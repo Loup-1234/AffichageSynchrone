@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__video__output" kind="group">
+    <compoundname>video_output</compoundname>
+    <title>Video output</title>
+    <innerfile refid="vlc__vout_8h">vlc_vout.h</innerfile>
+    <innerclass refid="structvout__configuration__t" prot="public">vout_configuration_t</innerclass>
+    <innerclass refid="structvout__thread__t" prot="public">vout_thread_t</innerclass>
+    <innergroup refid="group__spu">Sub-picture channels</innergroup>
+    <innergroup refid="group__subpicture">Video sub-pictures</innergroup>
+    <innergroup refid="group__video__display">Video output display</innergroup>
+    <innergroup refid="group__video__window">Video window</innergroup>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__video__output_1ga88d1c41dc17e170ca31480d77bb7a924" prot="public" static="no">
+        <type>struct <ref refid="group__video__output_1ga88d1c41dc17e170ca31480d77bb7a924" kindref="member">vout_thread_sys_t</ref></type>
+        <definition>typedef struct vout_thread_sys_t vout_thread_sys_t</definition>
+        <argsstring></argsstring>
+        <name>vout_thread_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Video output thread private structure </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="61" column="32" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__video__output_1ga2b6ae97c361cfcad909ac6c7494a2f7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        <definition>VLC_API vout_thread_t * vout_Request</definition>
+        <argsstring>(vlc_object_t *object, const vout_configuration_t *cfg)</argsstring>
+        <name>vout_Request</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvout__configuration__t" kindref="compound">vout_configuration_t</ref> *</type>
+          <declname>cfg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a suitable vout or release the given one.</para>
+<para>If cfg-&gt;fmt is non NULL and valid, a vout will be returned, reusing cfg-&gt;vout is possible, otherwise it returns NULL. If cfg-&gt;vout is not used, it will be closed and released.</para>
+<para>You can release the returned value either by vout_Request or <ref refid="group__video__output_1gac4265e793646e4730afe6ce9495205ae" kindref="member">vout_Close()</ref> followed by a vlc_object_release() or shorter vout_CloseAndRelease()</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vlc object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the video configuration requested. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a vout </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="103" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="103" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1gac4265e793646e4730afe6ce9495205ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_Close</definition>
+        <argsstring>(vout_thread_t *p_vout)</argsstring>
+        <name>vout_Close</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+          <declname>p_vout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will close a vout created by vout_Request. The associated vout module is closed. Note: It is not released yet, you&apos;ll have to call vlc_object_release() or use the convenient vout_CloseAndRelease().</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_vout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vout to close </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="114" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="114" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1ga41eee3ef4bb041d8061b99b4ad67ff5d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_CloseAndRelease</definition>
+        <argsstring>(vout_thread_t *p_vout)</argsstring>
+        <name>vout_CloseAndRelease</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+          <declname>p_vout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will close a vout created by vout_Create and then release it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_vout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vout to close and release </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="122" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="122" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1gae4885297218bd4b58e3a1ed1d2c97144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vout_GetSnapshot</definition>
+        <argsstring>(vout_thread_t *p_vout, block_t **pp_image, picture_t **pp_picture, video_format_t *p_fmt, const char *psz_format, vlc_tick_t i_timeout)</argsstring>
+        <name>vout_GetSnapshot</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+          <declname>p_vout</declname>
+        </param>
+        <param>
+          <type><ref refid="structblock__t" kindref="compound">block_t</ref> **</type>
+          <declname>pp_image</declname>
+        </param>
+        <param>
+          <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> **</type>
+          <declname>pp_picture</declname>
+        </param>
+        <param>
+          <type><ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>p_fmt</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_format</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>i_timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will handle a snapshot request.</para>
+<para>pp_image, pp_picture and p_fmt can be NULL otherwise they will be set with returned value in case of success.</para>
+<para>pp_image will hold an encoded picture in psz_format format.</para>
+<para>p_fmt can be NULL otherwise it will be set with the format used for the picture before encoding.</para>
+<para>i_timeout specifies the time the function will wait for a snapshot to be available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="143" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="143" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1ga6f536398a0111bd2306a50541a2d636a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_ChangeAspectRatio</definition>
+        <argsstring>(vout_thread_t *p_vout, unsigned int i_num, unsigned int i_den)</argsstring>
+        <name>vout_ChangeAspectRatio</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+          <declname>p_vout</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>i_num</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>i_den</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="148" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="148" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1ga81cd2781f30c073e7024957131987770" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+        <definition>VLC_API picture_t * vout_GetPicture</definition>
+        <argsstring>(vout_thread_t *)</argsstring>
+        <name>vout_GetPicture</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="152" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="152" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1ga764dffe6f3dcdebcb4e90d283e0215ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_PutPicture</definition>
+        <argsstring>(vout_thread_t *, picture_t *)</argsstring>
+        <name>vout_PutPicture</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="153" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="153" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1gab29103d86d62c0c66c7d6b4eca341f9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_PutSubpicture</definition>
+        <argsstring>(vout_thread_t *, subpicture_t *)</argsstring>
+        <name>vout_PutSubpicture</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="161" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="161" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1ga55eff5581ce36c8ecc8081b18f18a4c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vout_RegisterSubpictureChannel</definition>
+        <argsstring>(vout_thread_t *)</argsstring>
+        <name>vout_RegisterSubpictureChannel</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="162" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="162" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__output_1gaabc230dfe9dbea2c8fbb693f1b61d72d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_FlushSubpictureChannel</definition>
+        <argsstring>(vout_thread_t *, int)</argsstring>
+        <name>vout_FlushSubpictureChannel</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="163" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" declline="163" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__video__output_1gada1d1b57154f50061bddfc261adeef45" prot="public" static="no">
+        <name>VOUT_ALIGN_LEFT</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="78" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1gafae25ad980c16a5df9b4a91f3dc3e095" prot="public" static="no">
+        <name>VOUT_ALIGN_RIGHT</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="79" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1gaacf5a814ccce5c18174986be254ccfc2" prot="public" static="no">
+        <name>VOUT_ALIGN_HMASK</name>
+        <initializer>0x0003</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="80" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1gafad8dd2c41bbc92fda3760587216327b" prot="public" static="no">
+        <name>VOUT_ALIGN_TOP</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="81" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1ga1a4085c49d2bbba21357ab2630bdb32e" prot="public" static="no">
+        <name>VOUT_ALIGN_BOTTOM</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="82" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1ga329bd2c0056ee1303f7b5f1dbdb8a8c8" prot="public" static="no">
+        <name>VOUT_ALIGN_VMASK</name>
+        <initializer>0x000C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="83" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1ga2cf28a692148ca136ccb7afa84944161" prot="public" static="no">
+        <name>vout_Request</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>vout_Request(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a),b)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="104" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1ga2a57d6dbaddee1160520770b2fda1f77" prot="public" static="no">
+        <name>VOUT_SPU_CHANNEL_INVALID</name>
+        <initializer>(-1) /* Always fails in comparison */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="156" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1ga0519abb9564b4ea2080bad507df7880b" prot="public" static="no">
+        <name>VOUT_SPU_CHANNEL_OSD</name>
+        <initializer>1 /* OSD channel is automatically cleared */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="157" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__video__output_1gafd360246740c59274c5adcba7d9e47de" prot="public" static="no">
+        <name>VOUT_SPU_CHANNEL_AVAIL_FIRST</name>
+        <initializer>8 /* Registerable channels from this offset */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" line="158" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Video rendering, output and window management</para>
+<para>This module describes the programming interface for video output threads. It includes functions allowing to open a new thread, send pictures to a thread, and destroy a previously opened video output thread. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

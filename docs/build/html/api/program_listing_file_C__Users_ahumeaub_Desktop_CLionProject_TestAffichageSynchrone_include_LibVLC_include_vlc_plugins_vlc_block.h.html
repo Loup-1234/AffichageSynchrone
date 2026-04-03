@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_block.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_block.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_block.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_block.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-block-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-block-h"></span><h1>Program Listing for File vlc_block.h<a class="headerlink" href="#program-listing-for-file-vlc-block-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_block.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-block-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_block.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_block.h: Data blocks management functions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2003 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Laurent Aimar &lt;fenrir@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_BLOCK_H</span>
+<span class="cp">#define VLC_BLOCK_H 1</span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/types.h&gt;</span><span class="c1">  /* for ssize_t */</span>
+
+<span class="cm">/****************************************************************************</span>
+<span class="cm"> * block:</span>
+<span class="cm"> ****************************************************************************</span>
+<span class="cm"> * - i_flags may not always be set (ie could be 0, even for a key frame</span>
+<span class="cm"> *      it depends where you receive the buffer (before/after a packetizer</span>
+<span class="cm"> *      and the demux/packetizer implementations.</span>
+<span class="cm"> * - i_dts/i_pts could be VLC_TICK_INVALID, it means no pts/dts</span>
+<span class="cm"> * - i_length: length in microseond of the packet, can be null except in the</span>
+<span class="cm"> *      sout where it is mandatory.</span>
+<span class="cm"> *</span>
+<span class="cm"> * - i_buffer number of valid data pointed by p_buffer</span>
+<span class="cm"> *      you can freely decrease it but never increase it yourself</span>
+<span class="cm"> *      (use block_Realloc)</span>
+<span class="cm"> * - p_buffer: pointer over datas. You should never overwrite it, you can</span>
+<span class="cm"> *   only incremment it to skip datas, in others cases use block_Realloc</span>
+<span class="cm"> *   (don&#39;t duplicate yourself in a bigger buffer, block_Realloc is</span>
+<span class="cm"> *   optimised for preheader/postdatas increase)</span>
+<span class="cm"> ****************************************************************************/</span>
+
+<span class="cp">#define BLOCK_FLAG_DISCONTINUITY 0x0001</span>
+<span class="cp">#define BLOCK_FLAG_TYPE_I        0x0002</span>
+<span class="cp">#define BLOCK_FLAG_TYPE_P        0x0004</span>
+<span class="cp">#define BLOCK_FLAG_TYPE_B        0x0008</span>
+<span class="cp">#define BLOCK_FLAG_TYPE_PB       0x0010</span>
+<span class="cp">#define BLOCK_FLAG_HEADER        0x0020</span>
+<span class="cp">#define BLOCK_FLAG_END_OF_SEQUENCE 0x0040</span>
+<span class="cp">#define BLOCK_FLAG_CLOCK         0x0080</span>
+<span class="cp">#define BLOCK_FLAG_SCRAMBLED     0x0100</span>
+<span class="cp">#define BLOCK_FLAG_PREROLL       0x0200</span>
+<span class="cp">#define BLOCK_FLAG_CORRUPTED     0x0400</span>
+<span class="cp">#define BLOCK_FLAG_TOP_FIELD_FIRST 0x0800</span>
+<span class="cp">#define BLOCK_FLAG_BOTTOM_FIELD_FIRST 0x1000</span>
+<span class="cp">#define BLOCK_FLAG_SINGLE_FIELD  0x2000</span>
+
+<span class="cp">#define BLOCK_FLAG_INTERLACED_MASK \</span>
+<span class="cp">    (BLOCK_FLAG_TOP_FIELD_FIRST|BLOCK_FLAG_BOTTOM_FIELD_FIRST|BLOCK_FLAG_SINGLE_FIELD)</span>
+
+<span class="cp">#define BLOCK_FLAG_TYPE_MASK \</span>
+<span class="cp">    (BLOCK_FLAG_TYPE_I|BLOCK_FLAG_TYPE_P|BLOCK_FLAG_TYPE_B|BLOCK_FLAG_TYPE_PB)</span>
+
+<span class="cm">/* These are for input core private usage only */</span>
+<span class="cp">#define BLOCK_FLAG_CORE_PRIVATE_MASK  0x00ff0000</span>
+<span class="cp">#define BLOCK_FLAG_CORE_PRIVATE_SHIFT 16</span>
+
+<span class="cm">/* These are for module private usage only */</span>
+<span class="cp">#define BLOCK_FLAG_PRIVATE_MASK  0xff000000</span>
+<span class="cp">#define BLOCK_FLAG_PRIVATE_SHIFT 24</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">block_free_t</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">block_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w">    </span><span class="o">*</span><span class="n">p_next</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="o">*</span><span class="n">p_buffer</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w">      </span><span class="n">i_buffer</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="o">*</span><span class="n">p_start</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w">      </span><span class="n">i_size</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w">    </span><span class="n">i_flags</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_nb_samples</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Used for audio */</span>
+
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w">  </span><span class="n">i_pts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w">  </span><span class="n">i_dts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w">  </span><span class="n">i_length</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Rudimentary support for overloading block (de)allocation. */</span>
+<span class="w">    </span><span class="n">block_free_t</span><span class="w"> </span><span class="n">pf_release</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">block_Init</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_Alloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_TryRealloc</span><span class="p">(</span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">pre</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">body</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_Realloc</span><span class="p">(</span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">pre</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">body</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_Release</span><span class="p">(</span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">block</span><span class="o">-&gt;</span><span class="n">pf_release</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_CopyProperties</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">dst</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dst</span><span class="o">-&gt;</span><span class="n">i_nb_samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">i_nb_samples</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dst</span><span class="o">-&gt;</span><span class="n">i_dts</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">i_dts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dst</span><span class="o">-&gt;</span><span class="n">i_pts</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">i_pts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dst</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_block</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">block_Alloc</span><span class="p">(</span><span class="w"> </span><span class="n">p_block</span><span class="o">-&gt;</span><span class="n">i_buffer</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_dup</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">block_CopyProperties</span><span class="p">(</span><span class="w"> </span><span class="n">p_dup</span><span class="p">,</span><span class="w"> </span><span class="n">p_block</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="w"> </span><span class="n">p_dup</span><span class="o">-&gt;</span><span class="n">p_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">p_block</span><span class="o">-&gt;</span><span class="n">p_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">p_block</span><span class="o">-&gt;</span><span class="n">i_buffer</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_dup</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_heap_Alloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_mmap_Alloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_shm_Alloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_File</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">write</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_FilePath</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">write</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_Cleanup</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">block</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">block_Release</span><span class="w"> </span><span class="p">((</span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">block</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#define block_cleanup_push( block ) vlc_cleanup_push (block_Cleanup, block)</span>
+
+
+<span class="cm">/****************************************************************************</span>
+<span class="cm"> * Chains of blocks functions helper</span>
+<span class="cm"> ****************************************************************************</span>
+<span class="cm"> * - block_ChainAppend : append a block to the last block of a chain. Try to</span>
+<span class="cm"> *      avoid using with a lot of data as it&#39;s really slow, prefer</span>
+<span class="cm"> *      block_ChainLastAppend, p_block can be NULL</span>
+<span class="cm"> * - block_ChainLastAppend : use a pointer over a pointer to the next blocks,</span>
+<span class="cm"> *      and update it.</span>
+<span class="cm"> * - block_ChainRelease : release a chain of block</span>
+<span class="cm"> * - block_ChainExtract : extract data from a chain, return real bytes counts</span>
+<span class="cm"> * - block_ChainGather : gather a chain, free it and return one block.</span>
+<span class="cm"> ****************************************************************************/</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_ChainAppend</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_list</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_block</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="n">pp_list</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="o">*</span><span class="n">pp_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_block</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pp_list</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">        </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_block</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_ChainLastAppend</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">***</span><span class="n">ppp_last</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_block</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_block</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">**</span><span class="n">ppp_last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_block</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_last</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">p_last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_last</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="o">*</span><span class="n">ppp_last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_last</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_ChainRelease</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_block</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_block</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_block</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">        </span><span class="n">block_Release</span><span class="p">(</span><span class="w"> </span><span class="n">p_block</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">p_block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">block_ChainExtract</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_list</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_max</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w">  </span><span class="n">i_total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">p_data</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_list</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i_max</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">__MIN</span><span class="p">(</span><span class="w"> </span><span class="n">i_max</span><span class="p">,</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">i_buffer</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">memcpy</span><span class="p">(</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">p_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">i_copy</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">i_max</span><span class="w">   </span><span class="o">-=</span><span class="w"> </span><span class="n">i_copy</span><span class="p">;</span>
+<span class="w">        </span><span class="n">i_total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i_copy</span><span class="p">;</span>
+<span class="w">        </span><span class="n">p</span><span class="w">       </span><span class="o">+=</span><span class="w"> </span><span class="n">i_copy</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">p_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i_total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">block_ChainProperties</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_count</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="o">*</span><span class="n">pi_size</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="o">*</span><span class="n">pi_length</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">i_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_list</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">i_size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">i_buffer</span><span class="p">;</span>
+<span class="w">        </span><span class="n">i_length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="p">;</span>
+<span class="w">        </span><span class="n">i_count</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">p_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pi_size</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">*</span><span class="n">pi_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_size</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pi_length</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">*</span><span class="n">pi_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_length</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pi_count</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">*</span><span class="n">pi_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="nf">block_ChainGather</span><span class="p">(</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_list</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w">  </span><span class="n">i_total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">i_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">g</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p_list</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Already gathered */</span>
+
+<span class="w">    </span><span class="n">block_ChainProperties</span><span class="p">(</span><span class="w"> </span><span class="n">p_list</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i_total</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i_length</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">block_Alloc</span><span class="p">(</span><span class="w"> </span><span class="n">i_total</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">g</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">block_ChainExtract</span><span class="p">(</span><span class="w"> </span><span class="n">p_list</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">p_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">i_buffer</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="p">;</span>
+<span class="w">    </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">i_pts</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">i_pts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">i_dts</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">p_list</span><span class="o">-&gt;</span><span class="n">i_dts</span><span class="p">;</span>
+<span class="w">    </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_length</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* free p_list */</span>
+<span class="w">    </span><span class="n">block_ChainRelease</span><span class="p">(</span><span class="w"> </span><span class="n">p_list</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">g</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_FifoNew</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">block_FifoRelease</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">block_FifoEmpty</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">block_FifoPut</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="n">fifo</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_FifoGet</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block_FifoShow</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="kt">size_t</span><span class="w"> </span><span class="nf">block_FifoSize</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_DEPRECATED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">block_FifoCount</span><span class="p">(</span><span class="n">block_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_DEPRECATED</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">block_fifo_t</span><span class="w"> </span><span class="n">vlc_fifo_t</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_Lock</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_Unlock</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_Signal</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_Wait</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_WaitCond</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">vlc_fifo_TimedWaitCond</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_QueueUnlocked</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_fifo_DequeueUnlocked</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_fifo_DequeueAllUnlocked</span><span class="p">(</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">vlc_fifo_GetCount</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">vlc_fifo_GetBytes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_USED</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">vlc_fifo_IsEmpty</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="n">fifo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vlc_fifo_GetCount</span><span class="p">(</span><span class="n">fifo</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_fifo_Cleanup</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">fifo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_fifo_Unlock</span><span class="p">((</span><span class="n">vlc_fifo_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">fifo</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#define vlc_fifo_CleanupPush(fifo) vlc_cleanup_push(vlc_fifo_Cleanup, fifo)</span>
+
+
+
+<span class="cp">#endif </span><span class="cm">/* VLC_BLOCK_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

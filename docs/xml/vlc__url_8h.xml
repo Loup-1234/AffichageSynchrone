@@ -1,0 +1,478 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__url_8h" kind="file" language="C++">
+    <compoundname>vlc_url.h</compoundname>
+    <includedby refid="vlc__http_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h</includedby>
+    <includedby refid="vlc__renderer__discovery_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h</label>
+        <link refid="vlc__http_8h"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h</label>
+        <link refid="vlc__renderer__discovery_8h"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h</label>
+        <link refid="vlc__url_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structvlc__url__t" prot="public">vlc_url_t</innerclass>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="vlc__url_8h_1ab55170bd82c0fe392009e8d0b2ef550d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_path2uri</definition>
+        <argsstring>(const char *path, const char *scheme) VLC_MALLOC</argsstring>
+        <name>vlc_path2uri</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>scheme</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts local path to URL.</para>
+<para>Builds a URL representation from a local UTF-8 null-terminated file path.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file path </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scheme</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URI scheme to use (default is auto: &quot;file&quot;, &quot;fd&quot; or &quot;smb&quot;) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a heap-allocated URI string on success or NULL in case of error (errno will be set accordingly) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="46" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="46" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1ab3cb192855b0c63783e0585897c3f4ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri2path</definition>
+        <argsstring>(const char *url) VLC_MALLOC</argsstring>
+        <name>vlc_uri2path</name>
+        <param>
+          <type>const char *</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts a URI to a local path.</para>
+<para>Builds a local path (UTF-8-encoded null-terminated string) from a URI if the URI scheme allows.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URI </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a heap-allocated string or success or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="58" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="58" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a539bea8b79cbc3733e39e856de51f45a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri_decode</definition>
+        <argsstring>(char *str)</argsstring>
+        <name>vlc_uri_decode</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decodes an URI component in place.</para>
+<para>Decodes one null-terminated UTF-8 URI component to aa null-terminated UTF-8 string in place.</para>
+<para>See also <ref refid="vlc__url_8h_1a570b5830a0409b6c8fdd77fdac09848b" kindref="member">vlc_uri_decode_duplicate()</ref> for the not-in-place variant.</para>
+<para><simplesect kind="warning"><para><bold>This function does NOT decode entire URIs.</bold> URI can only be decoded (and encoded) one component at a time (e.g. the host name, one directory, the file name). Complete URIs are always &quot;encoded&quot; (or they are syntaxically invalid). See IETF RFC3986, especially §2.4 for details.</para>
+</simplesect>
+<simplesect kind="note"><para>URI encoding is <bold>different</bold> from Javascript escaping. Especially, white spaces and Unicode non-ASCII code points are encoded differently.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>null-terminated component </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>str is returned on success. NULL if str was not properly encoded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="80" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="80" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a570b5830a0409b6c8fdd77fdac09848b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri_decode_duplicate</definition>
+        <argsstring>(const char *str) VLC_MALLOC</argsstring>
+        <name>vlc_uri_decode_duplicate</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decodes an URI component.</para>
+<para>See also <ref refid="vlc__url_8h_1a539bea8b79cbc3733e39e856de51f45a" kindref="member">vlc_uri_decode()</ref> for the in-place variant.</para>
+<para><simplesect kind="return"><para>a heap-allocated string on success or NULL on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="89" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="89" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a9ad79a40fc183ba87137ab72c4fb687a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri_encode</definition>
+        <argsstring>(const char *str) VLC_MALLOC</argsstring>
+        <name>vlc_uri_encode</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encodes a URI component.</para>
+<para>Substitutes URI-unsafe, URI delimiters and non-ASCII characters into their URI-encoded URI-safe representation. See also IETF RFC3986 §2.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nul-terminated UTF-8 representation of the component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Obviously, a URI containing nul bytes cannot be passed. </para>
+</simplesect>
+<simplesect kind="return"><para>heap-allocated string, or NULL if out of memory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="101" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="101" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a55ef13fda4e4269b994d425744d3edd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri_compose</definition>
+        <argsstring>(const vlc_url_t *) VLC_MALLOC</argsstring>
+        <name>vlc_uri_compose</name>
+        <param>
+          <type>const <ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Composes an URI.</para>
+<para>Converts a decomposed/parsed URI structure (<ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref>) into a nul-terminated URI literal string.</para>
+<para>See also IETF RFC3986 section 5.3 for details.</para>
+<para><xrefsect id="bug_1_bug000007"><xreftitle>Bogue</xreftitle><xrefdescription><para>URI fragments (i.e. HTML anchors) are not handled</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="return"><para>a heap-allocated nul-terminated string or NULL if out of memory </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="115" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="115" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1ad5df759732f8d71381a86567741d1f5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri_resolve</definition>
+        <argsstring>(const char *base, const char *ref) VLC_MALLOC</argsstring>
+        <name>vlc_uri_resolve</name>
+        <param>
+          <type>const char *</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resolves an URI reference.</para>
+<para>Resolves an URI reference relative to a base URI. If the reference is an absolute URI, then this function simply returns a copy of the URI reference.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>base URI (as a nul-terminated string) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ref</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URI reference (also as a nul-terminated string)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a heap-allocated nul-terminated string representing the resolved absolute URI, or NULL if out of memory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="130" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="130" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a7f8b4fec13c5e338d149e47ca9afee3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_uri_fixup</definition>
+        <argsstring>(const char *) VLC_MALLOC</argsstring>
+        <name>vlc_uri_fixup</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fixes up a URI string.</para>
+<para>Attempts to convert a nul-terminated string into a syntactically valid URI. If the string is, or may be, a syntactically valid URI, an exact copy is returned. In any case, the result will only contain URI-safe and URI delimiter characters (generic delimiters or sub-delimiters) and all percent signs will be followed by two hexadecimal characters.</para>
+<para><simplesect kind="return"><para>a heap-allocated string, or NULL if on out of memory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="143" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="143" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a1262de736d8d5dd560e87d858093e6dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_UrlParse</definition>
+        <argsstring>(vlc_url_t *url, const char *str)</argsstring>
+        <name>vlc_UrlParse</name>
+        <param>
+          <type><ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref> *</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parses an URI or IRI.</para>
+<para>Extracts the following parts from an URI string:<itemizedlist>
+<listitem><para>scheme (i.e. protocol),</para>
+</listitem><listitem><para>user (deprecated),</para>
+</listitem><listitem><para>password (also deprecated),</para>
+</listitem><listitem><para>host name or IP address literal,</para>
+</listitem><listitem><para>port number,</para>
+</listitem><listitem><para>path (including the filename preceded by any and all directories)</para>
+</listitem><listitem><para>request parameters (excluding the leading question mark &apos;?&apos;).</para>
+</listitem></itemizedlist>
+</para>
+<para>The function accepts URIs, as well as UTF-8-encoded IRIs. For IRIs, the hier part (specifically, the host name) is assumed to be an IDN and is decoded to ASCII according, so it can be used for DNS resolution. If the host is an IPv6 address literal, brackets are stripped.</para>
+<para>Any missing part is set to nul. For historical reasons, the target structure is always initialized, even if parsing the URI string fails.</para>
+<para>On error, errno is set to one of the following value:<itemizedlist>
+<listitem><para>ENOMEM in case of memory allocation failure,</para>
+</listitem><listitem><para>EINVAL in case of syntax error in the input string.</para>
+</listitem></itemizedlist>
+</para>
+<para><xrefsect id="bug_1_bug000008"><xreftitle>Bogue</xreftitle><xrefdescription><para>The URI fragment is discarded if present.</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="note"><para>This function allocates memory. <ref refid="vlc__url_8h_1a424d28278321c21c47d4692864c35574" kindref="member">vlc_UrlClean()</ref> must be used free associated the allocations, even if the function fails.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>structure of URL parts [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nul-terminated URL string to split </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>-1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>failure </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="193" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="193" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1af6f3bec4a32d7ee12f742a8ec7fec88e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_UrlParseFixup</definition>
+        <argsstring>(vlc_url_t *url, const char *str)</argsstring>
+        <name>vlc_UrlParseFixup</name>
+        <param>
+          <type><ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref> *</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parses an URI or IRI and fix up the path part.</para>
+<para><simplesect kind="see"><para><ref refid="vlc__url_8h_1a1262de736d8d5dd560e87d858093e6dc" kindref="member">vlc_UrlParse</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="vlc__url_8h_1a7f8b4fec13c5e338d149e47ca9afee3a" kindref="member">vlc_uri_fixup</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="201" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="201" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__url_8h_1a424d28278321c21c47d4692864c35574" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_UrlClean</definition>
+        <argsstring>(vlc_url_t *)</argsstring>
+        <name>vlc_UrlClean</name>
+        <param>
+          <type><ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases resources allocated by <ref refid="vlc__url_8h_1a1262de736d8d5dd560e87d858093e6dc" kindref="member">vlc_UrlParse()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" line="206" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h" declline="206" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines functions for manipulating URL in vlc </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_url.h:<sp/>URL<sp/>related<sp/>macros</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002-2006<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Christophe<sp/>Massiot<sp/>&lt;massiot@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rémi<sp/>Denis-Courmont</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_URL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>VLC_URL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="vlc__url_8h_1ab55170bd82c0fe392009e8d0b2ef550d" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1ab55170bd82c0fe392009e8d0b2ef550d" kindref="member">vlc_path2uri</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*scheme)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="vlc__url_8h_1ab3cb192855b0c63783e0585897c3f4ff" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1ab3cb192855b0c63783e0585897c3f4ff" kindref="member">vlc_uri2path</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*url)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="vlc__url_8h_1a539bea8b79cbc3733e39e856de51f45a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1a539bea8b79cbc3733e39e856de51f45a" kindref="member">vlc_uri_decode</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="vlc__url_8h_1a570b5830a0409b6c8fdd77fdac09848b" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1a570b5830a0409b6c8fdd77fdac09848b" kindref="member">vlc_uri_decode_duplicate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="vlc__url_8h_1a9ad79a40fc183ba87137ab72c4fb687a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1a9ad79a40fc183ba87137ab72c4fb687a" kindref="member">vlc_uri_encode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="vlc__url_8h_1a55ef13fda4e4269b994d425744d3edd8" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1a55ef13fda4e4269b994d425744d3edd8" kindref="member">vlc_uri_compose</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref><sp/>*)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="vlc__url_8h_1ad5df759732f8d71381a86567741d1f5d" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1ad5df759732f8d71381a86567741d1f5d" kindref="member">vlc_uri_resolve</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*base,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ref)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="vlc__url_8h_1a7f8b4fec13c5e338d149e47ca9afee3a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__url_8h_1a7f8b4fec13c5e338d149e47ca9afee3a" kindref="member">vlc_uri_fixup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="structvlc__url__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_protocol;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_username;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_password;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_host;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i_port;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_path;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_option;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_buffer;<sp/></highlight><highlight class="comment">/*<sp/>to<sp/>be<sp/>freed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_pathbuffer;<sp/></highlight><highlight class="comment">/*<sp/>to<sp/>be<sp/>freed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="vlc__url_8h_1a1262de736d8d5dd560e87d858093e6dc" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="vlc__url_8h_1a1262de736d8d5dd560e87d858093e6dc" kindref="member">vlc_UrlParse</ref>(<ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref><sp/>*url,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="vlc__url_8h_1af6f3bec4a32d7ee12f742a8ec7fec88e" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="vlc__url_8h_1af6f3bec4a32d7ee12f742a8ec7fec88e" kindref="member">vlc_UrlParseFixup</ref>(<ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref><sp/>*url,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="vlc__url_8h_1a424d28278321c21c47d4692864c35574" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__url_8h_1a424d28278321c21c47d4692864c35574" kindref="member">vlc_UrlClean</ref>(<ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_url.h"/>
+  </compounddef>
+</doxygen>

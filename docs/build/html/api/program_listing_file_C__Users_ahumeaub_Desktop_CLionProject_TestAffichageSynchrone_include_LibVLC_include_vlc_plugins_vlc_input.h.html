@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_input.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_input.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_input.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_input.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-input-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-input-h"></span><h1>Program Listing for File vlc_input.h<a class="headerlink" href="#program-listing-for-file-vlc-input-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_input.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-input-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_input.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_input.h: Core input structures</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2015 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Christophe Massiot &lt;massiot@via.ecp.fr&gt;</span>
+<span class="cm"> *          Laurent Aimar &lt;fenrir@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_INPUT_H</span>
+<span class="cp">#define VLC_INPUT_H 1</span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_es.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_meta.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_epg.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_events.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_input_item.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_vout.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_vout_osd.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Seek point: (generalisation of chapters)</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">seekpoint_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_time_offset</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">    </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_seekpoint_New</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">seekpoint_t</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">point</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">point</span><span class="o">-&gt;</span><span class="n">i_time_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">point</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">point</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_seekpoint_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">point</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">point</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">point</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_seekpoint_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlc_seekpoint_New</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">likely</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">point</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">point</span><span class="o">-&gt;</span><span class="n">i_time_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="o">-&gt;</span><span class="n">i_time_offset</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">point</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Title:</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cm">/* input_title_t.i_flags field */</span>
+<span class="cp">#define INPUT_TITLE_MENU         0x01   </span><span class="cm">/* Menu title */</span>
+<span class="cp">#define INPUT_TITLE_INTERACTIVE  0x02   </span><span class="cm">/* Interactive title. Playback position has no meaning. */</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_title_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">     </span><span class="n">i_length</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Length(microsecond) if known, else 0 */</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_flags</span><span class="p">;</span><span class="w">    </span><span class="cm">/* Is it a menu or a normal entry */</span>
+
+<span class="w">    </span><span class="cm">/* Title seekpoint */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_seekpoint</span><span class="p">;</span>
+<span class="w">    </span><span class="n">seekpoint_t</span><span class="w"> </span><span class="o">**</span><span class="n">seekpoint</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">input_title_t</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">input_title_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_input_title_New</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_title_t</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">input_title_t</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">input_title_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">t</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_input_title_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">input_title_t</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">vlc_seekpoint_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">input_title_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_input_title_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">input_title_t</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_title_t</span><span class="w"> </span><span class="o">*</span><span class="n">dup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlc_input_title_New</span><span class="p">(</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">dup</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_flags</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">seekpoint_t</span><span class="o">**</span><span class="p">)</span><span class="n">vlc_alloc</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">seekpoint_t</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">likely</span><span class="p">(</span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                </span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlc_seekpoint_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">seekpoint</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="n">dup</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">i_seekpoint</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dup</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Attachments</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">input_attachment_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_mime</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_description</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_data</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_data</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_input_attachment_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">a</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">p_data</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_description</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_mime</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_input_attachment_New</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                                            </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_mime</span><span class="p">,</span>
+<span class="w">                                                            </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_description</span><span class="p">,</span>
+<span class="w">                                                            </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_data</span><span class="p">,</span>
+<span class="w">                                                            </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_data</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">unlikely</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">psz_name</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">psz_name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_mime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">psz_mime</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">psz_mime</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">psz_description</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">psz_description</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">i_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_data</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">p_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="n">i_data</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">i_data</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">likely</span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">p_data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">memcpy</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="n">i_data</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">unlikely</span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_mime</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span>
+<span class="w">              </span><span class="o">||</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_description</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">i_data</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">p_data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vlc_input_attachment_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_input_attachment_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vlc_input_attachment_New</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_mime</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">psz_description</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">i_data</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * input defines/constants.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_resource_t</span><span class="w"> </span><span class="n">input_resource_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">input_thread_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+<span class="p">};</span>
+
+<span class="cp">#define INPUT_RECORD_PREFIX &quot;vlc-record-%Y-%m-%d-%Hh%Mm%Ss-$ N-$ p&quot;</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Input events and variables</span>
+<span class="cm"> *****************************************************************************/</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">input_state_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">INIT_S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">OPENING_S</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYING_S</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PAUSE_S</span><span class="p">,</span>
+<span class="w">    </span><span class="n">END_S</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ERROR_S</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">input_state_e</span><span class="p">;</span>
+
+
+<span class="cp">#define INPUT_RATE_DEFAULT  1000</span>
+<span class="cp">#define INPUT_RATE_MIN        32            </span><span class="cm">/* Up to 32/1 */</span>
+<span class="cp">#define INPUT_RATE_MAX     32000            </span><span class="cm">/* Up to 1/32 */</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">input_event_type_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* &quot;state&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_STATE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* b_dead is true */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_DEAD</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* &quot;rate&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_RATE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* At least one of &quot;position&quot; or &quot;time&quot; */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_POSITION</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* &quot;length&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_LENGTH</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* A title has been added or removed or selected.</span>
+<span class="cm">     * It implies that the chapter has changed (no chapter event is sent) */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_TITLE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* A chapter has been added or removed or selected. */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_CHAPTER</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* A program (&quot;program&quot;) has been added or removed or selected,</span>
+<span class="cm">     * or &quot;program-scrambled&quot; has changed.*/</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_PROGRAM</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* A ES has been added or removed or selected */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_ES</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* &quot;teletext-es&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_TELETEXT</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* &quot;record&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_RECORD</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* input_item_t media has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_ITEM_META</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* input_item_t info has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_ITEM_INFO</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* input_item_t epg has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_ITEM_EPG</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Input statistics have been updated */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_STATISTICS</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* At least one of &quot;signal-quality&quot; or &quot;signal-strength&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_SIGNAL</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* &quot;audio-delay&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_AUDIO_DELAY</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* &quot;spu-delay&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_SUBTITLE_DELAY</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* &quot;bookmark&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_BOOKMARK</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* cache&quot; has changed */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_CACHE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* A audio_output_t object has been created/deleted by *the input* */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_AOUT</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* A vout_thread_t object has been created/deleted by *the input* */</span>
+<span class="w">    </span><span class="n">INPUT_EVENT_VOUT</span><span class="p">,</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">input_event_type_e</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">input_query_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* input variable &quot;position&quot; */</span>
+<span class="w">    </span><span class="n">INPUT_GET_POSITION</span><span class="p">,</span><span class="w">         </span><span class="cm">/* arg1= double *       res=    */</span>
+<span class="w">    </span><span class="n">INPUT_SET_POSITION</span><span class="p">,</span><span class="w">         </span><span class="cm">/* arg1= double         res=can fail    */</span>
+
+<span class="w">    </span><span class="cm">/* input variable &quot;length&quot; */</span>
+<span class="w">    </span><span class="n">INPUT_GET_LENGTH</span><span class="p">,</span><span class="w">           </span><span class="cm">/* arg1= int64_t *      res=can fail    */</span>
+
+<span class="w">    </span><span class="cm">/* input variable &quot;time&quot; */</span>
+<span class="w">    </span><span class="n">INPUT_GET_TIME</span><span class="p">,</span><span class="w">             </span><span class="cm">/* arg1= int64_t *      res=    */</span>
+<span class="w">    </span><span class="n">INPUT_SET_TIME</span><span class="p">,</span><span class="w">             </span><span class="cm">/* arg1= int64_t        res=can fail    */</span>
+
+<span class="w">    </span><span class="cm">/* input variable &quot;rate&quot; (nominal is INPUT_RATE_DEFAULT) */</span>
+<span class="w">    </span><span class="n">INPUT_GET_RATE</span><span class="p">,</span><span class="w">             </span><span class="cm">/* arg1= int *          res=    */</span>
+<span class="w">    </span><span class="n">INPUT_SET_RATE</span><span class="p">,</span><span class="w">             </span><span class="cm">/* arg1= int            res=can fail    */</span>
+
+<span class="w">    </span><span class="cm">/* input variable &quot;state&quot; */</span>
+<span class="w">    </span><span class="n">INPUT_GET_STATE</span><span class="p">,</span><span class="w">            </span><span class="cm">/* arg1= int *          res=    */</span>
+<span class="w">    </span><span class="n">INPUT_SET_STATE</span><span class="p">,</span><span class="w">            </span><span class="cm">/* arg1= int            res=can fail    */</span>
+
+<span class="w">    </span><span class="cm">/* input variable &quot;audio-delay&quot; and &quot;sub-delay&quot; */</span>
+<span class="w">    </span><span class="n">INPUT_GET_AUDIO_DELAY</span><span class="p">,</span><span class="w">      </span><span class="cm">/* arg1 = int* res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_SET_AUDIO_DELAY</span><span class="p">,</span><span class="w">      </span><span class="cm">/* arg1 = int  res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_SPU_DELAY</span><span class="p">,</span><span class="w">        </span><span class="cm">/* arg1 = int* res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_SET_SPU_DELAY</span><span class="p">,</span><span class="w">        </span><span class="cm">/* arg1 = int  res=can fail */</span>
+
+<span class="w">    </span><span class="cm">/* Menu (VCD/DVD/BD) Navigation */</span>
+<span class="w">    </span><span class="n">INPUT_NAV_ACTIVATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INPUT_NAV_UP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INPUT_NAV_DOWN</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INPUT_NAV_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INPUT_NAV_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INPUT_NAV_POPUP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INPUT_NAV_MENU</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Meta datas */</span>
+<span class="w">    </span><span class="n">INPUT_ADD_INFO</span><span class="p">,</span><span class="w">   </span><span class="cm">/* arg1= char* arg2= char* arg3=...     res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_REPLACE_INFOS</span><span class="p">,</span><span class="cm">/* arg1= info_category_t *            res=cannot fail */</span>
+<span class="w">    </span><span class="n">INPUT_MERGE_INFOS</span><span class="p">,</span><span class="cm">/* arg1= info_category_t *              res=cannot fail */</span>
+<span class="w">    </span><span class="n">INPUT_DEL_INFO</span><span class="p">,</span><span class="w">   </span><span class="cm">/* arg1= char* arg2= char*              res=can fail */</span>
+
+<span class="w">    </span><span class="cm">/* bookmarks */</span>
+<span class="w">    </span><span class="n">INPUT_GET_BOOKMARK</span><span class="p">,</span><span class="w">    </span><span class="cm">/* arg1= seekpoint_t *               res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_BOOKMARKS</span><span class="p">,</span><span class="w">   </span><span class="cm">/* arg1= seekpoint_t *** arg2= int * res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_CLEAR_BOOKMARKS</span><span class="p">,</span><span class="w"> </span><span class="cm">/* res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_ADD_BOOKMARK</span><span class="p">,</span><span class="w">    </span><span class="cm">/* arg1= seekpoint_t *  res=can fail   */</span>
+<span class="w">    </span><span class="n">INPUT_CHANGE_BOOKMARK</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1= seekpoint_t * arg2= int * res=can fail   */</span>
+<span class="w">    </span><span class="n">INPUT_DEL_BOOKMARK</span><span class="p">,</span><span class="w">    </span><span class="cm">/* arg1= seekpoint_t *  res=can fail   */</span>
+<span class="w">    </span><span class="n">INPUT_SET_BOOKMARK</span><span class="p">,</span><span class="w">    </span><span class="cm">/* arg1= int  res=can fail    */</span>
+
+<span class="w">    </span><span class="cm">/* titles */</span>
+<span class="w">    </span><span class="n">INPUT_GET_TITLE_INFO</span><span class="p">,</span><span class="w">     </span><span class="cm">/* arg1=input_title_t** arg2= int * res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_FULL_TITLE_INFO</span><span class="p">,</span><span class="w">     </span><span class="cm">/* arg1=input_title_t*** arg2= int * res=can fail */</span>
+
+<span class="w">    </span><span class="cm">/* seekpoints */</span>
+<span class="w">    </span><span class="n">INPUT_GET_SEEKPOINTS</span><span class="p">,</span><span class="w">  </span><span class="cm">/* arg1=seekpoint_t*** arg2= int * res=can fail */</span>
+
+<span class="w">    </span><span class="cm">/* Attachments */</span>
+<span class="w">    </span><span class="n">INPUT_GET_ATTACHMENTS</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1=input_attachment_t***, arg2=int*  res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_ATTACHMENT</span><span class="p">,</span><span class="w">  </span><span class="cm">/* arg1=input_attachment_t**, arg2=char*  res=can fail */</span>
+
+<span class="w">    </span><span class="cm">/* On the fly input slave */</span>
+<span class="w">    </span><span class="n">INPUT_ADD_SLAVE</span><span class="p">,</span><span class="w">       </span><span class="cm">/* arg1= enum slave_type, arg2= const char *,</span>
+<span class="cm">                            * arg3= bool forced, arg4= bool notify,</span>
+<span class="cm">                            * arg5= bool check_extension */</span>
+
+<span class="w">    </span><span class="cm">/* On the fly record while playing */</span>
+<span class="w">    </span><span class="n">INPUT_SET_RECORD_STATE</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1=bool    res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_RECORD_STATE</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1=bool*   res=can fail */</span>
+
+<span class="w">    </span><span class="cm">/* ES */</span>
+<span class="w">    </span><span class="n">INPUT_RESTART_ES</span><span class="p">,</span><span class="w">       </span><span class="cm">/* arg1=int (-AUDIO/VIDEO/SPU_ES for the whole category) */</span>
+
+<span class="w">    </span><span class="cm">/* Viewpoint */</span>
+<span class="w">    </span><span class="n">INPUT_UPDATE_VIEWPOINT</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1=(const vlc_viewpoint_t*), arg2=bool b_absolute */</span>
+<span class="w">    </span><span class="n">INPUT_SET_INITIAL_VIEWPOINT</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1=(const vlc_viewpoint_t*) */</span>
+
+<span class="w">    </span><span class="cm">/* Input ressources</span>
+<span class="cm">     * XXX You must call vlc_object_release as soon as possible */</span>
+<span class="w">    </span><span class="n">INPUT_GET_AOUT</span><span class="p">,</span><span class="w">         </span><span class="cm">/* arg1=audio_output_t **              res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_VOUTS</span><span class="p">,</span><span class="w">        </span><span class="cm">/* arg1=vout_thread_t ***, size_t *        res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_GET_ES_OBJECTS</span><span class="p">,</span><span class="w">   </span><span class="cm">/* arg1=int id, vlc_object_t **dec, vout_thread_t **, audio_output_t ** */</span>
+
+<span class="w">    </span><span class="cm">/* Renderers */</span>
+<span class="w">    </span><span class="n">INPUT_SET_RENDERER</span><span class="p">,</span><span class="w">     </span><span class="cm">/* arg1=vlc_renderer_item_t* */</span>
+
+<span class="w">    </span><span class="cm">/* External clock managments */</span>
+<span class="w">    </span><span class="n">INPUT_GET_PCR_SYSTEM</span><span class="p">,</span><span class="w">   </span><span class="cm">/* arg1=vlc_tick_t *, arg2=vlc_tick_t *       res=can fail */</span>
+<span class="w">    </span><span class="n">INPUT_MODIFY_PCR_SYSTEM</span><span class="p">,</span><span class="cm">/* arg1=int absolute, arg2=vlc_tick_t   res=can fail */</span>
+<span class="p">};</span>
+
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Prototypes</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_Create</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_parent</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_log</span><span class="p">,</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                       </span><span class="n">vlc_renderer_item_t</span><span class="o">*</span><span class="w"> </span><span class="n">p_renderer</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="cp">#define input_Create(a,b,c,d,e) input_Create(VLC_OBJECT(a),b,c,d,e)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_Start</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_Stop</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_Read</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define input_Read(a,b) input_Read(VLC_OBJECT(a),b)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_vaControl</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_query</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w">  </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_query</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w">  </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_Close</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span>
+<span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="nf">input_CreateAndStart</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">log</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input_Create</span><span class="p">(</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">input_Start</span><span class="p">(</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vlc_object_release</span><span class="p">(</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">#define input_CreateAndStart(a,b,c) input_CreateAndStart(VLC_OBJECT(a),b,c)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_t</span><span class="o">*</span><span class="w"> </span><span class="n">input_GetItem</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">input_state_e</span><span class="w"> </span><span class="nf">input_GetState</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_input</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_state_e</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INIT_S</span><span class="p">;</span>
+<span class="w">    </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_GET_STATE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">state</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">vout_thread_t</span><span class="w"> </span><span class="o">*</span><span class="nf">input_GetVout</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">     </span><span class="n">vout_thread_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_vout</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">p_vout</span><span class="p">;</span>
+<span class="w">     </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_vout</span><span class="p">;</span>
+
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_GET_VOUTS</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pp_vout</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i_vout</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">     </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i_vout</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="n">vlc_object_release</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">pp_vout</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">     </span><span class="n">p_vout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i_vout</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">pp_vout</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">     </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">pp_vout</span><span class="w"> </span><span class="p">);</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">p_vout</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">input_AddSlave</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">slave_type</span><span class="w"> </span><span class="n">type</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_uri</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_forced</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_notify</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_check_ext</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_ADD_SLAVE</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">psz_uri</span><span class="p">,</span><span class="w"> </span><span class="n">b_forced</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">b_notify</span><span class="p">,</span><span class="w"> </span><span class="n">b_check_ext</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">input_UpdateViewpoint</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_viewpoint</span><span class="p">,</span>
+<span class="w">                                         </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_absolute</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_UPDATE_VIEWPOINT</span><span class="p">,</span><span class="w"> </span><span class="n">p_viewpoint</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">b_absolute</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="nf">input_GetAout</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">     </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_aout</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_GET_AOUT</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_aout</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">p_aout</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">input_GetEsObjects</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_id</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_decoder</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">vout_thread_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_vout</span><span class="p">,</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_aout</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_GET_ES_OBJECTS</span><span class="p">,</span><span class="w"> </span><span class="n">i_id</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">pp_decoder</span><span class="p">,</span><span class="w"> </span><span class="n">pp_vout</span><span class="p">,</span><span class="w"> </span><span class="n">pp_aout</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">input_GetPcrSystem</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="o">*</span><span class="n">pi_system</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="o">*</span><span class="n">pi_delay</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_GET_PCR_SYSTEM</span><span class="p">,</span><span class="w"> </span><span class="n">pi_system</span><span class="p">,</span><span class="w"> </span><span class="n">pi_delay</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">input_ModifyPcrSystem</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_absolute</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">i_system</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input_Control</span><span class="p">(</span><span class="w"> </span><span class="n">p_input</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_MODIFY_PCR_SYSTEM</span><span class="p">,</span><span class="w"> </span><span class="n">b_absolute</span><span class="p">,</span><span class="w"> </span><span class="n">i_system</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* */</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_DecoderCreate</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_DecoderDelete</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_DecoderDecode</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_do_pace</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_DecoderDrain</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_DecoderFlush</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_CreateFilename</span><span class="p">(</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_path</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_prefix</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_extension</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_resource_New</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_resource_Release</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_resource_TerminateVout</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_resource_Terminate</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">input_resource_HoldAout</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">input_resource_GetAout</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_resource_PutAout</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_resource_ResetAout</span><span class="p">(</span><span class="w"> </span><span class="n">input_resource_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,749 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__bits_8h" kind="file" language="C++">
+    <compoundname>vlc_bits.h</compoundname>
+    <includes refid="vlc__common_8h" local="no">vlc_common.h</includes>
+    <incdepgraph>
+      <node id="17">
+        <label>vlc_arrays.h</label>
+        <link refid="vlc__arrays_8h"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h</label>
+        <link refid="vlc__bits_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_common.h</label>
+        <link refid="vlc__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vlc_config.h</label>
+        <link refid="vlc__config_8h"/>
+      </node>
+      <node id="22">
+        <label>vlc_configuration.h</label>
+        <link refid="vlc__configuration_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>vlc_main.h</label>
+        <link refid="vlc__main_8h"/>
+      </node>
+      <node id="18">
+        <label>vlc_messages.h</label>
+        <link refid="vlc__messages_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>vlc_mtime.h</label>
+        <link refid="vlc__mtime_8h_source"/>
+      </node>
+      <node id="19">
+        <label>vlc_objects.h</label>
+        <link refid="vlc__objects_8h"/>
+      </node>
+      <node id="12">
+        <label>vlc_threads.h</label>
+        <link refid="vlc__threads_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>vlc_variables.h</label>
+        <link refid="vlc__variables_8h"/>
+      </node>
+      <node id="8">
+        <label>inttypes.h</label>
+      </node>
+      <node id="16">
+        <label>limits.h</label>
+      </node>
+      <node id="14">
+        <label>pthread.h</label>
+      </node>
+      <node id="15">
+        <label>semaphore.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="10">
+        <label>stdbool.h</label>
+      </node>
+      <node id="9">
+        <label>stddef.h</label>
+      </node>
+      <node id="7">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="23">
+        <label>sys/types.h</label>
+      </node>
+      <node id="13">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structbs__s" prot="public">bs_s</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="vlc__bits_8h_1ad9e202c251a898f5bf53678666199df1" prot="public" static="no">
+        <name>bs_forward</name>
+        <param><defname>s</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>    s-&gt;p = s-&gt;pf_forward ? s-&gt;pf_forward( s-&gt;p, s-&gt;p_end, s-&gt;p_fwpriv, i ) : s-&gt;p + i</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="84" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="84" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vlc__bits_8h_1a2bb551c4cf3e98a90f3540679dba66f0" prot="public" static="no">
+        <type>struct <ref refid="structbs__s" kindref="compound">bs_s</ref></type>
+        <definition>typedef struct bs_s bs_t</definition>
+        <argsstring></argsstring>
+        <name>bs_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="47" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="vlc__bits_8h_1a43c6682c16443ff58dbde3e6bb74aa29" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_write_init</definition>
+        <argsstring>(bs_t *s, void *p_data, size_t i_data)</argsstring>
+        <name>bs_write_init</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="49" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="49" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1ad66972b6ee9f7129679ae1a61b3c6f3a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_init</definition>
+        <argsstring>(bs_t *s, const void *p_data, size_t i_data)</argsstring>
+        <name>bs_init</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="60" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1ad6b1dd632b0c8636c9de33f708c3f269" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int bs_pos</definition>
+        <argsstring>(const bs_t *s)</argsstring>
+        <name>bs_pos</name>
+        <param>
+          <type>const <ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="66" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1acd94e10be4771ddb970cbb5cc621bdce" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int bs_remain</definition>
+        <argsstring>(const bs_t *s)</argsstring>
+        <name>bs_remain</name>
+        <param>
+          <type>const <ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="71" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="71" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a3152f5407493590f92b05a465ccf141e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int bs_eof</definition>
+        <argsstring>(const bs_t *s)</argsstring>
+        <name>bs_eof</name>
+        <param>
+          <type>const <ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="79" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a858ad18595827d25900d52baac1f4189" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t bs_read</definition>
+        <argsstring>(bs_t *s, int i_count)</argsstring>
+        <name>bs_read</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="87" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="87" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a304e070c779b2fce536ce65677f4aeb4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t bs_read1</definition>
+        <argsstring>(bs_t *s)</argsstring>
+        <name>bs_read1</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="146" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="146" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a38a6ff3abf054a5eb09003fdd8b12262" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t bs_show</definition>
+        <argsstring>(bs_t *s, int i_count)</argsstring>
+        <name>bs_show</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="165" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="165" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1af5025c94aed3e030d1b6292a182fba72" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_skip</definition>
+        <argsstring>(bs_t *s, ssize_t i_count)</argsstring>
+        <name>bs_skip</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>ssize_t</type>
+          <declname>i_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="171" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="171" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a7c9347e70f2612036dca5fce12ee8e01" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_write</definition>
+        <argsstring>(bs_t *s, int i_count, uint32_t i_bits)</argsstring>
+        <name>bs_write</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_count</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>i_bits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="186" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="186" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a30a262498cffbc0c6cd2eeacd6c6d846" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool bs_aligned</definition>
+        <argsstring>(bs_t *s)</argsstring>
+        <name>bs_aligned</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="217" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a7dd52c7c429969adf0f806cc1014c76f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_align</definition>
+        <argsstring>(bs_t *s)</argsstring>
+        <name>bs_align</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="222" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="222" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a8e881b65ee6ad2b362a7c38fd5a417fb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_align_0</definition>
+        <argsstring>(bs_t *s)</argsstring>
+        <name>bs_align_0</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="231" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="231" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a2fb86f0935b79dcbc49b616463606933" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bs_align_1</definition>
+        <argsstring>(bs_t *s)</argsstring>
+        <name>bs_align_1</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="239" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="239" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1a2fdf98488bc515c662d7a8fc6f5db2a8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint_fast32_t</type>
+        <definition>static uint_fast32_t bs_read_ue</definition>
+        <argsstring>(bs_t *bs)</argsstring>
+        <name>bs_read_ue</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>bs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="248" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="248" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__bits_8h_1ae7266d7fd93918b090be840d6bac8ed4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int_fast32_t</type>
+        <definition>static int_fast32_t bs_read_se</definition>
+        <argsstring>(bs_t *s)</argsstring>
+        <name>bs_read_se</name>
+        <param>
+          <type><ref refid="structbs__s" kindref="compound">bs_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" line="259" column="28" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h" bodystart="259" bodyend="265"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines functions, structures for handling streams of bits in vlc </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_bits.h<sp/>:<sp/>Bit<sp/>handling<sp/>helpers</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2001,<sp/>2002,<sp/>2003,<sp/>2006,<sp/>2015<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gildas<sp/>Bazin<sp/>&lt;gbazin<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rafaël<sp/>Carré<sp/>&lt;funman<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_BITS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_BITS_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__common_8h" kindref="compound">vlc_common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="structbs__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbs__s" kindref="compound">bs_s</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p_start;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p_end;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/><sp/>i_left;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>i_count<sp/>number<sp/>of<sp/>available<sp/>bits<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>b_read_only;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>forward<sp/>read<sp/>modifier<sp/>(p_start,<sp/>p_end,<sp/>p_fwpriv,<sp/>count)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*(*pf_forward)(uint8_t<sp/>*,<sp/>uint8_t<sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>size_t);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*p_fwpriv;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}<sp/>bs_t;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_write_init(<sp/>bs_t<sp/>*s,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_data<sp/>)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;p_start<sp/>=<sp/>(uint8_t<sp/>*)p_data;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;p<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>s-&gt;p_start;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;p_end<sp/><sp/><sp/>=<sp/>s-&gt;p_start<sp/>+<sp/>i_data;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/><sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;b_read_only<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;p_fwpriv<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;pf_forward<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_init(<sp/>bs_t<sp/>*s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_data<sp/>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>bs_write_init(<sp/>s,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<sp/>p_data,<sp/>i_data<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;b_read_only<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bs_pos(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<sp/>8<sp/>*<sp/>(<sp/>s-&gt;p<sp/>-<sp/>s-&gt;p_start<sp/>)<sp/>+<sp/>8<sp/>-<sp/>s-&gt;i_left<sp/>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bs_remain(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;p<sp/>&gt;=<sp/>s-&gt;p_end<sp/>)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<sp/>8<sp/>*<sp/>(<sp/>s-&gt;p_end<sp/>-<sp/>s-&gt;p<sp/>)<sp/>-<sp/>8<sp/>+<sp/>s-&gt;i_left<sp/>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bs_eof(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<sp/>s-&gt;p<sp/>&gt;=<sp/>s-&gt;p_end<sp/>?<sp/>1:<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>bs_forward(<sp/>s,<sp/>i<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>s-&gt;p<sp/>=<sp/>s-&gt;pf_forward<sp/>?<sp/>s-&gt;pf_forward(<sp/>s-&gt;p,<sp/>s-&gt;p_end,<sp/>s-&gt;p_fwpriv,<sp/>i<sp/>)<sp/>:<sp/>s-&gt;p<sp/>+<sp/>i</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/>bs_read(<sp/>bs_t<sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_count<sp/>)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>i_mask[33]<sp/>=</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/>0x00,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01,<sp/><sp/><sp/><sp/><sp/><sp/>0x03,<sp/><sp/><sp/><sp/><sp/><sp/>0x07,<sp/><sp/><sp/><sp/><sp/><sp/>0x0f,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1f,<sp/><sp/><sp/><sp/><sp/><sp/>0x3f,<sp/><sp/><sp/><sp/><sp/><sp/>0x7f,<sp/><sp/><sp/><sp/><sp/><sp/>0xff,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1ff,<sp/><sp/><sp/><sp/><sp/>0x3ff,<sp/><sp/><sp/><sp/><sp/>0x7ff,<sp/><sp/><sp/><sp/><sp/>0xfff,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1fff,<sp/><sp/><sp/><sp/>0x3fff,<sp/><sp/><sp/><sp/>0x7fff,<sp/><sp/><sp/><sp/>0xffff,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1ffff,<sp/><sp/><sp/>0x3ffff,<sp/><sp/><sp/>0x7ffff,<sp/><sp/><sp/>0xfffff,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1fffff,<sp/><sp/>0x3fffff,<sp/><sp/>0x7fffff,<sp/><sp/>0xffffff,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1ffffff,<sp/>0x3ffffff,<sp/>0x7ffffff,<sp/>0xfffffff,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1fffffff,0x3fffffff,0x7fffffff,0xffffffff};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i_shr,<sp/>i_drop<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>i_result<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>i_count<sp/>&gt;<sp/>32<sp/>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_drop<sp/>=<sp/>i_count<sp/>-<sp/>32;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_count<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>i_count<sp/>&gt;<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;p<sp/>&gt;=<sp/>s-&gt;p_end<sp/>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>(<sp/>i_shr<sp/>=<sp/>s-&gt;i_left<sp/>-<sp/>i_count<sp/>)<sp/>&gt;=<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>more<sp/>in<sp/>the<sp/>buffer<sp/>than<sp/>requested<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_result<sp/>|=<sp/>(<sp/>*s-&gt;p<sp/>&gt;&gt;<sp/>i_shr<sp/>)&amp;i_mask[i_count];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>-=<sp/>i_count;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;i_left<sp/>==<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_forward(<sp/>s,<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>less<sp/>in<sp/>the<sp/>buffer<sp/>than<sp/>requested<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>-i_shr<sp/>==<sp/>32<sp/>)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_result<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_result<sp/>|=<sp/>(*s-&gt;p&amp;i_mask[s-&gt;i_left])<sp/>&lt;&lt;<sp/>-i_shr;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_count<sp/><sp/>-=<sp/>s-&gt;i_left;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_forward(<sp/>s,<sp/>1);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>i_drop<sp/>)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_forward(<sp/>s,<sp/>i_drop<sp/>);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<sp/>i_result<sp/>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/>bs_read1(<sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;p<sp/>&lt;<sp/>s-&gt;p_end<sp/>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_result;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left--;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_result<sp/>=<sp/>(<sp/>*s-&gt;p<sp/>&gt;&gt;<sp/>s-&gt;i_left<sp/>)&amp;0x01;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;i_left<sp/>==<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_forward(<sp/>s,<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i_result;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/>bs_show(<sp/>bs_t<sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_count<sp/>)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>bs_t<sp/><sp/><sp/><sp/><sp/>s_tmp<sp/>=<sp/>*s;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bs_read(<sp/>&amp;s_tmp,<sp/>i_count<sp/>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_skip(<sp/>bs_t<sp/>*s,<sp/>ssize_t<sp/>i_count<sp/>)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>-=<sp/>i_count;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;i_left<sp/>&lt;=<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_bytes<sp/>=<sp/>1<sp/>+<sp/>s-&gt;i_left<sp/>/<sp/>-8;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_forward(<sp/>s,<sp/>i_bytes<sp/>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>i_bytes<sp/>*<sp/>8<sp/>&lt;<sp/>i_bytes<sp/></highlight><highlight class="comment">/*<sp/>ofw<sp/>*/</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>=<sp/>i_bytes;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>+=<sp/>8<sp/>*<sp/>i_bytes;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_write(<sp/>bs_t<sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_count,<sp/>uint32_t<sp/>i_bits<sp/>)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;b_read_only<sp/>)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>i_count<sp/>&gt;<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;p<sp/>&gt;=<sp/>s-&gt;p_end<sp/>)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_count--;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>(<sp/>i_bits<sp/>&gt;&gt;<sp/>i_count<sp/>)&amp;0x01<sp/>)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*s-&gt;p<sp/>|=<sp/>1<sp/>&lt;&lt;<sp/>(<sp/>s-&gt;i_left<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*s-&gt;p<sp/>&amp;=<sp/>~(<sp/>1<sp/>&lt;&lt;<sp/>(<sp/>s-&gt;i_left<sp/>-<sp/>1<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left--;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;i_left<sp/>==<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_forward(<sp/>s,<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bs_aligned(<sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s-&gt;i_left<sp/>%<sp/>8<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_align(<sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;i_left<sp/>!=<sp/>8<sp/>)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;i_left<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;p++;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_align_0(<sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>s-&gt;i_left<sp/>!=<sp/>8<sp/>)</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_write(<sp/>s,<sp/>s-&gt;i_left,<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bs_align_1(<sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>!s-&gt;b_read_only<sp/>&amp;&amp;<sp/>s-&gt;i_left<sp/>!=<sp/>8<sp/>)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs_write(<sp/>s,<sp/>1,<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Read<sp/>unsigned<sp/>Exp-Golomb<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint_fast32_t<sp/>bs_read_ue(<sp/>bs_t<sp/>*<sp/>bs<sp/>)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>bs_read1(<sp/>bs<sp/>)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>bs-&gt;p<sp/>&lt;<sp/>bs-&gt;p_end<sp/>&amp;&amp;<sp/>i<sp/>&lt;<sp/>31<sp/>)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1U<sp/>&lt;&lt;<sp/>i)<sp/>-<sp/>1<sp/>+<sp/>bs_read(<sp/>bs,<sp/>i<sp/>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Read<sp/>signed<sp/>Exp-Golomb<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>int_fast32_t<sp/>bs_read_se(<sp/>bs_t<sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_fast32_t<sp/>val<sp/>=<sp/>bs_read_ue(<sp/>s<sp/>);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(val<sp/>&amp;<sp/>0x01)<sp/>?<sp/>(int_fast32_t)((val<sp/>+<sp/>1)<sp/>/<sp/>2)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>-(int_fast32_t)(val<sp/>/<sp/>2);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>bs_forward</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_bits.h"/>
+  </compounddef>
+</doxygen>

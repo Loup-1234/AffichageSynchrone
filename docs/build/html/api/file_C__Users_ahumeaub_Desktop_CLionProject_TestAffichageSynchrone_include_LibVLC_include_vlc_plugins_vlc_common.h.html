@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File vlc_common.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">File vlc_common.h</a><ul>
+<li><a class="reference internal" href="#definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h">Definition (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_common.h</span></code>)</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#includes">Includes</a></li>
+<li><a class="reference internal" href="#included-by">Included By</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#defines">Defines</a></li>
+<li><a class="reference internal" href="#typedefs">Typedefs</a></li>
+<li><a class="reference internal" href="#unions">Unions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">File vlc_common.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_common.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-vlc-common-h">
+<span id="file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h"></span><h1>File vlc_common.h<a class="headerlink" href="#file-vlc-common-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="dir_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins.html#dir-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins</span></code>)</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_common.h</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id3">Includes</a></p></li>
+<li><p><a class="reference internal" href="#included-by" id="id4">Included By</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id5">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id6">Functions</a></p></li>
+<li><p><a class="reference internal" href="#defines" id="id7">Defines</a></p></li>
+<li><p><a class="reference internal" href="#typedefs" id="id8">Typedefs</a></p></li>
+<li><p><a class="reference internal" href="#unions" id="id9">Unions</a></p></li>
+</ul>
+</nav>
+<section id="definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_common.h</span></code>)<a class="headerlink" href="#definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h" title="Lien vers cette rubrique"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_common.h.html">Program Listing for File vlc_common.h</a></li>
+</ul>
+</div>
+</section>
+<section id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Lien vers cette rubrique"></a></h2>
+<p>This file is a collection of common definitions and types</p>
+</section>
+<section id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inttypes.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">limits.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdarg.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdbool.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stddef.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdio.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdlib.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_arrays.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_arrays.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-arrays-h"><span class="std std-ref">File vlc_arrays.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_config.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_config.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-config-h"><span class="std std-ref">File vlc_config.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_configuration.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_configuration.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-configuration-h"><span class="std std-ref">File vlc_configuration.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_main.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_main.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-main-h"><span class="std std-ref">File vlc_main.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_messages.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_messages.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-messages-h"><span class="std std-ref">File vlc_messages.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_mtime.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_mtime.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-mtime-h"><span class="std std-ref">File vlc_mtime.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_objects.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_objects.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-objects-h"><span class="std std-ref">File vlc_objects.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_threads.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_threads.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h"><span class="std std-ref">File vlc_threads.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlc_variables.h</span></code> (<a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_variables.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-variables-h"><span class="std std-ref">File vlc_variables.h</span></a>)</p></li>
+</ul>
+</section>
+<section id="included-by">
+<h2>Included By<a class="headerlink" href="#included-by" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_bits.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-bits-h"><span class="std std-ref">File vlc_bits.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_boxes.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-boxes-h"><span class="std std-ref">File vlc_boxes.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_es.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-es-h"><span class="std std-ref">File vlc_es.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_fingerprinter.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-fingerprinter-h"><span class="std std-ref">File vlc_fingerprinter.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_keystore.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-keystore-h"><span class="std std-ref">File vlc_keystore.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_viewpoint.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-viewpoint-h"><span class="std std-ref">File vlc_viewpoint.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_vout_window.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-vout-window-h"><span class="std std-ref">File vlc_vout_window.h</span></a></p></li>
+</ul>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structvlc__common__members.html#exhale-struct-structvlc-common-members"><span class="std std-ref">Struct vlc_common_members</span></a></p></li>
+<li><p><a class="reference internal" href="structvlc__list__t.html#exhale-struct-structvlc-list-t"><span class="std std-ref">Struct vlc_list_t</span></a></p></li>
+<li><p><a class="reference internal" href="structvlc__rational__t.html#exhale-struct-structvlc-rational-t"><span class="std std-ref">Struct vlc_rational_t</span></a></p></li>
+</ul>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a2c144b9622c2e58ec1f3100392e329f6.html#exhale-function-vlc-common-8h-1a2c144b9622c2e58ec1f3100392e329f6"><span class="std std-ref">Function bswap16</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ad31c8d1d5d2afe76626ac8b6245e90c0.html#exhale-function-vlc-common-8h-1ad31c8d1d5d2afe76626ac8b6245e90c0"><span class="std std-ref">Function bswap32</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a1021b4685aebc3b70e234744af729bf2.html#exhale-function-vlc-common-8h-1a1021b4685aebc3b70e234744af729bf2"><span class="std std-ref">Function bswap64</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1af5c30400f57a49fac809dd75586d9ae9.html#exhale-function-vlc-common-8h-1af5c30400f57a49fac809dd75586d9ae9"><span class="std std-ref">Function clip_uint8_vlc</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a56751986ea55a8a6975649baae8768d7.html#exhale-function-vlc-common-8h-1a56751986ea55a8a6975649baae8768d7"><span class="std std-ref">Function clz</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a0a57d4f1a63c54645d7493ff3f27a552.html#exhale-function-vlc-common-8h-1a0a57d4f1a63c54645d7493ff3f27a552"><span class="std std-ref">Function ctz</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ad42607e3b878b5fbbb4f5a6fefff0daf.html#exhale-function-vlc-common-8h-1ad42607e3b878b5fbbb4f5a6fefff0daf"><span class="std std-ref">Function GCD</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1aff0cb615898df71fbae06d5299ba2965.html#exhale-function-vlc-common-8h-1aff0cb615898df71fbae06d5299ba2965"><span class="std std-ref">Function GetDWLE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a26043f306dee0b98bbf5345951a80f2d.html#exhale-function-vlc-common-8h-1a26043f306dee0b98bbf5345951a80f2d"><span class="std std-ref">Function GetQWLE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1aa7b46ef3db57f998ec100bf4d9ce30e6.html#exhale-function-vlc-common-8h-1aa7b46ef3db57f998ec100bf4d9ce30e6"><span class="std std-ref">Function GetWLE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ac358c9068d48c6741f3306b932c1a9d9.html#exhale-function-vlc-common-8h-1ac358c9068d48c6741f3306b932c1a9d9"><span class="std std-ref">Function parity</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a23ea275a9fea42be6d296d7aa621cbba.html#exhale-function-vlc-common-8h-1a23ea275a9fea42be6d296d7aa621cbba"><span class="std std-ref">Function popcount</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a9ca2e840280f5eb1bf411983921b781b.html#exhale-function-vlc-common-8h-1a9ca2e840280f5eb1bf411983921b781b"><span class="std std-ref">Function popcountll</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a0cbe8528c4f393f267d2302b7eec8eff.html#exhale-function-vlc-common-8h-1a0cbe8528c4f393f267d2302b7eec8eff"><span class="std std-ref">Function SetDWBE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a4a85d80181f89e61db5d6cdbbb0f4906.html#exhale-function-vlc-common-8h-1a4a85d80181f89e61db5d6cdbbb0f4906"><span class="std std-ref">Function SetDWLE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1aa74b672508cd6a5200eab7a498090cfc.html#exhale-function-vlc-common-8h-1aa74b672508cd6a5200eab7a498090cfc"><span class="std std-ref">Function SetQWBE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ac906e5160e4348d1fbc457c592e5f381.html#exhale-function-vlc-common-8h-1ac906e5160e4348d1fbc457c592e5f381"><span class="std std-ref">Function SetQWLE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a664bf21492c2a682e1e46506fc4c4cd6.html#exhale-function-vlc-common-8h-1a664bf21492c2a682e1e46506fc4c4cd6"><span class="std std-ref">Function SetWBE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a1551a811055235ca0189bb359d043ceb.html#exhale-function-vlc-common-8h-1a1551a811055235ca0189bb359d043ceb"><span class="std std-ref">Function SetWLE</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a273978d49832295568b2f4d40d15cdfb.html#exhale-function-vlc-common-8h-1a273978d49832295568b2f4d40d15cdfb"><span class="std std-ref">Function U16_AT</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1afc852ce659a73287ae347c6f5bd2010b.html#exhale-function-vlc-common-8h-1afc852ce659a73287ae347c6f5bd2010b"><span class="std std-ref">Function U32_AT</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ad1b37d7f9c999a9ce2f612ca5848e69e.html#exhale-function-vlc-common-8h-1ad1b37d7f9c999a9ce2f612ca5848e69e"><span class="std std-ref">Function U64_AT</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1acc85118e67ee5b6459a6842ab52a5131.html#exhale-function-vlc-common-8h-1acc85118e67ee5b6459a6842ab52a5131"><span class="std std-ref">Function uadd_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1af95d0d0acc93e3895e3f0588903f74a9.html#exhale-function-vlc-common-8h-1af95d0d0acc93e3895e3f0588903f74a9"><span class="std std-ref">Function uaddl_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a6ff2c8acd050ceef9eab5c73209af81c.html#exhale-function-vlc-common-8h-1a6ff2c8acd050ceef9eab5c73209af81c"><span class="std std-ref">Function uaddll_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ac5be75b43137eeb21ab23b324c3cbee3.html#exhale-function-vlc-common-8h-1ac5be75b43137eeb21ab23b324c3cbee3"><span class="std std-ref">Function umul_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a8dd4d48d3d807eaf622056e5aafb5e78.html#exhale-function-vlc-common-8h-1a8dd4d48d3d807eaf622056e5aafb5e78"><span class="std std-ref">Function umull_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a33f9ab816f23b0030f511dcb203cc544.html#exhale-function-vlc-common-8h-1a33f9ab816f23b0030f511dcb203cc544"><span class="std std-ref">Function umulll_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1afb8151ff0c368d16895da1ecb2dda057.html#exhale-function-vlc-common-8h-1afb8151ff0c368d16895da1ecb2dda057"><span class="std std-ref">Function vlc_alloc</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1aab987bdeffecb718ecd4caf54c15eb39.html#exhale-function-vlc-common-8h-1aab987bdeffecb718ecd4caf54c15eb39"><span class="std std-ref">Function VLC_CompileBy</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ac463600e580f94ef22ebcd8618eb55a5.html#exhale-function-vlc-common-8h-1ac463600e580f94ef22ebcd8618eb55a5"><span class="std std-ref">Function VLC_CompileHost</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ab3b0036ccaac212d2fb569cec13116c0.html#exhale-function-vlc-common-8h-1ab3b0036ccaac212d2fb569cec13116c0"><span class="std std-ref">Function VLC_Compiler</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a027072ac15b8d47810b89e38223c1af4.html#exhale-function-vlc-common-8h-1a027072ac15b8d47810b89e38223c1af4"><span class="std std-ref">Function vlc_error</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1af4e9dfcd05ff4e95f1f6c0d9ff361ce9.html#exhale-function-vlc-common-8h-1af4e9dfcd05ff4e95f1f6c0d9ff361ce9"><span class="std std-ref">Function vlc_fourcc_to_char</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ae241b2bef673c4c67b63d9137f52e2d2.html#exhale-function-vlc-common-8h-1ae241b2bef673c4c67b63d9137f52e2d2"><span class="std std-ref">Function vlc_gettext</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a70458b31405cad0ea5c3afb99430788b.html#exhale-function-vlc-common-8h-1a70458b31405cad0ea5c3afb99430788b"><span class="std std-ref">Function vlc_ngettext</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1ada7b5c7e0d27a54921544b435ca01507.html#exhale-function-vlc-common-8h-1ada7b5c7e0d27a54921544b435ca01507"><span class="std std-ref">Function vlc_pgettext_aux</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a0d521894f92d78fda436ee3dfbc64c46.html#exhale-function-vlc-common-8h-1a0d521894f92d78fda436ee3dfbc64c46"><span class="std std-ref">Function vlc_ureduce</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a95e326bb9f09d908a7faa57d4dfe6a2f.html#exhale-function-vlc-common-8h-1a95e326bb9f09d908a7faa57d4dfe6a2f"><span class="std std-ref">Function xcalloc</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1aa97afa2f9e057c82d5d2b499779dea74.html#exhale-function-vlc-common-8h-1aa97afa2f9e057c82d5d2b499779dea74"><span class="std std-ref">Function xmalloc</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a09748c2bdbfec2acf0930d98e036df68.html#exhale-function-vlc-common-8h-1a09748c2bdbfec2acf0930d98e036df68"><span class="std std-ref">Function xrealloc</span></a></p></li>
+<li><p><a class="reference internal" href="function_vlc__common_8h_1a462449ee70dc867467932c1c196393e6.html#exhale-function-vlc-common-8h-1a462449ee70dc867467932c1c196393e6"><span class="std std-ref">Function xstrdup</span></a></p></li>
+</ul>
+</section>
+<section id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="define_vlc__common_8h_1adb5f23e5ea7901d5a9db45c55950bcac.html#exhale-define-vlc-common-8h-1adb5f23e5ea7901d5a9db45c55950bcac"><span class="std std-ref">Define __MAX</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a8c23ded66d14903c4c553941371b9413.html#exhale-define-vlc-common-8h-1a8c23ded66d14903c4c553941371b9413"><span class="std std-ref">Define __MIN</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ac4d23ad4e20fa67d98b9746cee64d398.html#exhale-define-vlc-common-8h-1ac4d23ad4e20fa67d98b9746cee64d398"><span class="std std-ref">Define add_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a22a2e391e1f845218c72777257120593.html#exhale-define-vlc-common-8h-1a22a2e391e1f845218c72777257120593"><span class="std std-ref">Define clz16</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a68395d271bcd5720fe29ac16d8a2f982.html#exhale-define-vlc-common-8h-1a68395d271bcd5720fe29ac16d8a2f982"><span class="std std-ref">Define clz32</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a478875cfd9f48b4d756ceae99dfa5dc8.html#exhale-define-vlc-common-8h-1a478875cfd9f48b4d756ceae99dfa5dc8"><span class="std std-ref">Define clz8</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1af8c317a42292b61c93aae91e59118a46.html#exhale-define-vlc-common-8h-1af8c317a42292b61c93aae91e59118a46"><span class="std std-ref">Define container_of</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a5e4e2bb4643ada1903da735d4bf975ef.html#exhale-define-vlc-common-8h-1a5e4e2bb4643ada1903da735d4bf975ef"><span class="std std-ref">Define DIR_SEP</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1af0f71b00a9472b8a877b7158de47a891.html#exhale-define-vlc-common-8h-1af0f71b00a9472b8a877b7158de47a891"><span class="std std-ref">Define DIR_SEP_CHAR</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1abc7ce66f32923815a103a0878c9a454f.html#exhale-define-vlc-common-8h-1abc7ce66f32923815a103a0878c9a454f"><span class="std std-ref">Define EMPTY_STR</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a672179e43f0197d8d33418b3f6b3eea8.html#exhale-define-vlc-common-8h-1a672179e43f0197d8d33418b3f6b3eea8"><span class="std std-ref">Define FREENULL</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a522d7fa687442b63569e72478cd8ad81.html#exhale-define-vlc-common-8h-1a522d7fa687442b63569e72478cd8ad81"><span class="std std-ref">Define GetDWBE</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a79f42a8dd8ca73ed0441b8ba614ea118.html#exhale-define-vlc-common-8h-1a79f42a8dd8ca73ed0441b8ba614ea118"><span class="std std-ref">Define GetQWBE</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ad7f54ac3b5ea9ff12d3a18e06c23c71f.html#exhale-define-vlc-common-8h-1ad7f54ac3b5ea9ff12d3a18e06c23c71f"><span class="std std-ref">Define GetWBE</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a3c5a24e46ccccb596d517e393e65babd.html#exhale-define-vlc-common-8h-1a3c5a24e46ccccb596d517e393e65babd"><span class="std std-ref">Define hton16</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ac958fbbb7f2877b45751c36b07e8dcbc.html#exhale-define-vlc-common-8h-1ac958fbbb7f2877b45751c36b07e8dcbc"><span class="std std-ref">Define hton32</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a4f86ed32b66692ad228acac8fa8c21a4.html#exhale-define-vlc-common-8h-1a4f86ed32b66692ad228acac8fa8c21a4"><span class="std std-ref">Define hton64</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a9eaeb79ce882778821b354c3bbe5f89e.html#exhale-define-vlc-common-8h-1a9eaeb79ce882778821b354c3bbe5f89e"><span class="std std-ref">Define LICENSE_MSG</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ab21d72efaa91b8628bd6f04f63f0c248.html#exhale-define-vlc-common-8h-1ab21d72efaa91b8628bd6f04f63f0c248"><span class="std std-ref">Define likely</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ae0797b62f5942e778c54cd4f4dba9d60.html#exhale-define-vlc-common-8h-1ae0797b62f5942e778c54cd4f4dba9d60"><span class="std std-ref">Define mul_overflow</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1afffe2817ad6e0fa28d1cf900e2731753.html#exhale-define-vlc-common-8h-1afffe2817ad6e0fa28d1cf900e2731753"><span class="std std-ref">Define ntoh16</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a541e78f67c7938d318e85f4e3723f0d6.html#exhale-define-vlc-common-8h-1a541e78f67c7938d318e85f4e3723f0d6"><span class="std std-ref">Define ntoh32</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1af04f0ce76d65c025a871af80bef7bda6.html#exhale-define-vlc-common-8h-1af04f0ce76d65c025a871af80bef7bda6"><span class="std std-ref">Define ntoh64</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a837df2c29aacf37cb96c2b65acb312a6.html#exhale-define-vlc-common-8h-1a837df2c29aacf37cb96c2b65acb312a6"><span class="std std-ref">Define PATH_SEP</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ab0fc36c269bc641cca53029f80a986a3.html#exhale-define-vlc-common-8h-1ab0fc36c269bc641cca53029f80a986a3"><span class="std std-ref">Define PATH_SEP_CHAR</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a1728ccf7d6547a32d7b2fc7451256907.html#exhale-define-vlc-common-8h-1a1728ccf7d6547a32d7b2fc7451256907"><span class="std std-ref">Define unlikely</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a86d08c1b23d67eca942da0ac012d89f3.html#exhale-define-vlc-common-8h-1a86d08c1b23d67eca942da0ac012d89f3"><span class="std std-ref">Define unreachable</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a4466ab66bdbcee071dc38d949338659c.html#exhale-define-vlc-common-8h-1a4466ab66bdbcee071dc38d949338659c"><span class="std std-ref">Define VLC_API</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a01cb9d86b18057507d7a7bdf81d1325a.html#exhale-define-vlc-common-8h-1a01cb9d86b18057507d7a7bdf81d1325a"><span class="std std-ref">Define vlc_assert_unreachable</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a6c694aee39e1eaf6724d40c25bb0ffc1.html#exhale-define-vlc-common-8h-1a6c694aee39e1eaf6724d40c25bb0ffc1"><span class="std std-ref">Define VLC_CLIP</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9.html#exhale-define-vlc-common-8h-1ade51bfbb83f3125334db7a30a87e2be9"><span class="std std-ref">Define VLC_COMMON_MEMBERS</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ac7bc7d8a5bf6dfdfdd8d29ff6ee1e5a7.html#exhale-define-vlc-common-8h-1ac7bc7d8a5bf6dfdfdd8d29ff6ee1e5a7"><span class="std std-ref">Define VLC_DEPRECATED</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a0d92d30d28a1ac304faf11a3f8596e09.html#exhale-define-vlc-common-8h-1a0d92d30d28a1ac304faf11a3f8596e09"><span class="std std-ref">Define VLC_DEPRECATED_ENUM</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1acbf617807e1d25175e6fe887eb6aa44c.html#exhale-define-vlc-common-8h-1acbf617807e1d25175e6fe887eb6aa44c"><span class="std std-ref">Define VLC_EBADVAR</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a2baa7840673512d3c8797b9ca97fa766.html#exhale-define-vlc-common-8h-1a2baa7840673512d3c8797b9ca97fa766"><span class="std std-ref">Define VLC_EGENERIC</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a75555a25e74d0ebaf731bf780763a887.html#exhale-define-vlc-common-8h-1a75555a25e74d0ebaf731bf780763a887"><span class="std std-ref">Define VLC_ENOITEM</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a84ab7ec0cd6788c180ca7f85f1142851.html#exhale-define-vlc-common-8h-1a84ab7ec0cd6788c180ca7f85f1142851"><span class="std std-ref">Define VLC_ENOMEM</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a3eb1624bf9cda0cd0b894fd3e9c52efb.html#exhale-define-vlc-common-8h-1a3eb1624bf9cda0cd0b894fd3e9c52efb"><span class="std std-ref">Define VLC_ENOMOD</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1af67a01726560daeedbf2b81222b09170.html#exhale-define-vlc-common-8h-1af67a01726560daeedbf2b81222b09170"><span class="std std-ref">Define VLC_ENOOBJ</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ac7f506c678d9b67bef1cffd80129cd9b.html#exhale-define-vlc-common-8h-1ac7f506c678d9b67bef1cffd80129cd9b"><span class="std std-ref">Define VLC_ENOVAR</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ae567e5ec6474ded52ed3ecd285210f5c.html#exhale-define-vlc-common-8h-1ae567e5ec6474ded52ed3ecd285210f5c"><span class="std std-ref">Define VLC_ETIMEOUT</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a37e254455b5b92204a5d4e9ee91e0642.html#exhale-define-vlc-common-8h-1a37e254455b5b92204a5d4e9ee91e0642"><span class="std std-ref">Define VLC_EXPORT</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1aaa6db3bd3f1a9b1a4899e784c03cc9d7.html#exhale-define-vlc-common-8h-1aaa6db3bd3f1a9b1a4899e784c03cc9d7"><span class="std std-ref">Define VLC_EXTERN</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1afc8843d13d64b7c6aa80a11781d6ae5e.html#exhale-define-vlc-common-8h-1afc8843d13d64b7c6aa80a11781d6ae5e"><span class="std std-ref">Define VLC_FORMAT</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a7445f58891fe621e9e63e1de59ce692f.html#exhale-define-vlc-common-8h-1a7445f58891fe621e9e63e1de59ce692f"><span class="std std-ref">Define VLC_FORMAT_ARG</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a24380bf49065a5d38b07a1f64695994d.html#exhale-define-vlc-common-8h-1a24380bf49065a5d38b07a1f64695994d"><span class="std std-ref">Define VLC_FOURCC</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ae13d2a37a13d3a2e7b9f10f15c4b2b85.html#exhale-define-vlc-common-8h-1ae13d2a37a13d3a2e7b9f10f15c4b2b85"><span class="std std-ref">Define VLC_GCC_VERSION</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a5770f45ef856283ba5568bbabb3b59ff.html#exhale-define-vlc-common-8h-1a5770f45ef856283ba5568bbabb3b59ff"><span class="std std-ref">Define VLC_MALLOC</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd.html#exhale-define-vlc-common-8h-1a0bb384dcbe940a1de9daf45b12db24dd"><span class="std std-ref">Define VLC_OBJECT</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a5b6947be70de769372735749388b65c6.html#exhale-define-vlc-common-8h-1a5b6947be70de769372735749388b65c6"><span class="std std-ref">Define vlc_pgettext</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1af24cdfbdddcc5d1a33d9c9f601323f17.html#exhale-define-vlc-common-8h-1af24cdfbdddcc5d1a33d9c9f601323f17"><span class="std std-ref">Define VLC_SUCCESS</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1acb68a484bef9927cf27ba9c2eb699f1c.html#exhale-define-vlc-common-8h-1acb68a484bef9927cf27ba9c2eb699f1c"><span class="std std-ref">Define VLC_TICK_0</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a53d36f84138d542a82c87c1f442f389a.html#exhale-define-vlc-common-8h-1a53d36f84138d542a82c87c1f442f389a"><span class="std std-ref">Define VLC_TICK_INVALID</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1ad726fd1eafb6770a07311288f7e6d6e0.html#exhale-define-vlc-common-8h-1ad726fd1eafb6770a07311288f7e6d6e0"><span class="std std-ref">Define VLC_TWOCC</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a1ca93d377d66c24681d604f63d3176db.html#exhale-define-vlc-common-8h-1a1ca93d377d66c24681d604f63d3176db"><span class="std std-ref">Define VLC_UNUSED</span></a></p></li>
+<li><p><a class="reference internal" href="define_vlc__common_8h_1a3004617db3923b33ec6cd477b4843258.html#exhale-define-vlc-common-8h-1a3004617db3923b33ec6cd477b4843258"><span class="std std-ref">Define VLC_USED</span></a></p></li>
+</ul>
+</section>
+<section id="typedefs">
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a84061e8b5d7ddd17007171c646401b79.html#exhale-typedef-vlc-common-8h-1a84061e8b5d7ddd17007171c646401b79"><span class="std std-ref">Typedef access_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a1c2b4e9873ddc9a7ef3af376f2021967.html#exhale-typedef-vlc-common-8h-1a1c2b4e9873ddc9a7ef3af376f2021967"><span class="std std-ref">Typedef addon_entry_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a7b03b4f44bb1fa60ea2cfe9d9209ef5b.html#exhale-typedef-vlc-common-8h-1a7b03b4f44bb1fa60ea2cfe9d9209ef5b"><span class="std std-ref">Typedef aout_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a7d307e616de00831678135d89cb7bdb4.html#exhale-typedef-vlc-common-8h-1a7d307e616de00831678135d89cb7bdb4"><span class="std std-ref">Typedef audio_format_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a52c9742e5aa20db7fefd85579e1f3e47.html#exhale-typedef-vlc-common-8h-1a52c9742e5aa20db7fefd85579e1f3e47"><span class="std std-ref">Typedef audio_output_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a3f6ae9606e1709a14cf5fb85bce38dcb.html#exhale-typedef-vlc-common-8h-1a3f6ae9606e1709a14cf5fb85bce38dcb"><span class="std std-ref">Typedef audio_sample_format_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a8bf01c2e155a01cc826d98853581e6c1.html#exhale-typedef-vlc-common-8h-1a8bf01c2e155a01cc826d98853581e6c1"><span class="std std-ref">Typedef block_fifo_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ad88072cce90efba4190326521dbb4d85.html#exhale-typedef-vlc-common-8h-1ad88072cce90efba4190326521dbb4d85"><span class="std std-ref">Typedef block_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aa2781c6b71c483621534631398484487.html#exhale-typedef-vlc-common-8h-1aa2781c6b71c483621534631398484487"><span class="std std-ref">Typedef config_category_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a98a1e02a0ee434a014c5712209e2a403.html#exhale-typedef-vlc-common-8h-1a98a1e02a0ee434a014c5712209e2a403"><span class="std std-ref">Typedef config_chain_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a5537aa0e93a18a8e7b668e58c35a329b.html#exhale-typedef-vlc-common-8h-1a5537aa0e93a18a8e7b668e58c35a329b"><span class="std std-ref">Typedef date_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1adb4c06e3042f2921509222e6c2a950f4.html#exhale-typedef-vlc-common-8h-1adb4c06e3042f2921509222e6c2a950f4"><span class="std std-ref">Typedef decoder_synchro_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1adc4456e704f15dfba318ce4309b58fb2.html#exhale-typedef-vlc-common-8h-1adc4456e704f15dfba318ce4309b58fb2"><span class="std std-ref">Typedef decoder_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a1a08f240e6cfa034fefb41b29533472c.html#exhale-typedef-vlc-common-8h-1a1a08f240e6cfa034fefb41b29533472c"><span class="std std-ref">Typedef decoder_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aec21cbcdd80971af96c930ec5766c472.html#exhale-typedef-vlc-common-8h-1aec21cbcdd80971af96c930ec5766c472"><span class="std std-ref">Typedef demux_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a4853fb03b05c1b2c90f9e75350d16f9d.html#exhale-typedef-vlc-common-8h-1a4853fb03b05c1b2c90f9e75350d16f9d"><span class="std std-ref">Typedef demux_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aca7c280ffca22b134e165432e5ce16c3.html#exhale-typedef-vlc-common-8h-1aca7c280ffca22b134e165432e5ce16c3"><span class="std std-ref">Typedef encoder_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a4a07b3161519fb9595d1b30c990341ed.html#exhale-typedef-vlc-common-8h-1a4a07b3161519fb9595d1b30c990341ed"><span class="std std-ref">Typedef encoder_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a662064cf9b13a81a354aa971ebd27dca.html#exhale-typedef-vlc-common-8h-1a662064cf9b13a81a354aa971ebd27dca"><span class="std std-ref">Typedef es_format_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a16bdbcb8d62309b0762c9f61a7539182.html#exhale-typedef-vlc-common-8h-1a16bdbcb8d62309b0762c9f61a7539182"><span class="std std-ref">Typedef es_out_id_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aa6c3ee28e64880f43b85afc466cc640a.html#exhale-typedef-vlc-common-8h-1aa6c3ee28e64880f43b85afc466cc640a"><span class="std std-ref">Typedef es_out_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a309f3b974065fb7ca41441df1176e1da.html#exhale-typedef-vlc-common-8h-1a309f3b974065fb7ca41441df1176e1da"><span class="std std-ref">Typedef es_out_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a99f679999ffdef93c3891f876fd0f4f4.html#exhale-typedef-vlc-common-8h-1a99f679999ffdef93c3891f876fd0f4f4"><span class="std std-ref">Typedef filter_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a692e2cefaa96f5bb76be519b2e53bdc5.html#exhale-typedef-vlc-common-8h-1a692e2cefaa96f5bb76be519b2e53bdc5"><span class="std std-ref">Typedef filter_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a9870f81d9820e173dd5054f7085d47d9.html#exhale-typedef-vlc-common-8h-1a9870f81d9820e173dd5054f7085d47d9"><span class="std std-ref">Typedef image_handler_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ae81acea092ed7a67439bbc0347b12400.html#exhale-typedef-vlc-common-8h-1ae81acea092ed7a67439bbc0347b12400"><span class="std std-ref">Typedef info_category_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a2f62b4646811ff4691ae0686df97c8f6.html#exhale-typedef-vlc-common-8h-1a2f62b4646811ff4691ae0686df97c8f6"><span class="std std-ref">Typedef info_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a8072ba6ce6c6a5e22485adb5d07aa070.html#exhale-typedef-vlc-common-8h-1a8072ba6ce6c6a5e22485adb5d07aa070"><span class="std std-ref">Typedef input_attachment_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a177bfd7f47833b3c5d9d59d9e4a11937.html#exhale-typedef-vlc-common-8h-1a177bfd7f47833b3c5d9d59d9e4a11937"><span class="std std-ref">Typedef input_item_node_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a1656e9a2f1c25f8b7a0085c7af33f9c8.html#exhale-typedef-vlc-common-8h-1a1656e9a2f1c25f8b7a0085c7af33f9c8"><span class="std std-ref">Typedef input_item_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a45e7e3c8c37c0a50c5828d964f758b05.html#exhale-typedef-vlc-common-8h-1a45e7e3c8c37c0a50c5828d964f758b05"><span class="std std-ref">Typedef input_stats_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a2b448138b175f4f8e7322ffb77fff6fb.html#exhale-typedef-vlc-common-8h-1a2b448138b175f4f8e7322ffb77fff6fb"><span class="std std-ref">Typedef input_thread_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ad9bdd597f41d84510028d20829fadb22.html#exhale-typedef-vlc-common-8h-1ad9bdd597f41d84510028d20829fadb22"><span class="std std-ref">Typedef iso639_lang_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ae9822ad3edc45ccbbda828270d9a51ff.html#exhale-typedef-vlc-common-8h-1ae9822ad3edc45ccbbda828270d9a51ff"><span class="std std-ref">Typedef libvlc_int_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ac86058319385e3e5b0d14634028c180e.html#exhale-typedef-vlc-common-8h-1ac86058319385e3e5b0d14634028c180e"><span class="std std-ref">Typedef md5_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1adb1e62a23e9c37ea8ef34473f486d007.html#exhale-typedef-vlc-common-8h-1adb1e62a23e9c37ea8ef34473f486d007"><span class="std std-ref">Typedef module_config_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a088834adf1518358a376b9b05ed4f272.html#exhale-typedef-vlc-common-8h-1a088834adf1518358a376b9b05ed4f272"><span class="std std-ref">Typedef module_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a3392ad06b2d7da0646bc53da65687152.html#exhale-typedef-vlc-common-8h-1a3392ad06b2d7da0646bc53da65687152"><span class="std std-ref">Typedef mtime_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a72d7970025b3df787bacb15b86a7e230.html#exhale-typedef-vlc-common-8h-1a72d7970025b3df787bacb15b86a7e230"><span class="std std-ref">Typedef picture_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a65d28fa38cd1cc8c93ad11024b13b27c.html#exhale-typedef-vlc-common-8h-1a65d28fa38cd1cc8c93ad11024b13b27c"><span class="std std-ref">Typedef picture_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a525402b34b8081df7efd5bb0fe4bd416.html#exhale-typedef-vlc-common-8h-1a525402b34b8081df7efd5bb0fe4bd416"><span class="std std-ref">Typedef playlist_item_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a8106b15d0d59af74cdd9c39ed888641c.html#exhale-typedef-vlc-common-8h-1a8106b15d0d59af74cdd9c39ed888641c"><span class="std std-ref">Typedef playlist_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a978fdb6459f110bd5157edfd25afc3aa.html#exhale-typedef-vlc-common-8h-1a978fdb6459f110bd5157edfd25afc3aa"><span class="std std-ref">Typedef seekpoint_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a2e82f82276713e3b67696158074c8bea.html#exhale-typedef-vlc-common-8h-1a2e82f82276713e3b67696158074c8bea"><span class="std std-ref">Typedef services_discovery_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1af6483a6d3c7821874cd596ba084e97eb.html#exhale-typedef-vlc-common-8h-1af6483a6d3c7821874cd596ba084e97eb"><span class="std std-ref">Typedef services_discovery_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a82c5d1df7598c4c43f1a020a1d370b57.html#exhale-typedef-vlc-common-8h-1a82c5d1df7598c4c43f1a020a1d370b57"><span class="std std-ref">Typedef session_descriptor_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ad39d41958302d02b2ace4a3d8301af05.html#exhale-typedef-vlc-common-8h-1ad39d41958302d02b2ace4a3d8301af05"><span class="std std-ref">Typedef sout_access_out_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ace4ca337b76be229befaf7b84833e29e.html#exhale-typedef-vlc-common-8h-1ace4ca337b76be229befaf7b84833e29e"><span class="std std-ref">Typedef sout_access_out_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1adfa947a4b1653760325a566af929cacf.html#exhale-typedef-vlc-common-8h-1adfa947a4b1653760325a566af929cacf"><span class="std std-ref">Typedef sout_input_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aa989c6aeda5253a4769ad63bfe48261b.html#exhale-typedef-vlc-common-8h-1aa989c6aeda5253a4769ad63bfe48261b"><span class="std std-ref">Typedef sout_instance_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a7f702ebf447760621da21a25ca71493b.html#exhale-typedef-vlc-common-8h-1a7f702ebf447760621da21a25ca71493b"><span class="std std-ref">Typedef sout_mux_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a537984acadf6818a8f6464d4637567cf.html#exhale-typedef-vlc-common-8h-1a537984acadf6818a8f6464d4637567cf"><span class="std std-ref">Typedef sout_mux_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a3505f1f8a4e60dd8a2c78aae474b75b2.html#exhale-typedef-vlc-common-8h-1a3505f1f8a4e60dd8a2c78aae474b75b2"><span class="std std-ref">Typedef sout_packetizer_input_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ac5c6cb11cbfdf9a2948868deff946056.html#exhale-typedef-vlc-common-8h-1ac5c6cb11cbfdf9a2948868deff946056"><span class="std std-ref">Typedef sout_stream_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a783467d852e5bbac94caa41432cd3855.html#exhale-typedef-vlc-common-8h-1a783467d852e5bbac94caa41432cd3855"><span class="std std-ref">Typedef sout_stream_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ae3874f4cb4790542660f3416e9154522.html#exhale-typedef-vlc-common-8h-1ae3874f4cb4790542660f3416e9154522"><span class="std std-ref">Typedef spu_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ab4589fcff567fc35ba953a6013f377ca.html#exhale-typedef-vlc-common-8h-1ab4589fcff567fc35ba953a6013f377ca"><span class="std std-ref">Typedef stream_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a1e018946474644b5c076a528716454a6.html#exhale-typedef-vlc-common-8h-1a1e018946474644b5c076a528716454a6"><span class="std std-ref">Typedef stream_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a4fe9718b4aa8067cb081225d96a2b352.html#exhale-typedef-vlc-common-8h-1a4fe9718b4aa8067cb081225d96a2b352"><span class="std std-ref">Typedef subpicture_region_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a72a31e629f1a774db4a39fd5ea604b84.html#exhale-typedef-vlc-common-8h-1a72a31e629f1a774db4a39fd5ea604b84"><span class="std std-ref">Typedef subpicture_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a22a9548db4649f71cfec66f44966bfa7.html#exhale-typedef-vlc-common-8h-1a22a9548db4649f71cfec66f44966bfa7"><span class="std std-ref">Typedef subs_format_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a3c834c9f53d63dd5d92f52ad8432e268.html#exhale-typedef-vlc-common-8h-1a3c834c9f53d63dd5d92f52ad8432e268"><span class="std std-ref">Typedef update_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aec7dcc01994fde75476b91c5bde8abb2.html#exhale-typedef-vlc-common-8h-1aec7dcc01994fde75476b91c5bde8abb2"><span class="std std-ref">Typedef video_format_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aade2d1b3b89faef6679da423b7468e87.html#exhale-typedef-vlc-common-8h-1aade2d1b3b89faef6679da423b7468e87"><span class="std std-ref">Typedef video_frame_format_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aea15b7ce8729b3077729cc8f52f72662.html#exhale-typedef-vlc-common-8h-1aea15b7ce8729b3077729cc8f52f72662"><span class="std std-ref">Typedef video_palette_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a5f5a2c041c7ee1db8ea0a3f3fc3a66a2.html#exhale-typedef-vlc-common-8h-1a5f5a2c041c7ee1db8ea0a3f3fc3a66a2"><span class="std std-ref">Typedef vlc_callback_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d.html#exhale-typedef-vlc-common-8h-1af49f89d0f752bc9cff142e43b1bd634d"><span class="std std-ref">Typedef vlc_fourcc_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a3c3cd7cbcfb68f63e7723b82c0904fa0.html#exhale-typedef-vlc-common-8h-1a3c3cd7cbcfb68f63e7723b82c0904fa0"><span class="std std-ref">Typedef vlc_list_callback_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a593fbe2b5db5e2a9a991aa5a4bd48fbf.html#exhale-typedef-vlc-common-8h-1a593fbe2b5db5e2a9a991aa5a4bd48fbf"><span class="std std-ref">Typedef vlc_list_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a11eea5147be72303078d81f2d565e36f.html#exhale-typedef-vlc-common-8h-1a11eea5147be72303078d81f2d565e36f"><span class="std std-ref">Typedef vlc_meta_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a7aab786884ba4bd76a6d72b541dd55d9.html#exhale-typedef-vlc-common-8h-1a7aab786884ba4bd76a6d72b541dd55d9"><span class="std std-ref">Typedef vlc_object_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ac67f956de328a9967670493dea932cc3.html#exhale-typedef-vlc-common-8h-1ac67f956de328a9967670493dea932cc3"><span class="std std-ref">Typedef vlc_renderer_discovery_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a98ae1e34d4d80a7742572c58815e4b50.html#exhale-typedef-vlc-common-8h-1a98ae1e34d4d80a7742572c58815e4b50"><span class="std std-ref">Typedef vlc_renderer_item_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35.html#exhale-typedef-vlc-common-8h-1a4185ff2b4df43e2bfd7ae9736b235d35"><span class="std std-ref">Typedef vlc_tick_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a3f01cd6caa4e3bb1b8c6d9ed33a91779.html#exhale-typedef-vlc-common-8h-1a3f01cd6caa4e3bb1b8c6d9ed33a91779"><span class="std std-ref">Typedef vlc_url_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ae2c8212a341e6bd9220a34a18b0350fb.html#exhale-typedef-vlc-common-8h-1ae2c8212a341e6bd9220a34a18b0350fb"><span class="std std-ref">Typedef vlc_viewpoint_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1af752ae40a73a24e05024037b3596ef87.html#exhale-typedef-vlc-common-8h-1af752ae40a73a24e05024037b3596ef87"><span class="std std-ref">Typedef vlm_message_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1adf9ef77c956a574efc1ed7368c294fb8.html#exhale-typedef-vlc-common-8h-1adf9ef77c956a574efc1ed7368c294fb8"><span class="std std-ref">Typedef vlm_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a864a9b7ce540e4f0db259550c7e9c813.html#exhale-typedef-vlc-common-8h-1a864a9b7ce540e4f0db259550c7e9c813"><span class="std std-ref">Typedef vod_media_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ad48aa1c5b5bc03e4594b502811a001c7.html#exhale-typedef-vlc-common-8h-1ad48aa1c5b5bc03e4594b502811a001c7"><span class="std std-ref">Typedef vod_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a57ba111a4a7bc381961343b6ad8f102f.html#exhale-typedef-vlc-common-8h-1a57ba111a4a7bc381961343b6ad8f102f"><span class="std std-ref">Typedef vod_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a64aed1297e920ecca8db60b3b760a53f.html#exhale-typedef-vlc-common-8h-1a64aed1297e920ecca8db60b3b760a53f"><span class="std std-ref">Typedef vout_thread_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1a0472402b15cd1e5e2a7f48c4cf04de9d.html#exhale-typedef-vlc-common-8h-1a0472402b15cd1e5e2a7f48c4cf04de9d"><span class="std std-ref">Typedef xml_reader_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1aecea9f2ee3e97703e19dc99b09fbb740.html#exhale-typedef-vlc-common-8h-1aecea9f2ee3e97703e19dc99b09fbb740"><span class="std std-ref">Typedef xml_reader_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1ab223d31fc8abab2a860db3d6ad73ce07.html#exhale-typedef-vlc-common-8h-1ab223d31fc8abab2a860db3d6ad73ce07"><span class="std std-ref">Typedef xml_sys_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_vlc__common_8h_1adcbc427887516632a2c562bb3fba6dd2.html#exhale-typedef-vlc-common-8h-1adcbc427887516632a2c562bb3fba6dd2"><span class="std std-ref">Typedef xml_t</span></a></p></li>
+</ul>
+</section>
+<section id="unions">
+<h2>Unions<a class="headerlink" href="#unions" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="unionvlc__value__t.html#exhale-union-unionvlc-value-t"><span class="std std-ref">Union vlc_value_t</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

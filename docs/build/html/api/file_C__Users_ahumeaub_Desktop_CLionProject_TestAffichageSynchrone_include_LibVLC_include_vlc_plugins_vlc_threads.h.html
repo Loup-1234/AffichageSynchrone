@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File vlc_threads.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">File vlc_threads.h</a><ul>
+<li><a class="reference internal" href="#definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h">Definition (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_threads.h</span></code>)</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#includes">Includes</a></li>
+<li><a class="reference internal" href="#included-by">Included By</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#enums">Enums</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#defines">Defines</a></li>
+<li><a class="reference internal" href="#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">File vlc_threads.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_threads.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-vlc-threads-h">
+<span id="file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h"></span><h1>File vlc_threads.h<a class="headerlink" href="#file-vlc-threads-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="dir_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins.html#dir-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins</span></code>)</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_threads.h</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id3">Includes</a></p></li>
+<li><p><a class="reference internal" href="#included-by" id="id4">Included By</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id5">Classes</a></p></li>
+<li><p><a class="reference internal" href="#enums" id="id6">Enums</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id7">Functions</a></p></li>
+<li><p><a class="reference internal" href="#defines" id="id8">Defines</a></p></li>
+<li><p><a class="reference internal" href="#typedefs" id="id9">Typedefs</a></p></li>
+</ul>
+</nav>
+<section id="definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_threads.h</span></code>)<a class="headerlink" href="#definition-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h" title="Lien vers cette rubrique"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_threads.h.html">Program Listing for File vlc_threads.h</a></li>
+</ul>
+</div>
+</section>
+<section id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Lien vers cette rubrique"></a></h2>
+<p>Thread primitive declarations</p>
+</section>
+<section id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pthread.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">semaphore.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unistd.h</span></code></p></li>
+</ul>
+</section>
+<section id="included-by">
+<h2>Included By<a class="headerlink" href="#included-by" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_common.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h"><span class="std std-ref">File vlc_common.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_interrupt.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-interrupt-h"><span class="std std-ref">File vlc_interrupt.h</span></a></p></li>
+</ul>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structvlc__thread__t.html#exhale-struct-structvlc-thread-t"><span class="std std-ref">Struct vlc_thread_t</span></a></p></li>
+</ul>
+</section>
+<section id="enums">
+<h2>Enums<a class="headerlink" href="#enums" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="enum_group__thread_1ga4e76c53251ddef709f76f34d408e72eb.html#exhale-enum-group-thread-1ga4e76c53251ddef709f76f34d408e72eb"><span class="std std-ref">Enum</span></a></p></li>
+<li><p><a class="reference internal" href="enum_group__thread_1ga785b8ee7950754ac3a51e4a459811672.html#exhale-enum-group-thread-1ga785b8ee7950754ac3a51e4a459811672"><span class="std std-ref">Enum</span></a></p></li>
+</ul>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b.html#exhale-function-group-thread-1ga5aa7b01176460b7e8e51fb8ca582614b"><span class="std std-ref">Function mdate</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaa915ef105ccc23dcb3c87ced63cad088.html#exhale-function-group-thread-1gaa915ef105ccc23dcb3c87ced63cad088"><span class="std std-ref">Function msleep</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga6e03b768bdc640314117bd1c5d20d393.html#exhale-function-group-thread-1ga6e03b768bdc640314117bd1c5d20d393"><span class="std std-ref">Function mwait</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gae458cb00d001966325088fbcdec93ac8.html#exhale-function-group-thread-1gae458cb00d001966325088fbcdec93ac8"><span class="std std-ref">Function vlc_addr_broadcast</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaa7a9c5fb4f9371ca875293037a55878a.html#exhale-function-group-thread-1gaa7a9c5fb4f9371ca875293037a55878a"><span class="std std-ref">Function vlc_addr_signal</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaf1e30c3d1002c46e511ce82fa1f1f4b3.html#exhale-function-group-thread-1gaf1e30c3d1002c46e511ce82fa1f1f4b3"><span class="std std-ref">Function vlc_addr_timedwait</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gab308300ea9c5e26ca7bcb64afed1ada3.html#exhale-function-group-thread-1gab308300ea9c5e26ca7bcb64afed1ada3"><span class="std std-ref">Function vlc_addr_wait</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaa01d87b577819120098cb6e9e26269ad.html#exhale-function-group-thread-1gaa01d87b577819120098cb6e9e26269ad"><span class="std std-ref">Function vlc_cancel</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga56ecd6829c1c4a4d0f91215c683ec98b.html#exhale-function-group-thread-1ga56ecd6829c1c4a4d0f91215c683ec98b"><span class="std std-ref">Function vlc_cancel_addr_clear</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gae9039a11e237421cd132f83943841bbd.html#exhale-function-group-thread-1gae9039a11e237421cd132f83943841bbd"><span class="std std-ref">Function vlc_cancel_addr_set</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga0c08c6c3f35ba11f40daa51dc2436617.html#exhale-function-group-thread-1ga0c08c6c3f35ba11f40daa51dc2436617"><span class="std std-ref">Function vlc_cleanup_lock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaddffb928a1966cf64dada5d913248514.html#exhale-function-group-thread-1gaddffb928a1966cf64dada5d913248514"><span class="std std-ref">Function vlc_clone</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaf39147e51466dd4dc92775dabbded9a2.html#exhale-function-group-thread-1gaf39147e51466dd4dc92775dabbded9a2"><span class="std std-ref">Function vlc_cond_broadcast</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gad399ee8455df3680b0881138a6e2bbfc.html#exhale-function-group-thread-1gad399ee8455df3680b0881138a6e2bbfc"><span class="std std-ref">Function vlc_cond_destroy</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gadd1b498d459bda64a717f023073c9e23.html#exhale-function-group-thread-1gadd1b498d459bda64a717f023073c9e23"><span class="std std-ref">Function vlc_cond_init</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gadb0bb49b2824fbef0a6e9c4709f32cca.html#exhale-function-group-thread-1gadb0bb49b2824fbef0a6e9c4709f32cca"><span class="std std-ref">Function vlc_cond_init_daytime</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga6d3ae6c039b3dabe4b6ade3a39af1a16.html#exhale-function-group-thread-1ga6d3ae6c039b3dabe4b6ade3a39af1a16"><span class="std std-ref">Function vlc_cond_signal</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaaecb0c77335ff83e4e1529d836c9c482.html#exhale-function-group-thread-1gaaecb0c77335ff83e4e1529d836c9c482"><span class="std std-ref">Function vlc_cond_timedwait</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gacc7664751630a14a71eb75249a4378eb.html#exhale-function-group-thread-1gacc7664751630a14a71eb75249a4378eb"><span class="std std-ref">Function vlc_cond_timedwait_daytime</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaa4182903deb4277f148ec5c0b250167f.html#exhale-function-group-thread-1gaa4182903deb4277f148ec5c0b250167f"><span class="std std-ref">Function vlc_cond_wait</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaeeccd6907169b461f054877229fe50b6.html#exhale-function-group-thread-1gaeeccd6907169b461f054877229fe50b6"><span class="std std-ref">Function vlc_control_cancel</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga532d4077c5c133dee5b937b0126b33bd.html#exhale-function-group-thread-1ga532d4077c5c133dee5b937b0126b33bd"><span class="std std-ref">Function vlc_GetCPUCount</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gab9f6c69caae21aab54cb24f13e7f2f49.html#exhale-function-group-thread-1gab9f6c69caae21aab54cb24f13e7f2f49"><span class="std std-ref">Function vlc_global_mutex</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga05befb3e4d38e135447d9d9eb996da8f.html#exhale-function-group-thread-1ga05befb3e4d38e135447d9d9eb996da8f"><span class="std std-ref">Function vlc_join</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga12b9b026eb9e5a7ad2887060162c7512.html#exhale-function-group-thread-1ga12b9b026eb9e5a7ad2887060162c7512"><span class="std std-ref">Function vlc_mutex_destroy</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga660e087861f3484e7ee42f52f7bd917e.html#exhale-function-group-thread-1ga660e087861f3484e7ee42f52f7bd917e"><span class="std std-ref">Function vlc_mutex_init</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga9a0785911907da6b086b0cda99653a78.html#exhale-function-group-thread-1ga9a0785911907da6b086b0cda99653a78"><span class="std std-ref">Function vlc_mutex_init_recursive</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga5ca171a3fdcc88d7140b8b07e8c062e2.html#exhale-function-group-thread-1ga5ca171a3fdcc88d7140b8b07e8c062e2"><span class="std std-ref">Function vlc_mutex_lock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaf78345239e01702947192a01e7608760.html#exhale-function-group-thread-1gaf78345239e01702947192a01e7608760"><span class="std std-ref">Function vlc_mutex_trylock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga2d9b8768ff0af713ab020f66c79f3637.html#exhale-function-group-thread-1ga2d9b8768ff0af713ab020f66c79f3637"><span class="std std-ref">Function vlc_mutex_unlock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga7d45f13a05b62e665daf69db4f820c7a.html#exhale-function-group-thread-1ga7d45f13a05b62e665daf69db4f820c7a"><span class="std std-ref">Function vlc_restorecancel</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga1121ff7b3e19bcedd424eafa579a23f2.html#exhale-function-group-thread-1ga1121ff7b3e19bcedd424eafa579a23f2"><span class="std std-ref">Function vlc_rwlock_destroy</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga8fff20c3562ba4f8b231cf43069e5710.html#exhale-function-group-thread-1ga8fff20c3562ba4f8b231cf43069e5710"><span class="std std-ref">Function vlc_rwlock_init</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga04613b9870fa2d1f0329c73a22e3bf22.html#exhale-function-group-thread-1ga04613b9870fa2d1f0329c73a22e3bf22"><span class="std std-ref">Function vlc_rwlock_rdlock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga208963c7ee66cec383fc186653462b08.html#exhale-function-group-thread-1ga208963c7ee66cec383fc186653462b08"><span class="std std-ref">Function vlc_rwlock_unlock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga682dbd6f2f1ace2eb93f431801a47e4d.html#exhale-function-group-thread-1ga682dbd6f2f1ace2eb93f431801a47e4d"><span class="std std-ref">Function vlc_rwlock_wrlock</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga92a0f9c42e70edb2ffa3dbc095a48b27.html#exhale-function-group-thread-1ga92a0f9c42e70edb2ffa3dbc095a48b27"><span class="std std-ref">Function vlc_savecancel</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga07da8dc1c139e78389a6122fb3cb752a.html#exhale-function-group-thread-1ga07da8dc1c139e78389a6122fb3cb752a"><span class="std std-ref">Function vlc_sem_destroy</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaf30051af153b2ea69d81e948b3f35ef4.html#exhale-function-group-thread-1gaf30051af153b2ea69d81e948b3f35ef4"><span class="std std-ref">Function vlc_sem_init</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga1c89019e116ba396f8f6949da119ed87.html#exhale-function-group-thread-1ga1c89019e116ba396f8f6949da119ed87"><span class="std std-ref">Function vlc_sem_post</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gad690a85e538e894a8646788466a1fcbb.html#exhale-function-group-thread-1gad690a85e538e894a8646788466a1fcbb"><span class="std std-ref">Function vlc_sem_wait</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaba57d505d7e964799540aa2f054c6954.html#exhale-function-group-thread-1gaba57d505d7e964799540aa2f054c6954"><span class="std std-ref">Function vlc_testcancel</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga645b01e9cdd9cd21a98b3d984831f844.html#exhale-function-group-thread-1ga645b01e9cdd9cd21a98b3d984831f844"><span class="std std-ref">Function vlc_thread_id</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga2438e817e125b1fe22397faff8e9baf7.html#exhale-function-group-thread-1ga2438e817e125b1fe22397faff8e9baf7"><span class="std std-ref">Function vlc_thread_self</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga2071eee55ea93d40cd2d889edae76f75.html#exhale-function-group-thread-1ga2071eee55ea93d40cd2d889edae76f75"><span class="std std-ref">Function vlc_threadvar_create</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga562d702e02763372b0f39cdd9cfb5f29.html#exhale-function-group-thread-1ga562d702e02763372b0f39cdd9cfb5f29"><span class="std std-ref">Function vlc_threadvar_delete</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gadb08da692a9c414c57d9163cb1448e2a.html#exhale-function-group-thread-1gadb08da692a9c414c57d9163cb1448e2a"><span class="std std-ref">Function vlc_threadvar_get</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaca658b8b5492c78736cccd584d8252b3.html#exhale-function-group-thread-1gaca658b8b5492c78736cccd584d8252b3"><span class="std std-ref">Function vlc_threadvar_set</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gac582bbcd866fff4c700f1ae359ad55e8.html#exhale-function-group-thread-1gac582bbcd866fff4c700f1ae359ad55e8"><span class="std std-ref">Function vlc_timer_create</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gafc0cd5594b3cfd1db212ab3d6231f988.html#exhale-function-group-thread-1gafc0cd5594b3cfd1db212ab3d6231f988"><span class="std std-ref">Function vlc_timer_destroy</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1ga72e653f83aa45db5eaf0808df9a4b7ea.html#exhale-function-group-thread-1ga72e653f83aa45db5eaf0808df9a4b7ea"><span class="std std-ref">Function vlc_timer_getoverrun</span></a></p></li>
+<li><p><a class="reference internal" href="function_group__thread_1gaff3929fb12a5a55484443501454bdeae.html#exhale-function-group-thread-1gaff3929fb12a5a55484443501454bdeae"><span class="std std-ref">Function vlc_timer_schedule</span></a></p></li>
+</ul>
+</section>
+<section id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="define_group__thread_1ga59862480b193f842adadfc269aff4cd3.html#exhale-define-group-thread-1ga59862480b193f842adadfc269aff4cd3"><span class="std std-ref">Define check_deadline</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga940d33666229c2784cb772b6f8051d08.html#exhale-define-group-thread-1ga940d33666229c2784cb772b6f8051d08"><span class="std std-ref">Define check_delay</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga0d943bc9c02ff07a476f61beefa86b63.html#exhale-define-group-thread-1ga0d943bc9c02ff07a476f61beefa86b63"><span class="std std-ref">Define LIBVLC_USE_PTHREAD</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gae45a668a1ae722a6eac727af8625cab6.html#exhale-define-group-thread-1gae45a668a1ae722a6eac727af8625cab6"><span class="std std-ref">Define LIBVLC_USE_PTHREAD_CLEANUP</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga992f2dd04e7ca2bddb0caf67990cafc4.html#exhale-define-group-thread-1ga992f2dd04e7ca2bddb0caf67990cafc4"><span class="std std-ref">Define msleep</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga25c4c336935b27c5eee9743a4136e3ee.html#exhale-define-group-thread-1ga25c4c336935b27c5eee9743a4136e3ee"><span class="std std-ref">Define mutex_cleanup_push</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga46dc2fd43b10639b221faa7d8d2fea01.html#exhale-define-group-thread-1ga46dc2fd43b10639b221faa7d8d2fea01"><span class="std std-ref">Define mwait</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga027a7d8748800afff5e4535209c0d90b.html#exhale-define-group-thread-1ga027a7d8748800afff5e4535209c0d90b"><span class="std std-ref">Define vlc_cleanup_pop</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4.html#exhale-define-group-thread-1gaccd7ab1b9dbb86fe73ab02e2a0deccf4"><span class="std std-ref">Define vlc_cleanup_push</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga1d6f2fe1b518f075be9607e7da332743.html#exhale-define-group-thread-1ga1d6f2fe1b518f075be9607e7da332743"><span class="std std-ref">Define vlc_global_lock</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gacaff2e0df7412c40994155cb12713f4c.html#exhale-define-group-thread-1gacaff2e0df7412c40994155cb12713f4c"><span class="std std-ref">Define vlc_global_unlock</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gab49c8f82b705b38c636bce96417ea903.html#exhale-define-group-thread-1gab49c8f82b705b38c636bce96417ea903"><span class="std std-ref">Define VLC_HARD_MIN_SLEEP</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gabbcf7a09262f19dd9a3e2c4b7d3c600b.html#exhale-define-group-thread-1gabbcf7a09262f19dd9a3e2c4b7d3c600b"><span class="std std-ref">Define VLC_SOFT_MIN_SLEEP</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga18c464ebf9c574074ab1af2e61f8ada7.html#exhale-define-group-thread-1ga18c464ebf9c574074ab1af2e61f8ada7"><span class="std std-ref">Define VLC_STATIC_COND</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gac3cbb7445bb65ad5a86b1d338ae853a4.html#exhale-define-group-thread-1gac3cbb7445bb65ad5a86b1d338ae853a4"><span class="std std-ref">Define VLC_STATIC_MUTEX</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga1dabcdecdea118c8fabdc5acbc3377b5.html#exhale-define-group-thread-1ga1dabcdecdea118c8fabdc5acbc3377b5"><span class="std std-ref">Define VLC_STATIC_RWLOCK</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga20ebef5ea28637629561ada839cb1c62.html#exhale-define-group-thread-1ga20ebef5ea28637629561ada839cb1c62"><span class="std std-ref">Define VLC_THREAD_CANCELED</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga0b0c9381347b1c5251223bab1a43ac4c.html#exhale-define-group-thread-1ga0b0c9381347b1c5251223bab1a43ac4c"><span class="std std-ref">Define VLC_THREAD_PRIORITY_AUDIO</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gaceef3755b7a979a13003c7f1c23e7030.html#exhale-define-group-thread-1gaceef3755b7a979a13003c7f1c23e7030"><span class="std std-ref">Define VLC_THREAD_PRIORITY_HIGHEST</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga967945286ebb11bfc6bad728c6718072.html#exhale-define-group-thread-1ga967945286ebb11bfc6bad728c6718072"><span class="std std-ref">Define VLC_THREAD_PRIORITY_INPUT</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga8fce225438265f9bb92542cbbcc84aef.html#exhale-define-group-thread-1ga8fce225438265f9bb92542cbbcc84aef"><span class="std std-ref">Define VLC_THREAD_PRIORITY_LOW</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1ga28b65e33fa073664f50df89c8b8c48b2.html#exhale-define-group-thread-1ga28b65e33fa073664f50df89c8b8c48b2"><span class="std std-ref">Define VLC_THREAD_PRIORITY_OUTPUT</span></a></p></li>
+<li><p><a class="reference internal" href="define_group__thread_1gabf534e13fa64d11ab054e1c7e29fff13.html#exhale-define-group-thread-1gabf534e13fa64d11ab054e1c7e29fff13"><span class="std std-ref">Define VLC_THREAD_PRIORITY_VIDEO</span></a></p></li>
+</ul>
+</section>
+<section id="typedefs">
+<h2>Typedefs<a class="headerlink" href="#typedefs" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="typedef_group__thread_1gae1427dd44afbfddc5df5faba4bf3e890.html#exhale-typedef-group-thread-1gae1427dd44afbfddc5df5faba4bf3e890"><span class="std std-ref">Typedef vlc_cond_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7.html#exhale-typedef-group-thread-1gaec8f015c2773bbea62fb04ec9fcf4ce7"><span class="std std-ref">Typedef vlc_mutex_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c.html#exhale-typedef-group-thread-1gabb4cd013c20bf5c5e783f39088bfab0c"><span class="std std-ref">Typedef vlc_rwlock_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__thread_1gaefec241da45a9c83371c3a69e5359fb9.html#exhale-typedef-group-thread-1gaefec241da45a9c83371c3a69e5359fb9"><span class="std std-ref">Typedef vlc_sem_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__thread_1ga0d1018cf815d96bfdbf085daf9a8bc25.html#exhale-typedef-group-thread-1ga0d1018cf815d96bfdbf085daf9a8bc25"><span class="std std-ref">Typedef vlc_threadvar_t</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_group__thread_1ga5c35c719bf1ebc1111978e24f66e60b8.html#exhale-typedef-group-thread-1ga5c35c719bf1ebc1111978e24f66e60b8"><span class="std std-ref">Typedef vlc_timer_t</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

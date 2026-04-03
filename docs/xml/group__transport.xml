@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__transport" kind="group">
+    <compoundname>transport</compoundname>
+    <title>Transport layer sockets</title>
+    <innerfile refid="vlc__tls_8h">vlc_tls.h</innerfile>
+    <innerclass refid="structvlc__tls" prot="public">vlc_tls</innerclass>
+    <innergroup refid="group__tls">Transport Layer Security</innergroup>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" prot="public" static="no">
+        <type>struct <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref></type>
+        <definition>typedef struct vlc_tls vlc_tls_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_tls_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Transport layer socket </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="52" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_tls_SessionDelete</definition>
+        <argsstring>(vlc_tls_t *)</argsstring>
+        <name>vlc_tls_SessionDelete</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a TLS session down.</para>
+<para>All resources associated with the TLS session are released.</para>
+<para>If the session was established successfully, then shutdown cleanly, the underlying socket can be reused. Otherwise, it must be closed. Either way, this function does not close the underlying socket: Use vlc_tls_Close() instead to close it at the same.</para>
+<para>This function is non-blocking and is not a cancellation point. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="185" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="185" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1gaa06096ccbd7011d3b467475e53e464d5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_tls_GetFD</definition>
+        <argsstring>(vlc_tls_t *tls)</argsstring>
+        <name>vlc_tls_GetFD</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+          <declname>tls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="187" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga57a42167210dfccd0d766cca4dac899e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_tls_Read</definition>
+        <argsstring>(vlc_tls_t *, void *buf, size_t len, bool waitall)</argsstring>
+        <name>vlc_tls_Read</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>waitall</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Receives data through a socket.</para>
+<para>This dequeues incoming data from a transport layer socket.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>received buffer start address [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer length (in bytes) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>waitall</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to wait for the exact buffer length (true), or for any amount of data (false)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>At end of stream, the number of bytes returned may be shorter than requested regardless of the &quot;waitall&quot; flag.</para>
+</simplesect>
+<simplesect kind="return"><para>the number of bytes actually dequeued, or -1 on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="207" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="207" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_tls_GetLine</definition>
+        <argsstring>(vlc_tls_t *)</argsstring>
+        <name>vlc_tls_GetLine</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Receives a text line through a socket.</para>
+<para>This dequeues one line of text from a transport layer socket. <simplesect kind="return"><para>a heap-allocated nul-terminated string, or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="215" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="215" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_tls_Write</definition>
+        <argsstring>(vlc_tls_t *, const void *buf, size_t len)</argsstring>
+        <name>vlc_tls_Write</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends data through a socket. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="220" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="220" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1gafe1537809c27013cf3203c451e77f7c2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_tls_Shutdown</definition>
+        <argsstring>(vlc_tls_t *tls, bool duplex)</argsstring>
+        <name>vlc_tls_Shutdown</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+          <declname>tls</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>duplex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuts a connection down.</para>
+<para>This sends the connection close notification.</para>
+<para>If the TLS protocol is used, this provides a secure indication to the other end that no further data will be sent. If using plain TCP/IP, this sets the FIN flag.</para>
+<para>Data can still be received until a close notification is received from the other end.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>duplex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to stop receiving data as well </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the session was terminated securely and cleanly (the underlying socket can be reused for other purposes) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 the session was terminated locally, but either a notification could not be sent or received (the underlying socket cannot be reused and must be closed) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="241" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1gabd95c7171fc6bdc0b0a4bc3eebd53fef" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlc_tls_Close</definition>
+        <argsstring>(vlc_tls_t *session)</argsstring>
+        <name>vlc_tls_Close</name>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes a connection and its underlying resources.</para>
+<para>This function closes the transport layer socket, and terminates any underlying connection. For instance, if the TLS protocol is used over a TCP stream, this function terminates both the TLS session, and then underlying TCP/IP connection.</para>
+<para>To close a connection but retain any underlying resources, use <ref refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kindref="member">vlc_tls_SessionDelete()</ref> instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="257" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="257" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        <definition>VLC_API vlc_tls_t * vlc_tls_SocketOpen</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>vlc_tls_SocketOpen</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a transport-layer stream from a socket.</para>
+<para>Creates a transport-layer I/O stream from a socket file descriptor. Data will be sent and received directly through the socket. This can be used either to share common code between non-TLS and TLS cases, or for testing purposes.</para>
+<para>This function is not a cancellation point.</para>
+<para><xrefsect id="deprecated_1_deprecated000022"><xreftitle>Obsolète</xreftitle><xrefdescription><para>This function is transitional. Do not use it directly. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="281" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="281" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_tls_SocketPair</definition>
+        <argsstring>(int family, int protocol, vlc_tls_t *[2])</argsstring>
+        <name>vlc_tls_SocketPair</name>
+        <param>
+          <type>int</type>
+          <declname>family</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+          <array>[2]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a connected pair of transport-layer sockets. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="286" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="286" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga0045694f60f5f64365860867e9322d50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        <definition>VLC_API vlc_tls_t * vlc_tls_SocketOpenAddrInfo</definition>
+        <argsstring>(const struct addrinfo *ai, bool defer_connect)</argsstring>
+        <name>vlc_tls_SocketOpenAddrInfo</name>
+        <param>
+          <type>const struct addrinfo *</type>
+          <declname>ai</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>defer_connect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a transport-layer stream from a struct addrinfo.</para>
+<para>This function tries to allocate a socket using the specified addrinfo structure. Normally, the <ref refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" kindref="member">vlc_tls_SocketOpenTCP()</ref> function takes care of this. But in some cases, it cannot be used, notably:<itemizedlist>
+<listitem><para>if the remote destination is not resolved (directly) from getaddrinfo(),</para>
+</listitem><listitem><para>if the socket type is not SOCK_STREAM,</para>
+</listitem><listitem><para>if the transport protocol is not TCP (IPPROTO_TCP), or</para>
+</listitem><listitem><para>if TCP Fast Open should be attempted.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ai</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a filled addrinfo structure (the ai_next member is ignored) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defer_connect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to attempt a TCP Fast Open connection or not </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="304" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="304" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        <definition>VLC_API vlc_tls_t * vlc_tls_SocketOpenTCP</definition>
+        <argsstring>(vlc_object_t *obj, const char *hostname, unsigned port)</argsstring>
+        <name>vlc_tls_SocketOpenTCP</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a transport-layer TCP stream from a name and port.</para>
+<para>This function resolves a hostname, and attempts to establish a TCP/IP connection to the specified host and port number.</para>
+<para><simplesect kind="note"><para>The function currently iterates through the addrinfo linked list. Future versions may implement different behaviour (e.g. RFC6555).</para>
+</simplesect>
+<simplesect kind="return"><para>a transport layer socket on success or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="318" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="318" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        <definition>VLC_API vlc_tls_t * vlc_tls_SocketOpenTLS</definition>
+        <argsstring>(vlc_tls_creds_t *crd, const char *hostname, unsigned port, const char *service, const char *const *alpn, char **alp)</argsstring>
+        <name>vlc_tls_SocketOpenTLS</name>
+        <param>
+          <type><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
+          <declname>crd</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>service</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>alpn</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>alp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiates a TLS session over TCP.</para>
+<para>This function resolves a hostname, attempts to establish a TCP/IP connection to the specified host and port number, and finally attempts to establish a TLS session over the TCP/IP stream.</para>
+<para>See also <ref refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" kindref="member">vlc_tls_SocketOpenTCP()</ref> and vlc_tls_SessionCreate(). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="330" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="330" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__transport_1ga4ecfe9a98f85b48bd42b70229f9c6204" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_DEPRECATED <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
+        <definition>static VLC_DEPRECATED vlc_tls_t * vlc_tls_ClientSessionCreateFD</definition>
+        <argsstring>(vlc_tls_creds_t *crd, int fd, const char *host, const char *srv, const char *const *lp, char **p)</argsstring>
+        <name>vlc_tls_ClientSessionCreateFD</name>
+        <param>
+          <type><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
+          <declname>crd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>srv</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>lp</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="337" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="337" bodyend="348"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Network stream abstraction</para>
+<para>Originally intended for the TLS protocol (Transport Layer Security), the Transport Layer Sockets now provides a generic abstraction for connection-oriented full-duplex I/O byte streams, such as TCP/IP sockets and TLS protocol sessions. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,774 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__video__display" kind="group">
+    <compoundname>video_display</compoundname>
+    <title>Video output display</title>
+    <innerfile refid="vlc__vout__display_8h">vlc_vout_display.h</innerfile>
+    <innerclass refid="structvout__display__cfg__t" prot="public">vout_display_cfg_t</innerclass>
+    <innerclass refid="structvout__display__info__t" prot="public">vout_display_info_t</innerclass>
+    <innerclass refid="structvout__display__owner__t" prot="public">vout_display_owner_t</innerclass>
+    <innerclass refid="structvout__display__t" prot="public">vout_display_t</innerclass>
+    <innerclass refid="structvout__display__place__t" prot="public">vout_display_place_t</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__video__display_1ga162c0d83e9bb4c08f2605b96b0ce9b91" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vout_display_align_t</name>
+        <enumvalue id="group__video__display_1gga162c0d83e9bb4c08f2605b96b0ce9b91a8af42cc82d87b7358dd03c659ac8dacf" prot="public">
+          <name>VOUT_DISPLAY_ALIGN_CENTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga162c0d83e9bb4c08f2605b96b0ce9b91a77950f37a1c3b336b763764cc66f99b5" prot="public">
+          <name>VOUT_DISPLAY_ALIGN_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga162c0d83e9bb4c08f2605b96b0ce9b91a9e47cc15d1d0f2c645570bd9f0d98751" prot="public">
+          <name>VOUT_DISPLAY_ALIGN_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga162c0d83e9bb4c08f2605b96b0ce9b91a7e0e27f2765a633f8e5a3f45eeea8116" prot="public">
+          <name>VOUT_DISPLAY_ALIGN_TOP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga162c0d83e9bb4c08f2605b96b0ce9b91a75813b86fb6ef7092aa080d039051ade" prot="public">
+          <name>VOUT_DISPLAY_ALIGN_BOTTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Possible alignments for vout_display. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="59" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="60" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__video__display_1gadfcbce766c4ba6efc563c568c0c6e64a" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__video__display_1ggadfcbce766c4ba6efc563c568c0c6e64aa712aa1135bbb8cbaa166ffb0770ed279" prot="public">
+          <name>VOUT_WINDOW_STATE_NORMAL</name>
+          <initializer>=0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggadfcbce766c4ba6efc563c568c0c6e64aa9fe9b0169584a8851de5197f659b9b9e" prot="public">
+          <name>VOUT_WINDOW_STATE_ABOVE</name>
+          <initializer>=1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggadfcbce766c4ba6efc563c568c0c6e64aa1e90c8bc31c660d6d096fae604cfb0ab" prot="public">
+          <name>VOUT_WINDOW_STATE_BELOW</name>
+          <initializer>=2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggadfcbce766c4ba6efc563c568c0c6e64aa3a6fdec1932818bf528232b49ff9e85d" prot="public">
+          <name>VOUT_WINDOW_STACK_MASK</name>
+          <initializer>=3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Window management state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="73" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="73" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__video__display_1ga726dbe91711dbef97dfe8f96b6f3ac77" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77a6781e7e3c986f3e17b2c9366ed32d641" prot="public">
+          <name>VLC_DEPRECATED_ENUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77a2ec4df5d8f1bed103cc1b0b10a71b68e" prot="public">
+          <name>VOUT_DISPLAY_RESET_PICTURES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77a28f763064f2109cb10742cf1033b7d5c" prot="public">
+          <name>VOUT_DISPLAY_CHANGE_DISPLAY_SIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77a6e4dc3b2a7df755bae2b0c52aaf2ea96" prot="public">
+          <name>VOUT_DISPLAY_CHANGE_DISPLAY_FILLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77a160ba9c4742263026a38b5ff2e9ddc1d" prot="public">
+          <name>VOUT_DISPLAY_CHANGE_ZOOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77ab39f3e2073da7a9371112565787e228c" prot="public">
+          <name>VOUT_DISPLAY_CHANGE_SOURCE_ASPECT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77adbed2c74580d98fed7fdcbecddd1007a" prot="public">
+          <name>VOUT_DISPLAY_CHANGE_SOURCE_CROP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1gga726dbe91711dbef97dfe8f96b6f3ac77a847ea08a09799aa06c66106132a56773" prot="public">
+          <name>VOUT_DISPLAY_CHANGE_VIEWPOINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control query for <ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="141" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="141" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__video__display_1gaa3064c685ab4b197d1148dd2f5f8c226" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a841275d6343e0eb92502aca0224ab3af" prot="public">
+          <name>VOUT_DISPLAY_EVENT_PICTURES_INVALID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226ac93e961d074f0279de63819bed28d654" prot="public">
+          <name>VOUT_DISPLAY_EVENT_DISPLAY_SIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a9351b783d7ff4da51ef2fd2081a89be1" prot="public">
+          <name>VOUT_DISPLAY_EVENT_CLOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226aabf32d2ce05d11906bf2fc8d8ae67926" prot="public">
+          <name>VOUT_DISPLAY_EVENT_KEY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a528413714db210b7137e50cd8d1bec15" prot="public">
+          <name>VOUT_DISPLAY_EVENT_MOUSE_STATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a547a80529b2878b834dba9c2dba4edfc" prot="public">
+          <name>VOUT_DISPLAY_EVENT_MOUSE_MOVED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a1e4c6c9b84cbabcefa14487bb333dcb1" prot="public">
+          <name>VOUT_DISPLAY_EVENT_MOUSE_PRESSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a3c3851a4bfe64dd8b482580e62f48402" prot="public">
+          <name>VOUT_DISPLAY_EVENT_MOUSE_RELEASED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226a2a213e00472f7dcbacd5307671292f70" prot="public">
+          <name>VOUT_DISPLAY_EVENT_MOUSE_DOUBLE_CLICK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__video__display_1ggaa3064c685ab4b197d1148dd2f5f8c226ad11bede6a12f9443538ba3cd67ba3ee3" prot="public">
+          <name>VOUT_DISPLAY_EVENT_VIEWPOINT_MOVED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event from <ref refid="structvout__display__t" kindref="compound">vout_display_t</ref></para>
+<para>Events modifiying the state may be sent multiple times. Only the transition will be retained and acted upon. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="192" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="192" bodyend="224"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__video__display_1ga32aa79498ea89652532843d814b102a0" prot="public" static="no">
+        <type>struct vout_display_t</type>
+        <definition>typedef struct vout_display_t vout_display_t</definition>
+        <argsstring></argsstring>
+        <name>vout_display_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="52" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__video__display_1ga446ad850ec55022a218e130fd08b83d6" prot="public" static="no">
+        <type>struct vout_display_sys_t</type>
+        <definition>typedef struct vout_display_sys_t vout_display_sys_t</definition>
+        <argsstring></argsstring>
+        <name>vout_display_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="53" column="33" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__video__display_1gadb3b428f8868a36671bca39e0531d1a2" prot="public" static="no">
+        <type>struct vout_display_owner_t</type>
+        <definition>typedef struct vout_display_owner_t vout_display_owner_t</definition>
+        <argsstring></argsstring>
+        <name>vout_display_owner_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="54" column="35" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__video__display_1ga6102da647f9818bb9edd436c6fbe9f7e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEvent</definition>
+        <argsstring>(vout_display_t *vd, int query,...)</argsstring>
+        <name>vout_display_SendEvent</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="348" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="348" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga25c5e11f32fe6282cd4da69679afacc4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventDisplaySize</definition>
+        <argsstring>(vout_display_t *vd, int width, int height)</argsstring>
+        <name>vout_display_SendEventDisplaySize</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="356" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="356" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga3b88eb5af79b7b470d11c7b77de13ae6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventPicturesInvalid</definition>
+        <argsstring>(vout_display_t *vd)</argsstring>
+        <name>vout_display_SendEventPicturesInvalid</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="360" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="360" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1gadcce1894bd334219071ed31e28edba33" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventClose</definition>
+        <argsstring>(vout_display_t *vd)</argsstring>
+        <name>vout_display_SendEventClose</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="364" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="364" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1gaaece412a35e15e0ea4cc8c57a2f40365" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventKey</definition>
+        <argsstring>(vout_display_t *vd, int key)</argsstring>
+        <name>vout_display_SendEventKey</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="368" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="368" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga019967cbadaa26c21f6db3cd063e8eed" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventMouseState</definition>
+        <argsstring>(vout_display_t *vd, int x, int y, int button_mask)</argsstring>
+        <name>vout_display_SendEventMouseState</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>button_mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="384" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="384" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1gaecdc8013c0441568d6c3bc19b725d37a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventMouseMoved</definition>
+        <argsstring>(vout_display_t *vd, int x, int y)</argsstring>
+        <name>vout_display_SendEventMouseMoved</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="388" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="388" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga9126812e256120659b553930e1a356c1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventMousePressed</definition>
+        <argsstring>(vout_display_t *vd, int button)</argsstring>
+        <name>vout_display_SendEventMousePressed</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="392" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="392" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga69ef6e7a11199fde3b56f34d3d84d68f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventMouseReleased</definition>
+        <argsstring>(vout_display_t *vd, int button)</argsstring>
+        <name>vout_display_SendEventMouseReleased</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="396" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="396" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga74f03b1bf5c4fa7d11e69594862570b8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventMouseDoubleClick</definition>
+        <argsstring>(vout_display_t *vd)</argsstring>
+        <name>vout_display_SendEventMouseDoubleClick</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="400" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="400" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga933b24070dcd23bbe53c61a39ad1046c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_SendEventViewpointMoved</definition>
+        <argsstring>(vout_display_t *vd, const vlc_viewpoint_t *vp)</argsstring>
+        <name>vout_display_SendEventViewpointMoved</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvlc__viewpoint__t" kindref="compound">vlc_viewpoint_t</ref> *</type>
+          <declname>vp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="404" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="404" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga73629544b042abe1731d170c74ef84b9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structvout__window__t" kindref="compound">vout_window_t</ref> *</type>
+        <definition>static vout_window_t * vout_display_NewWindow</definition>
+        <argsstring>(vout_display_t *vd, unsigned type)</argsstring>
+        <name>vout_display_NewWindow</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Asks for a new window of a given type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="413" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="413" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga45f964299b665fda179e773f3c76014e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vout_display_DeleteWindow</definition>
+        <argsstring>(vout_display_t *vd, vout_window_t *window)</argsstring>
+        <name>vout_display_DeleteWindow</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type><ref refid="structvout__window__t" kindref="compound">vout_window_t</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deletes a window created by vout_display_NewWindow if window is non NULL or any unused windows otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="421" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="421" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1gace7978d9117a29eb54a53100704dffc7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool vout_display_IsWindowed</definition>
+        <argsstring>(vout_display_t *vd)</argsstring>
+        <name>vout_display_IsWindowed</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="427" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="427" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga7677c0b0daf21e43e79d7545865c7579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_display_GetDefaultDisplaySize</definition>
+        <argsstring>(unsigned *width, unsigned *height, const video_format_t *source, const vout_display_cfg_t *)</argsstring>
+        <name>vout_display_GetDefaultDisplaySize</name>
+        <param>
+          <type>unsigned *</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvout__display__cfg__t" kindref="compound">vout_display_cfg_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the default display size given the source and the display configuration.</para>
+<para>This asssumes that the picture is already cropped. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="441" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" declline="441" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga8e4f2d86356c7f69eb231edf5380cd0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_display_PlacePicture</definition>
+        <argsstring>(vout_display_place_t *place, const video_format_t *source, const vout_display_cfg_t *cfg, bool do_clipping)</argsstring>
+        <name>vout_display_PlacePicture</name>
+        <param>
+          <type><ref refid="structvout__display__place__t" kindref="compound">vout_display_place_t</ref> *</type>
+          <declname>place</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvout__display__cfg__t" kindref="compound">vout_display_cfg_t</ref> *</type>
+          <declname>cfg</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>do_clipping</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes how to place a picture inside the display to respect the given parameters. This assumes that cropping is done by an external mean.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_place</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Place inside the window (window pixel unit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Video source format </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_cfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Display configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_clip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, prevent the video to go outside the display (break zoom). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="464" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" declline="464" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__video__display_1ga2387b777e1f06eb692b7c0a37fd5de5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_display_SendMouseMovedDisplayCoordinates</definition>
+        <argsstring>(vout_display_t *vd, video_orientation_t orient_display, int m_x, int m_y, vout_display_place_t *place)</argsstring>
+        <name>vout_display_SendMouseMovedDisplayCoordinates</name>
+        <param>
+          <type><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref> *</type>
+          <declname>vd</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__es_8h_1a1a6878c41244a468be3869ca422934a4" kindref="member">video_orientation_t</ref></type>
+          <declname>orient_display</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m_y</declname>
+        </param>
+        <param>
+          <type><ref refid="structvout__display__place__t" kindref="compound">vout_display_place_t</ref> *</type>
+          <declname>place</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper function that applies the necessary transforms to the mouse position and then calls vout_display_SendEventMouseMoved.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvout__display__t" kindref="compound">vout_display_t</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>orient_display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The orientation of the picture as seen on screen (probably ORIENT_NORMAL). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse x position (relative to place, origin is top left). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse y position (relative to place, origin is top left). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>place</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Place of the picture. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="477" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" declline="477" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Video output display: output buffers and rendering </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

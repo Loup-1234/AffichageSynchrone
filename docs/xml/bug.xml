@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="bug" kind="page">
+    <compoundname>bug</compoundname>
+    <title>Liste des bogues</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Membre <ref refid="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a69130c404fbe48cdc11e0d3a7708edd1" kindref="member">DEMUX_CAN_PAUSE</ref>  </term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000005"/>Failing should not be allowed. </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ad1778c20a19076f9517250c20673824a" kindref="member">DEMUX_CAN_SEEK</ref>  </term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000004"/>Failing should not be allowed. </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__libvlc__media__player_1ga057b0d82fb84f60ee24a6d76c1f135f3" kindref="member">libvlc_media_player_get_length</ref>  (libvlc_media_player_t *p_mi)</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000003"/>This might go away ... to be replaced by a broader system  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__libvlc__media__player_1ga31827df3a665a72410cb95695147ba5b" kindref="member">libvlc_media_player_set_xwindow</ref>  (libvlc_media_player_t *p_mi, uint32_t drawable)</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000002"/> No more than one window handle per media player instance can be specified. If the media has multiple simultaneously active video tracks, extra tracks will be rendered into external windows beyond the control of the application.  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__libvlc__media__player_1ga6518394e05d458731c11c86edb23f4cc" kindref="member">libvlc_video_set_format</ref>  (libvlc_media_player_t *mp, const char *chroma, unsigned width, unsigned height, unsigned pitch)</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000001"/>All pixel planes are expected to have the same pitch. To use the YCbCr color space with chrominance subsampling, consider using <ref refid="group__libvlc__media__player_1gafbeef69fb76b4c4d6cb25145aee1ad99" kindref="member">libvlc_video_set_format_callbacks()</ref> instead.  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__stream__fifo_1gad4ab31423b87026fa27b7c9a086e55ef" kindref="member">vlc_stream_fifo_Queue</ref>  (<ref refid="structstream__t" kindref="compound">stream_t</ref> *s, <ref refid="structblock__t" kindref="compound">block_t</ref> *block)</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000006"/>No congestion control is performed. If the reader end is not keeping up with the writer end, buffers will accumulate in memory.  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="vlc__url_8h_1a55ef13fda4e4269b994d425744d3edd8" kindref="member">vlc_uri_compose</ref>  (const <ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref> *) VLC_MALLOC</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000007"/>URI fragments (i.e. HTML anchors) are not handled </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="vlc__url_8h_1a1262de736d8d5dd560e87d858093e6dc" kindref="member">vlc_UrlParse</ref>  (<ref refid="structvlc__url__t" kindref="compound">vlc_url_t</ref> *url, const char *str)</term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000008"/>The URI fragment is discarded if present.</para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="bug"/>
+  </compounddef>
+</doxygen>

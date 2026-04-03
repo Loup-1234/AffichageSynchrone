@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__media__list" kind="group">
+    <compoundname>libvlc_media_list</compoundname>
+    <title>LibVLC media list</title>
+    <innerfile refid="libvlc__media__list_8h">libvlc_media_list.h</innerfile>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="group__libvlc__media__list_1gac129d6253bbbe3c3901cd53da38d526d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED int</type>
+        <definition>LIBVLC_DEPRECATED int libvlc_media_list_add_file_content</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, const char *psz_uri)</argsstring>
+        <name>libvlc_media_list_add_file_content</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="278" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="278" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__libvlc__media__list_1gaa35f57beed98325e23364a35d5d248ee" prot="public" static="no">
+        <type>struct libvlc_media_list_t</type>
+        <definition>typedef struct libvlc_media_list_t libvlc_media_list_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_media_list_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="39" column="34" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__media__list_1ga6d8ceb862ff68a9bc42f1d13384fc0f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_list_t *</type>
+        <definition>LIBVLC_API libvlc_media_list_t * libvlc_media_list_new</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_media_list_new</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an empty media list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>empty media list, or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="48" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="48" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga690973281c2f7f32cd366914a08c68dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_list_release</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_release</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release media list created with <ref refid="group__libvlc__media__list_1ga6d8ceb862ff68a9bc42f1d13384fc0f2" kindref="member">libvlc_media_list_new()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list created with <ref refid="group__libvlc__media__list_1ga6d8ceb862ff68a9bc42f1d13384fc0f2" kindref="member">libvlc_media_list_new()</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="56" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="56" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga2e6c93ff61c6380eb3c07d22ef47da8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_list_retain</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_retain</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retain reference to a media list</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list created with <ref refid="group__libvlc__media__list_1ga6d8ceb862ff68a9bc42f1d13384fc0f2" kindref="member">libvlc_media_list_new()</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="64" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="64" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga96a38e5aabb5781c2f1932d332363eef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_list_set_media</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, libvlc_media_t *p_md)</argsstring>
+        <name>libvlc_media_list_set_media</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>libvlc_media_t *</type>
+          <declname>p_md</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Associate media instance with this media list instance. If another media instance was present it will be released. The libvlc_media_list_lock should NOT be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_md</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media instance to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="75" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="75" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga528688635e26c4135bdd3823ed3bb7bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_t *</type>
+        <definition>LIBVLC_API libvlc_media_t * libvlc_media_list_media</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_media</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get media instance from this media list instance. This action will increase the refcount on the media instance. The libvlc_media_list_lock should NOT be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>media instance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="86" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="86" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1gab1dea4f59a23ee3e151a34704f2b8bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_list_add_media</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, libvlc_media_t *p_md)</argsstring>
+        <name>libvlc_media_list_add_media</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>libvlc_media_t *</type>
+          <declname>p_md</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add media instance to media list The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_md</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 if the media list is read-only </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="97" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="97" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga96d55d4e9222ad4370774c4662b084e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_list_insert_media</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, libvlc_media_t *p_md, int i_pos)</argsstring>
+        <name>libvlc_media_list_insert_media</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>libvlc_media_t *</type>
+          <declname>p_md</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Insert media instance in media list on a position The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_md</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in array where to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 if the media list is read-only </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="109" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="109" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga19bdb775f747bd6aaf31b542e600bb87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_list_remove_index</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, int i_pos)</argsstring>
+        <name>libvlc_media_list_remove_index</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove media instance from media list on a position The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in array where to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 if the list is read-only or the item was not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="121" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="121" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga91adfaf535ae4a6338a53865f45444d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_list_count</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_count</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get count on media list items The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number of items in media list </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="131" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="131" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1gaae8bb1a139ae6e45b489b6ea680a1ffb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_t *</type>
+        <definition>LIBVLC_API libvlc_media_t * libvlc_media_list_item_at_index</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, int i_pos)</argsstring>
+        <name>libvlc_media_list_item_at_index</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>List media instance in media list at a position The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in array where to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>media instance at position i_pos, or NULL if not found. In case of success, <ref refid="group__libvlc__media_1gaf4be74c918bc34ea4182e8028ea5f0ba" kindref="member">libvlc_media_retain()</ref> is called to increase the refcount on the media. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="144" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="144" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga7ba4219836788ca58127199da06a6550" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_list_index_of_item</definition>
+        <argsstring>(libvlc_media_list_t *p_ml, libvlc_media_t *p_md)</argsstring>
+        <name>libvlc_media_list_index_of_item</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <param>
+          <type>libvlc_media_t *</type>
+          <declname>p_md</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Find index position of List media instance in media list. Warning: the function will return the first matched position. The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_md</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>position of media instance or -1 if media not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="155" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="155" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga93b9fc524ba86c1fd3151a49f6486f54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_list_is_readonly</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_is_readonly</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This indicates if this media list is read-only from a user point of view</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media list instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on readonly, 0 on readwrite</para>
+</simplesect>
+\libvlc_return_bool </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="167" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="167" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga908ca009b4ebecbccdeb5650c72cd7a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_list_lock</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_lock</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get lock on media list items</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="175" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="175" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1gaa91574447f7b7baa18e4054cf1957c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_list_unlock</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_unlock</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release lock on media list items The libvlc_media_list_lock should be held upon entering this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="184" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="184" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__list_1ga9d684633d214dafa40ada080e8e00f65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref> *</type>
+        <definition>LIBVLC_API libvlc_event_manager_t * libvlc_media_list_event_manager</definition>
+        <argsstring>(libvlc_media_list_t *p_ml)</argsstring>
+        <name>libvlc_media_list_event_manager</name>
+        <param>
+          <type>libvlc_media_list_t *</type>
+          <declname>p_ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get libvlc_event_manager from this media list instance. The p_event_manager is immutable, so you don&apos;t have to hold the lock</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_ml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a media list instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>libvlc_event_manager </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" line="194" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_list.h" declline="194" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A LibVLC media list holds multiple libvlc_media_t media descriptors. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

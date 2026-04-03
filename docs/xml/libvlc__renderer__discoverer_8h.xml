@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="libvlc__renderer__discoverer_8h" kind="file" language="C++">
+    <compoundname>libvlc_renderer_discoverer.h</compoundname>
+    <includedby refid="vlc_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/vlc.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h</label>
+        <link refid="_affichage_synchrone_8h_source"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_renderer_discoverer.h</label>
+        <link refid="libvlc__renderer__discoverer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/vlc.h</label>
+        <link refid="vlc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlibvlc__rd__description__t" prot="public">libvlc_rd_description_t</innerclass>
+    <sectiondef kind="define">
+      <member refid="group__libvlc__renderer__discoverer_1ga778ec80ff1425d503bbdc1192ae19cee" kind="define"><name>LIBVLC_RENDERER_CAN_AUDIO</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga5f45935a0f05c6f27184756540b76a2e" kind="define"><name>LIBVLC_RENDERER_CAN_VIDEO</name></member>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <member refid="group__libvlc__renderer__discoverer_1gab381ff14739fea836f060644db2831b3" kind="typedef"><name>libvlc_renderer_discoverer_t</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1gaf657644b2fe42ddba504fb0edb0d3390" kind="typedef"><name>libvlc_rd_description_t</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__libvlc__renderer__discoverer_1gafb9277954288e84649e5360c9651509b" kind="function"><name>libvlc_renderer_item_hold</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1gaf57bf809f447c6c679221a94254bbb23" kind="function"><name>libvlc_renderer_item_release</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga0d69c6c415fa7b68272e1512b8295a55" kind="function"><name>libvlc_renderer_item_name</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga0487ad085d2b06396c1d99977cb8b70d" kind="function"><name>libvlc_renderer_item_type</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga4a3358a37b8af09ae012ebc66f625769" kind="function"><name>libvlc_renderer_item_icon_uri</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga61e48d3242c6ee14fe10c78b001bd955" kind="function"><name>libvlc_renderer_item_flags</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1gaa433c657cc2711a3737f6f09eaac1646" kind="function"><name>libvlc_renderer_discoverer_new</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga92ed3e0a5e4a812e8c6a5b3d10008cce" kind="function"><name>libvlc_renderer_discoverer_release</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1gae3d8e1d89fde247262d75904db80b706" kind="function"><name>libvlc_renderer_discoverer_start</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1gaeaa1a955bfb68b8c9bc2d1749b9cff31" kind="function"><name>libvlc_renderer_discoverer_stop</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1gab19f1576b101b38fec230a48d6d2a6fc" kind="function"><name>libvlc_renderer_discoverer_event_manager</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga9b46158f154a3fbf09f7862d20bc80c7" kind="function"><name>libvlc_renderer_discoverer_list_get</name></member>
+      <member refid="group__libvlc__renderer__discoverer_1ga72972dec3110a7b4328f0ff9eedb1cb4" kind="function"><name>libvlc_renderer_discoverer_list_release</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>LibVLC renderer discoverer external API </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>libvlc_renderer_discoverer.h:<sp/><sp/>libvlc<sp/>external<sp/>API</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2016<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_LIBVLC_RENDERER_DISCOVERER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_LIBVLC_RENDERER_DISCOVERER_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">libvlc_renderer_discoverer_t<sp/>libvlc_renderer_discoverer_t;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structlibvlc__rd__description__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibvlc__rd__description__t" kindref="compound">libvlc_rd_description_t</ref></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_longname;</highlight></codeline>
+<codeline lineno="49" refid="group__libvlc__renderer__discoverer_1gaf657644b2fe42ddba504fb0edb0d3390" refkind="member"><highlight class="normal">}<sp/><ref refid="structlibvlc__rd__description__t" kindref="compound">libvlc_rd_description_t</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="group__libvlc__renderer__discoverer_1ga778ec80ff1425d503bbdc1192ae19cee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBVLC_RENDERER_CAN_AUDIO<sp/>0x0001</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="group__libvlc__renderer__discoverer_1ga5f45935a0f05c6f27184756540b76a2e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBVLC_RENDERER_CAN_VIDEO<sp/>0x0002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">LIBVLC_API<sp/><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*</highlight></codeline>
+<codeline lineno="82" refid="group__libvlc__renderer__discoverer_1gafb9277954288e84649e5360c9651509b" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1gafb9277954288e84649e5360c9651509b" kindref="member">libvlc_renderer_item_hold</ref>(<ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*p_item);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="group__libvlc__renderer__discoverer_1gaf57bf809f447c6c679221a94254bbb23" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1gaf57bf809f447c6c679221a94254bbb23" kindref="member">libvlc_renderer_item_release</ref>(<ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*p_item);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="100" refid="group__libvlc__renderer__discoverer_1ga0d69c6c415fa7b68272e1512b8295a55" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga0d69c6c415fa7b68272e1512b8295a55" kindref="member">libvlc_renderer_item_name</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*p_item);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="111" refid="group__libvlc__renderer__discoverer_1ga0487ad085d2b06396c1d99977cb8b70d" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga0487ad085d2b06396c1d99977cb8b70d" kindref="member">libvlc_renderer_item_type</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*p_item);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="121" refid="group__libvlc__renderer__discoverer_1ga4a3358a37b8af09ae012ebc66f625769" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga4a3358a37b8af09ae012ebc66f625769" kindref="member">libvlc_renderer_item_icon_uri</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*p_item);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="group__libvlc__renderer__discoverer_1ga61e48d3242c6ee14fe10c78b001bd955" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga61e48d3242c6ee14fe10c78b001bd955" kindref="member">libvlc_renderer_item_flags</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref><sp/>*p_item);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">LIBVLC_API<sp/>libvlc_renderer_discoverer_t<sp/>*</highlight></codeline>
+<codeline lineno="156" refid="group__libvlc__renderer__discoverer_1gaa433c657cc2711a3737f6f09eaac1646" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1gaa433c657cc2711a3737f6f09eaac1646" kindref="member">libvlc_renderer_discoverer_new</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_inst,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name<sp/>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="group__libvlc__renderer__discoverer_1ga92ed3e0a5e4a812e8c6a5b3d10008cce" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga92ed3e0a5e4a812e8c6a5b3d10008cce" kindref="member">libvlc_renderer_discoverer_release</ref>(<sp/>libvlc_renderer_discoverer_t<sp/>*p_rd<sp/>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="group__libvlc__renderer__discoverer_1gae3d8e1d89fde247262d75904db80b706" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1gae3d8e1d89fde247262d75904db80b706" kindref="member">libvlc_renderer_discoverer_start</ref>(<sp/>libvlc_renderer_discoverer_t<sp/>*p_rd<sp/>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="group__libvlc__renderer__discoverer_1gaeaa1a955bfb68b8c9bc2d1749b9cff31" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1gaeaa1a955bfb68b8c9bc2d1749b9cff31" kindref="member">libvlc_renderer_discoverer_stop</ref>(<sp/>libvlc_renderer_discoverer_t<sp/>*p_rd<sp/>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal">LIBVLC_API<sp/><ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref><sp/>*</highlight></codeline>
+<codeline lineno="215" refid="group__libvlc__renderer__discoverer_1gab19f1576b101b38fec230a48d6d2a6fc" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1gab19f1576b101b38fec230a48d6d2a6fc" kindref="member">libvlc_renderer_discoverer_event_manager</ref>(<sp/>libvlc_renderer_discoverer_t<sp/>*p_rd<sp/>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="group__libvlc__renderer__discoverer_1ga9b46158f154a3fbf09f7862d20bc80c7" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga9b46158f154a3fbf09f7862d20bc80c7" kindref="member">libvlc_renderer_discoverer_list_get</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_inst,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlibvlc__rd__description__t" kindref="compound">libvlc_rd_description_t</ref><sp/>***ppp_services<sp/>);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="group__libvlc__renderer__discoverer_1ga72972dec3110a7b4328f0ff9eedb1cb4" refkind="member"><highlight class="normal"><ref refid="group__libvlc__renderer__discoverer_1ga72972dec3110a7b4328f0ff9eedb1cb4" kindref="member">libvlc_renderer_discoverer_list_release</ref>(<sp/><ref refid="structlibvlc__rd__description__t" kindref="compound">libvlc_rd_description_t</ref><sp/>**pp_services,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_count<sp/>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_renderer_discoverer.h"/>
+  </compounddef>
+</doxygen>

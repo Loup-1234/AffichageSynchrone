@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__vlc__renderer__discovery" kind="group">
+    <compoundname>vlc_renderer_discovery</compoundname>
+    <title>VLC renderer discovery interface</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__vlc__renderer__discovery_1gaa9db3e944d7f4070b68b2c8250d354e5" prot="public" static="no">
+        <type>struct vlc_renderer_discovery_sys</type>
+        <definition>typedef struct vlc_renderer_discovery_sys vlc_renderer_discovery_sys</definition>
+        <argsstring></argsstring>
+        <name>vlc_renderer_discovery_sys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="116" column="41" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__vlc__renderer__discovery_1ga38c866eba94ff4adbc249023755ed3df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_rd_get_names</definition>
+        <argsstring>(vlc_object_t *p_obj, char ***pppsz_names, char ***pppsz_longnames) VLC_USED</argsstring>
+        <name>vlc_rd_get_names</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type>char ***</type>
+          <declname>pppsz_names</declname>
+        </param>
+        <param>
+          <type>char ***</type>
+          <declname>pppsz_longnames</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a list of renderer discovery modules</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pppsz_names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a list of module name, NULL terminated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pppsz_longnames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a list of module longname, NULL terminated</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS on success, or VLC_EGENERIC on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="129" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="129" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__discovery_1ga2371d6a6deba58b22cf7cd328f547a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvlc__renderer__discovery__t" kindref="compound">vlc_renderer_discovery_t</ref> *</type>
+        <definition>VLC_API vlc_renderer_discovery_t * vlc_rd_new</definition>
+        <argsstring>(vlc_object_t *p_obj, const char *psz_name, const struct vlc_renderer_discovery_owner *owner) VLC_USED</argsstring>
+        <name>vlc_rd_new</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structvlc__renderer__discovery__owner" kindref="compound">vlc_renderer_discovery_owner</ref> *</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new renderer discovery module</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the module to load, see vlc_rd_get_names() to get the list of names</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a valid vlc_renderer_discovery, need to be released with vlc_rd_release() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="144" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="144" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__discovery_1ga73a09fb981a09dc9d36db5efa28a2852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_rd_release</definition>
+        <argsstring>(vlc_renderer_discovery_t *p_rd)</argsstring>
+        <name>vlc_rd_release</name>
+        <param>
+          <type><ref refid="structvlc__renderer__discovery__t" kindref="compound">vlc_renderer_discovery_t</ref> *</type>
+          <declname>p_rd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="147" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="147" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__vlc__renderer__discovery_1ga762302f2db6c4f375651cbbae675a3ae" prot="public" static="no">
+        <name>vlc_rd_get_names</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>        vlc_rd_get_names(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="131" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" bodystart="131" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

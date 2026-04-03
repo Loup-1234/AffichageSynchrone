@@ -1,0 +1,898 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__stream" kind="group">
+    <compoundname>stream</compoundname>
+    <title>Stream</title>
+    <innerfile refid="vlc__stream_8h">vlc_stream.h</innerfile>
+    <innerclass refid="structstream__t" prot="public">stream_t</innerclass>
+    <innergroup refid="group__access">Access</innergroup>
+    <innergroup refid="group__stream__fifo">FIFO stream</innergroup>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__stream_1gac90a8aaf65579464a5604c9de255929a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>stream_query_e</name>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aaa8713b90e0df50b9ce6653211d20f4f9" prot="public">
+          <name>STREAM_CAN_SEEK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= bool * res=cannot fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa8aec9890f93fde818e3fe8bacd7496ec" prot="public">
+          <name>STREAM_CAN_FASTSEEK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= bool * res=cannot fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa8dd0cea80134003f8582ff8e8c5d48d3" prot="public">
+          <name>STREAM_CAN_PAUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= bool * res=cannot fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa4ad696863f1d78fdce009c9d3ca249a0" prot="public">
+          <name>STREAM_CAN_CONTROL_PACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= bool * res=cannot fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aad711fafff9c55278e65102af584a235b" prot="public">
+          <name>STREAM_GET_SIZE</name>
+          <initializer>=6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= uint64_t * res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa53150275f65cd089954c9e6cf610a807" prot="public">
+          <name>STREAM_IS_DIRECTORY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa63fe5c80dc98e616cc68efb5a677bdd2" prot="public">
+          <name>STREAM_GET_PTS_DELAY</name>
+          <initializer>= 0x101</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= int64_t* res=cannot fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aaff4a61fe8c4a4bb2d9ed917189481f00" prot="public">
+          <name>STREAM_GET_TITLE_INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=input_title_t*** arg2=int* res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa22189e0c84cb9b67b10cf7266873eaa7" prot="public">
+          <name>STREAM_GET_TITLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=unsigned * res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aacaee16aa8d513def9f83897a84c63378" prot="public">
+          <name>STREAM_GET_SEEKPOINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=unsigned * res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aaff64344cb822f1b6cb88f1cfe6289044" prot="public">
+          <name>STREAM_GET_META</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= vlc_meta_t * res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7ebc58a0d76f4fa44444305d3116bf2f" prot="public">
+          <name>STREAM_GET_CONTENT_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= char ** res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aaacf5c3f2478728f39372ebf0881c6c2c" prot="public">
+          <name>STREAM_GET_SIGNAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=double *pf_quality, arg2=double *pf_strength res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7e93d36786ed23873b0372e4a084d160" prot="public">
+          <name>STREAM_GET_TAGS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=const <ref refid="structblock__t" kindref="compound">block_t</ref> ** res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa52b071c3972f120269b8e694954717e8" prot="public">
+          <name>STREAM_SET_PAUSE_STATE</name>
+          <initializer>= 0x200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= bool res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa975e8a0d165a9dd46717374368de6c1b" prot="public">
+          <name>STREAM_SET_TITLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= int res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aafff7614b422eff8e6c2caefaaf98453c" prot="public">
+          <name>STREAM_SET_SEEKPOINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= int res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa603f56e65f3d97803a81de2a578907af" prot="public">
+          <name>STREAM_SET_RECORD_STATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=bool, arg2=const char *psz_ext (if arg1 is true) res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aafb3c9502004e4a15e1d29df047395104" prot="public">
+          <name>STREAM_SET_PRIVATE_ID_STATE</name>
+          <initializer>= 0x1000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa102c98ca143214ce1f67d8aba944c809" prot="public">
+          <name>STREAM_SET_PRIVATE_ID_CA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__stream_1ggac90a8aaf65579464a5604c9de255929aa09c4af2d5dcfd8cf5a3393c691e66803" prot="public">
+          <name>STREAM_GET_PRIVATE_ID_STATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Possible commands to send to vlc_stream_Control() and vlc_stream_vaControl() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="137" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="138" bodyend="168"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_stream_Read</definition>
+        <argsstring>(stream_t *, void *buf, size_t len) VLC_USED</argsstring>
+        <name>vlc_stream_Read</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads data from a byte stream.</para>
+<para>This function always waits for the requested number of bytes, unless a fatal error is encountered or the end-of-stream is reached first.</para>
+<para>If the buffer is NULL, data is skipped instead of read. This is effectively a relative forward seek, but it works even on non-seekable streams.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of buffer to read data into [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of bytes to read </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of bytes read or a negative value on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="183" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="183" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gace0ee3234325ed4f421dde063351ca62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_stream_ReadPartial</definition>
+        <argsstring>(stream_t *, void *buf, size_t len) VLC_USED</argsstring>
+        <name>vlc_stream_ReadPartial</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads partial data from a byte stream.</para>
+<para>This function waits until some data is available for reading from the stream, a fatal error is encountered or the end-of-stream is reached.</para>
+<para>Unlike <ref refid="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" kindref="member">vlc_stream_Read()</ref>, this function does not wait for the full requested bytes count. It can return a short count even before the end of the stream and in the absence of any error.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start of buffer to read data into [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer size (maximum number of bytes to read) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of bytes read or a negative value on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="199" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="199" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga0371076b9c19bce5f54bd3d48fd86ae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_stream_Peek</definition>
+        <argsstring>(stream_t *, const uint8_t **, size_t) VLC_USED</argsstring>
+        <name>vlc_stream_Peek</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <param>
+          <type>const uint8_t **</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Peeks at data from a byte stream.</para>
+<para>This function buffers for the requested number of bytes, waiting if necessary. Then it stores a pointer to the buffer. Unlike <ref refid="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" kindref="member">vlc_stream_Read()</ref> or vlc_stream_Block(), this function does not modify the stream read offset.</para>
+<para><simplesect kind="note"><para>The buffer remains valid until the next read/peek or seek operation on the same stream. In case of error, the buffer address is undefined.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bufp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>storage space for the buffer address [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of bytes to peek </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of bytes actually available (shorter than requested if the end-of-stream is reached), or a negative value on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="218" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="218" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga170791160b1f8f754c170bcaa6168bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * vlc_stream_ReadBlock</definition>
+        <argsstring>(stream_t *) VLC_USED</argsstring>
+        <name>vlc_stream_ReadBlock</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads a data block from a byte stream.</para>
+<para>This function dequeues the next block of data from the byte stream. The byte stream back-end decides on the size of the block; the caller cannot make any assumption about it.</para>
+<para>The function might also return NULL spuriously - this does not necessarily imply that the stream is ended nor that it has encountered a nonrecoverable error.</para>
+<para>This function should be used instead of <ref refid="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" kindref="member">vlc_stream_Read()</ref> or <ref refid="group__stream_1ga0371076b9c19bce5f54bd3d48fd86ae9" kindref="member">vlc_stream_Peek()</ref> when the caller can handle reads of any size.</para>
+<para><simplesect kind="return"><para>either a data block or NULL </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="236" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="236" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga5e84953ea62ecd95d822ae9be11e70f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API uint64_t</type>
+        <definition>VLC_API uint64_t vlc_stream_Tell</definition>
+        <argsstring>(const stream_t *) VLC_USED</argsstring>
+        <name>vlc_stream_Tell</name>
+        <param>
+          <type>const <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tells the current stream position.</para>
+<para>This function tells the current read offset (in bytes) from the start of the start of the stream. <simplesect kind="note"><para>The read offset may be larger than the stream size, either because of a seek past the end, or because the stream shrank asynchronously.</para>
+</simplesect>
+<simplesect kind="return"><para>the byte offset from the beginning of the stream (cannot fail) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="248" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="248" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gad86da11c047d70d0b86196b62c02667d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool vlc_stream_Eof</definition>
+        <argsstring>(const stream_t *) VLC_USED</argsstring>
+        <name>vlc_stream_Eof</name>
+        <param>
+          <type>const <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks for end of stream.</para>
+<para>Checks if the last attempt to reads data from the stream encountered the end of stream before the attempt could be fully satisfied. The value is initially false, and is reset to false by <ref refid="group__stream_1ga40ea027b5298f00c541fa80fc53d906e" kindref="member">vlc_stream_Seek()</ref>.</para>
+<para><simplesect kind="note"><para>The function can return false even though the current stream position is equal to the stream size. It will return true after the following attempt to read more than zero bytes.</para>
+</simplesect>
+<simplesect kind="note"><para>It might be possible to read after the end of the stream. It implies the size of the stream increased asynchronously in the mean time. Streams of most types cannot trigger such a case, but regular local files notably can.</para>
+</simplesect>
+<simplesect kind="note"><para>In principles, the stream size should match the stream offset when the end-of-stream is reached. But that rule is not enforced; it is entirely dependent on the underlying implementation of the stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="270" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="270" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga40ea027b5298f00c541fa80fc53d906e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_stream_Seek</definition>
+        <argsstring>(stream_t *, uint64_t offset) VLC_USED</argsstring>
+        <name>vlc_stream_Seek</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the current stream position.</para>
+<para>This function changes the read offset within a stream, if the stream supports seeking. In case of error, the read offset is not changed.</para>
+<para><simplesect kind="note"><para>It is possible (but not useful) to seek past the end of a stream.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte offset from the beginning of the stream </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>zero on success, a negative value on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="283" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="283" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gac5580b5547dcea257860c1a135f5aa8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_stream_vaControl</definition>
+        <argsstring>(stream_t *s, int query, va_list args)</argsstring>
+        <name>vlc_stream_vaControl</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="285" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="285" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gaaef36d200e0f0fc3deff825b8e47d5c0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_stream_Control</definition>
+        <argsstring>(stream_t *s, int query,...)</argsstring>
+        <name>vlc_stream_Control</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="287" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="287" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga1aad3775e5c6aa09c5d8c7543a0bac8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * vlc_stream_Block</definition>
+        <argsstring>(stream_t *s, size_t)</argsstring>
+        <name>vlc_stream_Block</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="298" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="298" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gaa55164ff3fb5f1aed9bb573abcb78432" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_stream_ReadLine</definition>
+        <argsstring>(stream_t *)</argsstring>
+        <name>vlc_stream_ReadLine</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="299" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="299" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga051f36f87fa29a14b047f0ed7bd7c325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_stream_ReadDir</definition>
+        <argsstring>(stream_t *, input_item_node_t *)</argsstring>
+        <name>vlc_stream_ReadDir</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="300" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="300" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga312a17d8be94eb50948391703b071773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_stream_Delete</definition>
+        <argsstring>(stream_t *s)</argsstring>
+        <name>vlc_stream_Delete</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes a byte stream. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte stream to close </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="306" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="306" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga5811d32865b5734d9fdf496e25b85250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>VLC_API stream_t * vlc_stream_CommonNew</definition>
+        <argsstring>(vlc_object_t *, void(*)(stream_t *))</argsstring>
+        <name>vlc_stream_CommonNew</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>void(*)(<ref refid="structstream__t" kindref="compound">stream_t</ref> *)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="308" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="308" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga531572733046d19bb5150d2b6d46e13a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED int</type>
+        <definition>static VLC_USED int vlc_stream_GetSize</definition>
+        <argsstring>(stream_t *s, uint64_t *size)</argsstring>
+        <name>vlc_stream_GetSize</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>uint64_t *</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the size of the stream. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="313" column="28" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="313" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga6245f102e675f1b934adc8161cfa3b85" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int64_t</type>
+        <definition>static int64_t stream_Size</definition>
+        <argsstring>(stream_t *s)</argsstring>
+        <name>stream_Size</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="318" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="318" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga834b3fee1cb9226ff357baed83528b65" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED bool</type>
+        <definition>static VLC_USED bool stream_HasExtension</definition>
+        <argsstring>(stream_t *s, const char *extension)</argsstring>
+        <name>stream_HasExtension</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>extension</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="330" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="330" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gaf69317485e5e60d51c3b40af88d53e2d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * stream_ContentType</definition>
+        <argsstring>(stream_t *s)</argsstring>
+        <name>stream_ContentType</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the Content-Type of a stream, or NULL if unknown. Result must be free()&apos;d. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="342" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="342" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga4f7cd77f694390ac15e91c6e5ba13ae2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED char *</type>
+        <definition>static VLC_USED char * stream_MimeType</definition>
+        <argsstring>(stream_t *s)</argsstring>
+        <name>stream_MimeType</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the mime-type of a stream</para>
+<para><simplesect kind="warning"><para>the returned resource is to be freed by the caller </para>
+</simplesect>
+<simplesect kind="return"><para>the mime-type, or <computeroutput>NULL</computeroutput> if unknown </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="357" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="357" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga5acbb69e0bfc48f4e5892f62868adf50" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED bool</type>
+        <definition>static VLC_USED bool stream_IsMimeType</definition>
+        <argsstring>(stream_t *s, const char *type)</argsstring>
+        <name>stream_IsMimeType</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks for a MIME type.</para>
+<para>Checks if the stream has a specific MIME type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="373" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="373" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gacb479466634a99bda0edb52ea567da0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>VLC_API stream_t * vlc_stream_MemoryNew</definition>
+        <argsstring>(vlc_object_t *obj, uint8_t *base, size_t size, bool preserve) VLC_USED</argsstring>
+        <name>vlc_stream_MemoryNew</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>preserve</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a stream from a memory buffer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parent VLC object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start address of the memory buffer to read from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size in bytes of the memory buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>preserve</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if false, free(base) will be called when the stream is destroyed; if true, the memory buffer is preserved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="393" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="393" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gac0b4cc2940ee9c286a1de8208507f9d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>VLC_API stream_t * vlc_stream_NewURL</definition>
+        <argsstring>(vlc_object_t *obj, const char *url) VLC_USED</argsstring>
+        <name>vlc_stream_NewURL</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a <ref refid="structstream__t" kindref="compound">stream_t</ref> reading from a URL. You must delete it using vlc_stream_Delete. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="402" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="402" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga2155fd4a193a446078d943372a8c2c73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>VLC_API stream_t * vlc_stream_FilterNew</definition>
+        <argsstring>(stream_t *p_source, const char *psz_stream_filter)</argsstring>
+        <name>vlc_stream_FilterNew</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>p_source</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_stream_filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try to add a stream filter to an open stream. <simplesect kind="return"><para>New stream to use, or NULL if the filter could not be added. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="472" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="472" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gabf4e3da2c71d9321d1362bf9f7d1f7db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_stream_FilterDefaultReadDir</definition>
+        <argsstring>(stream_t *s, input_item_node_t *p_node)</argsstring>
+        <name>vlc_stream_FilterDefaultReadDir</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>p_node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default ReadDir implementation for stream Filter. This implementation just forward the pf_readdir call to the p_source stream. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="478" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" declline="478" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__stream_1gaf488d4a9dddfa2f68fa1a9a574a79d64" prot="public" static="no">
+        <name>vlc_stream_MemoryNew</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <initializer>        vlc_stream_MemoryNew(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c, d)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="395" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="395" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="define" id="group__stream_1gafe9dd5643b3b731555df86a6a1b879b1" prot="public" static="no">
+        <name>vlc_stream_NewURL</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>vlc_stream_NewURL(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="404" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="404" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__stream_1ga25b99c2c20aa0060c95af15f970a0023" prot="public" static="no">
+        <name>stream_FilterSetDefaultReadDir</name>
+        <param><defname>stream</defname></param>
+        <initializer>do { \
+    (stream)-&gt;pf_readdir = <ref refid="group__stream_1gabf4e3da2c71d9321d1362bf9f7d1f7db" kindref="member">vlc_stream_FilterDefaultReadDir</ref>; \
+} while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets vlc_stream_FilterDefaultReadDir as the pf_readdir callback for this stream filter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" line="485" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h" bodystart="485" bodyend="488"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Buffered input byte streams </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

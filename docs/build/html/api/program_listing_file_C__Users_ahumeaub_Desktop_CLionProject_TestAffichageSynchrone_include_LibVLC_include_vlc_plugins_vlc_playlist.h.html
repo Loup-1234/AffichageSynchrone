@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_playlist.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_playlist.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_playlist.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_playlist.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-playlist-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-playlist-h"></span><h1>Program Listing for File vlc_playlist.h<a class="headerlink" href="#program-listing-for-file-vlc-playlist-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_playlist.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-playlist-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_playlist.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_playlist.h : Playlist functions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2004 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Samuel Hocevar &lt;sam@zoy.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_PLAYLIST_H_</span>
+<span class="cp">#define VLC_PLAYLIST_H_</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_events.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_aout.h&gt;</span>
+
+<span class="n">TYPEDEF_ARRAY</span><span class="p">(</span><span class="n">playlist_item_t</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_array_t</span><span class="p">)</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">intf_thread_t</span><span class="p">;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">playlist_export_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">base_url</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">p_file</span><span class="p">;</span>
+<span class="w">    </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_root</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">playlist_export_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">playlist_item_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_item_t</span><span class="w">           </span><span class="o">*</span><span class="n">p_input</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">playlist_item_t</span><span class="w">      </span><span class="o">**</span><span class="n">pp_children</span><span class="p">;</span>
+<span class="w">    </span><span class="n">playlist_item_t</span><span class="w">       </span><span class="o">*</span><span class="n">p_parent</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">                    </span><span class="n">i_children</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">               </span><span class="n">i_nb_played</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">                    </span><span class="n">i_id</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">                </span><span class="n">i_flags</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PLAYLIST_DBL_FLAG</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mh">0x04</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_RO_FLAG</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="mh">0x08</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_SUBITEM_STOP_FLAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x40</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_NO_INHERIT_FLAG</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mh">0x80</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">playlist_item_flags_e</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span>
+<span class="p">{</span><span class="w"> </span><span class="n">PLAYLIST_STOPPED</span><span class="p">,</span><span class="n">PLAYLIST_RUNNING</span><span class="p">,</span><span class="n">PLAYLIST_PAUSED</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">playlist_status_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">playlist_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="n">playlist_item_array_t</span><span class="w"> </span><span class="n">items</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">playlist_item_array_t</span><span class="w"> </span><span class="n">current</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">                   </span><span class="n">i_current_index</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Predefined items */</span>
+<span class="w">    </span><span class="n">playlist_item_t</span><span class="w">  </span><span class="n">root</span><span class="p">;</span>
+<span class="w">    </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playing</span><span class="p">;</span>
+<span class="w">    </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_media_library</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/* A bit of macro magic to generate an enum out of the following list,</span>
+<span class="cm"> * and later, to generate a list of static functions out of the same list.</span>
+<span class="cm"> * There is also SORT_RANDOM, which is always last and handled specially.</span>
+<span class="cm"> */</span>
+<span class="cp">#define VLC_DEFINE_SORT_FUNCTIONS \</span>
+<span class="cp">    DEF( SORT_ID )\</span>
+<span class="cp">    DEF( SORT_TITLE )\</span>
+<span class="cp">    DEF( SORT_TITLE_NODES_FIRST )\</span>
+<span class="cp">    DEF( SORT_ARTIST )\</span>
+<span class="cp">    DEF( SORT_GENRE )\</span>
+<span class="cp">    DEF( SORT_DURATION )\</span>
+<span class="cp">    DEF( SORT_TITLE_NUMERIC )\</span>
+<span class="cp">    DEF( SORT_ALBUM )\</span>
+<span class="cp">    DEF( SORT_TRACK_NUMBER )\</span>
+<span class="cp">    DEF( SORT_DESCRIPTION )\</span>
+<span class="cp">    DEF( SORT_RATING )\</span>
+<span class="cp">    DEF( SORT_URI )\</span>
+<span class="cp">    DEF( SORT_DISC_NUMBER )\</span>
+<span class="cp">    DEF( SORT_DATE )</span>
+
+<span class="cp">#define DEF( s ) s,</span>
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_DEFINE_SORT_FUNCTIONS</span>
+<span class="w">    </span><span class="n">SORT_RANDOM</span><span class="p">,</span>
+<span class="w">    </span><span class="n">NUM_SORT_FNS</span><span class="o">=</span><span class="n">SORT_RANDOM</span>
+<span class="p">};</span>
+<span class="cp">#undef  DEF</span>
+<span class="cp">#ifndef VLC_INTERNAL_PLAYLIST_SORT_FUNCTIONS</span>
+<span class="cp">#undef  VLC_DEFINE_SORT_FUNCTIONS</span>
+<span class="cp">#endif</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ORDER_NORMAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORDER_REVERSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="cp">#define PLAYLIST_END           -1</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">pl_locked_state</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pl_Locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="n">pl_Unlocked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="p">};</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Prototypes</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cm">/* Helpers */</span>
+<span class="cp">#define PL_LOCK playlist_Lock( p_playlist )</span>
+<span class="cp">#define PL_UNLOCK playlist_Unlock( p_playlist )</span>
+<span class="cp">#define PL_ASSERT_LOCKED playlist_AssertLocked( p_playlist )</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PLAYLIST_PLAY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_VIEWPLAY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_TOGGLE_PAUSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_STOP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_SKIP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_PAUSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PLAYLIST_RESUME</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="cp">#define playlist_Play(p) playlist_Control(p,PLAYLIST_PLAY, pl_Unlocked )</span>
+<span class="cp">#define playlist_TogglePause(p) \</span>
+<span class="cp">        playlist_Control(p, PLAYLIST_TOGGLE_PAUSE, pl_Unlocked)</span>
+<span class="cp">#define playlist_Stop(p) playlist_Control(p,PLAYLIST_STOP, pl_Unlocked )</span>
+<span class="cp">#define playlist_Next(p) playlist_Control(p,PLAYLIST_SKIP, pl_Unlocked, 1)</span>
+<span class="cp">#define playlist_Prev(p) playlist_Control(p,PLAYLIST_SKIP, pl_Unlocked, -1)</span>
+<span class="cp">#define playlist_Skip(p,i) playlist_Control(p,PLAYLIST_SKIP, pl_Unlocked,  (i) )</span>
+<span class="cp">#define playlist_Pause(p) \</span>
+<span class="cp">        playlist_Control(p, PLAYLIST_PAUSE, pl_Unlocked)</span>
+<span class="cp">#define playlist_Resume(p) \</span>
+<span class="cp">        playlist_Control(p, PLAYLIST_RESUME, pl_Unlocked)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_Lock</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_Unlock</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_AssertLocked</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_Deactivate</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_Control</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_query</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b_locked</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w">  </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">playlist_ViewPlay</span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">pl</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">node</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">playlist_Control</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span><span class="w"> </span><span class="n">PLAYLIST_VIEWPLAY</span><span class="p">,</span><span class="w"> </span><span class="n">pl_Locked</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">playlist_CurrentInput</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">playlist_CurrentInputLocked</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">playlist_GetNodeDuration</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_Clear</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/* Playlist sorting */</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_TreeMove</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_TreeMoveMany</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_RecursiveNodeSort</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">playlist_CurrentPlayingItem</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_Status</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_Export</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                             </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_playlist</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_type</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_Import</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_file</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/********************** Services discovery ***********************/</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_ServicesDiscoveryAdd</span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_ServicesDiscoveryRemove</span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">playlist_IsServicesDiscoveryLoaded</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_DEPRECATED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_ServicesDiscoveryControl</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/********************** Renderer ***********************/</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_SetRenderer</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="o">*</span><span class="w"> </span><span class="n">p_pl</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_renderer_item_t</span><span class="o">*</span><span class="w"> </span><span class="n">p_item</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="cm">/********************************************************</span>
+<span class="cm"> * Item management</span>
+<span class="cm"> ********************************************************/</span>
+
+<span class="cm">/******************** Item addition ********************/</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_Add</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_AddExt</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_AddInput</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">playlist_NodeAddInput</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_NodeAddCopy</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/********************************** Item search *************************/</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">playlist_ItemGetById</span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">playlist_ItemGetByInput</span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span>
+<span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_LiveSearchUpdate</span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/********************************************************</span>
+<span class="cm"> * Tree management</span>
+<span class="cm"> ********************************************************/</span>
+<span class="cm">/* Node management */</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">playlist_NodeCreate</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_parent</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_flags</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">playlist_ChildSearchName</span><span class="p">(</span><span class="n">playlist_item_t</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_NodeDelete</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/**************************</span>
+<span class="cm"> * Audio output management</span>
+<span class="cm"> **************************/</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">playlist_GetAout</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">playlist_VolumeGet</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_VolumeSet</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_VolumeUp</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define playlist_VolumeDown(a, b, c) playlist_VolumeUp(a, -(b), c)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_MuteSet</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">playlist_MuteGet</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">playlist_MuteToggle</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">pl</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist_MuteGet</span><span class="p">(</span><span class="w"> </span><span class="n">pl</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist_MuteSet</span><span class="p">(</span><span class="w"> </span><span class="n">pl</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="n">val</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">playlist_EnableAudioFilter</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/***********************************************************************</span>
+<span class="cm"> * Inline functions</span>
+<span class="cm"> ***********************************************************************/</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">playlist_IsEmpty</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PL_ASSERT_LOCKED</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_playlist</span><span class="o">-&gt;</span><span class="n">items</span><span class="p">.</span><span class="n">i_size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">playlist_CurrentSize</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_playlist</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PL_ASSERT_LOCKED</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_playlist</span><span class="o">-&gt;</span><span class="n">current</span><span class="p">.</span><span class="n">i_size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

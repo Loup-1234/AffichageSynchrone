@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__error" kind="group">
+    <compoundname>libvlc_error</compoundname>
+    <title>LibVLC error handling</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_errmsg</definition>
+        <argsstring>(void)</argsstring>
+        <name>libvlc_errmsg</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A human-readable error message for the last LibVLC error in the calling thread. The resulting string is valid until another error occurs (at least until the next LibVLC call).</para>
+<para><simplesect kind="warning"><para>This will be NULL if there was no error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="93" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="93" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_clearerr</definition>
+        <argsstring>(void)</argsstring>
+        <name>libvlc_clearerr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears the LibVLC error status for the current thread. This is optional. By default, the error status is automatically overridden when a new error occurs, and destroyed when the thread exits. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="100" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="100" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_vprinterr</definition>
+        <argsstring>(const char *fmt, va_list ap)</argsstring>
+        <name>libvlc_vprinterr</name>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>ap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the LibVLC error status and message for the current thread. Any previous error is overridden. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a nul terminated string in any case </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="109" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="109" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_printerr</definition>
+        <argsstring>(const char *fmt,...)</argsstring>
+        <name>libvlc_printerr</name>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the LibVLC error status and message for the current thread. Any previous error is overridden. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a nul terminated string in any case </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="118" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="118" declcolumn="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

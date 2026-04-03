@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structinteraction__dialog__t" kind="struct" language="C++" prot="public">
+    <compoundname>interaction_dialog_t</compoundname>
+    <includes refid="vlc__interface_8h" local="no">vlc_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <member refid="group__interface_1ga709ea71fd94031ae849581c308a4cb2c" kind="variable"><name>i_type</name></member>
+      <member refid="group__interface_1ga8be0b7a573483fb7544b947b32dc991f" kind="variable"><name>psz_title</name></member>
+      <member refid="group__interface_1ga2ea565fd49f8b4c9fd41aae09da1e9c7" kind="variable"><name>psz_description</name></member>
+      <member refid="group__interface_1gac6dc7491b5454d4b506395cca4177052" kind="variable"><name>psz_default_button</name></member>
+      <member refid="group__interface_1ga86b06806dd6d688829bc076308992d48" kind="variable"><name>psz_alternate_button</name></member>
+      <member refid="group__interface_1ga2b5ef764d12c5a9c70183e84cd9c5a7f" kind="variable"><name>psz_other_button</name></member>
+      <member refid="group__interface_1ga6cbfe082ca95e800fe93a9c12d47fe6d" kind="variable"><name>psz_returned</name></member>
+      <member refid="group__interface_1gad3049c4442528693350c24f36a69ce44" kind="variable"><name>val</name></member>
+      <member refid="group__interface_1ga4f84c6c5a704f51d081e864863a87064" kind="variable"><name>i_timeToGo</name></member>
+      <member refid="group__interface_1ga13696162d9a24f7ff0de250108192536" kind="variable"><name>b_cancelled</name></member>
+      <member refid="group__interface_1gaa7ed9fb29dbecdea55f6f0d88c84e2a1" kind="variable"><name>p_private</name></member>
+      <member refid="group__interface_1gadf0e4b67cdaffadf704e423efcf5d5bc" kind="variable"><name>i_status</name></member>
+      <member refid="group__interface_1ga3db7182e1308046b00f620fe2267991f" kind="variable"><name>i_action</name></member>
+      <member refid="group__interface_1ga447fe3fcb44629a7ad8ce139d1a76938" kind="variable"><name>i_flags</name></member>
+      <member refid="group__interface_1ga4b2b334d19ce2fb9f687876c71eebb63" kind="variable"><name>i_return</name></member>
+      <member refid="group__interface_1ga6cd22271fd9f15c19bcb05a073420d01" kind="variable"><name>p_parent</name></member>
+      <member refid="group__interface_1ga01af407051edbcf73f7f5d7f6249d904" kind="variable"><name>p_interface</name></member>
+      <member refid="group__interface_1ga34c436428465f8e10f3792aa44839dc9" kind="variable"><name>p_lock</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure describes a piece of interaction with the user </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>config_chain_t</label>
+        <link refid="structconfig__chain__t"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>interaction_dialog_t</label>
+        <link refid="structinteraction__dialog__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+val</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+p_parent</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+p_interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>intf_thread_t</label>
+        <link refid="structintf__thread__t"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+p_cfg</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vlc_list_t</label>
+        <link refid="structvlc__list__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_values</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>vlc_object_t</label>
+        <link refid="structvlc__object__t"/>
+      </node>
+      <node id="2">
+        <label>vlc_value_t</label>
+        <link refid="unionvlc__value__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" line="256" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" bodystart="257" bodyend="283"/>
+    <listofallmembers>
+      <member refid="group__interface_1ga13696162d9a24f7ff0de250108192536" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>b_cancelled</name></member>
+      <member refid="group__interface_1ga3db7182e1308046b00f620fe2267991f" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>i_action</name></member>
+      <member refid="group__interface_1ga447fe3fcb44629a7ad8ce139d1a76938" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>i_flags</name></member>
+      <member refid="group__interface_1ga4b2b334d19ce2fb9f687876c71eebb63" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>i_return</name></member>
+      <member refid="group__interface_1gadf0e4b67cdaffadf704e423efcf5d5bc" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>i_status</name></member>
+      <member refid="group__interface_1ga4f84c6c5a704f51d081e864863a87064" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>i_timeToGo</name></member>
+      <member refid="group__interface_1ga709ea71fd94031ae849581c308a4cb2c" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>i_type</name></member>
+      <member refid="group__interface_1ga01af407051edbcf73f7f5d7f6249d904" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>p_interface</name></member>
+      <member refid="group__interface_1ga34c436428465f8e10f3792aa44839dc9" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>p_lock</name></member>
+      <member refid="group__interface_1ga6cd22271fd9f15c19bcb05a073420d01" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>p_parent</name></member>
+      <member refid="group__interface_1gaa7ed9fb29dbecdea55f6f0d88c84e2a1" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>p_private</name></member>
+      <member refid="group__interface_1ga86b06806dd6d688829bc076308992d48" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>psz_alternate_button</name></member>
+      <member refid="group__interface_1gac6dc7491b5454d4b506395cca4177052" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>psz_default_button</name></member>
+      <member refid="group__interface_1ga2ea565fd49f8b4c9fd41aae09da1e9c7" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>psz_description</name></member>
+      <member refid="group__interface_1ga2b5ef764d12c5a9c70183e84cd9c5a7f" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>psz_other_button</name></member>
+      <member refid="group__interface_1ga6cbfe082ca95e800fe93a9c12d47fe6d" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>psz_returned</name></member>
+      <member refid="group__interface_1ga8be0b7a573483fb7544b947b32dc991f" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>psz_title</name></member>
+      <member refid="group__interface_1gad3049c4442528693350c24f36a69ce44" prot="public" virt="non-virtual"><scope>interaction_dialog_t</scope><name>val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_filter.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_filter.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_filter.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_filter.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-filter-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-filter-h"></span><h1>Program Listing for File vlc_filter.h<a class="headerlink" href="#program-listing-for-file-vlc-filter-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_filter.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-filter-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_filter.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_filter.h: filter related structures and functions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2014 VLC authors and VideoLAN</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Gildas Bazin &lt;gbazin@videolan.org&gt;</span>
+<span class="cm"> *          Antoine Cellerier &lt;dionoea at videolan dot org&gt;</span>
+<span class="cm"> *          Rémi Denis-Courmont</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_FILTER_H</span>
+<span class="cp">#define VLC_FILTER_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_es.h&gt;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">filter_owner_sys_t</span><span class="w"> </span><span class="n">filter_owner_sys_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">filter_owner_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">struct</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">buffer_new</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="n">video</span><span class="p">;</span>
+<span class="w">        </span><span class="k">struct</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">buffer_new</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="n">sub</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span><span class="w"> </span><span class="n">filter_owner_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">filter_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="cm">/* Module properties */</span>
+<span class="w">    </span><span class="n">module_t</span><span class="w"> </span><span class="o">*</span><span class="w">          </span><span class="n">p_module</span><span class="p">;</span>
+<span class="w">    </span><span class="n">filter_sys_t</span><span class="w"> </span><span class="o">*</span><span class="w">      </span><span class="n">p_sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Input format */</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w">         </span><span class="n">fmt_in</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Output format of filter */</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w">         </span><span class="n">fmt_out</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">                </span><span class="n">b_allow_fmt_out_change</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Name of the &quot;video filter&quot; shortcut that is requested, can be NULL */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w">        </span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/* Filter configuration */</span>
+<span class="w">    </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w">    </span><span class="n">p_cfg</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_video_filter</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_audio_filter</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_video_blend</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w">  </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                 </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf_sub_source</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf_sub_filter</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_render</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* TODO: video filter drain */</span>
+<span class="w">        </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf_audio_drain</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_flush</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_change_viewpoint</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_video_mouse</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                               </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_old</span><span class="p">,</span>
+<span class="w">                               </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_new</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_sub_mouse</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_old</span><span class="p">,</span>
+<span class="w">                             </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_new</span><span class="p">,</span>
+<span class="w">                             </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="cm">/* Input attachments</span>
+<span class="cm">     * XXX use filter_GetInputAttachments */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_get_attachments</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">***</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Private structure for the owner of the decoder */</span>
+<span class="w">    </span><span class="n">filter_owner_t</span><span class="w">      </span><span class="n">owner</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="nf">filter_NewPicture</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_filter</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">pic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">owner</span><span class="p">.</span><span class="n">video</span><span class="p">.</span><span class="n">buffer_new</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pic</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">msg_Warn</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;can&#39;t get output picture&quot;</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">filter_Flush</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_filter</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_flush</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_flush</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">filter_ChangeViewpoint</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_filter</span><span class="p">,</span>
+<span class="w">                                           </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">vp</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_change_viewpoint</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_change_viewpoint</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="p">,</span><span class="w"> </span><span class="n">vp</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="nf">filter_DrainAudio</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_filter</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_audio_drain</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_audio_drain</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="nf">filter_NewSubpicture</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_filter</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="n">subpic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">owner</span><span class="p">.</span><span class="n">sub</span><span class="p">.</span><span class="n">buffer_new</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">subpic</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">msg_Warn</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;can&#39;t get output subpicture&quot;</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">subpic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">filter_GetInputAttachments</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_filter</span><span class="p">,</span>
+<span class="w">                                              </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">***</span><span class="n">ppp_attachment</span><span class="p">,</span>
+<span class="w">                                              </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_attachment</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_get_attachments</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">VLC_EGENERIC</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_filter</span><span class="o">-&gt;</span><span class="n">pf_get_attachments</span><span class="p">(</span><span class="w"> </span><span class="n">p_filter</span><span class="p">,</span>
+<span class="w">                                         </span><span class="n">ppp_attachment</span><span class="p">,</span><span class="w"> </span><span class="n">pi_attachment</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_AddProxyCallbacks</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter</span><span class="p">,</span>
+<span class="w">                                       </span><span class="n">vlc_callback_t</span><span class="w"> </span><span class="n">restart_cb</span><span class="w"> </span><span class="p">);</span>
+<span class="cp"># define filter_AddProxyCallbacks(a, b, c) \</span>
+<span class="cp">    filter_AddProxyCallbacks(VLC_OBJECT(a), b, c)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_DelProxyCallbacks</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter</span><span class="p">,</span>
+<span class="w">                                       </span><span class="n">vlc_callback_t</span><span class="w"> </span><span class="n">restart_cb</span><span class="p">);</span>
+<span class="cp"># define filter_DelProxyCallbacks(a, b, c) \</span>
+<span class="cp">    filter_DelProxyCallbacks(VLC_OBJECT(a), b, c)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">filter_NewBlend</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst_chroma</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filter_ConfigureBlend</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_dst_width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_dst_height</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filter_Blend</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_dst_x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_dst_y</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_alpha</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_DeleteBlend</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cp">#define VIDEO_FILTER_WRAPPER( name )                                    \</span>
+<span class="cp">    static picture_t *name ## _Filter ( filter_t *p_filter,             \</span>
+<span class="cp">                                        picture_t *p_pic )              \</span>
+<span class="cp">    {                                                                   \</span>
+<span class="cp">        picture_t *p_outpic = filter_NewPicture( p_filter );            \</span>
+<span class="cp">        if( p_outpic )                                                  \</span>
+<span class="cp">        {                                                               \</span>
+<span class="cp">            name( p_filter, p_pic, p_outpic );                          \</span>
+<span class="cp">            picture_CopyProperties( p_outpic, p_pic );                  \</span>
+<span class="cp">        }                                                               \</span>
+<span class="cp">        picture_Release( p_pic );                                       \</span>
+<span class="cp">        return p_outpic;                                                \</span>
+<span class="cp">    }</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">filter_chain_t</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="p">;</span>
+
+<span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">filter_chain_New</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">es_format_category_e</span><span class="w"> </span><span class="p">)</span>
+<span class="n">VLC_USED</span><span class="p">;</span>
+<span class="cp">#define filter_chain_New( a, b, c ) filter_chain_New( VLC_OBJECT( a ), b, c )</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">filter_chain_NewVideo</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">change</span><span class="p">,</span>
+<span class="w">                                                </span><span class="k">const</span><span class="w"> </span><span class="n">filter_owner_t</span><span class="w"> </span><span class="o">*</span><span class="n">owner</span><span class="w"> </span><span class="p">)</span>
+<span class="n">VLC_USED</span><span class="p">;</span>
+<span class="cp">#define filter_chain_NewVideo( a, b, c ) \</span>
+<span class="cp">        filter_chain_NewVideo( VLC_OBJECT( a ), b, c )</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_chain_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_chain_Reset</span><span class="p">(</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter_chain_AppendFilter</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">cfg</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt_in</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt_out</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filter_chain_AppendConverter</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt_in</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt_out</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filter_chain_AppendFromString</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_chain_DeleteFilter</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">                                       </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">filter_chain_IsEmpty</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter_chain_GetFmtOut</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter_chain_VideoFilter</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">                                            </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">pic</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">filter_chain_VideoFlush</span><span class="p">(</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">filter_chain_SubSource</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">spu_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">display_date</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="n">filter_chain_SubFilter</span><span class="p">(</span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="n">subpic</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filter_chain_MouseFilter</span><span class="p">(</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filter_chain_MouseEvent</span><span class="p">(</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_mouse_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">filter_chain_ForEach</span><span class="p">(</span><span class="w"> </span><span class="n">filter_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">chain</span><span class="p">,</span>
+<span class="w">                          </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">opaque</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cp">#endif </span><span class="cm">/* _VLC_FILTER_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_threads.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_threads.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_threads.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_threads.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-threads-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h"></span><h1>Program Listing for File vlc_threads.h<a class="headerlink" href="#program-listing-for-file-vlc-threads-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_threads.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-threads-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_threads.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_threads.h : threads implementation for the VideoLAN client</span>
+<span class="cm"> * This header provides portable declarations for mutexes &amp; conditions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999, 2002 VLC authors and VideoLAN</span>
+<span class="cm"> * Copyright © 2007-2016 Rémi Denis-Courmont</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Jean-Marc Dressler &lt;polux@via.ecp.fr&gt;</span>
+<span class="cm"> *          Samuel Hocevar &lt;sam@via.ecp.fr&gt;</span>
+<span class="cm"> *          Gildas Bazin &lt;gbazin@netcourrier.com&gt;</span>
+<span class="cm"> *          Christophe Massiot &lt;massiot@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_THREADS_H_</span>
+<span class="cp">#define VLC_THREADS_H_</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_testcancel</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cp">#if defined (_WIN32)</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;process.h&gt;</span>
+<span class="cp"># ifndef ETIMEDOUT</span>
+<span class="cp">#  define ETIMEDOUT 10060 </span><span class="cm">/* This is the value in winsock.h. */</span>
+<span class="cp"># endif</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_thread</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_thread_t</span><span class="p">;</span>
+<span class="cp"># define VLC_THREAD_CANCELED NULL</span>
+<span class="cp"># define LIBVLC_NEED_SLEEP</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dynamic</span><span class="p">;</span>
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">struct</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">locked</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">contention</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="n">CRITICAL_SECTION</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_MUTEX { false, { { false, 0 } } }</span>
+<span class="cp">#define LIBVLC_NEED_CONDVAR</span>
+<span class="cp">#define LIBVLC_NEED_SEMAPHORE</span>
+<span class="cp">#define LIBVLC_NEED_RWLOCK</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_threadvar</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_threadvar_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_timer</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_timer_t</span><span class="p">;</span>
+
+<span class="cp"># define VLC_THREAD_PRIORITY_LOW      0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_INPUT    THREAD_PRIORITY_ABOVE_NORMAL</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_AUDIO    THREAD_PRIORITY_HIGHEST</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_VIDEO    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_OUTPUT   THREAD_PRIORITY_ABOVE_NORMAL</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_HIGHEST  THREAD_PRIORITY_TIME_CRITICAL</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_poll</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">pollfd</span><span class="w"> </span><span class="o">*</span><span class="n">fds</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">nfds</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">timeout</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_testcancel</span><span class="p">();</span>
+<span class="w">    </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">poll</span><span class="p">(</span><span class="n">fds</span><span class="p">,</span><span class="w"> </span><span class="n">nfds</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">vlc_testcancel</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp"># define poll(u,n,t) vlc_poll(u, n, t)</span>
+
+<span class="cp">#elif defined (__OS2__)</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;errno.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_thread</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_thread_t</span><span class="p">;</span>
+<span class="cp">#define VLC_THREAD_CANCELED NULL</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dynamic</span><span class="p">;</span>
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">struct</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">locked</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">contention</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="n">HMTX</span><span class="w"> </span><span class="n">hmtx</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_MUTEX { false, { { false, 0 } } }</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">HEV</span><span class="w">      </span><span class="n">hev</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">waiters</span><span class="p">;</span>
+<span class="w">    </span><span class="n">HEV</span><span class="w">      </span><span class="n">hevAck</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">signaled</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_cond_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_COND { NULLHANDLE, 0, NULLHANDLE, 0 }</span>
+<span class="cp">#define LIBVLC_NEED_SEMAPHORE</span>
+<span class="cp">#define LIBVLC_NEED_RWLOCK</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_threadvar</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_threadvar_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_timer</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_timer_t</span><span class="p">;</span>
+
+<span class="cp"># define VLC_THREAD_PRIORITY_LOW      0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_INPUT \</span>
+<span class="cp">                                    MAKESHORT(PRTYD_MAXIMUM / 2, PRTYC_REGULAR)</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_AUDIO    MAKESHORT(PRTYD_MAXIMUM, PRTYC_REGULAR)</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_VIDEO    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_OUTPUT \</span>
+<span class="cp">                                    MAKESHORT(PRTYD_MAXIMUM / 2, PRTYC_REGULAR)</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_HIGHEST  MAKESHORT(0, PRTYC_TIMECRITICAL)</span>
+
+<span class="cp"># define pthread_sigmask  sigprocmask</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_poll</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">pollfd</span><span class="w"> </span><span class="o">*</span><span class="n">fds</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">nfds</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">timeout</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">vlc_poll_os2</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">pollfd</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">vlc_poll_os2</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HMODULE</span><span class="w"> </span><span class="n">hmod</span><span class="p">;</span>
+<span class="w">        </span><span class="n">CHAR</span><span class="w"> </span><span class="n">szFailed</span><span class="p">[</span><span class="n">CCHMAXPATH</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">DosLoadModule</span><span class="p">(</span><span class="n">szFailed</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">szFailed</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;vlccore&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hmod</span><span class="p">))</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">DosQueryProcAddr</span><span class="p">(</span><span class="n">hmod</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;_vlc_poll_os2&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PFN</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">vlc_poll_os2</span><span class="p">))</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">vlc_poll_os2</span><span class="p">)(</span><span class="n">fds</span><span class="p">,</span><span class="w"> </span><span class="n">nfds</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp"># define poll(u,n,t) vlc_poll(u, n, t)</span>
+
+<span class="cp">#elif defined (__ANDROID__)      </span><span class="cm">/* pthreads subset without pthread_cancel() */</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;poll.h&gt;</span>
+<span class="cp"># define LIBVLC_USE_PTHREAD_CLEANUP   1</span>
+<span class="cp"># define LIBVLC_NEED_SLEEP</span>
+<span class="cp"># define LIBVLC_NEED_CONDVAR</span>
+<span class="cp"># define LIBVLC_NEED_SEMAPHORE</span>
+<span class="cp"># define LIBVLC_NEED_RWLOCK</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_thread</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_thread_t</span><span class="p">;</span>
+<span class="cp">#define VLC_THREAD_CANCELED NULL</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_MUTEX PTHREAD_MUTEX_INITIALIZER</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_key_t</span><span class="w">   </span><span class="n">vlc_threadvar_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_timer</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_timer_t</span><span class="p">;</span>
+
+<span class="cp"># define VLC_THREAD_PRIORITY_LOW      0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_INPUT    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_AUDIO    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_VIDEO    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_OUTPUT   0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_HIGHEST  0</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_poll</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">pollfd</span><span class="w"> </span><span class="o">*</span><span class="n">fds</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">nfds</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">timeout</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">do</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ugly_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">timeout</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">timeout</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timeout</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">timeout</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">ugly_timeout</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">vlc_testcancel</span><span class="w"> </span><span class="p">();</span>
+<span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">poll</span><span class="w"> </span><span class="p">(</span><span class="n">fds</span><span class="p">,</span><span class="w"> </span><span class="n">nfds</span><span class="p">,</span><span class="w"> </span><span class="n">ugly_timeout</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp"># define poll(u,n,t) vlc_poll(u, n, t)</span>
+
+<span class="cp">#elif defined (__APPLE__)</span>
+<span class="cp"># define _APPLE_C_SOURCE    1 </span><span class="cm">/* Proper pthread semantics on OSX */</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
+<span class="cm">/* Unnamed POSIX semaphores not supported on Mac OS X */</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;mach/semaphore.h&gt;</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;mach/task.h&gt;</span>
+<span class="cp"># define LIBVLC_USE_PTHREAD           1</span>
+<span class="cp"># define LIBVLC_USE_PTHREAD_CLEANUP   1</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_t</span><span class="w">       </span><span class="n">vlc_thread_t</span><span class="p">;</span>
+<span class="cp">#define VLC_THREAD_CANCELED PTHREAD_CANCELED</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_MUTEX PTHREAD_MUTEX_INITIALIZER</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_cond_t</span><span class="w"> </span><span class="n">vlc_cond_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_COND PTHREAD_COND_INITIALIZER</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">semaphore_t</span><span class="w">     </span><span class="n">vlc_sem_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_rwlock_t</span><span class="w"> </span><span class="n">vlc_rwlock_t</span><span class="p">;</span>
+<span class="cp">#define VLC_STATIC_RWLOCK PTHREAD_RWLOCK_INITIALIZER</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_key_t</span><span class="w">   </span><span class="n">vlc_threadvar_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_timer</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_timer_t</span><span class="p">;</span>
+
+<span class="cp"># define VLC_THREAD_PRIORITY_LOW      0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_INPUT   22</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_AUDIO   22</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_VIDEO    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_OUTPUT  22</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_HIGHEST 22</span>
+
+<span class="cp">#else </span><span class="cm">/* POSIX threads */</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1"> /* _POSIX_SPIN_LOCKS */</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;semaphore.h&gt;</span>
+
+<span class="cp"># define LIBVLC_USE_PTHREAD           1</span>
+
+<span class="cp"># define LIBVLC_USE_PTHREAD_CLEANUP   1</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">handle</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_thread_t</span><span class="p">;</span>
+
+<span class="cp">#define VLC_THREAD_CANCELED PTHREAD_CANCELED</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="p">;</span>
+
+<span class="cp">#define VLC_STATIC_MUTEX PTHREAD_MUTEX_INITIALIZER</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_cond_t</span><span class="w">  </span><span class="n">vlc_cond_t</span><span class="p">;</span>
+
+<span class="cp">#define VLC_STATIC_COND  PTHREAD_COND_INITIALIZER</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">sem_t</span><span class="w">           </span><span class="n">vlc_sem_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_rwlock_t</span><span class="w"> </span><span class="n">vlc_rwlock_t</span><span class="p">;</span>
+
+<span class="cp">#define VLC_STATIC_RWLOCK PTHREAD_RWLOCK_INITIALIZER</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">pthread_key_t</span><span class="w">   </span><span class="n">vlc_threadvar_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_timer</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_timer_t</span><span class="p">;</span>
+
+<span class="cp"># define VLC_THREAD_PRIORITY_LOW      0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_INPUT   10</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_AUDIO    5</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_VIDEO    0</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_OUTPUT  15</span>
+<span class="cp"># define VLC_THREAD_PRIORITY_HIGHEST 20</span>
+
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef LIBVLC_NEED_CONDVAR</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_cond_t</span><span class="p">;</span>
+<span class="cp"># define VLC_STATIC_COND { 0 }</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef LIBVLC_NEED_SEMAPHORE</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_sem</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="n">lock</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_cond_t</span><span class="w">  </span><span class="n">wait</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_sem_t</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef LIBVLC_NEED_RWLOCK</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_rwlock</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_mutex_t</span><span class="w">   </span><span class="n">mutex</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_cond_t</span><span class="w">    </span><span class="n">wait</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">long</span><span class="w">          </span><span class="n">state</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_rwlock_t</span><span class="p">;</span>
+<span class="cp"># define VLC_STATIC_RWLOCK { VLC_STATIC_MUTEX, VLC_STATIC_COND, 0 }</span>
+<span class="cp">#endif</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_mutex_init</span><span class="p">(</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_mutex_init_recursive</span><span class="p">(</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_mutex_destroy</span><span class="p">(</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_mutex_lock</span><span class="p">(</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_mutex_trylock</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_mutex_unlock</span><span class="p">(</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_cond_init</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">vlc_cond_init_daytime</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_cond_destroy</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_cond_signal</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_cond_broadcast</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_cond_wait</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="n">mutex</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_cond_timedwait</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="n">mutex</span><span class="p">,</span>
+<span class="w">                               </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">deadline</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">vlc_cond_timedwait_daytime</span><span class="p">(</span><span class="n">vlc_cond_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">time_t</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_sem_init</span><span class="p">(</span><span class="n">vlc_sem_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_sem_destroy</span><span class="p">(</span><span class="n">vlc_sem_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_sem_post</span><span class="p">(</span><span class="n">vlc_sem_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_sem_wait</span><span class="p">(</span><span class="n">vlc_sem_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_rwlock_init</span><span class="p">(</span><span class="n">vlc_rwlock_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_rwlock_destroy</span><span class="p">(</span><span class="n">vlc_rwlock_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_rwlock_rdlock</span><span class="p">(</span><span class="n">vlc_rwlock_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_rwlock_wrlock</span><span class="p">(</span><span class="n">vlc_rwlock_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_rwlock_unlock</span><span class="p">(</span><span class="n">vlc_rwlock_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_threadvar_create</span><span class="p">(</span><span class="n">vlc_threadvar_t</span><span class="w"> </span><span class="o">*</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">destr</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_threadvar_delete</span><span class="p">(</span><span class="n">vlc_threadvar_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_threadvar_set</span><span class="p">(</span><span class="n">vlc_threadvar_t</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_threadvar_get</span><span class="p">(</span><span class="n">vlc_threadvar_t</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">vlc_addr_wait</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">vlc_addr_timedwait</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">delay</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">vlc_addr_signal</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">vlc_addr_broadcast</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_clone</span><span class="p">(</span><span class="n">vlc_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">th</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">entry</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span>
+<span class="w">                      </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_cancel</span><span class="p">(</span><span class="n">vlc_thread_t</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_join</span><span class="p">(</span><span class="n">vlc_thread_t</span><span class="w"> </span><span class="n">th</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">result</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_savecancel</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_restorecancel</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_control_cancel</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cmd</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlc_thread_t</span><span class="w"> </span><span class="n">vlc_thread_self</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">vlc_thread_id</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">mdate</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">mwait</span><span class="p">(</span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">deadline</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">msleep</span><span class="p">(</span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">delay</span><span class="p">);</span>
+
+<span class="cp">#define VLC_HARD_MIN_SLEEP   10000 </span><span class="cm">/* 10 milliseconds = 1 tick at 100Hz */</span>
+<span class="cp">#define VLC_SOFT_MIN_SLEEP 9000000 </span><span class="cm">/* 9 seconds */</span>
+
+<span class="cp">#if defined (__GNUC__) &amp;&amp; !defined (__clang__)</span>
+<span class="cm">/* Linux has 100, 250, 300 or 1000Hz</span>
+<span class="cm"> *</span>
+<span class="cm"> * HZ=100 by default on FreeBSD, but some architectures use a 1000Hz timer</span>
+<span class="cm"> */</span>
+
+<span class="k">static</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">))</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;sorry, cannot sleep for such short a time&quot;</span><span class="p">)))</span>
+<span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">impossible_delay</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">delay</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">delay</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">VLC_HARD_MIN_SLEEP</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">))</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;use proper event handling instead of short delay&quot;</span><span class="p">)))</span>
+<span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">harmful_delay</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">delay</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">delay</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp"># define check_delay( d ) \</span>
+<span class="cp">    ((__builtin_constant_p(d &lt; VLC_HARD_MIN_SLEEP) \</span>
+<span class="cp">   &amp;&amp; (d &lt; VLC_HARD_MIN_SLEEP)) \</span>
+<span class="cp">       ? impossible_delay(d) \</span>
+<span class="cp">       : ((__builtin_constant_p(d &lt; VLC_SOFT_MIN_SLEEP) \</span>
+<span class="cp">       &amp;&amp; (d &lt; VLC_SOFT_MIN_SLEEP)) \</span>
+<span class="cp">           ? harmful_delay(d) \</span>
+<span class="cp">           : d))</span>
+
+<span class="k">static</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">))</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;deadlines can not be constant&quot;</span><span class="p">)))</span>
+<span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">impossible_deadline</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">deadline</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">deadline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp"># define check_deadline( d ) \</span>
+<span class="cp">    (__builtin_constant_p(d) ? impossible_deadline(d) : d)</span>
+<span class="cp">#else</span>
+<span class="cp"># define check_delay(d) (d)</span>
+<span class="cp"># define check_deadline(d) (d)</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define msleep(d) msleep(check_delay(d))</span>
+<span class="cp">#define mwait(d) mwait(check_deadline(d))</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_timer_create</span><span class="p">(</span><span class="n">vlc_timer_t</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_timer_destroy</span><span class="p">(</span><span class="n">vlc_timer_t</span><span class="w"> </span><span class="n">timer</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_timer_schedule</span><span class="p">(</span><span class="n">vlc_timer_t</span><span class="w"> </span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">absolute</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">interval</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">vlc_timer_getoverrun</span><span class="p">(</span><span class="n">vlc_timer_t</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">vlc_GetCPUCount</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_CLEANUP_PUSH</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_CLEANUP_POP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_CANCEL_ADDR_SET</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_CANCEL_ADDR_CLEAR</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="cp">#if defined (LIBVLC_USE_PTHREAD_CLEANUP)</span>
+<span class="cp"># define vlc_cleanup_push( routine, arg ) pthread_cleanup_push (routine, arg)</span>
+
+<span class="cp"># define vlc_cleanup_pop( ) pthread_cleanup_pop (0)</span>
+
+<span class="cp">#else</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_cleanup_t</span><span class="w"> </span><span class="n">vlc_cleanup_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vlc_cleanup_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_cleanup_t</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">         </span><span class="p">(</span><span class="o">*</span><span class="n">proc</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">          </span><span class="o">*</span><span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/* This macros opens a code block on purpose. This is needed for multiple</span>
+<span class="cm"> * calls within a single function. This also prevent Win32 developers from</span>
+<span class="cm"> * writing code that would break on POSIX (POSIX opens a block as well). */</span>
+<span class="cp"># define vlc_cleanup_push( routine, arg ) \</span>
+<span class="cp">    do { \</span>
+<span class="cp">        vlc_cleanup_t vlc_cleanup_data = { NULL, routine, arg, }; \</span>
+<span class="cp">        vlc_control_cancel (VLC_CLEANUP_PUSH, &amp;vlc_cleanup_data)</span>
+
+<span class="cp"># define vlc_cleanup_pop( ) \</span>
+<span class="cp">        vlc_control_cancel (VLC_CLEANUP_POP); \</span>
+<span class="cp">    } while (0)</span>
+
+<span class="cp">#endif </span><span class="cm">/* !LIBVLC_USE_PTHREAD_CLEANUP */</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_cleanup_lock</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">lock</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_mutex_unlock</span><span class="w"> </span><span class="p">((</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">lock</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#define mutex_cleanup_push( lock ) vlc_cleanup_push (vlc_cleanup_lock, lock)</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_cancel_addr_set</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_control_cancel</span><span class="p">(</span><span class="n">VLC_CANCEL_ADDR_SET</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_cancel_addr_clear</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_control_cancel</span><span class="p">(</span><span class="n">VLC_CANCEL_ADDR_CLEAR</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">vlc_mutex_locker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="n">lock</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="n">vlc_mutex_locker</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">lock</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">vlc_mutex_lock</span><span class="w"> </span><span class="p">(</span><span class="n">lock</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="o">~</span><span class="n">vlc_mutex_locker</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">vlc_mutex_unlock</span><span class="w"> </span><span class="p">(</span><span class="n">lock</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="cp">#endif</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">VLC_AVCODEC_MUTEX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="n">VLC_GCRYPT_MUTEX</span><span class="p">,</span>
+<span class="w">   </span><span class="n">VLC_XLIB_MUTEX</span><span class="p">,</span>
+<span class="w">   </span><span class="n">VLC_MOSAIC_MUTEX</span><span class="p">,</span>
+<span class="w">   </span><span class="n">VLC_HIGHLIGHT_MUTEX</span><span class="p">,</span>
+<span class="cp">#ifdef _WIN32</span>
+<span class="w">   </span><span class="n">VLC_MTA_MUTEX</span><span class="p">,</span>
+<span class="cp">#endif</span>
+<span class="w">   </span><span class="cm">/* Insert new entry HERE */</span>
+<span class="w">   </span><span class="n">VLC_MAX_MUTEX</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_global_mutex</span><span class="p">(</span><span class="kt">unsigned</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">);</span>
+
+<span class="cp">#define vlc_global_lock( n ) vlc_global_mutex(n, true)</span>
+
+<span class="cp">#define vlc_global_unlock( n ) vlc_global_mutex(n, false)</span>
+
+
+<span class="cp">#endif </span><span class="cm">/* !_VLC_THREADS_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

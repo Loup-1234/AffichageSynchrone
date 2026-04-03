@@ -1,0 +1,757 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__demux" kind="group">
+    <compoundname>demux</compoundname>
+    <title>Demultiplexer</title>
+    <innerfile refid="vlc__demux_8h">vlc_demux.h</innerfile>
+    <innerclass refid="structdemux__t" prot="public">demux_t</innerclass>
+    <innerclass refid="structdemux__meta__t" prot="public">demux_meta_t</innerclass>
+    <innergroup refid="group__chained__demux">Chained demultiplexer</innergroup>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__demux_1ga8a50c1738c3b314f887d0630ee6ab434" prot="public" static="no" strong="no">
+        <type></type>
+        <name>demux_query_e</name>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ad1778c20a19076f9517250c20673824a" prot="public">
+          <name>DEMUX_CAN_SEEK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Checks whether the stream supports seeking. Can fail if seeking is not supported (same as returning false). <xrefsect id="bug_1_bug000004"><xreftitle>Bogue</xreftitle><xrefdescription><para>Failing should not be allowed.</para>
+</xrefdescription></xrefsect></para>
+<para>arg1 = bool * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a69130c404fbe48cdc11e0d3a7708edd1" prot="public">
+          <name>DEMUX_CAN_PAUSE</name>
+          <initializer>= 0x002</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Checks whether (long) pause then stream resumption is supported. Can fail only if synchronous and <bold>not</bold> an access-demuxer. The underlying input stream then determines if pause is supported. <xrefsect id="bug_1_bug000005"><xreftitle>Bogue</xreftitle><xrefdescription><para>Failing should not be allowed.</para>
+</xrefdescription></xrefsect></para>
+<para>arg1= bool * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a31b2e557b1b7f3af53f8279451facdb6" prot="public">
+          <name>DEMUX_CAN_CONTROL_PACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the stream can be read at an arbitrary pace. Cannot fail.</para>
+<para>arg1= bool * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a205f2a0ae01ee3a656833d36e9c3eacd" prot="public">
+          <name>DEMUX_GET_PTS_DELAY</name>
+          <initializer>= 0x101</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Retrieves the PTS delay (roughly the default buffer duration). Can fail only if synchronous and <bold>not</bold> an access-demuxer. The underlying input stream then determines the PTS delay.</para>
+<para>arg1= int64_t * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ae4de0184e4c1f30cbeb39ad7f7de1c6f" prot="public">
+          <name>DEMUX_GET_META</name>
+          <initializer>= 0x105</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Retrieves stream meta-data. Should fail if no meta-data were retrieved.</para>
+<para>arg1= vlc_meta_t * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a06cf58df711ccbb3dce8bd5710f3e9dc" prot="public">
+          <name>DEMUX_GET_SIGNAL</name>
+          <initializer>= 0x107</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Retrieves an estimate of signal quality and strength. Can fail.</para>
+<para>arg1=double *quality, arg2=double *strength </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a56c228e94d94cbe77f8ab2872077df37" prot="public">
+          <name>DEMUX_SET_PAUSE_STATE</name>
+          <initializer>= 0x200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sets the paused or playing/resumed state.</para>
+<para>Streams are initially in playing state. The control always specifies a change from paused to playing (false) or from playing to paused (true) and streams are initially playing; a no-op cannot be requested.</para>
+<para>The control is never used if DEMUX_CAN_PAUSE fails. Can fail.</para>
+<para>arg1= bool </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a39be80526c136726f0be3f9cfb860c1d" prot="public">
+          <name>DEMUX_SET_TITLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Seeks to the beginning of a title.</para>
+<para>The control is never used if DEMUX_GET_TITLE_INFO fails. Can fail.</para>
+<para>arg1= int </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a4e2fedd3123bf89ad83eb0afbe1168f7" prot="public">
+          <name>DEMUX_SET_SEEKPOINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Seeks to the beginning of a chapter of the current title.</para>
+<para>The control is never used if DEMUX_GET_TITLE_INFO fails. Can fail.</para>
+<para>arg1= int </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a0c46fdbf16bad4dbd49f3d860f826de3" prot="public">
+          <name>DEMUX_TEST_AND_CLEAR_FLAGS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Check which INPUT_UPDATE_XXX flag is set and reset the ones set.</para>
+<para>The unsigned* argument is set with the flags needed to be checked, on return it contains the values that were reset during the call</para>
+<para>This can can fail, in which case flags from demux_t.info.i_update are read/reset</para>
+<para>arg1= unsigned * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434aae2505ad275f2864a9dadfdd80d86281" prot="public">
+          <name>DEMUX_GET_TITLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read the title number currently playing</para>
+<para>Can fail, in which case demux_t.info.i_title is used</para>
+<para>arg1= int * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ae15d0fb1cf4bbfc9639af45b6ec2a620" prot="public">
+          <name>DEMUX_GET_SEEKPOINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a38d0d4da416cc2d1cedb601b421f5132" prot="public">
+          <name>DEMUX_GET_POSITION</name>
+          <initializer>= 0x300</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ac16f8d14c8393cdf768ebbb8a87967e9" prot="public">
+          <name>DEMUX_SET_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ab0ccf7267a7d921cfd0ae06c5f37f349" prot="public">
+          <name>DEMUX_GET_LENGTH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a12fe6548225cb5583c2ddeaaae2fd63c" prot="public">
+          <name>DEMUX_GET_TIME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a4d311b58459aad42031cdb9ae94b2a64" prot="public">
+          <name>DEMUX_SET_TIME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ae25dfa5c10b1265713e92dd61dd61958" prot="public">
+          <name>DEMUX_GET_TITLE_INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><xrefsect id="todo_1_todo000001"><xreftitle>A faire</xreftitle><xrefdescription><para>Document</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="warning"><para>The prototype is different from STREAM_GET_TITLE_INFO</para>
+</simplesect>
+Can fail, meaning there is only one title and one chapter.</para>
+<para>arg1= <ref refid="structinput__title__t" kindref="compound">input_title_t</ref> ***, arg2=int *, arg3=int *pi_title_offset(0), arg4= int *pi_seekpoint_offset(0) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a1e1dd09ccb45355a88dae658ecd1d403" prot="public">
+          <name>DEMUX_SET_GROUP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a4b795b7ceadf1f778ac3e7283cf3a7b2" prot="public">
+          <name>DEMUX_SET_ES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434adbfabc809c0b4d07ab4cec127ad89534" prot="public">
+          <name>DEMUX_SET_NEXT_DEMUX_TIME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ab052053fc871e9a8c863c1e672cd17d4" prot="public">
+          <name>DEMUX_GET_FPS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a80fe9d62217b8cf8585a1f7d56fd0fba" prot="public">
+          <name>DEMUX_HAS_UNSUPPORTED_META</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a1df8b1806c5f98e772aee3a48aab0204" prot="public">
+          <name>DEMUX_GET_ATTACHMENTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a71ef7a1a9e3fc519b030e6f93e4a256b" prot="public">
+          <name>DEMUX_CAN_RECORD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a4935ec8c51785d2460ec9e7ad81594fa" prot="public">
+          <name>DEMUX_SET_RECORD_STATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><xrefsect id="todo_1_todo000002"><xreftitle>A faire</xreftitle><xrefdescription><para>Document</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="warning"><para>The prototype is different from STREAM_SET_RECORD_STATE</para>
+</simplesect>
+The control is never used if DEMUX_CAN_RECORD fails or returns false. Can fail.</para>
+<para>arg1= bool </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434acfda2780560d03f69945eebdaf1237f0" prot="public">
+          <name>DEMUX_CAN_CONTROL_RATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434acb5ec6fcc054eaad211c69e017cd122d" prot="public">
+          <name>DEMUX_SET_RATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434aadda1715fcbfb6d4737533596b3c6f11" prot="public">
+          <name>DEMUX_IS_PLAYLIST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Checks whether the stream is actually a playlist, rather than a real stream.</para>
+<para><simplesect kind="warning"><para>The prototype is different from STREAM_IS_DIRECTORY.</para>
+</simplesect>
+Can fail if the stream is not a playlist (same as returning false).</para>
+<para>arg1= bool * </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a49fdce0133dfe01e79ada671c354132b" prot="public">
+          <name>DEMUX_NAV_ACTIVATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Activate the navigation item selected. Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434aaef750b4b5d96f6e641058421ee31f35" prot="public">
+          <name>DEMUX_NAV_UP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use the up arrow to select a navigation item above. Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a4d3490b1af361fa15100889e74178bef" prot="public">
+          <name>DEMUX_NAV_DOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use the down arrow to select a navigation item under. Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a3037fcfee0172123a4631181108b7cbd" prot="public">
+          <name>DEMUX_NAV_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use the left arrow to select a navigation item on the left. Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434aed75b58e8407d95d084b87454c881428" prot="public">
+          <name>DEMUX_NAV_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use the right arrow to select a navigation item on the right. Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434abd5cad7273040627de5d018c23257d64" prot="public">
+          <name>DEMUX_NAV_POPUP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Activate the popup Menu (for BD). Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434a309ecc7082db7f6d66b7c196d5c69547" prot="public">
+          <name>DEMUX_NAV_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Activate disc Root Menu. Can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ae74fb1b8155a05172e6c59c3932b3d92" prot="public">
+          <name>DEMUX_FILTER_ENABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Enable/Disable a demux filter <simplesect kind="warning"><para>This has limited support, and is likely to break if more than a single demux_filter is present in the chain. This is not guaranteed to work in future VLC versions, nor with all demux filters </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__demux_1gga8a50c1738c3b314f887d0630ee6ab434ad7583c7d5ce6dfa0a8b0bd3257261f3b" prot="public">
+          <name>DEMUX_FILTER_DISABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control query identifiers for use with demux_t.pf_control</para>
+<para>In the individual identifier description, the input stream refers to <ref refid="structdemux__t_1a5029aa891b52675363891ea3123ae5e3" kindref="member">demux_t.s</ref> if non-NULL, and the output refers to demux_t.out.</para>
+<para>A demuxer is synchronous if it only accesses its input stream and the output from within its <ref refid="structdemux__t" kindref="compound">demux_t</ref> callbacks, i.e. demux.pf_demux and demux_t.pf_control.</para>
+<para>A demuxer is threaded if it accesses either or both input and output asynchronously.</para>
+<para>An access-demuxer is a demuxer without input, i.e. <ref refid="structdemux__t_1a5029aa891b52675363891ea3123ae5e3" kindref="member">demux_t.s</ref> == NULL). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="138" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="139" bodyend="333"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__demux_1ga86843a0036a3dc28c8280fd3f4892295" prot="public" static="no">
+        <type>struct demux_meta_t</type>
+        <definition>typedef struct demux_meta_t demux_meta_t</definition>
+        <argsstring></argsstring>
+        <name>demux_meta_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="121" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__demux_1ga977886ea10c28c2c2156ffe5476f9f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+        <definition>VLC_API demux_t * demux_New</definition>
+        <argsstring>(vlc_object_t *p_obj, const char *psz_name, const char *psz_path, stream_t *s, es_out_t *out)</argsstring>
+        <name>demux_New</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_path</declname>
+        </param>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="structes__out__t" kindref="compound">es_out_t</ref> *</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="340" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="340" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga2aa322bee02b7d8ca57bc6d290fd8b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void demux_Delete</definition>
+        <argsstring>(demux_t *)</argsstring>
+        <name>demux_Delete</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="343" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="343" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga17ce7ae56a21710c4f33ac016a9cfb16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int demux_vaControlHelper</definition>
+        <argsstring>(stream_t *, int64_t i_start, int64_t i_end, int64_t i_bitrate, int i_align, int i_query, va_list args)</argsstring>
+        <name>demux_vaControlHelper</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>i_start</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>i_end</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>i_bitrate</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_align</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="346" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="346" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga80ec9625cf2f5575bfd37d1c4e4c5ee1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED int</type>
+        <definition>static VLC_USED int demux_Demux</definition>
+        <argsstring>(demux_t *p_demux)</argsstring>
+        <name>demux_Demux</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>p_demux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="349" column="28" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="349" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga260366615627ec510cb28d34022815ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int demux_vaControl</definition>
+        <argsstring>(demux_t *p_demux, int i_query, va_list args)</argsstring>
+        <name>demux_vaControl</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>p_demux</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="357" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="357" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1gaa79f0b092b7644ec7a918ca5773a739f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int demux_Control</definition>
+        <argsstring>(demux_t *p_demux, int i_query,...)</argsstring>
+        <name>demux_Control</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>p_demux</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="359" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="359" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga42f2492744d459c56650ffcc77ece123" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void demux_UpdateTitleFromStream</definition>
+        <argsstring>(demux_t *demux)</argsstring>
+        <name>demux_UpdateTitleFromStream</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>demux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="374" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="374" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga5024ac88b7fc9474d74a09e221ca9134" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED bool</type>
+        <definition>static VLC_USED bool demux_IsPathExtension</definition>
+        <argsstring>(demux_t *p_demux, const char *psz_extension)</argsstring>
+        <name>demux_IsPathExtension</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>p_demux</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_extension</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="396" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="396" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga77b0481afd23d9b0d9a5c63d94580cdf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED bool</type>
+        <definition>static VLC_USED bool demux_IsContentType</definition>
+        <argsstring>(demux_t *demux, const char *type)</argsstring>
+        <name>demux_IsContentType</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>demux</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="407" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="407" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga681adc0d0a3e63167c3f0a0668213d74" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED bool</type>
+        <definition>static VLC_USED bool demux_IsForced</definition>
+        <argsstring>(demux_t *p_demux, const char *psz_name)</argsstring>
+        <name>demux_IsForced</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>p_demux</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="413" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="413" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga37f5b37903461f49da62c6af2232f4ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structdecoder__t" kindref="compound">decoder_t</ref> *</type>
+        <definition>VLC_API decoder_t * demux_PacketizerNew</definition>
+        <argsstring>(demux_t *p_demux, es_format_t *p_fmt, const char *psz_msg) VLC_USED</argsstring>
+        <name>demux_PacketizerNew</name>
+        <param>
+          <type><ref refid="structdemux__t" kindref="compound">demux_t</ref> *</type>
+          <declname>p_demux</declname>
+        </param>
+        <param>
+          <type><ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+          <declname>p_fmt</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will create a packetizer suitable for a demuxer that parses elementary stream.</para>
+<para>The provided <ref refid="structes__format__t" kindref="compound">es_format_t</ref> will be cleaned on error or by demux_PacketizerDestroy. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="427" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="427" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__demux_1ga67bbb8bff77333e401f3aece9ce180e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void demux_PacketizerDestroy</definition>
+        <argsstring>(decoder_t *p_packetizer)</argsstring>
+        <name>demux_PacketizerDestroy</name>
+        <param>
+          <type><ref refid="structdecoder__t" kindref="compound">decoder_t</ref> *</type>
+          <declname>p_packetizer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will destroy a packetizer create by demux_PacketizerNew. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="432" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="432" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__demux_1ga4043c81f1a73c0ccf8d5de174877a763" prot="public" static="no">
+        <name>VLC_DEMUXER_EOF</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="101" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1ga711c649ad6d7f5fc17f597fd51ab99f1" prot="public" static="no">
+        <name>VLC_DEMUXER_EGENERIC</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="102" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1ga53e2d7a245a9024673544ff75ea7fcbf" prot="public" static="no">
+        <name>VLC_DEMUXER_SUCCESS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="103" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1ga6721741057be77626feb53594217c058" prot="public" static="no">
+        <name>INPUT_UPDATE_TITLE</name>
+        <initializer>0x0010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="106" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1ga5a382f3cafe7fe04a0ae761cf3ba4e95" prot="public" static="no">
+        <name>INPUT_UPDATE_SEEKPOINT</name>
+        <initializer>0x0020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="107" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1gad31ed135c7b66ccf9bb5ee84cb6460f9" prot="public" static="no">
+        <name>INPUT_UPDATE_META</name>
+        <initializer>0x0040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="108" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1gafd92b34102528f2f872b03e3a0cd7041" prot="public" static="no">
+        <name>INPUT_UPDATE_TITLE_LIST</name>
+        <initializer>0x0100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="109" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__demux_1gabb8bfa04d33ef74879a9de45aea6a214" prot="public" static="no">
+        <name>DEMUX_INIT_COMMON</name>
+        <param></param>
+        <initializer>    do {            \
+    p_demux-&gt;pf_control = Control;          \
+    p_demux-&gt;pf_demux = Demux;              \
+    p_demux-&gt;p_sys = calloc( 1, sizeof( demux_sys_t ) ); \
+    if( !p_demux-&gt;p_sys ) return <ref refid="vlc__common_8h_1a84ab7ec0cd6788c180ca7f85f1142851" kindref="member">VLC_ENOMEM</ref>;\
+    } while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="435" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="435" bodyend="440"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Demultiplexers (file format parsers) </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

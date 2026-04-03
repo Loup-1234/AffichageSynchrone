@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__vlc__renderer__item" kind="group">
+    <compoundname>vlc_renderer_item</compoundname>
+    <title>VLC renderer items returned by the discovery</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__vlc__renderer__item_1ga4c9f18990d2577f9733291e8283a8039" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlc_renderer_item_t *</type>
+        <definition>VLC_API vlc_renderer_item_t * vlc_renderer_item_new</definition>
+        <argsstring>(const char *psz_type, const char *psz_name, const char *psz_uri, const char *psz_extra_sout, const char *psz_demux_filter, const char *psz_icon_uri, int i_flags) VLC_USED</argsstring>
+        <name>vlc_renderer_item_new</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz_type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_extra_sout</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_demux_filter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_icon_uri</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new renderer item</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>psz_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the item </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the item </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uri of the renderer item, must contains a valid protocol and a valid host </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_extra_sout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>extra sout options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_demux_filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>demux filter to use with the renderer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_icon_uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>icon uri of the renderer item </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flags for the item </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a renderer item or NULL in case of error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="56" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="56" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1gadd43970ec96f54cba390d8c94e21b8fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlc_renderer_item_t *</type>
+        <definition>VLC_API vlc_renderer_item_t * vlc_renderer_item_hold</definition>
+        <argsstring>(vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_hold</name>
+        <param>
+          <type>vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold a renderer item, i.e. creates a new reference </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="65" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="65" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1ga4b9fcb82b0361c148eb8ce9f66b09e27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_renderer_item_release</definition>
+        <argsstring>(vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_release</name>
+        <param>
+          <type>vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases a renderer item, i.e. decrements its reference counter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="71" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="71" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1gaa09cabb065882e97defa795a8ca827ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_renderer_item_name</definition>
+        <argsstring>(const vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_name</name>
+        <param>
+          <type>const vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the human readable name of a renderer item </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="77" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="77" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1gab6ca6f521f3882a9022b1550de19416a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_renderer_item_type</definition>
+        <argsstring>(const vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_type</name>
+        <param>
+          <type>const vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the type (not translated) of a renderer item. For now, the type can only be &quot;chromecast&quot; (&quot;upnp&quot;, &quot;airplay&quot; may come later). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="84" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="84" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1ga54c24007ec31de782110293b140ce27f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_renderer_item_demux_filter</definition>
+        <argsstring>(const vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_demux_filter</name>
+        <param>
+          <type>const vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the demux filter to use with a renderer item </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="90" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="90" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1gafd2828c18bc7053adea8e876c8c824d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_renderer_item_sout</definition>
+        <argsstring>(const vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_sout</name>
+        <param>
+          <type>const vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the sout command of a renderer item </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="96" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="96" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1ga451e09581017f81ff899475c4990f393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_renderer_item_icon_uri</definition>
+        <argsstring>(const vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_icon_uri</name>
+        <param>
+          <type>const vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the icon uri of a renderer item </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="102" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="102" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__renderer__item_1ga7af52d1190b07403de3d0c4875f4b067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_renderer_item_flags</definition>
+        <argsstring>(const vlc_renderer_item_t *p_item)</argsstring>
+        <name>vlc_renderer_item_flags</name>
+        <param>
+          <type>const vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the flags of a renderer item </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="108" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" declline="108" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__vlc__renderer__item_1gab5314e955290180e1edaa18b257e2d5c" prot="public" static="no">
+        <name>VLC_RENDERER_CAN_AUDIO</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="39" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__vlc__renderer__item_1gaa6a669ba8582c9f280caf5717fdc9e23" prot="public" static="no">
+        <name>VLC_RENDERER_CAN_VIDEO</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" line="40" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

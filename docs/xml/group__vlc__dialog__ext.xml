@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__vlc__dialog__ext" kind="group">
+    <compoundname>vlc_dialog_ext</compoundname>
+    <title>VLC extension dialog functions</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__vlc__dialog__ext_1ga53ab2d02fa5fae0712dc8792cc1890d2" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* vlc_dialog_ext_update_cb) (extension_dialog_t *p_ext_dialog, void *p_data)</definition>
+        <argsstring>)(extension_dialog_t *p_ext_dialog, void *p_data)</argsstring>
+        <name>vlc_dialog_ext_update_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dialog extension callback to be implemented </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="464" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" bodystart="464" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__vlc__dialog__ext_1ga014eeae8c3769975487141ec34f85f48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_ext_dialog_update</definition>
+        <argsstring>(vlc_object_t *p_obj, extension_dialog_t *dialog)</argsstring>
+        <name>vlc_ext_dialog_update</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type>extension_dialog_t *</type>
+          <declname>dialog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="457" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="457" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__dialog__ext_1ga50499c763a958231a30a43e1a5c79830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_dialog_provider_set_ext_callback</definition>
+        <argsstring>(vlc_object_t *p_obj, vlc_dialog_ext_update_cb pf_update, void *p_data)</argsstring>
+        <name>vlc_dialog_provider_set_ext_callback</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type><ref refid="group__vlc__dialog__ext_1ga53ab2d02fa5fae0712dc8792cc1890d2" kindref="member">vlc_dialog_ext_update_cb</ref></type>
+          <declname>pf_update</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register a callback for VLC extension dialog</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pf_update</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the update callback, or NULL to unregister callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opaque pointer for the callback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="475" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="475" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__vlc__dialog__ext_1ga000e6a3a7df82ae469507cafa9de0496" prot="public" static="no">
+        <name>vlc_ext_dialog_update</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>    vlc_ext_dialog_update(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="458" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" bodystart="458" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="define" id="group__vlc__dialog__ext_1ga1ac7173b922787ef314d9a5091e76590" prot="public" static="no">
+        <name>vlc_dialog_provider_set_ext_callback</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>    vlc_dialog_provider_set_ext_callback(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="478" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" bodystart="478" bodyend="479"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,804 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="class_affichage_synchrone" kind="class" language="C++" prot="public">
+    <compoundname>AffichageSynchrone</compoundname>
+    <includes refid="_affichage_synchrone_8h" local="no">AffichageSynchrone.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_affichage_synchrone_1afd4b1c095ac9c7a45d4985fe3f9755a9" prot="private" static="no" mutable="no">
+        <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+        <definition>libvlc_instance_t* AffichageSynchrone::instanceVLC</definition>
+        <argsstring></argsstring>
+        <name>instanceVLC</name>
+        <qualifiedname>AffichageSynchrone::instanceVLC</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="60" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a7cfb445c398720f2e881a234e1cb759e" prot="private" static="no" mutable="no">
+        <type>libvlc_media_player_t *</type>
+        <definition>libvlc_media_player_t* AffichageSynchrone::lecteurVLC</definition>
+        <argsstring></argsstring>
+        <name>lecteurVLC</name>
+        <qualifiedname>AffichageSynchrone::lecteurVLC</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="61" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a97b741394512ad1639b6e4617866f0e4" prot="private" static="no" mutable="no">
+        <type>Texture2D</type>
+        <definition>Texture2D AffichageSynchrone::textureVideo</definition>
+        <argsstring></argsstring>
+        <name>textureVideo</name>
+        <qualifiedname>AffichageSynchrone::textureVideo</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="62" column="15" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1ac4f5d7a4f8e1e5a88c4494dc779fda96" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; unsigned char &gt;</type>
+        <definition>std::vector&lt;unsigned char&gt; AffichageSynchrone::pixelsVideo</definition>
+        <argsstring></argsstring>
+        <name>pixelsVideo</name>
+        <qualifiedname>AffichageSynchrone::pixelsVideo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="63" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a391a7ed523d2fc4519433095b1c9eec4" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex AffichageSynchrone::mutexImage</definition>
+        <argsstring></argsstring>
+        <name>mutexImage</name>
+        <qualifiedname>AffichageSynchrone::mutexImage</qualifiedname>
+        <briefdescription>
+<para>Mutex pour protéger l&apos;accès aux pixels de la vidéo entre le thread VLC et le thread principal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="64" column="16" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1aadbb0caeecaa1e1214a18566ad27ed81" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int AffichageSynchrone::largeurVideo</definition>
+        <argsstring></argsstring>
+        <name>largeurVideo</name>
+        <qualifiedname>AffichageSynchrone::largeurVideo</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="65" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1af7302c165e8abba74e02034d88f5513e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int AffichageSynchrone::hauteurVideo</definition>
+        <argsstring></argsstring>
+        <name>hauteurVideo</name>
+        <qualifiedname>AffichageSynchrone::hauteurVideo</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="66" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a6211b45258bd0eed51ea39eed25920a4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string AffichageSynchrone::cheminVideoComplexe</definition>
+        <argsstring></argsstring>
+        <name>cheminVideoComplexe</name>
+        <qualifiedname>AffichageSynchrone::cheminVideoComplexe</qualifiedname>
+        <initializer>= &quot;sortie_synchro.mp4&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="67" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a94f845bb850a3624cdb1dc480e021da6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AffichageSynchrone::duree</definition>
+        <argsstring></argsstring>
+        <name>duree</name>
+        <qualifiedname>AffichageSynchrone::duree</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="68" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a4b76f078ddb3474cf195aad4d5283b66" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AffichageSynchrone::valeurSliderProgression</definition>
+        <argsstring></argsstring>
+        <name>valeurSliderProgression</name>
+        <qualifiedname>AffichageSynchrone::valeurSliderProgression</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="78" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a69c1b365f607f0f3bac5071419b75fcd" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AffichageSynchrone::valeurSliderSon</definition>
+        <argsstring></argsstring>
+        <name>valeurSliderSon</name>
+        <qualifiedname>AffichageSynchrone::valeurSliderSon</qualifiedname>
+        <initializer>= 100.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="79" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1ade77fc01c47abad7f7f0ef7a8b315827" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AffichageSynchrone::valeurSliderSonPrecedent</definition>
+        <argsstring></argsstring>
+        <name>valeurSliderSonPrecedent</name>
+        <qualifiedname>AffichageSynchrone::valeurSliderSonPrecedent</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="80" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a696a0efc238f5c9a3c23b4070ce12501" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AffichageSynchrone::estMuet</definition>
+        <argsstring></argsstring>
+        <name>estMuet</name>
+        <qualifiedname>AffichageSynchrone::estMuet</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="81" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1ab378ba5573dbc780466ac8089e486a9c" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; AffichageSynchrone::videoGeneree</definition>
+        <argsstring></argsstring>
+        <name>videoGeneree</name>
+        <qualifiedname>AffichageSynchrone::videoGeneree</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="84" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1abf864b25c1b036ee73719abb1af97e86" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; AffichageSynchrone::generationEnCours</definition>
+        <argsstring></argsstring>
+        <name>generationEnCours</name>
+        <qualifiedname>AffichageSynchrone::generationEnCours</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="85" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a88b080e43dfafff0186c925b8134bf86" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; AffichageSynchrone::framePrete</definition>
+        <argsstring></argsstring>
+        <name>framePrete</name>
+        <qualifiedname>AffichageSynchrone::framePrete</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="86" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a3d9cd44ca2e7ae5bc54dbcd342bfcaf7" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; AffichageSynchrone::textureDoitEtreRedimensionnee</definition>
+        <argsstring></argsstring>
+        <name>textureDoitEtreRedimensionnee</name>
+        <qualifiedname>AffichageSynchrone::textureDoitEtreRedimensionnee</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="87" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a4c09b9ee5486a0870819426e02843983" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread AffichageSynchrone::threadGeneration</definition>
+        <argsstring></argsstring>
+        <name>threadGeneration</name>
+        <qualifiedname>AffichageSynchrone::threadGeneration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="88" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a4fd98768069b04f552c627cb435f6f70" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; AffichageSynchrone::fichiersVideo</definition>
+        <argsstring></argsstring>
+        <name>fichiersVideo</name>
+        <qualifiedname>AffichageSynchrone::fichiersVideo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="91" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1af133ff0e4d123ace07a968c0dfffe2ab" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; bool &gt;</type>
+        <definition>std::vector&lt;bool&gt; AffichageSynchrone::videosSelectionnees</definition>
+        <argsstring></argsstring>
+        <name>videosSelectionnees</name>
+        <qualifiedname>AffichageSynchrone::videosSelectionnees</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="92" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a0306f17ce948498de27622d6e4f10515" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; AffichageSynchrone::ordreSelection</definition>
+        <argsstring></argsstring>
+        <name>ordreSelection</name>
+        <qualifiedname>AffichageSynchrone::ordreSelection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="93" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a4840450e2e5ebe3aa37a2a1d3eef2ec3" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 AffichageSynchrone::positionDefilement</definition>
+        <argsstring></argsstring>
+        <name>positionDefilement</name>
+        <qualifiedname>AffichageSynchrone::positionDefilement</qualifiedname>
+        <initializer>= {0, 0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="94" column="13" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1a474a784a8e0b0f59b6e78b83de65203c" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* AffichageSynchrone::TEXTE_BOUTON_GENERER</definition>
+        <argsstring></argsstring>
+        <name>TEXTE_BOUTON_GENERER</name>
+        <qualifiedname>AffichageSynchrone::TEXTE_BOUTON_GENERER</qualifiedname>
+        <initializer>= &quot;Générer&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="97" column="16" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1af3108e2f5fccab234584fbad4f06bcca" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* AffichageSynchrone::TEXTE_BOUTON_OUVRIR_DOSSIER</definition>
+        <argsstring></argsstring>
+        <name>TEXTE_BOUTON_OUVRIR_DOSSIER</name>
+        <qualifiedname>AffichageSynchrone::TEXTE_BOUTON_OUVRIR_DOSSIER</qualifiedname>
+        <initializer>= &quot;Ouvrir dossier&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="98" column="16" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affichage_synchrone_1af01a8d25c111c25d3b42a9284ee8e81b" prot="private" static="no" mutable="no">
+        <type>Rectangle</type>
+        <definition>Rectangle AffichageSynchrone::zones[11]</definition>
+        <argsstring>[11]</argsstring>
+        <name>zones</name>
+        <qualifiedname>AffichageSynchrone::zones</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="101" column="15" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="101" bodyend="101"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_affichage_synchrone_1a549a8bc9af9995eca9ea71dcad58bb1a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AffichageSynchrone::AffichageSynchrone</definition>
+        <argsstring>()</argsstring>
+        <name>AffichageSynchrone</name>
+        <qualifiedname>AffichageSynchrone::AffichageSynchrone</qualifiedname>
+        <briefdescription>
+<para>Constructeur de la classe <ref refid="class_affichage_synchrone" kindref="compound">AffichageSynchrone</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialise la fenêtre Raylib, le périphérique audio, l&apos;instance VLC et charge la liste des vidéos disponibles. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="33" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="49" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a67e61e03d62733b9956c84ff969b3179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AffichageSynchrone::~AffichageSynchrone</definition>
+        <argsstring>()</argsstring>
+        <name>~AffichageSynchrone</name>
+        <qualifiedname>AffichageSynchrone::~AffichageSynchrone</qualifiedname>
+        <briefdescription>
+<para>Destructeur de la classe <ref refid="class_affichage_synchrone" kindref="compound">AffichageSynchrone</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Libère les ressources VLC, ferme la fenêtre, arrête le thread de génération s&apos;il est actif et nettoie les textures. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="41" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="70" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a407bde31a04e04b4284d71cc9ce43b1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::executer</definition>
+        <argsstring>()</argsstring>
+        <name>executer</name>
+        <qualifiedname>AffichageSynchrone::executer</qualifiedname>
+        <briefdescription>
+<para>Exécute la boucle principale de l&apos;application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Gère les événements d&apos;entrée, la mise à jour de l&apos;affichage vidéo et l&apos;interface utilisateur (GUI). Cette méthode bloque jusqu&apos;à la fermeture de la fenêtre. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="49" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="367" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1af504a31a1ac2eb0557b9d775b4498ae6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::setVolume</definition>
+        <argsstring>(float volume)</argsstring>
+        <name>setVolume</name>
+        <qualifiedname>AffichageSynchrone::setVolume</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>volume</declname>
+        </param>
+        <briefdescription>
+<para>Définit le volume de la lecture vidéo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le volume à définir (valeur entre 0.0 et 100.0). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="56" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="450" bodyend="453"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_affichage_synchrone_1ab58c57eea00a91e1a5405d8aed15b7e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * verrouiller</definition>
+        <argsstring>(void *donnees, void **p_pixels)</argsstring>
+        <name>verrouiller</name>
+        <qualifiedname>AffichageSynchrone::verrouiller</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>donnees</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>p_pixels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="71" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_affichage_synchrone_1af090f2082b12b7e48394dded3eb3b219" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void deverrouiller</definition>
+        <argsstring>(void *donnees)</argsstring>
+        <name>deverrouiller</name>
+        <qualifiedname>AffichageSynchrone::deverrouiller</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>donnees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="72" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_affichage_synchrone_1a695f0d9934c3a8baf5963057f15a8c7f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void afficherPixels</definition>
+        <argsstring>(const void *donnees)</argsstring>
+        <name>afficherPixels</name>
+        <qualifiedname>AffichageSynchrone::afficherPixels</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>donnees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="73" column="17"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_affichage_synchrone_1a6c1fb4f542042b188d6b08b53ff84b3c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned</type>
+        <definition>unsigned configurerVideo</definition>
+        <argsstring>(void **donnees, char *chroma, const unsigned *largeur, const unsigned *hauteur, unsigned *pas, unsigned *lignes)</argsstring>
+        <name>configurerVideo</name>
+        <qualifiedname>AffichageSynchrone::configurerVideo</qualifiedname>
+        <param>
+          <type>void **</type>
+          <declname>donnees</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>chroma</declname>
+        </param>
+        <param>
+          <type>const unsigned *</type>
+          <declname>largeur</declname>
+        </param>
+        <param>
+          <type>const unsigned *</type>
+          <declname>hauteur</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>pas</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>lignes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="74" column="21" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="32" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_affichage_synchrone_1a6f7a98bcb8195a7d3069fea05a50c51c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nettoyerVideo</definition>
+        <argsstring>(void *donnees)</argsstring>
+        <name>nettoyerVideo</name>
+        <qualifiedname>AffichageSynchrone::nettoyerVideo</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>donnees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="75" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_affichage_synchrone_1a8f2d921c10b071bc9983df8515e8136f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::chargerListeVideos</definition>
+        <argsstring>()</argsstring>
+        <name>chargerListeVideos</name>
+        <qualifiedname>AffichageSynchrone::chargerListeVideos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="104" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="104" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a0727e53ed317cd4b041d1e93e77abd59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::chargerVideo</definition>
+        <argsstring>()</argsstring>
+        <name>chargerVideo</name>
+        <qualifiedname>AffichageSynchrone::chargerVideo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="105" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="123" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a3e7551548d24acd0d09fa19981f9beb4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::generer</definition>
+        <argsstring>()</argsstring>
+        <name>generer</name>
+        <qualifiedname>AffichageSynchrone::generer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="106" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="149" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a318c072e0f0196fc27f4c60d52f4f837" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::lecturePause</definition>
+        <argsstring>() const</argsstring>
+        <name>lecturePause</name>
+        <qualifiedname>AffichageSynchrone::lecturePause</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="108" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="220" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a4f894e2c7ef125297e07fea4bc53e720" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::son</definition>
+        <argsstring>()</argsstring>
+        <name>son</name>
+        <qualifiedname>AffichageSynchrone::son</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="109" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="228" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1ae70db3d2448fa31324ebb7538553116e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::barreProgression</definition>
+        <argsstring>(bool &amp;enGlissement, bool &amp;etaitEnLecture, float &amp;delaiRecherche)</argsstring>
+        <name>barreProgression</name>
+        <qualifiedname>AffichageSynchrone::barreProgression</qualifiedname>
+        <param>
+          <type>bool &amp;</type>
+          <declname>enGlissement</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>etaitEnLecture</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>delaiRecherche</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="110" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="239" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a59c2ecdf5b4bb3a4458f9bb5df7335aa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::barreVolume</definition>
+        <argsstring>()</argsstring>
+        <name>barreVolume</name>
+        <qualifiedname>AffichageSynchrone::barreVolume</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="111" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="271" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1ac07725b9f8b46e24a279f864fe25433a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::afficherVideo</definition>
+        <argsstring>()</argsstring>
+        <name>afficherVideo</name>
+        <qualifiedname>AffichageSynchrone::afficherVideo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="112" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="281" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a49724e86e24d11975d73024f45278758" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::afficherListeFichiers</definition>
+        <argsstring>()</argsstring>
+        <name>afficherListeFichiers</name>
+        <qualifiedname>AffichageSynchrone::afficherListeFichiers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="113" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="310" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affichage_synchrone_1a9cb04c1379bb281d36edaeb4c24ca40e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::miseAJourDisposition</definition>
+        <argsstring>()</argsstring>
+        <name>miseAJourDisposition</name>
+        <qualifiedname>AffichageSynchrone::miseAJourDisposition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="114" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="86" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_affichage_synchrone_1aa10b5a8744227ff1ef94036356e89649" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffichageSynchrone::ouvrirDossierVideos</definition>
+        <argsstring>()</argsstring>
+        <name>ouvrirDossierVideos</name>
+        <qualifiedname>AffichageSynchrone::ouvrirDossierVideos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="107" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/src/AffichageSynchrone.cpp" bodystart="203" bodyend="218"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Gère l&apos;affichage synchronisé de vidéos et l&apos;interface utilisateur associée. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Cette classe utilise Raylib pour l&apos;interface graphique et libVLC pour la lecture vidéo. Elle permet de sélectionner des vidéos, de générer une vidéo synchronisée via un traitement externe, et de lire le résultat. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>AffichageSynchrone</label>
+        <link refid="class_affichage_synchrone"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" line="26" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/AffichageSynchrone/AffichageSynchrone.h" bodystart="26" bodyend="115"/>
+    <listofallmembers>
+      <member refid="class_affichage_synchrone_1a549a8bc9af9995eca9ea71dcad58bb1a" prot="public" virt="non-virtual"><scope>AffichageSynchrone</scope><name>AffichageSynchrone</name></member>
+      <member refid="class_affichage_synchrone_1a49724e86e24d11975d73024f45278758" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>afficherListeFichiers</name></member>
+      <member refid="class_affichage_synchrone_1a695f0d9934c3a8baf5963057f15a8c7f" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>afficherPixels</name></member>
+      <member refid="class_affichage_synchrone_1ac07725b9f8b46e24a279f864fe25433a" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>afficherVideo</name></member>
+      <member refid="class_affichage_synchrone_1ae70db3d2448fa31324ebb7538553116e" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>barreProgression</name></member>
+      <member refid="class_affichage_synchrone_1a59c2ecdf5b4bb3a4458f9bb5df7335aa" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>barreVolume</name></member>
+      <member refid="class_affichage_synchrone_1a8f2d921c10b071bc9983df8515e8136f" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>chargerListeVideos</name></member>
+      <member refid="class_affichage_synchrone_1a0727e53ed317cd4b041d1e93e77abd59" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>chargerVideo</name></member>
+      <member refid="class_affichage_synchrone_1a6211b45258bd0eed51ea39eed25920a4" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>cheminVideoComplexe</name></member>
+      <member refid="class_affichage_synchrone_1a6c1fb4f542042b188d6b08b53ff84b3c" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>configurerVideo</name></member>
+      <member refid="class_affichage_synchrone_1af090f2082b12b7e48394dded3eb3b219" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>deverrouiller</name></member>
+      <member refid="class_affichage_synchrone_1a94f845bb850a3624cdb1dc480e021da6" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>duree</name></member>
+      <member refid="class_affichage_synchrone_1a696a0efc238f5c9a3c23b4070ce12501" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>estMuet</name></member>
+      <member refid="class_affichage_synchrone_1a407bde31a04e04b4284d71cc9ce43b1b" prot="public" virt="non-virtual"><scope>AffichageSynchrone</scope><name>executer</name></member>
+      <member refid="class_affichage_synchrone_1a4fd98768069b04f552c627cb435f6f70" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>fichiersVideo</name></member>
+      <member refid="class_affichage_synchrone_1a88b080e43dfafff0186c925b8134bf86" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>framePrete</name></member>
+      <member refid="class_affichage_synchrone_1abf864b25c1b036ee73719abb1af97e86" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>generationEnCours</name></member>
+      <member refid="class_affichage_synchrone_1a3e7551548d24acd0d09fa19981f9beb4" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>generer</name></member>
+      <member refid="class_affichage_synchrone_1af7302c165e8abba74e02034d88f5513e" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>hauteurVideo</name></member>
+      <member refid="class_affichage_synchrone_1afd4b1c095ac9c7a45d4985fe3f9755a9" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>instanceVLC</name></member>
+      <member refid="class_affichage_synchrone_1aadbb0caeecaa1e1214a18566ad27ed81" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>largeurVideo</name></member>
+      <member refid="class_affichage_synchrone_1a7cfb445c398720f2e881a234e1cb759e" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>lecteurVLC</name></member>
+      <member refid="class_affichage_synchrone_1a318c072e0f0196fc27f4c60d52f4f837" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>lecturePause</name></member>
+      <member refid="class_affichage_synchrone_1a9cb04c1379bb281d36edaeb4c24ca40e" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>miseAJourDisposition</name></member>
+      <member refid="class_affichage_synchrone_1a391a7ed523d2fc4519433095b1c9eec4" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>mutexImage</name></member>
+      <member refid="class_affichage_synchrone_1a6f7a98bcb8195a7d3069fea05a50c51c" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>nettoyerVideo</name></member>
+      <member refid="class_affichage_synchrone_1a0306f17ce948498de27622d6e4f10515" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>ordreSelection</name></member>
+      <member refid="class_affichage_synchrone_1aa10b5a8744227ff1ef94036356e89649" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>ouvrirDossierVideos</name></member>
+      <member refid="class_affichage_synchrone_1ac4f5d7a4f8e1e5a88c4494dc779fda96" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>pixelsVideo</name></member>
+      <member refid="class_affichage_synchrone_1a4840450e2e5ebe3aa37a2a1d3eef2ec3" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>positionDefilement</name></member>
+      <member refid="class_affichage_synchrone_1af504a31a1ac2eb0557b9d775b4498ae6" prot="public" virt="non-virtual"><scope>AffichageSynchrone</scope><name>setVolume</name></member>
+      <member refid="class_affichage_synchrone_1a4f894e2c7ef125297e07fea4bc53e720" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>son</name></member>
+      <member refid="class_affichage_synchrone_1a474a784a8e0b0f59b6e78b83de65203c" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>TEXTE_BOUTON_GENERER</name></member>
+      <member refid="class_affichage_synchrone_1af3108e2f5fccab234584fbad4f06bcca" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>TEXTE_BOUTON_OUVRIR_DOSSIER</name></member>
+      <member refid="class_affichage_synchrone_1a3d9cd44ca2e7ae5bc54dbcd342bfcaf7" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>textureDoitEtreRedimensionnee</name></member>
+      <member refid="class_affichage_synchrone_1a97b741394512ad1639b6e4617866f0e4" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>textureVideo</name></member>
+      <member refid="class_affichage_synchrone_1a4c09b9ee5486a0870819426e02843983" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>threadGeneration</name></member>
+      <member refid="class_affichage_synchrone_1a4b76f078ddb3474cf195aad4d5283b66" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>valeurSliderProgression</name></member>
+      <member refid="class_affichage_synchrone_1a69c1b365f607f0f3bac5071419b75fcd" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>valeurSliderSon</name></member>
+      <member refid="class_affichage_synchrone_1ade77fc01c47abad7f7f0ef7a8b315827" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>valeurSliderSonPrecedent</name></member>
+      <member refid="class_affichage_synchrone_1ab58c57eea00a91e1a5405d8aed15b7e0" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>verrouiller</name></member>
+      <member refid="class_affichage_synchrone_1ab378ba5573dbc780466ac8089e486a9c" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>videoGeneree</name></member>
+      <member refid="class_affichage_synchrone_1af133ff0e4d123ace07a968c0dfffe2ab" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>videosSelectionnees</name></member>
+      <member refid="class_affichage_synchrone_1af01a8d25c111c25d3b42a9284ee8e81b" prot="private" virt="non-virtual"><scope>AffichageSynchrone</scope><name>zones</name></member>
+      <member refid="class_affichage_synchrone_1a67e61e03d62733b9956c84ff969b3179" prot="public" virt="non-virtual"><scope>AffichageSynchrone</scope><name>~AffichageSynchrone</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

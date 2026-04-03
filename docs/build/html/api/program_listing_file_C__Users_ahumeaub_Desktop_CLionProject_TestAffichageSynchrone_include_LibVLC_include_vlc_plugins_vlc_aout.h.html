@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_aout.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_aout.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_aout.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_aout.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-aout-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-aout-h"></span><h1>Program Listing for File vlc_aout.h<a class="headerlink" href="#program-listing-for-file-vlc-aout-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_aout.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-aout-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_aout.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_aout.h : audio output interface</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2002-2011 VLC authors and VideoLAN</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Christophe Massiot &lt;massiot@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_AOUT_H</span>
+<span class="cp">#define VLC_AOUT_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;assert.h&gt;</span>
+
+
+<span class="cm">/* Buffers which arrive in advance of more than AOUT_MAX_ADVANCE_TIME</span>
+<span class="cm"> * will be considered as bogus and be trashed */</span>
+<span class="cp">#define AOUT_MAX_ADVANCE_TIME           (AOUT_MAX_PREPARE_TIME + CLOCK_FREQ)</span>
+
+<span class="cm">/* Buffers which arrive in advance of more than AOUT_MAX_PREPARE_TIME</span>
+<span class="cm"> * will cause the calling thread to sleep */</span>
+<span class="cp">#define AOUT_MAX_PREPARE_TIME           (2 * CLOCK_FREQ)</span>
+
+<span class="cm">/* Buffers which arrive after pts - AOUT_MIN_PREPARE_TIME will be trashed</span>
+<span class="cm"> * to avoid too heavy resampling */</span>
+<span class="cp">#define AOUT_MIN_PREPARE_TIME           AOUT_MAX_PTS_ADVANCE</span>
+
+<span class="cm">/* Tolerance values from EBU Recommendation 37 */</span>
+<span class="cp">#define AOUT_MAX_PTS_ADVANCE            (CLOCK_FREQ / 25)</span>
+
+<span class="cp">#define AOUT_MAX_PTS_DELAY              (3 * CLOCK_FREQ / 50)</span>
+
+<span class="cm">/* Max acceptable resampling (in %) */</span>
+<span class="cp">#define AOUT_MAX_RESAMPLING             10</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_es.h&quot;</span>
+
+<span class="cp">#define AOUT_FMTS_IDENTICAL( p_first, p_second ) (                          \</span>
+<span class="cp">    ((p_first)-&gt;i_format == (p_second)-&gt;i_format)                           \</span>
+<span class="cp">      &amp;&amp; AOUT_FMTS_SIMILAR(p_first, p_second) )</span>
+
+<span class="cm">/* Check if i_rate == i_rate and i_channels == i_channels */</span>
+<span class="cp">#define AOUT_FMTS_SIMILAR( p_first, p_second ) (                            \</span>
+<span class="cp">    ((p_first)-&gt;i_rate == (p_second)-&gt;i_rate)                               \</span>
+<span class="cp">      &amp;&amp; ((p_first)-&gt;channel_type == (p_second)-&gt;channel_type)            \</span>
+<span class="cp">      &amp;&amp; ((p_first)-&gt;i_physical_channels == (p_second)-&gt;i_physical_channels)\</span>
+<span class="cp">      &amp;&amp; ((p_first)-&gt;i_chan_mode == (p_second)-&gt;i_chan_mode) )</span>
+
+<span class="cp">#define AOUT_FMT_LINEAR( p_format ) \</span>
+<span class="cp">    (aout_BitsPerSample((p_format)-&gt;i_format) != 0)</span>
+
+<span class="cp">#define VLC_CODEC_SPDIFL VLC_FOURCC(&#39;s&#39;,&#39;p&#39;,&#39;d&#39;,&#39;i&#39;)</span>
+<span class="cp">#define VLC_CODEC_SPDIFB VLC_FOURCC(&#39;s&#39;,&#39;p&#39;,&#39;d&#39;,&#39;b&#39;)</span>
+
+<span class="cp">#define AOUT_FMT_SPDIF( p_format ) \</span>
+<span class="cp">    ( ((p_format)-&gt;i_format == VLC_CODEC_SPDIFL)       \</span>
+<span class="cp">       || ((p_format)-&gt;i_format == VLC_CODEC_SPDIFB)   \</span>
+<span class="cp">       || ((p_format)-&gt;i_format == VLC_CODEC_A52)      \</span>
+<span class="cp">       || ((p_format)-&gt;i_format == VLC_CODEC_DTS) )</span>
+
+<span class="cp">#define AOUT_FMT_HDMI( p_format )                   \</span>
+<span class="cp">    ( (p_format)-&gt;i_format == VLC_CODEC_EAC3        \</span>
+<span class="cp">    ||(p_format)-&gt;i_format == VLC_CODEC_TRUEHD      \</span>
+<span class="cp">    ||(p_format)-&gt;i_format == VLC_CODEC_MLP         \</span>
+<span class="cp">    )</span>
+
+<span class="cm">/* Values used for the audio-channels object variable */</span>
+<span class="cp">#define AOUT_VAR_CHAN_UNSET         0 </span><span class="cm">/* must be zero */</span>
+<span class="cp">#define AOUT_VAR_CHAN_STEREO        1</span>
+<span class="cp">#define AOUT_VAR_CHAN_RSTEREO       2</span>
+<span class="cp">#define AOUT_VAR_CHAN_LEFT          3</span>
+<span class="cp">#define AOUT_VAR_CHAN_RIGHT         4</span>
+<span class="cp">#define AOUT_VAR_CHAN_DOLBYS        5</span>
+<span class="cp">#define AOUT_VAR_CHAN_HEADPHONES    6</span>
+<span class="cp">#define AOUT_VAR_CHAN_MONO          7</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Main audio output structures</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cm">/* Size of a frame for S/PDIF output. */</span>
+<span class="cp">#define AOUT_SPDIF_SIZE 6144</span>
+
+<span class="cm">/* Number of samples in an A/52 frame. */</span>
+<span class="cp">#define A52_FRAME_NB 1536</span>
+
+<span class="cm">/* FIXME to remove once aout.h is cleaned a bit more */</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_block.h&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">audio_output</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">aout_sys_t</span><span class="w"> </span><span class="o">*</span><span class="n">sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">start</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">stop</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">time_get</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="o">*</span><span class="n">delay</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">play</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pause</span><span class="p">)(</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">pause</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">date</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">flush</span><span class="p">)(</span><span class="w"> </span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">wait</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">volume_set</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">volume</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">mute_set</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mute</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">device_select</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">headphones</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">current_sink_info</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">volume_report</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">mute_report</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">policy_report</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">device_report</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">hotplug_report</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">gain_request</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">restart_request</span><span class="p">)(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">event</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_DISABLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_MIDDLELEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_MIDDLERIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_REARLEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_REARRIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_REARCENTER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_CENTER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_LFE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHANIDX_MAX</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_chan_order_idx_t</span><span class="p">;</span>
+
+<span class="k">static_assert</span><span class="p">(</span><span class="n">AOUT_CHANIDX_MAX</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AOUT_CHAN_MAX</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;channel count mismatch&quot;</span><span class="p">);</span>
+
+<span class="cp">#define AOUT_CHAN_REMAP_INIT { \</span>
+<span class="cp">    AOUT_CHANIDX_LEFT,  \</span>
+<span class="cp">    AOUT_CHANIDX_RIGHT, \</span>
+<span class="cp">    AOUT_CHANIDX_MIDDLELEFT, \</span>
+<span class="cp">    AOUT_CHANIDX_MIDDLERIGHT, \</span>
+<span class="cp">    AOUT_CHANIDX_REARLEFT, \</span>
+<span class="cp">    AOUT_CHANIDX_REARRIGHT, \</span>
+<span class="cp">    AOUT_CHANIDX_REARCENTER, \</span>
+<span class="cp">    AOUT_CHANIDX_CENTER, \</span>
+<span class="cp">    AOUT_CHANIDX_LFE, \</span>
+<span class="cp">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">pi_vlc_chan_order_wg4</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">AOUT_CHAN_LEFT</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_CHAN_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHAN_MIDDLELEFT</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_CHAN_MIDDLERIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHAN_REARLEFT</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_CHAN_REARRIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_CHAN_REARCENTER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AOUT_CHAN_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_CHAN_LFE</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="cp">#define AOUT_RESTART_FILTERS        0x1</span>
+<span class="cp">#define AOUT_RESTART_OUTPUT         (AOUT_RESTART_FILTERS|0x2)</span>
+<span class="cp">#define AOUT_RESTART_STEREOMODE     (AOUT_RESTART_OUTPUT|0x4)</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Prototypes</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">aout_CheckChannelReorder</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                           </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">table</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_ChannelReorder</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_Interleave</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">planes</span><span class="p">,</span>
+<span class="w">                             </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">channels</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">fourcc</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_Deinterleave</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span>
+<span class="w">                             </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">channels</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">fourcc</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">aout_CheckChannelExtraction</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_selection</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">pi_layout</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_channels</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">pi_order_dst</span><span class="p">[</span><span class="n">AOUT_CHAN_MAX</span><span class="p">],</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">pi_order_src</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_channels</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_ChannelExtract</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_dst_channels</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_src_channels</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_sample_count</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_selection</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_bits_per_sample</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/* */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="nf">aout_FormatNbChannels</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">popcount</span><span class="p">(</span><span class="n">fmt</span><span class="o">-&gt;</span><span class="n">i_physical_channels</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_BitsPerSample</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_format</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_FormatPrepare</span><span class="p">(</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_format</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_FormatPrint</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="cp">#define aout_FormatPrint(o, t, f) aout_FormatPrint(VLC_OBJECT(o), t, f)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">aout_FormatPrintChannels</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cp">#define AOUT_VOLUME_DEFAULT             256</span>
+<span class="cp">#define AOUT_VOLUME_MAX                 512</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">aout_VolumeGet</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_VolumeSet</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_VolumeUpdate</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_MuteGet</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_MuteSet</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">aout_DeviceGet</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_DeviceSet</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aout_DevicesList</span><span class="w"> </span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aout_VolumeReport</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">volume</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">volume_report</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">volume</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aout_MuteReport</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mute</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">mute_report</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">mute</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aout_PolicyReport</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">cork</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">policy_report</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">cork</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aout_DeviceReport</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">device_report</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aout_HotplugReport</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">hotplug_report</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">aout_GainRequest</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gain</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">gain_request</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">gain</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aout_RestartRequest</span><span class="p">(</span><span class="n">audio_output_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">aout</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">restart_request</span><span class="p">(</span><span class="n">aout</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* Audio output filters */</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">remap</span><span class="p">[</span><span class="n">AOUT_CHANIDX_MAX</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">headphones</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">aout_filters_cfg_t</span><span class="p">;</span>
+
+<span class="cp">#define AOUT_FILTERS_CFG_INIT (aout_filters_cfg_t) \</span>
+<span class="cp">    { .remap = AOUT_CHAN_REMAP_INIT, \</span>
+<span class="cp">      .headphones = false, \</span>
+<span class="cp">    };</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">aout_filters</span><span class="w"> </span><span class="n">aout_filters_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">aout_request_vout</span><span class="w"> </span><span class="n">aout_request_vout_t</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout_FiltersNew</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                        </span><span class="k">const</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                        </span><span class="k">const</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                        </span><span class="k">const</span><span class="w"> </span><span class="n">aout_request_vout_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                        </span><span class="k">const</span><span class="w"> </span><span class="n">aout_filters_cfg_t</span><span class="w"> </span><span class="o">*</span><span class="n">cfg</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="cp">#define aout_FiltersNew(o,inf,outf,rv,remap) \</span>
+<span class="cp">        aout_FiltersNew(VLC_OBJECT(o),inf,outf,rv,remap)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">aout_FiltersDelete</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="cp">#define aout_FiltersDelete(o,f) \</span>
+<span class="cp">        aout_FiltersDelete(VLC_OBJECT(o),f)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">aout_FiltersAdjustResampling</span><span class="p">(</span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout_FiltersPlay</span><span class="p">(</span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rate</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">aout_FiltersDrain</span><span class="p">(</span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w">     </span><span class="n">aout_FiltersFlush</span><span class="p">(</span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w">     </span><span class="n">aout_FiltersChangeViewpoint</span><span class="p">(</span><span class="n">aout_filters_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">vp</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vout_thread_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">aout_filter_RequestVout</span><span class="p">(</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vout_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_vout</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="cp">#endif </span><span class="cm">/* VLC_AOUT_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

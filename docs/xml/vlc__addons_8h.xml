@@ -1,0 +1,793 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__addons_8h" kind="file" language="C++">
+    <compoundname>vlc_addons.h</compoundname>
+    <includes refid="vlc__arrays_8h" local="no">vlc_arrays.h</includes>
+    <includes refid="vlc__events_8h" local="no">vlc_events.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h</label>
+        <link refid="vlc__addons_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_arrays.h</label>
+        <link refid="vlc__arrays_8h"/>
+      </node>
+      <node id="3">
+        <label>vlc_events.h</label>
+        <link refid="vlc__events_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>vlc_meta.h</label>
+        <link refid="vlc__meta_8h"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structaddon__file__t" prot="public">addon_file_t</innerclass>
+    <innerclass refid="structaddon__entry__t" prot="public">addon_entry_t</innerclass>
+    <innerclass refid="structaddons__finder__t" prot="public">addons_finder_t</innerclass>
+    <innerclass refid="structaddons__storage__t" prot="public">addons_storage_t</innerclass>
+    <innerclass refid="structaddons__manager__owner" prot="public">addons_manager_owner</innerclass>
+    <innerclass refid="structaddons__manager__t" prot="public">addons_manager_t</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="vlc__addons_8h_1a176e4f36eb601edd7832748e9938c3cc" prot="public" static="no">
+        <name>ADDON_MAX_SCORE</name>
+        <initializer>(5 * 100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="59" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__addons_8h_1a36355dc43b226b759b4d609d4a621d63" prot="public" static="no">
+        <name>ADDON_UUID_SIZE</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="60" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__addons_8h_1a8c728264037ab472d77f0411bd43090c" prot="public" static="no">
+        <name>ADDON_UUID_PSZ_SIZE</name>
+        <initializer>(ADDON_UUID_SIZE * 2 + 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="61" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>addon_type_t</name>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fba0bbb17b21429c3759f00474e63ac6e11" prot="public">
+          <name>ADDON_UNKNOWN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fbac7be6b14aa775f29f8b9ee1b44cc3d30" prot="public">
+          <name>ADDON_EXTENSION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fba08b519c2503c751aac8357205a0962d0" prot="public">
+          <name>ADDON_PLAYLIST_PARSER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fbac206e28a7ca3762584c1a9373f065e1b" prot="public">
+          <name>ADDON_SERVICE_DISCOVERY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fba829ba663336aca2672d3e632bdc26836" prot="public">
+          <name>ADDON_SKIN2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fbaa1bffd1d0e1633c524795a0a31dd70cb" prot="public">
+          <name>ADDON_PLUGIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fba4b57ff11e804a1d726e2089b449b8627" prot="public">
+          <name>ADDON_INTERFACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fba6aa41e55071fd1ed43ca11fc61aa8eed" prot="public">
+          <name>ADDON_META</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a2602677d8db99ec26b0a99b1359320fbabcf468347b55e3f1bb1e807c07d33ed1" prot="public">
+          <name>ADDON_OTHER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="31" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="32" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__addons_8h_1aa7267dfb6515120299c987a412a4351a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>addon_state_t</name>
+        <enumvalue id="vlc__addons_8h_1aa7267dfb6515120299c987a412a4351aacd158c1dc47bf9e68c80302a2e8df806" prot="public">
+          <name>ADDON_NOTINSTALLED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1aa7267dfb6515120299c987a412a4351aa09642d63f2ef429a7f500b7976953fd8" prot="public">
+          <name>ADDON_INSTALLING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1aa7267dfb6515120299c987a412a4351aa86fe818f827d9f0665e0065869328e88" prot="public">
+          <name>ADDON_INSTALLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1aa7267dfb6515120299c987a412a4351aa12bbb0d4c959d0bcde49776af4f04f1b" prot="public">
+          <name>ADDON_UNINSTALLING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="44" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__addons_8h_1a9b48410f78753d145984bc6e3e222827" prot="public" static="no" strong="no">
+        <type></type>
+        <name>addon_flags_t</name>
+        <enumvalue id="vlc__addons_8h_1a9b48410f78753d145984bc6e3e222827a874d2677dea129bf883b2f522efdcdb2" prot="public">
+          <name>ADDON_BROKEN</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a9b48410f78753d145984bc6e3e222827a0fdf95c3d86ad2971edabffab70a39af" prot="public">
+          <name>ADDON_MANAGEABLE</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__addons_8h_1a9b48410f78753d145984bc6e3e222827a8b4985cfef2668715d4937e0bbb02b7d" prot="public">
+          <name>ADDON_UPDATABLE</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="52" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="53" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vlc__addons_8h_1a0df53458091b3081544852e806f84d22" prot="public" static="no">
+        <type>enum addon_type_t</type>
+        <definition>typedef enum addon_type_t addon_type_t</definition>
+        <argsstring></argsstring>
+        <name>addon_type_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="42" column="14"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1a2c8d259f0b5efa4b2fc07bf5d4da53d9" prot="public" static="no">
+        <type>enum addon_state_t</type>
+        <definition>typedef enum addon_state_t addon_state_t</definition>
+        <argsstring></argsstring>
+        <name>addon_state_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="50" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1ac6ad6a733b7008aaff7f39d5477da669" prot="public" static="no">
+        <type>enum addon_flags_t</type>
+        <definition>typedef enum addon_flags_t addon_flags_t</definition>
+        <argsstring></argsstring>
+        <name>addon_flags_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="57" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1a7152f7f4456dcdd10fdd2f7e4b2b87c3" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t addon_uuid_t[ADDON_UUID_SIZE]</definition>
+        <argsstring>[ADDON_UUID_SIZE]</argsstring>
+        <name>addon_uuid_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="62" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1ab223837d965f99894d2459dc791b597d" prot="public" static="no">
+        <type>struct addon_file_t</type>
+        <definition>typedef struct addon_file_t addon_file_t</definition>
+        <argsstring></argsstring>
+        <name>addon_file_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="69" column="14"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1ac4bc00811c1e41d9c89e9c2103df567e" prot="public" static="no">
+        <type>struct addons_finder_t</type>
+        <definition>typedef struct addons_finder_t addons_finder_t</definition>
+        <argsstring></argsstring>
+        <name>addons_finder_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="105" column="30" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1a35f652b038371bbe353562b4a1ce8862" prot="public" static="no">
+        <type>struct addons_finder_sys_t</type>
+        <definition>typedef struct addons_finder_sys_t addons_finder_sys_t</definition>
+        <argsstring></argsstring>
+        <name>addons_finder_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="106" column="34" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1a264c5ecba1ffa2dac7699364a4461271" prot="public" static="no">
+        <type>struct addons_storage_t</type>
+        <definition>typedef struct addons_storage_t addons_storage_t</definition>
+        <argsstring></argsstring>
+        <name>addons_storage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="119" column="31" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1af9b153ce469c8b89722121a8275f5468" prot="public" static="no">
+        <type>struct addons_storage_sys_t</type>
+        <definition>typedef struct addons_storage_sys_t addons_storage_sys_t</definition>
+        <argsstring></argsstring>
+        <name>addons_storage_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="120" column="35" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1a0df0796767230985bc4ac3157b60fcad" prot="public" static="no">
+        <type>struct addons_manager_t</type>
+        <definition>typedef struct addons_manager_t addons_manager_t</definition>
+        <argsstring></argsstring>
+        <name>addons_manager_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="132" column="31" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__addons_8h_1a0766201e3c282c29da374c0be6478091" prot="public" static="no">
+        <type>struct addons_manager_private_t</type>
+        <definition>typedef struct addons_manager_private_t addons_manager_private_t</definition>
+        <argsstring></argsstring>
+        <name>addons_manager_private_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="142" column="39" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="vlc__addons_8h_1a7b912ef7486c3f78371922d6d24a878a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref> *</type>
+        <definition>VLC_API addon_entry_t * addon_entry_New</definition>
+        <argsstring>(void)</argsstring>
+        <name>addon_entry_New</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>addon entry lifecycle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="152" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="152" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1a7d5547715da10f2230adfefeb9322c75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref> *</type>
+        <definition>VLC_API addon_entry_t * addon_entry_Hold</definition>
+        <argsstring>(addon_entry_t *)</argsstring>
+        <name>addon_entry_Hold</name>
+        <param>
+          <type><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="153" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="153" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1a40a7c62be14340b35269b97c9e0ee511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void addon_entry_Release</definition>
+        <argsstring>(addon_entry_t *)</argsstring>
+        <name>addon_entry_Release</name>
+        <param>
+          <type><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="154" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="154" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1af4f29fbf77896870add7882f7b25e6db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref> *</type>
+        <definition>VLC_API addons_manager_t * addons_manager_New</definition>
+        <argsstring>(vlc_object_t *, const struct addons_manager_owner *)</argsstring>
+        <name>addons_manager_New</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>const struct <ref refid="structaddons__manager__owner" kindref="compound">addons_manager_owner</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>addons manager lifecycle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="159" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="159" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1a525088e67f60b700fa8a1dc333152997" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void addons_manager_Delete</definition>
+        <argsstring>(addons_manager_t *)</argsstring>
+        <name>addons_manager_Delete</name>
+        <param>
+          <type><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="161" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="161" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1a4a5b39a9d5a45bdfdf035bca6beb56c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int addons_manager_LoadCatalog</definition>
+        <argsstring>(addons_manager_t *)</argsstring>
+        <name>addons_manager_LoadCatalog</name>
+        <param>
+          <type><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Charge currently installed, usable and manageable addons (default &quot;addons storage&quot; module) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="167" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="167" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1ab37b1e5fbe073a9e832e00c805e396c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void addons_manager_Gather</definition>
+        <argsstring>(addons_manager_t *, const char *psz_uri)</argsstring>
+        <name>addons_manager_Gather</name>
+        <param>
+          <type><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gather addons info from repository (default &quot;addons finder&quot; module) If psz_uri is not NULL, only gather info from the pointed package. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="173" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="173" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1a090189794f403294df23e4015784d7ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int addons_manager_Install</definition>
+        <argsstring>(addons_manager_t *p_manager, const addon_uuid_t uuid)</argsstring>
+        <name>addons_manager_Install</name>
+        <param>
+          <type><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref> *</type>
+          <declname>p_manager</declname>
+        </param>
+        <param>
+          <type>const addon_uuid_t</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Install or Remove the addon identified by its uuid </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="178" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="178" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1ac27c7f9b0d23fec5da4e86a851b578f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int addons_manager_Remove</definition>
+        <argsstring>(addons_manager_t *p_manager, const addon_uuid_t uuid)</argsstring>
+        <name>addons_manager_Remove</name>
+        <param>
+          <type><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref> *</type>
+          <declname>p_manager</declname>
+        </param>
+        <param>
+          <type>const addon_uuid_t</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="179" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" declline="179" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1a8223ef40dedf9a009fce237ffc0132d6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool addons_uuid_read</definition>
+        <argsstring>(const char *psz_uuid, addon_uuid_t *p_uuid)</argsstring>
+        <name>addons_uuid_read</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uuid</declname>
+        </param>
+        <param>
+          <type>addon_uuid_t *</type>
+          <declname>p_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>String uuid to binary uuid helpers </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="184" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="184" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__addons_8h_1ae5b8bcfe07da11c09258e41abf1ac4c9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * addons_uuid_to_psz</definition>
+        <argsstring>(const addon_uuid_t *p_uuid)</argsstring>
+        <name>addons_uuid_to_psz</name>
+        <param>
+          <type>const addon_uuid_t *</type>
+          <declname>p_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" line="203" column="21" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h" bodystart="203" bodyend="221"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_addons.h<sp/>:<sp/>addons<sp/>handling<sp/>and<sp/>describing</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2013<sp/>VideoLAN<sp/>and<sp/>authors</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_ADDONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_ADDONS_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__arrays_8h" kindref="compound">vlc_arrays.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__events_8h" kindref="compound">vlc_events.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>addon_type_t</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_UNKNOWN<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_EXTENSION,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_PLAYLIST_PARSER,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_SERVICE_DISCOVERY,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_SKIN2,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_PLUGIN,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_INTERFACE,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_META,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_OTHER</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/>addon_type_t;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>addon_state_t</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_NOTINSTALLED<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_INSTALLING,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_INSTALLED,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_UNINSTALLING</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}<sp/>addon_state_t;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>addon_flags_t</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_BROKEN<sp/><sp/><sp/><sp/><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">/*<sp/>Have<sp/>install<sp/>inconsistency<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_MANAGEABLE<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,<sp/></highlight><highlight class="comment">/*<sp/>Have<sp/>manifest,<sp/>can<sp/>install<sp/>or<sp/>uninstall<sp/>files<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>ADDON_UPDATABLE<sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}<sp/>addon_flags_t;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADDON_MAX_SCORE<sp/>(5<sp/>*<sp/>100)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADDON_UUID_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADDON_UUID_PSZ_SIZE<sp/>(ADDON_UUID_SIZE<sp/>*<sp/>2<sp/>+<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/>addon_uuid_t[ADDON_UUID_SIZE];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structaddon__file__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddon__file__t" kindref="compound">addon_file_t</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>addon_type_t<sp/>e_filetype;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_download_uri;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_filename;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/><ref refid="structaddon__file__t" kindref="compound">addon_file_t</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="structaddon__entry__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref><sp/>lock;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>addon_type_t<sp/>e_type;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>addon_state_t<sp/>e_state;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>addon_flags_t<sp/>e_flags;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>data<sp/>describing<sp/>addon<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>addon_uuid_t<sp/>uuid;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_summary;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_description;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_author;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_source_uri;<sp/></highlight><highlight class="comment">/*<sp/>webpage,<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_image_uri;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_image_data;<sp/></highlight><highlight class="comment">/*<sp/>base64,<sp/>png<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_version;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>stats<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_downloads;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_score;<sp/></highlight><highlight class="comment">/*<sp/>score<sp/>0..5<sp/>in<sp/>hundredth<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Lister<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_source_module;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>files<sp/>list<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_archive_uri;<sp/></highlight><highlight class="comment">/*<sp/>Archive<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>DECL_ARRAY(<ref refid="structaddon__file__t" kindref="compound">addon_file_t</ref><sp/>*)<sp/>files;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>custom<sp/>data<sp/>storage<sp/>(if<sp/>needed<sp/>by<sp/>module/source)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>p_custom;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__finder__t" kindref="compound">addons_finder_t</ref><sp/><ref refid="structaddons__finder__t" kindref="compound">addons_finder_t</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addons_finder_sys_t<sp/>addons_finder_sys_t;</highlight></codeline>
+<codeline lineno="107" refid="structaddons__finder__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__finder__t" kindref="compound">addons_finder_t</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(<sp/>*<sp/>pf_find<sp/>)(<sp/><ref refid="structaddons__finder__t" kindref="compound">addons_finder_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(<sp/>*<sp/>pf_retrieve<sp/>)(<sp/><ref refid="structaddons__finder__t" kindref="compound">addons_finder_t</ref><sp/>*,<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>DECL_ARRAY(<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*<sp/>)<sp/>entries;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_uri;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>addons_finder_sys_t<sp/>*p_sys;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__storage__t" kindref="compound">addons_storage_t</ref><sp/><ref refid="structaddons__storage__t" kindref="compound">addons_storage_t</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addons_storage_sys_t<sp/>addons_storage_sys_t;</highlight></codeline>
+<codeline lineno="121" refid="structaddons__storage__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__storage__t" kindref="compound">addons_storage_t</ref></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(<sp/>*<sp/>pf_install<sp/>)(<sp/><ref refid="structaddons__storage__t" kindref="compound">addons_storage_t</ref><sp/>*,<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(<sp/>*<sp/>pf_remove<sp/>)(<sp/><ref refid="structaddons__storage__t" kindref="compound">addons_storage_t</ref><sp/>*,<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(<sp/>*<sp/>pf_catalog<sp/>)<sp/>(<sp/><ref refid="structaddons__storage__t" kindref="compound">addons_storage_t</ref><sp/>*,<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>**,<sp/>int<sp/>);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>addons_storage_sys_t<sp/>*p_sys;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="structaddons__manager__owner" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__owner" kindref="compound">addons_manager_owner</ref></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*sys;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*addon_found)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*discovery_ended)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*addon_changed)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addons_manager_private_t<sp/>addons_manager_private_t;</highlight></codeline>
+<codeline lineno="143" refid="structaddons__manager__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaddons__manager__owner" kindref="compound">addons_manager_owner</ref><sp/>owner;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>addons_manager_private_t<sp/>*p_priv;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">VLC_API<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*addon_entry_New(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">VLC_API<sp/><ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*addon_entry_Hold(<ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addon_entry_Release(<ref refid="structaddon__entry__t" kindref="compound">addon_entry_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">VLC_API<sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*addons_manager_New(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structaddons__manager__owner" kindref="compound">addons_manager_owner</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addons_manager_Delete(<sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addons_manager_LoadCatalog(<sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addons_manager_Gather(<sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_uri<sp/>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addons_manager_Install(<sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*p_manager,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>addon_uuid_t<sp/>uuid<sp/>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addons_manager_Remove(<sp/><ref refid="structaddons__manager__t" kindref="compound">addons_manager_t</ref><sp/>*p_manager,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>addon_uuid_t<sp/>uuid<sp/>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addons_uuid_read(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_uuid,<sp/>addon_uuid_t<sp/>*p_uuid<sp/>)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!psz_uuid<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>strlen(<sp/>psz_uuid<sp/>)<sp/>&lt;<sp/>ADDON_UUID_PSZ_SIZE<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>j<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>i&lt;ADDON_UUID_PSZ_SIZE<sp/>)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>*(<sp/>psz_uuid<sp/>+<sp/>i<sp/>)<sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sscanf(<sp/>psz_uuid<sp/>+<sp/>i,<sp/></highlight><highlight class="stringliteral">&quot;%02x&quot;</highlight><highlight class="normal">,<sp/>&amp;v<sp/>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*p_uuid)[j++]<sp/>=<sp/>v<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i+=2;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>addons_uuid_to_psz(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>addon_uuid_t<sp/>*<sp/>p_uuid<sp/>)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>calloc(<sp/>ADDON_UUID_PSZ_SIZE<sp/>+<sp/>1<sp/>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>psz<sp/>)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p<sp/>=<sp/>psz;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>&lt;<sp/>ADDON_UUID_SIZE<sp/>)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>==<sp/>4<sp/>||<sp/>i==<sp/>7<sp/>||<sp/>i==<sp/>9<sp/>||<sp/>i==<sp/>11<sp/>)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*p++<sp/>=<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v<sp/>=<sp/>0xFF<sp/>&amp;<sp/>(*p_uuid)[i];</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<sp/>p,<sp/></highlight><highlight class="stringliteral">&quot;%02x&quot;</highlight><highlight class="normal">,<sp/>v<sp/>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>+=<sp/>2;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>psz;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h"/>
+  </compounddef>
+</doxygen>

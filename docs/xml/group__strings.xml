@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__strings" kind="group">
+    <compoundname>strings</compoundname>
+    <title>String helpers</title>
+    <innerfile refid="vlc__charset_8h">vlc_charset.h</innerfile>
+    <innerfile refid="vlc__strings_8h">vlc_strings.h</innerfile>
+    <innerfile refid="vlc__url_8h">vlc_url.h</innerfile>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__strings_1ga9e15d5c9b9a97fc20cfd0d4da5c82049" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_ascii_toupper</definition>
+        <argsstring>(int c)</argsstring>
+        <name>vlc_ascii_toupper</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="34" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" bodystart="34" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga842153630c567a8606e58a5aed8371f4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_ascii_tolower</definition>
+        <argsstring>(int c)</argsstring>
+        <name>vlc_ascii_tolower</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="42" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gae6c4c7f7a63819d175fe096987c9d23f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_ascii_strcasecmp</definition>
+        <argsstring>(const char *psz1, const char *psz2)</argsstring>
+        <name>vlc_ascii_strcasecmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compare two ASCII strings ignoring case.</para>
+<para>The result is independent of the locale. If there are non-ASCII characters in the strings, their cases are NOT ignored in the comparison. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="57" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" bodystart="57" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga1a2ce9d80e528c1784f8eace4e3d7cd1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_ascii_strncasecmp</definition>
+        <argsstring>(const char *psz1, const char *psz2, size_t n)</argsstring>
+        <name>vlc_ascii_strncasecmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz2</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="72" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" bodystart="72" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gafd8aa2ec2898f1a300d829d4a8b2a9b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_xml_decode</definition>
+        <argsstring>(char *st)</argsstring>
+        <name>vlc_xml_decode</name>
+        <param>
+          <type>char *</type>
+          <declname>st</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decodes XML entities.</para>
+<para>Decodes a null-terminated UTF-8 string of XML character data into a regular nul-terminated UTF-8 string. In other words, replaces XML entities and numerical character references with the corresponding characters.</para>
+<para>This function operates in place (the output is always of smaller or equal length than the input) and always succeeds.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>null-terminated string [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="103" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="103" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga2b721b3dc59adb4c020220c9b3b3b745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_xml_encode</definition>
+        <argsstring>(const char *str) VLC_MALLOC</argsstring>
+        <name>vlc_xml_encode</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encodes XML entites.</para>
+<para>Substitutes unsafe characters in a null-terminated UTF-8 strings with an XML entity or numerical character reference.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>null terminated UTF-8 string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>On success, a heap-allocated null-terminated string is returned. If the input string was not a valid UTF-8 sequence, NULL is returned and errno is set to EILSEQ. If there was not enough memory, NULL is returned and errno is to ENOMEM. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="117" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="117" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gac3ad74a8362682905464d359a3b9c1ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_b64_encode_binary</definition>
+        <argsstring>(const uint8_t *, size_t)</argsstring>
+        <name>vlc_b64_encode_binary</name>
+        <param>
+          <type>const uint8_t *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="119" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="119" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga651d75c89ba16bda4dd71b6641e9e568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_b64_encode</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>vlc_b64_encode</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="120" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="120" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga655e9374bcd922fe34769b157c9e1337" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API size_t</type>
+        <definition>VLC_API size_t vlc_b64_decode_binary_to_buffer</definition>
+        <argsstring>(uint8_t *p_dst, size_t i_dst_max, const char *psz_src)</argsstring>
+        <name>vlc_b64_decode_binary_to_buffer</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_dst</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_dst_max</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="122" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="122" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga8d7c901762b7e2ce30a3d1906fdb6ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API size_t</type>
+        <definition>VLC_API size_t vlc_b64_decode_binary</definition>
+        <argsstring>(uint8_t **pp_dst, const char *psz_src)</argsstring>
+        <name>vlc_b64_decode_binary</name>
+        <param>
+          <type>uint8_t **</type>
+          <declname>pp_dst</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="123" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="123" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga12e57f8cb7b7e4f89eefceb80291d37d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_b64_decode</definition>
+        <argsstring>(const char *psz_src)</argsstring>
+        <name>vlc_b64_decode</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="124" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="124" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gabc71fc878d6df26506bd3ffb6d0247fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_strftime</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>vlc_strftime</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convenience wrapper for strftime().</para>
+<para>Formats the current time into a heap-allocated string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tformat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time format (as with C strftime()) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>an allocated string (must be free()&apos;d), or NULL on memory error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="134" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="134" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gaa02c31fbddd6bc8b9ad29c16ab88f587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_strfinput</definition>
+        <argsstring>(input_thread_t *, const char *) VLC_MALLOC</argsstring>
+        <name>vlc_strfinput</name>
+        <param>
+          <type><ref refid="structinput__thread__t" kindref="compound">input_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Formats input meta-data.</para>
+<para>Formats input and input item meta-informations into a heap-allocated string. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="141" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="141" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gaac23773f07738ade635e108771560bb1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * str_format</definition>
+        <argsstring>(input_thread_t *input, const char *fmt)</argsstring>
+        <name>str_format</name>
+        <param>
+          <type><ref refid="structinput__thread__t" kindref="compound">input_thread_t</ref> *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="143" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" bodystart="143" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1gaf5849b53442e459b817feb57912b8464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_filenamecmp</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>vlc_filenamecmp</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="151" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="151" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__strings_1ga0d01c184600cfb21f90b243dd996ddaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void filename_sanitize</definition>
+        <argsstring>(char *)</argsstring>
+        <name>filename_sanitize</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" line="153" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_strings.h" declline="153" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

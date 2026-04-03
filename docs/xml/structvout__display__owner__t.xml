@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structvout__display__owner__t" kind="struct" language="C++" prot="public">
+    <compoundname>vout_display_owner_t</compoundname>
+    <includes refid="vlc__vout__display_8h" local="no">vlc_vout_display.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structvout__display__owner__t_1ad385326f21697d0ab5f3d85b38782544" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vout_display_owner_t::sys</definition>
+        <argsstring></argsstring>
+        <name>sys</name>
+        <qualifiedname>vout_display_owner_t::sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="232" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__display__owner__t_1a9f5234176a75924f902ddffb40f7571e" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* vout_display_owner_t::event) (vout_display_t *, int, va_list)</definition>
+        <argsstring>)(vout_display_t *, int, va_list)</argsstring>
+        <name>event</name>
+        <qualifiedname>vout_display_owner_t::event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="245" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__display__owner__t_1a7dec826b3f8576b1ce9e351ba2bd02f3" prot="public" static="no" mutable="no">
+        <type><ref refid="structvout__window__t" kindref="compound">vout_window_t</ref> *(*</type>
+        <definition>vout_window_t *(* vout_display_owner_t::window_new) (vout_display_t *, unsigned type)</definition>
+        <argsstring>)(vout_display_t *, unsigned type)</argsstring>
+        <name>window_new</name>
+        <qualifiedname>vout_display_owner_t::window_new</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="252" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__display__owner__t_1a470da3c91e181093437b4f5d882083d2" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* vout_display_owner_t::window_del) (vout_display_t *, vout_window_t *)</definition>
+        <argsstring>)(vout_display_t *, vout_window_t *)</argsstring>
+        <name>window_del</name>
+        <qualifiedname>vout_display_owner_t::window_del</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="253" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Vout owner structures </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>vout_display_owner_t</label>
+        <link refid="structvout__display__owner__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+window_new</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vout_window_owner</label>
+        <link refid="structvout__window__owner"/>
+      </node>
+      <node id="2">
+        <label>vout_window_t</label>
+        <link refid="structvout__window__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+owner</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" line="229" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_display.h" bodystart="229" bodyend="254"/>
+    <listofallmembers>
+      <member refid="structvout__display__owner__t_1a9f5234176a75924f902ddffb40f7571e" prot="public" virt="non-virtual"><scope>vout_display_owner_t</scope><name>event</name></member>
+      <member refid="structvout__display__owner__t_1ad385326f21697d0ab5f3d85b38782544" prot="public" virt="non-virtual"><scope>vout_display_owner_t</scope><name>sys</name></member>
+      <member refid="structvout__display__owner__t_1a470da3c91e181093437b4f5d882083d2" prot="public" virt="non-virtual"><scope>vout_display_owner_t</scope><name>window_del</name></member>
+      <member refid="structvout__display__owner__t_1a7dec826b3f8576b1ce9e351ba2bd02f3" prot="public" virt="non-virtual"><scope>vout_display_owner_t</scope><name>window_new</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

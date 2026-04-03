@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__access" kind="group">
+    <compoundname>access</compoundname>
+    <title>Access</title>
+    <innerfile refid="vlc__access_8h">vlc_access.h</innerfile>
+    <innergroup refid="group__access__helper">Access Helpers</innergroup>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__access_1ga3187bb47975ca77f0c67fc954ccde310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>VLC_API stream_t * vlc_access_NewMRL</definition>
+        <argsstring>(vlc_object_t *obj, const char *mrl)</argsstring>
+        <name>vlc_access_NewMRL</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>mrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens a new read-only byte stream.</para>
+<para>This function might block. The initial offset is of course always zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parent VLC object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mrl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media resource location to read </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new access object on success, NULL on failure </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" line="57" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" declline="57" declcolumn="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__access_1ga5be52b1aa5cb2d30731d172b1d08dfb8" prot="public" static="no">
+        <name>VLC_ACCESS_REDIRECT</name>
+        <initializer><ref refid="vlc__common_8h_1ae567e5ec6474ded52ed3ecd285210f5c" kindref="member">VLC_ETIMEOUT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Special redirection error code.</para>
+<para>In case of redirection, the access open function should clean up (as in normal failure case), store the heap-allocated redirection URL in <ref refid="structstream__t_1a97a3bfccf69ecf7845ed41dbb1757eb1" kindref="member">stream_t.psz_url</ref>, and return this value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" line="45" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Raw input byte streams </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

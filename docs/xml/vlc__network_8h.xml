@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__network_8h" kind="file" language="C++">
+    <compoundname>vlc_network.h</compoundname>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includedby refid="vlc__tls_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h</label>
+        <link refid="vlc__network_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>netdb.h</label>
+      </node>
+      <node id="5">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="4">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="2">
+        <label>sys/types.h</label>
+      </node>
+      <node id="3">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h</label>
+        <link refid="vlc__network_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h</label>
+        <link refid="vlc__tls_8h"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <member refid="group__sockets_1ga0d2405717efb999eab438679ae507f1f" kind="define"><name>net_errno</name></member>
+      <member refid="group__sockets_1ga0540b3415e28d15e977be2d0ca2e9748" kind="define"><name>net_Close</name></member>
+      <member refid="group__sockets_1ga9f55d0e90dc8cc6b2287312435cdde48" kind="define"><name>MSG_NOSIGNAL</name></member>
+      <member refid="group__sockets_1ga9c06b3fb22702568d5daf2c78a805134" kind="define"><name>net_Connect</name></member>
+      <member refid="group__sockets_1ga94545aae0d1b77ee06b528de2562cfa7" kind="define"><name>net_ListenTCP</name></member>
+      <member refid="group__sockets_1gaf089de622f237edacfb552815fbdcd3d" kind="define"><name>net_ConnectTCP</name></member>
+      <member refid="group__sockets_1ga36f0b407b1f23834b54de709b4596aa2" kind="define"><name>net_Accept</name></member>
+      <member refid="group__sockets_1gac0ba2ca229dcafb52ae688c52bdbd5a3" kind="define"><name>net_ConnectDgram</name></member>
+      <member refid="group__sockets_1ga058ae61a926d90e7b215e937e0d9c606" kind="define"><name>net_OpenDgram</name></member>
+      <member refid="group__sockets_1ga67fd43e85dbc66da4b406fbe36a2578a" kind="define"><name>net_Read</name></member>
+      <member refid="group__sockets_1ga0e8b26875ce79faf3b946e11e3f00aff" kind="define"><name>net_Write</name></member>
+      <member refid="group__sockets_1gafc2cb61d9c710f57decea6f3f8a28cce" kind="define"><name>net_Gets</name></member>
+      <member refid="group__sockets_1ga49cbc3e3a0a0333be0baa3c224844654" kind="define"><name>net_Printf</name></member>
+      <member refid="group__sockets_1ga13aa11bf04c4bb242f17191baf5af4a2" kind="define"><name>net_vaPrintf</name></member>
+      <member refid="group__net_1gadd34fda6af0f556c23e2ea32f5d01ee8" kind="define"><name>NI_MAXNUMERICHOST</name></member>
+      <member refid="group__net_1ga8739abe7bcb9470bcdb021e869b2a76f" kind="define"><name>AI_NUMERICSERV</name></member>
+      <member refid="group__net_1ga2be9ba4ecba49b119eb2c31f92623ff6" kind="define"><name>AI_IDN</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__sockets_1ga4f4fe419da790a051ae042b8c3d3f2d6" kind="function"><name>vlc_socket</name></member>
+      <member refid="group__sockets_1ga7a3fa84b57114d14ebc571b0bb38d2b6" kind="function"><name>vlc_socketpair</name></member>
+      <member refid="group__sockets_1ga62d662e39d845037342ce07577113be5" kind="function"><name>vlc_accept</name></member>
+      <member refid="group__sockets_1gafae3481b4eb4e45665607775bbfc9367" kind="function"><name>net_Socket</name></member>
+      <member refid="group__sockets_1ga2df38124fe1a465a6fbaff535f28495a" kind="function"><name>net_Connect</name></member>
+      <member refid="group__sockets_1gac2a005f434014a4d1459d13f7717fd5c" kind="function"><name>net_Listen</name></member>
+      <member refid="group__sockets_1ga473c22ce30b4aa60674b0f41c54472f7" kind="function"><name>net_ConnectTCP</name></member>
+      <member refid="group__sockets_1ga9b1eefbcc2ff4b2b1186fa013fdbbedb" kind="function"><name>net_AcceptSingle</name></member>
+      <member refid="group__sockets_1gaaa3d9833162facff54fb96d931225c89" kind="function"><name>net_Accept</name></member>
+      <member refid="group__sockets_1ga635c91d8134518a624b9a307542062cc" kind="function"><name>net_ConnectDgram</name></member>
+      <member refid="group__sockets_1gaa735f21557850f2c32a55175ec045002" kind="function"><name>net_ConnectUDP</name></member>
+      <member refid="group__sockets_1ga76e292baa105eac66a3904c69319859f" kind="function"><name>net_OpenDgram</name></member>
+      <member refid="group__sockets_1ga342a29131432626dddb799efb078dcc2" kind="function"><name>net_ListenUDP1</name></member>
+      <member refid="group__sockets_1gaf40ff5822d34d33708b9310e44ad06e1" kind="function"><name>net_ListenClose</name></member>
+      <member refid="group__sockets_1gaff061671a285c63fe6ff743425cdd259" kind="function"><name>net_Subscribe</name></member>
+      <member refid="group__sockets_1ga8718bb871a811265a7edf978f078d171" kind="function"><name>net_SetCSCov</name></member>
+      <member refid="group__sockets_1ga48168bee988f4ec4a0284c51ed365379" kind="function"><name>net_Read</name></member>
+      <member refid="group__sockets_1gaa7f0332084228c9adcb695c28fa1c162" kind="function"><name>net_Write</name></member>
+      <member refid="group__sockets_1gaf7c640830b664c0e01aad4dbd91acc67" kind="function"><name>net_Gets</name></member>
+      <member refid="group__sockets_1ga7de9921ebc7ae039e34dfb21e1518ee3" kind="function"><name>net_Printf</name></member>
+      <member refid="group__sockets_1ga7cf49fbfb7dcd77db3dbf8f58a97d1d9" kind="function"><name>net_vaPrintf</name></member>
+      <member refid="group__sockets_1gacec4ccb10bbda1f0a1b38feba4073013" kind="function"><name>vlc_close</name></member>
+      <member refid="group__net_1ga13f938f7d22daf27098bed6acd3d5683" kind="function"><name>vlc_getnameinfo</name></member>
+      <member refid="group__net_1ga295b0091c78e1840b9a280ccf3da53b2" kind="function"><name>vlc_getaddrinfo</name></member>
+      <member refid="group__net_1gaeb2a75e82233e3fb386efc8f98cef59b" kind="function"><name>vlc_getaddrinfo_i11e</name></member>
+      <member refid="group__net_1ga4be5506f3f0eadee249f0d4b8c4016e8" kind="function"><name>net_SockAddrIsMulticast</name></member>
+      <member refid="group__net_1gae7b7932514f9cd371112c8c1df36a5f9" kind="function"><name>net_GetSockAddress</name></member>
+      <member refid="group__net_1ga7a7a756fb55bb45c836ebee259f5e14d" kind="function"><name>net_GetPeerAddress</name></member>
+      <member refid="group__net_1gae118e6a99f8b5c15c7a6498ae0abd02a" kind="function"><name>net_GetPort</name></member>
+      <member refid="group__net_1gac3951097132e46178c7b65b1a247149e" kind="function"><name>net_SetPort</name></member>
+      <member refid="group__net_1ga209c3fffafc1bd30f1d6e091981a669c" kind="function"><name>vlc_getProxyUrl</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Definitions for sockets and low-level networking </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_network.h:<sp/>interface<sp/>to<sp/>communicate<sp/>with<sp/>network<sp/>plug-ins</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002-2005<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2006-2007<sp/>Rémi<sp/>Denis-Courmont</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Christophe<sp/>Massiot<sp/>&lt;massiot@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rémi<sp/>Denis-Courmont</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_NETWORK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>VLC_NETWORK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(<sp/>_WIN32<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>_NO_OLDNAMES<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;ws2tcpip.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>net_errno<sp/>(WSAGetLastError())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>net_Close(fd)<sp/>((void)closesocket((SOCKET)fd))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>ifndef<sp/>IPV6_V6ONLY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>define<sp/>IPV6_V6ONLY<sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>net_errno<sp/>errno</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>net_Close(fd)<sp/>((void)vlc_close(fd))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MSG_NOSIGNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>MSG_NOSIGNAL<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="group__sockets_1ga4f4fe419da790a051ae042b8c3d3f2d6" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__sockets_1ga4f4fe419da790a051ae042b8c3d3f2d6" kindref="member">vlc_socket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proto,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>nonblock)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="group__sockets_1ga7a3fa84b57114d14ebc571b0bb38d2b6" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__sockets_1ga7a3fa84b57114d14ebc571b0bb38d2b6" kindref="member">vlc_socketpair</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proto,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fds[2],</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>nonblock);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="group__sockets_1ga62d662e39d845037342ce07577113be5" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__sockets_1ga62d662e39d845037342ce07577113be5" kindref="member">vlc_accept</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lfd,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*addr,<sp/>socklen_t<sp/>*alen,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>nonblock)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Portable<sp/>networking<sp/>layer<sp/>communication<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_Socket<sp/>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>family,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socktype,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proto);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_Connect(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socktype,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>protocol);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_Connect(a,<sp/>b,<sp/>c,<sp/>d,<sp/>e)<sp/>net_Connect(VLC_OBJECT(a),<sp/>b,<sp/>c,<sp/>d,<sp/>e)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>net_Listen(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socktype,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>protocol);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_ListenTCP(a,<sp/>b,<sp/>c)<sp/>net_Listen(VLC_OBJECT(a),<sp/>b,<sp/>c,<sp/>\</highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SOCK_STREAM,<sp/>IPPROTO_TCP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_ConnectTCP<sp/>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>net_Connect<sp/>(obj,<sp/>host,<sp/>port,<sp/>SOCK_STREAM,<sp/>IPPROTO_TCP);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_ConnectTCP(a,<sp/>b,<sp/>c)<sp/>net_ConnectTCP(VLC_OBJECT(a),<sp/>b,<sp/>c)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_AcceptSingle(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lfd);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_Accept(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_Accept(a,<sp/>b)<sp/>\</highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>net_Accept(VLC_OBJECT(a),<sp/>b)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_ConnectDgram(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hlim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proto<sp/>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_ConnectDgram(a,<sp/>b,<sp/>c,<sp/>d,<sp/>e<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>net_ConnectDgram(VLC_OBJECT(a),<sp/>b,<sp/>c,<sp/>d,<sp/>e)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_ConnectUDP<sp/>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hlim)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>net_ConnectDgram<sp/>(obj,<sp/>host,<sp/>port,<sp/>hlim,<sp/>IPPROTO_UDP);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_OpenDgram(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_bind,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_bind,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_server,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_server,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proto<sp/>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_OpenDgram(<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>e,<sp/>g<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>net_OpenDgram(VLC_OBJECT(a),<sp/>b,<sp/>c,<sp/>d,<sp/>e,<sp/>g)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_ListenUDP1<sp/>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>net_OpenDgram<sp/>(obj,<sp/>host,<sp/>port,<sp/>NULL,<sp/>0,<sp/>IPPROTO_UDP);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>net_ListenClose(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*fd<sp/>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_Subscribe<sp/>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*addr,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>socklen_t<sp/>addrlen);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_SetCSCov(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sendcov,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>recvcov<sp/>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>net_Read(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_data<sp/>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_Read(a,b,c,d)<sp/>net_Read(VLC_OBJECT(a),b,c,d)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>net_Write(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_data<sp/>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_Write(a,b,c,d)<sp/>net_Write(VLC_OBJECT(a),b,c,d)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>net_Gets(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd<sp/>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_Gets(a,b)<sp/>net_Gets(VLC_OBJECT(a),b)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>net_Printf(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_fmt,<sp/>...<sp/>)<sp/>VLC_FORMAT(<sp/>3,<sp/>4<sp/>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_Printf(o,fd,...)<sp/>net_Printf(VLC_OBJECT(o),fd,<sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>net_vaPrintf(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_this,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_fmt,<sp/>va_list<sp/>args<sp/>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>net_vaPrintf(a,b,c,d)<sp/>net_vaPrintf(VLC_OBJECT(a),b,c,d)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1ga323c8f656dd7f8612a1c7a1eb74d0187" kindref="member">vlc_close</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_getsockopt(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>name,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*val,<sp/>socklen_t<sp/>*len)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getsockopt(s,<sp/>level,<sp/>name,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)val,<sp/>len);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>getsockopt<sp/>vlc_getsockopt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_setsockopt(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>name,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*val,<sp/>socklen_t<sp/>len)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>setsockopt(s,<sp/>level,<sp/>name,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)val,<sp/>len);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>setsockopt<sp/>vlc_setsockopt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Portable<sp/>network<sp/>names/addresses<sp/>resolution<sp/>layer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NI_MAXNUMERICHOST<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AI_NUMERICSERV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>AI_NUMERICSERV<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AI_IDN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>AI_IDN<sp/>0<sp/></highlight><highlight class="comment">/*<sp/>GNU/libc<sp/>extension<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>if<sp/>!defined(WINAPI_FAMILY)<sp/>||<sp/>WINAPI_FAMILY<sp/>!=<sp/>WINAPI_FAMILY_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>undef<sp/>gai_strerror</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>gai_strerror<sp/>gai_strerrorA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_getnameinfo(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_getaddrinfo<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>addrinfo<sp/>*,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>addrinfo<sp/>**);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_getaddrinfo_i11e(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>addrinfo<sp/>*,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>addrinfo<sp/>**);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal">net_SockAddrIsMulticast<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*addr,<sp/>socklen_t<sp/>len)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(addr-&gt;sa_family)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>IN_MULTICAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AF_INET:</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*v4<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*)addr;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)len<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*v4))</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IN_MULTICAST<sp/>(ntohl<sp/>(v4-&gt;sin_addr.s_addr))<sp/>!=<sp/>0;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>IN6_IS_ADDR_MULTICAST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AF_INET6:</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in6<sp/>*v6<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in6<sp/>*)addr;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)len<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*v6))</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IN6_IS_ADDR_MULTICAST<sp/>(&amp;v6-&gt;sin6_addr)<sp/>!=<sp/>0;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_GetSockAddress(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*address,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*port<sp/>)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_storage<sp/>addr;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>socklen_t<sp/>addrlen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>addr<sp/>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getsockname(<sp/>fd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;addr,<sp/>&amp;addrlen<sp/>)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>vlc_getnameinfo(<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;addr,<sp/>addrlen,<sp/>address,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NI_MAXNUMERICHOST,<sp/>port,<sp/>NI_NUMERICHOST<sp/>)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/><ref refid="vlc__common_8h_1a2baa7840673512d3c8797b9ca97fa766" kindref="member">VLC_EGENERIC</ref><sp/>:<sp/>0;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>net_GetPeerAddress(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*address,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*port<sp/>)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_storage<sp/>addr;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>socklen_t<sp/>addrlen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>addr<sp/>);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getpeername(<sp/>fd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;addr,<sp/>&amp;addrlen<sp/>)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>vlc_getnameinfo(<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;addr,<sp/>addrlen,<sp/>address,</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NI_MAXNUMERICHOST,<sp/>port,<sp/>NI_NUMERICHOST<sp/>)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/><ref refid="vlc__common_8h_1a2baa7840673512d3c8797b9ca97fa766" kindref="member">VLC_EGENERIC</ref><sp/>:<sp/>0;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint16_t<sp/>net_GetPort<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*addr)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(addr-&gt;sa_family)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AF_INET6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AF_INET6:</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in6<sp/>*)addr)-&gt;sin6_port;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AF_INET:</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*)addr)-&gt;sin_port;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>net_SetPort<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*addr,<sp/>uint16_t<sp/>port)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(addr-&gt;sa_family)</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AF_INET6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AF_INET6:</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in6<sp/>*)addr)-&gt;sin6_port<sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AF_INET:</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*)addr)-&gt;sin_port<sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vlc_getProxyUrl(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h"/>
+  </compounddef>
+</doxygen>

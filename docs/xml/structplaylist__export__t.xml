@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structplaylist__export__t" kind="struct" language="C++" prot="public">
+    <compoundname>playlist_export_t</compoundname>
+    <includes refid="vlc__playlist_8h" local="no">vlc_playlist.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structplaylist__export__t_1a0cdcdc828a04ab6aa64f6d4b0fc197b7" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> char *</type>
+        <definition>VLC_COMMON_MEMBERS char* playlist_export_t::base_url</definition>
+        <argsstring></argsstring>
+        <name>base_url</name>
+        <qualifiedname>playlist_export_t::base_url</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="120" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structplaylist__export__t_1ac75c045dd3819b6c4f2e125d5d89b444" prot="public" static="no" mutable="no">
+        <type>FILE *</type>
+        <definition>FILE* playlist_export_t::p_file</definition>
+        <argsstring></argsstring>
+        <name>p_file</name>
+        <qualifiedname>playlist_export_t::p_file</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="121" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structplaylist__export__t_1a6321dfc8a589e46f15a6a035e0ad8225" prot="public" static="no" mutable="no">
+        <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>playlist_item_t* playlist_export_t::p_root</definition>
+        <argsstring></argsstring>
+        <name>p_root</name>
+        <qualifiedname>playlist_export_t::p_root</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="122" column="21" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Helper structure to export to file part of the playlist </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="8">
+        <label>audio_format_t</label>
+        <link refid="structaudio__format__t"/>
+      </node>
+      <node id="9">
+        <label>audio_replay_gain_t</label>
+        <link refid="structaudio__replay__gain__t"/>
+      </node>
+      <node id="6">
+        <label>es_format_t</label>
+        <link refid="structes__format__t"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+p_extra_languages</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+audio</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+audio_replay_gain</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>+video</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>+subs</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>extra_languages_t</label>
+        <link refid="structextra__languages__t"/>
+      </node>
+      <node id="4">
+        <label>info_category_t</label>
+        <link refid="structinfo__category__t"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+pp_infos</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>info_t</label>
+        <link refid="structinfo__t"/>
+      </node>
+      <node id="18">
+        <label>input_item_slave</label>
+        <link refid="structinput__item__slave"/>
+      </node>
+      <node id="3">
+        <label>input_item_t</label>
+        <link refid="structinput__item__t"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+pp_categories</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+es</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>+p_stats</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>+p_epg_table</edgelabel>
+          <edgelabel>+pp_epg</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>+pp_slaves</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>+event_manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>input_stats_t</label>
+        <link refid="structinput__stats__t"/>
+      </node>
+      <node id="1">
+        <label>playlist_export_t</label>
+        <link refid="structplaylist__export__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_root</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>playlist_item_t</label>
+        <link refid="structplaylist__item__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_input</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_parent</edgelabel>
+          <edgelabel>+pp_children</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>subs_format_t</label>
+        <link refid="structsubs__format__t"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>+p_style</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>text_style_t</label>
+        <link refid="structtext__style__t"/>
+      </node>
+      <node id="10">
+        <label>video_format_t</label>
+        <link refid="structvideo__format__t"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>+p_palette</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>+pose</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>video_palette_t</label>
+        <link refid="structvideo__palette__t"/>
+      </node>
+      <node id="17">
+        <label>vlc_epg_event_t</label>
+        <link refid="structvlc__epg__event__t"/>
+      </node>
+      <node id="16">
+        <label>vlc_epg_t</label>
+        <link refid="structvlc__epg__t"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>+p_current</edgelabel>
+          <edgelabel>+pp_event</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>vlc_event_listeners_group_t</label>
+        <link refid="structvlc__event__listeners__group__t"/>
+      </node>
+      <node id="19">
+        <label>vlc_event_manager_t</label>
+        <link refid="structvlc__event__manager__t"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>+events</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>vlc_viewpoint_t</label>
+        <link refid="structvlc__viewpoint__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="117" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="118" bodyend="123"/>
+    <listofallmembers>
+      <member refid="structplaylist__export__t_1a0cdcdc828a04ab6aa64f6d4b0fc197b7" prot="public" virt="non-virtual"><scope>playlist_export_t</scope><name>base_url</name></member>
+      <member refid="structplaylist__export__t_1ac75c045dd3819b6c4f2e125d5d89b444" prot="public" virt="non-virtual"><scope>playlist_export_t</scope><name>p_file</name></member>
+      <member refid="structplaylist__export__t_1a6321dfc8a589e46f15a6a035e0ad8225" prot="public" virt="non-virtual"><scope>playlist_export_t</scope><name>p_root</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

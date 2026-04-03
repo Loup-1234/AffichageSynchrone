@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__http_8h" kind="file" language="C++">
+    <compoundname>vlc_http.h</compoundname>
+    <includes refid="vlc__url_8h" local="no">vlc_url.h</includes>
+    <includes refid="vlc__arrays_8h" local="no">vlc_arrays.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>vlc_arrays.h</label>
+        <link refid="vlc__arrays_8h"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h</label>
+        <link refid="vlc__http_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_url.h</label>
+        <link refid="vlc__url_8h"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structvlc__http__auth__t" prot="public">vlc_http_auth_t</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vlc__http_8h_1acb2eeac46f5f97ced757989cbb8a1e45" prot="public" static="no">
+        <type>struct vlc_http_auth_t</type>
+        <definition>typedef struct vlc_http_auth_t vlc_http_auth_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_http_auth_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="52" column="17"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__http_8h_1a10002c0f1e986af668d9a7324d01477b" prot="public" static="no">
+        <type>struct vlc_http_cookie_jar_t</type>
+        <definition>typedef struct vlc_http_cookie_jar_t vlc_http_cookie_jar_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_http_cookie_jar_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="71" column="36" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="vlc__http_8h_1aad59db82524ee1fb2dadfaeca18a905a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_http_auth_Init</definition>
+        <argsstring>(vlc_http_auth_t *)</argsstring>
+        <name>vlc_http_auth_Init</name>
+        <param>
+          <type><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="55" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="55" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1a133b6e8ea64ff8c72fa6877d7c7e5d02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_http_auth_Deinit</definition>
+        <argsstring>(vlc_http_auth_t *)</argsstring>
+        <name>vlc_http_auth_Deinit</name>
+        <param>
+          <type><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="56" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="56" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1a7aeb89b98f7c8626c03f56d5760f6358" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_http_auth_ParseWwwAuthenticateHeader</definition>
+        <argsstring>(vlc_object_t *, vlc_http_auth_t *, const char *)</argsstring>
+        <name>vlc_http_auth_ParseWwwAuthenticateHeader</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="57" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="57" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1ae9d812a642c9fb30623f23ee570192a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_http_auth_ParseAuthenticationInfoHeader</definition>
+        <argsstring>(vlc_object_t *, vlc_http_auth_t *, const char *, const char *, const char *, const char *, const char *)</argsstring>
+        <name>vlc_http_auth_ParseAuthenticationInfoHeader</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="59" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="59" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1a3faf794c7f1ec7ddf158bd7e5b6e4e59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_http_auth_FormatAuthorizationHeader</definition>
+        <argsstring>(vlc_object_t *, vlc_http_auth_t *, const char *, const char *, const char *, const char *) VLC_USED</argsstring>
+        <name>vlc_http_auth_FormatAuthorizationHeader</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="64" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="64" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1aafed9f0973ac938a181ed0d0a0ceb14d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlc_http_cookie_jar_t *</type>
+        <definition>VLC_API vlc_http_cookie_jar_t * vlc_http_cookies_new</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_http_cookies_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="73" column="32" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="73" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1a94076e81e6411f6c5fa2413a0ee87a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_http_cookies_destroy</definition>
+        <argsstring>(vlc_http_cookie_jar_t *p_jar)</argsstring>
+        <name>vlc_http_cookies_destroy</name>
+        <param>
+          <type>vlc_http_cookie_jar_t *</type>
+          <declname>p_jar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="74" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="74" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1af451a5d989de4c3608f4eeb01f8d05b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool vlc_http_cookies_store</definition>
+        <argsstring>(vlc_http_cookie_jar_t *jar, const char *cookie, const char *host, const char *path)</argsstring>
+        <name>vlc_http_cookies_store</name>
+        <param>
+          <type>vlc_http_cookie_jar_t *</type>
+          <declname>jar</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>cookie</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse a value of an incoming Set-Cookie header and append the cookie to the cookie jar if appropriate.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>jar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>cookie jar object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cookie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>header field value of Set-Cookie </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, if the cookie was added, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="84" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="84" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__http_8h_1af7c95cc3facc51b9f17955b46d7f77a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_http_cookies_fetch</definition>
+        <argsstring>(vlc_http_cookie_jar_t *jar, bool secure, const char *host, const char *path)</argsstring>
+        <name>vlc_http_cookies_fetch</name>
+        <param>
+          <type>vlc_http_cookie_jar_t *</type>
+          <declname>jar</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>secure</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a cookie value that match the given URL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_jar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a cookie jar </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the URL for which the cookies are returned </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A string consisting of semicolon-separated cookie NAME=VALUE pairs. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" line="94" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h" declline="94" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines functions, structures, enums and macros shared between HTTP clients. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_http.h:<sp/>Shared<sp/>code<sp/>for<sp/>HTTP<sp/>clients</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2001-2008<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Christophe<sp/>Massiot<sp/>&lt;massiot@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rémi<sp/>Denis-Courmont</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Antoine<sp/>Cellerier<sp/>&lt;dionoea<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_HTTP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_HTTP_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__url_8h" kindref="compound">vlc_url.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__arrays_8h" kindref="compound">vlc_arrays.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>RFC<sp/>2617:<sp/>Basic<sp/>and<sp/>Digest<sp/>Access<sp/>Authentication<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structvlc__http__auth__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_realm;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_domain;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_nonce;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_opaque;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_stale;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_algorithm;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_qop;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_nonce;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_cnonce;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_HA1;<sp/></highlight><highlight class="comment">/*<sp/>stored<sp/>H(A1)<sp/>value<sp/>if<sp/>algorithm<sp/>=<sp/>&quot;MD5-sess&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}<sp/><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_http_auth_Init(<sp/><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_http_auth_Deinit(<sp/><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_http_auth_ParseWwwAuthenticateHeader</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref><sp/>*<sp/>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_http_auth_ParseAuthenticationInfoHeader</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref><sp/>*,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vlc_http_auth_FormatAuthorizationHeader</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/><ref refid="structvlc__http__auth__t" kindref="compound">vlc_http_auth_t</ref><sp/>*,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>RFC<sp/>6265:<sp/>cookies<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">vlc_http_cookie_jar_t<sp/>vlc_http_cookie_jar_t;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">VLC_API<sp/>vlc_http_cookie_jar_t<sp/>*<sp/>vlc_http_cookies_new(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_http_cookies_destroy(<sp/>vlc_http_cookie_jar_t<sp/>*<sp/>p_jar<sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="vlc__http_8h_1af451a5d989de4c3608f4eeb01f8d05b3" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vlc__http_8h_1af451a5d989de4c3608f4eeb01f8d05b3" kindref="member">vlc_http_cookies_store</ref>(<sp/>vlc_http_cookie_jar_t<sp/>*jar,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cookie,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path<sp/>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="vlc__http_8h_1af7c95cc3facc51b9f17955b46d7f77a2" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="vlc__http_8h_1af7c95cc3facc51b9f17955b46d7f77a2" kindref="member">vlc_http_cookies_fetch</ref>(<sp/>vlc_http_cookie_jar_t<sp/>*jar,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>secure,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path<sp/>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>VLC_HTTP_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_http.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_plugin.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_plugin.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_plugin.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_plugin.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-plugin-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-plugin-h"></span><h1>Program Listing for File vlc_plugin.h<a class="headerlink" href="#program-listing-for-file-vlc-plugin-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_plugin.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-plugin-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_plugin.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_plugin.h : Macros used from within a module.</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2001-2006 VLC authors and VideoLAN</span>
+<span class="cm"> * Copyright © 2007-2009 Rémi Denis-Courmont</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Samuel Hocevar &lt;sam@zoy.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef LIBVLC_MODULES_MACROS_H</span>
+<span class="cp"># define LIBVLC_MODULES_MACROS_H 1</span>
+
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">vlc_module_properties</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_MODULE_CREATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_CONFIG_CREATE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* DO NOT EVER REMOVE, INSERT OR REPLACE ANY ITEM! It would break the ABI!</span>
+<span class="cm">     * Append new items at the end ONLY. */</span>
+<span class="w">    </span><span class="n">VLC_MODULE_CPU_REQUIREMENT</span><span class="o">=</span><span class="mh">0x100</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_SHORTCUT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_CAPABILITY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_SCORE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_CB_OPEN</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_CB_CLOSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_NO_UNLOAD</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_NAME</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_SHORTNAME</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_DESCRIPTION</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_HELP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MODULE_TEXTDOMAIN</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* Insert new VLC_MODULE_* here */</span>
+
+<span class="w">    </span><span class="cm">/* DO NOT EVER REMOVE, INSERT OR REPLACE ANY ITEM! It would break the ABI!</span>
+<span class="cm">     * Append new items at the end ONLY. */</span>
+<span class="w">    </span><span class="n">VLC_CONFIG_NAME</span><span class="o">=</span><span class="mh">0x1000</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* command line name (args=const char *) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_VALUE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* actual value (args=int64_t/double/const char *) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_RANGE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* minimum value (args=int64_t/double/const char * twice) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_ADVANCED</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* enable advanced flag (args=none) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_VOLATILE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* don&#39;t write variable to storage (args=none) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_PERSISTENT_OBSOLETE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* unused (ignored) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_PRIVATE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* hide from user (args=none) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_REMOVED</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* tag as no longer supported (args=none) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_CAPABILITY</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* capability for a module or list thereof (args=const char*) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_SHORTCUT</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* one-character (short) command line option name (args=char) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_OLDNAME_OBSOLETE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* unused (ignored) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_SAFE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* tag as modifiable by untrusted input item &quot;sources&quot; (args=none) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_DESC</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* description (args=const char *, const char *, const char *) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_LIST_OBSOLETE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* unused (ignored) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_ADD_ACTION_OBSOLETE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* unused (ignored) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_LIST</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* list of suggested values</span>
+<span class="cm">     * (args=size_t, const &lt;type&gt; *, const char *const *) */</span>
+
+<span class="w">    </span><span class="n">VLC_CONFIG_LIST_CB</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* callback for suggested values</span>
+<span class="cm">     * (args=const char *, size_t (*)(vlc_object_t *, &lt;type&gt; **, char ***)) */</span>
+
+<span class="w">    </span><span class="cm">/* Insert new VLC_CONFIG_* here */</span>
+<span class="p">};</span>
+
+<span class="cm">/* Configuration hint types */</span>
+<span class="cp">#define CONFIG_HINT_CATEGORY                0x02  </span><span class="cm">/* Start of new category */</span>
+<span class="cp">#define CONFIG_HINT_USAGE                   0x05  </span><span class="cm">/* Usage information */</span>
+
+<span class="cp">#define CONFIG_CATEGORY                     0x06 </span><span class="cm">/* Set category */</span>
+<span class="cp">#define CONFIG_SUBCATEGORY                  0x07 </span><span class="cm">/* Set subcategory */</span>
+<span class="cp">#define CONFIG_SECTION                      0x08 </span><span class="cm">/* Start of new section */</span>
+
+<span class="cm">/* Configuration item types */</span>
+<span class="cp">#define CONFIG_ITEM_FLOAT                   0x20  </span><span class="cm">/* Float option */</span>
+<span class="cp">#define CONFIG_ITEM_INTEGER                 0x40  </span><span class="cm">/* Integer option */</span>
+<span class="cp">#define CONFIG_ITEM_RGB                     0x41  </span><span class="cm">/* RGB color option */</span>
+<span class="cp">#define CONFIG_ITEM_BOOL                    0x60  </span><span class="cm">/* Bool option */</span>
+<span class="cp">#define CONFIG_ITEM_STRING                  0x80  </span><span class="cm">/* String option */</span>
+<span class="cp">#define CONFIG_ITEM_PASSWORD                0x81  </span><span class="cm">/* Password option (*) */</span>
+<span class="cp">#define CONFIG_ITEM_KEY                     0x82  </span><span class="cm">/* Hot key option */</span>
+<span class="cp">#define CONFIG_ITEM_MODULE                  0x84  </span><span class="cm">/* Module option */</span>
+<span class="cp">#define CONFIG_ITEM_MODULE_CAT              0x85  </span><span class="cm">/* Module option */</span>
+<span class="cp">#define CONFIG_ITEM_MODULE_LIST             0x86  </span><span class="cm">/* Module option */</span>
+<span class="cp">#define CONFIG_ITEM_MODULE_LIST_CAT         0x87  </span><span class="cm">/* Module option */</span>
+<span class="cp">#define CONFIG_ITEM_LOADFILE                0x8C  </span><span class="cm">/* Read file option */</span>
+<span class="cp">#define CONFIG_ITEM_SAVEFILE                0x8D  </span><span class="cm">/* Written file option */</span>
+<span class="cp">#define CONFIG_ITEM_DIRECTORY               0x8E  </span><span class="cm">/* Directory option */</span>
+<span class="cp">#define CONFIG_ITEM_FONT                    0x8F  </span><span class="cm">/* Font option */</span>
+
+<span class="cp">#define CONFIG_ITEM(x) (((x) &amp; ~0xF) != 0)</span>
+
+<span class="cm">/* Categories and subcategories */</span>
+<span class="cp">#define CAT_INTERFACE 1</span>
+<span class="cp">#define SUBCAT_INTERFACE_GENERAL 101</span>
+<span class="cp">#define SUBCAT_INTERFACE_MAIN 102</span>
+<span class="cp">#define SUBCAT_INTERFACE_CONTROL 103</span>
+<span class="cp">#define SUBCAT_INTERFACE_HOTKEYS 104</span>
+
+<span class="cp">#define CAT_AUDIO 2</span>
+<span class="cp">#define SUBCAT_AUDIO_GENERAL 201</span>
+<span class="cp">#define SUBCAT_AUDIO_AOUT 202</span>
+<span class="cp">#define SUBCAT_AUDIO_AFILTER 203</span>
+<span class="cp">#define SUBCAT_AUDIO_VISUAL 204</span>
+<span class="cp">#define SUBCAT_AUDIO_MISC 205</span>
+<span class="cp">#define SUBCAT_AUDIO_RESAMPLER 206</span>
+
+<span class="cp">#define CAT_VIDEO 3</span>
+<span class="cp">#define SUBCAT_VIDEO_GENERAL 301</span>
+<span class="cp">#define SUBCAT_VIDEO_VOUT 302</span>
+<span class="cp">#define SUBCAT_VIDEO_VFILTER 303</span>
+<span class="cp">#define SUBCAT_VIDEO_SUBPIC 305</span>
+<span class="cp">#define SUBCAT_VIDEO_SPLITTER 306</span>
+
+<span class="cp">#define CAT_INPUT 4</span>
+<span class="cp">#define SUBCAT_INPUT_GENERAL 401</span>
+<span class="cp">#define SUBCAT_INPUT_ACCESS 402</span>
+<span class="cp">#define SUBCAT_INPUT_DEMUX 403</span>
+<span class="cp">#define SUBCAT_INPUT_VCODEC 404</span>
+<span class="cp">#define SUBCAT_INPUT_ACODEC 405</span>
+<span class="cp">#define SUBCAT_INPUT_SCODEC 406</span>
+<span class="cp">#define SUBCAT_INPUT_STREAM_FILTER 407</span>
+
+<span class="cp">#define CAT_SOUT 5</span>
+<span class="cp">#define SUBCAT_SOUT_GENERAL 501</span>
+<span class="cp">#define SUBCAT_SOUT_STREAM 502</span>
+<span class="cp">#define SUBCAT_SOUT_MUX 503</span>
+<span class="cp">#define SUBCAT_SOUT_ACO 504</span>
+<span class="cp">#define SUBCAT_SOUT_PACKETIZER 505</span>
+<span class="cp">#define SUBCAT_SOUT_VOD 507</span>
+<span class="cp">#define SUBCAT_SOUT_RENDERER 508</span>
+
+<span class="cp">#define CAT_ADVANCED 6</span>
+<span class="cp">#define SUBCAT_ADVANCED_MISC 602</span>
+<span class="cp">#define SUBCAT_ADVANCED_NETWORK 603</span>
+
+<span class="cp">#define CAT_PLAYLIST 7</span>
+<span class="cp">#define SUBCAT_PLAYLIST_GENERAL 701</span>
+<span class="cp">#define SUBCAT_PLAYLIST_SD 702</span>
+<span class="cp">#define SUBCAT_PLAYLIST_EXPORT 703</span>
+
+
+<span class="cp"># define MODULE_SYMBOL 3_0_0f</span>
+<span class="cp"># define MODULE_SUFFIX &quot;__3_0_0f&quot;</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Add a few defines. You do not want to read this section. Really.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cm">/* Explanation:</span>
+<span class="cm"> *</span>
+<span class="cm"> * if linking a module statically, we will need:</span>
+<span class="cm"> * #define MODULE_FUNC( zog ) module_foo_zog</span>
+<span class="cm"> *</span>
+<span class="cm"> * this can&#39;t easily be done with the C preprocessor, thus a few ugly hacks.</span>
+<span class="cm"> */</span>
+
+<span class="cm">/* I need to do _this_ to change « foo bar » to « module_foo_bar » ! */</span>
+<span class="cp">#define CONCATENATE( y, z ) CRUDE_HACK( y, z )</span>
+<span class="cp">#define CRUDE_HACK( y, z )  y##__##z</span>
+
+<span class="cm">/* If the module is built-in, then we need to define foo_InitModule instead</span>
+<span class="cm"> * of InitModule. Same for Activate- and DeactivateModule. */</span>
+<span class="cp">#ifdef __PLUGIN__</span>
+<span class="cp"># define __VLC_SYMBOL( symbol  ) CONCATENATE( symbol, MODULE_SYMBOL )</span>
+<span class="cp"># define VLC_MODULE_NAME_HIDDEN_SYMBOL \</span>
+<span class="cp">    const char vlc_module_name[] = MODULE_STRING;</span>
+<span class="cp">#else</span>
+<span class="cp"># define __VLC_SYMBOL( symbol )  CONCATENATE( symbol, MODULE_NAME )</span>
+<span class="cp"># define VLC_MODULE_NAME_HIDDEN_SYMBOL</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define CDECL_SYMBOL</span>
+<span class="cp">#if defined (__PLUGIN__)</span>
+<span class="cp"># if defined (_WIN32)</span>
+<span class="cp">#   define DLL_SYMBOL              __declspec(dllexport)</span>
+<span class="cp">#   undef CDECL_SYMBOL</span>
+<span class="cp">#   define CDECL_SYMBOL            __cdecl</span>
+<span class="cp"># elif defined (__GNUC__)</span>
+<span class="cp">#   define DLL_SYMBOL              __attribute__((visibility(&quot;default&quot;)))</span>
+<span class="cp"># else</span>
+<span class="cp">#  define DLL_SYMBOL</span>
+<span class="cp"># endif</span>
+<span class="cp">#else</span>
+<span class="cp"># define DLL_SYMBOL</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if defined( __cplusplus )</span>
+<span class="cp">#   define EXTERN_SYMBOL           extern &quot;C&quot;</span>
+<span class="cp">#else</span>
+<span class="cp">#   define EXTERN_SYMBOL</span>
+<span class="cp">#endif</span>
+
+<span class="n">EXTERN_SYMBOL</span><span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">vlc_set_cb</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+
+<span class="cp">#define vlc_plugin_set(...) vlc_set (opaque,   NULL, __VA_ARGS__)</span>
+<span class="cp">#define vlc_module_set(...) vlc_set (opaque, module, __VA_ARGS__)</span>
+<span class="cp">#define vlc_config_set(...) vlc_set (opaque, config, __VA_ARGS__)</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * InitModule: this function is called once and only once, when the module</span>
+<span class="cm"> * is looked at for the first time. We get the useful data from it, for</span>
+<span class="cm"> * instance the module name, its shortcuts, its capabilities... we also create</span>
+<span class="cm"> * a copy of its config because the module can be unloaded at any time.</span>
+<span class="cm"> */</span>
+<span class="cp">#define vlc_module_begin() \</span>
+<span class="cp">EXTERN_SYMBOL DLL_SYMBOL \</span>
+<span class="cp">int CDECL_SYMBOL __VLC_SYMBOL(vlc_entry) (vlc_set_cb, void *); \</span>
+<span class="cp">EXTERN_SYMBOL DLL_SYMBOL \</span>
+<span class="cp">int CDECL_SYMBOL __VLC_SYMBOL(vlc_entry) (vlc_set_cb vlc_set, void *opaque) \</span>
+<span class="cp">{ \</span>
+<span class="cp">    module_t *module; \</span>
+<span class="cp">    module_config_t *config = NULL; \</span>
+<span class="cp">    if (vlc_plugin_set (VLC_MODULE_CREATE, &amp;module)) \</span>
+<span class="cp">        goto error; \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_NAME, (MODULE_STRING))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define vlc_module_end() \</span>
+<span class="cp">    (void) config; \</span>
+<span class="cp">    return 0; \</span>
+<span class="cp">error: \</span>
+<span class="cp">    return -1; \</span>
+<span class="cp">} \</span>
+<span class="cp">VLC_MODULE_NAME_HIDDEN_SYMBOL \</span>
+<span class="cp">VLC_METADATA_EXPORTS</span>
+
+<span class="cp">#define add_submodule( ) \</span>
+<span class="cp">    if (vlc_plugin_set (VLC_MODULE_CREATE, &amp;module)) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define add_shortcut( ... ) \</span>
+<span class="cp">{ \</span>
+<span class="cp">    const char *shortcuts[] = { __VA_ARGS__ }; \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_SHORTCUT, \</span>
+<span class="cp">                        sizeof(shortcuts)/sizeof(shortcuts[0]), shortcuts)) \</span>
+<span class="cp">        goto error; \</span>
+<span class="cp">}</span>
+
+<span class="cp">#define set_shortname( shortname ) \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_SHORTNAME, (const char *)(shortname))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define set_description( desc ) \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_DESCRIPTION, (const char *)(desc))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define set_help( help ) \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_HELP, (const char *)(help))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define set_capability( cap, score ) \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_CAPABILITY, (const char *)(cap)) \</span>
+<span class="cp">     || vlc_module_set (VLC_MODULE_SCORE, (int)(score))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define set_callbacks( activate, deactivate ) \</span>
+<span class="cp">    if (vlc_module_set(VLC_MODULE_CB_OPEN, #activate, (void *)(activate)) \</span>
+<span class="cp">     || vlc_module_set(VLC_MODULE_CB_CLOSE, #deactivate, \</span>
+<span class="cp">                       (void *)(deactivate))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define cannot_unload_broken_library( ) \</span>
+<span class="cp">    if (vlc_module_set (VLC_MODULE_NO_UNLOAD)) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cp">#define set_text_domain( dom ) \</span>
+<span class="cp">    if (vlc_plugin_set (VLC_MODULE_TEXTDOMAIN, (dom))) \</span>
+<span class="cp">        goto error;</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Macros used to build the configuration structure.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Note that internally we support only 3 types of config data: int, float</span>
+<span class="cm"> *   and string.</span>
+<span class="cm"> *   The other types declared here just map to one of these 3 basic types but</span>
+<span class="cm"> *   have the advantage of also providing very good hints to a configuration</span>
+<span class="cm"> *   interface so as to make it more user friendly.</span>
+<span class="cm"> * The configuration structure also includes category hints. These hints can</span>
+<span class="cm"> *   provide a configuration interface with some very useful data and again</span>
+<span class="cm"> *   allow for a more user friendly interface.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#define add_type_inner( type ) \</span>
+<span class="cp">    vlc_plugin_set (VLC_CONFIG_CREATE, (type), &amp;config);</span>
+
+<span class="cp">#define add_typedesc_inner( type, text, longtext ) \</span>
+<span class="cp">    add_type_inner( type ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_DESC, \</span>
+<span class="cp">                    (const char *)(text), (const char *)(longtext));</span>
+
+<span class="cp">#define add_typeadv_inner( type, text, longtext, advc ) \</span>
+<span class="cp">    add_typedesc_inner( type, text, longtext ) \</span>
+<span class="cp">    if (advc) vlc_config_set (VLC_CONFIG_ADVANCED);</span>
+
+<span class="cp">#define add_typename_inner( type, name, text, longtext, advc ) \</span>
+<span class="cp">    add_typeadv_inner( type, text, longtext, advc ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_NAME, (const char *)(name));</span>
+
+<span class="cp">#define add_string_inner( type, name, text, longtext, advc, v ) \</span>
+<span class="cp">    add_typename_inner( type, name, text, longtext, advc ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_VALUE, (const char *)(v));</span>
+
+<span class="cp">#define add_int_inner( type, name, text, longtext, advc, v ) \</span>
+<span class="cp">    add_typename_inner( type, name, text, longtext, advc ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_VALUE, (int64_t)(v));</span>
+
+
+<span class="cp">#define set_category( i_id ) \</span>
+<span class="cp">    add_type_inner( CONFIG_CATEGORY ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_VALUE, (int64_t)(i_id));</span>
+
+<span class="cp">#define set_subcategory( i_id ) \</span>
+<span class="cp">    add_type_inner( CONFIG_SUBCATEGORY ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_VALUE, (int64_t)(i_id));</span>
+
+<span class="cp">#define set_section( text, longtext ) \</span>
+<span class="cp">    add_typedesc_inner( CONFIG_SECTION, text, longtext )</span>
+
+<span class="cp">#define add_category_hint( text, longtext, advc ) \</span>
+<span class="cp">    add_typeadv_inner( CONFIG_HINT_CATEGORY, text, longtext, advc )</span>
+
+<span class="cp">#define add_usage_hint( text ) \</span>
+<span class="cp">    add_typedesc_inner( CONFIG_HINT_USAGE, text, NULL )</span>
+
+<span class="cp">#define add_string( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_STRING, name, text, longtext, advc, \</span>
+<span class="cp">                      value )</span>
+
+<span class="cp">#define add_password( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_PASSWORD, name, text, longtext, advc, \</span>
+<span class="cp">                      value )</span>
+
+<span class="cp">#define add_loadfile( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_LOADFILE, name, text, longtext, advc, \</span>
+<span class="cp">                      value )</span>
+
+<span class="cp">#define add_savefile( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_SAVEFILE, name, text, longtext, advc, \</span>
+<span class="cp">                      value )</span>
+
+<span class="cp">#define add_directory( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_DIRECTORY, name, text, longtext, advc, \</span>
+<span class="cp">                      value )</span>
+
+<span class="cp">#define add_font( name, value, text, longtext, advc )\</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_FONT, name, text, longtext, advc, \</span>
+<span class="cp">                      value )</span>
+
+<span class="cp">#define add_module( name, psz_caps, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_MODULE, name, text, longtext, advc, \</span>
+<span class="cp">                      value ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_CAPABILITY, (const char *)(psz_caps));</span>
+
+<span class="cp">#define add_module_list( name, psz_caps, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_MODULE_LIST, name, text, longtext, advc, \</span>
+<span class="cp">                      value ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_CAPABILITY, (const char *)(psz_caps));</span>
+
+<span class="cp">#ifndef __PLUGIN__</span>
+<span class="cp">#define add_module_cat( name, i_subcategory, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_MODULE_CAT, name, text, longtext, advc, \</span>
+<span class="cp">                      value ) \</span>
+<span class="cp">    change_integer_range (i_subcategory </span><span class="cm">/* gruik */</span><span class="cp">, 0);</span>
+
+<span class="cp">#define add_module_list_cat( name, i_subcategory, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_MODULE_LIST_CAT, name, text, longtext, \</span>
+<span class="cp">                      advc, value ) \</span>
+<span class="cp">    change_integer_range (i_subcategory </span><span class="cm">/* gruik */</span><span class="cp">, 0);</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define add_integer( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_int_inner( CONFIG_ITEM_INTEGER, name, text, longtext, advc, value )</span>
+
+<span class="cp">#define add_rgb( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_int_inner( CONFIG_ITEM_RGB, name, text, longtext, advc, value ) \</span>
+<span class="cp">    change_integer_range( 0, 0xFFFFFF )</span>
+
+<span class="cp">#define add_key( name, value, text, longtext, advc ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_KEY, &quot;global-&quot; name, text, longtext, advc, \</span>
+<span class="cp">                   KEY_UNSET ) \</span>
+<span class="cp">    add_string_inner( CONFIG_ITEM_KEY, name, text, longtext, advc, value )</span>
+
+<span class="cp">#define add_integer_with_range( name, value, i_min, i_max, text, longtext, advc ) \</span>
+<span class="cp">    add_integer( name, value, text, longtext, advc ) \</span>
+<span class="cp">    change_integer_range( i_min, i_max )</span>
+
+<span class="cp">#define add_float( name, v, text, longtext, advc ) \</span>
+<span class="cp">    add_typename_inner( CONFIG_ITEM_FLOAT, name, text, longtext, advc ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_VALUE, (double)(v));</span>
+
+<span class="cp">#define add_float_with_range( name, value, f_min, f_max, text, longtext, advc ) \</span>
+<span class="cp">    add_float( name, value, text, longtext, advc ) \</span>
+<span class="cp">    change_float_range( f_min, f_max )</span>
+
+<span class="cp">#define add_bool( name, v, text, longtext, advc ) \</span>
+<span class="cp">    add_typename_inner( CONFIG_ITEM_BOOL, name, text, longtext, advc ) \</span>
+<span class="cp">    if (v) vlc_config_set (VLC_CONFIG_VALUE, (int64_t)true);</span>
+
+<span class="cm">/* For removed option */</span>
+<span class="cp">#define add_obsolete_inner( name, type ) \</span>
+<span class="cp">    add_type_inner( type ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_NAME, (const char *)(name)); \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_REMOVED);</span>
+
+<span class="cp">#define add_obsolete_bool( name ) \</span>
+<span class="cp">        add_obsolete_inner( name, CONFIG_ITEM_BOOL )</span>
+
+<span class="cp">#define add_obsolete_integer( name ) \</span>
+<span class="cp">        add_obsolete_inner( name, CONFIG_ITEM_INTEGER )</span>
+
+<span class="cp">#define add_obsolete_float( name ) \</span>
+<span class="cp">        add_obsolete_inner( name, CONFIG_ITEM_FLOAT )</span>
+
+<span class="cp">#define add_obsolete_string( name ) \</span>
+<span class="cp">        add_obsolete_inner( name, CONFIG_ITEM_STRING )</span>
+
+<span class="cm">/* Modifier macros for the config options (used for fine tuning) */</span>
+
+<span class="cp">#define change_short( ch ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_SHORTCUT, (int)(ch));</span>
+
+<span class="cp">#define change_string_list( list, list_text ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_LIST, \</span>
+<span class="cp">                    (size_t)(sizeof (list) / sizeof (char *)), \</span>
+<span class="cp">                    (const char *const *)(list), \</span>
+<span class="cp">                    (const char *const *)(list_text));</span>
+
+<span class="cp">#define change_string_cb( cb ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_LIST_CB, #cb, (void *)(cb));</span>
+
+<span class="cp">#define change_integer_list( list, list_text ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_LIST, \</span>
+<span class="cp">                    (size_t)(sizeof (list) / sizeof (int)), \</span>
+<span class="cp">                    (const int *)(list), \</span>
+<span class="cp">                    (const char *const *)(list_text));</span>
+
+<span class="cp">#define change_integer_cb( cb ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_LIST_CB, #cb, (cb));</span>
+
+<span class="cp">#define change_integer_range( minv, maxv ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_RANGE, (int64_t)(minv), (int64_t)(maxv));</span>
+
+<span class="cp">#define change_float_range( minv, maxv ) \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_RANGE, (double)(minv), (double)(maxv));</span>
+
+<span class="cm">/* For options that are saved but hidden from the preferences panel */</span>
+<span class="cp">#define change_private() \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_PRIVATE);</span>
+
+<span class="cm">/* For options that cannot be saved in the configuration */</span>
+<span class="cp">#define change_volatile() \</span>
+<span class="cp">    change_private() \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_VOLATILE);</span>
+
+<span class="cp">#define change_safe() \</span>
+<span class="cp">    vlc_config_set (VLC_CONFIG_SAFE);</span>
+
+<span class="cm">/* Meta data plugin exports */</span>
+<span class="cp">#define VLC_META_EXPORT( name, value ) \</span>
+<span class="cp">    EXTERN_SYMBOL DLL_SYMBOL const char * CDECL_SYMBOL \</span>
+<span class="cp">    __VLC_SYMBOL(vlc_entry_ ## name) (void); \</span>
+<span class="cp">    EXTERN_SYMBOL DLL_SYMBOL const char * CDECL_SYMBOL \</span>
+<span class="cp">    __VLC_SYMBOL(vlc_entry_ ## name) (void) \</span>
+<span class="cp">    { \</span>
+<span class="cp">         return value; \</span>
+<span class="cp">    }</span>
+
+<span class="cp">#define VLC_COPYRIGHT_VIDEOLAN \</span>
+<span class="cp">    &quot;\x43\x6f\x70\x79\x72\x69\x67\x68\x74\x20\x28\x43\x29\x20\x74\x68&quot; \</span>
+<span class="cp">    &quot;\x65\x20\x56\x69\x64\x65\x6f\x4c\x41\x4e\x20\x56\x4c\x43\x20\x6d&quot; \</span>
+<span class="cp">    &quot;\x65\x64\x69\x61\x20\x70\x6c\x61\x79\x65\x72\x20\x64\x65\x76\x65&quot; \</span>
+<span class="cp">    &quot;\x6c\x6f\x70\x65\x72\x73&quot;</span>
+<span class="cp">#define VLC_LICENSE_LGPL_2_1_PLUS \</span>
+<span class="cp">    &quot;\x4c\x69\x63\x65\x6e\x73\x65\x64\x20\x75\x6e\x64\x65\x72\x20\x74&quot; \</span>
+<span class="cp">    &quot;\x68\x65\x20\x74\x65\x72\x6d\x73\x20\x6f\x66\x20\x74\x68\x65\x20&quot; \</span>
+<span class="cp">    &quot;\x47\x4e\x55\x20\x4c\x65\x73\x73\x65\x72\x20\x47\x65\x6e\x65\x72&quot; \</span>
+<span class="cp">    &quot;\x61\x6c\x20\x50\x75\x62\x6c\x69\x63\x20\x4c\x69\x63\x65\x6e\x73&quot; \</span>
+<span class="cp">    &quot;\x65\x2c\x20\x76\x65\x72\x73\x69\x6f\x6e\x20\x32\x2e\x31\x20\x6f&quot; \</span>
+<span class="cp">    &quot;\x72\x20\x6c\x61\x74\x65\x72\x2e&quot;</span>
+<span class="cp">#define VLC_LICENSE_GPL_2_PLUS \</span>
+<span class="cp">    &quot;\x4c\x69\x63\x65\x6e\x73\x65\x64\x20\x75\x6e\x64\x65\x72\x20\x74&quot; \</span>
+<span class="cp">    &quot;\x68\x65\x20\x74\x65\x72\x6d\x73\x20\x6f\x66\x20\x74\x68\x65\x20&quot; \</span>
+<span class="cp">    &quot;\x47\x4e\x55\x20\x47\x65\x6e\x65\x72\x61\x6c\x20\x50\x75\x62\x6c&quot; \</span>
+<span class="cp">    &quot;\x69\x63\x20\x4c\x69\x63\x65\x6e\x73\x65\x2c\x20\x76\x65\x72\x73&quot; \</span>
+<span class="cp">    &quot;\x69\x6f\x6e\x20\x32\x20\x6f\x72\x20\x6c\x61\x74\x65\x72\x2e&quot;</span>
+<span class="cp">#if defined (__LIBVLC__)</span>
+<span class="cp"># define VLC_MODULE_COPYRIGHT VLC_COPYRIGHT_VIDEOLAN</span>
+<span class="cp"># ifndef VLC_MODULE_LICENSE</span>
+<span class="cp">#  define VLC_MODULE_LICENSE VLC_LICENSE_LGPL_2_1_PLUS</span>
+<span class="cp"># endif</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef VLC_MODULE_COPYRIGHT</span>
+<span class="cp"># define VLC_COPYRIGHT_EXPORT VLC_META_EXPORT(copyright, VLC_MODULE_COPYRIGHT)</span>
+<span class="cp">#else</span>
+<span class="cp"># define VLC_COPYRIGHT_EXPORT</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef VLC_MODULE_LICENSE</span>
+<span class="cp"># define VLC_LICENSE_EXPORT VLC_META_EXPORT(license, VLC_MODULE_LICENSE)</span>
+<span class="cp">#else</span>
+<span class="cp"># define VLC_LICENSE_EXPORT</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define VLC_METADATA_EXPORTS \</span>
+<span class="cp">    VLC_COPYRIGHT_EXPORT \</span>
+<span class="cp">    VLC_LICENSE_EXPORT</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

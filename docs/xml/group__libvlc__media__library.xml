@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__media__library" kind="group">
+    <compoundname>libvlc_media_library</compoundname>
+    <title>LibVLC media library</title>
+    <innerfile refid="libvlc__media__library_8h">libvlc_media_library.h</innerfile>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__libvlc__media__library_1ga3ba1fbcbf8d5ef9b8786b3c0c0916862" prot="public" static="no">
+        <type>struct libvlc_media_library_t</type>
+        <definition>typedef struct libvlc_media_library_t libvlc_media_library_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_media_library_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" line="40" column="37" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__media__library_1gae8f7f5b9c131059b4c29235a886d0e01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_library_t *</type>
+        <definition>LIBVLC_API libvlc_media_library_t * libvlc_media_library_new</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_media_library_new</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an new Media Library object</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new object or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" line="49" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" declline="49" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__library_1ga334af602d7829cd26e6a0591fff5bf6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_library_release</definition>
+        <argsstring>(libvlc_media_library_t *p_mlib)</argsstring>
+        <name>libvlc_media_library_release</name>
+        <param>
+          <type>libvlc_media_library_t *</type>
+          <declname>p_mlib</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release media library object. This functions decrements the reference count of the media library object. If it reaches 0, then the object will be released.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mlib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media library object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" line="59" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" declline="59" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__library_1gaecb327371dd64fbd23e77637b32a8091" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_library_retain</definition>
+        <argsstring>(libvlc_media_library_t *p_mlib)</argsstring>
+        <name>libvlc_media_library_retain</name>
+        <param>
+          <type>libvlc_media_library_t *</type>
+          <declname>p_mlib</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retain a reference to a media library object. This function will increment the reference counting for this object. Use <ref refid="group__libvlc__media__library_1ga334af602d7829cd26e6a0591fff5bf6d" kindref="member">libvlc_media_library_release()</ref> to decrement the reference count.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mlib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media library object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" line="69" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" declline="69" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__library_1gaffa7ef77393064821c02c9203031945f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_library_load</definition>
+        <argsstring>(libvlc_media_library_t *p_mlib)</argsstring>
+        <name>libvlc_media_library_load</name>
+        <param>
+          <type>libvlc_media_library_t *</type>
+          <declname>p_mlib</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load media library.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mlib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media library object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" line="78" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" declline="78" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__library_1gad6ca353b4dd3bda7122b8d097ed646b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_list_t *</type>
+        <definition>LIBVLC_API libvlc_media_list_t * libvlc_media_library_media_list</definition>
+        <argsstring>(libvlc_media_library_t *p_mlib)</argsstring>
+        <name>libvlc_media_library_media_list</name>
+        <param>
+          <type>libvlc_media_library_t *</type>
+          <declname>p_mlib</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get media library subitems.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mlib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media library object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>media list subitems </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" line="87" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_library.h" declline="87" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

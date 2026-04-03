@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__interrupt__context" kind="group">
+    <compoundname>interrupt_context</compoundname>
+    <title>Interrupt context signaling and manipulation</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__interrupt__context_1gaea171ef7c3f05d7a4554deed598f32ea" prot="public" static="no">
+        <type>struct vlc_interrupt</type>
+        <definition>typedef struct vlc_interrupt vlc_interrupt_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_interrupt_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="158" column="28" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__interrupt__context_1ga51d7d1af91400610f0b2226bc30270b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlc_interrupt_t *</type>
+        <definition>VLC_API vlc_interrupt_t * vlc_interrupt_create</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_interrupt_create</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an interruption context. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="163" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="163" declcolumn="25"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1ga9344075b949fe0bcf51a63565f774e5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_interrupt_destroy</definition>
+        <argsstring>(vlc_interrupt_t *)</argsstring>
+        <name>vlc_interrupt_destroy</name>
+        <param>
+          <type>vlc_interrupt_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys an interrupt context. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="168" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="168" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1ga493327cca117b02f4361992444330c71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlc_interrupt_t *</type>
+        <definition>VLC_API vlc_interrupt_t * vlc_interrupt_set</definition>
+        <argsstring>(vlc_interrupt_t *)</argsstring>
+        <name>vlc_interrupt_set</name>
+        <param>
+          <type>vlc_interrupt_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the interruption context for the calling thread. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the interruption context to attach or NULL for none </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the previous interruption context or NULL if none</para>
+</simplesect>
+<simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+<simplesect kind="warning"><para>A context can be attached to no more than one thread at a time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="178" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="178" declcolumn="25"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1ga6ad7acf9e5d0639e9e0ffc81b477dc1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_interrupt_raise</definition>
+        <argsstring>(vlc_interrupt_t *)</argsstring>
+        <name>vlc_interrupt_raise</name>
+        <param>
+          <type>vlc_interrupt_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Raises an interruption through a specified context.</para>
+<para>This is used to asynchronously wake a thread up while it is waiting on some other events (typically I/O events).</para>
+<para><simplesect kind="note"><para>This function is thread-safe. </para>
+</simplesect>
+<simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="189" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="189" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1ga12685d4b7ba71818f4a59e28db0ccc09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_interrupt_kill</definition>
+        <argsstring>(vlc_interrupt_t *)</argsstring>
+        <name>vlc_interrupt_kill</name>
+        <param>
+          <type>vlc_interrupt_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Marks the interruption context as &quot;killed&quot;.</para>
+<para>This is not reversible. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="196" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="196" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1ga5922738084d4992960c624967e4d99c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool vlc_killed</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_killed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the interruption context was &quot;killed&quot;.</para>
+<para>Indicates whether the interruption context of the calling thread (if any) was killed with <ref refid="group__interrupt__context_1ga12685d4b7ba71818f4a59e28db0ccc09" kindref="member">vlc_interrupt_kill()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="204" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="204" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_interrupt_forward_start</definition>
+        <argsstring>(vlc_interrupt_t *to, void *data[2])</argsstring>
+        <name>vlc_interrupt_forward_start</name>
+        <param>
+          <type>vlc_interrupt_t *</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+          <array>[2]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enables forwarding of interruption.</para>
+<para>If an interruption is raised through the context of the calling thread, it will be forwarded to the specified other context. This is used to cross thread boundaries.</para>
+<para>If the calling thread has no interrupt context, this function does nothing.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>to</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>context to forward to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="217" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="217" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__context_1gaad177c327afe520dbc62fa5beadf0137" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_interrupt_forward_stop</definition>
+        <argsstring>(void *const data[2])</argsstring>
+        <name>vlc_interrupt_forward_stop</name>
+        <param>
+          <type>void *const</type>
+          <declname>data</declname>
+          <array>[2]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Undoes <ref refid="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" kindref="member">vlc_interrupt_forward_start()</ref>.</para>
+<para>This function must be called after each successful call to <ref refid="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" kindref="member">vlc_interrupt_forward_start()</ref> before any other interruptible call is made in the same thread.</para>
+<para>If an interruption was raised against the context of the calling thread (after the previous call to <ref refid="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" kindref="member">vlc_interrupt_forward_start()</ref>), it is dequeued.</para>
+<para>If the calling thread has no interrupt context, this function does nothing and returns zero.</para>
+<para><simplesect kind="return"><para>0 if no interrupt was raised, EINTR if an interrupt was raised </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="235" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="235" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

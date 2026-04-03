@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__stream_8h" kind="file" language="C++">
+    <compoundname>vlc_stream.h</compoundname>
+    <includes refid="vlc__block_8h" local="no">vlc_block.h</includes>
+    <includedby refid="vlc__access_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h</includedby>
+    <includedby refid="vlc__demux_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>vlc_block.h</label>
+        <link refid="vlc__block_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h</label>
+        <link refid="vlc__stream_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h</label>
+        <link refid="vlc__access_8h"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h</label>
+        <link refid="vlc__demux_8h"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h</label>
+        <link refid="vlc__stream_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structstream__t" prot="public">stream_t</innerclass>
+    <sectiondef kind="define">
+      <member refid="group__stream_1gaf488d4a9dddfa2f68fa1a9a574a79d64" kind="define"><name>vlc_stream_MemoryNew</name></member>
+      <member refid="group__stream_1gafe9dd5643b3b731555df86a6a1b879b1" kind="define"><name>vlc_stream_NewURL</name></member>
+      <member refid="group__stream_1ga25b99c2c20aa0060c95af15f970a0023" kind="define"><name>stream_FilterSetDefaultReadDir</name></member>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <member refid="group__stream_1gac90a8aaf65579464a5604c9de255929a" kind="enum"><name>stream_query_e</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" kind="function"><name>vlc_stream_Read</name></member>
+      <member refid="group__stream_1gace0ee3234325ed4f421dde063351ca62" kind="function"><name>vlc_stream_ReadPartial</name></member>
+      <member refid="group__stream_1ga0371076b9c19bce5f54bd3d48fd86ae9" kind="function"><name>vlc_stream_Peek</name></member>
+      <member refid="group__stream_1ga170791160b1f8f754c170bcaa6168bed" kind="function"><name>vlc_stream_ReadBlock</name></member>
+      <member refid="group__stream_1ga5e84953ea62ecd95d822ae9be11e70f1" kind="function"><name>vlc_stream_Tell</name></member>
+      <member refid="group__stream_1gad86da11c047d70d0b86196b62c02667d" kind="function"><name>vlc_stream_Eof</name></member>
+      <member refid="group__stream_1ga40ea027b5298f00c541fa80fc53d906e" kind="function"><name>vlc_stream_Seek</name></member>
+      <member refid="group__stream_1gac5580b5547dcea257860c1a135f5aa8c" kind="function"><name>vlc_stream_vaControl</name></member>
+      <member refid="group__stream_1gaaef36d200e0f0fc3deff825b8e47d5c0" kind="function"><name>vlc_stream_Control</name></member>
+      <member refid="group__stream_1ga1aad3775e5c6aa09c5d8c7543a0bac8b" kind="function"><name>vlc_stream_Block</name></member>
+      <member refid="group__stream_1gaa55164ff3fb5f1aed9bb573abcb78432" kind="function"><name>vlc_stream_ReadLine</name></member>
+      <member refid="group__stream_1ga051f36f87fa29a14b047f0ed7bd7c325" kind="function"><name>vlc_stream_ReadDir</name></member>
+      <member refid="group__stream_1ga312a17d8be94eb50948391703b071773" kind="function"><name>vlc_stream_Delete</name></member>
+      <member refid="group__stream_1ga5811d32865b5734d9fdf496e25b85250" kind="function"><name>vlc_stream_CommonNew</name></member>
+      <member refid="group__stream_1ga531572733046d19bb5150d2b6d46e13a" kind="function"><name>vlc_stream_GetSize</name></member>
+      <member refid="group__stream_1ga6245f102e675f1b934adc8161cfa3b85" kind="function"><name>stream_Size</name></member>
+      <member refid="group__stream_1ga834b3fee1cb9226ff357baed83528b65" kind="function"><name>stream_HasExtension</name></member>
+      <member refid="group__stream_1gaf69317485e5e60d51c3b40af88d53e2d" kind="function"><name>stream_ContentType</name></member>
+      <member refid="group__stream_1ga4f7cd77f694390ac15e91c6e5ba13ae2" kind="function"><name>stream_MimeType</name></member>
+      <member refid="group__stream_1ga5acbb69e0bfc48f4e5892f62868adf50" kind="function"><name>stream_IsMimeType</name></member>
+      <member refid="group__stream_1gacb479466634a99bda0edb52ea567da0f" kind="function"><name>vlc_stream_MemoryNew</name></member>
+      <member refid="group__stream_1gac0b4cc2940ee9c286a1de8208507f9d7" kind="function"><name>vlc_stream_NewURL</name></member>
+      <member refid="group__stream__fifo_1ga5df89e172b2ac079a5ff53478fc3a48a" kind="function"><name>vlc_stream_fifo_New</name></member>
+      <member refid="group__stream__fifo_1gad4ab31423b87026fa27b7c9a086e55ef" kind="function"><name>vlc_stream_fifo_Queue</name></member>
+      <member refid="group__stream__fifo_1gafcb48ec4e00386506ad6c83c1e3559d5" kind="function"><name>vlc_stream_fifo_Write</name></member>
+      <member refid="group__stream__fifo_1ga5d4f9984225d6f111d06ce237263dc6d" kind="function"><name>vlc_stream_fifo_Close</name></member>
+      <member refid="group__stream_1ga2155fd4a193a446078d943372a8c2c73" kind="function"><name>vlc_stream_FilterNew</name></member>
+      <member refid="group__stream_1gabf4e3da2c71d9321d1362bf9f7d1f7db" kind="function"><name>vlc_stream_FilterDefaultReadDir</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Byte streams and byte stream filter modules interface </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_stream.h:<sp/>Stream<sp/>(between<sp/>access<sp/>and<sp/>demux)<sp/>descriptor<sp/>and<sp/>methods</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1999-2004<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_STREAM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_STREAM_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__block_8h" kindref="compound">vlc_block.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="structstream__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__t" kindref="compound">stream_t</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Module<sp/>properties<sp/>for<sp/>stream<sp/>filter<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>module_t<sp/><sp/><sp/><sp/>*p_module;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*psz_name;</highlight></codeline>
+<codeline lineno="54" refid="structstream__t_1a97a3bfccf69ecf7845ed41dbb1757eb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structstream__t_1a97a3bfccf69ecf7845ed41dbb1757eb1" kindref="member">psz_url</ref>;<sp/></highlight></codeline>
+<codeline lineno="55" refid="structstream__t_1a89b42e495f05f95f5cc951b1d0963964" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*<ref refid="structstream__t_1a89b42e495f05f95f5cc951b1d0963964" kindref="member">psz_location</ref>;<sp/></highlight></codeline>
+<codeline lineno="56" refid="structstream__t_1ad6d64fe43afb9acc346d7b926e940e2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structstream__t_1ad6d64fe43afb9acc346d7b926e940e2b" kindref="member">psz_filepath</ref>;<sp/></highlight></codeline>
+<codeline lineno="57" refid="structstream__t_1a1333d59af9a89981e5f1e499a6df51d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structstream__t_1a1333d59af9a89981e5f1e499a6df51d8" kindref="member">b_preparsing</ref>;<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Stream<sp/>source<sp/>for<sp/>stream<sp/>filter<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*p_source;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="structstream__t_1adbd5568567b3b488962f26d8a574c4b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/><sp/><sp/><sp/><sp/>(*<ref refid="structstream__t_1adbd5568567b3b488962f26d8a574c4b6" kindref="member">pf_read</ref>)(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="structstream__t_1a81a48e3b8c183d6e0000b5e8321447db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/><sp/><sp/><sp/>*(*pf_block)(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*eof);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="structstream__t_1afc5fe9c3bd0fa69c8f86fd9aac010f43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*<ref refid="structstream__t_1afc5fe9c3bd0fa69c8f86fd9aac010f43" kindref="member">pf_readdir</ref>)(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="structstream__t_1a745408c868bf5bd7982d6f38d4ee54bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*<ref refid="structstream__t_1a745408c868bf5bd7982d6f38d4ee54bc" kindref="member">pf_seek</ref>)(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/>uint64_t);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="structstream__t_1a4b791119caa6132669614cd0aa3c77dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*<ref refid="structstream__t_1a4b791119caa6132669614cd0aa3c77dc" kindref="member">pf_control</ref>)(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_query,<sp/>va_list);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="structstream__t_1ab56db4c805cd13a9da29c950fadee485" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structstream__t_1ab56db4c805cd13a9da29c950fadee485" kindref="member">p_sys</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Weak<sp/>link<sp/>to<sp/>parent<sp/>input<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinput__thread__t" kindref="compound">input_thread_t</ref><sp/>*p_input;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="group__stream_1gac90a8aaf65579464a5604c9de255929a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__stream_1gac90a8aaf65579464a5604c9de255929a" kindref="member">stream_query_e</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>capabilities<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaa8713b90e0df50b9ce6653211d20f4f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaa8713b90e0df50b9ce6653211d20f4f9" kindref="member">STREAM_CAN_SEEK</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa8aec9890f93fde818e3fe8bacd7496ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa8aec9890f93fde818e3fe8bacd7496ec" kindref="member">STREAM_CAN_FASTSEEK</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa8dd0cea80134003f8582ff8e8c5d48d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa8dd0cea80134003f8582ff8e8c5d48d3" kindref="member">STREAM_CAN_PAUSE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa4ad696863f1d78fdce009c9d3ca249a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa4ad696863f1d78fdce009c9d3ca249a0" kindref="member">STREAM_CAN_CONTROL_PACE</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aad711fafff9c55278e65102af584a235b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aad711fafff9c55278e65102af584a235b" kindref="member">STREAM_GET_SIZE</ref>=6,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa53150275f65cd089954c9e6cf610a807" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa53150275f65cd089954c9e6cf610a807" kindref="member">STREAM_IS_DIRECTORY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa63fe5c80dc98e616cc68efb5a677bdd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa63fe5c80dc98e616cc68efb5a677bdd2" kindref="member">STREAM_GET_PTS_DELAY</ref><sp/>=<sp/>0x101,</highlight></codeline>
+<codeline lineno="150" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaff4a61fe8c4a4bb2d9ed917189481f00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaff4a61fe8c4a4bb2d9ed917189481f00" kindref="member">STREAM_GET_TITLE_INFO</ref>,<sp/></highlight></codeline>
+<codeline lineno="151" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa22189e0c84cb9b67b10cf7266873eaa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa22189e0c84cb9b67b10cf7266873eaa7" kindref="member">STREAM_GET_TITLE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aacaee16aa8d513def9f83897a84c63378" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aacaee16aa8d513def9f83897a84c63378" kindref="member">STREAM_GET_SEEKPOINT</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="153" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaff64344cb822f1b6cb88f1cfe6289044" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaff64344cb822f1b6cb88f1cfe6289044" kindref="member">STREAM_GET_META</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7ebc58a0d76f4fa44444305d3116bf2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7ebc58a0d76f4fa44444305d3116bf2f" kindref="member">STREAM_GET_CONTENT_TYPE</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaacf5c3f2478728f39372ebf0881c6c2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aaacf5c3f2478728f39372ebf0881c6c2c" kindref="member">STREAM_GET_SIGNAL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7e93d36786ed23873b0372e4a084d160" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7e93d36786ed23873b0372e4a084d160" kindref="member">STREAM_GET_TAGS</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa52b071c3972f120269b8e694954717e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa52b071c3972f120269b8e694954717e8" kindref="member">STREAM_SET_PAUSE_STATE</ref><sp/>=<sp/>0x200,<sp/></highlight></codeline>
+<codeline lineno="159" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa975e8a0d165a9dd46717374368de6c1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa975e8a0d165a9dd46717374368de6c1b" kindref="member">STREAM_SET_TITLE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="160" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aafff7614b422eff8e6c2caefaaf98453c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aafff7614b422eff8e6c2caefaaf98453c" kindref="member">STREAM_SET_SEEKPOINT</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>XXX<sp/>only<sp/>data<sp/>read<sp/>through<sp/>vlc_stream_Read/Block<sp/>will<sp/>be<sp/>recorded<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa603f56e65f3d97803a81de2a578907af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa603f56e65f3d97803a81de2a578907af" kindref="member">STREAM_SET_RECORD_STATE</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>STREAM_SET_PRIVATE_ID_STATE<sp/>=<sp/>0x1000,<sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>int<sp/>i_private_data,<sp/>bool<sp/>b_selected<sp/><sp/><sp/><sp/>res=can<sp/>fail<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>STREAM_SET_PRIVATE_ID_CA,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>int<sp/>i_program_number,<sp/>uint16_t<sp/>i_vpid,<sp/>uint16_t<sp/>i_apid1,<sp/>uint16_t<sp/>i_apid2,<sp/>uint16_t<sp/>i_apid3,<sp/>uint8_t<sp/>i_length,<sp/>uint8_t<sp/>*p_data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>STREAM_GET_PRIVATE_ID_STATE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>i_private_data<sp/>arg2=bool<sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res=can<sp/>fail<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__stream_1ga5ef03536ed07ac8c9857685d6d435be1" kindref="member">vlc_stream_Read</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="group__stream_1gace0ee3234325ed4f421dde063351ca62" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__stream_1gace0ee3234325ed4f421dde063351ca62" kindref="member">vlc_stream_ReadPartial</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">VLC_USED;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="group__stream_1ga0371076b9c19bce5f54bd3d48fd86ae9" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__stream_1ga0371076b9c19bce5f54bd3d48fd86ae9" kindref="member">vlc_stream_Peek</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>**,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="group__stream_1ga170791160b1f8f754c170bcaa6168bed" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__stream_1ga170791160b1f8f754c170bcaa6168bed" kindref="member">vlc_stream_ReadBlock</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="group__stream_1ga5e84953ea62ecd95d822ae9be11e70f1" refkind="member"><highlight class="normal">VLC_API<sp/>uint64_t<sp/><ref refid="group__stream_1ga5e84953ea62ecd95d822ae9be11e70f1" kindref="member">vlc_stream_Tell</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="group__stream_1gad86da11c047d70d0b86196b62c02667d" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group__stream_1gad86da11c047d70d0b86196b62c02667d" kindref="member">vlc_stream_Eof</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="group__stream_1ga40ea027b5298f00c541fa80fc53d906e" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__stream_1ga40ea027b5298f00c541fa80fc53d906e" kindref="member">vlc_stream_Seek</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/>uint64_t<sp/>offset)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_stream_vaControl(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>query,<sp/>va_list<sp/>args);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_stream_Control(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>query,<sp/>...)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>va_list<sp/>ap;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>va_start(ap,<sp/>query);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>vlc_stream_vaControl(s,<sp/>query,<sp/>ap);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>va_end(ap);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*vlc_stream_Block(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vlc_stream_ReadLine(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_stream_ReadDir(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*,<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="group__stream_1ga312a17d8be94eb50948391703b071773" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__stream_1ga312a17d8be94eb50948391703b071773" kindref="member">vlc_stream_Delete</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal">VLC_API<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*vlc_stream_CommonNew(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*)(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*));</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal">VLC_USED<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_stream_GetSize(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/>uint64_t<sp/>*size<sp/>)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vlc_stream_Control(<sp/>s,<sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aad711fafff9c55278e65102af584a235b" kindref="member">STREAM_GET_SIZE</ref>,<sp/>size<sp/>);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>int64_t<sp/>stream_Size(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>i_pos;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>vlc_stream_GetSize(<sp/>s,<sp/>&amp;i_pos<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>i_pos<sp/>&gt;&gt;<sp/>62<sp/>)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(int64_t)1<sp/>&lt;&lt;<sp/>62;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i_pos;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal">VLC_USED</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stream_HasExtension(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*extension<sp/>)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>=<sp/>(s-&gt;<ref refid="structstream__t_1ad6d64fe43afb9acc346d7b926e940e2b" kindref="member">psz_filepath</ref><sp/>!=<sp/>NULL)<sp/>?<sp/>s-&gt;<ref refid="structstream__t_1ad6d64fe43afb9acc346d7b926e940e2b" kindref="member">psz_filepath</ref></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>s-&gt;psz_url;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ext<sp/>=<sp/>strrchr(<sp/>name,<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ext<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>!strcasecmp(<sp/>ext,<sp/>extension<sp/>);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stream_ContentType(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*res;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>vlc_stream_Control(<sp/>s,<sp/><ref refid="group__stream_1ggac90a8aaf65579464a5604c9de255929aa7ebc58a0d76f4fa44444305d3116bf2f" kindref="member">STREAM_GET_CONTENT_TYPE</ref>,<sp/>&amp;res<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal">VLC_USED</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stream_MimeType(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s<sp/>)</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mime_type<sp/>=<sp/>stream_ContentType(<sp/>s<sp/>);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>mime_type<sp/>)<sp/></highlight><highlight class="comment">/*<sp/>strip<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mime_type[strcspn(<sp/>mime_type,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>;&quot;</highlight><highlight class="normal"><sp/>)]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mime_type;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal">VLC_USED</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stream_IsMimeType(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*type)</highlight></codeline>
+<codeline lineno="374"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mime<sp/>=<sp/>stream_MimeType(s);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mime<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ok<sp/>=<sp/>!strcasecmp(mime,<sp/>type);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>free(mime);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ok;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393" refid="group__stream_1gacb479466634a99bda0edb52ea567da0f" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*vlc_stream_MemoryNew(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/>uint8_t<sp/>*base,</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>preserve)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vlc_stream_MemoryNew(a,<sp/>b,<sp/>c,<sp/>d)<sp/>\</highlight></codeline>
+<codeline lineno="396"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_stream_MemoryNew(VLC_OBJECT(a),<sp/>b,<sp/>c,<sp/>d)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402" refid="group__stream_1gac0b4cc2940ee9c286a1de8208507f9d7" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*<sp/>vlc_stream_NewURL(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*url)</highlight></codeline>
+<codeline lineno="403"><highlight class="normal">VLC_USED;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vlc_stream_NewURL(a,<sp/>b)<sp/>vlc_stream_NewURL(VLC_OBJECT(a),<sp/>b)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="429" refid="group__stream__fifo_1ga5df89e172b2ac079a5ff53478fc3a48a" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*<ref refid="group__stream__fifo_1ga5df89e172b2ac079a5ff53478fc3a48a" kindref="member">vlc_stream_fifo_New</ref>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*parent);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight></codeline>
+<codeline lineno="442" refid="group__stream__fifo_1gad4ab31423b87026fa27b7c9a086e55ef" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__stream__fifo_1gad4ab31423b87026fa27b7c9a086e55ef" kindref="member">vlc_stream_fifo_Queue</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*block);</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453" refid="group__stream__fifo_1gafcb48ec4e00386506ad6c83c1e3559d5" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__stream__fifo_1gafcb48ec4e00386506ad6c83c1e3559d5" kindref="member">vlc_stream_fifo_Write</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight></codeline>
+<codeline lineno="462" refid="group__stream__fifo_1ga5d4f9984225d6f111d06ce237263dc6d" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__stream__fifo_1ga5d4f9984225d6f111d06ce237263dc6d" kindref="member">vlc_stream_fifo_Close</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472" refid="group__stream_1ga2155fd4a193a446078d943372a8c2c73" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref>*<sp/><ref refid="group__stream_1ga2155fd4a193a446078d943372a8c2c73" kindref="member">vlc_stream_FilterNew</ref>(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*p_source,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_stream_filter<sp/>);</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478" refid="group__stream_1gabf4e3da2c71d9321d1362bf9f7d1f7db" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__stream_1gabf4e3da2c71d9321d1362bf9f7d1f7db" kindref="member">vlc_stream_FilterDefaultReadDir</ref>(<ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*s,</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_node);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485" refid="group__stream_1ga25b99c2c20aa0060c95af15f970a0023" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>stream_FilterSetDefaultReadDir(stream)<sp/>\</highlight></codeline>
+<codeline lineno="486"><highlight class="preprocessor">do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="487"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(stream)-&gt;pf_readdir<sp/>=<sp/>vlc_stream_FilterDefaultReadDir;<sp/>\</highlight></codeline>
+<codeline lineno="488"><highlight class="preprocessor">}<sp/>while<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h"/>
+  </compounddef>
+</doxygen>

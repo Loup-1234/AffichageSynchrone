@@ -1,0 +1,3250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__media__player" kind="group">
+    <compoundname>libvlc_media_player</compoundname>
+    <title>LibVLC media player</title>
+    <innerfile refid="libvlc__media__player_8h">libvlc_media_player.h</innerfile>
+    <innerclass refid="structlibvlc__track__description__t" prot="public">libvlc_track_description_t</innerclass>
+    <innerclass refid="structlibvlc__title__description__t" prot="public">libvlc_title_description_t</innerclass>
+    <innerclass refid="structlibvlc__chapter__description__t" prot="public">libvlc_chapter_description_t</innerclass>
+    <innerclass refid="structlibvlc__audio__output__t" prot="public">libvlc_audio_output_t</innerclass>
+    <innerclass refid="structlibvlc__audio__output__device__t" prot="public">libvlc_audio_output_device_t</innerclass>
+    <innergroup refid="group__libvlc__video">LibVLC video controls</innergroup>
+    <innergroup refid="group__libvlc__audio">LibVLC audio controls</innergroup>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="group__libvlc__media__player_1gafbcb776feeacdd4482b3a45f36abbb7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API float</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API float libvlc_media_player_get_fps</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_fps</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get movie fps rate</para>
+<para>This function is provided for backward compatibility. It cannot deal with multiple video tracks. In LibVLC versions prior to 3.0, it would also fail if the file format did not convey the frame rate explicitly.</para>
+<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Consider using <ref refid="group__libvlc__media_1ga33f5fef54e3750ab55744007e0e80f02" kindref="member">libvlc_media_tracks_get()</ref> instead.</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>frames per second (fps) for this playing movie, or 0 if unspecified </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="50" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="50" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gab15aa2437c8aba7d48299d60570a9e06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API void</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API void libvlc_media_player_set_agl</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, uint32_t drawable)</argsstring>
+        <name>libvlc_media_player_set_agl</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>end bug <xrefsect id="deprecated_1_deprecated000002"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Use <ref refid="group__libvlc__media__player_1ga46c26a395b496e48917101198acc31f6" kindref="member">libvlc_media_player_set_nsobject()</ref> instead </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="58" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="58" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga356f9411f2ff9397ec932a021112405a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API uint32_t</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API uint32_t libvlc_media_player_get_agl</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_agl</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000003"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Use <ref refid="group__libvlc__media__player_1gaa9327d659b0d30ea89a9e7ee711567b0" kindref="member">libvlc_media_player_get_nsobject()</ref> instead </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="64" column="21" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="64" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga952b5c8fffa72a993f0ea61bf5b5711c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API void</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API void libvlc_track_description_release</definition>
+        <argsstring>(libvlc_track_description_t *p_track_description)</argsstring>
+        <name>libvlc_track_description_release</name>
+        <param>
+          <type><ref refid="structlibvlc__track__description__t" kindref="compound">libvlc_track_description_t</ref> *</type>
+          <declname>p_track_description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000004"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Use <ref refid="group__libvlc__media__player_1gaffdae51d73f23127456631b87457beb2" kindref="member">libvlc_track_description_list_release()</ref> instead </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="70" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="70" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__libvlc__media__player_1ga4f8ed834e69239bcb5d113ecb54cb32a" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__libvlc__media__player_1gga4f8ed834e69239bcb5d113ecb54cb32aaafed65a19e1d0ee4f3ea70f5d4885bb5" prot="public">
+          <name>libvlc_title_menu</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga4f8ed834e69239bcb5d113ecb54cb32aa0316669874e3e6dd8d3d52e38b8941a6" prot="public">
+          <name>libvlc_title_interactive</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description for titles </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="60" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__libvlc__media__player_1ga412d5b45da5bda967f656cb17ecc83fd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>libvlc_video_marquee_option_t</name>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fdaa42b8e1a61efda0ff0acff941ddb7517" prot="public">
+          <name>libvlc_marquee_Enable</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fdacf36054f78e8dcb1031f9dae0c88054e" prot="public">
+          <name>libvlc_marquee_Text</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fda46d8b92b1bf73d727e5f9fad4bb9ee2d" prot="public">
+          <name>libvlc_marquee_Color</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>string argument </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fdab4b60b7595d401aaa331c9725e3b8b37" prot="public">
+          <name>libvlc_marquee_Opacity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fda73be6807bd3499bacadfd7149862b66c" prot="public">
+          <name>libvlc_marquee_Position</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fdac75d4cc7280b01f40f94fe61bbe9e7c2" prot="public">
+          <name>libvlc_marquee_Refresh</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fdac325f8932cb226f7c1bd609459ba64b0" prot="public">
+          <name>libvlc_marquee_Size</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fda90fd7687ef50167c98726408d407aaa7" prot="public">
+          <name>libvlc_marquee_Timeout</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fdabd426153cbbd582cab56f7236a53a06b" prot="public">
+          <name>libvlc_marquee_X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga412d5b45da5bda967f656cb17ecc83fda80ab4b97b0f5f8bc4a0a8a54ae7dd601" prot="public">
+          <name>libvlc_marquee_Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Marq options definition </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="109" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="109" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__libvlc__media__player_1ga6e6b601e219aafd4ffc6063c1dbf11b1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>libvlc_navigate_mode_t</name>
+        <enumvalue id="group__libvlc__media__player_1gga6e6b601e219aafd4ffc6063c1dbf11b1aa7028e9dcc0b34a642ce37717fa188e2" prot="public">
+          <name>libvlc_navigate_activate</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga6e6b601e219aafd4ffc6063c1dbf11b1ad5a40187f192b6cd4a97d054ee67a3e2" prot="public">
+          <name>libvlc_navigate_up</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga6e6b601e219aafd4ffc6063c1dbf11b1adbac0bcdbd61b81fb61f3c29b05fad78" prot="public">
+          <name>libvlc_navigate_down</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga6e6b601e219aafd4ffc6063c1dbf11b1a8a5e49e9b617f86aaf08abb2b68dacf1" prot="public">
+          <name>libvlc_navigate_left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga6e6b601e219aafd4ffc6063c1dbf11b1a097e6d67e9b18af97e0141dc5b9ea154" prot="public">
+          <name>libvlc_navigate_right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga6e6b601e219aafd4ffc6063c1dbf11b1ab02287d5868de6e020c50e18fab7391a" prot="public">
+          <name>libvlc_navigate_popup</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Navigation mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="125" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="126" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__libvlc__media__player_1ga948997d1c6ab5fee8051417ac7dfa1c7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>libvlc_position_t</name>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7ae269b163c0ada208ac7553990702d29d" prot="public">
+          <name>libvlc_position_disable</name>
+          <initializer>=-1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7af0c014e336998d953fa100dc4f5f1c22" prot="public">
+          <name>libvlc_position_center</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7a6bbdf4a4f0afb4d53fe137d9dfd114c1" prot="public">
+          <name>libvlc_position_left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7aced1118e53edf29651421a4f3124aef0" prot="public">
+          <name>libvlc_position_right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7a034e3cf98a0b3d593e56cd458426b177" prot="public">
+          <name>libvlc_position_top</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7a983532e86bc776d2a054123328cc2c8d" prot="public">
+          <name>libvlc_position_top_left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7af7cb6c4cbda2e871b0f8db1aab4cee52" prot="public">
+          <name>libvlc_position_top_right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7aefdfa1bcec69ce85a37f967612f12683" prot="public">
+          <name>libvlc_position_bottom</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7ac8ca483d6034ca4047165e23fb9f0267" prot="public">
+          <name>libvlc_position_bottom_left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga948997d1c6ab5fee8051417ac7dfa1c7a010e37c12eb43718d1cf444f60170e7e" prot="public">
+          <name>libvlc_position_bottom_right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumeration of values used to set position (e.g. of video title). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="138" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="138" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__libvlc__media__player_1ga1f78c23ee7cc81fc34873393986de8c4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>libvlc_teletext_key_t</name>
+        <enumvalue id="group__libvlc__media__player_1gga1f78c23ee7cc81fc34873393986de8c4ae635379e254784e78ec3ced832938ead" prot="public">
+          <name>libvlc_teletext_key_red</name>
+          <initializer>= &apos;r&apos; &lt;&lt; 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga1f78c23ee7cc81fc34873393986de8c4ac4f14b34b6a91d94a0a9fc0b773cc2df" prot="public">
+          <name>libvlc_teletext_key_green</name>
+          <initializer>= &apos;g&apos; &lt;&lt; 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga1f78c23ee7cc81fc34873393986de8c4ae9150b61104e0e4452593fea6c9d764b" prot="public">
+          <name>libvlc_teletext_key_yellow</name>
+          <initializer>= &apos;y&apos; &lt;&lt; 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga1f78c23ee7cc81fc34873393986de8c4ad6604671c860d5ebfe848d2692fbb5bf" prot="public">
+          <name>libvlc_teletext_key_blue</name>
+          <initializer>= &apos;b&apos; &lt;&lt; 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__media__player_1gga1f78c23ee7cc81fc34873393986de8c4a1f12f5f11e567cd16e0ea21a88bfeb61" prot="public">
+          <name>libvlc_teletext_key_index</name>
+          <initializer>= &apos;i&apos; &lt;&lt; 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumeration of teletext keys than can be passed via <ref refid="group__libvlc__video_1gac734df7211ebf2a80d09d2566c96240b" kindref="member">libvlc_video_set_teletext()</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="155" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="155" bodyend="161"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gab28ae6631ae60f0adb906165ab8cecc6" prot="public" static="no">
+        <type>struct libvlc_media_player_t</type>
+        <definition>typedef struct libvlc_media_player_t libvlc_media_player_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_media_player_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="43" column="36" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga1b0ba3da2d233f3213a8e034674097d8" prot="public" static="no">
+        <type>struct libvlc_track_description_t</type>
+        <definition>typedef struct libvlc_track_description_t libvlc_track_description_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_track_description_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description for video, audio tracks and subtitles. It contains id, name (description string) and pointer to next record. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="55" column="28"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga78611eec61a2322a42f85c1a002f9b5e" prot="public" static="no">
+        <type>struct libvlc_title_description_t</type>
+        <definition>typedef struct libvlc_title_description_t libvlc_title_description_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_title_description_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="71" column="28"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gabbf644bb8ff2a239afbdbdefde4e4156" prot="public" static="no">
+        <type>struct libvlc_chapter_description_t</type>
+        <definition>typedef struct libvlc_chapter_description_t libvlc_chapter_description_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_chapter_description_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description for chapters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="81" column="30"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga4adb2eeec4bfea68f3801093f8c7f973" prot="public" static="no">
+        <type>struct libvlc_audio_output_t</type>
+        <definition>typedef struct libvlc_audio_output_t libvlc_audio_output_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_audio_output_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description for audio output. It contains name, description and pointer to next record. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="93" column="23"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gadca6d309b4d8f524dda8378b93bea8af" prot="public" static="no">
+        <type>struct libvlc_audio_output_device_t</type>
+        <definition>typedef struct libvlc_audio_output_device_t libvlc_audio_output_device_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_audio_output_device_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description for audio output device. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="104" column="30"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga67307a9deca4cabd8dbc11f2f9d5a586" prot="public" static="no">
+        <type>enum <ref refid="group__libvlc__media__player_1ga412d5b45da5bda967f656cb17ecc83fd" kindref="member">libvlc_video_marquee_option_t</ref></type>
+        <definition>typedef enum libvlc_video_marquee_option_t libvlc_video_marquee_option_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_video_marquee_option_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Marq options definition </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="120" column="31"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gad1bf4ac25f31dc4e02b795b718e323d5" prot="public" static="no">
+        <type>enum <ref refid="group__libvlc__media__player_1ga6e6b601e219aafd4ffc6063c1dbf11b1" kindref="member">libvlc_navigate_mode_t</ref></type>
+        <definition>typedef enum libvlc_navigate_mode_t libvlc_navigate_mode_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_navigate_mode_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Navigation mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="133" column="24"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga23a7d164dac1771a70d41e45e505b4ad" prot="public" static="no">
+        <type>enum <ref refid="group__libvlc__media__player_1ga948997d1c6ab5fee8051417ac7dfa1c7" kindref="member">libvlc_position_t</ref></type>
+        <definition>typedef enum libvlc_position_t libvlc_position_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumeration of values used to set position (e.g. of video title). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="149" column="19"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gaee7dc63f468b6ec1de339dba4297bb8a" prot="public" static="no">
+        <type>enum <ref refid="group__libvlc__media__player_1ga1f78c23ee7cc81fc34873393986de8c4" kindref="member">libvlc_teletext_key_t</ref></type>
+        <definition>typedef enum libvlc_teletext_key_t libvlc_teletext_key_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_teletext_key_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumeration of teletext keys than can be passed via <ref refid="group__libvlc__video_1gac734df7211ebf2a80d09d2566c96240b" kindref="member">libvlc_video_set_teletext()</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="161" column="23"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga1ea141a84d68d0147fc58d99bfc83ab7" prot="public" static="no">
+        <type>struct <ref refid="group__libvlc__media__player_1ga1ea141a84d68d0147fc58d99bfc83ab7" kindref="member">libvlc_equalizer_t</ref></type>
+        <definition>typedef struct libvlc_equalizer_t libvlc_equalizer_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_equalizer_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opaque equalizer handle.</para>
+<para>Equalizer settings can be applied to a media player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="168" column="33" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga63cb55704cb9bc4f6447b52b3579359b" prot="public" static="no">
+        <type>void *(*</type>
+        <definition>typedef void *(* libvlc_video_lock_cb) (void *opaque, void **planes)</definition>
+        <argsstring>)(void *opaque, void **planes)</argsstring>
+        <name>libvlc_video_lock_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype to allocate and lock a picture buffer.</para>
+<para>Whenever a new video frame needs to be decoded, the lock callback is invoked. Depending on the video chroma, one or three pixel planes of adequate dimensions must be returned via the second parameter. Those planes must be aligned on 32-bytes boundaries.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer as passed to <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>planes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start address of the pixel planes (LibVLC allocates the array of void pointers, this callback must initialize the array) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a private pointer for the display and unlock callbacks to identify the picture buffers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="307" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga024c0f0bba9d3b32a881c40f3cb479bb" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_video_unlock_cb) (void *opaque, void *picture, void *const *planes)</definition>
+        <argsstring>)(void *opaque, void *picture, void *const *planes)</argsstring>
+        <name>libvlc_video_unlock_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype to unlock a picture buffer.</para>
+<para>When the video frame decoding is complete, the unlock callback is invoked. This callback might not be needed at all. It is only an indication that the application can now read the pixel values if it needs to.</para>
+<para><simplesect kind="note"><para>A picture buffer is unlocked after the picture is decoded, but before the picture is displayed.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer as passed to <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>picture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer returned from the <ref refid="group__libvlc__media__player_1ga63cb55704cb9bc4f6447b52b3579359b" kindref="member">libvlc_video_lock_cb</ref> callback [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>planes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pixel planes as defined by the <ref refid="group__libvlc__media__player_1ga63cb55704cb9bc4f6447b52b3579359b" kindref="member">libvlc_video_lock_cb</ref> callback (this parameter is only for convenience) [IN] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="325" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga2189c9deefc2154ddc5d5f1871b0a106" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_video_display_cb) (void *opaque, void *picture)</definition>
+        <argsstring>)(void *opaque, void *picture)</argsstring>
+        <name>libvlc_video_display_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype to display a picture.</para>
+<para>When the video frame needs to be shown, as determined by the media playback clock, the display callback is invoked.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer as passed to <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>picture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer returned from the <ref refid="group__libvlc__media__player_1ga63cb55704cb9bc4f6447b52b3579359b" kindref="member">libvlc_video_lock_cb</ref> callback [IN] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="338" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gae46128c21d0d0151aca3ba017d1d6b35" prot="public" static="no">
+        <type>unsigned(*</type>
+        <definition>typedef unsigned(* libvlc_video_format_cb) (void **opaque, char *chroma, unsigned *width, unsigned *height, unsigned *pitches, unsigned *lines)</definition>
+        <argsstring>)(void **opaque, char *chroma, unsigned *width, unsigned *height, unsigned *pitches, unsigned *lines)</argsstring>
+        <name>libvlc_video_format_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype to configure picture buffers format. This callback gets the format of the video as output by the video decoder and the chain of video filters (if any). It can opt to change any parameter as it needs. In that case, LibVLC will attempt to convert the video format (rescaling and chroma conversion) but these operations can be CPU intensive.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the private pointer passed to <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref> [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chroma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the 4 bytes video format identifier [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the pixel width [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the pixel height [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitches</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>table of scanline pitches in bytes for each pixel plane (the table is allocated by LibVLC) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lines</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>table of scanlines count for each plane [OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of picture buffers allocated, 0 indicates failure</para>
+</simplesect>
+<simplesect kind="note"><para>For each pixels plane, the scanline pitch must be bigger than or equal to the number of bytes per pixel multiplied by the pixel width. Similarly, the number of scanlines must be bigger than of equal to the pixel height. Furthermore, we recommend that pitches and lines be multiple of 32 to not break assumptions that might be held by optimized code in the video decoders, video filters and/or video converters. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="366" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga47f87563b82ed4b6d70ef51243003ae9" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_video_cleanup_cb) (void *opaque)</definition>
+        <argsstring>)(void *opaque)</argsstring>
+        <name>libvlc_video_cleanup_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype to configure picture buffers format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer as passed to <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref> (and possibly modified by <ref refid="group__libvlc__media__player_1gae46128c21d0d0151aca3ba017d1d6b35" kindref="member">libvlc_video_format_cb</ref>) [IN] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="377" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga9a242251d11378ecdc43b8ef0cc0254e" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_play_cb) (void *data, const void *samples, unsigned count, int64_t pts)</definition>
+        <argsstring>)(void *data, const void *samples, unsigned count, int64_t pts)</argsstring>
+        <name>libvlc_audio_play_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio playback.</para>
+<para>The LibVLC media player decodes and post-processes the audio signal asynchronously (in an internal thread). Whenever audio samples are ready to be queued to the output, this callback is invoked.</para>
+<para>The number of samples provided per invocation may depend on the file format, the audio coding algorithm, the decoder plug-in, the post-processing filters and timing. Application must not assume a certain number of samples.</para>
+<para>The exact format of audio samples is determined by <ref refid="group__libvlc__media__player_1gaf7af18f5f09e34234e5f1bf4681dfe43" kindref="member">libvlc_audio_set_format()</ref> or <ref refid="group__libvlc__media__player_1gae1c8bcbd10157da11331e46d30ecd058" kindref="member">libvlc_audio_set_format_callbacks()</ref> as is the channels layout.</para>
+<para>Note that the number of samples is per channel. For instance, if the audio track sampling rate is 48000 Hz, then 1200 samples represent 25 milliseconds of audio signal - regardless of the number of audio channels.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>samples</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to a table of audio samples to play back [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of audio samples to play back </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>expected play time stamp (see libvlc_delay()) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="627" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="627" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gaac6c92b1a3d331c73fbbba11140fca4e" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_pause_cb) (void *data, int64_t pts)</definition>
+        <argsstring>)(void *data, int64_t pts)</argsstring>
+        <name>libvlc_audio_pause_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio pause.</para>
+<para>LibVLC invokes this callback to pause audio playback.</para>
+<para><simplesect kind="note"><para>The pause callback is never called if the audio is already paused. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time stamp of the pause request (should be elapsed already) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="639" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="639" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga4c61b5ee287be1aa176882cef004e4ca" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_resume_cb) (void *data, int64_t pts)</definition>
+        <argsstring>)(void *data, int64_t pts)</argsstring>
+        <name>libvlc_audio_resume_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio resumption.</para>
+<para>LibVLC invokes this callback to resume audio playback after it was previously paused.</para>
+<para><simplesect kind="note"><para>The resume callback is never called if the audio is not paused. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time stamp of the resumption request (should be elapsed already) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="651" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="651" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga7ab971890ddbf306331989d60b88c171" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_flush_cb) (void *data, int64_t pts)</definition>
+        <argsstring>)(void *data, int64_t pts)</argsstring>
+        <name>libvlc_audio_flush_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio buffer flush.</para>
+<para>LibVLC invokes this callback if it needs to discard all pending buffers and stop playback as soon as possible. This typically occurs when the media is stopped.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="662" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="662" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gaf25ee69cefcb19ae1a1751b7ba73cf41" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_drain_cb) (void *data)</definition>
+        <argsstring>)(void *data)</argsstring>
+        <name>libvlc_audio_drain_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio buffer drain.</para>
+<para>LibVLC may invoke this callback when the decoded audio track is ending. There will be no further decoded samples for the track, but playback should nevertheless continue until all already pending buffers are rendered.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="673" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga1f41552fa452e3d5d53d079485eb0749" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_set_volume_cb) (void *data, float volume, bool mute)</definition>
+        <argsstring>)(void *data, float volume, bool mute)</argsstring>
+        <name>libvlc_audio_set_volume_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio volume change. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>software volume (1. = nominal, 0. = mute) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>muted flag </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="681" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="681" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1gaa8c228a30286c9b0b26ad436d69e6f8b" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* libvlc_audio_setup_cb) (void **data, char *format, unsigned *rate, unsigned *channels)</definition>
+        <argsstring>)(void **data, char *format, unsigned *rate, unsigned *channels)</argsstring>
+        <name>libvlc_audio_setup_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype to setup the audio playback.</para>
+<para>This is called when the media player needs to create a new audio output. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the data pointer passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>4 bytes sample format [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sample rate [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>channels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>channels count [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, anything else to skip audio playback </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="737" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="737" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__media__player_1ga90303960d8c56bc1cd9902e80b011843" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_audio_cleanup_cb) (void *data)</definition>
+        <argsstring>)(void *data)</argsstring>
+        <name>libvlc_audio_cleanup_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for audio playback cleanup.</para>
+<para>This is called when the media player no longer needs an audio output. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as passed to <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref> [IN] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="746" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" bodystart="746" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__media__player_1ga58e7332d3230aef5012ea49c39ad06af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_player_t *</type>
+        <definition>LIBVLC_API libvlc_media_player_t * libvlc_media_player_new</definition>
+        <argsstring>(libvlc_instance_t *p_libvlc_instance)</argsstring>
+        <name>libvlc_media_player_new</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_libvlc_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an empty Media Player object</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_libvlc_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the libvlc instance in which the Media Player should be created. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new media player object, or NULL on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="177" column="35" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="177" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga2a5ac142c024b709f4cd443644f55b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_player_t *</type>
+        <definition>LIBVLC_API libvlc_media_player_t * libvlc_media_player_new_from_media</definition>
+        <argsstring>(libvlc_media_t *p_md)</argsstring>
+        <name>libvlc_media_player_new_from_media</name>
+        <param>
+          <type>libvlc_media_t *</type>
+          <declname>p_md</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a Media Player object from a Media</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_md</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media. Afterwards the p_md can be safely destroyed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new media player object, or NULL on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="186" column="35" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="186" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gac8d8236f3dfa549d3637100ae6d07e72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_release</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_release</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release a media_player after use Decrement the reference count of a media player object. If the reference count is 0, then <ref refid="group__libvlc__media__player_1gac8d8236f3dfa549d3637100ae6d07e72" kindref="member">libvlc_media_player_release()</ref> will release the media player object. If the media player object has been released, then it should not be used again.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player to free </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="197" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="197" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gac05d1395d425db194eda5a29a03c346a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_retain</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_retain</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retain a reference to a media player object. Use <ref refid="group__libvlc__media__player_1gac8d8236f3dfa549d3637100ae6d07e72" kindref="member">libvlc_media_player_release()</ref> to decrement reference count.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media player object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="205" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="205" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gadeb7ac440f41dbb2aa1a7811904099b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_media</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, libvlc_media_t *p_md)</argsstring>
+        <name>libvlc_media_player_set_media</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>libvlc_media_t *</type>
+          <declname>p_md</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the media that will be used by the media_player. If any, previous md will be released.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_md</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media. Afterwards the p_md can be safely destroyed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="215" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="215" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga9b407ade6adf9f2c8335e1a0aa55d97f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_t *</type>
+        <definition>LIBVLC_API libvlc_media_t * libvlc_media_player_get_media</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_media</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the media used by the media_player.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the media associated with p_mi, or NULL if no media is associated </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="225" column="28" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="225" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga74e1db669127f538f1f447aedd763728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref> *</type>
+        <definition>LIBVLC_API libvlc_event_manager_t * libvlc_media_player_event_manager</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_event_manager</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the Event Manager from which the media player send event.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the event manager associated with p_mi </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="233" column="36" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="233" declcolumn="36"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga70fd26f9bbca7eda021a49680e7fbc1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_is_playing</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_is_playing</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>is_playing</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 if the media player is playing, 0 otherwise</para>
+</simplesect>
+\libvlc_return_bool </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="243" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="243" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gac5da60e52d11c81c7a6a61f470aa1646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_play</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_play</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Play</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if playback started (and was already started), or -1 on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="251" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="251" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga6e39882b33a22337cec9fd49dd7e23c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_pause</definition>
+        <argsstring>(libvlc_media_player_t *mp, int do_pause)</argsstring>
+        <name>libvlc_media_player_set_pause</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>do_pause</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pause or resume (no effect if there is no media)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>do_pause</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>play/resume if zero, pause if non-zero </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 1.1.1 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="260" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="260" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga61712d4eb8f63232c712a81fb19ee8fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_pause</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_pause</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Toggle pause (no effect if there is no media)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="268" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="268" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gacefc05e7806905447a436d3fc242e6de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_stop</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_stop</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop (no effect if there is no media)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="275" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="275" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gab6c789e40bc08a8a12d2947a63dfe934" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_set_renderer</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, libvlc_renderer_item_t *p_item)</argsstring>
+        <name>libvlc_media_player_set_renderer</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__renderer__discoverer_1ga347a55891c5f0fe7399d6344d5590a50" kindref="member">libvlc_renderer_item_t</ref> *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a renderer to the media player</para>
+<para><simplesect kind="note"><para>must be called before the first call of <ref refid="group__libvlc__media__player_1gac5da60e52d11c81c7a6a61f470aa1646" kindref="member">libvlc_media_player_play()</ref> to take effect.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__renderer__discoverer_1gaa433c657cc2711a3737f6f09eaac1646" kindref="member">libvlc_renderer_discoverer_new</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an item discovered by <ref refid="group__libvlc__renderer__discoverer_1gae3d8e1d89fde247262d75904db80b706" kindref="member">libvlc_renderer_discoverer_start()</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error. </para>
+</simplesect>
+<simplesect kind="version"><para>LibVLC 3.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="290" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="290" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_video_set_callbacks</definition>
+        <argsstring>(libvlc_media_player_t *mp, libvlc_video_lock_cb lock, libvlc_video_unlock_cb unlock, libvlc_video_display_cb display, void *opaque)</argsstring>
+        <name>libvlc_video_set_callbacks</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga63cb55704cb9bc4f6447b52b3579359b" kindref="member">libvlc_video_lock_cb</ref></type>
+          <declname>lock</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga024c0f0bba9d3b32a881c40f3cb479bb" kindref="member">libvlc_video_unlock_cb</ref></type>
+          <declname>unlock</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga2189c9deefc2154ddc5d5f1871b0a106" kindref="member">libvlc_video_display_cb</ref></type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>opaque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set callbacks and private data to render decoded video to a custom area in memory. Use <ref refid="group__libvlc__media__player_1ga6518394e05d458731c11c86edb23f4cc" kindref="member">libvlc_video_set_format()</ref> or <ref refid="group__libvlc__media__player_1gafbeef69fb76b4c4d6cb25145aee1ad99" kindref="member">libvlc_video_set_format_callbacks()</ref> to configure the decoded format.</para>
+<para><simplesect kind="warning"><para>Rendering video into custom memory buffers is considerably less efficient than rendering in a custom window as normal.</para>
+</simplesect>
+For optimal perfomances, VLC media player renders into a custom window, and does not use this function and associated callbacks. It is <bold>highly recommended</bold> that other LibVLC-based application do likewise. To embed video in a window, use libvlc_media_player_set_xid() or equivalent depending on the operating system.</para>
+<para>If window embedding does not fit the application use case, then a custom LibVLC video output display plugin is required to maintain optimal video rendering performances.</para>
+<para>The following limitations affect performance:<itemizedlist>
+<listitem><para>Hardware video decoding acceleration will either be disabled completely, or require (relatively slow) copy from video/DSP memory to main memory.</para>
+</listitem><listitem><para>Sub-pictures (subtitles, on-screen display, etc.) must be blent into the main picture by the CPU instead of the GPU.</para>
+</listitem><listitem><para>Depending on the video format, pixel format conversion, picture scaling, cropping and/or picture re-orientation, must be performed by the CPU instead of the GPU.</para>
+</listitem><listitem><para>Memory copying is required between LibVLC reference picture buffers and application buffers (between lock and unlock callbacks).</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to lock video memory (must not be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unlock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to unlock video memory (or NULL if not needed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to display video (or NULL if not needed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer for the three callbacks (as first parameter) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 1.1.1 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="418" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="418" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga6518394e05d458731c11c86edb23f4cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_video_set_format</definition>
+        <argsstring>(libvlc_media_player_t *mp, const char *chroma, unsigned width, unsigned height, unsigned pitch)</argsstring>
+        <name>libvlc_video_set_format</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>chroma</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>pitch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set decoded video chroma and dimensions. This only works in combination with <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref>, and is mutually exclusive with <ref refid="group__libvlc__media__player_1gafbeef69fb76b4c4d6cb25145aee1ad99" kindref="member">libvlc_video_set_format_callbacks()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chroma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a four-characters string identifying the chroma (e.g. &quot;RV32&quot; or &quot;YUYV&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pixel width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pixel height </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>line pitch (in bytes) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 1.1.1 or later </para>
+</simplesect>
+<xrefsect id="bug_1_bug000001"><xreftitle>Bogue</xreftitle><xrefdescription><para>All pixel planes are expected to have the same pitch. To use the YCbCr color space with chrominance subsampling, consider using <ref refid="group__libvlc__media__player_1gafbeef69fb76b4c4d6cb25145aee1ad99" kindref="member">libvlc_video_set_format_callbacks()</ref> instead. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="441" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="441" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gafbeef69fb76b4c4d6cb25145aee1ad99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_video_set_format_callbacks</definition>
+        <argsstring>(libvlc_media_player_t *mp, libvlc_video_format_cb setup, libvlc_video_cleanup_cb cleanup)</argsstring>
+        <name>libvlc_video_set_format_callbacks</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1gae46128c21d0d0151aca3ba017d1d6b35" kindref="member">libvlc_video_format_cb</ref></type>
+          <declname>setup</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga47f87563b82ed4b6d70ef51243003ae9" kindref="member">libvlc_video_cleanup_cb</ref></type>
+          <declname>cleanup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set decoded video chroma and dimensions. This only works in combination with <ref refid="group__libvlc__media__player_1ga612605f2e5c638d9f4ed59021d714bf0" kindref="member">libvlc_video_set_callbacks()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>setup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to select the video format (cannot be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cleanup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to release any allocated resources (or NULL) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="455" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="455" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga46c26a395b496e48917101198acc31f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_nsobject</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, void *drawable)</argsstring>
+        <name>libvlc_media_player_set_nsobject</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the NSView handler where the media player should render its video output.</para>
+<para>Use the vout called &quot;macosx&quot;.</para>
+<para>The drawable is an NSObject that follow the VLCOpenGLVideoViewEmbedding protocol:</para>
+<para><programlisting filename=".m"><codeline><highlight class="normal">\</highlight><highlight class="keyword">@protocol<sp/></highlight><highlight class="normal">VLCOpenGLVideoViewEmbedding<sp/>&lt;NSObject&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>(void)addVoutSubview:(NSView<sp/>*)view;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>(void)removeVoutSubview:(NSView<sp/>*)view;</highlight></codeline>
+<codeline><highlight class="normal">\</highlight><highlight class="keyword">@end</highlight></codeline>
+</programlisting></para>
+<para>Or it can be an NSView object.</para>
+<para>If you want to use it along with Qt see the QMacCocoaViewContainer. Then the following code should work: <programlisting filename=".mm"><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>NSView<sp/>*video<sp/>=<sp/>[[NSView<sp/>alloc]<sp/>init];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QMacCocoaViewContainer<sp/>*container<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QMacCocoaViewContainer(video,<sp/>parent);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__libvlc__media__player_1ga46c26a395b496e48917101198acc31f6" kindref="member">libvlc_media_player_set_nsobject</ref>(mp,<sp/>video);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>[video<sp/>release];</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>You can find a live example in VLCVideoView in VLCKit.framework.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the drawable that is either an NSView or an object following the VLCOpenGLVideoViewEmbedding protocol. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="493" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="493" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaa9327d659b0d30ea89a9e7ee711567b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void *</type>
+        <definition>LIBVLC_API void * libvlc_media_player_get_nsobject</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_nsobject</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the NSView handler previously set with <ref refid="group__libvlc__media__player_1ga46c26a395b496e48917101198acc31f6" kindref="member">libvlc_media_player_set_nsobject()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the NSView handler or 0 if none where set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="501" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="501" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga31827df3a665a72410cb95695147ba5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_xwindow</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, uint32_t drawable)</argsstring>
+        <name>libvlc_media_player_set_xwindow</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set an X Window System drawable where the media player should render its video output. The call takes effect when the playback starts. If it is already started, it might need to be stopped before changes apply. If LibVLC was built without X11 output support, then this function has no effects.</para>
+<para>By default, LibVLC will capture input events on the video rendering area. Use <ref refid="group__libvlc__video_1gad53def725dd5a50a3823b68ed31bca1a" kindref="member">libvlc_video_set_mouse_input()</ref> and <ref refid="group__libvlc__video_1ga8636dead7f51bd9fb7f82c17f3e46236" kindref="member">libvlc_video_set_key_input()</ref> to disable that and deliver events to the parent window / to the application instead. By design, the X11 protocol delivers input events to only one recipient.</para>
+<para><simplesect kind="warning"><para>The application must call the XInitThreads() function from Xlib before <ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kindref="member">libvlc_new()</ref>, and before any call to XOpenDisplay() directly or via any other library. Failure to call XInitThreads() will seriously impede LibVLC performance. Calling XOpenDisplay() before XInitThreads() will eventually crash the process. That is a limitation of Xlib.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X11 window ID</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The specified identifier must correspond to an existing Input/Output class X11 window. Pixmaps are <bold>not</bold> currently supported. The default X11 server is assumed, i.e. that specified in the DISPLAY environment variable.</para>
+</simplesect>
+<simplesect kind="warning"><para>LibVLC can deal with invalid X11 handle errors, however some display drivers (EGL, GLX, VA and/or VDPAU) can unfortunately not. Thus the window handle must remain valid until playback is stopped, otherwise the process may abort or crash.</para>
+</simplesect>
+<xrefsect id="bug_1_bug000002"><xreftitle>Bogue</xreftitle><xrefdescription><para>No more than one window handle per media player instance can be specified. If the media has multiple simultaneously active video tracks, extra tracks will be rendered into external windows beyond the control of the application. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="543" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="543" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gac0ccdaeef127b62ce26adfa195f0bba1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API uint32_t</type>
+        <definition>LIBVLC_API uint32_t libvlc_media_player_get_xwindow</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_xwindow</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the X Window System window identifier previously set with <ref refid="group__libvlc__media__player_1ga31827df3a665a72410cb95695147ba5b" kindref="member">libvlc_media_player_set_xwindow()</ref>. Note that this will return the identifier even if VLC is not currently using it (for instance if it is playing an audio-only input).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>an X window ID, or 0 if none where set. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="555" column="21" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="555" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga0ee3abb85cd9735fdeace4882eb711f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_hwnd</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, void *drawable)</argsstring>
+        <name>libvlc_media_player_set_hwnd</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a Win32/Win64 API window handle (HWND) where the media player should render its video output. If LibVLC was built without Win32/Win64 API output support, then this has no effects.</para>
+<para><simplesect kind="warning"><para>the HWND must have the WS_CLIPCHILDREN set in its style.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>windows handle of the drawable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="567" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="567" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga561c5d9fdd3103528c361fd4f98398bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void *</type>
+        <definition>LIBVLC_API void * libvlc_media_player_get_hwnd</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_hwnd</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the Windows API window handle (HWND) previously set with <ref refid="group__libvlc__media__player_1ga0ee3abb85cd9735fdeace4882eb711f3" kindref="member">libvlc_media_player_set_hwnd()</ref>. The handle will be returned even if LibVLC is not currently outputting any video to it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a window handle or NULL if there are none. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="577" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="577" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga2a40175371247e4422ce52993935ae29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_android_context</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, void *p_awindow_handler)</argsstring>
+        <name>libvlc_media_player_set_android_context</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_awindow_handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the android context.</para>
+<para><simplesect kind="version"><para>LibVLC 3.0.0 and later.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_awindow_handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>org.videolan.libvlc.AWindow jobject owned by the org.videolan.libvlc.MediaPlayer class from the libvlc-android project. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="588" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="588" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaa7c1a91d10bc3e979951eac69be02fd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_set_evas_object</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, void *p_evas_object)</argsstring>
+        <name>libvlc_media_player_set_evas_object</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_evas_object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the EFL Evas Object.</para>
+<para><simplesect kind="version"><para>LibVLC 3.0.0 and later.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_evas_object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a valid EFL Evas Object (Evas_Object) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 if an error was detected, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="600" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="600" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_audio_set_callbacks</definition>
+        <argsstring>(libvlc_media_player_t *mp, libvlc_audio_play_cb play, libvlc_audio_pause_cb pause, libvlc_audio_resume_cb resume, libvlc_audio_flush_cb flush, libvlc_audio_drain_cb drain, void *opaque)</argsstring>
+        <name>libvlc_audio_set_callbacks</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga9a242251d11378ecdc43b8ef0cc0254e" kindref="member">libvlc_audio_play_cb</ref></type>
+          <declname>play</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1gaac6c92b1a3d331c73fbbba11140fca4e" kindref="member">libvlc_audio_pause_cb</ref></type>
+          <declname>pause</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga4c61b5ee287be1aa176882cef004e4ca" kindref="member">libvlc_audio_resume_cb</ref></type>
+          <declname>resume</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga7ab971890ddbf306331989d60b88c171" kindref="member">libvlc_audio_flush_cb</ref></type>
+          <declname>flush</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1gaf25ee69cefcb19ae1a1751b7ba73cf41" kindref="member">libvlc_audio_drain_cb</ref></type>
+          <declname>drain</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>opaque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets callbacks and private data for decoded audio.</para>
+<para>Use <ref refid="group__libvlc__media__player_1gaf7af18f5f09e34234e5f1bf4681dfe43" kindref="member">libvlc_audio_set_format()</ref> or <ref refid="group__libvlc__media__player_1gae1c8bcbd10157da11331e46d30ecd058" kindref="member">libvlc_audio_set_format_callbacks()</ref> to configure the decoded audio format.</para>
+<para><simplesect kind="note"><para>The audio callbacks override any other audio output mechanism. If the callbacks are set, LibVLC will <bold>not</bold> output audio in any way.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>play</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to play audio samples (must not be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pause</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to pause playback (or NULL to ignore) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>resume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to resume playback (or NULL to ignore) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flush</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to flush audio buffers (or NULL to ignore) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>drain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to drain audio buffers (or NULL to ignore) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>private pointer for the audio callbacks (as first parameter) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="703" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="703" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaabd876baf98d23a49ad55b2cd53e81b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_audio_set_volume_callback</definition>
+        <argsstring>(libvlc_media_player_t *mp, libvlc_audio_set_volume_cb set_volume)</argsstring>
+        <name>libvlc_audio_set_volume_callback</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga1f41552fa452e3d5d53d079485eb0749" kindref="member">libvlc_audio_set_volume_cb</ref></type>
+          <declname>set_volume</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set callbacks and private data for decoded audio. This only works in combination with <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref>. Use <ref refid="group__libvlc__media__player_1gaf7af18f5f09e34234e5f1bf4681dfe43" kindref="member">libvlc_audio_set_format()</ref> or <ref refid="group__libvlc__media__player_1gae1c8bcbd10157da11331e46d30ecd058" kindref="member">libvlc_audio_set_format_callbacks()</ref> to configure the decoded audio format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>set_volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to apply audio volume, or NULL to apply volume in software </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="723" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="723" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gae1c8bcbd10157da11331e46d30ecd058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_audio_set_format_callbacks</definition>
+        <argsstring>(libvlc_media_player_t *mp, libvlc_audio_setup_cb setup, libvlc_audio_cleanup_cb cleanup)</argsstring>
+        <name>libvlc_audio_set_format_callbacks</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1gaa8c228a30286c9b0b26ad436d69e6f8b" kindref="member">libvlc_audio_setup_cb</ref></type>
+          <declname>setup</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga90303960d8c56bc1cd9902e80b011843" kindref="member">libvlc_audio_cleanup_cb</ref></type>
+          <declname>cleanup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets decoded audio format via callbacks.</para>
+<para>This only works in combination with <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>setup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to select the audio format (cannot be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cleanup</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to release any allocated resources (or NULL) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="759" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="759" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaf7af18f5f09e34234e5f1bf4681dfe43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_audio_set_format</definition>
+        <argsstring>(libvlc_media_player_t *mp, const char *format, unsigned rate, unsigned channels)</argsstring>
+        <name>libvlc_audio_set_format</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>mp</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>rate</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>channels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets a fixed decoded audio format.</para>
+<para>This only works in combination with <ref refid="group__libvlc__media__player_1gaac7abb1d8be3f60bb9da20c000703790" kindref="member">libvlc_audio_set_callbacks()</ref>, and is mutually exclusive with <ref refid="group__libvlc__media__player_1gae1c8bcbd10157da11331e46d30ecd058" kindref="member">libvlc_audio_set_format_callbacks()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a four-characters string identifying the sample format (e.g. &quot;S16N&quot; or &quot;f32l&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sample rate (expressed in Hz) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>channels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>channels count </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="777" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="777" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga057b0d82fb84f60ee24a6d76c1f135f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_time_t</type>
+        <definition>LIBVLC_API libvlc_time_t libvlc_media_player_get_length</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_length</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="bug_1_bug000003"><xreftitle>Bogue</xreftitle><xrefdescription><para>This might go away ... to be replaced by a broader system </para>
+</xrefdescription></xrefsect>Get the current movie length (in ms).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the movie length (in ms), or -1 if there is no media. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="788" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="788" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga1a5ccaa2c044ded47205cd0754f68370" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_time_t</type>
+        <definition>LIBVLC_API libvlc_time_t libvlc_media_player_get_time</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_time</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current movie time (in ms).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the movie time (in ms), or -1 if there is no media. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="796" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="796" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga2f3347645100660ffae553387171e398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_time</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, libvlc_time_t i_time)</argsstring>
+        <name>libvlc_media_player_set_time</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>libvlc_time_t</type>
+          <declname>i_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the movie time (in ms). This has no effect if no media is being played. Not all formats and protocols support this.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the movie time (in ms). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="805" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="805" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaa6ee9d95f5b6ee0c34b92ab8c86a5c1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API float</type>
+        <definition>LIBVLC_API float libvlc_media_player_get_position</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_position</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get movie position as percentage between 0.0 and 1.0.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>movie position, or -1. in case of error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="813" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="813" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga4b672fe24ed2defbf732452d5ccbb4ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_position</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, float f_pos)</argsstring>
+        <name>libvlc_media_player_set_position</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set movie position as percentage between 0.0 and 1.0. This has no effect if playback is not enabled. This might not work depending on the underlying input format and protocol.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the position </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="823" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="823" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gae8f1cbc7f17ab01c99511adf1b457860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_chapter</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, int i_chapter)</argsstring>
+        <name>libvlc_media_player_set_chapter</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_chapter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set movie chapter (if applicable).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_chapter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>chapter number to play </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="831" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="831" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gabd8bdd2acfab5d780917f9afec77256a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_get_chapter</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_chapter</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get movie chapter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>chapter number currently playing, or -1 if there is no media. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="839" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="839" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaca201f5b20c3e8f2aeb4b65089620a64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_get_chapter_count</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_chapter_count</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get movie chapter count</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number of chapters in movie, or -1. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="847" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="847" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga3c38df27467a03f96f9ed0f6b585baaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_will_play</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_will_play</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is the player able to play</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean</para>
+</simplesect>
+\libvlc_return_bool </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="857" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="857" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga65061437d5b8f6ef9811f750118adaba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_get_chapter_count_for_title</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, int i_title)</argsstring>
+        <name>libvlc_media_player_get_chapter_count_for_title</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get title chapter count</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>title </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number of chapters in title, or -1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="866" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="866" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga39d28c13c551c195d4228dec1aa0b5e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_title</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, int i_title)</argsstring>
+        <name>libvlc_media_player_set_title</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set movie title</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>title number to play </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="875" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="875" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gafdaefc462fcab5c4fdd862d5ee3a226d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_get_title</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_title</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get movie title</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>title number currently playing, or -1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="883" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="883" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaa82c224660d1c88588dc9391be905396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_get_title_count</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_title_count</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get movie title count</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>title number count, or -1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="891" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="891" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga2b29595d53bcb7c0eed22e259b4f48c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_previous_chapter</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_previous_chapter</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set previous chapter (if applicable)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="898" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="898" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga6dfdfc7d9929c95d04b99d5d77847d48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_next_chapter</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_next_chapter</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set next chapter (if applicable)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="905" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="905" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga1ae5393783c03bd23a6b0c198aacf3cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API float</type>
+        <definition>LIBVLC_API float libvlc_media_player_get_rate</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_rate</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the requested movie play rate. <simplesect kind="warning"><para>Depending on the underlying media, the requested rate may be different from the real playback rate.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>movie play rate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="915" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="915" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaa81be3afb20eddedf7ae56e98d4b1e06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_set_rate</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, float rate)</argsstring>
+        <name>libvlc_media_player_set_rate</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set movie play rate</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>movie play rate to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 if an error was detected, 0 otherwise (but even then, it might not actually work depending on the underlying media protocol) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="925" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="925" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gac6537a6b1387db3a96b48947b0aa8b87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="group__libvlc__media_1gac88ad60037ea05e1f23675a2ebe31efc" kindref="member">libvlc_state_t</ref></type>
+        <definition>LIBVLC_API libvlc_state_t libvlc_media_player_get_state</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_get_state</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get current movie state</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the current state of the media player (playing, paused, ...) </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__media_1gac88ad60037ea05e1f23675a2ebe31efc" kindref="member">libvlc_state_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="933" column="27" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="933" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga2458b35abe7063cdfe5e6ef87a3be3b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API unsigned</type>
+        <definition>LIBVLC_API unsigned libvlc_media_player_has_vout</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_has_vout</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>How many video outputs does this media player have?</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of video outputs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="941" column="21" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="941" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaf39dbbcb37cd5bcc3cdf203de8e117e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_is_seekable</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_is_seekable</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is this media player seekable?</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the media player can seek</para>
+</simplesect>
+\libvlc_return_bool </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="951" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="951" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga764022fed72e41c7cb2988a93834ec5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_can_pause</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_can_pause</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Can this media player be paused?</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the media player can pause</para>
+</simplesect>
+\libvlc_return_bool </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="961" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="961" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gadce5576edbd7817b130cbeeea9973e86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_program_scrambled</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_program_scrambled</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if the current program is scrambled</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the current program is scrambled</para>
+</simplesect>
+\libvlc_return_bool <simplesect kind="version"><para>LibVLC 2.2.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="972" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="972" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gadbfec72aef61dd499c7a5c06271911bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_next_frame</definition>
+        <argsstring>(libvlc_media_player_t *p_mi)</argsstring>
+        <name>libvlc_media_player_next_frame</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display the next frame (if supported)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="979" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="979" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1ga8fe3bb8a48af33a012040196b0953a93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_navigate</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, unsigned navigate)</argsstring>
+        <name>libvlc_media_player_navigate</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>navigate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Navigate through DVD Menu</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Media Player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>navigate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Navigation mode </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>libVLC 2.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="988" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="988" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gacc22e10e72cf10bc81ab3065eae96716" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_player_set_video_title_display</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, libvlc_position_t position, unsigned int timeout)</argsstring>
+        <name>libvlc_media_player_set_video_title_display</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media__player_1ga948997d1c6ab5fee8051417ac7dfa1c7" kindref="member">libvlc_position_t</ref></type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set if, and how, the video title will be shown when media is played.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position at which to display the title, or libvlc_position_disable to prevent the title from being displayed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>title display timeout in milliseconds (ignored if libvlc_position_disable) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>libVLC 2.1.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="999" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="999" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gad7f50e13e7b96667bb0a37383c1d4c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_player_add_slave</definition>
+        <argsstring>(libvlc_media_player_t *p_mi, libvlc_media_slave_type_t i_type, const char *psz_uri, bool b_select)</argsstring>
+        <name>libvlc_media_player_add_slave</name>
+        <param>
+          <type>libvlc_media_player_t *</type>
+          <declname>p_mi</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__media_1gaa72710d446a889df8ee40a6c0c65465d" kindref="member">libvlc_media_slave_type_t</ref></type>
+          <declname>i_type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_select</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a slave to the current media player.</para>
+<para><simplesect kind="note"><para>If the player is playing, the slave will be added directly. This call will also update the slave list of the attached libvlc_media_t.</para>
+</simplesect>
+<simplesect kind="version"><para>LibVLC 3.0.0 and later.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__media_1gab21524c105f6dd706dd4118e026403f7" kindref="member">libvlc_media_slaves_add</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media player </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>subtitle or audio </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uri of the slave (should contain a valid scheme). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_select</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if this slave should be selected when it&apos;s loaded</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="1019" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="1019" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__player_1gaffdae51d73f23127456631b87457beb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_track_description_list_release</definition>
+        <argsstring>(libvlc_track_description_t *p_track_description)</argsstring>
+        <name>libvlc_track_description_list_release</name>
+        <param>
+          <type><ref refid="structlibvlc__track__description__t" kindref="compound">libvlc_track_description_t</ref> *</type>
+          <declname>p_track_description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release (free) <ref refid="structlibvlc__track__description__t" kindref="compound">libvlc_track_description_t</ref></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_track_description</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the structure to release </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" line="1028" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_player.h" declline="1028" declcolumn="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A LibVLC media player plays one media (usually in a custom drawable). </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

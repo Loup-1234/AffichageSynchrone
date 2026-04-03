@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structencoder__t" kind="struct" language="C++" prot="public">
+    <compoundname>encoder_t</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structencoder__t_1a3c815343602c0ed20805b51c9130a2e8" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> module_t *</type>
+        <definition>VLC_COMMON_MEMBERS module_t* encoder_t::p_module</definition>
+        <argsstring></argsstring>
+        <name>p_module</name>
+        <qualifiedname>encoder_t::p_module</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="216" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1ae2d95206492fba9f71c72f4ce8201538" prot="public" static="no" mutable="no">
+        <type>encoder_sys_t *</type>
+        <definition>encoder_sys_t* encoder_t::p_sys</definition>
+        <argsstring></argsstring>
+        <name>p_sys</name>
+        <qualifiedname>encoder_t::p_sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="217" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a0f9042ff7782e3a4b7216f9d648b66b0" prot="public" static="no" mutable="no">
+        <type><ref refid="structes__format__t" kindref="compound">es_format_t</ref></type>
+        <definition>es_format_t encoder_t::fmt_in</definition>
+        <argsstring></argsstring>
+        <name>fmt_in</name>
+        <qualifiedname>encoder_t::fmt_in</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="220" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a6d681718cb297d94d78a13b51124e1e3" prot="public" static="no" mutable="no">
+        <type><ref refid="structes__format__t" kindref="compound">es_format_t</ref></type>
+        <definition>es_format_t encoder_t::fmt_out</definition>
+        <argsstring></argsstring>
+        <name>fmt_out</name>
+        <qualifiedname>encoder_t::fmt_out</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="223" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a5a453ba9e11955b591dc4c2714a36ec8" prot="public" static="no" mutable="no">
+        <type><ref refid="structblock__t" kindref="compound">block_t</ref> *(*</type>
+        <definition>block_t *(* encoder_t::pf_encode_video) (encoder_t *, picture_t *)</definition>
+        <argsstring>)(encoder_t *, picture_t *)</argsstring>
+        <name>pf_encode_video</name>
+        <qualifiedname>encoder_t::pf_encode_video</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="225" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a986d4ca994646ae952d213f337071ff9" prot="public" static="no" mutable="no">
+        <type><ref refid="structblock__t" kindref="compound">block_t</ref> *(*</type>
+        <definition>block_t *(* encoder_t::pf_encode_audio) (encoder_t *, block_t *)</definition>
+        <argsstring>)(encoder_t *, block_t *)</argsstring>
+        <name>pf_encode_audio</name>
+        <qualifiedname>encoder_t::pf_encode_audio</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="226" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a057f4f9e0297eb0db4285cc46065558a" prot="public" static="no" mutable="no">
+        <type><ref refid="structblock__t" kindref="compound">block_t</ref> *(*</type>
+        <definition>block_t *(* encoder_t::pf_encode_sub) (encoder_t *, subpicture_t *)</definition>
+        <argsstring>)(encoder_t *, subpicture_t *)</argsstring>
+        <name>pf_encode_sub</name>
+        <qualifiedname>encoder_t::pf_encode_sub</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="227" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a214337e2005ea8db9471b7e87255b66a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int encoder_t::i_threads</definition>
+        <argsstring></argsstring>
+        <name>i_threads</name>
+        <qualifiedname>encoder_t::i_threads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="230" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a904a904dafa081abfd82da5b961cf983" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int encoder_t::i_iframes</definition>
+        <argsstring></argsstring>
+        <name>i_iframes</name>
+        <qualifiedname>encoder_t::i_iframes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="231" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1ab4a6af9087600f56dde2457e452e48d4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int encoder_t::i_bframes</definition>
+        <argsstring></argsstring>
+        <name>i_bframes</name>
+        <qualifiedname>encoder_t::i_bframes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="232" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a7afd25319032b369ea0012cf35ff37ff" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int encoder_t::i_tolerance</definition>
+        <argsstring></argsstring>
+        <name>i_tolerance</name>
+        <qualifiedname>encoder_t::i_tolerance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="233" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structencoder__t_1a0e99caa6d172bb1a61971442ca6ffdb3" prot="public" static="no" mutable="no">
+        <type><ref refid="structconfig__chain__t" kindref="compound">config_chain_t</ref> *</type>
+        <definition>config_chain_t* encoder_t::p_cfg</definition>
+        <argsstring></argsstring>
+        <name>p_cfg</name>
+        <qualifiedname>encoder_t::p_cfg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="236" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>audio_format_t</label>
+        <link refid="structaudio__format__t"/>
+      </node>
+      <node id="5">
+        <label>audio_replay_gain_t</label>
+        <link refid="structaudio__replay__gain__t"/>
+      </node>
+      <node id="11">
+        <label>block_t</label>
+        <link refid="structblock__t"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+          <edgelabel>+pf_release</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>config_chain_t</label>
+        <link refid="structconfig__chain__t"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>encoder_t</label>
+        <link refid="structencoder__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+fmt_in</edgelabel>
+          <edgelabel>+fmt_out</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>+pf_encode_audio</edgelabel>
+          <edgelabel>+pf_encode_sub</edgelabel>
+          <edgelabel>+pf_encode_video</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>+p_cfg</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>es_format_t</label>
+        <link refid="structes__format__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_extra_languages</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+audio</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+audio_replay_gain</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+video</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+subs</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>extra_languages_t</label>
+        <link refid="structextra__languages__t"/>
+      </node>
+      <node id="9">
+        <label>subs_format_t</label>
+        <link refid="structsubs__format__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>+p_style</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>text_style_t</label>
+        <link refid="structtext__style__t"/>
+      </node>
+      <node id="6">
+        <label>video_format_t</label>
+        <link refid="structvideo__format__t"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+p_palette</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+pose</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>video_palette_t</label>
+        <link refid="structvideo__palette__t"/>
+      </node>
+      <node id="8">
+        <label>vlc_viewpoint_t</label>
+        <link refid="structvlc__viewpoint__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" line="211" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h" bodystart="212" bodyend="237"/>
+    <listofallmembers>
+      <member refid="structencoder__t_1a0f9042ff7782e3a4b7216f9d648b66b0" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>fmt_in</name></member>
+      <member refid="structencoder__t_1a6d681718cb297d94d78a13b51124e1e3" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>fmt_out</name></member>
+      <member refid="structencoder__t_1ab4a6af9087600f56dde2457e452e48d4" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>i_bframes</name></member>
+      <member refid="structencoder__t_1a904a904dafa081abfd82da5b961cf983" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>i_iframes</name></member>
+      <member refid="structencoder__t_1a214337e2005ea8db9471b7e87255b66a" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>i_threads</name></member>
+      <member refid="structencoder__t_1a7afd25319032b369ea0012cf35ff37ff" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>i_tolerance</name></member>
+      <member refid="structencoder__t_1a0e99caa6d172bb1a61971442ca6ffdb3" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>p_cfg</name></member>
+      <member refid="structencoder__t_1a3c815343602c0ed20805b51c9130a2e8" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>p_module</name></member>
+      <member refid="structencoder__t_1ae2d95206492fba9f71c72f4ce8201538" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>p_sys</name></member>
+      <member refid="structencoder__t_1a986d4ca994646ae952d213f337071ff9" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>pf_encode_audio</name></member>
+      <member refid="structencoder__t_1a057f4f9e0297eb0db4285cc46065558a" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>pf_encode_sub</name></member>
+      <member refid="structencoder__t_1a5a453ba9e11955b591dc4c2714a36ec8" prot="public" virt="non-virtual"><scope>encoder_t</scope><name>pf_encode_video</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

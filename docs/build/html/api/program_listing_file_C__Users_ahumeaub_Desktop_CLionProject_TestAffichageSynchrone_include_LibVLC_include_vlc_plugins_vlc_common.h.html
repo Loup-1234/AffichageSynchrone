@@ -1,0 +1,1073 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_common.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_common.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_common.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_common.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-common-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h"></span><h1>Program Listing for File vlc_common.h<a class="headerlink" href="#program-listing-for-file-vlc-common-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_common.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-common-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_common.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_common.h: common definitions</span>
+<span class="cm"> * Collection of useful common types and macros definitions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1998-2011 VLC authors and VideoLAN</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Samuel Hocevar &lt;sam@via.ecp.fr&gt;</span>
+<span class="cm"> *          Vincent Seguin &lt;seguin@via.ecp.fr&gt;</span>
+<span class="cm"> *          Gildas Bazin &lt;gbazin@videolan.org&gt;</span>
+<span class="cm"> *          Rémi Denis-Courmont</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+
+<span class="cp">#ifndef VLC_COMMON_H</span>
+<span class="cp"># define VLC_COMMON_H 1</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Required vlc headers</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_config.h&quot;</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Required system headers</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdarg.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;inttypes.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stddef.h&gt;</span>
+
+<span class="cp">#ifndef __cplusplus</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Compilers definitions</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="cm">/* Helper for GCC version checks */</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="cp"># define VLC_GCC_VERSION(maj,min) \</span>
+<span class="cp">    ((__GNUC__ &gt; (maj)) || (__GNUC__ == (maj) &amp;&amp; __GNUC_MINOR__ &gt;= (min)))</span>
+<span class="cp">#else</span>
+<span class="cp"># define VLC_GCC_VERSION(maj,min) (0)</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* Try to fix format strings for all versions of mingw and mingw64 */</span>
+<span class="cp">#if defined( _WIN32 ) &amp;&amp; defined( __USE_MINGW_ANSI_STDIO )</span>
+<span class="w"> </span><span class="cp">#undef PRId64</span>
+<span class="w"> </span><span class="cp">#define PRId64 &quot;lld&quot;</span>
+<span class="w"> </span><span class="cp">#undef PRIi64</span>
+<span class="w"> </span><span class="cp">#define PRIi64 &quot;lli&quot;</span>
+<span class="w"> </span><span class="cp">#undef PRIu64</span>
+<span class="w"> </span><span class="cp">#define PRIu64 &quot;llu&quot;</span>
+<span class="w"> </span><span class="cp">#undef PRIo64</span>
+<span class="w"> </span><span class="cp">#define PRIo64 &quot;llo&quot;</span>
+<span class="w"> </span><span class="cp">#undef PRIx64</span>
+<span class="w"> </span><span class="cp">#define PRIx64 &quot;llx&quot;</span>
+<span class="w"> </span><span class="cp">#define snprintf __mingw_snprintf</span>
+<span class="w"> </span><span class="cp">#define vsnprintf __mingw_vsnprintf</span>
+<span class="w"> </span><span class="cp">#define swprintf _snwprintf</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* Function attributes for compiler warnings */</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="cp"># define VLC_DEPRECATED __attribute__((deprecated))</span>
+<span class="cp"># if VLC_GCC_VERSION(6,0)</span>
+<span class="cp">#  define VLC_DEPRECATED_ENUM __attribute__((deprecated))</span>
+<span class="cp"># else</span>
+<span class="cp">#  define VLC_DEPRECATED_ENUM</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># if defined( _WIN32 ) &amp;&amp; !defined( __clang__ )</span>
+<span class="cp">#  define VLC_FORMAT(x,y) __attribute__ ((format(gnu_printf,x,y)))</span>
+<span class="cp"># else</span>
+<span class="cp">#  define VLC_FORMAT(x,y) __attribute__ ((format(printf,x,y)))</span>
+<span class="cp"># endif</span>
+<span class="cp"># define VLC_FORMAT_ARG(x) __attribute__ ((format_arg(x)))</span>
+<span class="cp"># define VLC_MALLOC __attribute__ ((malloc))</span>
+<span class="cp"># define VLC_USED __attribute__ ((warn_unused_result))</span>
+
+<span class="cp">#else</span>
+<span class="cp"># define VLC_DEPRECATED</span>
+<span class="cp"># define VLC_DEPRECATED_ENUM</span>
+<span class="cp"># define VLC_FORMAT(x,y)</span>
+<span class="cp"># define VLC_FORMAT_ARG(x)</span>
+<span class="cp"># define VLC_MALLOC</span>
+<span class="cp"># define VLC_USED</span>
+<span class="cp">#endif</span>
+
+
+<span class="cm">/* Branch prediction */</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="cp"># define likely(p)     __builtin_expect(!!(p), 1)</span>
+<span class="cp"># define unlikely(p)   __builtin_expect(!!(p), 0)</span>
+<span class="cp"># if !defined(unreachable)</span>
+<span class="cp">#  define unreachable() __builtin_unreachable()</span>
+<span class="cp"># endif</span>
+<span class="cp">#else</span>
+<span class="cp"># define likely(p)     (!!(p))</span>
+<span class="cp"># define unlikely(p)   (!!(p))</span>
+<span class="cp"># define unreachable() ((void)0)</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define vlc_assert_unreachable() (assert(!&quot;unreachable&quot;), unreachable())</span>
+
+<span class="cm">/* Linkage */</span>
+<span class="cp">#ifdef __cplusplus</span>
+<span class="cp"># define VLC_EXTERN extern &quot;C&quot;</span>
+<span class="cp">#else</span>
+<span class="cp"># define VLC_EXTERN</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if defined (_WIN32) &amp;&amp; defined (DLL_EXPORT)</span>
+<span class="cp"># define VLC_EXPORT __declspec(dllexport)</span>
+<span class="cp">#elif defined (__GNUC__)</span>
+<span class="cp"># define VLC_EXPORT __attribute__((visibility(&quot;default&quot;)))</span>
+<span class="cp">#else</span>
+<span class="cp"># define VLC_EXPORT</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define VLC_API VLC_EXTERN VLC_EXPORT</span>
+
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Basic types definitions</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">mtime_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* deprecated, use vlc_tick_t */</span>
+
+<span class="cp">#define VLC_TICK_INVALID  VLC_TS_INVALID</span>
+<span class="cp">#define VLC_TICK_0        VLC_TS_0</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="p">;</span>
+
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="cp">#   define VLC_FOURCC( a, b, c, d ) \</span>
+<span class="cp">        ( ((uint32_t)d) | ( ((uint32_t)c) &lt;&lt; 8 ) \</span>
+<span class="cp">           | ( ((uint32_t)b) &lt;&lt; 16 ) | ( ((uint32_t)a) &lt;&lt; 24 ) )</span>
+<span class="cp">#   define VLC_TWOCC( a, b ) \</span>
+<span class="cp">        ( (uint16_t)(b) | ( (uint16_t)(a) &lt;&lt; 8 ) )</span>
+
+<span class="cp">#else</span>
+<span class="cp">#   define VLC_FOURCC( a, b, c, d ) \</span>
+<span class="cp">        ( ((uint32_t)a) | ( ((uint32_t)b) &lt;&lt; 8 ) \</span>
+<span class="cp">           | ( ((uint32_t)c) &lt;&lt; 16 ) | ( ((uint32_t)d) &lt;&lt; 24 ) )</span>
+<span class="cp">#   define VLC_TWOCC( a, b ) \</span>
+<span class="cp">        ( (uint16_t)(a) | ( (uint16_t)(b) &lt;&lt; 8 ) )</span>
+
+<span class="cp">#endif</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_fourcc_to_char</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">fcc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_fourcc</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="w"> </span><span class="n">psz_fourcc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fcc</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Classes declaration</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cm">/* Internal types */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_list_t</span><span class="w"> </span><span class="n">vlc_list_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_object_t</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_int_t</span><span class="w"> </span><span class="n">libvlc_int_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">date_t</span><span class="w"> </span><span class="n">date_t</span><span class="p">;</span>
+
+<span class="cm">/* Playlist */</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">playlist_t</span><span class="w"> </span><span class="n">playlist_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">playlist_item_t</span><span class="w"> </span><span class="n">playlist_item_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">services_discovery_t</span><span class="w"> </span><span class="n">services_discovery_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">services_discovery_sys_t</span><span class="w"> </span><span class="n">services_discovery_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_renderer_discovery_t</span><span class="w"> </span><span class="n">vlc_renderer_discovery_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_renderer_item_t</span><span class="w"> </span><span class="n">vlc_renderer_item_t</span><span class="p">;</span>
+
+<span class="cm">/* Modules */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">module_t</span><span class="w"> </span><span class="n">module_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">module_config_t</span><span class="w"> </span><span class="n">module_config_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">config_category_t</span><span class="w"> </span><span class="n">config_category_t</span><span class="p">;</span>
+
+<span class="cm">/* Input */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_thread_t</span><span class="w"> </span><span class="n">input_thread_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_item_t</span><span class="w"> </span><span class="n">input_item_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_item_node_t</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">access_sys_t</span><span class="w"> </span><span class="n">access_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">stream_t</span><span class="w">     </span><span class="n">stream_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">stream_sys_t</span><span class="w"> </span><span class="n">stream_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">demux_t</span><span class="w">  </span><span class="n">demux_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">demux_sys_t</span><span class="w"> </span><span class="n">demux_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">es_out_t</span><span class="w">     </span><span class="n">es_out_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">es_out_id_t</span><span class="w">  </span><span class="n">es_out_id_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">es_out_sys_t</span><span class="w"> </span><span class="n">es_out_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">seekpoint_t</span><span class="w"> </span><span class="n">seekpoint_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">info_t</span><span class="w"> </span><span class="n">info_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">info_category_t</span><span class="w"> </span><span class="n">info_category_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_attachment_t</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="p">;</span>
+
+<span class="cm">/* Format */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">audio_format_t</span><span class="w"> </span><span class="n">audio_format_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">video_format_t</span><span class="w"> </span><span class="n">video_format_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">subs_format_t</span><span class="w"> </span><span class="n">subs_format_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">es_format_t</span><span class="w"> </span><span class="n">es_format_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">video_palette_t</span><span class="w"> </span><span class="n">video_palette_t</span><span class="p">;</span>
+
+<span class="cm">/* Audio */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">audio_output</span><span class="w"> </span><span class="n">audio_output_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">aout_sys_t</span><span class="w"> </span><span class="n">aout_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">audio_format_t</span><span class="w"> </span><span class="n">audio_sample_format_t</span><span class="p">;</span>
+
+<span class="cm">/* Video */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vout_thread_t</span><span class="w"> </span><span class="n">vout_thread_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_viewpoint_t</span><span class="w"> </span><span class="n">vlc_viewpoint_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="n">video_frame_format_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">picture_t</span><span class="w"> </span><span class="n">picture_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">picture_sys_t</span><span class="w"> </span><span class="n">picture_sys_t</span><span class="p">;</span>
+
+<span class="cm">/* Subpictures */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">spu_t</span><span class="w"> </span><span class="n">spu_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_t</span><span class="w"> </span><span class="n">subpicture_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_region_t</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">image_handler_t</span><span class="w"> </span><span class="n">image_handler_t</span><span class="p">;</span>
+
+<span class="cm">/* Stream output */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_instance_t</span><span class="w"> </span><span class="n">sout_instance_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_input_t</span><span class="w"> </span><span class="n">sout_input_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_packetizer_input_t</span><span class="w"> </span><span class="n">sout_packetizer_input_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_access_out_t</span><span class="w"> </span><span class="n">sout_access_out_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_access_out_sys_t</span><span class="w">   </span><span class="n">sout_access_out_sys_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_mux_t</span><span class="w"> </span><span class="n">sout_mux_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_mux_sys_t</span><span class="w"> </span><span class="n">sout_mux_sys_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_stream_t</span><span class="w">    </span><span class="n">sout_stream_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sout_stream_sys_t</span><span class="w"> </span><span class="n">sout_stream_sys_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">config_chain_t</span><span class="w">       </span><span class="n">config_chain_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">session_descriptor_t</span><span class="w"> </span><span class="n">session_descriptor_t</span><span class="p">;</span>
+
+<span class="cm">/* Decoders */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">decoder_t</span><span class="w">         </span><span class="n">decoder_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">decoder_sys_t</span><span class="w">     </span><span class="n">decoder_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">decoder_synchro_t</span><span class="w"> </span><span class="n">decoder_synchro_t</span><span class="p">;</span>
+
+<span class="cm">/* Encoders */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">encoder_t</span><span class="w">      </span><span class="n">encoder_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">encoder_sys_t</span><span class="w">  </span><span class="n">encoder_sys_t</span><span class="p">;</span>
+
+<span class="cm">/* Filters */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">filter_t</span><span class="w"> </span><span class="n">filter_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">filter_sys_t</span><span class="w"> </span><span class="n">filter_sys_t</span><span class="p">;</span>
+
+<span class="cm">/* Network */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_url_t</span><span class="w"> </span><span class="n">vlc_url_t</span><span class="p">;</span>
+
+<span class="cm">/* Misc */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">iso639_lang_t</span><span class="w"> </span><span class="n">iso639_lang_t</span><span class="p">;</span>
+
+<span class="cm">/* block */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">block_t</span><span class="w">      </span><span class="n">block_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">block_fifo_t</span><span class="w"> </span><span class="n">block_fifo_t</span><span class="p">;</span>
+
+<span class="cm">/* Hashing */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">md5_s</span><span class="w"> </span><span class="n">md5_t</span><span class="p">;</span>
+
+<span class="cm">/* XML */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">xml_t</span><span class="w"> </span><span class="n">xml_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">xml_sys_t</span><span class="w"> </span><span class="n">xml_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">xml_reader_t</span><span class="w"> </span><span class="n">xml_reader_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">xml_reader_sys_t</span><span class="w"> </span><span class="n">xml_reader_sys_t</span><span class="p">;</span>
+
+<span class="cm">/* vod server */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vod_t</span><span class="w">     </span><span class="n">vod_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vod_sys_t</span><span class="w"> </span><span class="n">vod_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vod_media_t</span><span class="w"> </span><span class="n">vod_media_t</span><span class="p">;</span>
+
+<span class="cm">/* VLM */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlm_t</span><span class="w">         </span><span class="n">vlm_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlm_message_t</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="p">;</span>
+
+<span class="cm">/* misc */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_meta_t</span><span class="w">    </span><span class="n">vlc_meta_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_stats_t</span><span class="w"> </span><span class="n">input_stats_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">addon_entry_t</span><span class="w"> </span><span class="n">addon_entry_t</span><span class="p">;</span>
+
+<span class="cm">/* Update */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">update_t</span><span class="w"> </span><span class="n">update_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">union</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">         </span><span class="n">i_int</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">            </span><span class="n">b_bool</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">           </span><span class="n">f_float</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w">          </span><span class="n">psz_string</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w">          </span><span class="n">p_address</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_list_t</span><span class="w"> </span><span class="o">*</span><span class="w">    </span><span class="n">p_list</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">coords</span><span class="p">;</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_value_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vlc_list_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">          </span><span class="n">i_type</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">          </span><span class="n">i_count</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_value_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_values</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Error values (shouldn&#39;t be exposed)</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="cp">#define VLC_SUCCESS        (-0)</span>
+<span class="cp">#define VLC_EGENERIC       (-1)</span>
+<span class="cp">#define VLC_ENOMEM         (-2)</span>
+<span class="cp">#define VLC_ETIMEOUT       (-3)</span>
+<span class="cp">#define VLC_ENOMOD         (-4)</span>
+<span class="cp">#define VLC_ENOOBJ         (-5)</span>
+<span class="cp">#define VLC_ENOVAR         (-6)</span>
+<span class="cp">#define VLC_EBADVAR        (-7)</span>
+<span class="cp">#define VLC_ENOITEM        (-8)</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Variable callbacks: called when the value is modified</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlc_callback_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w">      </span><span class="cm">/* variable&#39;s object */</span>
+<span class="w">                                   </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w">            </span><span class="cm">/* variable name */</span>
+<span class="w">                                   </span><span class="n">vlc_value_t</span><span class="p">,</span><span class="w">                 </span><span class="cm">/* old value */</span>
+<span class="w">                                   </span><span class="n">vlc_value_t</span><span class="p">,</span><span class="w">                 </span><span class="cm">/* new value */</span>
+<span class="w">                                   </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span><span class="w">                </span><span class="cm">/* callback data */</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * List callbacks: called when elements are added/removed from the list</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlc_list_callback_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w">      </span><span class="cm">/* variable&#39;s object */</span>
+<span class="w">                                        </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w">            </span><span class="cm">/* variable name */</span>
+<span class="w">                                        </span><span class="kt">int</span><span class="p">,</span><span class="w">                  </span><span class="cm">/* VLC_VAR_* action */</span>
+<span class="w">                                        </span><span class="n">vlc_value_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w">      </span><span class="cm">/* new/deleted value  */</span>
+<span class="w">                                        </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w">                 </span><span class="cm">/* callback data */</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * OS-specific headers and thread types</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="cp">#if defined( _WIN32 )</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;malloc.h&gt;</span>
+<span class="cp">#   ifndef PATH_MAX</span>
+<span class="cp">#       define PATH_MAX MAX_PATH</span>
+<span class="cp">#   endif</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;windows.h&gt;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef __APPLE__</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/syslimits.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AvailabilityMacros.h&gt;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef __OS2__</span>
+<span class="cp">#   define OS2EMX_PLAIN_CHAR</span>
+<span class="cp">#   define INCL_BASE</span>
+<span class="cp">#   define INCL_PM</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;os2safe.h&gt;</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;os2.h&gt;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_mtime.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_threads.h&quot;</span>
+
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vlc_common_members</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">object_type</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">header</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">flags</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">force</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">libvlc_int_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#define VLC_COMMON_MEMBERS struct vlc_common_members obj;</span>
+
+<span class="cp">#if !defined(__cplusplus)</span>
+<span class="cp"># define VLC_OBJECT(x) \</span>
+<span class="cp">    _Generic((x)-&gt;obj, \</span>
+<span class="cp">        vlc_object_t: (vlc_object_t *)(&amp;(x)-&gt;obj), \</span>
+<span class="cp">        struct vlc_common_members: (vlc_object_t *)(x) \</span>
+<span class="cp">    )</span>
+<span class="cp">#else</span>
+<span class="cp"># define VLC_OBJECT( x ) ((vlc_object_t *)&amp;(x)-&gt;obj)</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Macros and inline functions</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cm">/* __MAX and __MIN: self explanatory */</span>
+<span class="cp">#ifndef __MAX</span>
+<span class="cp">#   define __MAX(a, b)   ( ((a) &gt; (b)) ? (a) : (b) )</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifndef __MIN</span>
+<span class="cp">#   define __MIN(a, b)   ( ((a) &lt; (b)) ? (a) : (b) )</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* clip v in [min, max] */</span>
+<span class="cp">#define VLC_CLIP(v, min, max)    __MIN(__MAX((v), (min)), (max))</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">GCD</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* function imported from libavutil/common.h */</span>
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">clip_uint8_vlc</span><span class="p">(</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">&amp;</span><span class="p">(</span><span class="o">~</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">31</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w">           </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="p">(</span><span class="n">clz</span><span class="p">)(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_clz</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="cp">#define clz8( x ) (clz(x) - ((sizeof(unsigned) - sizeof (uint8_t)) * 8))</span>
+<span class="cp">#define clz16( x ) (clz(x) - ((sizeof(unsigned) - sizeof (uint16_t)) * 8))</span>
+<span class="cm">/* XXX: this assumes that int is 32-bits or more */</span>
+<span class="cp">#define clz32( x ) (clz(x) - ((sizeof(unsigned) - sizeof (uint32_t)) * 8))</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="p">(</span><span class="n">ctz</span><span class="p">)(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_ctz</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="cp">#if !defined(__NetBSD__)</span>
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="p">(</span><span class="n">popcount</span><span class="p">)(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_popcount</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="n">popcountll</span><span class="p">)(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_popcountll</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="p">(</span><span class="n">parity</span><span class="p">)(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef __GNUC__</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_parity</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="cp">#if !defined(__NetBSD__)</span>
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="p">(</span><span class="n">bswap16</span><span class="p">)(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="p">(</span><span class="n">bswap32</span><span class="p">)(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if defined (__GNUC__) || defined(__clang__)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_bswap32</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x000000FF</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0000FF00</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w">  </span><span class="mi">8</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00FF0000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w">  </span><span class="mi">8</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF000000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">24</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="p">(</span><span class="n">bswap64</span><span class="p">)(</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if defined (__GNUC__) || defined(__clang__)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_bswap64</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#elif !defined (__cplusplus)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00000000000000FF</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">56</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x000000000000FF00</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0000000000FF0000</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00000000FF000000</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w">  </span><span class="mi">8</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x000000FF00000000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w">  </span><span class="mi">8</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0000FF0000000000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00FF000000000000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF00000000000000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">56</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00000000000000FFULL</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">56</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x000000000000FF00ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0000000000FF0000ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00000000FF000000ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w">  </span><span class="mi">8</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x000000FF00000000ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w">  </span><span class="mi">8</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0000FF0000000000ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x00FF000000000000ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span>
+<span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF00000000000000ULL</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">56</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* Integer overflow */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">uadd_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if VLC_GCC_VERSION(5,0) || defined(__clang__)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_uadd_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">     </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">uaddl_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if VLC_GCC_VERSION(5,0) || defined(__clang__)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_uaddl_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">     </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">uaddll_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if VLC_GCC_VERSION(5,0) || defined(__clang__)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_uaddll_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">     </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="cp">#ifndef __cplusplus</span>
+<span class="cp"># define add_overflow(a,b,r) \</span>
+<span class="cp">    _Generic(*(r), \</span>
+<span class="cp">        unsigned: uadd_overflow(a, b, (unsigned *)(r)), \</span>
+<span class="cp">        unsigned long: uaddl_overflow(a, b, (unsigned long *)(r)), \</span>
+<span class="cp">        unsigned long long: uaddll_overflow(a, b, (unsigned long long *)(r)))</span>
+<span class="cp">#else</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">add_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">uadd_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">add_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">uaddl_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">add_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">uaddll_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if !(VLC_GCC_VERSION(5,0) || defined(__clang__))</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;limits.h&gt;</span>
+<span class="cp">#endif</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">umul_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if VLC_GCC_VERSION(5,0) || defined(__clang__)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_umul_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">     </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">UINT_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">umull_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if VLC_GCC_VERSION(5,0) || defined(__clang__)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_umull_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">     </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">ULONG_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">umulll_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if VLC_GCC_VERSION(5,0) || defined(__clang__)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">__builtin_umulll_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">     </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">ULLONG_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="cp">#ifndef __cplusplus</span>
+<span class="cp">#define mul_overflow(a,b,r) \</span>
+<span class="cp">    _Generic(*(r), \</span>
+<span class="cp">        unsigned: umul_overflow(a, b, (unsigned *)(r)), \</span>
+<span class="cp">        unsigned long: umull_overflow(a, b, (unsigned long *)(r)), \</span>
+<span class="cp">        unsigned long long: umulll_overflow(a, b, (unsigned long long *)(r)))</span>
+<span class="cp">#else</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mul_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">umul_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mul_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">umull_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mul_overflow</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">                                </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">umulll_overflow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* Free and set set the variable to NULL */</span>
+<span class="cp">#define FREENULL(a) do { free( a ); a = NULL; } while(0)</span>
+
+<span class="cp">#define EMPTY_STR(str) (!str || !*str)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlc_error</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_arrays.h&gt;</span>
+
+<span class="cm">/* MSB (big endian)/LSB (little endian) conversions - network order is always</span>
+<span class="cm"> * MSB, and should be used for both network communications and files. */</span>
+
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="cp"># define hton16(i) ((uint16_t)(i))</span>
+<span class="cp"># define hton32(i) ((uint32_t)(i))</span>
+<span class="cp"># define hton64(i) ((uint64_t)(i))</span>
+<span class="cp">#else</span>
+<span class="cp"># define hton16(i) bswap16(i)</span>
+<span class="cp"># define hton32(i) bswap32(i)</span>
+<span class="cp"># define hton64(i) bswap64(i)</span>
+<span class="cp">#endif</span>
+<span class="cp">#define ntoh16(i) hton16(i)</span>
+<span class="cp">#define ntoh32(i) hton32(i)</span>
+<span class="cp">#define ntoh64(i) hton64(i)</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">U16_AT</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ntoh16</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">U32_AT</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ntoh32</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">U64_AT</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ntoh64</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#define GetWBE(p)  U16_AT(p)</span>
+<span class="cp">#define GetDWBE(p) U32_AT(p)</span>
+<span class="cp">#define GetQWBE(p) U64_AT(p)</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">GetWLE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bswap16</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">GetDWLE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bswap32</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">GetQWLE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bswap64</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">SetWBE</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hton16</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">SetDWBE</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">dw</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">dw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hton32</span><span class="w"> </span><span class="p">(</span><span class="n">dw</span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">dw</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">dw</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">SetQWBE</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">qw</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">qw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hton64</span><span class="w"> </span><span class="p">(</span><span class="n">qw</span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">qw</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">qw</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">SetWLE</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="w">    </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bswap16</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">SetDWLE</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">dw</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="w">    </span><span class="n">dw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bswap32</span><span class="w"> </span><span class="p">(</span><span class="n">dw</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">dw</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">dw</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">SetQWLE</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">qw</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef WORDS_BIGENDIAN</span>
+<span class="w">    </span><span class="n">qw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bswap64</span><span class="w"> </span><span class="p">(</span><span class="n">qw</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">qw</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="n">qw</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="cm">/* */</span>
+<span class="cp">#define VLC_UNUSED(x) (void)(x)</span>
+
+<span class="cm">/* Stuff defined in src/extras/libc.c */</span>
+
+<span class="cp">#if defined(_WIN32)</span>
+<span class="cm">/* several type definitions */</span>
+<span class="cp">#   if defined( __MINGW32__ )</span>
+<span class="cp">#       if !defined( _OFF_T_ )</span>
+<span class="w">            </span><span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">_off_t</span><span class="p">;</span>
+<span class="w">            </span><span class="k">typedef</span><span class="w"> </span><span class="n">_off_t</span><span class="w"> </span><span class="kt">off_t</span><span class="p">;</span>
+<span class="cp">#           define _OFF_T_</span>
+<span class="cp">#       else</span>
+<span class="cp">#           ifdef off_t</span>
+<span class="cp">#               undef off_t</span>
+<span class="cp">#           endif</span>
+<span class="cp">#           define off_t long long</span>
+<span class="cp">#       endif</span>
+<span class="cp">#   endif</span>
+
+<span class="cp">#   ifndef O_NONBLOCK</span>
+<span class="cp">#       define O_NONBLOCK 0</span>
+<span class="cp">#   endif</span>
+
+<span class="cm">/* the mingw32 swab() and win32 _swab() prototypes expect a char* instead of a</span>
+<span class="cm">   const void* */</span>
+<span class="cp">#  define swab(a,b,c)  swab((char*) (a), (char*) (b), (c))</span>
+
+
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;tchar.h&gt;</span>
+<span class="cp">#endif </span><span class="cm">/* _WIN32 */</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">den</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_rational_t</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">vlc_ureduce</span><span class="p">(</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cp">#define container_of(ptr, type, member) \</span>
+<span class="cp">    ((type *)(((char *)(ptr)) - offsetof(type, member)))</span>
+
+<span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_alloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mul_overflow</span><span class="p">(</span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * I18n stuff</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_gettext</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msgid</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_FORMAT_ARG</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_ngettext</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_FORMAT_ARG</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_FORMAT_ARG</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="cp">#define vlc_pgettext( ctx, id ) \</span>
+<span class="cp">        vlc_pgettext_aux( ctx &quot;\004&quot; id, id )</span>
+
+<span class="n">VLC_FORMAT_ARG</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_pgettext_aux</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">tr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlc_gettext</span><span class="p">(</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">tr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Loosy memory allocation functions. Do not use in new code.</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">xmalloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">        </span><span class="n">abort</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">xrealloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">nptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realloc</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">nptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">        </span><span class="n">abort</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">nptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">xcalloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)))</span>
+<span class="w">        </span><span class="n">abort</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">xstrdup</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="w"> </span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">))</span>
+<span class="w">        </span><span class="n">abort</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * libvlc features</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">VLC_CompileBy</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">VLC_CompileHost</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">VLC_Compiler</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Additional vlc stuff</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_messages.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_objects.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_variables.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_main.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vlc_configuration.h&quot;</span>
+
+<span class="cp">#if defined( _WIN32 ) || defined( __OS2__ )</span>
+<span class="cp">#   define DIR_SEP_CHAR &#39;\\&#39;</span>
+<span class="cp">#   define DIR_SEP &quot;\\&quot;</span>
+<span class="cp">#   define PATH_SEP_CHAR &#39;;&#39;</span>
+<span class="cp">#   define PATH_SEP &quot;;&quot;</span>
+<span class="cp">#else</span>
+<span class="cp">#   define DIR_SEP_CHAR &#39;/&#39;</span>
+<span class="cp">#   define DIR_SEP &quot;/&quot;</span>
+<span class="cp">#   define PATH_SEP_CHAR &#39;:&#39;</span>
+<span class="cp">#   define PATH_SEP &quot;:&quot;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define LICENSE_MSG \</span>
+<span class="cp">  _(&quot;This program comes with NO WARRANTY, to the extent permitted by &quot; \</span>
+<span class="cp">    &quot;law.\nYou may redistribute it under the terms of the GNU General &quot; \</span>
+<span class="cp">    &quot;Public License;\nsee the file named COPYING for details.\n&quot; \</span>
+<span class="cp">    &quot;Written by the VideoLAN team; see the AUTHORS file.\n&quot;)</span>
+
+<span class="cp">#endif </span><span class="cm">/* !VLC_COMMON_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

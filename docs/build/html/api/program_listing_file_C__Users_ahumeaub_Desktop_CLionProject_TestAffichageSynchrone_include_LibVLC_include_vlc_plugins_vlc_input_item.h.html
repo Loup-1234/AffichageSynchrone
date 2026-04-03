@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_input_item.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_input_item.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_input_item.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_input_item.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-input-item-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-input-item-h"></span><h1>Program Listing for File vlc_input_item.h<a class="headerlink" href="#program-listing-for-file-vlc-input-item-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_input_item.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-input-item-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_input_item.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_input_item.h: Core input item</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2009 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Christophe Massiot &lt;massiot@via.ecp.fr&gt;</span>
+<span class="cm"> *          Laurent Aimar &lt;fenrir@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_INPUT_ITEM_H</span>
+<span class="cp">#define VLC_INPUT_ITEM_H 1</span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_meta.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_epg.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_events.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_item_opaque</span><span class="w"> </span><span class="n">input_item_opaque_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">input_item_slave</span><span class="w"> </span><span class="n">input_item_slave_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">info_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_value</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">info_category_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">   </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">    </span><span class="n">i_infos</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">info_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_infos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">input_item_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">       </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">       </span><span class="o">*</span><span class="n">psz_uri</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_options</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">       </span><span class="o">**</span><span class="n">ppsz_options</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="o">*</span><span class="n">optflagv</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">   </span><span class="n">optflagc</span><span class="p">;</span>
+<span class="w">    </span><span class="n">input_item_opaque_t</span><span class="w"> </span><span class="o">*</span><span class="n">opaques</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">i_duration</span><span class="p">;</span>
+
+
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_categories</span><span class="p">;</span>
+<span class="w">    </span><span class="n">info_category_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_categories</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_es</span><span class="p">;</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">**</span><span class="n">es</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">input_stats_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_stats</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_meta_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_meta</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_epg</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_epg_t</span><span class="w">   </span><span class="o">**</span><span class="n">pp_epg</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">     </span><span class="n">i_epg_time</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_epg_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_epg_table</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_slaves</span><span class="p">;</span>
+<span class="w">    </span><span class="n">input_item_slave_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_slaves</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_event_manager_t</span><span class="w"> </span><span class="n">event_manager</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_mutex_t</span><span class="w"> </span><span class="n">lock</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">i_type</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">b_net</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">b_error_when_reading</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_preparse_depth</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">b_preparse_interact</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">input_item_type_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_UNKNOWN</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_FILE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_DIRECTORY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_DISC</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_CARD</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_STREAM</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_PLAYLIST</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_NODE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* This one is not a real type but the number of input_item types. */</span>
+<span class="w">    </span><span class="n">ITEM_TYPE_NUMBER</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">input_item_net_type</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ITEM_NET_UNKNOWN</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_NET</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_LOCAL</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">slave_type</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">SLAVE_TYPE_SPU</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SLAVE_TYPE_AUDIO</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">slave_priority</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">SLAVE_PRIORITY_MATCH_NONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SLAVE_PRIORITY_MATCH_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SLAVE_PRIORITY_MATCH_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SLAVE_PRIORITY_MATCH_ALL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SLAVE_PRIORITY_USER</span>
+<span class="p">};</span>
+
+<span class="cm">/* Extensions must be in alphabetical order */</span>
+<span class="cp">#define MASTER_EXTENSIONS \</span>
+<span class="cp">    &quot;asf&quot;, &quot;avi&quot;, &quot;divx&quot;, \</span>
+<span class="cp">    &quot;f4v&quot;, &quot;flv&quot;, &quot;m1v&quot;, \</span>
+<span class="cp">    &quot;m2v&quot;, &quot;m4v&quot;, &quot;mkv&quot;, \</span>
+<span class="cp">    &quot;mov&quot;, &quot;mp2&quot;, &quot;mp2v&quot;, \</span>
+<span class="cp">    &quot;mp4&quot;, &quot;mp4v&quot;, &quot;mpe&quot;, \</span>
+<span class="cp">    &quot;mpeg&quot;, &quot;mpeg1&quot;, &quot;mpeg2&quot;, \</span>
+<span class="cp">    &quot;mpeg4&quot;, &quot;mpg&quot;, &quot;mpv2&quot;, \</span>
+<span class="cp">    &quot;mxf&quot;, &quot;ogv&quot;, &quot;ogx&quot;, \</span>
+<span class="cp">    &quot;ps&quot;, &quot;vro&quot;,&quot;webm&quot;, \</span>
+<span class="cp">    &quot;wmv&quot;, &quot;wtv&quot;</span>
+
+<span class="cp">#define SLAVE_SPU_EXTENSIONS \</span>
+<span class="cp">    &quot;aqt&quot;, &quot;ass&quot;,  &quot;cdg&quot;, \</span>
+<span class="cp">    &quot;dks&quot;, &quot;idx&quot;, &quot;jss&quot;, \</span>
+<span class="cp">    &quot;mpl2&quot;, &quot;mpsub&quot;, &quot;pjs&quot;, \</span>
+<span class="cp">    &quot;psb&quot;, &quot;rt&quot;, &quot;sami&quot;, &quot;sbv&quot;, \</span>
+<span class="cp">    &quot;scc&quot;, &quot;smi&quot;, &quot;srt&quot;, \</span>
+<span class="cp">    &quot;ssa&quot;,  &quot;stl&quot;, &quot;sub&quot;, \</span>
+<span class="cp">    &quot;ttml&quot;, &quot;tt&quot;, &quot;usf&quot;, \</span>
+<span class="cp">    &quot;vtt&quot;, &quot;webvtt&quot;</span>
+
+<span class="cp">#define SLAVE_AUDIO_EXTENSIONS \</span>
+<span class="cp">    &quot;aac&quot;, &quot;ac3&quot;, &quot;dts&quot;, \</span>
+<span class="cp">    &quot;dtshd&quot;, &quot;eac3&quot;, &quot;flac&quot;, \</span>
+<span class="cp">    &quot;m4a&quot;, &quot;mp3&quot;, &quot;pcm&quot; \</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">input_item_slave</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="nc">slave_type</span><span class="w">     </span><span class="n">i_type</span><span class="p">;</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="nc">slave_priority</span><span class="w"> </span><span class="n">i_priority</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">                </span><span class="n">b_forced</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">                </span><span class="n">psz_uri</span><span class="p">[];</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">input_item_node_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w">         </span><span class="n">p_item</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">                    </span><span class="n">i_children</span><span class="p">;</span>
+<span class="w">    </span><span class="n">input_item_node_t</span><span class="w">      </span><span class="o">**</span><span class="n">pp_children</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_CopyOptions</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_child</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_parent</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_SetName</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_item</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_node_Create</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_node_AppendItem</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_node</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_item</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_node_AppendNode</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_parent</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_child</span><span class="w"> </span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">input_item_node_RemoveNode</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">child</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_node_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_node</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">input_item_option_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Allow VLC to trust the given option.</span>
+<span class="cm">     * By default options are untrusted */</span>
+<span class="w">    </span><span class="n">VLC_INPUT_OPTION_TRUSTED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Add the option, unless the same option</span>
+<span class="cm">     * is already present. */</span>
+<span class="w">    </span><span class="n">VLC_INPUT_OPTION_UNIQUE</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_item_AddOption</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i_flags</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_item_AddOptions</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_options</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">ppsz_options</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i_flags</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_item_AddOpaque</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">input_item_ApplyOptions</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">input_item_slave_GetType</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">slave_type</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_slave_t</span><span class="w"> </span><span class="o">*</span><span class="n">input_item_slave_New</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">slave_type</span><span class="p">,</span>
+<span class="w">                                               </span><span class="k">enum</span><span class="w"> </span><span class="nc">slave_priority</span><span class="p">);</span>
+<span class="cp">#define input_item_slave_Delete(p_slave) free(p_slave)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_item_AddSlave</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_slave_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="cm">/* */</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">input_item_HasErrorWhenReading</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_SetMeta</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_meta_type_t</span><span class="w"> </span><span class="n">meta_type</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_val</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">input_item_MetaMatch</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_meta_type_t</span><span class="w"> </span><span class="n">meta_type</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_GetMeta</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_meta_type_t</span><span class="w"> </span><span class="n">meta_type</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_GetName</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_GetTitleFbName</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_GetURI</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_GetNowPlayingFb</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_item</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_SetURI</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_uri</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">input_item_GetDuration</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_SetDuration</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">i_duration</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">input_item_IsPreparsed</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">input_item_IsArtFetched</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cp">#define INPUT_META( name ) \</span>
+<span class="cp">static inline \</span>
+<span class="cp">void input_item_Set ## name (input_item_t *p_input, const char *val) \</span>
+<span class="cp">{ \</span>
+<span class="cp">    input_item_SetMeta (p_input, vlc_meta_ ## name, val); \</span>
+<span class="cp">} \</span>
+<span class="cp">static inline \</span>
+<span class="cp">char *input_item_Get ## name (input_item_t *p_input) \</span>
+<span class="cp">{ \</span>
+<span class="cp">    return input_item_GetMeta (p_input, vlc_meta_ ## name); \</span>
+<span class="cp">}</span>
+
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Title</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Artist</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">AlbumArtist</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Genre</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Copyright</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Album</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">TrackNumber</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Description</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Rating</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Date</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Setting</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Language</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">NowPlaying</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">ESNowPlaying</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Publisher</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">EncodedBy</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">ArtworkURL</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">TrackID</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">TrackTotal</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Director</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Season</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Episode</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">ShowName</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">Actors</span><span class="p">)</span>
+<span class="n">INPUT_META</span><span class="p">(</span><span class="n">DiscNumber</span><span class="p">)</span>
+
+<span class="cp">#define input_item_SetTrackNum input_item_SetTrackNumber</span>
+<span class="cp">#define input_item_GetTrackNum input_item_GetTrackNumber</span>
+<span class="cp">#define input_item_SetArtURL   input_item_SetArtworkURL</span>
+<span class="cp">#define input_item_GetArtURL   input_item_GetArtworkURL</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_GetInfo</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_cat</span><span class="p">,</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_item_AddInfo</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_cat</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_format</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_FORMAT</span><span class="p">(</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_item_DelInfo</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_cat</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_ReplaceInfos</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">info_category_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_MergeInfos</span><span class="p">(</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">info_category_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_NewExt</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_uri</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                          </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">i_duration</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_type</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">enum</span><span class="w"> </span><span class="nc">input_item_net_type</span><span class="w"> </span><span class="n">i_net</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cp">#define input_item_New( psz_uri, psz_name ) \</span>
+<span class="cp">    input_item_NewExt( psz_uri, psz_name, -1, ITEM_TYPE_UNKNOWN, ITEM_NET_UNKNOWN )</span>
+
+<span class="cp">#define input_item_NewCard( psz_uri, psz_name ) \</span>
+<span class="cp">    input_item_NewExt( psz_uri, psz_name, -1, ITEM_TYPE_CARD, ITEM_LOCAL )</span>
+
+<span class="cp">#define input_item_NewDisc( psz_uri, psz_name, i_duration ) \</span>
+<span class="cp">    input_item_NewExt( psz_uri, psz_name, i_duration, ITEM_TYPE_DISC, ITEM_LOCAL )</span>
+
+<span class="cp">#define input_item_NewStream( psz_uri, psz_name, i_duration ) \</span>
+<span class="cp">    input_item_NewExt( psz_uri, psz_name, i_duration, ITEM_TYPE_STREAM, ITEM_NET )</span>
+
+<span class="cp">#define input_item_NewDirectory( psz_uri, psz_name, i_net ) \</span>
+<span class="cp">    input_item_NewExt( psz_uri, psz_name, -1, ITEM_TYPE_DIRECTORY, i_net )</span>
+
+<span class="cp">#define input_item_NewFile( psz_uri, psz_name, i_duration, i_net ) \</span>
+<span class="cp">    input_item_NewExt( psz_uri, psz_name, i_duration, ITEM_TYPE_FILE, i_net )</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_item_Copy</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="n">input_item_Hold</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">input_item_Release</span><span class="p">(</span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">input_item_meta_request_option_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">META_REQUEST_OPTION_NONE</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span>
+<span class="w">    </span><span class="n">META_REQUEST_OPTION_SCOPE_LOCAL</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mh">0x01</span><span class="p">,</span>
+<span class="w">    </span><span class="n">META_REQUEST_OPTION_SCOPE_NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x02</span><span class="p">,</span>
+<span class="w">    </span><span class="n">META_REQUEST_OPTION_SCOPE_ANY</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mh">0x03</span><span class="p">,</span>
+<span class="w">    </span><span class="n">META_REQUEST_OPTION_DO_INTERACT</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mh">0x04</span>
+<span class="p">}</span><span class="w"> </span><span class="n">input_item_meta_request_option_t</span><span class="p">;</span>
+
+<span class="cm">/* status of the vlc_InputItemPreparseEnded event */</span>
+<span class="k">enum</span><span class="w"> </span><span class="nc">input_item_preparse_status</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ITEM_PREPARSE_SKIPPED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_PREPARSE_FAILED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_PREPARSE_TIMEOUT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ITEM_PREPARSE_DONE</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_MetadataRequest</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_int_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                    </span><span class="n">input_item_meta_request_option_t</span><span class="p">,</span>
+<span class="w">                                    </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_ArtRequest</span><span class="p">(</span><span class="n">libvlc_int_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                              </span><span class="n">input_item_meta_request_option_t</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_MetadataCancel</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_int_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/******************</span>
+<span class="cm"> * Input stats</span>
+<span class="cm"> ******************/</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">input_stats_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_mutex_t</span><span class="w">         </span><span class="n">lock</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Input */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_read_packets</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_read_bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_input_bitrate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_average_input_bitrate</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Demux */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_demux_read_packets</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_demux_read_bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_demux_bitrate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_average_demux_bitrate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_demux_corrupted</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_demux_discontinuity</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Decoders */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_decoded_audio</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_decoded_video</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Vout */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_displayed_pictures</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_lost_pictures</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Sout */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_sent_packets</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_sent_bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_send_bitrate</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Aout */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_played_abuffers</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i_lost_abuffers</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vlc_readdir_helper</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_node</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">pp_slaves</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_slaves</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">pp_dirs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_dirs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_sub_autodetect_fuzzy</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_show_hiddenfiles</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_flatten</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_ignored_exts</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_readdir_helper_init</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_readdir_helper</span><span class="w"> </span><span class="o">*</span><span class="n">p_rdh</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_obj</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_node</span><span class="p">);</span>
+<span class="cp">#define vlc_readdir_helper_init(p_rdh, p_obj, p_node) \</span>
+<span class="cp">    vlc_readdir_helper_init(p_rdh, VLC_OBJECT(p_obj), p_node)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_readdir_helper_finish</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_readdir_helper</span><span class="w"> </span><span class="o">*</span><span class="n">p_rdh</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_success</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_readdir_helper_additem</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_readdir_helper</span><span class="w"> </span><span class="o">*</span><span class="n">p_rdh</span><span class="p">,</span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_uri</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_flatpath</span><span class="p">,</span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_filename</span><span class="p">,</span>
+<span class="w">                                       </span><span class="kt">int</span><span class="w"> </span><span class="n">i_type</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_net</span><span class="p">);</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

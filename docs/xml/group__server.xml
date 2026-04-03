@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__server" kind="group">
+    <compoundname>server</compoundname>
+    <title>VLM</title>
+    <innerfile refid="vlc__vlm_8h">vlc_vlm.h</innerfile>
+    <innerclass refid="structvlm__media__t" prot="public">vlm_media_t</innerclass>
+    <innerclass refid="structvlm__media__instance__t" prot="public">vlm_media_instance_t</innerclass>
+    <innerclass refid="structvlm__event__t" prot="public">vlm_event_t</innerclass>
+    <innerclass refid="structvlm__message__t" prot="public">vlm_message_t</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__server_1gae0b625cfc0da775854684b1acd329d66" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vlm_event_type_e</name>
+        <enumvalue id="group__server_1ggae0b625cfc0da775854684b1acd329d66afe0d19a28eaa6008ab4d2af900b0477d" prot="public">
+          <name>VLM_EVENT_MEDIA_ADDED</name>
+          <initializer>= 0x100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggae0b625cfc0da775854684b1acd329d66a3f1500c112af4a4ac3ed93cb4ef5ba7f" prot="public">
+          <name>VLM_EVENT_MEDIA_REMOVED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggae0b625cfc0da775854684b1acd329d66a8bfb1a3febb27b3ecec5b67d58a0d54f" prot="public">
+          <name>VLM_EVENT_MEDIA_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggae0b625cfc0da775854684b1acd329d66ac54888decc68bbee32745ba79e7bbd76" prot="public">
+          <name>VLM_EVENT_MEDIA_INSTANCE_STARTED</name>
+          <initializer>= 0x200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggae0b625cfc0da775854684b1acd329d66a8a1ac74f08992b50910c744203b30008" prot="public">
+          <name>VLM_EVENT_MEDIA_INSTANCE_STOPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggae0b625cfc0da775854684b1acd329d66ae7cd94f23aa3a00f8360c8a2a18ac8b9" prot="public">
+          <name>VLM_EVENT_MEDIA_INSTANCE_STATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>VLM events You can catch vlm event by adding a callback on the variable &quot;intf-event&quot; of the VLM object. This variable is an address that will hold a vlm_event_t* value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="94" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="95" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__server_1gab547769cc956818fbebbe18a14ac0d98" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vlm_query_e</name>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a33dc711ac4cac2ac7841a7e4c7456908" prot="public">
+          <name>VLM_GET_MEDIAS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98ae470415c6c8dd09989879ef1d42a6726" prot="public">
+          <name>VLM_CLEAR_MEDIAS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a49f7455b491593dc66ba9da98c099b3d" prot="public">
+          <name>VLM_ADD_MEDIA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a167e874cea81fcb203cc6a2fbd10bae9" prot="public">
+          <name>VLM_DEL_MEDIA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98ae2a6a18c4799243f939eeb5286c0062b" prot="public">
+          <name>VLM_CHANGE_MEDIA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98abada0199b904186b9df6b182ba35ed4a" prot="public">
+          <name>VLM_GET_MEDIA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98ad754bb43e16b9ded0be472793db70d28" prot="public">
+          <name>VLM_GET_MEDIA_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a51956f3893fc0f45a74272a112950e53" prot="public">
+          <name>VLM_GET_MEDIA_INSTANCES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a876011c5cf8a8cc0db55053150502a50" prot="public">
+          <name>VLM_CLEAR_MEDIA_INSTANCES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98ae619bd8ef76ac7409de8c27158c69a40" prot="public">
+          <name>VLM_START_MEDIA_BROADCAST_INSTANCE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98ae2d83250ff4f6d5d96e89bcb9ca64923" prot="public">
+          <name>VLM_START_MEDIA_VOD_INSTANCE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98ae1c586a1c6534ddc3f21a2fe46df70c8" prot="public">
+          <name>VLM_STOP_MEDIA_INSTANCE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a11334c57af91ca44f20a4945b49e1296" prot="public">
+          <name>VLM_PAUSE_MEDIA_INSTANCE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a1b0c43c85d3d0ff3879768c14845fa12" prot="public">
+          <name>VLM_GET_MEDIA_INSTANCE_TIME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a7b6ac4c3ed1b13f7f3fc46b4ca3056ef" prot="public">
+          <name>VLM_SET_MEDIA_INSTANCE_TIME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98abb3d03d86923a29eda44bd6675b49466" prot="public">
+          <name>VLM_GET_MEDIA_INSTANCE_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a1bf03d991beae5306cdff7136fd42806" prot="public">
+          <name>VLM_SET_MEDIA_INSTANCE_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__server_1ggab547769cc956818fbebbe18a14ac0d98a50d77f4f98a5f94596fd7c36644df0a9" prot="public">
+          <name>VLM_CLEAR_SCHEDULES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>VLM control query </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="117" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="118" bodyend="163"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__server_1ga3c4eb3e974a7ab686f2f2d0a414e2179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlm_t *</type>
+        <definition>VLC_API vlm_t * vlm_New</definition>
+        <argsstring>(vlc_object_t *)</argsstring>
+        <name>vlm_New</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="186" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="186" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga69972432678c6a77d4c08246a246b0da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlm_Delete</definition>
+        <argsstring>(vlm_t *)</argsstring>
+        <name>vlm_Delete</name>
+        <param>
+          <type>vlm_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="188" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="188" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1gae8594d7c8b0731fd47e9438a7809194c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlm_ExecuteCommand</definition>
+        <argsstring>(vlm_t *, const char *, vlm_message_t **)</argsstring>
+        <name>vlm_ExecuteCommand</name>
+        <param>
+          <type>vlm_t *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type><ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> **</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="189" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="189" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1gaf789a5fd50f064f947ebc481939c4ec0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlm_Control</definition>
+        <argsstring>(vlm_t *p_vlm, int i_query,...)</argsstring>
+        <name>vlm_Control</name>
+        <param>
+          <type>vlm_t *</type>
+          <declname>p_vlm</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="190" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="190" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga5a7ce372009ca81da0b03285c1049d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> *</type>
+        <definition>VLC_API vlm_message_t * vlm_MessageSimpleNew</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>vlm_MessageSimpleNew</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="192" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="192" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1gac776b3efba35199f839f263480603716" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> *</type>
+        <definition>VLC_API vlm_message_t * vlm_MessageNew</definition>
+        <argsstring>(const char *, const char *,...) VLC_FORMAT(2</argsstring>
+        <name>vlm_MessageNew</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="193" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1gaf8904249432ffb480b291de9b89403b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> VLC_API <ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> *</type>
+        <definition>VLC_API vlm_message_t VLC_API vlm_message_t * vlm_MessageAdd</definition>
+        <argsstring>(vlm_message_t *, vlm_message_t *)</argsstring>
+        <name>vlm_MessageAdd</name>
+        <param>
+          <type><ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="194" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="194" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga2c4f09fd9273524783bb0b4a794c3515" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlm_MessageDelete</definition>
+        <argsstring>(vlm_message_t *)</argsstring>
+        <name>vlm_MessageDelete</name>
+        <param>
+          <type><ref refid="structvlm__message__t" kindref="compound">vlm_message_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="195" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" declline="195" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1gaf23868df05c79459217fa2205e9a9545" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_Init</definition>
+        <argsstring>(vlm_media_t *p_media)</argsstring>
+        <name>vlm_media_Init</name>
+        <param>
+          <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *</type>
+          <declname>p_media</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize a <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_media</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance to initialize </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="203" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="203" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga840745a1dd4bed4a560495cfa27b20cd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_Copy</definition>
+        <argsstring>(vlm_media_t *restrict p_dst, const vlm_media_t *restrict p_src)</argsstring>
+        <name>vlm_media_Copy</name>
+        <param>
+          <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *restrict</type>
+          <declname>p_dst</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *restrict</type>
+          <declname>p_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy a <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance into another <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance to copy to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance to copy from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="224" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="224" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga4f03382eb259eb8b3cba5bff8fc83dd3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_Clean</definition>
+        <argsstring>(vlm_media_t *p_media)</argsstring>
+        <name>vlm_media_Clean</name>
+        <param>
+          <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *</type>
+          <declname>p_media</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleanup and release memory associated with this <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance. You still need to release p_media itself with vlm_media_Delete(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_media</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> to cleanup </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="262" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="262" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga9856160825a09b4b0416a3e01b595a5e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *</type>
+        <definition>static vlm_media_t * vlm_media_New</definition>
+        <argsstring>(void)</argsstring>
+        <name>vlm_media_New</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate a new <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance <simplesect kind="return"><para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="284" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="284" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga3a658f926df1558f5da900c6238d8e34" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_Delete</definition>
+        <argsstring>(vlm_media_t *p_media)</argsstring>
+        <name>vlm_media_Delete</name>
+        <param>
+          <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *</type>
+          <declname>p_media</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_media</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance to delete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="296" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="296" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga796df85b622ef7308aa597496d20fe3f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *</type>
+        <definition>static vlm_media_t * vlm_media_Duplicate</definition>
+        <argsstring>(vlm_media_t *p_src)</argsstring>
+        <name>vlm_media_Duplicate</name>
+        <param>
+          <type><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> *</type>
+          <declname>p_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy a <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> instance to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> duplicate of p_src </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="307" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="307" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1gacb5c8553bf811c1ed6248966418eff36" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_instance_Init</definition>
+        <argsstring>(vlm_media_instance_t *p_instance)</argsstring>
+        <name>vlm_media_instance_Init</name>
+        <param>
+          <type><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize <ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> to initialize </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="320" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="320" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga2e09b77996ec44e2e259b700aae896b7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_instance_Clean</definition>
+        <argsstring>(vlm_media_instance_t *p_instance)</argsstring>
+        <name>vlm_media_instance_Clean</name>
+        <param>
+          <type><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleanup <ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> to cleanup </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="335" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="335" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga3961adb7e5cb83c70c60620c835f3e00" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> *</type>
+        <definition>static vlm_media_instance_t * vlm_media_instance_New</definition>
+        <argsstring>(void)</argsstring>
+        <name>vlm_media_instance_New</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate a new <ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> <simplesect kind="return"><para>a new <ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="344" column="36" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="344" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="group__server_1ga9d8663159803498dbaf3dbdd61a6d746" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlm_media_instance_Delete</definition>
+        <argsstring>(vlm_media_instance_t *p_instance)</argsstring>
+        <name>vlm_media_instance_Delete</name>
+        <param>
+          <type><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a <ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref> to delete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="356" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="356" bodyend="360"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__server_1gae838f01988d2bdee6e4719bf1451e52e" prot="public" static="no">
+        <name>vlm_New</name>
+        <param><defname>a</defname></param>
+        <initializer>vlm_New( <ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" line="187" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>VLC stream manager</para>
+<para>VLM is the server core in vlc that allows streaming of multiple media streams at the same time. It provides broadcast, schedule and video on demand features for streaming using several streaming and network protocols. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

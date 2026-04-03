@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__osd" kind="group">
+    <compoundname>osd</compoundname>
+    <title>On-screen display</title>
+    <innerfile refid="vlc__vout__osd_8h">vlc_vout_osd.h</innerfile>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__osd_1ga4c4bd7763384eda65ad6725cfc68462c" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__osd_1gga4c4bd7763384eda65ad6725cfc68462ca9d5fa104c8259489eedcbb9ce0678cb1" prot="public">
+          <name>OSD_PLAY_ICON</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__osd_1gga4c4bd7763384eda65ad6725cfc68462ca2e51fff9e032a4bf6ae80fdf2b9e483e" prot="public">
+          <name>OSD_PAUSE_ICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__osd_1gga4c4bd7763384eda65ad6725cfc68462cab8f41be52ab8703f6757705d661f5047" prot="public">
+          <name>OSD_SPEAKER_ICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__osd_1gga4c4bd7763384eda65ad6725cfc68462ca612cc3bebafbc8343547efb3e815f593" prot="public">
+          <name>OSD_MUTE_ICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__osd_1gga4c4bd7763384eda65ad6725cfc68462cac2a161c2c9b46da720c6ea5b0f2417c8" prot="public">
+          <name>OSD_HOR_SLIDER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__osd_1gga4c4bd7763384eda65ad6725cfc68462cac173a1f5fed918fa2adcd3174e8bda25" prot="public">
+          <name>OSD_VERT_SLIDER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>OSD menu position and picture type defines </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" line="44" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" bodystart="45" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__osd_1ga0ccd9d7f8e3781d95261a7759ea5f334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vout_OSDEpg</definition>
+        <argsstring>(vout_thread_t *, input_item_t *)</argsstring>
+        <name>vout_OSDEpg</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" line="56" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" declline="56" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__osd_1gafcdafb060e9410198d8416e0c5567f2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_OSDText</definition>
+        <argsstring>(vout_thread_t *vout, int channel, int position, vlc_tick_t duration, const char *text)</argsstring>
+        <name>vout_OSDText</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+          <declname>vout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>duration</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Write an informative message if the OSD option is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vout on which the message will be displayed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subpicture channel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the text </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration of the text being displayed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text to be displayed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" line="66" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" declline="66" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__osd_1ga4c9bb5536c7b4f5166ca0495f3c661be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_OSDMessage</definition>
+        <argsstring>(vout_thread_t *, int, const char *,...) VLC_FORMAT(3</argsstring>
+        <name>vout_OSDMessage</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Write an informative message at the default location, for the default duration and only if the OSD option is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vout on which the message will be displayed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subpicture channel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>printf style formatting</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Provided for convenience. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" line="77" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__osd_1gaa571eacec87da7ea930535b1d0a26224" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void VLC_API void</type>
+        <definition>VLC_API void VLC_API void vout_OSDSlider</definition>
+        <argsstring>(vout_thread_t *, int, int, short)</argsstring>
+        <name>vout_OSDSlider</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>short</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display a slider on the video output. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subpicture channel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_postion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current position in the slider </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Types are: OSD_HOR_SLIDER and OSD_VERT_SLIDER. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" line="86" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" declline="86" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__osd_1ga836f984b6f9399b6429f3fdbf2a7752a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vout_OSDIcon</definition>
+        <argsstring>(vout_thread_t *, int, short)</argsstring>
+        <name>vout_OSDIcon</name>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>short</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display an Icon on the video output. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subpicture channel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Types are: OSD_PLAY_ICON, OSD_PAUSE_ICON, OSD_SPEAKER_ICON, OSD_MUTE_ICON </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" line="94" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_osd.h" declline="94" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

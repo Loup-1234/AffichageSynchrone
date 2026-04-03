@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__stream__extractor_8h" kind="file" language="C++">
+    <compoundname>vlc_stream_extractor.h</compoundname>
+    <innerclass refid="structstream__extractor__t" prot="public">stream_extractor_t</innerclass>
+    <innerclass refid="structstream__directory__t" prot="public">stream_directory_t</innerclass>
+    <sectiondef kind="user-defined">
+      <header>Attach a stream-extractor to the passed stream</header>
+      <description><para>These functions are used to attach a stream extractor to an already existing stream. As hinted by their names, vlc_stream_extractor_Attach will attach an <emphasis>entity-extractor</emphasis>, whereas vlc_stream_directory_Attach will attach a <emphasis>stream-directory</emphasis>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer-to-pointer to stream, <computeroutput>*stream</computeroutput> will refer to the attached stream on success, and left untouched on failure. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>identifier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(if present) NULL or a c-style string referring to the desired entity </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>module_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>NULL or an explicit stream-extractor module name</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS if a stream-extractor was successfully attached, an error-code on failure. </para>
+</simplesect>
+</para>
+</description>
+      <member refid="group__stream__extractor_1ga381cd391e3daeaf71e354bb535b642a1" kind="function"><name>vlc_stream_extractor_Attach</name></member>
+      <member refid="group__stream__extractor_1ga12be440a2598e9c2b6ca257127f763f2" kind="function"><name>vlc_stream_directory_Attach</name></member>
+    </sectiondef>
+    <sectiondef kind="define">
+      <member refid="group__stream__extractor_1gae73c2c750e162246d37e706365926cd2" kind="define"><name>vlc_stream_NewMRL</name></member>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <member refid="group__stream__extractor_1ga357a55a1ae4d0217b7244400eba05740" kind="typedef"><name>stream_extractor_t</name></member>
+      <member refid="group__stream__extractor_1gaca4ca04beaec077a20fc0f682cea7842" kind="typedef"><name>stream_directory_t</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__stream__extractor_1ga0abe11e8e9922d5ac662fc59ee34231d" kind="function"><name>vlc_stream_NewMRL</name></member>
+      <member refid="group__stream__extractor_1gae17aac953011bc9301593d0196a259a5" kind="function"><name>vlc_stream_extractor_CreateMRL</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_stream_extractor.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2016<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_STREAM_EXTRACTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_STREAM_EXTRACTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structstream__extractor__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__extractor__t" kindref="compound">stream_extractor_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/><sp/>(*pf_read)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__extractor__t" kindref="compound">stream_extractor_t</ref>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref>*<sp/>(*pf_block)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__extractor__t" kindref="compound">stream_extractor_t</ref>*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>eof);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/>(*pf_seek)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__extractor__t" kindref="compound">stream_extractor_t</ref>*,<sp/>uint64_t);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/>(*pf_control)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__extractor__t" kindref="compound">stream_extractor_t</ref>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>request,<sp/>va_list<sp/>args);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="structstream__extractor__t_1a4193155f0ddda62e49698b119b36f21a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/><ref refid="structstream__extractor__t_1a4193155f0ddda62e49698b119b36f21a" kindref="member">identifier</ref>;<sp/></highlight></codeline>
+<codeline lineno="68" refid="structstream__extractor__t_1af5acb2c4d8c1bcfbb8fd4d5b3c8655ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstream__t" kindref="compound">stream_t</ref>*<sp/><ref refid="structstream__extractor__t_1af5acb2c4d8c1bcfbb8fd4d5b3c8655ee" kindref="member">source</ref>;<sp/></highlight></codeline>
+<codeline lineno="69" refid="structstream__extractor__t_1ae9fff24affaa9162e9225e6d0fb63aac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structstream__extractor__t_1ae9fff24affaa9162e9225e6d0fb63aac" kindref="member">p_sys</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}<sp/><ref refid="structstream__extractor__t" kindref="compound">stream_extractor_t</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="structstream__directory__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__directory__t" kindref="compound">stream_directory_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*pf_readdir)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstream__directory__t" kindref="compound">stream_directory_t</ref>*,<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref>*<sp/>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="structstream__directory__t_1aa459c9a968aaea250206201b38094d08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstream__t" kindref="compound">stream_t</ref>*<sp/><ref refid="structstream__directory__t_1aa459c9a968aaea250206201b38094d08" kindref="member">source</ref>;<sp/></highlight></codeline>
+<codeline lineno="88" refid="structstream__directory__t_1aa50ce2aff953f6177fe85cba44329fee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structstream__directory__t_1aa50ce2aff953f6177fe85cba44329fee" kindref="member">p_sys</ref>;<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/><ref refid="structstream__directory__t" kindref="compound">stream_directory_t</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="group__stream__extractor_1ga0abe11e8e9922d5ac662fc59ee34231d" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*<sp/>vlc_stream_NewMRL(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mrl)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">VLC_USED;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vlc_stream_NewMRL(a,<sp/>b)<sp/>vlc_stream_NewMRL(VLC_OBJECT(a),<sp/>b)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="group__stream__extractor_1gae17aac953011bc9301593d0196a259a5" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="group__stream__extractor_1gae17aac953011bc9301593d0196a259a5" kindref="member">vlc_stream_extractor_CreateMRL</ref>(<sp/><ref refid="structstream__directory__t" kindref="compound">stream_directory_t</ref>*,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>subentry<sp/>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_stream_extractor_Attach(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref>**<sp/><ref refid="structstream__directory__t_1aa459c9a968aaea250206201b38094d08" kindref="member">source</ref>,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>identifier,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>module_name<sp/>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_stream_directory_Attach(<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref>**<sp/><ref refid="structstream__directory__t_1aa459c9a968aaea250206201b38094d08" kindref="member">source</ref>,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>module_name<sp/>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>include-guard<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h"/>
+  </compounddef>
+</doxygen>

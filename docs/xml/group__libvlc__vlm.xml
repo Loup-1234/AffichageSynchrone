@@ -1,0 +1,1207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__vlm" kind="group">
+    <compoundname>libvlc_vlm</compoundname>
+    <title>LibVLC VLM</title>
+    <innerfile refid="libvlc__vlm_8h">libvlc_vlm.h</innerfile>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__vlm_1ga2ccd4f533e38fef695cedfcf2ad9138e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_vlm_release</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_vlm_release</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release the vlm instance related to the given <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="44" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="44" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gaa8d58569f07229edabe9fdaab41b1c3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_add_broadcast</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_input, const char *psz_output, int i_options, const char *const *ppsz_options, int b_enabled, int b_loop)</argsstring>
+        <name>libvlc_vlm_add_broadcast</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_input</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_output</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_options</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>ppsz_options</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_enabled</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a broadcast, with one input.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the new broadcast </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input MRL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the output MRL (the parameter to the &quot;sout&quot; variable) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of additional options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppsz_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean for enabling the new broadcast </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should this broadcast be played in loop ? </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="59" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="59" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gab8926d17d29609bb01c852f83c292a46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_add_vod</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_input, int i_options, const char *const *ppsz_options, int b_enabled, const char *psz_mux)</argsstring>
+        <name>libvlc_vlm_add_vod</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_input</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_options</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>ppsz_options</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_enabled</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_mux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a vod, with one input.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the new vod media </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input MRL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of additional options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppsz_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean for enabling the new vod </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_mux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the muxer of the vod media </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="77" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="77" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gaa8740e4ab89a753b3075240d0ec3f2fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_del_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name)</argsstring>
+        <name>libvlc_vlm_del_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a media (VOD or broadcast).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to delete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="89" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="89" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga89b07022c1bcde4f36d850bde002cca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_set_enabled</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, int b_enabled)</argsstring>
+        <name>libvlc_vlm_set_enabled</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enable or disable a media (VOD or broadcast).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to work on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new status </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="100" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="100" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga6fab4609f8c9025ae83b24c477a290be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_set_output</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_output)</argsstring>
+        <name>libvlc_vlm_set_output</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the output for a media.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to work on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the output MRL (the parameter to the &quot;sout&quot; variable) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="111" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="111" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga3bffdef04ccd357ff6b807dd55a32df9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_set_input</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_input)</argsstring>
+        <name>libvlc_vlm_set_input</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a media&apos;s input MRL. This will delete all existing inputs and add the specified one.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to work on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input MRL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="124" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="124" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga5fa0df8fe9c5ea1dc7a4e119b74641c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_add_input</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_input)</argsstring>
+        <name>libvlc_vlm_add_input</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a media&apos;s input MRL. This will add the specified one.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to work on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input MRL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="136" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="136" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gaddaf297839d6bfcdd9902325ee9dee1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_set_loop</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, int b_loop)</argsstring>
+        <name>libvlc_vlm_set_loop</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a media&apos;s loop status.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to work on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new status </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="148" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="148" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga55ef9e3e50d2e020e3a8ac60e3cddc92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_set_mux</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_mux)</argsstring>
+        <name>libvlc_vlm_set_mux</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_mux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a media&apos;s vod muxer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the media to work on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_mux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new muxer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="160" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="160" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga8b6b44cfe9083fe54cef6bf922d8a2ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_change_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, const char *psz_input, const char *psz_output, int i_options, const char *const *ppsz_options, int b_enabled, int b_loop)</argsstring>
+        <name>libvlc_vlm_change_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_input</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_output</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_options</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>ppsz_options</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_enabled</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Edit the parameters of a media. This will delete all existing inputs and add the specified one.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the new broadcast </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input MRL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the output MRL (the parameter to the &quot;sout&quot; variable) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of additional options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppsz_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional options </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean for enabling the new broadcast </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should this broadcast be played in loop ? </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="178" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="178" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gaa9a8c40e7be3bf755e29a53135b00635" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_play_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name)</argsstring>
+        <name>libvlc_vlm_play_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Play the named broadcast.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the broadcast </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="191" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="191" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gad1ad823e28542b8e76c4454312cc3566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_stop_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name)</argsstring>
+        <name>libvlc_vlm_stop_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop the named broadcast.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the broadcast </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="201" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="201" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga869c66a632550f81bf8f618c3cfc7723" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_pause_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name)</argsstring>
+        <name>libvlc_vlm_pause_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pause the named broadcast.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the broadcast </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="211" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="211" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga3712208ddc85be4dd70cb115487f755e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_seek_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, float f_percentage)</argsstring>
+        <name>libvlc_vlm_seek_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f_percentage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Seek in the named broadcast.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the broadcast </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f_percentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the percentage to seek to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="222" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="222" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga72bdcebf4187d4ea060cec8290a2d8e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_vlm_show_media</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name)</argsstring>
+        <name>libvlc_vlm_show_media</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return information about the named media as a JSON string representation.</para>
+<para>This function is mainly intended for debugging use, if you want programmatic access to the state of a <ref refid="structvlm__media__instance__t" kindref="compound">vlm_media_instance_t</ref>, please use the corresponding libvlc_vlm_get_media_instance_xxx -functions. Currently there are no such functions available for <ref refid="structvlm__media__t" kindref="compound">vlm_media_t</ref> though.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the media, if the name is an empty string, all media is described </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string with information about named media, or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="242" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="242" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1gad4427a32ff1e4d12512c1878a22bfc79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API float</type>
+        <definition>LIBVLC_API float libvlc_vlm_get_media_instance_position</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, int i_instance)</argsstring>
+        <name>libvlc_vlm_get_media_instance_position</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get vlm_media instance position by name or instance id</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of vlm media instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>instance id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>position as float or -1. on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="253" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="253" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga1f09b989fd2b6dafb46119bbe6f2f029" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_get_media_instance_time</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, int i_instance)</argsstring>
+        <name>libvlc_vlm_get_media_instance_time</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get vlm_media instance time by name or instance id</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of vlm media instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>instance id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>time as integer or -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="265" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="265" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga5d8b7bd36576ea8b7ea7910359ba4b5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_get_media_instance_length</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, int i_instance)</argsstring>
+        <name>libvlc_vlm_get_media_instance_length</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get vlm_media instance length by name or instance id</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of vlm media instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>instance id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>length of media item or -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="277" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="277" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga11a2599b0b19764b32a633de6f940620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_vlm_get_media_instance_rate</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *psz_name, int i_instance)</argsstring>
+        <name>libvlc_vlm_get_media_instance_rate</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get vlm_media instance playback rate by name or instance id</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of vlm media instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>instance id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>playback rate or -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="289" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="289" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__vlm_1ga0a99581da74db7b5aa872de824125823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref> *</type>
+        <definition>LIBVLC_API libvlc_event_manager_t * libvlc_vlm_get_event_manager</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_vlm_get_event_manager</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get libvlc_event_manager from a vlm media. The p_event_manager is immutable, so you don&apos;t have to hold the lock</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>libvlc_event_manager </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" line="334" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_vlm.h" declline="334" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

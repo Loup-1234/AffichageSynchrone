@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__vlc__dialog__impl" kind="group">
+    <compoundname>vlc_dialog_impl</compoundname>
+    <title>VLC dialog callbacks</title>
+    <innerclass refid="structvlc__dialog__cbs" prot="public">vlc_dialog_cbs</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__vlc__dialog__impl_1gad3b39a6c38e68a999fc12d1a87f53cae" prot="public" static="no">
+        <type>struct vlc_dialog_cbs</type>
+        <definition>typedef struct vlc_dialog_cbs vlc_dialog_cbs</definition>
+        <argsstring></argsstring>
+        <name>vlc_dialog_cbs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dialog callbacks to be implemented </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="380" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__vlc__dialog__impl_1ga6bb97cf59613eaac83064d791d640cf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_dialog_provider_set_callbacks</definition>
+        <argsstring>(vlc_object_t *p_obj, const vlc_dialog_cbs *p_cbs, void *p_data)</argsstring>
+        <name>vlc_dialog_provider_set_callbacks</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvlc__dialog__cbs" kindref="compound">vlc_dialog_cbs</ref> *</type>
+          <declname>p_cbs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register callbacks to handle VLC dialogs</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_cbs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to callbacks, or NULL to unregister callbacks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opaque pointer for the callback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="389" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="389" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__dialog__impl_1gaf8421e7b643575cb8e22e2127f501296" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_dialog_id_set_context</definition>
+        <argsstring>(vlc_dialog_id *p_id, void *p_context)</argsstring>
+        <name>vlc_dialog_id_set_context</name>
+        <param>
+          <type>vlc_dialog_id *</type>
+          <declname>p_id</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Associate an opaque pointer with the dialog id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="398" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="398" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__dialog__impl_1ga9380940d5c271f3ab9e6a81be63e41d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void *</type>
+        <definition>VLC_API void * vlc_dialog_id_get_context</definition>
+        <argsstring>(vlc_dialog_id *p_id)</argsstring>
+        <name>vlc_dialog_id_get_context</name>
+        <param>
+          <type>vlc_dialog_id *</type>
+          <declname>p_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the opaque pointer associated with the dialog id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="404" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="404" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__dialog__impl_1gad6dd795d99fc275aa03dbe6bb99e6739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_dialog_id_post_login</definition>
+        <argsstring>(vlc_dialog_id *p_id, const char *psz_username, const char *psz_password, bool b_store)</argsstring>
+        <name>vlc_dialog_id_post_login</name>
+        <param>
+          <type>vlc_dialog_id *</type>
+          <declname>p_id</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_username</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_password</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_store</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Post a login answer</para>
+<para>After this call, p_id won&apos;t be valid anymore</para>
+<para><simplesect kind="see"><para><ref refid="group__vlc__dialog_1gaf7b1053db9c942b524bdb13a63c9cfea" kindref="member">vlc_dialog_cbs.pf_display_login</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the dialog </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>valid and non empty string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>valid string (can be empty) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_store</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, store the credentials </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS on success, or a VLC error code on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="420" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="420" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__dialog__impl_1gae6bf6332fd28201402a840d8bcf9a0a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_dialog_id_post_action</definition>
+        <argsstring>(vlc_dialog_id *p_id, int i_action)</argsstring>
+        <name>vlc_dialog_id_post_action</name>
+        <param>
+          <type>vlc_dialog_id *</type>
+          <declname>p_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Post a question answer</para>
+<para>After this call, p_id won&apos;t be valid anymore</para>
+<para><simplesect kind="see"><para><ref refid="group__vlc__dialog_1ga4ac03a1815d85b13eff147ff054973ec" kindref="member">vlc_dialog_cbs.pf_display_question</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the dialog </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>1 for action1, 2 for action2 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS on success, or a VLC error code on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="435" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="435" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__vlc__dialog__impl_1ga62300f7faf9aefbd5ad8abfa796cdcce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_dialog_id_dismiss</definition>
+        <argsstring>(vlc_dialog_id *p_id)</argsstring>
+        <name>vlc_dialog_id_dismiss</name>
+        <param>
+          <type>vlc_dialog_id *</type>
+          <declname>p_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dismiss a dialog</para>
+<para>After this call, p_id won&apos;t be valid anymore</para>
+<para><simplesect kind="see"><para><ref refid="group__vlc__dialog_1ga41302d6e505ed5c80a76666cb8758bc9" kindref="member">vlc_dialog_cbs.pf_cancel</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the dialog </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS on success, or a VLC error code on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="448" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" declline="448" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__vlc__dialog__impl_1ga63d5069b44efe89f730cfc10a4009895" prot="public" static="no">
+        <name>vlc_dialog_provider_set_callbacks</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>    vlc_dialog_provider_set_callbacks(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" line="391" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_dialog.h" bodystart="391" bodyend="392"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Need to be implemented by GUI modules or libvlc </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

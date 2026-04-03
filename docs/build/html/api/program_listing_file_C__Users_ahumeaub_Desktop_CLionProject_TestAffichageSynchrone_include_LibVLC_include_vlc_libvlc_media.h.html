@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File libvlc_media.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File libvlc_media.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File libvlc_media.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_libvlc_media.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-libvlc-media-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-libvlc-media-h"></span><h1>Program Listing for File libvlc_media.h<a class="headerlink" href="#program-listing-for-file-libvlc-media-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_libvlc_media.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-libvlc-media-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\libvlc_media.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * libvlc_media.h:  libvlc external API</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1998-2009 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Clément Stenac &lt;zorglub@videolan.org&gt;</span>
+<span class="cm"> *          Jean-Paul Saman &lt;jpsaman@videolan.org&gt;</span>
+<span class="cm"> *          Pierre d&#39;Herbemont &lt;pdherbemont@videolan.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_LIBVLC_MEDIA_H</span>
+<span class="cp">#define VLC_LIBVLC_MEDIA_H 1</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#if defined(_MSC_VER)</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;basetsd.h&gt;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">SSIZE_T</span><span class="w"> </span><span class="kt">ssize_t</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_media_t</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_meta_t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_meta_Title</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Artist</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Genre</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Copyright</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Album</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_TrackNumber</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Description</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Rating</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Date</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Setting</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_URL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Language</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_NowPlaying</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Publisher</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_EncodedBy</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_ArtworkURL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_TrackID</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_TrackTotal</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Director</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Season</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Episode</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_ShowName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_Actors</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_AlbumArtist</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_DiscNumber</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_meta_DiscTotal</span>
+<span class="w">    </span><span class="cm">/* Add new meta types HERE */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_meta_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_state_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_NothingSpecial</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_Opening</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_Buffering</span><span class="p">,</span><span class="w"> </span><span class="cm">/* XXX: Deprecated value. Check the</span>
+<span class="cm">                       * libvlc_MediaPlayerBuffering event to know the</span>
+<span class="cm">                       * buffering state of a libvlc_media_player */</span>
+<span class="w">    </span><span class="n">libvlc_Playing</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_Paused</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_Stopped</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_Ended</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_Error</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_state_t</span><span class="p">;</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_media_option_trusted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_option_unique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_track_type_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_track_unknown</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_track_audio</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_track_video</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_track_text</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_track_type_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_media_stats_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Input */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_read_bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">       </span><span class="n">f_input_bitrate</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Demux */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_demux_read_bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">       </span><span class="n">f_demux_bitrate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_demux_corrupted</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_demux_discontinuity</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Decoders */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_decoded_video</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_decoded_audio</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Video Output */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_displayed_pictures</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_lost_pictures</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Audio output */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_played_abuffers</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_lost_abuffers</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Stream output */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_sent_packets</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_sent_bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">       </span><span class="n">f_send_bitrate</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_stats_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_media_track_info_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Codec fourcc */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w">    </span><span class="n">i_codec</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">libvlc_track_type_t</span><span class="w"> </span><span class="n">i_type</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Codec specific */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_profile</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_level</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="cm">/* Audio specific */</span>
+<span class="w">            </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_channels</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_rate</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="n">audio</span><span class="p">;</span>
+<span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="cm">/* Video specific */</span>
+<span class="w">            </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_height</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_width</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="n">video</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_track_info_t</span><span class="p">;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_audio_track_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_channels</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_rate</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_audio_track_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_video_orient_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_top_left</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_top_right</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_bottom_left</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_bottom_right</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_left_top</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_left_bottom</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_right_top</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_orient_right_bottom</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_video_orient_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_video_projection_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_video_projection_rectangular</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_video_projection_equirectangular</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">libvlc_video_projection_cubemap_layout_standard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_video_projection_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_video_viewpoint_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_yaw</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_pitch</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_roll</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f_field_of_view</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_video_viewpoint_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_video_track_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_height</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_sar_num</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_sar_den</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_frame_rate_num</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">i_frame_rate_den</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">libvlc_video_orient_t</span><span class="w">       </span><span class="n">i_orientation</span><span class="p">;</span>
+<span class="w">    </span><span class="n">libvlc_video_projection_t</span><span class="w">   </span><span class="n">i_projection</span><span class="p">;</span>
+<span class="w">    </span><span class="n">libvlc_video_viewpoint_t</span><span class="w">    </span><span class="n">pose</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_video_track_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_subtitle_track_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_encoding</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_subtitle_track_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_media_track_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Codec fourcc */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w">    </span><span class="n">i_codec</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w">    </span><span class="n">i_original_fourcc</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">libvlc_track_type_t</span><span class="w"> </span><span class="n">i_type</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Codec specific */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_profile</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_level</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">libvlc_audio_track_t</span><span class="w"> </span><span class="o">*</span><span class="n">audio</span><span class="p">;</span>
+<span class="w">        </span><span class="n">libvlc_video_track_t</span><span class="w"> </span><span class="o">*</span><span class="n">video</span><span class="p">;</span>
+<span class="w">        </span><span class="n">libvlc_subtitle_track_t</span><span class="w"> </span><span class="o">*</span><span class="n">subtitle</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_bitrate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_language</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_description</span><span class="p">;</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_track_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_media_type_t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_media_type_unknown</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_type_file</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_type_directory</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_type_disc</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_type_stream</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_type_playlist</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_type_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_media_parse_flag_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_media_parse_local</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_parse_network</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mh">0x01</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_fetch_local</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mh">0x02</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_fetch_network</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mh">0x04</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_do_interact</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mh">0x08</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_parse_flag_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_media_parsed_status_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_media_parsed_status_skipped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_parsed_status_failed</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_parsed_status_timeout</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_parsed_status_done</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_parsed_status_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">libvlc_media_slave_type_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_media_slave_type_subtitle</span><span class="p">,</span>
+<span class="w">    </span><span class="n">libvlc_media_slave_type_audio</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_slave_type_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">libvlc_media_slave_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w">                          </span><span class="n">psz_uri</span><span class="p">;</span>
+<span class="w">    </span><span class="n">libvlc_media_slave_type_t</span><span class="w">       </span><span class="n">i_type</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w">                    </span><span class="n">i_priority</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">libvlc_media_slave_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">libvlc_media_open_cb</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">opaque</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">datap</span><span class="p">,</span>
+<span class="w">                                    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="o">*</span><span class="n">sizep</span><span class="p">);</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">libvlc_media_read_cb</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">opaque</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span>
+<span class="w">                                        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">libvlc_media_seek_cb</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">opaque</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">offset</span><span class="p">);</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">libvlc_media_close_cb</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_new_location</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_mrl</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_new_path</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">path</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_new_fd</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_new_callbacks</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">instance</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">libvlc_media_open_cb</span><span class="w"> </span><span class="n">open_cb</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">libvlc_media_read_cb</span><span class="w"> </span><span class="n">read_cb</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">libvlc_media_seek_cb</span><span class="w"> </span><span class="n">seek_cb</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">libvlc_media_close_cb</span><span class="w"> </span><span class="n">close_cb</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">opaque</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_new_as_node</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_add_option</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_options</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_add_option_flag</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_options</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i_flags</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_retain</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_release</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_get_mrl</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_duplicate</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_get_meta</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">libvlc_meta_t</span><span class="w"> </span><span class="n">e_meta</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_set_meta</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                           </span><span class="n">libvlc_meta_t</span><span class="w"> </span><span class="n">e_meta</span><span class="p">,</span>
+<span class="w">                                           </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_value</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_media_save_meta</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_state_t</span><span class="w"> </span><span class="n">libvlc_media_get_state</span><span class="p">(</span>
+<span class="w">                                   </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_media_get_stats</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                           </span><span class="n">libvlc_media_stats_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_stats</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/* The following method uses libvlc_media_list_t, however, media_list usage is optionnal</span>
+<span class="cm"> * and this is here for convenience */</span>
+<span class="cp">#define VLC_FORWARD_DECLARE_OBJECT(a) struct a</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="nf">VLC_FORWARD_DECLARE_OBJECT</span><span class="p">(</span><span class="n">libvlc_media_list_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span>
+<span class="n">libvlc_media_subitems</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_event_manager_t</span><span class="w"> </span><span class="o">*</span>
+<span class="w">    </span><span class="n">libvlc_media_event_manager</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_time_t</span>
+<span class="w">   </span><span class="n">libvlc_media_get_duration</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span>
+<span class="n">libvlc_media_parse_with_options</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">libvlc_media_parse_flag_t</span><span class="w"> </span><span class="n">parse_flag</span><span class="p">,</span>
+<span class="w">                                 </span><span class="kt">int</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span>
+<span class="n">libvlc_media_parse_stop</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_media_parsed_status_t</span>
+<span class="w">   </span><span class="n">libvlc_media_get_parsed_status</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span>
+<span class="w">    </span><span class="n">libvlc_media_set_user_data</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_new_user_data</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_get_user_data</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="n">libvlc_media_tracks_get</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">libvlc_media_track_t</span><span class="w"> </span><span class="o">***</span><span class="n">tracks</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">libvlc_media_get_codec_description</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_track_type_t</span><span class="w"> </span><span class="n">i_type</span><span class="p">,</span>
+<span class="w">                                                </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">i_codec</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_tracks_release</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_track_t</span><span class="w"> </span><span class="o">**</span><span class="n">p_tracks</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i_count</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="n">libvlc_media_type_t</span><span class="w"> </span><span class="n">libvlc_media_get_type</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">libvlc_media_slaves_add</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">libvlc_media_slave_type_t</span><span class="w"> </span><span class="n">i_type</span><span class="p">,</span>
+<span class="w">                             </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_priority</span><span class="p">,</span>
+<span class="w">                             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_uri</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_slaves_clear</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_media_slaves_get</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_md</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">libvlc_media_slave_t</span><span class="w"> </span><span class="o">***</span><span class="n">ppp_slaves</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">libvlc_media_slaves_release</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_media_slave_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_slaves</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_count</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#endif </span><span class="cm">/* VLC_LIBVLC_MEDIA_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

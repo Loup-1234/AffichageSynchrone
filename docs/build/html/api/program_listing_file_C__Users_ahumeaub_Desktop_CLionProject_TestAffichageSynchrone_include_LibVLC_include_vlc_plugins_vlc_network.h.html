@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_network.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_network.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_network.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_network.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-network-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-network-h"></span><h1>Program Listing for File vlc_network.h<a class="headerlink" href="#program-listing-for-file-vlc-network-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_network.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-network-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_network.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_network.h: interface to communicate with network plug-ins</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2002-2005 VLC authors and VideoLAN</span>
+<span class="cm"> * Copyright © 2006-2007 Rémi Denis-Courmont</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Christophe Massiot &lt;massiot@via.ecp.fr&gt;</span>
+<span class="cm"> *          Laurent Aimar &lt;fenrir@via.ecp.fr&gt;</span>
+<span class="cm"> *          Rémi Denis-Courmont</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_NETWORK_H</span>
+<span class="cp"># define VLC_NETWORK_H</span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/types.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+
+<span class="cp">#if defined( _WIN32 )</span>
+<span class="cp">#   define _NO_OLDNAMES 1</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;winsock2.h&gt;</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;ws2tcpip.h&gt;</span>
+<span class="cp">#   define net_errno (WSAGetLastError())</span>
+<span class="cp">#   define net_Close(fd) ((void)closesocket((SOCKET)fd))</span>
+<span class="cp">#   ifndef IPV6_V6ONLY</span>
+<span class="cp">#       define IPV6_V6ONLY 27</span>
+<span class="cp">#   endif</span>
+<span class="cp">#else</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;sys/socket.h&gt;</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;netinet/in.h&gt;</span>
+<span class="cp">#</span><span class="w">   </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;netdb.h&gt;</span>
+<span class="cp">#   define net_errno errno</span>
+<span class="cp">#   define net_Close(fd) ((void)vlc_close(fd))</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifndef MSG_NOSIGNAL</span>
+<span class="cp"># define MSG_NOSIGNAL 0</span>
+<span class="cp">#endif</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_socket</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">proto</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">nonblock</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_socketpair</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">proto</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+<span class="w">                           </span><span class="kt">bool</span><span class="w"> </span><span class="n">nonblock</span><span class="p">);</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_accept</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lfd</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="o">*</span><span class="n">alen</span><span class="p">,</span>
+<span class="w">                       </span><span class="kt">bool</span><span class="w"> </span><span class="n">nonblock</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+<span class="cm">/* Portable networking layer communication */</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">net_Socket</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">family</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">socktype</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">proto</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">net_Connect</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_host</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_port</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">socktype</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">protocol</span><span class="p">);</span>
+<span class="cp">#define net_Connect(a, b, c, d, e) net_Connect(VLC_OBJECT(a), b, c, d, e)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">net_Listen</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_host</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_port</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">socktype</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">protocol</span><span class="p">);</span>
+
+<span class="cp">#define net_ListenTCP(a, b, c) net_Listen(VLC_OBJECT(a), b, c, \</span>
+<span class="cp">                                          SOCK_STREAM, IPPROTO_TCP)</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">net_ConnectTCP</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">net_Connect</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">SOCK_STREAM</span><span class="p">,</span><span class="w"> </span><span class="n">IPPROTO_TCP</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#define net_ConnectTCP(a, b, c) net_ConnectTCP(VLC_OBJECT(a), b, c)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">net_AcceptSingle</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lfd</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">net_Accept</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_Accept(a, b) \</span>
+<span class="cp">        net_Accept(VLC_OBJECT(a), b)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">net_ConnectDgram</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_host</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_port</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hlim</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">proto</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_ConnectDgram(a, b, c, d, e ) \</span>
+<span class="cp">        net_ConnectDgram(VLC_OBJECT(a), b, c, d, e)</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">net_ConnectUDP</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hlim</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">net_ConnectDgram</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">hlim</span><span class="p">,</span><span class="w"> </span><span class="n">IPPROTO_UDP</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">net_OpenDgram</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_bind</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_bind</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_server</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_server</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">proto</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_OpenDgram( a, b, c, d, e, g ) \</span>
+<span class="cp">        net_OpenDgram(VLC_OBJECT(a), b, c, d, e, g)</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">net_ListenUDP1</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">net_OpenDgram</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">IPPROTO_UDP</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">net_ListenClose</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">fd</span><span class="w"> </span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">net_Subscribe</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span>
+<span class="w">                   </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">addrlen</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">net_SetCSCov</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sendcov</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">recvcov</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">net_Read</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_data</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_Read(a,b,c,d) net_Read(VLC_OBJECT(a),b,c,d)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">net_Write</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_data</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_Write(a,b,c,d) net_Write(VLC_OBJECT(a),b,c,d)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">net_Gets</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_Gets(a,b) net_Gets(VLC_OBJECT(a),b)</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">net_Printf</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_fmt</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_FORMAT</span><span class="p">(</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_Printf(o,fd,...) net_Printf(VLC_OBJECT(o),fd, __VA_ARGS__)</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">net_vaPrintf</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_this</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_fmt</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define net_vaPrintf(a,b,c,d) net_vaPrintf(VLC_OBJECT(a),b,c,d)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_close</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+
+
+<span class="cp">#ifdef _WIN32</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_getsockopt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<span class="w">                                 </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="o">*</span><span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getsockopt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#define getsockopt vlc_getsockopt</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_setsockopt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">setsockopt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#define setsockopt vlc_setsockopt</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* Portable network names/addresses resolution layer */</span>
+
+<span class="cp">#define NI_MAXNUMERICHOST 64</span>
+
+<span class="cp">#ifndef AI_NUMERICSERV</span>
+<span class="cp"># define AI_NUMERICSERV 0</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifndef AI_IDN</span>
+<span class="cp"># define AI_IDN 0 </span><span class="cm">/* GNU/libc extension */</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef _WIN32</span>
+<span class="cp"># if !defined(WINAPI_FAMILY) || WINAPI_FAMILY != WINAPI_FAMILY_APP</span>
+<span class="cp">#  undef gai_strerror</span>
+<span class="cp">#  define gai_strerror gai_strerrorA</span>
+<span class="cp"># endif</span>
+<span class="cp">#endif</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_getnameinfo</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_getaddrinfo</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">,</span>
+<span class="w">                             </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">**</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_getaddrinfo_i11e</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">,</span>
+<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">**</span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span>
+<span class="nf">net_SockAddrIsMulticast</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">addr</span><span class="o">-&gt;</span><span class="n">sa_family</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="cp">#ifdef IN_MULTICAST</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">AF_INET</span><span class="p">:</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in</span><span class="w"> </span><span class="o">*</span><span class="n">v4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">addr</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="kt">size_t</span><span class="p">)</span><span class="n">len</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">v4</span><span class="p">))</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">IN_MULTICAST</span><span class="w"> </span><span class="p">(</span><span class="n">ntohl</span><span class="w"> </span><span class="p">(</span><span class="n">v4</span><span class="o">-&gt;</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef IN6_IS_ADDR_MULTICAST</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">AF_INET6</span><span class="p">:</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in6</span><span class="w"> </span><span class="o">*</span><span class="n">v6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in6</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">addr</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="kt">size_t</span><span class="p">)</span><span class="n">len</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">v6</span><span class="p">))</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">IN6_IS_ADDR_MULTICAST</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">v6</span><span class="o">-&gt;</span><span class="n">sin6_addr</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">net_GetSockAddress</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">port</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_storage</span><span class="w"> </span><span class="n">addr</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">addrlen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getsockname</span><span class="p">(</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">addrlen</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="n">vlc_getnameinfo</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">addrlen</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">NI_MAXNUMERICHOST</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">NI_NUMERICHOST</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="n">VLC_EGENERIC</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">net_GetPeerAddress</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">port</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_storage</span><span class="w"> </span><span class="n">addr</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">addrlen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getpeername</span><span class="p">(</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">addrlen</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="n">vlc_getnameinfo</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">addrlen</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">NI_MAXNUMERICHOST</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">NI_NUMERICHOST</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="n">VLC_EGENERIC</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="nf">net_GetPort</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">addr</span><span class="o">-&gt;</span><span class="n">sa_family</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="cp">#ifdef AF_INET6</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">AF_INET6</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in6</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">addr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sin6_port</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">AF_INET</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">addr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sin_port</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">net_SetPort</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">port</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">addr</span><span class="o">-&gt;</span><span class="n">sa_family</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="cp">#ifdef AF_INET6</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">AF_INET6</span><span class="p">:</span>
+<span class="w">            </span><span class="p">((</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in6</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">addr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sin6_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">port</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">AF_INET</span><span class="p">:</span>
+<span class="w">            </span><span class="p">((</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">addr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sin_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">port</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_getProxyUrl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

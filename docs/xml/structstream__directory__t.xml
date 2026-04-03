@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structstream__directory__t" kind="struct" language="C++" prot="public">
+    <compoundname>stream_directory_t</compoundname>
+    <sectiondef kind="user-defined">
+      <header>Callbacks for stream directories</header>
+      <description><para>The following members shall be populated as specified by the documentation associated with <ref refid="structstream__t" kindref="compound">stream_t</ref> for the equivalent name. </para>
+</description>
+      <memberdef kind="variable" id="structstream__directory__t_1a453f70cc0cdc4a90b2f22c15cd522f45" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* stream_directory_t::pf_readdir) (struct stream_directory_t *, input_item_node_t *)</definition>
+        <argsstring>)(struct stream_directory_t *, input_item_node_t *)</argsstring>
+        <name>pf_readdir</name>
+        <qualifiedname>stream_directory_t::pf_readdir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="84" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstream__directory__t_1aa459c9a968aaea250206201b38094d08" prot="public" static="no" mutable="no">
+        <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>stream_t* stream_directory_t::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <qualifiedname>stream_directory_t::source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the source stream to be consumed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="87" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstream__directory__t_1aa50ce2aff953f6177fe85cba44329fee" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* stream_directory_t::p_sys</definition>
+        <argsstring></argsstring>
+        <name>p_sys</name>
+        <qualifiedname>stream_directory_t::p_sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>private opaque handle to be used by the module </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="88" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>block_t</label>
+        <link refid="structblock__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+          <edgelabel>+pf_release</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>input_thread_t</label>
+        <link refid="structinput__thread__t"/>
+      </node>
+      <node id="1">
+        <label>stream_directory_t</label>
+        <link refid="structstream__directory__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+source</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stream_t</label>
+        <link refid="structstream__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_source</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+pf_block</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+p_input</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="73" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="73" bodyend="90"/>
+    <listofallmembers>
+      <member refid="structstream__directory__t_1aa50ce2aff953f6177fe85cba44329fee" prot="public" virt="non-virtual"><scope>stream_directory_t</scope><name>p_sys</name></member>
+      <member refid="structstream__directory__t_1a453f70cc0cdc4a90b2f22c15cd522f45" prot="public" virt="non-virtual"><scope>stream_directory_t</scope><name>pf_readdir</name></member>
+      <member refid="structstream__directory__t_1aa459c9a968aaea250206201b38094d08" prot="public" virt="non-virtual"><scope>stream_directory_t</scope><name>source</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

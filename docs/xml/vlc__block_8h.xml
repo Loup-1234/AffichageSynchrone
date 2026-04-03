@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__block_8h" kind="file" language="C++">
+    <compoundname>vlc_block.h</compoundname>
+    <includes local="no">sys/types.h</includes>
+    <includedby refid="vlc__aout_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h</includedby>
+    <includedby refid="vlc__block__helper_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block_helper.h</includedby>
+    <includedby refid="vlc__boxes_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h</includedby>
+    <includedby refid="vlc__codec_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h</includedby>
+    <includedby refid="vlc__stream_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h</label>
+        <link refid="vlc__block_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h</label>
+        <link refid="vlc__access_8h"/>
+      </node>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h</label>
+        <link refid="vlc__aout_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h</label>
+        <link refid="vlc__block_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block_helper.h</label>
+        <link refid="vlc__block__helper_8h_source"/>
+      </node>
+      <node id="5">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h</label>
+        <link refid="vlc__boxes_8h"/>
+      </node>
+      <node id="6">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_codec.h</label>
+        <link refid="vlc__codec_8h"/>
+      </node>
+      <node id="9">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h</label>
+        <link refid="vlc__demux_8h"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h</label>
+        <link refid="vlc__playlist_8h"/>
+      </node>
+      <node id="7">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream.h</label>
+        <link refid="vlc__stream_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structblock__t" prot="public">block_t</innerclass>
+    <sectiondef kind="define">
+      <member refid="group__block_1ga82f33d56fbf301c610c2fe3a71f056cc" kind="define"><name>BLOCK_FLAG_DISCONTINUITY</name></member>
+      <member refid="group__block_1ga4ea1da5028885e857f9306a1657e721b" kind="define"><name>BLOCK_FLAG_TYPE_I</name></member>
+      <member refid="group__block_1ga27656a9cd59fa5d82a99fb5a4273bd7d" kind="define"><name>BLOCK_FLAG_TYPE_P</name></member>
+      <member refid="group__block_1ga55ed275938900370c869c1cebc19563a" kind="define"><name>BLOCK_FLAG_TYPE_B</name></member>
+      <member refid="group__block_1gaa489eb15f0fc9d679f5a9a7baa4d8b32" kind="define"><name>BLOCK_FLAG_TYPE_PB</name></member>
+      <member refid="group__block_1ga6b2f61be0305855aec568755ae821e54" kind="define"><name>BLOCK_FLAG_HEADER</name></member>
+      <member refid="group__block_1ga472702509d67343c9d3f0f60cb5a1fc3" kind="define"><name>BLOCK_FLAG_END_OF_SEQUENCE</name></member>
+      <member refid="group__block_1gadab445e19c449c99c3f581085a121321" kind="define"><name>BLOCK_FLAG_CLOCK</name></member>
+      <member refid="group__block_1ga9cfec273cb4b3a450691a9b15a62aa1b" kind="define"><name>BLOCK_FLAG_SCRAMBLED</name></member>
+      <member refid="group__block_1gaa97962b8c5929d56e12440f08f61bfc4" kind="define"><name>BLOCK_FLAG_PREROLL</name></member>
+      <member refid="group__block_1gaff637953fe9791ceb50500735ef26413" kind="define"><name>BLOCK_FLAG_CORRUPTED</name></member>
+      <member refid="group__block_1gafd724a2d943b3971bfaa7f030810200c" kind="define"><name>BLOCK_FLAG_TOP_FIELD_FIRST</name></member>
+      <member refid="group__block_1ga42dc4d050d33648a95b2690fe1d6fddb" kind="define"><name>BLOCK_FLAG_BOTTOM_FIELD_FIRST</name></member>
+      <member refid="group__block_1ga75d80005e0e48330fc828ea17e34ef65" kind="define"><name>BLOCK_FLAG_SINGLE_FIELD</name></member>
+      <member refid="group__block_1gabe2b48876bd1c91380e655cff287e2a5" kind="define"><name>BLOCK_FLAG_INTERLACED_MASK</name></member>
+      <member refid="group__block_1ga9e399c8404d43b40b2803ffe43b2c762" kind="define"><name>BLOCK_FLAG_TYPE_MASK</name></member>
+      <member refid="group__block_1gad281e990d118543f1668384b1d68a7b8" kind="define"><name>BLOCK_FLAG_CORE_PRIVATE_MASK</name></member>
+      <member refid="group__block_1ga5d18e7b2535494f31edc278ab88e9d69" kind="define"><name>BLOCK_FLAG_CORE_PRIVATE_SHIFT</name></member>
+      <member refid="group__block_1gaf9ffc0d6f085537c9e0c74d7e26308d0" kind="define"><name>BLOCK_FLAG_PRIVATE_MASK</name></member>
+      <member refid="group__block_1gac94ec086c9e47851b0b4b091aacf4209" kind="define"><name>BLOCK_FLAG_PRIVATE_SHIFT</name></member>
+      <member refid="group__block_1ga9e55c76273c5b59ddaf1419f706e3e8c" kind="define"><name>block_cleanup_push</name></member>
+      <member refid="group__fifo_1ga9f6ac3d3ef5ec2e29cb876a861a29fb9" kind="define"><name>vlc_fifo_CleanupPush</name></member>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <member refid="group__block_1ga69dd963d66d917ee35a5fca88103c916" kind="typedef"><name>block_free_t</name></member>
+      <member refid="group__fifo_1ga3cd9a84c5b30fae4305ad2d6d06b291b" kind="typedef"><name>vlc_fifo_t</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__block_1ga7c71d10b0cf007c8670fe7f05d9da2f9" kind="function"><name>block_Init</name></member>
+      <member refid="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" kind="function"><name>block_Alloc</name></member>
+      <member refid="group__block_1gac60c68a7f77b92298901e7bb5c0923f6" kind="function"><name>block_TryRealloc</name></member>
+      <member refid="group__block_1ga80686ce1b2b3d2563ec3736d14be11cb" kind="function"><name>block_Realloc</name></member>
+      <member refid="group__block_1gaf817d55445f9f41b7cfe494ff2a205c2" kind="function"><name>block_Release</name></member>
+      <member refid="group__block_1ga86fab3db91dac80ec291af4d4f1f9420" kind="function"><name>block_CopyProperties</name></member>
+      <member refid="group__block_1gacf4d50f762cf64e3fa1d11e3fb03405b" kind="function"><name>block_Duplicate</name></member>
+      <member refid="group__block_1ga0437981501ea707c77ecae1e40c6f348" kind="function"><name>block_heap_Alloc</name></member>
+      <member refid="group__block_1ga84d069d5dd48a5a8895bab4fd1c35396" kind="function"><name>block_mmap_Alloc</name></member>
+      <member refid="group__block_1ga6860e2453328100456080ae5cf7d135f" kind="function"><name>block_shm_Alloc</name></member>
+      <member refid="group__block_1gab1324798becb85cfb2a7354aed41cc5d" kind="function"><name>block_File</name></member>
+      <member refid="group__block_1gaac85f6b63dacc6d3b982942b728c898c" kind="function"><name>block_FilePath</name></member>
+      <member refid="group__block_1ga72f80606f95e6fbfef8ab72d06fb9573" kind="function"><name>block_Cleanup</name></member>
+      <member refid="group__block__fifo_1gaf68e162cfda786b629ace75052b806d1" kind="function"><name>block_ChainAppend</name></member>
+      <member refid="group__block__fifo_1ga1bdf5c442d24d3bcd272c0bf92ec3885" kind="function"><name>block_ChainLastAppend</name></member>
+      <member refid="group__block__fifo_1ga04e1d73f6102df6c613933d0d1abaade" kind="function"><name>block_ChainRelease</name></member>
+      <member refid="group__block__fifo_1ga4a53ee56a98700d4cbdb61d9e2a2d0cb" kind="function"><name>block_ChainExtract</name></member>
+      <member refid="group__block__fifo_1ga01178dbd0ab487eccdc1343d14efa8fd" kind="function"><name>block_ChainProperties</name></member>
+      <member refid="group__block__fifo_1ga226e9c06906d03c7313fba64992d1d0c" kind="function"><name>block_ChainGather</name></member>
+      <member refid="group__fifo_1ga76589cb22cfd4e8b1a8d8eb90f5f8be0" kind="function"><name>block_FifoNew</name></member>
+      <member refid="group__fifo_1ga22f649fecc82b557f94653eb05ead15a" kind="function"><name>block_FifoRelease</name></member>
+      <member refid="group__fifo_1gadeb75f1d534d07686f7ee0eca76399de" kind="function"><name>block_FifoEmpty</name></member>
+      <member refid="group__fifo_1gabb730ded02a2635e7805c76f60f0efee" kind="function"><name>block_FifoPut</name></member>
+      <member refid="group__fifo_1ga3da75b8e3e7a7315b3ac39cfd1f7d3de" kind="function"><name>block_FifoGet</name></member>
+      <member refid="group__fifo_1ga1fa9047826a8a0aec48c3281c572b23b" kind="function"><name>block_FifoShow</name></member>
+      <member refid="group__fifo_1ga5dfb33a71637fb341513eb1fdeddfc99" kind="function"><name>block_FifoSize</name></member>
+      <member refid="group__fifo_1gac713843e2cd2347ab7337bfc7b25a4f1" kind="function"><name>block_FifoCount</name></member>
+      <member refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kind="function"><name>vlc_fifo_Lock</name></member>
+      <member refid="group__fifo_1ga986af097c87339596885781781d4906a" kind="function"><name>vlc_fifo_Unlock</name></member>
+      <member refid="group__fifo_1gad4157ac4c846ae51abfc96837b4c2ac3" kind="function"><name>vlc_fifo_Signal</name></member>
+      <member refid="group__fifo_1ga3907f356b23df01c92864fd7eba77295" kind="function"><name>vlc_fifo_Wait</name></member>
+      <member refid="group__fifo_1ga197c03707b1d4a39ed38a9425a211f79" kind="function"><name>vlc_fifo_WaitCond</name></member>
+      <member refid="group__fifo_1ga61a95a397b7b00ef4ea8a14f07d38619" kind="function"><name>vlc_fifo_TimedWaitCond</name></member>
+      <member refid="group__fifo_1gabfae6e5f9929f0b20280919b6ae1100a" kind="function"><name>vlc_fifo_QueueUnlocked</name></member>
+      <member refid="group__fifo_1ga2734c4d814d8f2b6b2c0edbb12e1bb92" kind="function"><name>vlc_fifo_DequeueUnlocked</name></member>
+      <member refid="group__fifo_1ga3d5ce7e8b5140220f23cdaa342ce0f0e" kind="function"><name>vlc_fifo_DequeueAllUnlocked</name></member>
+      <member refid="group__fifo_1gae9dfe07e14f835524ed1bef319fddd8c" kind="function"><name>vlc_fifo_GetCount</name></member>
+      <member refid="group__fifo_1gac31ab97850c8dc420326e2c59291341d" kind="function"><name>vlc_fifo_GetBytes</name></member>
+      <member refid="group__fifo_1gae16732e911ca5b573a18650b4111c559" kind="function"><name>vlc_fifo_IsEmpty</name></member>
+      <member refid="group__fifo_1gafd468cd07b043720a4da5e72f05703c4" kind="function"><name>vlc_fifo_Cleanup</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Data block definition and functions </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_block.h:<sp/>Data<sp/>blocks<sp/>management<sp/>functions</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_BLOCK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_BLOCK_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>for<sp/>ssize_t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>block:</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>****************************************************************************</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>-<sp/>i_flags<sp/>may<sp/>not<sp/>always<sp/>be<sp/>set<sp/>(ie<sp/>could<sp/>be<sp/>0,<sp/>even<sp/>for<sp/>a<sp/>key<sp/>frame</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>depends<sp/>where<sp/>you<sp/>receive<sp/>the<sp/>buffer<sp/>(before/after<sp/>a<sp/>packetizer</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>the<sp/>demux/packetizer<sp/>implementations.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>-<sp/>i_dts/i_pts<sp/>could<sp/>be<sp/>VLC_TICK_INVALID,<sp/>it<sp/>means<sp/>no<sp/>pts/dts</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>-<sp/>i_length:<sp/>length<sp/>in<sp/>microseond<sp/>of<sp/>the<sp/>packet,<sp/>can<sp/>be<sp/>null<sp/>except<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>sout<sp/>where<sp/>it<sp/>is<sp/>mandatory.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>-<sp/>i_buffer<sp/>number<sp/>of<sp/>valid<sp/>data<sp/>pointed<sp/>by<sp/>p_buffer</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>you<sp/>can<sp/>freely<sp/>decrease<sp/>it<sp/>but<sp/>never<sp/>increase<sp/>it<sp/>yourself</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>(use<sp/>block_Realloc)</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>-<sp/>p_buffer:<sp/>pointer<sp/>over<sp/>datas.<sp/>You<sp/>should<sp/>never<sp/>overwrite<sp/>it,<sp/>you<sp/>can</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/><sp/>only<sp/>incremment<sp/>it<sp/>to<sp/>skip<sp/>datas,<sp/>in<sp/>others<sp/>cases<sp/>use<sp/>block_Realloc</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/><sp/>(don&apos;t<sp/>duplicate<sp/>yourself<sp/>in<sp/>a<sp/>bigger<sp/>buffer,<sp/>block_Realloc<sp/>is</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/><sp/>optimised<sp/>for<sp/>preheader/postdatas<sp/>increase)</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="group__block_1ga82f33d56fbf301c610c2fe3a71f056cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_DISCONTINUITY<sp/>0x0001</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="group__block_1ga4ea1da5028885e857f9306a1657e721b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_TYPE_I<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group__block_1ga27656a9cd59fa5d82a99fb5a4273bd7d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_TYPE_P<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0004</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="group__block_1ga55ed275938900370c869c1cebc19563a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_TYPE_B<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0008</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="group__block_1gaa489eb15f0fc9d679f5a9a7baa4d8b32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_TYPE_PB<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0010</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="group__block_1ga6b2f61be0305855aec568755ae821e54" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_HEADER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0020</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="group__block_1ga472702509d67343c9d3f0f60cb5a1fc3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_END_OF_SEQUENCE<sp/>0x0040</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="group__block_1gadab445e19c449c99c3f581085a121321" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_CLOCK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0080</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="group__block_1ga9cfec273cb4b3a450691a9b15a62aa1b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_SCRAMBLED<sp/><sp/><sp/><sp/><sp/>0x0100</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="group__block_1gaa97962b8c5929d56e12440f08f61bfc4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_PREROLL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0200</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="group__block_1gaff637953fe9791ceb50500735ef26413" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_CORRUPTED<sp/><sp/><sp/><sp/><sp/>0x0400</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="group__block_1gafd724a2d943b3971bfaa7f030810200c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_TOP_FIELD_FIRST<sp/>0x0800</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="group__block_1ga42dc4d050d33648a95b2690fe1d6fddb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_BOTTOM_FIELD_FIRST<sp/>0x1000</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="group__block_1ga75d80005e0e48330fc828ea17e34ef65" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_SINGLE_FIELD<sp/><sp/>0x2000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="group__block_1gabe2b48876bd1c91380e655cff287e2a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_INTERLACED_MASK<sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(BLOCK_FLAG_TOP_FIELD_FIRST|BLOCK_FLAG_BOTTOM_FIELD_FIRST|BLOCK_FLAG_SINGLE_FIELD)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_TYPE_MASK<sp/>\</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(BLOCK_FLAG_TYPE_I|BLOCK_FLAG_TYPE_P|BLOCK_FLAG_TYPE_B|BLOCK_FLAG_TYPE_PB)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>for<sp/>input<sp/>core<sp/>private<sp/>usage<sp/>only<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_CORE_PRIVATE_MASK<sp/><sp/>0x00ff0000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_CORE_PRIVATE_SHIFT<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>for<sp/>module<sp/>private<sp/>usage<sp/>only<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_PRIVATE_MASK<sp/><sp/>0xff000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_FLAG_PRIVATE_SHIFT<sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*block_free_t)<sp/>(<ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="structblock__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structblock__t" kindref="compound">block_t</ref></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/><sp/><sp/><sp/>*p_next;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/>*<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>;<sp/></highlight></codeline>
+<codeline lineno="117" refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>;<sp/></highlight></codeline>
+<codeline lineno="118" refid="structblock__t_1a7db19b5cba60c3c1880f4bdfe886e316" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/>*<ref refid="structblock__t_1a7db19b5cba60c3c1880f4bdfe886e316" kindref="member">p_start</ref>;<sp/></highlight></codeline>
+<codeline lineno="119" refid="structblock__t_1a13c1cafbffa17e7e3eebc993c405bcf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structblock__t_1a13c1cafbffa17e7e3eebc993c405bcf2" kindref="member">i_size</ref>;<sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/>i_flags;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>i_nb_samples;<sp/></highlight><highlight class="comment">/*<sp/>Used<sp/>for<sp/>audio<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/><sp/>i_pts;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/><sp/>i_dts;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/><sp/>i_length;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Rudimentary<sp/>support<sp/>for<sp/>overloading<sp/>block<sp/>(de)allocation.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>block_free_t<sp/>pf_release;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_Init(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" kindref="member">block_Alloc</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*block_TryRealloc(<ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*,<sp/>ssize_t<sp/>pre,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>body)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="group__block_1ga80686ce1b2b3d2563ec3736d14be11cb" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__block_1ga80686ce1b2b3d2563ec3736d14be11cb" kindref="member">block_Realloc</ref>(<ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*,<sp/>ssize_t<sp/>pre,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>body)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_Release(<ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*block)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>block-&gt;pf_release(block);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_CopyProperties(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*dst,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*src<sp/>)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>dst-&gt;i_flags<sp/><sp/><sp/>=<sp/>src-&gt;i_flags;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>dst-&gt;i_nb_samples<sp/>=<sp/>src-&gt;i_nb_samples;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>dst-&gt;i_dts<sp/><sp/><sp/><sp/><sp/>=<sp/>src-&gt;i_dts;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>dst-&gt;i_pts<sp/><sp/><sp/><sp/><sp/>=<sp/>src-&gt;i_pts;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>dst-&gt;i_length<sp/><sp/>=<sp/>src-&gt;i_length;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">VLC_USED</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*block_Duplicate(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_block<sp/>)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_dup<sp/>=<sp/><ref refid="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" kindref="member">block_Alloc</ref>(<sp/>p_block-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>p_dup<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>block_CopyProperties(<sp/>p_dup,<sp/>p_block<sp/>);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<sp/>p_dup-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>,<sp/>p_block-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>,<sp/>p_block-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_dup;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="group__block_1ga0437981501ea707c77ecae1e40c6f348" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__block_1ga0437981501ea707c77ecae1e40c6f348" kindref="member">block_heap_Alloc</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="group__block_1ga84d069d5dd48a5a8895bab4fd1c35396" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__block_1ga84d069d5dd48a5a8895bab4fd1c35396" kindref="member">block_mmap_Alloc</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*addr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258" refid="group__block_1ga6860e2453328100456080ae5cf7d135f" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<sp/><ref refid="group__block_1ga6860e2453328100456080ae5cf7d135f" kindref="member">block_shm_Alloc</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*addr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278" refid="group__block_1gab1324798becb85cfb2a7354aed41cc5d" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__block_1gab1324798becb85cfb2a7354aed41cc5d" kindref="member">block_File</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>write)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289" refid="group__block_1gaac85f6b63dacc6d3b982942b728c898c" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__block_1gaac85f6b63dacc6d3b982942b728c898c" kindref="member">block_FilePath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>write)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_Cleanup<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*block)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>block_Release<sp/>((<ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*)block);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>block_cleanup_push(<sp/>block<sp/>)<sp/>vlc_cleanup_push<sp/>(block_Cleanup,<sp/>block)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"><sp/>*<sp/>Chains<sp/>of<sp/>blocks<sp/>functions<sp/>helper</highlight></codeline>
+<codeline lineno="304"><highlight class="comment"><sp/>****************************************************************************</highlight></codeline>
+<codeline lineno="305"><highlight class="comment"><sp/>*<sp/>-<sp/>block_ChainAppend<sp/>:<sp/>append<sp/>a<sp/>block<sp/>to<sp/>the<sp/>last<sp/>block<sp/>of<sp/>a<sp/>chain.<sp/>Try<sp/>to</highlight></codeline>
+<codeline lineno="306"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>avoid<sp/>using<sp/>with<sp/>a<sp/>lot<sp/>of<sp/>data<sp/>as<sp/>it&apos;s<sp/>really<sp/>slow,<sp/>prefer</highlight></codeline>
+<codeline lineno="307"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>block_ChainLastAppend,<sp/>p_block<sp/>can<sp/>be<sp/>NULL</highlight></codeline>
+<codeline lineno="308"><highlight class="comment"><sp/>*<sp/>-<sp/>block_ChainLastAppend<sp/>:<sp/>use<sp/>a<sp/>pointer<sp/>over<sp/>a<sp/>pointer<sp/>to<sp/>the<sp/>next<sp/>blocks,</highlight></codeline>
+<codeline lineno="309"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>update<sp/>it.</highlight></codeline>
+<codeline lineno="310"><highlight class="comment"><sp/>*<sp/>-<sp/>block_ChainRelease<sp/>:<sp/>release<sp/>a<sp/>chain<sp/>of<sp/>block</highlight></codeline>
+<codeline lineno="311"><highlight class="comment"><sp/>*<sp/>-<sp/>block_ChainExtract<sp/>:<sp/>extract<sp/>data<sp/>from<sp/>a<sp/>chain,<sp/>return<sp/>real<sp/>bytes<sp/>counts</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/>*<sp/>-<sp/>block_ChainGather<sp/>:<sp/>gather<sp/>a<sp/>chain,<sp/>free<sp/>it<sp/>and<sp/>return<sp/>one<sp/>block.</highlight></codeline>
+<codeline lineno="313"><highlight class="comment"><sp/>****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_ChainAppend(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>**pp_list,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_block<sp/>)</highlight></codeline>
+<codeline lineno="315"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>*pp_list<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pp_list<sp/>=<sp/>p_block;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p<sp/>=<sp/>*pp_list;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>p-&gt;p_next<sp/>)<sp/>p<sp/>=<sp/>p-&gt;p_next;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p-&gt;p_next<sp/>=<sp/>p_block;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_ChainLastAppend(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>***ppp_last,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_block<sp/>)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_last<sp/>=<sp/>p_block;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>**ppp_last<sp/>=<sp/>p_block;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>p_last-&gt;p_next<sp/>)<sp/>p_last<sp/>=<sp/>p_last-&gt;p_next;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>*ppp_last<sp/>=<sp/>&amp;p_last-&gt;p_next;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_ChainRelease(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_block<sp/>)</highlight></codeline>
+<codeline lineno="340"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>p_block<sp/>)</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_next<sp/>=<sp/>p_block-&gt;p_next;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block_Release(<sp/>p_block<sp/>);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_block<sp/>=<sp/>p_next;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>block_ChainExtract(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_list,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_max<sp/>)</highlight></codeline>
+<codeline lineno="350"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/>i_total<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p<sp/>=<sp/>(uint8_t*)p_data;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>p_list<sp/>&amp;&amp;<sp/>i_max<sp/>)</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_copy<sp/>=<sp/>__MIN(<sp/>i_max,<sp/>p_list-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(<sp/>p,<sp/>p_list-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>,<sp/>i_copy<sp/>);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_max<sp/><sp/><sp/>-=<sp/>i_copy;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_total<sp/>+=<sp/>i_copy;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+=<sp/>i_copy;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_list<sp/>=<sp/>p_list-&gt;p_next;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i_total;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>block_ChainProperties(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_list,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*pi_count,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*pi_size,<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>*pi_length<sp/>)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>i_length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>p_list<sp/>)</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_size<sp/>+=<sp/>p_list-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_length<sp/>+=<sp/>p_list-&gt;i_length;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_count++;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_list<sp/>=<sp/>p_list-&gt;p_next;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pi_size<sp/>)</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pi_size<sp/>=<sp/>i_size;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pi_length<sp/>)</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pi_length<sp/>=<sp/>i_length;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>pi_count<sp/>)</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pi_count<sp/>=<sp/>i_count;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*block_ChainGather(<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_list<sp/>)</highlight></codeline>
+<codeline lineno="391"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/>i_total<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>i_length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*g;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>p_list-&gt;p_next<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_list;<sp/><sp/></highlight><highlight class="comment">/*<sp/>Already<sp/>gathered<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>block_ChainProperties(<sp/>p_list,<sp/>NULL,<sp/>&amp;i_total,<sp/>&amp;i_length<sp/>);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>g<sp/>=<sp/><ref refid="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" kindref="member">block_Alloc</ref>(<sp/>i_total<sp/>);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!g<sp/>)</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>block_ChainExtract(<sp/>p_list,<sp/>g-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>,<sp/>g-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/>g-&gt;i_flags<sp/>=<sp/>p_list-&gt;i_flags;</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/>g-&gt;i_pts<sp/><sp/><sp/>=<sp/>p_list-&gt;i_pts;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>g-&gt;i_dts<sp/><sp/><sp/>=<sp/>p_list-&gt;i_dts;</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/>g-&gt;i_length<sp/>=<sp/>i_length;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>free<sp/>p_list<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>block_ChainRelease(<sp/>p_list<sp/>);</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="431" refid="group__fifo_1ga76589cb22cfd4e8b1a8d8eb90f5f8be0" refkind="member"><highlight class="normal">VLC_API<sp/>block_fifo_t<sp/>*<ref refid="group__fifo_1ga76589cb22cfd4e8b1a8d8eb90f5f8be0" kindref="member">block_FifoNew</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>VLC_USED<sp/>VLC_MALLOC;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="440" refid="group__fifo_1ga22f649fecc82b557f94653eb05ead15a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1ga22f649fecc82b557f94653eb05ead15a" kindref="member">block_FifoRelease</ref>(block_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="445" refid="group__fifo_1gadeb75f1d534d07686f7ee0eca76399de" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gadeb75f1d534d07686f7ee0eca76399de" kindref="member">block_FifoEmpty</ref>(block_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453" refid="group__fifo_1gabb730ded02a2635e7805c76f60f0efee" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gabb730ded02a2635e7805c76f60f0efee" kindref="member">block_FifoPut</ref>(block_fifo_t<sp/>*fifo,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*block);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461" refid="group__fifo_1ga3da75b8e3e7a7315b3ac39cfd1f7d3de" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__fifo_1ga3da75b8e3e7a7315b3ac39cfd1f7d3de" kindref="member">block_FifoGet</ref>(block_fifo_t<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="474" refid="group__fifo_1ga1fa9047826a8a0aec48c3281c572b23b" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__fifo_1ga1fa9047826a8a0aec48c3281c572b23b" kindref="member">block_FifoShow</ref>(block_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>block_FifoSize(block_fifo_t<sp/>*)<sp/>VLC_USED<sp/>VLC_DEPRECATED;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>block_FifoCount(block_fifo_t<sp/>*)<sp/>VLC_USED<sp/>VLC_DEPRECATED;</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">block_fifo_t<sp/>vlc_fifo_t;</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494" refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock</ref>(vlc_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="504" refid="group__fifo_1ga986af097c87339596885781781d4906a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1ga986af097c87339596885781781d4906a" kindref="member">vlc_fifo_Unlock</ref>(vlc_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514" refid="group__fifo_1gad4157ac4c846ae51abfc96837b4c2ac3" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gad4157ac4c846ae51abfc96837b4c2ac3" kindref="member">vlc_fifo_Signal</ref>(vlc_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527" refid="group__fifo_1ga3907f356b23df01c92864fd7eba77295" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1ga3907f356b23df01c92864fd7eba77295" kindref="member">vlc_fifo_Wait</ref>(vlc_fifo_t<sp/>*);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_fifo_WaitCond(vlc_fifo_t<sp/>*,<sp/><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="537" refid="group__fifo_1ga61a95a397b7b00ef4ea8a14f07d38619" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1ga61a95a397b7b00ef4ea8a14f07d38619" kindref="member">vlc_fifo_TimedWaitCond</ref>(vlc_fifo_t<sp/>*,<sp/><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref><sp/>*,<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref>);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"></highlight></codeline>
+<codeline lineno="550" refid="group__fifo_1gabfae6e5f9929f0b20280919b6ae1100a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gabfae6e5f9929f0b20280919b6ae1100a" kindref="member">vlc_fifo_QueueUnlocked</ref>(vlc_fifo_t<sp/>*,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"></highlight></codeline>
+<codeline lineno="562" refid="group__fifo_1ga2734c4d814d8f2b6b2c0edbb12e1bb92" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__fifo_1ga2734c4d814d8f2b6b2c0edbb12e1bb92" kindref="member">vlc_fifo_DequeueUnlocked</ref>(vlc_fifo_t<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="577" refid="group__fifo_1ga3d5ce7e8b5140220f23cdaa342ce0f0e" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<ref refid="group__fifo_1ga3d5ce7e8b5140220f23cdaa342ce0f0e" kindref="member">vlc_fifo_DequeueAllUnlocked</ref>(vlc_fifo_t<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="591" refid="group__fifo_1gae9dfe07e14f835524ed1bef319fddd8c" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gae9dfe07e14f835524ed1bef319fddd8c" kindref="member">vlc_fifo_GetCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vlc_fifo_t<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"></highlight></codeline>
+<codeline lineno="609" refid="group__fifo_1gac31ab97850c8dc420326e2c59291341d" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gac31ab97850c8dc420326e2c59291341d" kindref="member">vlc_fifo_GetBytes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vlc_fifo_t<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal">VLC_USED<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>vlc_fifo_IsEmpty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vlc_fifo_t<sp/>*fifo)</highlight></codeline>
+<codeline lineno="612"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__fifo_1gae9dfe07e14f835524ed1bef319fddd8c" kindref="member">vlc_fifo_GetCount</ref>(fifo)<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="614"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="616"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_fifo_Cleanup(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*fifo)</highlight></codeline>
+<codeline lineno="617"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__fifo_1ga986af097c87339596885781781d4906a" kindref="member">vlc_fifo_Unlock</ref>((vlc_fifo_t<sp/>*)fifo);</highlight></codeline>
+<codeline lineno="619"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vlc_fifo_CleanupPush(fifo)<sp/>vlc_cleanup_push(vlc_fifo_Cleanup,<sp/>fifo)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="623"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>VLC_BLOCK_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"/>
+  </compounddef>
+</doxygen>

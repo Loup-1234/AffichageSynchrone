@@ -1,0 +1,14 @@
+.. _exhale_function_vlc__events_8h_1a0f861ca2d3c415c4a43bf17f093df973:
+
+Function vlc_event_attach
+=========================
+
+- Defined in :ref:`file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_events.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: vlc_event_attach(vlc_event_manager_t *, vlc_event_type_t, vlc_event_callback_t, void *)
+   :project: TestAffichageSynchrone

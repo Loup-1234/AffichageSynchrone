@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__fs_8h" kind="file" language="C++">
+    <compoundname>vlc_fs.h</compoundname>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">dirent.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h</label>
+        <link refid="vlc__fs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dirent.h</label>
+      </node>
+      <node id="2">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <member refid="group__fd_1gaff8546bcd073ab5f14cfcfea33ae970a" kind="function"><name>vlc_open</name></member>
+      <member refid="group__fd_1gaefea762c641eadc895984c81b6938c6d" kind="function"><name>vlc_openat</name></member>
+      <member refid="group__fd_1ga49ed4726fbea4068224964070b768001" kind="function"><name>vlc_mkstemp</name></member>
+      <member refid="group__fd_1ga6f00c8143a69db1eb119b8c174acb187" kind="function"><name>vlc_dup</name></member>
+      <member refid="group__fd_1ga17e06dd3b2a0f8ffa4bdc1fa14e0dc6f" kind="function"><name>vlc_pipe</name></member>
+      <member refid="group__fd_1ga4dedb30ee2c959abc992de15b4d81607" kind="function"><name>vlc_memfd</name></member>
+      <member refid="group__fd_1gafb376789d9d716a4bbef5f8a19638d71" kind="function"><name>vlc_write</name></member>
+      <member refid="group__fd_1ga6771710089889fa64d928b35ebb2a70c" kind="function"><name>vlc_writev</name></member>
+      <member refid="group__fd_1ga323c8f656dd7f8612a1c7a1eb74d0187" kind="function"><name>vlc_close</name></member>
+      <member refid="group__file_1ga30cd710c055ba3e4018e186fe1e2c607" kind="function"><name>vlc_stat</name></member>
+      <member refid="group__file_1gad1c02c4ebf7413a21cb90986007c0bad" kind="function"><name>vlc_lstat</name></member>
+      <member refid="group__file_1gaa11d5cec32eccc0aa3b5be6c9af158a1" kind="function"><name>vlc_unlink</name></member>
+      <member refid="group__file_1gafcf3430aa9165d0006aed45001b79698" kind="function"><name>vlc_rename</name></member>
+      <member refid="group__file_1gad8675192624476fc15f28f89abd6a9bc" kind="function"><name>vlc_fopen</name></member>
+      <member refid="group__dir_1ga41c608bd6a568eca71a508cf544cdb3f" kind="function"><name>vlc_opendir</name></member>
+      <member refid="group__dir_1ga63802dea65b9a23e11bbf08ad6ffd863" kind="function"><name>vlc_readdir</name></member>
+      <member refid="group__dir_1ga9eaea3781c8d9f1413af5530423d573e" kind="function"><name>vlc_loaddir</name></member>
+      <member refid="group__dir_1ga951a66572dda976ad620456417782e6a" kind="function"><name>vlc_scandir</name></member>
+      <member refid="group__dir_1ga9e282d63fa02a73ea1ca9b2c688a2489" kind="function"><name>vlc_mkdir</name></member>
+      <member refid="group__dir_1ga89ff35e99ba8337809aa79602038de3e" kind="function"><name>vlc_getcwd</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The functions in this file help with using low-level Unix-style file descriptors, BSD sockets and directories. In general, they retain the prototype and most semantics from their respective standard equivalents. However, there are a few differences:<itemizedlist>
+<listitem><para>On Windows, file path arguments are expected in UTF-8 format. They are converted to UTF-16 internally, thus enabling access to paths outside of the local Windows ANSI code page.</para>
+</listitem><listitem><para>On POSIX systems, file descriptors are created with the close-on-exec flag set (atomically where possible), so that they do not leak to child process after fork-and-exec.</para>
+</listitem><listitem><para>vlc_scandir(), inspired by GNU scandir(), passes file names rather than dirent structure pointers to its callbacks.</para>
+</listitem><listitem><para><ref refid="group__sockets_1ga62d662e39d845037342ce07577113be5" kindref="member">vlc_accept()</ref> takes an extra boolean for nonblocking mode (compare with the flags parameter in POSIX.next accept4()).</para>
+</listitem><listitem><para>Writing functions do not emit a SIGPIPE signal in case of broken pipe. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_fs.h:<sp/>File<sp/>system<sp/>helpers</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2006-2010<sp/>Rémi<sp/>Denis-Courmont</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_FS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_FS_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dirent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">stat;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">iovec;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>stat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>stat<sp/>_stati64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>fstat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>fstat<sp/>_fstati64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>undef<sp/>lseek</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>lseek<sp/>_lseeki64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__ANDROID__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>lseek<sp/>lseek64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="group__fd_1gaff8546bcd073ab5f14cfcfea33ae970a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1gaff8546bcd073ab5f14cfcfea33ae970a" kindref="member">vlc_open</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,<sp/>...)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="group__fd_1gaefea762c641eadc895984c81b6938c6d" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1gaefea762c641eadc895984c81b6938c6d" kindref="member">vlc_openat</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,<sp/>...)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_mkstemp(<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="group__fd_1ga6f00c8143a69db1eb119b8c174acb187" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1ga6f00c8143a69db1eb119b8c174acb187" kindref="member">vlc_dup</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="group__fd_1ga17e06dd3b2a0f8ffa4bdc1fa14e0dc6f" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1ga17e06dd3b2a0f8ffa4bdc1fa14e0dc6f" kindref="member">vlc_pipe</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>[2])<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="group__fd_1ga4dedb30ee2c959abc992de15b4d81607" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1ga4dedb30ee2c959abc992de15b4d81607" kindref="member">vlc_memfd</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="group__fd_1gafb376789d9d716a4bbef5f8a19638d71" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__fd_1gafb376789d9d716a4bbef5f8a19638d71" kindref="member">vlc_write</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>const<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="group__fd_1ga6771710089889fa64d928b35ebb2a70c" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__fd_1ga6771710089889fa64d928b35ebb2a70c" kindref="member">vlc_writev</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>const<sp/>struct<sp/>iovec<sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="group__fd_1ga323c8f656dd7f8612a1c7a1eb74d0187" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__fd_1ga323c8f656dd7f8612a1c7a1eb74d0187" kindref="member">vlc_close</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="group__file_1ga30cd710c055ba3e4018e186fe1e2c607" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__file_1ga30cd710c055ba3e4018e186fe1e2c607" kindref="member">vlc_stat</ref>(const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/>struct<sp/>stat<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="group__file_1gad1c02c4ebf7413a21cb90986007c0bad" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__file_1gad1c02c4ebf7413a21cb90986007c0bad" kindref="member">vlc_lstat</ref>(const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/>struct<sp/>stat<sp/>*)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="group__file_1gaa11d5cec32eccc0aa3b5be6c9af158a1" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__file_1gaa11d5cec32eccc0aa3b5be6c9af158a1" kindref="member">vlc_unlink</ref>(const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="group__file_1gafcf3430aa9165d0006aed45001b79698" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__file_1gafcf3430aa9165d0006aed45001b79698" kindref="member">vlc_rename</ref>(const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*oldpath,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*newpath);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">VLC_API<sp/>FILE<sp/>*<sp/>vlc_fopen(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mode<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="group__dir_1ga41c608bd6a568eca71a508cf544cdb3f" refkind="member"><highlight class="normal">VLC_API<sp/>DIR<sp/>*<ref refid="group__dir_1ga41c608bd6a568eca71a508cf544cdb3f" kindref="member">vlc_opendir</ref>(const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dirname)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="group__dir_1ga63802dea65b9a23e11bbf08ad6ffd863" refkind="member"><highlight class="normal">VLC_API<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__dir_1ga63802dea65b9a23e11bbf08ad6ffd863" kindref="member">vlc_readdir</ref>(DIR<sp/>*dir)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_loaddir(<sp/>DIR<sp/>*dir,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***namelist,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*select)(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>),<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*compar)(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_scandir(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dirname,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***namelist,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*select)(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>),<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*compar)(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="group__dir_1ga9e282d63fa02a73ea1ca9b2c688a2489" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__dir_1ga9e282d63fa02a73ea1ca9b2c688a2489" kindref="member">vlc_mkdir</ref>(const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dirname,<sp/>mode_t<sp/>mode);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="group__dir_1ga89ff35e99ba8337809aa79602038de3e" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__dir_1ga89ff35e99ba8337809aa79602038de3e" kindref="member">vlc_getcwd</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(<sp/>_WIN32<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">vlc_DIR</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>_WDIR<sp/>*wdir;<sp/></highlight><highlight class="comment">/*<sp/>MUST<sp/>be<sp/>first,<sp/>see<sp/>&lt;vlc_fs.h&gt;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*entry;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DWORD<sp/>drives;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>insert_dot_dot;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>u;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}<sp/>vlc_DIR;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_closedir(<sp/>DIR<sp/>*dir<sp/>)</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_DIR<sp/>*vdir<sp/>=<sp/>(vlc_DIR<sp/>*)dir;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>_WDIR<sp/>*wdir<sp/>=<sp/>vdir-&gt;wdir;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>free(<sp/>vdir-&gt;entry<sp/>);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>free(<sp/>vdir<sp/>);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(wdir<sp/>!=<sp/>NULL)<sp/>?<sp/>_wclosedir(<sp/>wdir<sp/>)<sp/>:<sp/>0;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>undef<sp/>closedir</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>closedir<sp/>vlc_closedir</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_rewinddir(<sp/>DIR<sp/>*dir<sp/>)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>_WDIR<sp/>*wdir<sp/>=<sp/>*(_WDIR<sp/>**)dir;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>_wrewinddir(<sp/>wdir<sp/>);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>undef<sp/>rewinddir</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>rewinddir<sp/>vlc_rewinddir</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__ANDROID__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>lseek<sp/>lseek64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h"/>
+  </compounddef>
+</doxygen>

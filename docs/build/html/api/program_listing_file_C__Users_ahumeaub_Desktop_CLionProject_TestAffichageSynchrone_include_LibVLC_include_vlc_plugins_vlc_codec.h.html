@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_codec.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_codec.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_codec.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_codec.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-codec-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-codec-h"></span><h1>Program Listing for File vlc_codec.h<a class="headerlink" href="#program-listing-for-file-vlc-codec-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_codec.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-codec-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_codec.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_codec.h: Definition of the decoder and encoder structures</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2003 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Gildas Bazin &lt;gbazin@netcourrier.com&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_CODEC_H</span>
+<span class="cp">#define VLC_CODEC_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;assert.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_block.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_es.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_picture.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_subpicture.h&gt;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">decoder_owner_sys_t</span><span class="w"> </span><span class="n">decoder_owner_sys_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">decoder_cc_desc_t</span><span class="w"> </span><span class="n">decoder_cc_desc_t</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * BIG FAT WARNING : the code relies in the first 4 members of filter_t</span>
+<span class="cm"> * and decoder_t to be the same, so if you have anything to add, do it</span>
+<span class="cm"> * at the end of the structure.</span>
+<span class="cm"> */</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">decoder_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="cm">/* Module properties */</span>
+<span class="w">    </span><span class="n">module_t</span><span class="w"> </span><span class="o">*</span><span class="w">          </span><span class="n">p_module</span><span class="p">;</span>
+<span class="w">    </span><span class="n">decoder_sys_t</span><span class="w"> </span><span class="o">*</span><span class="w">     </span><span class="n">p_sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Input format ie from demuxer (XXX: a lot of field could be invalid) */</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w">         </span><span class="n">fmt_in</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Output format of decoder/packetizer */</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w">         </span><span class="n">fmt_out</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Tell the decoder if it is allowed to drop frames */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">                </span><span class="n">b_frame_drop_allowed</span><span class="p">;</span>
+
+<span class="cp">#   define VLCDEC_SUCCESS   VLC_SUCCESS</span>
+<span class="cp">#   define VLCDEC_ECRITICAL VLC_EGENERIC</span>
+<span class="cp">#   define VLCDEC_RELOAD    (-100)</span>
+<span class="w">    </span><span class="cm">/* This function is called to decode one packetized block.</span>
+<span class="cm">     *</span>
+<span class="cm">     * The module implementation will own the input block (p_block) and should</span>
+<span class="cm">     * process and release it. Depending of the decoder type, the module should</span>
+<span class="cm">     * send output frames/blocks via decoder_QueueVideo(), decoder_QueueAudio()</span>
+<span class="cm">     * or decoder_QueueSub().</span>
+<span class="cm">     *</span>
+<span class="cm">     * If p_block is NULL, the decoder asks the module to drain itself. The</span>
+<span class="cm">     * module should return all available output frames/block via the queue</span>
+<span class="cm">     * functions.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Return values can be:</span>
+<span class="cm">     *  VLCDEC_SUCCESS: pf_decode will be called again</span>
+<span class="cm">     *  VLCDEC_ECRITICAL: in case of critical error, pf_decode won&#39;t be called</span>
+<span class="cm">     *  again.</span>
+<span class="cm">     *  VLCDEC_RELOAD: Request that the decoder should be reloaded. The current</span>
+<span class="cm">     *  module will be unloaded. Reloading a module may cause a loss of frames.</span>
+<span class="cm">     *  When returning this status, the implementation shouldn&#39;t release or</span>
+<span class="cm">     *  modify the p_block in argument (The same p_block will be feed to the</span>
+<span class="cm">     *  next decoder module).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">                 </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_decode</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_block</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* This function is called in a loop with the same pp_block argument until</span>
+<span class="cm">     * it returns NULL. This allows a module implementation to return more than</span>
+<span class="cm">     * one output blocks for one input block.</span>
+<span class="cm">     *</span>
+<span class="cm">     * pp_block or *pp_block can be NULL.</span>
+<span class="cm">     *</span>
+<span class="cm">     * If pp_block and *pp_block are not NULL, the module implementation will</span>
+<span class="cm">     * own the input block (*pp_block) and should process and release it. The</span>
+<span class="cm">     * module can also process a part of the block. In that case, it should</span>
+<span class="cm">     * modify (*pp_block)-&gt;p_buffer/i_buffer accordingly and return a valid</span>
+<span class="cm">     * output block. The module can also set *pp_block to NULL when the input</span>
+<span class="cm">     * block is consumed.</span>
+<span class="cm">     *</span>
+<span class="cm">     * If pp_block is not NULL but *pp_block is NULL, a previous call of the pf</span>
+<span class="cm">     * function has set the *pp_block to NULL. Here, the module can return new</span>
+<span class="cm">     * output block for the same, already processed, input block (the</span>
+<span class="cm">     * pf_packetize function will be called as long as the module return an</span>
+<span class="cm">     * output block).</span>
+<span class="cm">     *</span>
+<span class="cm">     * When the pf function returns NULL, the next call to this function will</span>
+<span class="cm">     * have a new a valid pp_block (if the packetizer is not drained).</span>
+<span class="cm">     *</span>
+<span class="cm">     * If pp_block is NULL, the packetizer asks the module to drain itself. In</span>
+<span class="cm">     * that case, the module has to return all output frames available (the</span>
+<span class="cm">     * pf_packetize function will be called as long as the module return an</span>
+<span class="cm">     * output block).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w">           </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_packetize</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_block</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">                </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_flush</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Closed Caption (CEA 608/708) extraction.</span>
+<span class="cm">     * If set, it *may* be called after pf_packetize returned data. It should</span>
+<span class="cm">     * return CC for the pictures returned by the last pf_packetize call only,</span>
+<span class="cm">     * channel bitmaps will be used to known which cc channel are present (but</span>
+<span class="cm">     * globaly, not necessary for the current packet. Video decoders should use</span>
+<span class="cm">     * the decoder_QueueCc() function to pass closed captions. */</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w">           </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_get_cc</span><span class="w"> </span><span class="p">)</span><span class="w">      </span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">decoder_cc_desc_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Meta data at codec level</span>
+<span class="cm">     *  The decoder owner set it back to NULL once it has retreived what it needs.</span>
+<span class="cm">     *  The decoder owner is responsible of its release except when you overwrite it.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">vlc_meta_t</span><span class="w">          </span><span class="o">*</span><span class="n">p_description</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * Owner fields</span>
+<span class="cm">     * XXX You MUST not use them directly.</span>
+<span class="cm">     */</span>
+
+<span class="w">    </span><span class="cm">/* Video output callbacks</span>
+<span class="cm">     * XXX use decoder_NewPicture */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_vout_format_update</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">picture_t</span><span class="w">      </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf_vout_buffer_new</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_extra_picture_buffers</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Audio output callbacks */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_aout_format_update</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* SPU output callbacks</span>
+<span class="cm">     * XXX use decoder_NewSubpicture */</span>
+<span class="w">    </span><span class="n">subpicture_t</span><span class="w">   </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf_spu_buffer_new</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">subpicture_updater_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Input attachments</span>
+<span class="cm">     * XXX use decoder_GetInputAttachments */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_get_attachments</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dec</span><span class="p">,</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">***</span><span class="n">ppp_attachment</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_attachment</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Display date</span>
+<span class="cm">     * XXX use decoder_GetDisplayDate */</span>
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w">      </span><span class="p">(</span><span class="o">*</span><span class="n">pf_get_display_date</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Display rate</span>
+<span class="cm">     * XXX use decoder_GetDisplayRate */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_get_display_rate</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* XXX use decoder_QueueVideo or decoder_QueueVideoWithCc */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_queue_video</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/* XXX use decoder_QueueAudio */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_queue_audio</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/* XXX use decoder_QueueCC */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_queue_cc</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">decoder_cc_desc_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/* XXX use decoder_QueueSub */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="p">(</span><span class="o">*</span><span class="n">pf_queue_sub</span><span class="p">)(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">             </span><span class="o">*</span><span class="n">p_queue_ctx</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Private structure for the owner of the decoder */</span>
+<span class="w">    </span><span class="n">decoder_owner_sys_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_owner</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/* struct for packetizer get_cc polling/decoder queue_cc</span>
+<span class="cm"> * until we have a proper metadata way */</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">decoder_cc_desc_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i_608_channels</span><span class="p">;</span><span class="w">  </span><span class="cm">/* 608 channels bitmap */</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">i_708_channels</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 708 */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_reorder_depth</span><span class="p">;</span><span class="w">     </span><span class="cm">/* reorder depth, -1 for no reorder, 0 for old P/B flag based */</span>
+<span class="p">};</span>
+
+
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">encoder_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="cm">/* Module properties */</span>
+<span class="w">    </span><span class="n">module_t</span><span class="w"> </span><span class="o">*</span><span class="w">          </span><span class="n">p_module</span><span class="p">;</span>
+<span class="w">    </span><span class="n">encoder_sys_t</span><span class="w"> </span><span class="o">*</span><span class="w">     </span><span class="n">p_sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Properties of the input data fed to the encoder */</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w">         </span><span class="n">fmt_in</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Properties of the output of the encoder */</span>
+<span class="w">    </span><span class="n">es_format_t</span><span class="w">         </span><span class="n">fmt_out</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w">           </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_encode_video</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="n">encoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w">           </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_encode_audio</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="n">encoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w">           </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_encode_sub</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="n">encoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Common encoder options */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_threads</span><span class="p">;</span><span class="w">               </span><span class="cm">/* Number of threads to use during encoding */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_iframes</span><span class="p">;</span><span class="w">               </span><span class="cm">/* One I frame per i_iframes */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_bframes</span><span class="p">;</span><span class="w">               </span><span class="cm">/* One B frame per i_bframes */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_tolerance</span><span class="p">;</span><span class="w">             </span><span class="cm">/* Bitrate tolerance */</span>
+
+<span class="w">    </span><span class="cm">/* Encoder config */</span>
+<span class="w">    </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_cfg</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">decoder_UpdateVideoFormat</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">fmt_in</span><span class="p">.</span><span class="n">i_cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">VIDEO_ES</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">fmt_in</span><span class="p">.</span><span class="n">i_cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">VIDEO_ES</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_vout_format_update</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_vout_format_update</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">decoder_NewPicture</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_vout_buffer_new</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">decoder_AbortPictures</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_abort</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">decoder_QueueVideo</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_pic</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">p_pic</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_video</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_video</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">p_pic</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">decoder_QueueCc</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_cc</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">decoder_cc_desc_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_desc</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_cc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">block_Release</span><span class="p">(</span><span class="w"> </span><span class="n">p_cc</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_cc</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">p_cc</span><span class="p">,</span><span class="w"> </span><span class="n">p_desc</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">decoder_QueueAudio</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_aout_buf</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">p_aout_buf</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_audio</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_audio</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">p_aout_buf</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">decoder_QueueSub</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_spu</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">p_spu</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_sub</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_queue_sub</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">p_spu</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">decoder_UpdateAudioFormat</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="n">dec</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">fmt_in</span><span class="p">.</span><span class="n">i_cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AUDIO_ES</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">fmt_in</span><span class="p">.</span><span class="n">i_cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AUDIO_ES</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_aout_format_update</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dec</span><span class="o">-&gt;</span><span class="n">pf_aout_format_update</span><span class="p">(</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">decoder_NewAudioBuffer</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_nb_samples</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">decoder_NewSubpicture</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">subpicture_updater_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">decoder_GetInputAttachments</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_attachment_t</span><span class="w"> </span><span class="o">***</span><span class="n">ppp_attachment</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pi_attachment</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="n">decoder_GetDisplayDate</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">decoder_GetDisplayRate</span><span class="p">(</span><span class="w"> </span><span class="n">decoder_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cp">#endif </span><span class="cm">/* _VLC_CODEC_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structvout__window__t" kind="struct" language="C++" prot="public">
+    <compoundname>vout_window_t</compoundname>
+    <includes refid="vlc__vout__window_8h" local="no">vlc_vout_window.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structvout__window__t_1aa67ac913f2e9f9be6e167293e99048b4" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> unsigned</type>
+        <definition>VLC_COMMON_MEMBERS unsigned vout_window_t::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>vout_window_t::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Window handle type</para>
+<para>This identified the windowing system and protocol that the window needs to use. This also selects which member of the <ref refid="structvout__window__t_1a1eeeb4504fc9493c90dca7c22e710482" kindref="member">handle</ref> union and the <ref refid="structvout__window__t_1aceee85b08f81e29785877e262ac4bfdd" kindref="member">display</ref> union are to be set.</para>
+<para>The possible values are defined in <ref refid="group__video__window_1ga61d87f40cd3e2165ead8e755febbc403" kindref="member">vout_window_type</ref>.</para>
+<para>VOUT_WINDOW_TYPE_INVALID is a special placeholder type. It means that any windowing system is acceptable. In that case, the plugin must set its actual type during activation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="146" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a05390f029a052a80975340c02d9c9530" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vout_window_t::hwnd</definition>
+        <argsstring></argsstring>
+        <name>hwnd</name>
+        <qualifiedname>vout_window_t::hwnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Win32 window handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="157" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1ab89c2299b2b3ba839c49427d0216b35a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t vout_window_t::xid</definition>
+        <argsstring></argsstring>
+        <name>xid</name>
+        <qualifiedname>vout_window_t::xid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>X11 windows ID </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="158" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a8052fa38402dd68bd7107380c1c3ad2b" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vout_window_t::nsobject</definition>
+        <argsstring></argsstring>
+        <name>nsobject</name>
+        <qualifiedname>vout_window_t::nsobject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mac OSX view object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="159" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a9f6f7d22ca20ae51ad248a4cbbac2f1e" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vout_window_t::anativewindow</definition>
+        <argsstring></argsstring>
+        <name>anativewindow</name>
+        <qualifiedname>vout_window_t::anativewindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Android native window </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="160" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1ad37a0a47196922b6da0b06f16fcf6ac4" prot="public" static="no" mutable="no">
+        <type>struct wl_surface *</type>
+        <definition>struct wl_surface* vout_window_t::wl</definition>
+        <argsstring></argsstring>
+        <name>wl</name>
+        <qualifiedname>vout_window_t::wl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wayland surface (client pointer) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="161" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a1eeeb4504fc9493c90dca7c22e710482" prot="public" static="no" mutable="no">
+        <type>union <ref refid="structvout__window__t" kindref="compound">vout_window_t</ref></type>
+        <definition>union vout_window_t vout_window_t::handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <qualifiedname>vout_window_t::handle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Window handle (mandatory)</para>
+<para>This must be filled by the plugin upon activation.</para>
+<para>Depending on the <ref refid="structvout__window__t_1aa67ac913f2e9f9be6e167293e99048b4" kindref="member">type</ref> above, a different member of this union is used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="162" column="12"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a712e0759b8d42aaa6e149a13974754dd" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* vout_window_t::x11</definition>
+        <argsstring></argsstring>
+        <name>x11</name>
+        <qualifiedname>vout_window_t::x11</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>X11 display string (NULL = use default) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="173" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1ac356c7639014075492f93f362fcaf753" prot="public" static="no" mutable="no">
+        <type>struct wl_display *</type>
+        <definition>struct wl_display* vout_window_t::wl</definition>
+        <argsstring></argsstring>
+        <name>wl</name>
+        <qualifiedname>vout_window_t::wl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wayland display (client pointer) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="174" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1aceee85b08f81e29785877e262ac4bfdd" prot="public" static="no" mutable="no">
+        <type>union <ref refid="structvout__window__t" kindref="compound">vout_window_t</ref></type>
+        <definition>union vout_window_t vout_window_t::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <qualifiedname>vout_window_t::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display server (mandatory)</para>
+<para>This must be filled by the plugin upon activation.</para>
+<para>The window handle is relative to the display server. The exact meaning of the display server depends on the window handle type. Not all window handle type provide a display server field. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="175" column="13"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a14d7620366a80dfc1df6979979e9f091" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* vout_window_t::control) (vout_window_t *, int query, va_list)</definition>
+        <argsstring>)(vout_window_t *, int query, va_list)</argsstring>
+        <name>control</name>
+        <qualifiedname>vout_window_t::control</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control callback (mandatory)</para>
+<para>This callback handles some control request regarding the window. See <ref refid="group__video__window_1ga45386cbc470c2d75ea9a6ce3b6f749d6" kindref="member">vout_window_control</ref>.</para>
+<para>This field should not be used directly when manipulating a window. vout_window_Control() should be used instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="186" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1aced7c8b3e5dbd120e4776128ce81f311" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool vout_window_t::has_double_click</definition>
+        <argsstring></argsstring>
+        <name>has_double_click</name>
+        <qualifiedname>vout_window_t::has_double_click</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether double click events are sent, or need to be emulated </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="189" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a94678e72b63b2402ff55b800c622f206" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structvout__window__t" kindref="compound">vout_window_t</ref></type>
+        <definition>struct vout_window_t vout_window_t::info</definition>
+        <argsstring></argsstring>
+        <name>info</name>
+        <qualifiedname>vout_window_t::info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="191" column="10"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a20797b45c28a63896beb54c834d72303" prot="public" static="no" mutable="no">
+        <type>vout_window_sys_t *</type>
+        <definition>vout_window_sys_t* vout_window_t::sys</definition>
+        <argsstring></argsstring>
+        <name>sys</name>
+        <qualifiedname>vout_window_t::sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="197" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvout__window__t_1a5c0da44a203dfcd902f0efc10985d527" prot="public" static="no" mutable="no">
+        <type><ref refid="structvout__window__owner" kindref="compound">vout_window_owner_t</ref></type>
+        <definition>vout_window_owner_t vout_window_t::owner</definition>
+        <argsstring></argsstring>
+        <name>owner</name>
+        <qualifiedname>vout_window_t::owner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="199" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Graphical window</para>
+<para>This structure is an abstract interface to the windowing system. The window is normally used to draw video (and subpictures) into, but it can also be used for other purpose (e.g. OpenGL visualization).</para>
+<para>The window is responsible for providing a window handle, whose exact meaning depends on the windowing system. It also must report some events such as user input (keyboard, mouse) and window resize.</para>
+<para>Finally, it must support some control requests such as for fullscreen mode. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>vout_window_owner</label>
+        <link refid="structvout__window__owner"/>
+      </node>
+      <node id="1">
+        <label>vout_window_t</label>
+        <link refid="structvout__window__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+owner</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" line="130" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vout_window.h" bodystart="130" bodyend="200"/>
+    <listofallmembers>
+      <member refid="structvout__window__t_1a9f6f7d22ca20ae51ad248a4cbbac2f1e" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>anativewindow</name></member>
+      <member refid="structvout__window__t_1a14d7620366a80dfc1df6979979e9f091" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>control</name></member>
+      <member refid="structvout__window__t_1aceee85b08f81e29785877e262ac4bfdd" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>display</name></member>
+      <member refid="structvout__window__t_1a1eeeb4504fc9493c90dca7c22e710482" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>handle</name></member>
+      <member refid="structvout__window__t_1aced7c8b3e5dbd120e4776128ce81f311" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>has_double_click</name></member>
+      <member refid="structvout__window__t_1a05390f029a052a80975340c02d9c9530" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>hwnd</name></member>
+      <member refid="structvout__window__t_1a94678e72b63b2402ff55b800c622f206" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>info</name></member>
+      <member refid="structvout__window__t_1a8052fa38402dd68bd7107380c1c3ad2b" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>nsobject</name></member>
+      <member refid="structvout__window__t_1a5c0da44a203dfcd902f0efc10985d527" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>owner</name></member>
+      <member refid="structvout__window__t_1a20797b45c28a63896beb54c834d72303" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>sys</name></member>
+      <member refid="structvout__window__t_1aa67ac913f2e9f9be6e167293e99048b4" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>type</name></member>
+      <member refid="structvout__window__t_1ad37a0a47196922b6da0b06f16fcf6ac4" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>wl</name></member>
+      <member refid="structvout__window__t_1ac356c7639014075492f93f362fcaf753" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>wl</name></member>
+      <member refid="structvout__window__t_1a712e0759b8d42aaa6e149a13974754dd" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>x11</name></member>
+      <member refid="structvout__window__t_1ab89c2299b2b3ba839c49427d0216b35a" prot="public" virt="non-virtual"><scope>vout_window_t</scope><name>xid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

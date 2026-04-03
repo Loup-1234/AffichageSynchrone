@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__interrupt__sleep" kind="group">
+    <compoundname>interrupt_sleep</compoundname>
+    <title>Interruptible sleep functions</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__interrupt__sleep_1ga3452730f2502295ab9dbcd425f057a64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_sem_wait_i11e</definition>
+        <argsstring>(vlc_sem_t *)</argsstring>
+        <name>vlc_sem_wait_i11e</name>
+        <param>
+          <type><ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interruptible variant of <ref refid="group__thread_1gad690a85e538e894a8646788466a1fcbb" kindref="member">vlc_sem_wait()</ref>.</para>
+<para>Waits on a semaphore like <ref refid="group__thread_1gad690a85e538e894a8646788466a1fcbb" kindref="member">vlc_sem_wait()</ref>. If the calling thread has an interruption context (as set by <ref refid="group__interrupt__context_1ga493327cca117b02f4361992444330c71" kindref="member">vlc_interrupt_set()</ref>), and another thread invokes <ref refid="group__interrupt__context_1ga6ad7acf9e5d0639e9e0ffc81b477dc1b" kindref="member">vlc_interrupt_raise()</ref> on that context, the semaphore is incremented.</para>
+<para><simplesect kind="warning"><para>The calling thread should be the only thread ever to wait on the specified semaphore. Otherwise, interruptions may not be delivered accurately (the wrong thread may be woken up).</para>
+</simplesect>
+<simplesect kind="note"><para>This function is (always) a cancellation point.</para>
+</simplesect>
+<simplesect kind="return"><para>EINTR if the semaphore was incremented due to an interruption, otherwise zero. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="63" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="63" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga8a7768b29bb48325af490ae45c1e9112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_mwait_i11e</definition>
+        <argsstring>(vlc_tick_t)</argsstring>
+        <name>vlc_mwait_i11e</name>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interruptible variant of mwait().</para>
+<para>Waits for a specified timestamp or, if the calling thread has an interruption context, an interruption.</para>
+<para><simplesect kind="return"><para>EINTR if an interruption occurred, otherwise 0 once the timestamp is reached. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="74" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="74" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga14953a1074d3d00a16cd00b3c0bda974" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_msleep_i11e</definition>
+        <argsstring>(vlc_tick_t delay)</argsstring>
+        <name>vlc_msleep_i11e</name>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interruptible variant of msleep().</para>
+<para>Waits for a specified timeout duration or, if the calling thread has an interruption context, an interruption.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timeout value (in microseconds)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>EINTR if an interruption occurred, otherwise 0 once the timeout expired. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="87" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1gac9afbeb073fe629c591b75d5ff90f140" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_poll_i11e</definition>
+        <argsstring>(struct pollfd *, unsigned, int)</argsstring>
+        <name>vlc_poll_i11e</name>
+        <param>
+          <type>struct pollfd *</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interruptible variant of poll().</para>
+<para>Waits for file descriptors I/O events, a timeout, a signal or a VLC I/O interruption. Except for VLC I/O interruptions, this function behaves just like the standard poll().</para>
+<para><simplesect kind="note"><para>This function is always a cancellation point (as poll()). </para>
+</simplesect>
+<simplesect kind="see"><para>poll() manual page</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>table of events to wait for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nfds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of entries in the table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time to wait in milliseconds or -1 for infinite</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A strictly positive result represent the number of pending events. 0 is returned if the time-out is reached without events. -1 is returned if a VLC I/O interrupt occurs (and errno is set to EINTR) or if an error occurs. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="111" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="111" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga46585c2dc5bd45254111f3d7d522185a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_readv_i11e</definition>
+        <argsstring>(int fd, struct iovec *, int)</argsstring>
+        <name>vlc_readv_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>struct iovec *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="113" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="113" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1gae00b9378d8260a3dd5046f45b12f5a5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_writev_i11e</definition>
+        <argsstring>(int fd, const struct iovec *, int)</argsstring>
+        <name>vlc_writev_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const struct iovec *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="114" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="114" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga2ec5295cb51673a8320ad1607650d1aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_read_i11e</definition>
+        <argsstring>(int fd, void *, size_t)</argsstring>
+        <name>vlc_read_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="115" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="115" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1gac6d4f7482c98245d2fc4b5311338bca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_write_i11e</definition>
+        <argsstring>(int fd, const void *, size_t)</argsstring>
+        <name>vlc_write_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="116" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="116" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1gacf6e2392d27167dcfea77dcd578efa01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_recvmsg_i11e</definition>
+        <argsstring>(int fd, struct msghdr *, int flags)</argsstring>
+        <name>vlc_recvmsg_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>struct msghdr *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="118" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="118" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga0ee57749ab063d0b8094e05db333e2af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_sendmsg_i11e</definition>
+        <argsstring>(int fd, const struct msghdr *, int flags)</argsstring>
+        <name>vlc_sendmsg_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const struct msghdr *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="119" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="119" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1gad545c26c488809cdcbcbbd0cba1ab845" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_recvfrom_i11e</definition>
+        <argsstring>(int fd, void *, size_t, int flags, struct sockaddr *, socklen_t *)</argsstring>
+        <name>vlc_recvfrom_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>struct sockaddr *</type>
+        </param>
+        <param>
+          <type>socklen_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="121" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="121" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga9c1818738a1ad5364de119beb5af4ca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_sendto_i11e</definition>
+        <argsstring>(int fd, const void *, size_t, int flags, const struct sockaddr *, socklen_t)</argsstring>
+        <name>vlc_sendto_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const struct sockaddr *</type>
+        </param>
+        <param>
+          <type>socklen_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="123" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="123" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga7d43b40cf69aeb75afdb80151c793fcc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ssize_t</type>
+        <definition>static ssize_t vlc_recv_i11e</definition>
+        <argsstring>(int fd, void *buf, size_t len, int flags)</argsstring>
+        <name>vlc_recv_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="126" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1gaa92a36914255a418b8e9ac5139d18ac1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ssize_t</type>
+        <definition>static ssize_t vlc_send_i11e</definition>
+        <argsstring>(int fd, const void *buf, size_t len, int flags)</argsstring>
+        <name>vlc_send_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="132" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga4635a067fb92a743b561ca7c6ef58693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_accept_i11e</definition>
+        <argsstring>(int fd, struct sockaddr *, socklen_t *, bool)</argsstring>
+        <name>vlc_accept_i11e</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>struct sockaddr *</type>
+        </param>
+        <param>
+          <type>socklen_t *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="137" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="137" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga876cba0868915478d41ff496ecd9cdc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_interrupt_register</definition>
+        <argsstring>(void(*cb)(void *), void *opaque)</argsstring>
+        <name>vlc_interrupt_register</name>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>opaque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers a custom interrupt handler.</para>
+<para>Registers a custom callback as interrupt handler for the calling thread. The callback must be unregistered with vlc_interrupt_unregister() before thread termination and before any further callback registration.</para>
+<para>If the calling thread has no interruption context, this function has no effects. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="149" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="149" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interrupt__sleep_1ga6bf76a4b5e4f24e2ff437bec451a7791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_interrupt_unregister</definition>
+        <argsstring>(void)</argsstring>
+        <name>vlc_interrupt_unregister</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" line="151" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h" declline="151" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

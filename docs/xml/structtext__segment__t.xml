@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structtext__segment__t" kind="struct" language="C++" prot="public">
+    <compoundname>text_segment_t</compoundname>
+    <includes refid="vlc__text__style_8h" local="no">vlc_text_style.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtext__segment__t_1a59051a255f097202d07798e5d4024823" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* text_segment_t::psz_text</definition>
+        <argsstring></argsstring>
+        <name>psz_text</name>
+        <qualifiedname>text_segment_t::psz_text</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>text string of the segment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" line="132" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtext__segment__t_1abb3d01134c0b9890b441d411516eea88" prot="public" static="no" mutable="no">
+        <type><ref refid="structtext__style__t" kindref="compound">text_style_t</ref> *</type>
+        <definition>text_style_t* text_segment_t::style</definition>
+        <argsstring></argsstring>
+        <name>style</name>
+        <qualifiedname>text_segment_t::style</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>style applied to this segment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" line="133" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtext__segment__t_1a5765ca33c93abfbaf40f16cc59df33cf" prot="public" static="no" mutable="no">
+        <type><ref refid="structtext__segment__t" kindref="compound">text_segment_t</ref> *</type>
+        <definition>text_segment_t* text_segment_t::p_next</definition>
+        <argsstring></argsstring>
+        <name>p_next</name>
+        <qualifiedname>text_segment_t::p_next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>next segment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" line="134" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Text segment for subtitles</para>
+<para>This structure is used to store a formatted text, with mixed styles Every segment is comprised of one text and a unique style</para>
+<para>On style change, a new segment is created with the next part of text and the new style, and chained to the list</para>
+<para>Create with text_segment_New and clean the chain with text_segment_ChainDelete </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>text_segment_t</label>
+        <link refid="structtext__segment__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+style</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>text_style_t</label>
+        <link refid="structtext__style__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" line="131" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_text_style.h" bodystart="131" bodyend="135"/>
+    <listofallmembers>
+      <member refid="structtext__segment__t_1a5765ca33c93abfbaf40f16cc59df33cf" prot="public" virt="non-virtual"><scope>text_segment_t</scope><name>p_next</name></member>
+      <member refid="structtext__segment__t_1a59051a255f097202d07798e5d4024823" prot="public" virt="non-virtual"><scope>text_segment_t</scope><name>psz_text</name></member>
+      <member refid="structtext__segment__t_1abb3d01134c0b9890b441d411516eea88" prot="public" virt="non-virtual"><scope>text_segment_t</scope><name>style</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

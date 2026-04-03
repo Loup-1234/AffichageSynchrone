@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_subpicture.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_subpicture.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_subpicture.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_subpicture.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-subpicture-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-subpicture-h"></span><h1>Program Listing for File vlc_subpicture.h<a class="headerlink" href="#program-listing-for-file-vlc-subpicture-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_subpicture.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-subpicture-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_subpicture.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_subpicture.h: subpicture definitions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999 - 2009 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Vincent Seguin &lt;seguin@via.ecp.fr&gt;</span>
+<span class="cm"> *          Samuel Hocevar &lt;sam@via.ecp.fr&gt;</span>
+<span class="cm"> *          Olivier Aubert &lt;oaubert 47 videolan d07 org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_SUBPICTURE_H</span>
+<span class="cp">#define VLC_SUBPICTURE_H 1</span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_picture.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_text_style.h&gt;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_region_private_t</span><span class="w"> </span><span class="n">subpicture_region_private_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_region_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">video_format_t</span><span class="w">  </span><span class="n">fmt</span><span class="p">;</span>
+<span class="w">    </span><span class="n">picture_t</span><span class="w">       </span><span class="o">*</span><span class="n">p_picture</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_align</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_alpha</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Parameters for text regions (p_picture to be rendered) */</span>
+<span class="w">    </span><span class="n">text_segment_t</span><span class="w">  </span><span class="o">*</span><span class="n">p_text</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_text_align</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">            </span><span class="n">b_noregionbg</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">            </span><span class="n">b_gridmode</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">            </span><span class="n">b_balanced_text</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_max_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_max_height</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">subpicture_region_private_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_private</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/* Subpicture region position flags */</span>
+<span class="cp">#define SUBPICTURE_ALIGN_LEFT       0x1</span>
+<span class="cp">#define SUBPICTURE_ALIGN_RIGHT      0x2</span>
+<span class="cp">#define SUBPICTURE_ALIGN_TOP        0x4</span>
+<span class="cp">#define SUBPICTURE_ALIGN_BOTTOM     0x8</span>
+<span class="cp">#define SUBPICTURE_ALIGN_MASK ( SUBPICTURE_ALIGN_LEFT|SUBPICTURE_ALIGN_RIGHT| \</span>
+<span class="cp">                                SUBPICTURE_ALIGN_TOP |SUBPICTURE_ALIGN_BOTTOM )</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subpicture_region_New</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">subpicture_region_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_region</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">subpicture_region_ChainDelete</span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_head</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="n">subpicture_region_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_region</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_updater_sys_t</span><span class="w"> </span><span class="n">subpicture_updater_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="p">(</span><span class="o">*</span><span class="n">pf_validate</span><span class="p">)(</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                         </span><span class="kt">bool</span><span class="w"> </span><span class="n">has_src_changed</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt_src</span><span class="p">,</span>
+<span class="w">                         </span><span class="kt">bool</span><span class="w"> </span><span class="n">has_dst_changed</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt_dst</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">vlc_tick_t</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_update</span><span class="p">)</span><span class="w">  </span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt_src</span><span class="p">,</span>
+<span class="w">                         </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt_dst</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_destroy</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">subpicture_updater_sys_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_sys</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">subpicture_updater_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_private_t</span><span class="w"> </span><span class="n">subpicture_private_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">subpicture_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_channel</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">         </span><span class="n">i_order</span><span class="p">;</span>
+<span class="w">    </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w">  </span><span class="n">p_next</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">subpicture_region_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_region</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w">      </span><span class="n">i_start</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_tick_t</span><span class="w">      </span><span class="n">i_stop</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">            </span><span class="n">b_ephemer</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">            </span><span class="n">b_fade</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w">         </span><span class="n">b_subtitle</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">         </span><span class="n">b_absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">          </span><span class="n">i_original_picture_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">          </span><span class="n">i_original_picture_height</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">          </span><span class="n">i_alpha</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">subpicture_updater_t</span><span class="w"> </span><span class="n">updater</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">subpicture_private_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_private</span><span class="p">;</span><span class="w">    </span><span class="cm">/* Reserved to the core */</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subpicture_New</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">subpicture_updater_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">subpicture_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_subpic</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">subpicture_NewFromPicture</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_chroma</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">subpicture_Update</span><span class="p">(</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_tick_t</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">picture_BlendSubpicture</span><span class="p">(</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">filter_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_blend</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="cp">#endif </span><span class="cm">/* _VLC_VIDEO_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

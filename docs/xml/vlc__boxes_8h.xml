@@ -1,0 +1,596 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__boxes_8h" kind="file" language="C++">
+    <compoundname>vlc_boxes.h</compoundname>
+    <includes refid="vlc__common_8h" local="no">vlc_common.h</includes>
+    <includes refid="vlc__block_8h" local="no">vlc_block.h</includes>
+    <incdepgraph>
+      <node id="17">
+        <label>vlc_arrays.h</label>
+        <link refid="vlc__arrays_8h"/>
+      </node>
+      <node id="24">
+        <label>vlc_block.h</label>
+        <link refid="vlc__block_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h</label>
+        <link refid="vlc__boxes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_common.h</label>
+        <link refid="vlc__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vlc_config.h</label>
+        <link refid="vlc__config_8h"/>
+      </node>
+      <node id="22">
+        <label>vlc_configuration.h</label>
+        <link refid="vlc__configuration_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>vlc_main.h</label>
+        <link refid="vlc__main_8h"/>
+      </node>
+      <node id="18">
+        <label>vlc_messages.h</label>
+        <link refid="vlc__messages_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>vlc_mtime.h</label>
+        <link refid="vlc__mtime_8h_source"/>
+      </node>
+      <node id="19">
+        <label>vlc_objects.h</label>
+        <link refid="vlc__objects_8h"/>
+      </node>
+      <node id="12">
+        <label>vlc_threads.h</label>
+        <link refid="vlc__threads_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>vlc_variables.h</label>
+        <link refid="vlc__variables_8h"/>
+      </node>
+      <node id="8">
+        <label>inttypes.h</label>
+      </node>
+      <node id="16">
+        <label>limits.h</label>
+      </node>
+      <node id="14">
+        <label>pthread.h</label>
+      </node>
+      <node id="15">
+        <label>semaphore.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="10">
+        <label>stdbool.h</label>
+      </node>
+      <node id="9">
+        <label>stddef.h</label>
+      </node>
+      <node id="7">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="23">
+        <label>sys/types.h</label>
+      </node>
+      <node id="13">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structbo__t" prot="public">bo_t</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="vlc__boxes_8h_1af28e83e2f1c280f5c784cb8b4a4e38e4" prot="public" static="no">
+        <name>BO_SET_DECL_S</name>
+        <param><defname>func</defname></param>
+        <param><defname>handler</defname></param>
+        <param><defname>type</defname></param>
+        <initializer>    static inline bool func(<ref refid="structbo__t" kindref="compound">bo_t</ref> *p_bo, size_t i_offset, type val)\
+    {\
+        if (!bo_extend(p_bo, i_offset + sizeof(type)))\
+            return false;\
+        handler(&amp;p_bo-&gt;b-&gt;p_buffer[i_offset], val);\
+        return true;\
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="87" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="87" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__boxes_8h_1a02f72f22f78adefccece29ff265a37a9" prot="public" static="no">
+        <name>BO_ADD_DECL_S</name>
+        <param><defname>func</defname></param>
+        <param><defname>handler</defname></param>
+        <param><defname>type</defname></param>
+        <initializer>    static inline bool func(<ref refid="structbo__t" kindref="compound">bo_t</ref> *p_bo, type val)\
+    {\
+        if(!p_bo-&gt;b || !handler(p_bo, p_bo-&gt;b-&gt;i_buffer, val))\
+            return false;\
+        p_bo-&gt;b-&gt;i_buffer += sizeof(type);\
+        return true;\
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="95" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="95" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__boxes_8h_1ad0bdb31969405fd8463d4b442f36a50d" prot="public" static="no">
+        <name>BO_FUNC_DECL</name>
+        <param><defname>suffix</defname></param>
+        <param><defname>handler</defname></param>
+        <param><defname>type</defname></param>
+        <initializer>    BO_SET_DECL_S( bo_set_ ## suffix ## be, handler ## BE, type )\
+    BO_SET_DECL_S( bo_set_ ## suffix ## le, handler ## LE, type )\
+    BO_ADD_DECL_S( bo_add_ ## suffix ## be, bo_set_ ## suffix ## be, type )\
+    BO_ADD_DECL_S( bo_add_ ## suffix ## le, bo_set_ ## suffix ## le, type )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="103" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="103" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__boxes_8h_1aa8e40733f2912c23914ab6cc7a9e528c" prot="public" static="no">
+        <name>bo_add_fourcc</name>
+        <param><defname>p_bo</defname></param>
+        <param><defname>fcc</defname></param>
+        <initializer>bo_add_mem(p_bo, 4, fcc)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="163" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vlc__boxes_8h_1a45fdea4d1996401a9e00c263f07e99c6" prot="public" static="no">
+        <type>struct bo_t</type>
+        <definition>typedef struct bo_t bo_t</definition>
+        <argsstring></argsstring>
+        <name>bo_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="39" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="vlc__boxes_8h_1a009271353cf5655519cf9f6b6b0ec149" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool bo_init</definition>
+        <argsstring>(bo_t *p_bo, int i_size)</argsstring>
+        <name>bo_init</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="41" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="41" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1ae0f5013cc99c5962753bb76b5e4d574e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bo_deinit</definition>
+        <argsstring>(bo_t *p_bo)</argsstring>
+        <name>bo_deinit</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="53" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1ad20983f59d427a2b5d7c3450b01afe8b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bo_free</definition>
+        <argsstring>(bo_t *p_bo)</argsstring>
+        <name>bo_free</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="59" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="59" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1ad3e78f2ccd357a30cf23041973eef0d5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int bo_extend</definition>
+        <argsstring>(bo_t *p_bo, size_t i_total)</argsstring>
+        <name>bo_extend</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_total</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="67" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="67" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1a9c0f70f487394470a6221f61376bf372" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool bo_set_8</definition>
+        <argsstring>(bo_t *p_bo, size_t i_offset, uint8_t i)</argsstring>
+        <name>bo_set_8</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_offset</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="109" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="109" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1acbed293b570ed9c48c1335fe7b5318ab" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool bo_add_8</definition>
+        <argsstring>(bo_t *p_bo, uint8_t i)</argsstring>
+        <name>bo_add_8</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="117" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="117" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1aaa7138a3b8b649742a3146965b350f82" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool bo_add_24be</definition>
+        <argsstring>(bo_t *p_bo, uint32_t i)</argsstring>
+        <name>bo_add_24be</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="134" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="134" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1af4b58d66a4740b97c320b010004877ae" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void bo_swap_32be</definition>
+        <argsstring>(bo_t *p_bo, size_t i_pos, uint32_t i)</argsstring>
+        <name>bo_swap_32be</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_pos</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="144" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="144" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__boxes_8h_1a2c01cd4f89ccaf4433b6a8684c101c21" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool bo_add_mem</definition>
+        <argsstring>(bo_t *p_bo, size_t i_size, const void *p_mem)</argsstring>
+        <name>bo_add_mem</name>
+        <param>
+          <type><ref refid="structbo__t" kindref="compound">bo_t</ref> *</type>
+          <declname>p_bo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_size</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p_mem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" line="154" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h" bodystart="154" bodyend="161"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines functions, structures for handling boxes/atoms in vlc </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_boxes.h<sp/>:<sp/>Boxes/Atoms<sp/>handling<sp/>helpers</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2001,<sp/>2002,<sp/>2003,<sp/>2006,<sp/>2015<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gildas<sp/>Bazin<sp/>&lt;gbazin<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rafaël<sp/>Carré<sp/>&lt;funman<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_BOXES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_BOXES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__common_8h" kindref="compound">vlc_common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__block_8h" kindref="compound">vlc_block.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="structbo__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbo__t" kindref="compound">bo_t</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/><sp/><sp/><sp/><sp/>*b;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>basesize;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/><ref refid="structbo__t" kindref="compound">bo_t</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bo_init(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_size)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b<sp/>=<sp/><ref refid="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" kindref="member">block_Alloc</ref>(i_size);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p_bo-&gt;b<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;basesize<sp/>=<sp/>i_size;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bo_deinit(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(p_bo-&gt;b)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block_Release(p_bo-&gt;b);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bo_free(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!p_bo)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_deinit(p_bo);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>free(p_bo);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bo_extend(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_total)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!p_bo-&gt;b)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_size<sp/>=<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1a13c1cafbffa17e7e3eebc993c405bcf2" kindref="member">i_size</ref><sp/>-<sp/>(p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref><sp/>-<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1a7db19b5cba60c3c1880f4bdfe886e316" kindref="member">p_start</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_total<sp/>&gt;=<sp/>i_size)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_growth<sp/>=<sp/>p_bo-&gt;basesize;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(i_total<sp/>&gt;=<sp/>i_size<sp/>+<sp/>i_growth)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_growth<sp/>+=<sp/>p_bo-&gt;basesize;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>;<sp/></highlight><highlight class="comment">/*<sp/>Realloc<sp/>would<sp/>set<sp/>payload<sp/>size<sp/>==<sp/>buffer<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_bo-&gt;b<sp/>=<sp/><ref refid="group__block_1ga80686ce1b2b3d2563ec3736d14be11cb" kindref="member">block_Realloc</ref>(p_bo-&gt;b,<sp/>0,<sp/>i_size<sp/>+<sp/>i_growth);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!p_bo-&gt;b)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>=<sp/>i;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BO_SET_DECL_S(func,<sp/>handler,<sp/>type)<sp/>static<sp/>inline<sp/>bool<sp/>func(bo_t<sp/>*p_bo,<sp/>size_t<sp/>i_offset,<sp/>type<sp/>val)\</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(!bo_extend(p_bo,<sp/>i_offset<sp/>+<sp/>sizeof(type)))\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handler(&amp;p_bo-&gt;b-&gt;p_buffer[i_offset],<sp/>val);\</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>true;\</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BO_ADD_DECL_S(func,<sp/>handler,<sp/>type)<sp/>static<sp/>inline<sp/>bool<sp/>func(bo_t<sp/>*p_bo,<sp/>type<sp/>val)\</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(!p_bo-&gt;b<sp/>||<sp/>!handler(p_bo,<sp/>p_bo-&gt;b-&gt;i_buffer,<sp/>val))\</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;\</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;i_buffer<sp/>+=<sp/>sizeof(type);\</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>true;\</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BO_FUNC_DECL(suffix,<sp/>handler,<sp/>type<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>BO_SET_DECL_S(<sp/>bo_set_<sp/>##<sp/>suffix<sp/>##<sp/>be,<sp/>handler<sp/>##<sp/>BE,<sp/>type<sp/>)\</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>BO_SET_DECL_S(<sp/>bo_set_<sp/>##<sp/>suffix<sp/>##<sp/>le,<sp/>handler<sp/>##<sp/>LE,<sp/>type<sp/>)\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>BO_ADD_DECL_S(<sp/>bo_add_<sp/>##<sp/>suffix<sp/>##<sp/>be,<sp/>bo_set_<sp/>##<sp/>suffix<sp/>##<sp/>be,<sp/>type<sp/>)\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>BO_ADD_DECL_S(<sp/>bo_add_<sp/>##<sp/>suffix<sp/>##<sp/>le,<sp/>bo_set_<sp/>##<sp/>suffix<sp/>##<sp/>le,<sp/>type<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bo_set_8(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_offset,<sp/>uint8_t<sp/>i)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!bo_extend(p_bo,<sp/>i_offset<sp/>+<sp/>1))</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[i_offset]<sp/>=<sp/>i;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bo_add_8(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/>uint8_t<sp/>i)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!p_bo-&gt;b<sp/>||<sp/>!bo_set_8(<sp/>p_bo,<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>,<sp/>i<sp/>))</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>++;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>declares<sp/>all<sp/>bo_[set,add]_[16,32,64]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">BO_FUNC_DECL(<sp/>16,<sp/>SetW,<sp/><sp/>uint16_t<sp/>)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">BO_FUNC_DECL(<sp/>32,<sp/>SetDW,<sp/>uint32_t<sp/>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">BO_FUNC_DECL(<sp/>64,<sp/>SetQW,<sp/>uint64_t<sp/>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BO_FUNC_DECL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BO_SET_DECL_S</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>BO_ADD_DECL_S</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bo_add_24be(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/>uint32_t<sp/>i)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!p_bo-&gt;b<sp/>||<sp/>!bo_extend(p_bo,<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>+<sp/>3))</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>++]<sp/>=<sp/>((i<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>++]<sp/>=<sp/>((i<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>++]<sp/>=<sp/>(i<sp/>&amp;<sp/>0xff);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bo_swap_32be<sp/>(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_pos,<sp/>uint32_t<sp/>i)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!p_bo-&gt;b<sp/>||<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>&lt;<sp/>i_pos<sp/>+<sp/>4)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[i_pos<sp/><sp/><sp/><sp/>]<sp/>=<sp/>(i<sp/>&gt;&gt;<sp/>24)&amp;0xff;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[i_pos<sp/>+<sp/>1]<sp/>=<sp/>(i<sp/>&gt;&gt;<sp/>16)&amp;0xff;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[i_pos<sp/>+<sp/>2]<sp/>=<sp/>(i<sp/>&gt;&gt;<sp/><sp/>8)&amp;0xff;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[i_pos<sp/>+<sp/>3]<sp/>=<sp/>(i<sp/><sp/><sp/><sp/><sp/><sp/>)&amp;0xff;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bo_add_mem(<ref refid="structbo__t" kindref="compound">bo_t</ref><sp/>*p_bo,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_mem)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!p_bo-&gt;b<sp/>||<sp/>!bo_extend(p_bo,<sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>+<sp/>i_size))</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(&amp;p_bo-&gt;b-&gt;<ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">p_buffer</ref>[p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref>],<sp/>p_mem,<sp/>i_size);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>p_bo-&gt;b-&gt;<ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">i_buffer</ref><sp/>+=<sp/>i_size;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>bo_add_fourcc(p_bo,<sp/>fcc)<sp/>bo_add_mem(p_bo,<sp/>4,<sp/>fcc)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>VLC_BOXES_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_boxes.h"/>
+  </compounddef>
+</doxygen>

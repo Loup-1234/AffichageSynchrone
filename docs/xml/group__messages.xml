@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__messages" kind="group">
+    <compoundname>messages</compoundname>
+    <title>Logging</title>
+    <innerfile refid="vlc__messages_8h">vlc_messages.h</innerfile>
+    <innerclass refid="structvlc__log__t" prot="public">vlc_log_t</innerclass>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="group__interface_1ga11b8b3e46491f8ceb9051bb141fb43c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_LogSet</definition>
+        <argsstring>(libvlc_int_t *, vlc_log_cb cb, void *data)</argsstring>
+        <name>vlc_LogSet</name>
+        <param>
+          <type><ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="group__messages_1ga1d2836ef5c694d881a40812094cdbc6e" kindref="member">vlc_log_cb</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" line="109" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" declline="109" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__messages_1gaac9d92208890aa567a07ca9a1d758303" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vlc_log_type</name>
+        <enumvalue id="group__messages_1ggaac9d92208890aa567a07ca9a1d758303a5a18a01125698fb2d3c14c167350f9d6" prot="public">
+          <name>VLC_MSG_INFO</name>
+          <initializer>=0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Important information </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__messages_1ggaac9d92208890aa567a07ca9a1d758303a8e54bab5e1a7da0fc1956ed354d77c5d" prot="public">
+          <name>VLC_MSG_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__messages_1ggaac9d92208890aa567a07ca9a1d758303ac043fb17268a3f593b5296f12f13fa6b" prot="public">
+          <name>VLC_MSG_WARN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Warning </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__messages_1ggaac9d92208890aa567a07ca9a1d758303a471093ff5e508b3165c091e61312cd01" prot="public">
+          <name>VLC_MSG_DBG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Debug </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Message types </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="44" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="45" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__messages_1gaf897da719a254877cd38fcd1896e2b7a" prot="public" static="no">
+        <type>struct vlc_log_t</type>
+        <definition>typedef struct vlc_log_t vlc_log_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_log_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log message </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="65" column="11"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__messages_1ga1d2836ef5c694d881a40812094cdbc6e" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* vlc_log_cb) (void *data, int type, const vlc_log_t *item, const char *fmt, va_list args)</definition>
+        <argsstring>)(void *data, int type, const vlc_log_t *item, const char *fmt, va_list args)</argsstring>
+        <name>vlc_log_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Message logging callback signature. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as provided to vlc_msg_SetCallback(). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message type (VLC_MSG_* values from enum <ref refid="group__messages_1gaac9d92208890aa567a07ca9a1d758303" kindref="member">vlc_log_type</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>meta information </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>format string arguments </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="102" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group__messages_1ga965ac9f76834f19b69e455ea3f77d1ac" prot="public" static="no" extern="yes" mutable="no">
+        <type>const char</type>
+        <definition>const char vlc_module_name[]</definition>
+        <argsstring>[]</argsstring>
+        <name>vlc_module_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="89" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" declline="89" declcolumn="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__messages_1ga8d26f7854fe744c0650c498970269bd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_Log</definition>
+        <argsstring>(vlc_object_t *obj, int prio, const char *module, const char *file, unsigned line, const char *func, const char *format,...) VLC_FORMAT(7</argsstring>
+        <name>vlc_Log</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>prio</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="67" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__messages_1ga0c05b69356ebbd95719671f09ce18918" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void VLC_API void</type>
+        <definition>VLC_API void VLC_API void vlc_vaLog</definition>
+        <argsstring>(vlc_object_t *obj, int prio, const char *module, const char *file, unsigned line, const char *func, const char *format, va_list ap)</argsstring>
+        <name>vlc_vaLog</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>prio</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>ap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="70" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" declline="70" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__messages_1gafbd0afe8dc8f897200085417506b74f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_strerror</definition>
+        <argsstring>(int)</argsstring>
+        <name>vlc_strerror</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="91" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" declline="91" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__messages_1ga482452ce7e9ab520e83abb9436476e23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_strerror_c</definition>
+        <argsstring>(int)</argsstring>
+        <name>vlc_strerror_c</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="92" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" declline="92" declcolumn="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__messages_1gab1521a873787d51d31adf7283bff52d8" prot="public" static="no">
+        <name>msg_GenericVa</name>
+        <param><defname>o</defname></param>
+        <param><defname>p</defname></param>
+        <param><defname>fmt</defname></param>
+        <param><defname>ap</defname></param>
+        <initializer>    vlc_vaLog(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o), p, vlc_module_name, __FILE__, __LINE__, \
+              __func__, fmt, ap)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="73" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="73" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="define" id="group__messages_1ga52b42ecf16c7c7eb809ae9ff565d8bf7" prot="public" static="no">
+        <name>msg_Generic</name>
+        <param><defname>o</defname></param>
+        <param><defname>p</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>    vlc_Log(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o), p, vlc_module_name, __FILE__, __LINE__, \
+            __func__, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="77" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="define" id="group__messages_1gaadb142e5d96253757733c0a6e953d8d6" prot="public" static="no">
+        <name>msg_Info</name>
+        <param><defname>p_this</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>    msg_Generic(p_this, <ref refid="group__messages_1ggaac9d92208890aa567a07ca9a1d758303a5a18a01125698fb2d3c14c167350f9d6" kindref="member">VLC_MSG_INFO</ref>, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="80" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="80" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="define" id="group__messages_1ga33c73c71b6ef54c3263c0dfd97ac9cc3" prot="public" static="no">
+        <name>msg_Err</name>
+        <param><defname>p_this</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>    msg_Generic(p_this, <ref refid="group__messages_1ggaac9d92208890aa567a07ca9a1d758303a8e54bab5e1a7da0fc1956ed354d77c5d" kindref="member">VLC_MSG_ERR</ref>, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="82" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="82" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="define" id="group__messages_1ga98c882d735cf879445c19d5d374a5b68" prot="public" static="no">
+        <name>msg_Warn</name>
+        <param><defname>p_this</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>    msg_Generic(p_this, <ref refid="group__messages_1ggaac9d92208890aa567a07ca9a1d758303ac043fb17268a3f593b5296f12f13fa6b" kindref="member">VLC_MSG_WARN</ref>, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="84" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="84" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="define" id="group__messages_1ga3470bb9095befd0b477e2117f4d65d66" prot="public" static="no">
+        <name>msg_Dbg</name>
+        <param><defname>p_this</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>    msg_Generic(p_this, <ref refid="group__messages_1ggaac9d92208890aa567a07ca9a1d758303a471093ff5e508b3165c091e61312cd01" kindref="member">VLC_MSG_DBG</ref>, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" line="86" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_messages.h" bodystart="86" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Message logs. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Functions for modules to emit log messages. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

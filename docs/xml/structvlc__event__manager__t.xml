@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structvlc__event__manager__t" kind="struct" language="C++" prot="public">
+    <compoundname>vlc_event_manager_t</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structvlc__event__manager__t_1aa3d9909d4a0e4fc56e0654f275416e20" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vlc_event_manager_t::p_obj</definition>
+        <argsstring></argsstring>
+        <name>p_obj</name>
+        <qualifiedname>vlc_event_manager_t::p_obj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="118" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__event__manager__t_1ab7b3b8aea78724eadf2dbd5acb0f130e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref></type>
+        <definition>vlc_mutex_t vlc_event_manager_t::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <qualifiedname>vlc_event_manager_t::lock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="119" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__event__manager__t_1a476773b08c551ab880f4bfb168d5d5c1" prot="public" static="no" mutable="no">
+        <type><ref refid="structvlc__event__listeners__group__t" kindref="compound">vlc_event_listeners_group_t</ref></type>
+        <definition>vlc_event_listeners_group_t vlc_event_manager_t::events[vlc_InputItemPreparseEnded+1]</definition>
+        <argsstring>[vlc_InputItemPreparseEnded+1]</argsstring>
+        <name>events</name>
+        <qualifiedname>vlc_event_manager_t::events</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="120" column="33" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>vlc_event_listeners_group_t</label>
+        <link refid="structvlc__event__listeners__group__t"/>
+      </node>
+      <node id="1">
+        <label>vlc_event_manager_t</label>
+        <link refid="structvlc__event__manager__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+events</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="116" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="117" bodyend="121"/>
+    <listofallmembers>
+      <member refid="structvlc__event__manager__t_1a476773b08c551ab880f4bfb168d5d5c1" prot="public" virt="non-virtual"><scope>vlc_event_manager_t</scope><name>events</name></member>
+      <member refid="structvlc__event__manager__t_1ab7b3b8aea78724eadf2dbd5acb0f130e" prot="public" virt="non-virtual"><scope>vlc_event_manager_t</scope><name>lock</name></member>
+      <member refid="structvlc__event__manager__t_1aa3d9909d4a0e4fc56e0654f275416e20" prot="public" virt="non-virtual"><scope>vlc_event_manager_t</scope><name>p_obj</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

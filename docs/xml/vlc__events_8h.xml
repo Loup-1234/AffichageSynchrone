@@ -1,0 +1,565 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__events_8h" kind="file" language="C++">
+    <compoundname>vlc_events.h</compoundname>
+    <includes refid="vlc__arrays_8h" local="no">vlc_arrays.h</includes>
+    <includes refid="vlc__meta_8h" local="no">vlc_meta.h</includes>
+    <includedby refid="vlc__addons_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h</includedby>
+    <includedby refid="vlc__input_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h</includedby>
+    <includedby refid="vlc__input__item_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h</includedby>
+    <includedby refid="vlc__playlist_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>vlc_arrays.h</label>
+        <link refid="vlc__arrays_8h"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h</label>
+        <link refid="vlc__events_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vlc_meta.h</label>
+        <link refid="vlc__meta_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_addons.h</label>
+        <link refid="vlc__addons_8h_source"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h</label>
+        <link refid="vlc__events_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fingerprinter.h</label>
+        <link refid="vlc__fingerprinter_8h_source"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h</label>
+        <link refid="vlc__input_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h</label>
+        <link refid="vlc__input__item_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h</label>
+        <link refid="vlc__playlist_8h"/>
+      </node>
+      <node id="4">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h</label>
+        <link refid="vlc__renderer__discovery_8h"/>
+      </node>
+      <node id="5">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_services_discovery.h</label>
+        <link refid="vlc__services__discovery_8h"/>
+      </node>
+      <node id="6">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h</label>
+        <link refid="vlc__vlm_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structvlc__event__listeners__group__t" prot="public">vlc_event_listeners_group_t</innerclass>
+    <innerclass refid="structvlc__event__manager__t" prot="public">vlc_event_manager_t</innerclass>
+    <innerclass refid="structvlc__event__t" prot="public">vlc_event_t</innerclass>
+    <innerclass refid="unionvlc__event__t_1_1vlc__event__type__specific" prot="public">vlc_event_t::vlc_event_type_specific</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__meta__changed" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_meta_changed</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__added" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_subitem_added</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__tree__added" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_subitem_tree_added</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__duration__changed" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_duration_changed</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__preparsed__changed" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_preparsed_changed</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__name__changed" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_name_changed</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__info__changed" prot="public">vlc_event_t::vlc_event_type_specific::vlc_input_item_info_changed</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__error__when__reading__changed" prot="public">vlc_event_t::vlc_event_type_specific::input_item_error_when_reading_changed</innerclass>
+    <innerclass refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__preparse__ended" prot="public">vlc_event_t::vlc_event_type_specific::input_item_preparse_ended</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vlc_event_type_t</name>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36af12c185556bb3047230caace1f415f63" prot="public">
+          <name>vlc_InputItemMetaChanged</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36aab2eddadb30089cf1ecdc762e507de98" prot="public">
+          <name>vlc_InputItemSubItemTreeAdded</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36a36b2f5f69d7ba9adf9399162c6925aa2" prot="public">
+          <name>vlc_InputItemDurationChanged</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36a0aca0f2b233643577d184958e33c8d09" prot="public">
+          <name>vlc_InputItemPreparsedChanged</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36a17a9b227eb2e6a84fa316e8d5b700333" prot="public">
+          <name>vlc_InputItemNameChanged</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36ab3b0d5a25f95f0007f9ca49a41138e4a" prot="public">
+          <name>vlc_InputItemInfoChanged</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36a11ac40f8dcd0ab37988538c83007871e" prot="public">
+          <name>vlc_InputItemErrorWhenReadingChanged</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__events_8h_1a6bcaaf6f4a38367d01958ca524236e36ad526627827ba44c2132122689e428e19" prot="public">
+          <name>vlc_InputItemPreparseEnded</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="98" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="98" bodyend="108"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vlc__events_8h_1a25c85e145254810fe6caf12f83e9e49c" prot="public" static="no">
+        <type>enum vlc_event_type_t</type>
+        <definition>typedef enum vlc_event_type_t vlc_event_type_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_event_type_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="108" column="18"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__events_8h_1a1e63179af9da5d4ef960d03ea0efd468" prot="public" static="no">
+        <type>struct vlc_event_listeners_group_t</type>
+        <definition>typedef struct vlc_event_listeners_group_t vlc_event_listeners_group_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_event_listeners_group_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="113" column="29"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__events_8h_1acc49dc8825978e55f87e23425c6a8803" prot="public" static="no">
+        <type>struct vlc_event_manager_t</type>
+        <definition>typedef struct vlc_event_manager_t vlc_event_manager_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_event_manager_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="121" column="21"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__events_8h_1a2d38c388a2248fda1ca3fce236ccc7d4" prot="public" static="no">
+        <type>struct vlc_event_t</type>
+        <definition>typedef struct vlc_event_t vlc_event_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_event_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="168" column="13"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__events_8h_1ad9feaa26597b898240f3cc445b913b1f" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* vlc_event_callback_t) (const vlc_event_t *, void *)</definition>
+        <argsstring>)(const vlc_event_t *, void *)</argsstring>
+        <name>vlc_event_callback_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="171" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="vlc__events_8h_1a1beed95b2d41f47984ca40dd93483e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_event_manager_init</definition>
+        <argsstring>(vlc_event_manager_t *p_em, void *p_obj)</argsstring>
+        <name>vlc_event_manager_init</name>
+        <param>
+          <type><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref> *</type>
+          <declname>p_em</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="181" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" declline="181" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__events_8h_1a79dca4d2810b3e7c6ef2ac94779d1ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_event_manager_fini</definition>
+        <argsstring>(vlc_event_manager_t *p_em)</argsstring>
+        <name>vlc_event_manager_fini</name>
+        <param>
+          <type><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref> *</type>
+          <declname>p_em</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="186" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" declline="186" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__events_8h_1af972040f6b421e7a8cec0089b6a80463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_event_send</definition>
+        <argsstring>(vlc_event_manager_t *p_em, vlc_event_t *)</argsstring>
+        <name>vlc_event_send</name>
+        <param>
+          <type><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref> *</type>
+          <declname>p_em</declname>
+        </param>
+        <param>
+          <type><ref refid="structvlc__event__t" kindref="compound">vlc_event_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="191" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" declline="191" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__events_8h_1a0f861ca2d3c415c4a43bf17f093df973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_event_attach</definition>
+        <argsstring>(vlc_event_manager_t *p_event_manager, vlc_event_type_t event_type, vlc_event_callback_t pf_callback, void *p_user_data)</argsstring>
+        <name>vlc_event_attach</name>
+        <param>
+          <type><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref> *</type>
+          <declname>p_event_manager</declname>
+        </param>
+        <param>
+          <type>vlc_event_type_t</type>
+          <declname>event_type</declname>
+        </param>
+        <param>
+          <type>vlc_event_callback_t</type>
+          <declname>pf_callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="196" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" declline="196" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__events_8h_1ae62ac90529749249385cb5e920325670" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_event_detach</definition>
+        <argsstring>(vlc_event_manager_t *p_event_manager, vlc_event_type_t event_type, vlc_event_callback_t pf_callback, void *p_user_data)</argsstring>
+        <name>vlc_event_detach</name>
+        <param>
+          <type><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref> *</type>
+          <declname>p_event_manager</declname>
+        </param>
+        <param>
+          <type>vlc_event_type_t</type>
+          <declname>event_type</declname>
+        </param>
+        <param>
+          <type>vlc_event_callback_t</type>
+          <declname>pf_callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="204" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" declline="204" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file is the interface definition for events (implementation in src/misc/events.c) </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_events.h:<sp/>events<sp/>definitions</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Interface<sp/>used<sp/>to<sp/>send<sp/>events.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2007<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Pierre<sp/>d&apos;Herbemont</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_EVENTS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>VLC_EVENTS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__arrays_8h" kindref="compound">vlc_arrays.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__meta_8h" kindref="compound">vlc_meta.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>Documentation</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>****<sp/>Background</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>This<sp/>implements<sp/>a<sp/>way<sp/>to<sp/>send<sp/>and<sp/>receive<sp/>event<sp/>for<sp/>an<sp/>object<sp/>(which<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>a<sp/>simple<sp/>C<sp/>struct<sp/>or<sp/>less).</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>in<sp/>direct<sp/>concurrency<sp/>with<sp/>the<sp/>Variable<sp/>based<sp/>Callback</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>(see<sp/>src/misc/variables.c).</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>It<sp/>has<sp/>the<sp/>following<sp/>advantages<sp/>over<sp/>Variable<sp/>based<sp/>Callback:</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>-<sp/>No<sp/>need<sp/>to<sp/>implement<sp/>the<sp/>whole<sp/>VLC_COMMON_MEMBERS<sp/>in<sp/>the<sp/>object,</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>thus<sp/>it<sp/>reduce<sp/>it<sp/>size.<sp/>This<sp/>is<sp/>especially<sp/>true<sp/>for<sp/>input_item_t<sp/>which</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>doesn&apos;t<sp/>have<sp/>VLC_COMMON_MEMBERS.<sp/>This<sp/>is<sp/>the<sp/>first<sp/>reason<sp/>of<sp/>existence<sp/>of</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>this<sp/>implementation.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>-<sp/>Libvlc<sp/>can<sp/>easily<sp/>be<sp/>based<sp/>upon<sp/>that.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>-<sp/>Existing<sp/>event<sp/>are<sp/>clearly<sp/>declared<sp/>(in<sp/>include/vlc_events.h)</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>****<sp/>Example<sp/>usage</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>(vlc_cool_object_t<sp/>doesn&apos;t<sp/>need<sp/>to<sp/>have<sp/>the<sp/>VLC_COMMON_MEMBERS.)</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>struct<sp/>vlc_cool_object_t</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_manager_t<sp/>p_event_manager;</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>vlc_my_cool_object_new()</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_manager_init(<sp/>&amp;p_self-&gt;p_event_manager,<sp/>p_self,<sp/>p_a_libvlc_object<sp/>);</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>vlc_my_cool_object_release()</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_manager_fini(<sp/>&amp;p_self-&gt;p_event_manager<sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>vlc_my_cool_object_do_something()</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_t<sp/>event;</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.type<sp/>=<sp/>vlc_MyCoolObjectDidSomething;</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.u.my_cool_object_did_something.what_it_did<sp/>=<sp/>kSomething;</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_send(<sp/>&amp;p_self-&gt;p_event_manager,<sp/>&amp;event<sp/>);</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/>/*****************************************************************************</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>Event<sp/>Type</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>List<sp/>of<sp/>event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>vlc_event_type_t<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Input<sp/>item<sp/>events<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemMetaChanged,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemSubItemTreeAdded,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemDurationChanged,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemPreparsedChanged,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemNameChanged,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemInfoChanged,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemErrorWhenReadingChanged,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_InputItemPreparseEnded,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}<sp/>vlc_event_type_t;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="structvlc__event__listeners__group__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__listeners__group__t" kindref="compound">vlc_event_listeners_group_t</ref></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>DECL_ARRAY(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>vlc_event_listener_t<sp/>*)<sp/>listeners;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}<sp/><ref refid="structvlc__event__listeners__group__t" kindref="compound">vlc_event_listeners_group_t</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Event<sp/>manager<sp/>type<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="structvlc__event__manager__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>p_obj;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref><sp/>lock;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structvlc__event__listeners__group__t" kindref="compound">vlc_event_listeners_group_t</ref><sp/>events[vlc_InputItemPreparseEnded<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}<sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Event<sp/>definition<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="structvlc__event__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t" kindref="compound">vlc_event_t</ref></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_event_type_t<sp/>type;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>p_obj;<sp/></highlight><highlight class="comment">/*<sp/>Sender<sp/>object,<sp/>automatically<sp/>filled<sp/>by<sp/>vlc_event_send()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="unionvlc__event__t_1_1vlc__event__type__specific" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionvlc__event__t_1_1vlc__event__type__specific" kindref="compound">vlc_event_type_specific</ref></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Input<sp/>item<sp/>events<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__meta__changed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__meta__changed" kindref="compound">vlc_input_item_meta_changed</ref></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_meta_type_t<sp/>meta_type;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_meta_changed;</highlight></codeline>
+<codeline lineno="135" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__added" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__added" kindref="compound">vlc_input_item_subitem_added</ref></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_new_child;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_subitem_added;</highlight></codeline>
+<codeline lineno="139" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__tree__added" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__tree__added" kindref="compound">vlc_input_item_subitem_tree_added</ref></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*<sp/>p_root;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_subitem_tree_added;</highlight></codeline>
+<codeline lineno="143" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__duration__changed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__duration__changed" kindref="compound">vlc_input_item_duration_changed</ref></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>new_duration;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_duration_changed;</highlight></codeline>
+<codeline lineno="147" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__preparsed__changed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__preparsed__changed" kindref="compound">vlc_input_item_preparsed_changed</ref></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_status;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_preparsed_changed;</highlight></codeline>
+<codeline lineno="151" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__name__changed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__name__changed" kindref="compound">vlc_input_item_name_changed</ref></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>new_name;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_name_changed;</highlight></codeline>
+<codeline lineno="155" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__info__changed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__info__changed" kindref="compound">vlc_input_item_info_changed</ref></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>unused;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>input_item_info_changed;</highlight></codeline>
+<codeline lineno="159" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__error__when__reading__changed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__error__when__reading__changed" kindref="compound">input_item_error_when_reading_changed</ref></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>new_value;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__error__when__reading__changed" kindref="compound">input_item_error_when_reading_changed</ref>;</highlight></codeline>
+<codeline lineno="163" refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__preparse__ended" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__preparse__ended" kindref="compound">input_item_preparse_ended</ref></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_status;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__preparse__ended" kindref="compound">input_item_preparse_ended</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>u;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}<sp/><ref refid="structvlc__event__t" kindref="compound">vlc_event_t</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Event<sp/>callback<sp/>type<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(<sp/>*vlc_event_callback_t<sp/>)(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structvlc__event__t" kindref="compound">vlc_event_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment"><sp/>/*****************************************************************************</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/>Event<sp/>manager</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>p_obj<sp/>points<sp/>to<sp/>the<sp/>object<sp/>that<sp/>owns<sp/>the<sp/>event<sp/>manager,<sp/>and<sp/>from</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>which<sp/>events<sp/>are<sp/>sent</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_event_manager_init(<sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref><sp/>*<sp/>p_em,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>p_obj<sp/>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/>Destroy</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_event_manager_fini(<sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref><sp/>*<sp/>p_em<sp/>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/>Send<sp/>an<sp/>event<sp/>to<sp/>the<sp/>listener<sp/>attached<sp/>to<sp/>this<sp/>p_em.</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_event_send(<sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref><sp/>*<sp/>p_em,<sp/><ref refid="structvlc__event__t" kindref="compound">vlc_event_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/>Add<sp/>a<sp/>callback<sp/>for<sp/>an<sp/>event.</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_event_attach(<sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref><sp/>*<sp/>p_event_manager,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_type_t<sp/>event_type,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_callback_t<sp/>pf_callback,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_user_data<sp/>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/>Remove<sp/>a<sp/>callback<sp/>for<sp/>an<sp/>event.</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_event_detach(<sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref><sp/>*p_event_manager,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_type_t<sp/>event_type,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vlc_event_callback_t<sp/>pf_callback,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_user_data<sp/>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>VLC_EVENTS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h"/>
+  </compounddef>
+</doxygen>

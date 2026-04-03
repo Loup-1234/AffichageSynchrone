@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__dir" kind="group">
+    <compoundname>dir</compoundname>
+    <title>Directories</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__dir_1ga41c608bd6a568eca71a508cf544cdb3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API DIR *</type>
+        <definition>VLC_API DIR * vlc_opendir</definition>
+        <argsstring>(const char *dirname) VLC_USED</argsstring>
+        <name>vlc_opendir</name>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens a DIR pointer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UTF-8 representation of the directory name </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to the DIR struct, or NULL in case of error. Release with standard closedir(). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="217" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="217" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dir_1ga63802dea65b9a23e11bbf08ad6ffd863" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * vlc_readdir</definition>
+        <argsstring>(DIR *dir) VLC_USED</argsstring>
+        <name>vlc_readdir</name>
+        <param>
+          <type>DIR *</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the next file name from an open directory.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>directory handle as returned by <ref refid="group__dir_1ga41c608bd6a568eca71a508cf544cdb3f" kindref="member">vlc_opendir()</ref> (must not be used by another thread concurrently)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a UTF-8 string of the directory entry. The string is valid until the next call to <ref refid="group__dir_1ga63802dea65b9a23e11bbf08ad6ffd863" kindref="member">vlc_readdir()</ref> or closedir() on the handle. If there are no more entries in the directory, NULL is returned. If an error occurs, errno is set and NULL is returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="230" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="230" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dir_1ga9eaea3781c8d9f1413af5530423d573e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_loaddir</definition>
+        <argsstring>(DIR *dir, char ***namelist, int(*select)(const char *), int(*compar)(const char **, const char **))</argsstring>
+        <name>vlc_loaddir</name>
+        <param>
+          <type>DIR *</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>char ***</type>
+          <declname>namelist</declname>
+        </param>
+        <param>
+          <type>int(*)(const char *)</type>
+          <declname>select</declname>
+        </param>
+        <param>
+          <type>int(*)(const char **, const char **)</type>
+          <declname>compar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="232" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="232" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dir_1ga951a66572dda976ad620456417782e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_scandir</definition>
+        <argsstring>(const char *dirname, char ***namelist, int(*select)(const char *), int(*compar)(const char **, const char **))</argsstring>
+        <name>vlc_scandir</name>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>char ***</type>
+          <declname>namelist</declname>
+        </param>
+        <param>
+          <type>int(*)(const char *)</type>
+          <declname>select</declname>
+        </param>
+        <param>
+          <type>int(*)(const char **, const char **)</type>
+          <declname>compar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="233" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="233" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dir_1ga9e282d63fa02a73ea1ca9b2c688a2489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_mkdir</definition>
+        <argsstring>(const char *dirname, mode_t mode)</argsstring>
+        <name>vlc_mkdir</name>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>mode_t</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a directory.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a UTF-8 string with the name of the directory that you want to create. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>directory permissions </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error (see errno). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="243" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="243" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dir_1ga89ff35e99ba8337809aa79602038de3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * vlc_getcwd</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_getcwd</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines the current working directory.</para>
+<para><simplesect kind="return"><para>the current working directory (must be free()&apos;d) or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="251" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="251" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__media__discoverer" kind="group">
+    <compoundname>libvlc_media_discoverer</compoundname>
+    <title>LibVLC media discovery</title>
+    <innerfile refid="libvlc__media__discoverer_8h">libvlc_media_discoverer.h</innerfile>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1gae2ac9d8725a369ef2bdf474bcc5a745a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API libvlc_media_discoverer_t *</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API libvlc_media_discoverer_t * libvlc_media_discoverer_new_from_name</definition>
+        <argsstring>(libvlc_instance_t *p_inst, const char *psz_name)</argsstring>
+        <name>libvlc_media_discoverer_new_from_name</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_inst</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000016"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Use <ref refid="group__libvlc__media__discoverer_1ga133ffcc4fa1b81903856853763df7c22" kindref="member">libvlc_media_discoverer_new()</ref> and <ref refid="group__libvlc__media__discoverer_1ga31e18ef76173c234f92db50ad8a432a6" kindref="member">libvlc_media_discoverer_start()</ref>. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="292" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="292" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1gae57f800acbbfb9bc8ec09c5361536309" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API char *</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API char * libvlc_media_discoverer_localized_name</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_localized_name</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get media service discover object its localized name.</para>
+<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Useless, use <ref refid="group__libvlc__media__discoverer_1ga9a4676e452daa2fd4b5eb371542afc29" kindref="member">libvlc_media_discoverer_list_get()</ref> to get the longname of the service discovery.</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>localized name or NULL if the media_discoverer is not started </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="305" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="305" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1gada3ac49cb52ab41d04c3e062c9c06132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref> *</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API libvlc_event_manager_t * libvlc_media_discoverer_event_manager</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_event_manager</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event manager from media service discover object.</para>
+<para><xrefsect id="deprecated_1_deprecated000018"><xreftitle>Obsolète</xreftitle><xrefdescription><para>Useless, media_discoverer events are only triggered when calling <ref refid="group__libvlc__media__discoverer_1ga31e18ef76173c234f92db50ad8a432a6" kindref="member">libvlc_media_discoverer_start()</ref> and <ref refid="group__libvlc__media__discoverer_1ga25c2376dff90e2ce2d4614a1c71b3da3" kindref="member">libvlc_media_discoverer_stop()</ref>.</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media service discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>event manager object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="317" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="317" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__libvlc__media__discoverer_1gaa1aed0a0424f42946cfbafebf11faa50" prot="public" static="no">
+        <type>struct libvlc_media_discoverer_t</type>
+        <definition>typedef struct libvlc_media_discoverer_t libvlc_media_discoverer_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_media_discoverer_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="70" column="40" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga133ffcc4fa1b81903856853763df7c22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_discoverer_t *</type>
+        <definition>LIBVLC_API libvlc_media_discoverer_t * libvlc_media_discoverer_new</definition>
+        <argsstring>(libvlc_instance_t *p_inst, const char *psz_name)</argsstring>
+        <name>libvlc_media_discoverer_new</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_inst</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a media discoverer object by name.</para>
+<para>After this object is created, you should attach to media_list events in order to be notified of new items discovered.</para>
+<para>You need to call <ref refid="group__libvlc__media__discoverer_1ga31e18ef76173c234f92db50ad8a432a6" kindref="member">libvlc_media_discoverer_start()</ref> in order to start the discovery.</para>
+<para><simplesect kind="see"><para><ref refid="group__libvlc__media__discoverer_1ga9b72afba0ee885ade6b1334280894eaf" kindref="member">libvlc_media_discoverer_media_list</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__media__discoverer_1gada3ac49cb52ab41d04c3e062c9c06132" kindref="member">libvlc_media_discoverer_event_manager</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__media__discoverer_1ga31e18ef76173c234f92db50ad8a432a6" kindref="member">libvlc_media_discoverer_start</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_inst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>service name; use <ref refid="group__libvlc__media__discoverer_1ga9a4676e452daa2fd4b5eb371542afc29" kindref="member">libvlc_media_discoverer_list_get()</ref> to get a list of the discoverer names available in this libVLC instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>media discover object or NULL in case of error </para>
+</simplesect>
+<simplesect kind="version"><para>LibVLC 3.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="92" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="92" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga31e18ef76173c234f92db50ad8a432a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_discoverer_start</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_start</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start media discovery.</para>
+<para>To stop it, call <ref refid="group__libvlc__media__discoverer_1ga25c2376dff90e2ce2d4614a1c71b3da3" kindref="member">libvlc_media_discoverer_stop()</ref> or <ref refid="group__libvlc__media__discoverer_1ga7e347d0ff55a57464b80529f4665eab9" kindref="member">libvlc_media_discoverer_list_release()</ref> directly.</para>
+<para><simplesect kind="see"><para><ref refid="group__libvlc__media__discoverer_1ga25c2376dff90e2ce2d4614a1c71b3da3" kindref="member">libvlc_media_discoverer_stop</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 in case of error, 0 otherwise </para>
+</simplesect>
+<simplesect kind="version"><para>LibVLC 3.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="108" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="108" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga25c2376dff90e2ce2d4614a1c71b3da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_discoverer_stop</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_stop</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop media discovery.</para>
+<para><simplesect kind="see"><para><ref refid="group__libvlc__media__discoverer_1ga31e18ef76173c234f92db50ad8a432a6" kindref="member">libvlc_media_discoverer_start</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 3.0.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="119" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="119" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga44bb5d3112f1844c420660ac50f03e1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_discoverer_release</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_release</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release media discover object. If the reference count reaches 0, then the object will be released.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media service discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="128" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="128" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga9b72afba0ee885ade6b1334280894eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API libvlc_media_list_t *</type>
+        <definition>LIBVLC_API libvlc_media_list_t * libvlc_media_discoverer_media_list</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_media_list</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get media service discover media list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media service discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>list of media items </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="137" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="137" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1gaa4cd385d67fd8099a23209d2245ddd16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_media_discoverer_is_running</definition>
+        <argsstring>(libvlc_media_discoverer_t *p_mdis)</argsstring>
+        <name>libvlc_media_discoverer_is_running</name>
+        <param>
+          <type>libvlc_media_discoverer_t *</type>
+          <declname>p_mdis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query if media service discover object is running.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_mdis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>media service discover object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if running, false if not</para>
+</simplesect>
+\libvlc_return_bool </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="148" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="148" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga9a4676e452daa2fd4b5eb371542afc29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API size_t</type>
+        <definition>LIBVLC_API size_t libvlc_media_discoverer_list_get</definition>
+        <argsstring>(libvlc_instance_t *p_inst, libvlc_media_discoverer_category_t i_cat, libvlc_media_discoverer_description_t ***ppp_services)</argsstring>
+        <name>libvlc_media_discoverer_list_get</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_inst</declname>
+        </param>
+        <param>
+          <type><ref refid="libvlc__media__discoverer_8h_1a9cba68f1969afbb862814952e6b75b9e" kindref="member">libvlc_media_discoverer_category_t</ref></type>
+          <declname>i_cat</declname>
+        </param>
+        <param>
+          <type><ref refid="structlibvlc__media__discoverer__description__t" kindref="compound">libvlc_media_discoverer_description_t</ref> ***</type>
+          <declname>ppp_services</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get media discoverer services by category</para>
+<para><simplesect kind="version"><para>LibVLC 3.0.0 and later.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_inst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_cat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>category of services to fetch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppp_services</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address to store an allocated array of media discoverer services (must be freed with <ref refid="group__libvlc__media__discoverer_1ga7e347d0ff55a57464b80529f4665eab9" kindref="member">libvlc_media_discoverer_list_release()</ref> by the caller) [OUT]</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of media discoverer services (0 on error) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="164" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="164" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__media__discoverer_1ga7e347d0ff55a57464b80529f4665eab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_media_discoverer_list_release</definition>
+        <argsstring>(libvlc_media_discoverer_description_t **pp_services, size_t i_count)</argsstring>
+        <name>libvlc_media_discoverer_list_release</name>
+        <param>
+          <type><ref refid="structlibvlc__media__discoverer__description__t" kindref="compound">libvlc_media_discoverer_description_t</ref> **</type>
+          <declname>pp_services</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release an array of media discoverer services</para>
+<para><simplesect kind="version"><para>LibVLC 3.0.0 and later.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__media__discoverer_1ga9a4676e452daa2fd4b5eb371542afc29" kindref="member">libvlc_media_discoverer_list_get()</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pp_services</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array to release </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of elements in the array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" line="179" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc_media_discoverer.h" declline="179" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>LibVLC media discovery finds available media via various means. This corresponds to the service discovery functionality in VLC media player. Different plugins find potential medias locally (e.g. user media directory), from peripherals (e.g. video capture device), on the local network (e.g. SAP) or on the Internet (e.g. Internet radios). </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

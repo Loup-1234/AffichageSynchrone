@@ -1,0 +1,941 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__sockets" kind="group">
+    <compoundname>sockets</compoundname>
+    <title>Internet sockets</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__sockets_1ga4f4fe419da790a051ae042b8c3d3f2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_socket</definition>
+        <argsstring>(int pf, int type, int proto, bool nonblock) VLC_USED</argsstring>
+        <name>vlc_socket</name>
+        <param>
+          <type>int</type>
+          <declname>pf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>nonblock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a socket file descriptor.</para>
+<para>This function creates a socket, similar to the standard socket() function. However, the new file descriptor has the close-on-exec flag set atomically, so as to avoid leaking the descriptor to child processes.</para>
+<para>The non-blocking flag can also optionally be set.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>protocol family </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proto</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>network protocol </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nonblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to create a non-blocking socket </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new file descriptor or -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="79" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="79" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga7a3fa84b57114d14ebc571b0bb38d2b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_socketpair</definition>
+        <argsstring>(int pf, int type, int proto, int fds[2], bool nonblock)</argsstring>
+        <name>vlc_socketpair</name>
+        <param>
+          <type>int</type>
+          <declname>pf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proto</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fds</declname>
+          <array>[2]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>nonblock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a pair of socket file descriptors.</para>
+<para>This function creates a pair of sockets that are mutually connected, much like the standard socketpair() function. However, the new file descriptors have the close-on-exec flag set atomically. See also <ref refid="group__sockets_1ga4f4fe419da790a051ae042b8c3d3f2d6" kindref="member">vlc_socket()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>protocol family </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proto</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>network protocol </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nonblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to create non-blocking sockets </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>-1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on failure </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="96" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="96" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga62d662e39d845037342ce07577113be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_accept</definition>
+        <argsstring>(int lfd, struct sockaddr *addr, socklen_t *alen, bool nonblock) VLC_USED</argsstring>
+        <name>vlc_accept</name>
+        <param>
+          <type>int</type>
+          <declname>lfd</declname>
+        </param>
+        <param>
+          <type>struct sockaddr *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>socklen_t *</type>
+          <declname>alen</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>nonblock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Accepts an inbound connection request on a listening socket.</para>
+<para>This function creates a connected socket from a listening socket, much like the standard accept() function. However, the new file descriptor has the close-on-exec flag set atomically. See also <ref refid="group__sockets_1ga4f4fe419da790a051ae042b8c3d3f2d6" kindref="member">vlc_socket()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>listening socket file descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the peer address or NULL [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the length of the peer address or NULL [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nonblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to put the new socket in non-blocking mode </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new file descriptor or -1 on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="114" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="114" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gafae3481b4eb4e45665607775bbfc9367" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int net_Socket</definition>
+        <argsstring>(vlc_object_t *obj, int family, int socktype, int proto)</argsstring>
+        <name>net_Socket</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>family</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>socktype</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="122" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="122" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga2df38124fe1a465a6fbaff535f28495a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int net_Connect</definition>
+        <argsstring>(vlc_object_t *p_this, const char *psz_host, int i_port, int socktype, int protocol)</argsstring>
+        <name>net_Connect</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>socktype</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="124" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="124" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gac2a005f434014a4d1459d13f7717fd5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int *</type>
+        <definition>VLC_API int * net_Listen</definition>
+        <argsstring>(vlc_object_t *p_this, const char *psz_host, int i_port, int socktype, int protocol)</argsstring>
+        <name>net_Listen</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>socktype</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="127" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="127" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga473c22ce30b4aa60674b0f41c54472f7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int net_ConnectTCP</definition>
+        <argsstring>(vlc_object_t *obj, const char *host, int port)</argsstring>
+        <name>net_ConnectTCP</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="132" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga9b1eefbcc2ff4b2b1186fa013fdbbedb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int net_AcceptSingle</definition>
+        <argsstring>(vlc_object_t *obj, int lfd)</argsstring>
+        <name>net_AcceptSingle</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lfd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="138" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="138" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gaaa3d9833162facff54fb96d931225c89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int net_Accept</definition>
+        <argsstring>(vlc_object_t *, int *)</argsstring>
+        <name>net_Accept</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>int *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="140" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="140" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga635c91d8134518a624b9a307542062cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int net_ConnectDgram</definition>
+        <argsstring>(vlc_object_t *p_this, const char *psz_host, int i_port, int hlim, int proto)</argsstring>
+        <name>net_ConnectDgram</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hlim</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="144" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="144" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gaa735f21557850f2c32a55175ec045002" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int net_ConnectUDP</definition>
+        <argsstring>(vlc_object_t *obj, const char *host, int port, int hlim)</argsstring>
+        <name>net_ConnectUDP</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hlim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="148" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga76e292baa105eac66a3904c69319859f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int net_OpenDgram</definition>
+        <argsstring>(vlc_object_t *p_this, const char *psz_bind, int i_bind, const char *psz_server, int i_server, int proto)</argsstring>
+        <name>net_OpenDgram</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_bind</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_bind</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="153" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="153" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga342a29131432626dddb799efb078dcc2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int net_ListenUDP1</definition>
+        <argsstring>(vlc_object_t *obj, const char *host, int port)</argsstring>
+        <name>net_ListenUDP1</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="157" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gaf40ff5822d34d33708b9310e44ad06e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void net_ListenClose</definition>
+        <argsstring>(int *fd)</argsstring>
+        <name>net_ListenClose</name>
+        <param>
+          <type>int *</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="162" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="162" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gaff061671a285c63fe6ff743425cdd259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int net_Subscribe</definition>
+        <argsstring>(vlc_object_t *obj, int fd, const struct sockaddr *addr, socklen_t addrlen)</argsstring>
+        <name>net_Subscribe</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const struct sockaddr *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>socklen_t</type>
+          <declname>addrlen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="164" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="164" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga8718bb871a811265a7edf978f078d171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int net_SetCSCov</definition>
+        <argsstring>(int fd, int sendcov, int recvcov)</argsstring>
+        <name>net_SetCSCov</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sendcov</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>recvcov</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="167" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="167" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga48168bee988f4ec4a0284c51ed365379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t net_Read</definition>
+        <argsstring>(vlc_object_t *p_this, int fd, void *p_data, size_t i_data)</argsstring>
+        <name>net_Read</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="169" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="169" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gaa7f0332084228c9adcb695c28fa1c162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t net_Write</definition>
+        <argsstring>(vlc_object_t *p_this, int fd, const void *p_data, size_t i_data)</argsstring>
+        <name>net_Write</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="171" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="171" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gaf7c640830b664c0e01aad4dbd91acc67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * net_Gets</definition>
+        <argsstring>(vlc_object_t *p_this, int fd)</argsstring>
+        <name>net_Gets</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="173" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="173" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga7de9921ebc7ae039e34dfb21e1518ee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t net_Printf</definition>
+        <argsstring>(vlc_object_t *p_this, int fd, const char *psz_fmt,...) VLC_FORMAT(3</argsstring>
+        <name>net_Printf</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="177" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1ga7cf49fbfb7dcd77db3dbf8f58a97d1d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t net_vaPrintf</definition>
+        <argsstring>(vlc_object_t *p_this, int fd, const char *psz_fmt, va_list args)</argsstring>
+        <name>net_vaPrintf</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_this</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_fmt</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="179" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="179" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sockets_1gacec4ccb10bbda1f0a1b38feba4073013" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_close</definition>
+        <argsstring>(int)</argsstring>
+        <name>vlc_close</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="182" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" declline="182" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__sockets_1ga0d2405717efb999eab438679ae507f1f" prot="public" static="no">
+        <name>net_errno</name>
+        <initializer>errno</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="56" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga0540b3415e28d15e977be2d0ca2e9748" prot="public" static="no">
+        <name>net_Close</name>
+        <param><defname>fd</defname></param>
+        <initializer>((void)<ref refid="group__fd_1ga323c8f656dd7f8612a1c7a1eb74d0187" kindref="member">vlc_close</ref>(fd))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="57" column="12" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga9f55d0e90dc8cc6b2287312435cdde48" prot="public" static="no">
+        <name>MSG_NOSIGNAL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="61" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga9c06b3fb22702568d5daf2c78a805134" prot="public" static="no">
+        <name>net_Connect</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>e</defname></param>
+        <initializer>net_Connect(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c, d, e)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="125" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga94545aae0d1b77ee06b528de2562cfa7" prot="public" static="no">
+        <name>net_ListenTCP</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>                                          net_Listen(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c, \
+                                          SOCK_STREAM, IPPROTO_TCP)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="129" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="129" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1gaf089de622f237edacfb552815fbdcd3d" prot="public" static="no">
+        <name>net_ConnectTCP</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>net_ConnectTCP(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="136" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga36f0b407b1f23834b54de709b4596aa2" prot="public" static="no">
+        <name>net_Accept</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>        net_Accept(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="141" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="141" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1gac0ba2ca229dcafb52ae688c52bdbd5a3" prot="public" static="no">
+        <name>net_ConnectDgram</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>e</defname></param>
+        <initializer>        net_ConnectDgram(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c, d, e)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="145" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="145" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga058ae61a926d90e7b215e937e0d9c606" prot="public" static="no">
+        <name>net_OpenDgram</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>e</defname></param>
+        <param><defname>g</defname></param>
+        <initializer>        net_OpenDgram(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c, d, e, g)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="154" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="154" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga67fd43e85dbc66da4b406fbe36a2578a" prot="public" static="no">
+        <name>net_Read</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <initializer>net_Read(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a),b,c,d)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="170" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga0e8b26875ce79faf3b946e11e3f00aff" prot="public" static="no">
+        <name>net_Write</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <initializer>net_Write(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a),b,c,d)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="172" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1gafc2cb61d9c710f57decea6f3f8a28cce" prot="public" static="no">
+        <name>net_Gets</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>net_Gets(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a),b)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="174" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga49cbc3e3a0a0333be0baa3c224844654" prot="public" static="no">
+        <name>net_Printf</name>
+        <param><defname>o</defname></param>
+        <param><defname>fd</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>net_Printf(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o),fd, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="178" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sockets_1ga13aa11bf04c4bb242f17191baf5af4a2" prot="public" static="no">
+        <name>net_vaPrintf</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <param><defname>d</defname></param>
+        <initializer>net_vaPrintf(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a),b,c,d)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" line="180" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_network.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

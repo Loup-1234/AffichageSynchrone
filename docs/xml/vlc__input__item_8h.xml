@@ -1,0 +1,2056 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__input__item_8h" kind="file" language="C++">
+    <compoundname>vlc_input_item.h</compoundname>
+    <includes refid="vlc__meta_8h" local="no">vlc_meta.h</includes>
+    <includes refid="vlc__epg_8h" local="no">vlc_epg.h</includes>
+    <includes refid="vlc__events_8h" local="no">vlc_events.h</includes>
+    <includes local="no">string.h</includes>
+    <includedby refid="vlc__fingerprinter_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fingerprinter.h</includedby>
+    <includedby refid="vlc__input_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>vlc_arrays.h</label>
+        <link refid="vlc__arrays_8h"/>
+      </node>
+      <node id="3">
+        <label>vlc_epg.h</label>
+        <link refid="vlc__epg_8h"/>
+      </node>
+      <node id="4">
+        <label>vlc_events.h</label>
+        <link refid="vlc__events_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h</label>
+        <link refid="vlc__input__item_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_meta.h</label>
+        <link refid="vlc__meta_8h"/>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fingerprinter.h</label>
+        <link refid="vlc__fingerprinter_8h_source"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h</label>
+        <link refid="vlc__input_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h</label>
+        <link refid="vlc__input__item_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h</label>
+        <link refid="vlc__renderer__discovery_8h"/>
+      </node>
+      <node id="5">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_services_discovery.h</label>
+        <link refid="vlc__services__discovery_8h"/>
+      </node>
+      <node id="6">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h</label>
+        <link refid="vlc__vlm_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structinfo__t" prot="public">info_t</innerclass>
+    <innerclass refid="structinfo__category__t" prot="public">info_category_t</innerclass>
+    <innerclass refid="structinput__item__t" prot="public">input_item_t</innerclass>
+    <innerclass refid="structinput__item__slave" prot="public">input_item_slave</innerclass>
+    <innerclass refid="structinput__item__node__t" prot="public">input_item_node_t</innerclass>
+    <innerclass refid="structinput__stats__t" prot="public">input_stats_t</innerclass>
+    <innerclass refid="structvlc__readdir__helper" prot="public">vlc_readdir_helper</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="vlc__input__item_8h_1a1147df1e76b42a35abb0253b86c7132f" prot="public" static="no">
+        <name>MASTER_EXTENSIONS</name>
+        <initializer>    &quot;asf&quot;, &quot;avi&quot;, &quot;divx&quot;, \
+    &quot;f4v&quot;, &quot;flv&quot;, &quot;m1v&quot;, \
+    &quot;m2v&quot;, &quot;m4v&quot;, &quot;mkv&quot;, \
+    &quot;mov&quot;, &quot;mp2&quot;, &quot;mp2v&quot;, \
+    &quot;mp4&quot;, &quot;mp4v&quot;, &quot;mpe&quot;, \
+    &quot;mpeg&quot;, &quot;mpeg1&quot;, &quot;mpeg2&quot;, \
+    &quot;mpeg4&quot;, &quot;mpg&quot;, &quot;mpv2&quot;, \
+    &quot;mxf&quot;, &quot;ogv&quot;, &quot;ogx&quot;, \
+    &quot;ps&quot;, &quot;vro&quot;,&quot;webm&quot;, \
+    &quot;wmv&quot;, &quot;wtv&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="145" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="145" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a45c08a77ddbd2663627e9356699ebabe" prot="public" static="no">
+        <name>SLAVE_SPU_EXTENSIONS</name>
+        <initializer>    &quot;aqt&quot;, &quot;ass&quot;,  &quot;cdg&quot;, \
+    &quot;dks&quot;, &quot;idx&quot;, &quot;jss&quot;, \
+    &quot;mpl2&quot;, &quot;mpsub&quot;, &quot;pjs&quot;, \
+    &quot;psb&quot;, &quot;rt&quot;, &quot;sami&quot;, &quot;sbv&quot;, \
+    &quot;scc&quot;, &quot;smi&quot;, &quot;srt&quot;, \
+    &quot;ssa&quot;,  &quot;stl&quot;, &quot;sub&quot;, \
+    &quot;ttml&quot;, &quot;tt&quot;, &quot;usf&quot;, \
+    &quot;vtt&quot;, &quot;webvtt&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="157" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="157" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a989612bf444a71476c9bda76527c67a2" prot="public" static="no">
+        <name>SLAVE_AUDIO_EXTENSIONS</name>
+        <initializer>    &quot;aac&quot;, &quot;ac3&quot;, &quot;dts&quot;, \
+    &quot;dtshd&quot;, &quot;eac3&quot;, &quot;flac&quot;, \
+    &quot;m4a&quot;, &quot;mp3&quot;, &quot;pcm&quot; \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="167" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="167" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1ab7537023ca5e3b09e67425052bd0adca" prot="public" static="no">
+        <name>input_item_slave_Delete</name>
+        <param><defname>p_slave</defname></param>
+        <initializer>free(p_slave)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="250" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a228fb8a6e22e3e19f599c37fd5118cab" prot="public" static="no">
+        <name>INPUT_META</name>
+        <param><defname>name</defname></param>
+        <initializer>static inline \
+void input_item_Set ## name (<ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *p_input, const char *val) \
+{ \
+    input_item_SetMeta (p_input, vlc_meta_ ## name, val); \
+} \
+static inline \
+char *input_item_Get ## name (<ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *p_input) \
+{ \
+    return input_item_GetMeta (p_input, vlc_meta_ ## name); \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="273" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="273" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a14cbab4da139562ae3fac6b49da8a3ba" prot="public" static="no">
+        <name>input_item_SetTrackNum</name>
+        <initializer>input_item_SetTrackNumber</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="312" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a39aa0a833657487d33d6090147648f8e" prot="public" static="no">
+        <name>input_item_GetTrackNum</name>
+        <initializer>input_item_GetTrackNumber</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="313" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1ae6c52f2e44b840b7d48e6c6304c2f4b7" prot="public" static="no">
+        <name>input_item_SetArtURL</name>
+        <initializer>input_item_SetArtworkURL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="314" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1af744faca7f30666b1d018de4a3cb771c" prot="public" static="no">
+        <name>input_item_GetArtURL</name>
+        <initializer>input_item_GetArtworkURL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="315" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1ae2ba1a4355a58111c32d607751e041c4" prot="public" static="no">
+        <name>input_item_New</name>
+        <param><defname>psz_uri</defname></param>
+        <param><defname>psz_name</defname></param>
+        <initializer>    <ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>( psz_uri, psz_name, -1, ITEM_TYPE_UNKNOWN, ITEM_NET_UNKNOWN )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="333" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="333" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1adfea7f65c50eaa19d5473308840471c0" prot="public" static="no">
+        <name>input_item_NewCard</name>
+        <param><defname>psz_uri</defname></param>
+        <param><defname>psz_name</defname></param>
+        <initializer>    <ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>( psz_uri, psz_name, -1, ITEM_TYPE_CARD, ITEM_LOCAL )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="336" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="336" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a6d80bf08c6f7469f80c205c4ca88f784" prot="public" static="no">
+        <name>input_item_NewDisc</name>
+        <param><defname>psz_uri</defname></param>
+        <param><defname>psz_name</defname></param>
+        <param><defname>i_duration</defname></param>
+        <initializer>    <ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>( psz_uri, psz_name, i_duration, ITEM_TYPE_DISC, ITEM_LOCAL )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="339" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="339" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1afb477a8d69297f5800765ae5f0e71e28" prot="public" static="no">
+        <name>input_item_NewStream</name>
+        <param><defname>psz_uri</defname></param>
+        <param><defname>psz_name</defname></param>
+        <param><defname>i_duration</defname></param>
+        <initializer>    <ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>( psz_uri, psz_name, i_duration, ITEM_TYPE_STREAM, ITEM_NET )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="342" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="342" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a61a55e80da7fb6717911c879a593eec6" prot="public" static="no">
+        <name>input_item_NewDirectory</name>
+        <param><defname>psz_uri</defname></param>
+        <param><defname>psz_name</defname></param>
+        <param><defname>i_net</defname></param>
+        <initializer>    <ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>( psz_uri, psz_name, -1, ITEM_TYPE_DIRECTORY, i_net )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="345" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="345" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a91fb2d6fe040d9c4234d91d5ab0e8eb3" prot="public" static="no">
+        <name>input_item_NewFile</name>
+        <param><defname>psz_uri</defname></param>
+        <param><defname>psz_name</defname></param>
+        <param><defname>i_duration</defname></param>
+        <param><defname>i_net</defname></param>
+        <initializer>    <ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>( psz_uri, psz_name, i_duration, ITEM_TYPE_FILE, i_net )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="348" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="348" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="define" id="vlc__input__item_8h_1a5f19cb4570e9dcc4276385cbdf5b6f17" prot="public" static="no">
+        <name>vlc_readdir_helper_init</name>
+        <param><defname>p_rdh</defname></param>
+        <param><defname>p_obj</defname></param>
+        <param><defname>p_node</defname></param>
+        <initializer>    vlc_readdir_helper_init(p_rdh, <ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(p_obj), p_node)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="453" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="453" bodyend="454"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741" prot="public" static="no" strong="no">
+        <type></type>
+        <name>input_item_type_e</name>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741ac9be2cde18da707e40fc1628a4162bcf" prot="public">
+          <name>ITEM_TYPE_UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741aabe586940143cf966b34c23b990b3533" prot="public">
+          <name>ITEM_TYPE_FILE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741a3868fc0e688494463dfb2064e88ae46f" prot="public">
+          <name>ITEM_TYPE_DIRECTORY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741a1efbe7db258349830631d867580438c2" prot="public">
+          <name>ITEM_TYPE_DISC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741ad14b5d52dd44840256dff364dfb2afbc" prot="public">
+          <name>ITEM_TYPE_CARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741ac2c051162a3f6b6834e82baa5be37766" prot="public">
+          <name>ITEM_TYPE_STREAM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741acc0a79255c9377d7afa1ff2470a13797" prot="public">
+          <name>ITEM_TYPE_PLAYLIST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741a137d9e4bd85c589bef8c90e515d9a52f" prot="public">
+          <name>ITEM_TYPE_NODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1afa73e321ff953ffa5d75d479e10f0741a23f2f05113391d31641717e79be4dcf4" prot="public">
+          <name>ITEM_TYPE_NUMBER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="107" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="108" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__input__item_8h_1aaf5d97f1faa342d7955d2918f477b533" prot="public" static="no" strong="no">
+        <type></type>
+        <name>input_item_net_type</name>
+        <enumvalue id="vlc__input__item_8h_1aaf5d97f1faa342d7955d2918f477b533a310cc5ae486cb3e55d5d1f236aa82c7d" prot="public">
+          <name>ITEM_NET_UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1aaf5d97f1faa342d7955d2918f477b533ac6628ab6ec801aa3e41d7a8b3d267477" prot="public">
+          <name>ITEM_NET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1aaf5d97f1faa342d7955d2918f477b533afadb236d98c7f74e7ee8cc4ed41e389f" prot="public">
+          <name>ITEM_LOCAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="122" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="123" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__input__item_8h_1a2b1256dbe2b2f2f99ae644563ca2825c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>slave_type</name>
+        <enumvalue id="vlc__input__item_8h_1a2b1256dbe2b2f2f99ae644563ca2825caddbb9f474f63bcaf8c22df15907291e9" prot="public">
+          <name>SLAVE_TYPE_SPU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1a2b1256dbe2b2f2f99ae644563ca2825caec5a3c89f439d6d7d1a8f5bfd003ed5d" prot="public">
+          <name>SLAVE_TYPE_AUDIO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="129" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__input__item_8h_1ac530f10251db5e19e3047deffb243b9d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>slave_priority</name>
+        <enumvalue id="vlc__input__item_8h_1ac530f10251db5e19e3047deffb243b9dadc175ddf0b810d3f2da34e3ce030b516" prot="public">
+          <name>SLAVE_PRIORITY_MATCH_NONE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac530f10251db5e19e3047deffb243b9da7fb0d6548ff78abd53c5c25627578eb7" prot="public">
+          <name>SLAVE_PRIORITY_MATCH_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac530f10251db5e19e3047deffb243b9da4d55e6e3d7794d2903c5c0e3713b3c6f" prot="public">
+          <name>SLAVE_PRIORITY_MATCH_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac530f10251db5e19e3047deffb243b9da7b11b68dacc5d698cece89e4667cbed9" prot="public">
+          <name>SLAVE_PRIORITY_MATCH_ALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac530f10251db5e19e3047deffb243b9da37f912d9e21918a55edbf657548e2406" prot="public">
+          <name>SLAVE_PRIORITY_USER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="135" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="136" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__input__item_8h_1a6396490392dfadfc18554f9777d98209" prot="public" static="no" strong="no">
+        <type></type>
+        <name>input_item_option_e</name>
+        <enumvalue id="vlc__input__item_8h_1a6396490392dfadfc18554f9777d98209a7a2ebe6dd3eb5e6cd530e38e0eb2826b" prot="public">
+          <name>VLC_INPUT_OPTION_TRUSTED</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1a6396490392dfadfc18554f9777d98209a5b8d9cb89e54c8f66c491721efeaed1a" prot="public">
+          <name>VLC_INPUT_OPTION_UNIQUE</name>
+          <initializer>= 0x100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Option flags </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="221" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="222" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__input__item_8h_1ac32513dc780e353a2d7d9516df0693b0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>input_item_meta_request_option_t</name>
+        <enumvalue id="vlc__input__item_8h_1ac32513dc780e353a2d7d9516df0693b0a2041caef540244d726993ec9c5af76c0" prot="public">
+          <name>META_REQUEST_OPTION_NONE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac32513dc780e353a2d7d9516df0693b0a8a2db78c3b87de41c831c846d7b7b927" prot="public">
+          <name>META_REQUEST_OPTION_SCOPE_LOCAL</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac32513dc780e353a2d7d9516df0693b0a3d0ea7de122e0585c2e18a94bbc02153" prot="public">
+          <name>META_REQUEST_OPTION_SCOPE_NETWORK</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac32513dc780e353a2d7d9516df0693b0a300e2d96c474b1125c952605a2c3efaf" prot="public">
+          <name>META_REQUEST_OPTION_SCOPE_ANY</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1ac32513dc780e353a2d7d9516df0693b0a848ce0ee8b70a4a0b6794b0054fbcaab" prot="public">
+          <name>META_REQUEST_OPTION_DO_INTERACT</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="362" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="363" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="enum" id="vlc__input__item_8h_1a5bd5f1268ce9269e3db9b18ee5819306" prot="public" static="no" strong="no">
+        <type></type>
+        <name>input_item_preparse_status</name>
+        <enumvalue id="vlc__input__item_8h_1a5bd5f1268ce9269e3db9b18ee5819306a7ba2761240fdfec3ef1c78079b77d9b2" prot="public">
+          <name>ITEM_PREPARSE_SKIPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1a5bd5f1268ce9269e3db9b18ee5819306a3eed61795f06ea11a22183c3c098b50a" prot="public">
+          <name>ITEM_PREPARSE_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1a5bd5f1268ce9269e3db9b18ee5819306a6c08ca43fa8fe3cb06c62ca854816cec" prot="public">
+          <name>ITEM_PREPARSE_TIMEOUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="vlc__input__item_8h_1a5bd5f1268ce9269e3db9b18ee5819306a79eeb4b6ab7fc5425450a11c5bf20dc8" prot="public">
+          <name>ITEM_PREPARSE_DONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="372" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="373" bodyend="378"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vlc__input__item_8h_1a18393a141d2ba896670a5e8439188cfe" prot="public" static="no">
+        <type>struct input_item_opaque</type>
+        <definition>typedef struct input_item_opaque input_item_opaque_t</definition>
+        <argsstring></argsstring>
+        <name>input_item_opaque_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="39" column="32" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__input__item_8h_1a419e678bc3588af9c14e8d4fc63a343a" prot="public" static="no">
+        <type>struct <ref refid="structinput__item__slave" kindref="compound">input_item_slave</ref></type>
+        <definition>typedef struct input_item_slave input_item_slave_t</definition>
+        <argsstring></argsstring>
+        <name>input_item_slave_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="40" column="31" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vlc__input__item_8h_1a8af393a2a2143320c6e100e4caf4543c" prot="public" static="no">
+        <type>enum input_item_meta_request_option_t</type>
+        <definition>typedef enum input_item_meta_request_option_t input_item_meta_request_option_t</definition>
+        <argsstring></argsstring>
+        <name>input_item_meta_request_option_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="369" column="34"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="vlc__input__item_8h_1ae09c3e1db697fbfa14dca705a94804aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_CopyOptions</definition>
+        <argsstring>(input_item_t *p_child, input_item_t *p_parent)</argsstring>
+        <name>input_item_CopyOptions</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_child</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="187" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="187" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1ab1f73195e561bf61ac9512695a4cd90a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_SetName</definition>
+        <argsstring>(input_item_t *p_item, const char *psz_name)</argsstring>
+        <name>input_item_SetName</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_item</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="188" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="188" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a5327fcf513b1256a08c69560bbee0391" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+        <definition>VLC_API input_item_node_t * input_item_node_Create</definition>
+        <argsstring>(input_item_t *p_input) VLC_USED</argsstring>
+        <name>input_item_node_Create</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start adding multiple subitems.</para>
+<para>Create a root node to hold a tree of subitems for given item </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="195" column="28" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="195" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a0671cdd23f4da80ed0e6d8e158d7fc51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+        <definition>VLC_API input_item_node_t * input_item_node_AppendItem</definition>
+        <argsstring>(input_item_node_t *p_node, input_item_t *p_item)</argsstring>
+        <name>input_item_node_AppendItem</name>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>p_node</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a new child node to this parent node that will point to this subitem. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="200" column="28" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="200" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a2a4014ab867bd004391fbd3a8f6b7ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_node_AppendNode</definition>
+        <argsstring>(input_item_node_t *p_parent, input_item_node_t *p_child)</argsstring>
+        <name>input_item_node_AppendNode</name>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>p_parent</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>p_child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add an already created node to children of this parent node. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="205" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="205" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a1e1de106a5352f047e77405682152f3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void input_item_node_RemoveNode</definition>
+        <argsstring>(input_item_node_t *parent, input_item_node_t *child)</argsstring>
+        <name>input_item_node_RemoveNode</name>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove a node from its parent. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="210" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="210" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1add140c08c6fc921e36584ec66fda33d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_node_Delete</definition>
+        <argsstring>(input_item_node_t *p_node)</argsstring>
+        <name>input_item_node_Delete</name>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>p_node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a node created with <ref refid="vlc__input__item_8h_1a5327fcf513b1256a08c69560bbee0391" kindref="member">input_item_node_Create()</ref> and all its children. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="216" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="216" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1ab0a74ffd05e816e9456651b07067ebcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int input_item_AddOption</definition>
+        <argsstring>(input_item_t *, const char *, unsigned i_flags)</argsstring>
+        <name>input_item_AddOption</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>i_flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function allows to add an option to an existing <ref refid="structinput__item__t" kindref="compound">input_item_t</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="235" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="235" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1ae3b792f8c32a7f68583e43078d4b829f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int input_item_AddOptions</definition>
+        <argsstring>(input_item_t *, int i_options, const char *const *ppsz_options, unsigned i_flags)</argsstring>
+        <name>input_item_AddOptions</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_options</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>ppsz_options</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>i_flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function add several options to an existing <ref refid="structinput__item__t" kindref="compound">input_item_t</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="239" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="239" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a55c81d56a35f201cb0d5d692be8c26fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int input_item_AddOpaque</definition>
+        <argsstring>(input_item_t *, const char *, void *)</argsstring>
+        <name>input_item_AddOpaque</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="242" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="242" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1aab8fc56d09c1cf79fc7ef185318627d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void input_item_ApplyOptions</definition>
+        <argsstring>(vlc_object_t *, input_item_t *)</argsstring>
+        <name>input_item_ApplyOptions</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="244" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="244" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a8002002c30624e34070b46ded691455a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool input_item_slave_GetType</definition>
+        <argsstring>(const char *, enum slave_type *)</argsstring>
+        <name>input_item_slave_GetType</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>enum slave_type *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="246" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="246" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1aa1541f603e6412f0da4ab7473f68326b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__item__slave" kindref="compound">input_item_slave_t</ref> *</type>
+        <definition>VLC_API input_item_slave_t * input_item_slave_New</definition>
+        <argsstring>(const char *, enum slave_type, enum slave_priority)</argsstring>
+        <name>input_item_slave_New</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>enum</type>
+          <declname>slave_type</declname>
+        </param>
+        <param>
+          <type>enum</type>
+          <declname>slave_priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="248" column="28" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="248" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1ae8581fde033762b45bcc655383ce4c93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int input_item_AddSlave</definition>
+        <argsstring>(input_item_t *, input_item_slave_t *)</argsstring>
+        <name>input_item_AddSlave</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__slave" kindref="compound">input_item_slave_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function allows adding a slave to an existing input item. The slave is owned by the input item after this call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="256" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="256" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a9203ea1b5fa3d56fe1da20d45369efe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool input_item_HasErrorWhenReading</definition>
+        <argsstring>(input_item_t *)</argsstring>
+        <name>input_item_HasErrorWhenReading</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="259" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="259" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a597b92a96eb069dfbccf055a454b851a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_SetMeta</definition>
+        <argsstring>(input_item_t *, vlc_meta_type_t meta_type, const char *psz_val)</argsstring>
+        <name>input_item_SetMeta</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>vlc_meta_type_t</type>
+          <declname>meta_type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="260" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="260" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a25491397083be00a97e4c8792f8be8d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool input_item_MetaMatch</definition>
+        <argsstring>(input_item_t *p_i, vlc_meta_type_t meta_type, const char *psz)</argsstring>
+        <name>input_item_MetaMatch</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type>vlc_meta_type_t</type>
+          <declname>meta_type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="261" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="261" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a10ca55e4d47f564573aebd00b6aaeb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * input_item_GetMeta</definition>
+        <argsstring>(input_item_t *p_i, vlc_meta_type_t meta_type) VLC_USED</argsstring>
+        <name>input_item_GetMeta</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type>vlc_meta_type_t</type>
+          <declname>meta_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="262" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="262" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a1fcadac2d571000c734617d5bcf152da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * input_item_GetName</definition>
+        <argsstring>(input_item_t *p_i) VLC_USED</argsstring>
+        <name>input_item_GetName</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="263" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="263" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a4c4c2978c538664f6861d34de70e6dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * input_item_GetTitleFbName</definition>
+        <argsstring>(input_item_t *p_i) VLC_USED</argsstring>
+        <name>input_item_GetTitleFbName</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="264" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="264" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a43c5b6ca4e34bbde2935608176acd08c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * input_item_GetURI</definition>
+        <argsstring>(input_item_t *p_i) VLC_USED</argsstring>
+        <name>input_item_GetURI</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="265" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="265" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1ad662b185f6a416890b3b88fb85bcc0b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * input_item_GetNowPlayingFb</definition>
+        <argsstring>(input_item_t *p_item) VLC_USED</argsstring>
+        <name>input_item_GetNowPlayingFb</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="266" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="266" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a87e21a789f061c74bad967d12de39573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_SetURI</definition>
+        <argsstring>(input_item_t *p_i, const char *psz_uri)</argsstring>
+        <name>input_item_SetURI</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="267" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="267" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a5129e05208c5309490399065882ff03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+        <definition>VLC_API vlc_tick_t input_item_GetDuration</definition>
+        <argsstring>(input_item_t *p_i)</argsstring>
+        <name>input_item_GetDuration</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="268" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="268" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a2eedf509c1160f7a46a4c2811f883b09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_SetDuration</definition>
+        <argsstring>(input_item_t *p_i, vlc_tick_t i_duration)</argsstring>
+        <name>input_item_SetDuration</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>i_duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="269" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="269" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a55e771ecfa1df0f3fef46801bb00182e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool input_item_IsPreparsed</definition>
+        <argsstring>(input_item_t *p_i)</argsstring>
+        <name>input_item_IsPreparsed</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="270" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="270" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a1a9635240588454b9164d89549ebf577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool input_item_IsArtFetched</definition>
+        <argsstring>(input_item_t *p_i)</argsstring>
+        <name>input_item_IsArtFetched</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="271" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="271" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a319ef28fd20eb81ae21f59e4f4efa781" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * input_item_GetInfo</definition>
+        <argsstring>(input_item_t *p_i, const char *psz_cat, const char *psz_name) VLC_USED</argsstring>
+        <name>input_item_GetInfo</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_cat</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="317" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="317" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a37f8a7fbdc2eaae8a25b129fe2855c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int input_item_AddInfo</definition>
+        <argsstring>(input_item_t *p_i, const char *psz_cat, const char *psz_name, const char *psz_format,...) VLC_FORMAT(4</argsstring>
+        <name>input_item_AddInfo</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_cat</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="318" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a6d44e5ed1464c385da64be834efeaf75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int VLC_API int</type>
+        <definition>VLC_API int VLC_API int input_item_DelInfo</definition>
+        <argsstring>(input_item_t *p_i, const char *psz_cat, const char *psz_name)</argsstring>
+        <name>input_item_DelInfo</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+          <declname>p_i</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_cat</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="319" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="319" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a3a40da419a21ef4df9996ff13b19051e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_ReplaceInfos</definition>
+        <argsstring>(input_item_t *, info_category_t *)</argsstring>
+        <name>input_item_ReplaceInfos</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinfo__category__t" kindref="compound">info_category_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="320" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="320" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a29dd2e67a80d9353afb918e864063fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_MergeInfos</definition>
+        <argsstring>(input_item_t *, info_category_t *)</argsstring>
+        <name>input_item_MergeInfos</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinfo__category__t" kindref="compound">info_category_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="321" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="321" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        <definition>VLC_API input_item_t * input_item_NewExt</definition>
+        <argsstring>(const char *psz_uri, const char *psz_name, vlc_tick_t i_duration, int i_type, enum input_item_net_type i_net) VLC_USED</argsstring>
+        <name>input_item_NewExt</name>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>i_duration</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_type</declname>
+        </param>
+        <param>
+          <type>enum input_item_net_type</type>
+          <declname>i_net</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> with the provided information.</para>
+<para>XXX You may also use input_item_New, as they need less arguments. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="328" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="328" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a3851fdac4b44b73b573156b7bc8ca585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        <definition>VLC_API input_item_t * input_item_Copy</definition>
+        <argsstring>(input_item_t *) VLC_USED</argsstring>
+        <name>input_item_Copy</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> as a copy of another. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="354" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="354" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a9d3a59b47a68041d143ab888260e5b98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        <definition>VLC_API input_item_t * input_item_Hold</definition>
+        <argsstring>(input_item_t *)</argsstring>
+        <name>input_item_Hold</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Holds an input item, i.e. creates a new reference. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="357" column="22" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="357" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a59fc6c3da287d4b0f5857e7c8498d256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void input_item_Release</definition>
+        <argsstring>(input_item_t *)</argsstring>
+        <name>input_item_Release</name>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases an input item, i.e. decrements its reference counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="360" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="360" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a0f4a9143123aa510dca78a2278e737e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int libvlc_MetadataRequest</definition>
+        <argsstring>(libvlc_int_t *, input_item_t *, input_item_meta_request_option_t, int, void *)</argsstring>
+        <name>libvlc_MetadataRequest</name>
+        <param>
+          <type><ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>input_item_meta_request_option_t</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="380" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="380" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1aaba6b74f49cd566be3ab840d210dfff9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int libvlc_ArtRequest</definition>
+        <argsstring>(libvlc_int_t *, input_item_t *, input_item_meta_request_option_t)</argsstring>
+        <name>libvlc_ArtRequest</name>
+        <param>
+          <type><ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>input_item_meta_request_option_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="383" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="383" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a2f89ccda127836a014447a2e75c17630" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void libvlc_MetadataCancel</definition>
+        <argsstring>(libvlc_int_t *, void *)</argsstring>
+        <name>libvlc_MetadataCancel</name>
+        <param>
+          <type><ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="385" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="385" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a76395a41b29088984bc159930fb89f70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_readdir_helper_init</definition>
+        <argsstring>(struct vlc_readdir_helper *p_rdh, vlc_object_t *p_obj, input_item_node_t *p_node)</argsstring>
+        <name>vlc_readdir_helper_init</name>
+        <param>
+          <type>struct <ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref> *</type>
+          <declname>p_rdh</declname>
+        </param>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>p_obj</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref> *</type>
+          <declname>p_node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Init a <ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref> struct</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_rdh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>need to be cleaned with <ref refid="vlc__input__item_8h_1a71d16c0c106b5a3f7bd78505dfcb832c" kindref="member">vlc_readdir_helper_finish()</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node that will be used to add items </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="451" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="451" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a71d16c0c106b5a3f7bd78505dfcb832c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_readdir_helper_finish</definition>
+        <argsstring>(struct vlc_readdir_helper *p_rdh, bool b_success)</argsstring>
+        <name>vlc_readdir_helper_finish</name>
+        <param>
+          <type>struct <ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref> *</type>
+          <declname>p_rdh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_success</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finish adding items to the node</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b_success</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, items of the node will be sorted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="461" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="461" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="vlc__input__item_8h_1a88c5113eeb08d394870d2b60a5506373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_readdir_helper_additem</definition>
+        <argsstring>(struct vlc_readdir_helper *p_rdh, const char *psz_uri, const char *psz_flatpath, const char *psz_filename, int i_type, int i_net)</argsstring>
+        <name>vlc_readdir_helper_additem</name>
+        <param>
+          <type>struct <ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref> *</type>
+          <declname>p_rdh</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_uri</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_flatpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_net</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a new <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> entry to the node of the <ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref> struct.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_rdh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>previously inited <ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref> struct </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uri of the new item </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_flatpath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flattened path of the new item. If not NULL, this function will create an input item for each sub folders (separated by &apos;/&apos;) of psz_flatpath (so, this will un-flatten the folder hierarchy). Either psz_flatpath or psz_filename must be valid. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file name of the new item. If NULL, the file part of path will be used as a filename. Either psz_flatpath or psz_filename must be valid. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>see input_item_type_e </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_net</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>see input_item_net_type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" line="478" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h" declline="478" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines functions, structures and enums for input items in vlc </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_input_item.h:<sp/>Core<sp/>input<sp/>item</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1999-2009<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Christophe<sp/>Massiot<sp/>&lt;massiot@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_INPUT_ITEM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_INPUT_ITEM_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__meta_8h" kindref="compound">vlc_meta.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__epg_8h" kindref="compound">vlc_epg.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vlc__events_8h" kindref="compound">vlc_events.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">input_item_opaque<sp/>input_item_opaque_t;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinput__item__slave" kindref="compound">input_item_slave</ref><sp/>input_item_slave_t;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structinfo__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinfo__t" kindref="compound">info_t</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44" refid="structinfo__t_1a7306fc36bde05206bf14c35aa4dac759" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structinfo__t_1a7306fc36bde05206bf14c35aa4dac759" kindref="member">psz_name</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="structinfo__t_1a178c10a504bf6c8aa2d6c1790b93be6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structinfo__t_1a178c10a504bf6c8aa2d6c1790b93be6b" kindref="member">psz_value</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structinfo__category__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinfo__category__t" kindref="compound">info_category_t</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50" refid="structinfo__category__t_1a31551fe4ffdb0fbbfa4416500b56cb4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>*<ref refid="structinfo__category__t_1a31551fe4ffdb0fbbfa4416500b56cb4c" kindref="member">psz_name</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="structinfo__category__t_1af8e5b2b9b9561ba464badf3dcfde3ff6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinfo__category__t_1af8e5b2b9b9561ba464badf3dcfde3ff6" kindref="member">i_infos</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="structinfo__category__t_1a2b88a3a6c1da66e2c0022cca8b29fd50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinfo__t" kindref="compound">info_t</ref><sp/>**<ref refid="structinfo__category__t_1a2b88a3a6c1da66e2c0022cca8b29fd50" kindref="member">pp_infos</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structinput__item__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinput__item__t" kindref="compound">input_item_t</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60" refid="structinput__item__t_1af1431396bf9f225003c8d27fefee2f72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structinput__item__t_1af1431396bf9f225003c8d27fefee2f72" kindref="member">psz_name</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="structinput__item__t_1aa2a16e74594955746c5a5abbf556268f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structinput__item__t_1aa2a16e74594955746c5a5abbf556268f" kindref="member">psz_uri</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structinput__item__t_1a4437f02e3f0f430e74a20b98f957d54c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a4437f02e3f0f430e74a20b98f957d54c" kindref="member">i_options</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64" refid="structinput__item__t_1acf3581d99467cb0330a035f220237ec4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**<ref refid="structinput__item__t_1acf3581d99467cb0330a035f220237ec4" kindref="member">ppsz_options</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="structinput__item__t_1a5e22414e969be944f7a6a4a7052a1dec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/>*<ref refid="structinput__item__t_1a5e22414e969be944f7a6a4a7052a1dec" kindref="member">optflagv</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><sp/><sp/>optflagc;</highlight></codeline>
+<codeline lineno="67" refid="structinput__item__t_1a35c2b48576202ca1a28f03ae86204c15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>input_item_opaque_t<sp/>*<ref refid="structinput__item__t_1a35c2b48576202ca1a28f03ae86204c15" kindref="member">opaques</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="structinput__item__t_1a8b0c57ff7069d7b2a1b766628a1416ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/><ref refid="structinput__item__t_1a8b0c57ff7069d7b2a1b766628a1416ec" kindref="member">i_duration</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="structinput__item__t_1aa622ae9c38f9c1bf67d3a94dfb6c7f00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1aa622ae9c38f9c1bf67d3a94dfb6c7f00" kindref="member">i_categories</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73" refid="structinput__item__t_1a79c218f8909c395ccd6863fa9d3047dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinfo__category__t" kindref="compound">info_category_t</ref><sp/>**<ref refid="structinput__item__t_1a79c218f8909c395ccd6863fa9d3047dc" kindref="member">pp_categories</ref>;<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="structinput__item__t_1a745e6a8690dd96d2bd7319816ef387fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a745e6a8690dd96d2bd7319816ef387fa" kindref="member">i_es</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="structinput__item__t_1aaca09137356e31604e1f3c28c864c19c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structes__format__t" kindref="compound">es_format_t</ref><sp/>**<ref refid="structinput__item__t_1aaca09137356e31604e1f3c28c864c19c" kindref="member">es</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="structinput__item__t_1a9f286f160c52a9b715fe2751a00655f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinput__stats__t" kindref="compound">input_stats_t</ref><sp/>*<ref refid="structinput__item__t_1a9f286f160c52a9b715fe2751a00655f5" kindref="member">p_stats</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_meta_t<sp/>*p_meta;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="structinput__item__t_1a59f0969b3cf820cb610c34ba0a470eca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a59f0969b3cf820cb610c34ba0a470eca" kindref="member">i_epg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83" refid="structinput__item__t_1a5fc49499e259d3f29e89293261a6c584" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/><sp/><sp/>**<ref refid="structinput__item__t_1a5fc49499e259d3f29e89293261a6c584" kindref="member">pp_epg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/><sp/><sp/><sp/><sp/>i_epg_time;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85" refid="structinput__item__t_1aa4a96ac8c8137322d0d7f7a14ef53a15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*<ref refid="structinput__item__t_1aa4a96ac8c8137322d0d7f7a14ef53a15" kindref="member">p_epg_table</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="structinput__item__t_1a4cc4acb800ff302c7f69e746438c9c64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a4cc4acb800ff302c7f69e746438c9c64" kindref="member">i_slaves</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="structinput__item__t_1a435d07b79af426f730c2ee0f9f092b1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>input_item_slave_t<sp/>**<ref refid="structinput__item__t_1a435d07b79af426f730c2ee0f9f092b1d" kindref="member">pp_slaves</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structvlc__event__manager__t" kindref="compound">vlc_event_manager_t</ref><sp/>event_manager;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="structinput__item__t_1a8888ef40f6e10f3822ce4d25f9d0caf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref><sp/><ref refid="structinput__item__t_1a8888ef40f6e10f3822ce4d25f9d0caf8" kindref="member">lock</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="structinput__item__t_1a92dd16affdc8178f5dffb94daad500ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a92dd16affdc8178f5dffb94daad500ff" kindref="member">i_type</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96" refid="structinput__item__t_1af551d17998134b91244a688ce3d768b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1af551d17998134b91244a688ce3d768b5" kindref="member">b_net</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98" refid="structinput__item__t_1a03f764a59ec0d7a8564047c518539028" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a03f764a59ec0d7a8564047c518539028" kindref="member">b_error_when_reading</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="structinput__item__t_1a1e4dbd51e8df5618d20e2136e0402402" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1a1e4dbd51e8df5618d20e2136e0402402" kindref="member">i_preparse_depth</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="structinput__item__t_1af9966ba9892488a7de197358f2ff04e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__t_1af9966ba9892488a7de197358f2ff04e1" kindref="member">b_preparse_interact</ref>;<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>input_item_type_e</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_UNKNOWN,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_FILE,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_DIRECTORY,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_DISC,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_CARD,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_STREAM,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_PLAYLIST,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_NODE,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>one<sp/>is<sp/>not<sp/>a<sp/>real<sp/>type<sp/>but<sp/>the<sp/>number<sp/>of<sp/>input_item<sp/>types.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_TYPE_NUMBER</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>input_item_net_type</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_NET_UNKNOWN,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_NET,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_LOCAL</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_type</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_TYPE_SPU,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_TYPE_AUDIO,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_priority</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_PRIORITY_MATCH_NONE<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_PRIORITY_MATCH_RIGHT,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_PRIORITY_MATCH_LEFT,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_PRIORITY_MATCH_ALL,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>SLAVE_PRIORITY_USER</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Extensions<sp/>must<sp/>be<sp/>in<sp/>alphabetical<sp/>order<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MASTER_EXTENSIONS<sp/>\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;asf&quot;,<sp/>&quot;avi&quot;,<sp/>&quot;divx&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;f4v&quot;,<sp/>&quot;flv&quot;,<sp/>&quot;m1v&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;m2v&quot;,<sp/>&quot;m4v&quot;,<sp/>&quot;mkv&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="149"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;mov&quot;,<sp/>&quot;mp2&quot;,<sp/>&quot;mp2v&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="150"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;mp4&quot;,<sp/>&quot;mp4v&quot;,<sp/>&quot;mpe&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="151"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;mpeg&quot;,<sp/>&quot;mpeg1&quot;,<sp/>&quot;mpeg2&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;mpeg4&quot;,<sp/>&quot;mpg&quot;,<sp/>&quot;mpv2&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;mxf&quot;,<sp/>&quot;ogv&quot;,<sp/>&quot;ogx&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;ps&quot;,<sp/>&quot;vro&quot;,&quot;webm&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;wmv&quot;,<sp/>&quot;wtv&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SLAVE_SPU_EXTENSIONS<sp/>\</highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;aqt&quot;,<sp/>&quot;ass&quot;,<sp/><sp/>&quot;cdg&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="159"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;dks&quot;,<sp/>&quot;idx&quot;,<sp/>&quot;jss&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="160"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;mpl2&quot;,<sp/>&quot;mpsub&quot;,<sp/>&quot;pjs&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="161"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;psb&quot;,<sp/>&quot;rt&quot;,<sp/>&quot;sami&quot;,<sp/>&quot;sbv&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;scc&quot;,<sp/>&quot;smi&quot;,<sp/>&quot;srt&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="163"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;ssa&quot;,<sp/><sp/>&quot;stl&quot;,<sp/>&quot;sub&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="164"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;ttml&quot;,<sp/>&quot;tt&quot;,<sp/>&quot;usf&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;vtt&quot;,<sp/>&quot;webvtt&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SLAVE_AUDIO_EXTENSIONS<sp/>\</highlight></codeline>
+<codeline lineno="168"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;aac&quot;,<sp/>&quot;ac3&quot;,<sp/>&quot;dts&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="169"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;dtshd&quot;,<sp/>&quot;eac3&quot;,<sp/>&quot;flac&quot;,<sp/>\</highlight></codeline>
+<codeline lineno="170"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;m4a&quot;,<sp/>&quot;mp3&quot;,<sp/>&quot;pcm&quot;<sp/>\</highlight></codeline>
+<codeline lineno="171"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="structinput__item__slave" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinput__item__slave" kindref="compound">input_item_slave</ref></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="174" refid="structinput__item__slave_1adfe9595bb6318072df1dc24f30ca0fb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_type<sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__slave_1adfe9595bb6318072df1dc24f30ca0fb0" kindref="member">i_type</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175" refid="structinput__item__slave_1a88cadfd4a1010900db547d24c68964f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_priority<sp/><ref refid="structinput__item__slave_1a88cadfd4a1010900db547d24c68964f9" kindref="member">i_priority</ref>;<sp/></highlight></codeline>
+<codeline lineno="176" refid="structinput__item__slave_1a8b7a68dfe3ec418f411e46fc315791a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__slave_1a8b7a68dfe3ec418f411e46fc315791a6" kindref="member">b_forced</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="177" refid="structinput__item__slave_1ade081883d5d1d2333ada0b5d4356f120" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__slave_1ade081883d5d1d2333ada0b5d4356f120" kindref="member">psz_uri</ref>[];<sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="structinput__item__node__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref></highlight></codeline>
+<codeline lineno="181"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_item;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_children;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/><sp/><sp/><sp/><sp/><sp/>**pp_children;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_CopyOptions(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_child,<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_parent<sp/>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_SetName(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_item,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name<sp/>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="vlc__input__item_8h_1a5327fcf513b1256a08c69560bbee0391" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*<sp/><ref refid="vlc__input__item_8h_1a5327fcf513b1256a08c69560bbee0391" kindref="member">input_item_node_Create</ref>(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_input<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="vlc__input__item_8h_1a0671cdd23f4da80ed0e6d8e158d7fc51" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*<sp/><ref refid="vlc__input__item_8h_1a0671cdd23f4da80ed0e6d8e158d7fc51" kindref="member">input_item_node_AppendItem</ref>(<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_node,<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_item<sp/>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="vlc__input__item_8h_1a2a4014ab867bd004391fbd3a8f6b7ab8" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1a2a4014ab867bd004391fbd3a8f6b7ab8" kindref="member">input_item_node_AppendNode</ref>(<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_parent,<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_child<sp/>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210" refid="vlc__input__item_8h_1a1e1de106a5352f047e77405682152f3f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1a1e1de106a5352f047e77405682152f3f" kindref="member">input_item_node_RemoveNode</ref>(<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*parent,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*child<sp/>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="vlc__input__item_8h_1add140c08c6fc921e36584ec66fda33d2" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1add140c08c6fc921e36584ec66fda33d2" kindref="member">input_item_node_Delete</ref>(<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_node<sp/>);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="vlc__input__item_8h_1a6396490392dfadfc18554f9777d98209" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1a6396490392dfadfc18554f9777d98209" kindref="member">input_item_option_e</ref></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allow<sp/>VLC<sp/>to<sp/>trust<sp/>the<sp/>given<sp/>option.</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>By<sp/>default<sp/>options<sp/>are<sp/>untrusted<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>VLC_INPUT_OPTION_TRUSTED<sp/>=<sp/>0x2,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Add<sp/>the<sp/>option,<sp/>unless<sp/>the<sp/>same<sp/>option</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>is<sp/>already<sp/>present.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>VLC_INPUT_OPTION_UNIQUE<sp/><sp/>=<sp/>0x100,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235" refid="vlc__input__item_8h_1ab0a74ffd05e816e9456651b07067ebcd" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1ab0a74ffd05e816e9456651b07067ebcd" kindref="member">input_item_AddOption</ref>(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i_flags<sp/>);</highlight></codeline>
+<codeline lineno="239" refid="vlc__input__item_8h_1ae3b792f8c32a7f68583e43078d4b829f" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1ae3b792f8c32a7f68583e43078d4b829f" kindref="member">input_item_AddOptions</ref>(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_options,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*ppsz_options,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i_flags<sp/>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>input_item_AddOpaque(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_ApplyOptions(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>input_item_slave_GetType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_type<sp/>*);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal">VLC_API<sp/>input_item_slave_t<sp/>*input_item_slave_New(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_type,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>slave_priority);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_slave_Delete(p_slave)<sp/>free(p_slave)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="vlc__input__item_8h_1ae8581fde033762b45bcc655383ce4c93" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1ae8581fde033762b45bcc655383ce4c93" kindref="member">input_item_AddSlave</ref>(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/>input_item_slave_t<sp/>*);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>input_item_HasErrorWhenReading(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_SetMeta(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/>vlc_meta_type_t<sp/>meta_type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_val<sp/>);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>input_item_MetaMatch(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i,<sp/>vlc_meta_type_t<sp/>meta_type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz<sp/>);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>input_item_GetMeta(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i,<sp/>vlc_meta_type_t<sp/>meta_type<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>input_item_GetName(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_i<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>input_item_GetTitleFbName(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_i<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>input_item_GetURI(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_i<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>input_item_GetNowPlayingFb(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_item<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_SetURI(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_i,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_uri<sp/>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">VLC_API<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>input_item_GetDuration(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_i<sp/>);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_SetDuration(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>p_i,<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>i_duration<sp/>);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>input_item_IsPreparsed(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i<sp/>);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>input_item_IsArtFetched(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i<sp/>);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INPUT_META(<sp/>name<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="274"><highlight class="preprocessor">static<sp/>inline<sp/>\</highlight></codeline>
+<codeline lineno="275"><highlight class="preprocessor">void<sp/>input_item_Set<sp/>##<sp/>name<sp/>(input_item_t<sp/>*p_input,<sp/>const<sp/>char<sp/>*val)<sp/>\</highlight></codeline>
+<codeline lineno="276"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="277"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_SetMeta<sp/>(p_input,<sp/>vlc_meta_<sp/>##<sp/>name,<sp/>val);<sp/>\</highlight></codeline>
+<codeline lineno="278"><highlight class="preprocessor">}<sp/>\</highlight></codeline>
+<codeline lineno="279"><highlight class="preprocessor">static<sp/>inline<sp/>\</highlight></codeline>
+<codeline lineno="280"><highlight class="preprocessor">char<sp/>*input_item_Get<sp/>##<sp/>name<sp/>(input_item_t<sp/>*p_input)<sp/>\</highlight></codeline>
+<codeline lineno="281"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="282"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>input_item_GetMeta<sp/>(p_input,<sp/>vlc_meta_<sp/>##<sp/>name);<sp/>\</highlight></codeline>
+<codeline lineno="283"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal">INPUT_META(Title)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal">INPUT_META(Artist)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">INPUT_META(AlbumArtist)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">INPUT_META(Genre)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">INPUT_META(Copyright)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">INPUT_META(Album)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">INPUT_META(TrackNumber)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">INPUT_META(Description)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">INPUT_META(Rating)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">INPUT_META(Date)</highlight></codeline>
+<codeline lineno="295"><highlight class="normal">INPUT_META(Setting)</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">INPUT_META(URL)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">INPUT_META(Language)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">INPUT_META(NowPlaying)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">INPUT_META(ESNowPlaying)</highlight></codeline>
+<codeline lineno="300"><highlight class="normal">INPUT_META(Publisher)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal">INPUT_META(EncodedBy)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">INPUT_META(ArtworkURL)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">INPUT_META(TrackID)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">INPUT_META(TrackTotal)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">INPUT_META(Director)</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">INPUT_META(Season)</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">INPUT_META(Episode)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal">INPUT_META(ShowName)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">INPUT_META(Actors)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">INPUT_META(DiscNumber)</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_SetTrackNum<sp/>input_item_SetTrackNumber</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_GetTrackNum<sp/>input_item_GetTrackNumber</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_SetArtURL<sp/><sp/><sp/>input_item_SetArtworkURL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_GetArtURL<sp/><sp/><sp/>input_item_GetArtworkURL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>input_item_GetInfo(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_cat,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>input_item_AddInfo(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_cat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_format,<sp/>...<sp/>)<sp/>VLC_FORMAT(<sp/>4,<sp/>5<sp/>);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>input_item_DelInfo(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*p_i,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_cat,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name<sp/>);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_ReplaceInfos(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/><ref refid="structinfo__category__t" kindref="compound">info_category_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>input_item_MergeInfos(<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,<sp/><ref refid="structinfo__category__t" kindref="compound">info_category_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328" refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/><ref refid="vlc__input__item_8h_1a18f23df1485a5efb35d328ae394375ce" kindref="member">input_item_NewExt</ref>(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_uri,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name,</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>i_duration,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_type,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enum<sp/>input_item_net_type<sp/>i_net<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_New(<sp/>psz_uri,<sp/>psz_name<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="334"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_NewExt(<sp/>psz_uri,<sp/>psz_name,<sp/>-1,<sp/>ITEM_TYPE_UNKNOWN,<sp/>ITEM_NET_UNKNOWN<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_NewCard(<sp/>psz_uri,<sp/>psz_name<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="337"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_NewExt(<sp/>psz_uri,<sp/>psz_name,<sp/>-1,<sp/>ITEM_TYPE_CARD,<sp/>ITEM_LOCAL<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_NewDisc(<sp/>psz_uri,<sp/>psz_name,<sp/>i_duration<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="340"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_NewExt(<sp/>psz_uri,<sp/>psz_name,<sp/>i_duration,<sp/>ITEM_TYPE_DISC,<sp/>ITEM_LOCAL<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_NewStream(<sp/>psz_uri,<sp/>psz_name,<sp/>i_duration<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="343"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_NewExt(<sp/>psz_uri,<sp/>psz_name,<sp/>i_duration,<sp/>ITEM_TYPE_STREAM,<sp/>ITEM_NET<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_NewDirectory(<sp/>psz_uri,<sp/>psz_name,<sp/>i_net<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="346"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_NewExt(<sp/>psz_uri,<sp/>psz_name,<sp/>-1,<sp/>ITEM_TYPE_DIRECTORY,<sp/>i_net<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>input_item_NewFile(<sp/>psz_uri,<sp/>psz_name,<sp/>i_duration,<sp/>i_net<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="349"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>input_item_NewExt(<sp/>psz_uri,<sp/>psz_name,<sp/>i_duration,<sp/>ITEM_TYPE_FILE,<sp/>i_net<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="vlc__input__item_8h_1a3851fdac4b44b73b573156b7bc8ca585" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/><ref refid="vlc__input__item_8h_1a3851fdac4b44b73b573156b7bc8ca585" kindref="member">input_item_Copy</ref>(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<sp/>)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357" refid="vlc__input__item_8h_1a9d3a59b47a68041d143ab888260e5b98" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*<ref refid="vlc__input__item_8h_1a9d3a59b47a68041d143ab888260e5b98" kindref="member">input_item_Hold</ref>(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360" refid="vlc__input__item_8h_1a59fc6c3da287d4b0f5857e7c8498d256" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1a59fc6c3da287d4b0f5857e7c8498d256" kindref="member">input_item_Release</ref>(<ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>input_item_meta_request_option_t</highlight></codeline>
+<codeline lineno="363"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>META_REQUEST_OPTION_NONE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>META_REQUEST_OPTION_SCOPE_LOCAL<sp/><sp/><sp/>=<sp/>0x01,</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>META_REQUEST_OPTION_SCOPE_NETWORK<sp/>=<sp/>0x02,</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>META_REQUEST_OPTION_SCOPE_ANY<sp/><sp/><sp/><sp/><sp/>=<sp/>0x03,</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>META_REQUEST_OPTION_DO_INTERACT<sp/><sp/><sp/>=<sp/>0x04</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}<sp/>input_item_meta_request_option_t;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>status<sp/>of<sp/>the<sp/>vlc_InputItemPreparseEnded<sp/>event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>input_item_preparse_status</highlight></codeline>
+<codeline lineno="373"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_PREPARSE_SKIPPED,</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_PREPARSE_FAILED,</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_PREPARSE_TIMEOUT,</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>ITEM_PREPARSE_DONE</highlight></codeline>
+<codeline lineno="378"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>libvlc_MetadataRequest(<sp/><ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref><sp/>*,<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input_item_meta_request_option_t,</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>libvlc_ArtRequest(<ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref><sp/>*,<sp/><ref refid="structinput__item__t" kindref="compound">input_item_t</ref><sp/>*,</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input_item_meta_request_option_t<sp/>);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>libvlc_MetadataCancel(<sp/><ref refid="structlibvlc__int__t" kindref="compound">libvlc_int_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="comment">/******************</highlight></codeline>
+<codeline lineno="388"><highlight class="comment"><sp/>*<sp/>Input<sp/>stats</highlight></codeline>
+<codeline lineno="389"><highlight class="comment"><sp/>******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390" refid="structinput__stats__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinput__stats__t" kindref="compound">input_stats_t</ref></highlight></codeline>
+<codeline lineno="391"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lock;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Input<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_read_packets;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_read_bytes;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f_input_bitrate;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f_average_input_bitrate;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Demux<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_demux_read_packets;</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_demux_read_bytes;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f_demux_bitrate;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f_average_demux_bitrate;</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_demux_corrupted;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_demux_discontinuity;</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Decoders<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_decoded_audio;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_decoded_video;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Vout<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_displayed_pictures;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_lost_pictures;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Sout<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_sent_packets;</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_sent_bytes;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f_send_bitrate;</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Aout<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_played_abuffers;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>i_lost_abuffers;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432" refid="structvlc__readdir__helper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref></highlight></codeline>
+<codeline lineno="433"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_node;</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**pp_slaves;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_slaves;</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**pp_dirs;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i_dirs;</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_sub_autodetect_fuzzy;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b_show_hiddenfiles;</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b_flatten;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_ignored_exts;</highlight></codeline>
+<codeline lineno="443"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight></codeline>
+<codeline lineno="451" refid="vlc__input__item_8h_1a76395a41b29088984bc159930fb89f70" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_readdir_helper_init(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref><sp/>*p_rdh,</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*p_obj,<sp/><ref refid="structinput__item__node__t" kindref="compound">input_item_node_t</ref><sp/>*p_node);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vlc_readdir_helper_init(p_rdh,<sp/>p_obj,<sp/>p_node)<sp/>\</highlight></codeline>
+<codeline lineno="454"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>vlc_readdir_helper_init(p_rdh,<sp/>VLC_OBJECT(p_obj),<sp/>p_node)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461" refid="vlc__input__item_8h_1a71d16c0c106b5a3f7bd78505dfcb832c" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1a71d16c0c106b5a3f7bd78505dfcb832c" kindref="member">vlc_readdir_helper_finish</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref><sp/>*p_rdh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b_success);</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478" refid="vlc__input__item_8h_1a88c5113eeb08d394870d2b60a5506373" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="vlc__input__item_8h_1a88c5113eeb08d394870d2b60a5506373" kindref="member">vlc_readdir_helper_additem</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structvlc__readdir__helper" kindref="compound">vlc_readdir_helper</ref><sp/>*p_rdh,</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_uri,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_flatpath,</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_filename,</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_net);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h"/>
+  </compounddef>
+</doxygen>

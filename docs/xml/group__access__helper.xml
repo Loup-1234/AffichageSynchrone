@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__access__helper" kind="group">
+    <compoundname>access_helper</compoundname>
+    <title>Access Helpers</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__access__helper_1ga707bcb03189b4685dbd619bfc71b0ae3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int access_vaDirectoryControlHelper</definition>
+        <argsstring>(stream_t *p_access, int i_query, va_list args)</argsstring>
+        <name>access_vaDirectoryControlHelper</name>
+        <param>
+          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+          <declname>p_access</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default pf_control callback for directory accesses. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" line="67" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" declline="67" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__access__helper_1ga60549a1a37bf5eae28de0c9fe6e9e466" prot="public" static="no">
+        <name>ACCESS_SET_CALLBACKS</name>
+        <param><defname>read</defname></param>
+        <param><defname>block</defname></param>
+        <param><defname>control</defname></param>
+        <param><defname>seek</defname></param>
+        <initializer>    do { \
+        p_access-&gt;pf_read = (read); \
+        p_access-&gt;pf_block = (block); \
+        p_access-&gt;pf_control = (control); \
+        p_access-&gt;pf_seek = (seek); \
+    } while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" line="69" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_access.h" bodystart="69" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

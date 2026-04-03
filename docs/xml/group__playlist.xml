@@ -1,0 +1,1465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__playlist" kind="group">
+    <compoundname>playlist</compoundname>
+    <title>VLC playlist</title>
+    <innerfile refid="vlc__playlist_8h">vlc_playlist.h</innerfile>
+    <innerclass refid="structplaylist__export__t" prot="public">playlist_export_t</innerclass>
+    <innerclass refid="structplaylist__item__t" prot="public">playlist_item_t</innerclass>
+    <innerclass refid="structplaylist__t" prot="public">playlist_t</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__playlist_1ga8e081f83afd54626ee47766bdca9d807" prot="public" static="no" strong="no">
+        <type></type>
+        <name>playlist_item_flags_e</name>
+        <enumvalue id="group__playlist_1gga8e081f83afd54626ee47766bdca9d807a10a7b303d1fee999da2024bc3587f2af" prot="public">
+          <name>PLAYLIST_DBL_FLAG</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Is it disabled ? </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1gga8e081f83afd54626ee47766bdca9d807ad48dc29aba68fa4b09f67bc826358d70" prot="public">
+          <name>PLAYLIST_RO_FLAG</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write-enabled ? </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1gga8e081f83afd54626ee47766bdca9d807a2fae7fdabe05ad19f3846b93a3d89c9e" prot="public">
+          <name>PLAYLIST_SUBITEM_STOP_FLAG</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Must playlist stop if the item gets subitems ? </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1gga8e081f83afd54626ee47766bdca9d807a5fd4ccc2603e0b256a086901dff6132c" prot="public">
+          <name>PLAYLIST_NO_INHERIT_FLAG</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Will children inherit flags the R/O flag ? </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="139" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="139" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__playlist_1gaccdaf2247d258fb3d8d6cb008a7d0cfa" prot="public" static="no" strong="no">
+        <type></type>
+        <name>playlist_status_t</name>
+        <enumvalue id="group__playlist_1ggaccdaf2247d258fb3d8d6cb008a7d0cfaad15d0eaafca0a851e578e6e73fee0ece" prot="public">
+          <name>PLAYLIST_STOPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggaccdaf2247d258fb3d8d6cb008a7d0cfaa1bb4c1a363ca7fd5724ea602ac9f7a2f" prot="public">
+          <name>PLAYLIST_RUNNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggaccdaf2247d258fb3d8d6cb008a7d0cfaa4b6f475d3639f64fc88a966007d7d8dc" prot="public">
+          <name>PLAYLIST_PAUSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Playlist status </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="147" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__playlist_1gad218ad3be0999259616ce9744637541b" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__playlist_1ggad218ad3be0999259616ce9744637541ba24b601ab055e7b5e7e8be0a3445e9a90" prot="public">
+          <name>SORT_RANDOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggad218ad3be0999259616ce9744637541ba6271ac31a3c11f22536ba0fdeb54b5c2" prot="public">
+          <name>NUM_SORT_FNS</name>
+          <initializer>=SORT_RANDOM</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="187" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="188" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__playlist_1ga251542ab37148ec8b0303212af58c0c7" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__playlist_1gga251542ab37148ec8b0303212af58c0c7abcac6692a8d1535c14956f2122d973c1" prot="public">
+          <name>ORDER_NORMAL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1gga251542ab37148ec8b0303212af58c0c7aacb866340e59acaa596f8d94a8b61daf" prot="public">
+          <name>ORDER_REVERSE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="198" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__playlist_1gabb90addd20d32fb1e0e4bd8295440963" prot="public" static="no" strong="no">
+        <type></type>
+        <name>pl_locked_state</name>
+        <enumvalue id="group__playlist_1ggabb90addd20d32fb1e0e4bd8295440963abea734939d2984d705f2c1dd707f2ae0" prot="public">
+          <name>pl_Locked</name>
+          <initializer>= true</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggabb90addd20d32fb1e0e4bd8295440963afda07aefd44d957370a6e87493ff9a4d" prot="public">
+          <name>pl_Unlocked</name>
+          <initializer>= false</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="206" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="207" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__playlist_1gab78b94c0d630b7c860ad202a13accc7a" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa1fc0a642c34dcd3e9e33716d39484991" prot="public">
+          <name>PLAYLIST_PLAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No arg. res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa8bffdd374d0c7857e0956fd746c5092e" prot="public">
+          <name>PLAYLIST_VIEWPLAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1= playlist_item_t*, </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aafd6f9f3b4bbb18349ef94b15c6a1ee38" prot="public">
+          <name>PLAYLIST_TOGGLE_PAUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg2 = playlist_item_t* , res=can fail No arg res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aaacef972e543ca058e3f3412a37a8daf4" prot="public">
+          <name>PLAYLIST_STOP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No arg res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa809bef74e2742d64391be61923aa4466" prot="public">
+          <name>PLAYLIST_SKIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>arg1=int, res=can fail </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa8b9e51046f8d9b6be3cda0765a7ccaf3" prot="public">
+          <name>PLAYLIST_PAUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No arg </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa7e980181a2ed54c9caa4e2ada9822d68" prot="public">
+          <name>PLAYLIST_RESUME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No arg </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Playlist commands </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="222" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="222" bodyend="231"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__playlist_1ga0d92af566c7d7239f64af785fd4f01b9" prot="public" static="no">
+        <type>struct playlist_export_t</type>
+        <definition>typedef struct playlist_export_t playlist_export_t</definition>
+        <argsstring></argsstring>
+        <name>playlist_export_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper structure to export to file part of the playlist </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="123" column="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__playlist_1ga6917fc5e0c11b56d41891d99e04f6b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_Lock</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_Lock</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Locks the playlist.</para>
+<para>This function locks the playlist. While the playlist is locked, no other thread can modify the playlist tree layout or current playing item and node.</para>
+<para>Locking the playlist is necessary before accessing, either for reading or writing, any playlist item.</para>
+<para><simplesect kind="note"><para>Because of the potential for lock inversion / deadlocks, locking the playlist shall not be attemped while holding an input item lock. An input item lock can be acquired while holding the playlist lock.</para>
+</simplesect>
+While holding the playlist lock, a thread shall not attempt to:<itemizedlist>
+<listitem><para>probe, initialize or deinitialize a module or a plugin,</para>
+</listitem><listitem><para>install or deinstall a variable or event callback,</para>
+</listitem><listitem><para>set a variable or trigger a variable callback, with the sole exception of the playlist core triggering add/remove/leaf item callbacks,</para>
+</listitem><listitem><para>invoke a module/plugin callback other than:<itemizedlist>
+<listitem><para>playlist export,</para>
+</listitem><listitem><para>logger message callback. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="267" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="267" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gabad285726e1723f2c8cfe86eb91c209a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_Unlock</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_Unlock</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlocks the playlist.</para>
+<para>This function unlocks the playlist, allowing other threads to lock it. The calling thread must have called <ref refid="group__playlist_1ga6917fc5e0c11b56d41891d99e04f6b1f" kindref="member">playlist_Lock()</ref> before.</para>
+<para>This function invalidates all or any playlist item pointers. There are no ways to ensure that playlist items are not modified or deleted by another thread past this function call.</para>
+<para>To retain a reference to a playlist item while not holding the playlist lock, a thread should take a reference to the input item within the playlist item before unlocking. If this is not practical, then the thread can store the playlist item ID (i_id) before unlocking. Either way, this will not ensure that the playlist item is not deleted, so the thread must be ready to handle that case later when calling playlist_ItemGetByInput() or playlist_ItemGetById().</para>
+<para>Furthermore, if ID is used, then the playlist item might be deleted, and another item could be assigned the same ID. To avoid that problem, use the input item instead of the ID. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="291" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="291" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga466cc9208a59da48b69cf986b4134753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_AssertLocked</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_AssertLocked</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="293" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="293" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga0a9ec4e662a6295fb348fbefe50e0e7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_Deactivate</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_Deactivate</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="294" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="294" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gaf0713fcbe280659eee8e66e684094627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_Control</definition>
+        <argsstring>(playlist_t *p_playlist, int i_query, int b_locked,...)</argsstring>
+        <name>playlist_Control</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_locked</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Do a playlist action. If there is something in the playlist then you can do playlist actions. Possible queries are listed in <ref refid="vlc__common_8h" kindref="compound">vlc_common.h</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_playlist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the playlist to do the command on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i_query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the command to do </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b_locked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TRUE if playlist is locked when entering this function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>variable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of arguments </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="305" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="305" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga83c6564af11fe1bea96a7b51dc2358de" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void playlist_ViewPlay</definition>
+        <argsstring>(playlist_t *pl, playlist_item_t *node, playlist_item_t *item)</argsstring>
+        <name>playlist_ViewPlay</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>pl</declname>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="307" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="307" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga708811d1ce4e5a45becf836db9bb10ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__thread__t" kindref="compound">input_thread_t</ref> *</type>
+        <definition>VLC_API input_thread_t * playlist_CurrentInput</definition>
+        <argsstring>(playlist_t *p_playlist) VLC_USED</argsstring>
+        <name>playlist_CurrentInput</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get current playing input. The object is retained. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="315" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="315" declcolumn="25"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga0ec68dab4c46bd4af83b325a6dbd1a3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structinput__thread__t" kindref="compound">input_thread_t</ref> *</type>
+        <definition>VLC_API input_thread_t * playlist_CurrentInputLocked</definition>
+        <argsstring>(playlist_t *p_playlist) VLC_USED</argsstring>
+        <name>playlist_CurrentInputLocked</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="316" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="316" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga4f24708ba949a52479dbeca63fe6f3f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+        <definition>VLC_API vlc_tick_t playlist_GetNodeDuration</definition>
+        <argsstring>(playlist_item_t *)</argsstring>
+        <name>playlist_GetNodeDuration</name>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the duration of all items in a node. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="320" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="320" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga08a4c79407d2cde206127095aa7baa13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_Clear</definition>
+        <argsstring>(playlist_t *, bool)</argsstring>
+        <name>playlist_Clear</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear the playlist <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b_locked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TRUE if playlist is locked when entering this function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="325" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="325" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga106875967d70575933fad24bb4b8a23b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_TreeMove</definition>
+        <argsstring>(playlist_t *, playlist_item_t *, playlist_item_t *, int)</argsstring>
+        <name>playlist_TreeMove</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="328" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="328" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga438cbb7b1891623b0d3b75734cc0387f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_TreeMoveMany</definition>
+        <argsstring>(playlist_t *, int, playlist_item_t **, playlist_item_t *, int)</argsstring>
+        <name>playlist_TreeMoveMany</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> **</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="329" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="329" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gabcaa5bfa4dfc14732daee3bbd0546b45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_RecursiveNodeSort</definition>
+        <argsstring>(playlist_t *, playlist_item_t *, int, int)</argsstring>
+        <name>playlist_RecursiveNodeSort</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="330" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="330" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga7761033ba5ce467dba581ad2be3cc6d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>VLC_API playlist_item_t * playlist_CurrentPlayingItem</definition>
+        <argsstring>(playlist_t *) VLC_USED</argsstring>
+        <name>playlist_CurrentPlayingItem</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="332" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="332" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gae1131db3d617f68e37a987bf72351fc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_Status</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_Status</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="333" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="333" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga9f5db83a8609d551d08425479d25ce20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_Export</definition>
+        <argsstring>(playlist_t *p_playlist, const char *psz_name, bool b_playlist, const char *psz_type)</argsstring>
+        <name>playlist_Export</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_playlist</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Export a node of the playlist to a certain type of playlistfile <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b_playlist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true for the playlist, false for the media library </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the location where the exported file will be saved </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of playlist file to create (m3u, pls, ..) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS on success </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="342" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="342" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga3433d0da5875ba97b0e42d6fd5d947fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_Import</definition>
+        <argsstring>(playlist_t *p_playlist, const char *psz_file)</argsstring>
+        <name>playlist_Import</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Open a playlist file, add its content to the current playlist </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="348" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="348" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gafcfd2f1e287c4ca7a3356a1f4875c88d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_ServicesDiscoveryAdd</definition>
+        <argsstring>(playlist_t *, const char *)</argsstring>
+        <name>playlist_ServicesDiscoveryAdd</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a service discovery module </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="353" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="353" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga91ffcf04d843ab08f7a460296d37595d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_ServicesDiscoveryRemove</definition>
+        <argsstring>(playlist_t *, const char *)</argsstring>
+        <name>playlist_ServicesDiscoveryRemove</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove a services discovery module by name </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="355" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="355" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga2cb2591cf33c213b064947677794ec67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool playlist_IsServicesDiscoveryLoaded</definition>
+        <argsstring>(playlist_t *, const char *) VLC_DEPRECATED</argsstring>
+        <name>playlist_IsServicesDiscoveryLoaded</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check whether a given SD is loaded </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="357" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="357" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gae68b5f21bde9697bf08ff9b3d0353105" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_ServicesDiscoveryControl</definition>
+        <argsstring>(playlist_t *, const char *, int,...)</argsstring>
+        <name>playlist_ServicesDiscoveryControl</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query a services discovery </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="359" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="359" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga525a3ab08c2184247430d38bbcc39509" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_SetRenderer</definition>
+        <argsstring>(playlist_t *p_pl, vlc_renderer_item_t *p_item)</argsstring>
+        <name>playlist_SetRenderer</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_pl</declname>
+        </param>
+        <param>
+          <type>vlc_renderer_item_t *</type>
+          <declname>p_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets a renderer or remove the current one <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The renderer item to be used, or NULL to disable the current one. If a renderer is provided, its reference count will be incremented. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="368" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="368" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gabb1ae0b4b3319324b4e823c399e1a9fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_Add</definition>
+        <argsstring>(playlist_t *, const char *, bool)</argsstring>
+        <name>playlist_Add</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="376" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="376" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga7059c27e04b0ed57be06c9db48f131f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_AddExt</definition>
+        <argsstring>(playlist_t *, const char *, const char *, bool, int, const char *const *, unsigned, bool)</argsstring>
+        <name>playlist_AddExt</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>const char *const *</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="377" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="377" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga27b715e142e43e7c3f04f699800a5fd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_AddInput</definition>
+        <argsstring>(playlist_t *, input_item_t *, bool, bool)</argsstring>
+        <name>playlist_AddInput</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="378" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="378" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga713880c55ff709d13407f26182c061bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>VLC_API playlist_item_t * playlist_NodeAddInput</definition>
+        <argsstring>(playlist_t *, input_item_t *, playlist_item_t *, int)</argsstring>
+        <name>playlist_NodeAddInput</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="379" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="379" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gad3067b576b0172bd88dc33d414bc6553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_NodeAddCopy</definition>
+        <argsstring>(playlist_t *, playlist_item_t *, playlist_item_t *, int)</argsstring>
+        <name>playlist_NodeAddCopy</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="380" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="380" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga25f25d19330ccc8435addf947ec14dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>VLC_API playlist_item_t * playlist_ItemGetById</definition>
+        <argsstring>(playlist_t *, int) VLC_USED</argsstring>
+        <name>playlist_ItemGetById</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="383" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="383" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga5a3790945312c977bb9e8fd8fc74b1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>VLC_API playlist_item_t * playlist_ItemGetByInput</definition>
+        <argsstring>(playlist_t *, const input_item_t *) VLC_USED</argsstring>
+        <name>playlist_ItemGetByInput</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="384" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="384" declcolumn="25"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gaaa934aab9789bdb675cdfe62abf490fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_LiveSearchUpdate</definition>
+        <argsstring>(playlist_t *, playlist_item_t *, const char *, bool)</argsstring>
+        <name>playlist_LiveSearchUpdate</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="388" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="388" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga28a81c7e6d35b3886573bcd958153570" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>VLC_API playlist_item_t * playlist_NodeCreate</definition>
+        <argsstring>(playlist_t *, const char *, playlist_item_t *p_parent, int i_pos, int i_flags)</argsstring>
+        <name>playlist_NodeCreate</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+          <declname>p_parent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="394" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="394" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga55ad0a4cc525a747f8a30ecf11b7644a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        <definition>VLC_API playlist_item_t * playlist_ChildSearchName</definition>
+        <argsstring>(playlist_item_t *, const char *) VLC_USED</argsstring>
+        <name>playlist_ChildSearchName</name>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="395" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="395" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga1a919ca0d54beff883e652ea514f9f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_NodeDelete</definition>
+        <argsstring>(playlist_t *, playlist_item_t *)</argsstring>
+        <name>playlist_NodeDelete</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structplaylist__item__t" kindref="compound">playlist_item_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="396" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="396" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga829a994af03ea1707ce65756a609c490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        <definition>VLC_API audio_output_t * playlist_GetAout</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_GetAout</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="402" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="402" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga4046f9016d5d52eda5fe2d4673d2ae48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API float</type>
+        <definition>VLC_API float playlist_VolumeGet</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_VolumeGet</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="404" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="404" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga69ac5048543e0d2c48816e0741c16b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_VolumeSet</definition>
+        <argsstring>(playlist_t *, float)</argsstring>
+        <name>playlist_VolumeSet</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>float</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="405" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="405" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gaa0115f1f6a566c028ce60cb322c04607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_VolumeUp</definition>
+        <argsstring>(playlist_t *, int, float *)</argsstring>
+        <name>playlist_VolumeUp</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>float *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="406" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="406" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga7ca388638e9741feb541bd8de3c6c908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_MuteSet</definition>
+        <argsstring>(playlist_t *, bool)</argsstring>
+        <name>playlist_MuteSet</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="408" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="408" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga437d8e1aeee3d3fec68e8eeb17b3ad6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int playlist_MuteGet</definition>
+        <argsstring>(playlist_t *)</argsstring>
+        <name>playlist_MuteGet</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="409" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="409" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga9833e0914d3d95429110b22119d40b45" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int playlist_MuteToggle</definition>
+        <argsstring>(playlist_t *pl)</argsstring>
+        <name>playlist_MuteToggle</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>pl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="411" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="411" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1gafc55ae4417238ba09c1633344f2ffa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void playlist_EnableAudioFilter</definition>
+        <argsstring>(playlist_t *, const char *, bool)</argsstring>
+        <name>playlist_EnableAudioFilter</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="419" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" declline="419" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga2e19167efd4a5b523ecc21743e7bd455" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool playlist_IsEmpty</definition>
+        <argsstring>(playlist_t *p_playlist)</argsstring>
+        <name>playlist_IsEmpty</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tell if the playlist is empty </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="425" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="425" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="group__playlist_1ga49050c7bcb39afad57f3fc32d45531ef" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int playlist_CurrentSize</definition>
+        <argsstring>(playlist_t *p_playlist)</argsstring>
+        <name>playlist_CurrentSize</name>
+        <param>
+          <type><ref refid="structplaylist__t" kindref="compound">playlist_t</ref> *</type>
+          <declname>p_playlist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tell the number of items in the current playing context </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="432" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="432" bodyend="436"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__playlist_1gaeaa262aa1340666fc2f3d8a0271cdf6b" prot="public" static="no">
+        <name>VLC_DEFINE_SORT_FUNCTIONS</name>
+        <initializer>    DEF( SORT_ID )\
+    DEF( SORT_TITLE )\
+    DEF( SORT_TITLE_NODES_FIRST )\
+    DEF( SORT_ARTIST )\
+    DEF( SORT_GENRE )\
+    DEF( SORT_DURATION )\
+    DEF( SORT_TITLE_NUMERIC )\
+    DEF( SORT_ALBUM )\
+    DEF( SORT_TRACK_NUMBER )\
+    DEF( SORT_DESCRIPTION )\
+    DEF( SORT_RATING )\
+    DEF( SORT_URI )\
+    DEF( SORT_DISC_NUMBER )\
+    DEF( SORT_DATE )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="170" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="170" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga74df88561cf7ca81beda662038f1e9f0" prot="public" static="no">
+        <name>DEF</name>
+        <param><defname>s</defname></param>
+        <initializer>s,</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="186" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1gabdc94229b10f802d8f19a64390fcd4ad" prot="public" static="no">
+        <name>PLAYLIST_END</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="204" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1gae0bb6cd83832cb1d666af4ff6e78bd0d" prot="public" static="no">
+        <name>PL_LOCK</name>
+        <initializer><ref refid="group__playlist_1ga6917fc5e0c11b56d41891d99e04f6b1f" kindref="member">playlist_Lock</ref>( p_playlist )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="217" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga2e039397f7ae3fbce43a4f21b18706f1" prot="public" static="no">
+        <name>PL_UNLOCK</name>
+        <initializer><ref refid="group__playlist_1gabad285726e1723f2c8cfe86eb91c209a" kindref="member">playlist_Unlock</ref>( p_playlist )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="218" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1gaac776a4a1f7fdc735378489b1fdfae70" prot="public" static="no">
+        <name>PL_ASSERT_LOCKED</name>
+        <initializer>playlist_AssertLocked( p_playlist )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="219" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1gaa486e9bf03b67ffe9fff9e2708f2953a" prot="public" static="no">
+        <name>playlist_Play</name>
+        <param><defname>p</defname></param>
+        <initializer><ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p,<ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa1fc0a642c34dcd3e9e33716d39484991" kindref="member">PLAYLIST_PLAY</ref>, pl_Unlocked )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="233" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1gacb7c7b1f339dcf966b248b88f7ef4326" prot="public" static="no">
+        <name>playlist_TogglePause</name>
+        <param><defname>p</defname></param>
+        <initializer>        <ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p, <ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aafd6f9f3b4bbb18349ef94b15c6a1ee38" kindref="member">PLAYLIST_TOGGLE_PAUSE</ref>, pl_Unlocked)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="234" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="234" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga5d0caaa7af322ccd8ed554138bdc9376" prot="public" static="no">
+        <name>playlist_Stop</name>
+        <param><defname>p</defname></param>
+        <initializer><ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p,<ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aaacef972e543ca058e3f3412a37a8daf4" kindref="member">PLAYLIST_STOP</ref>, pl_Unlocked )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="236" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga3a9d70247eacde47d114b3f39e554ded" prot="public" static="no">
+        <name>playlist_Next</name>
+        <param><defname>p</defname></param>
+        <initializer><ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p,<ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa809bef74e2742d64391be61923aa4466" kindref="member">PLAYLIST_SKIP</ref>, pl_Unlocked, 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="237" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga7c0c3967494df733b2913120f9e18707" prot="public" static="no">
+        <name>playlist_Prev</name>
+        <param><defname>p</defname></param>
+        <initializer><ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p,<ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa809bef74e2742d64391be61923aa4466" kindref="member">PLAYLIST_SKIP</ref>, pl_Unlocked, -1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="238" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga37861e03e4bdbbbc40d665a4fdb58149" prot="public" static="no">
+        <name>playlist_Skip</name>
+        <param><defname>p</defname></param>
+        <param><defname>i</defname></param>
+        <initializer><ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p,<ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa809bef74e2742d64391be61923aa4466" kindref="member">PLAYLIST_SKIP</ref>, pl_Unlocked,  (i) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="239" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga71160158c9a5e66db171bb740b069f7d" prot="public" static="no">
+        <name>playlist_Pause</name>
+        <param><defname>p</defname></param>
+        <initializer>        <ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p, <ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa8b9e51046f8d9b6be3cda0765a7ccaf3" kindref="member">PLAYLIST_PAUSE</ref>, pl_Unlocked)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="240" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="240" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga10d83c89e9310a74a8930b1d0e9eb0e0" prot="public" static="no">
+        <name>playlist_Resume</name>
+        <param><defname>p</defname></param>
+        <initializer>        <ref refid="group__playlist_1gaf0713fcbe280659eee8e66e684094627" kindref="member">playlist_Control</ref>(p, <ref refid="group__playlist_1ggab78b94c0d630b7c860ad202a13accc7aa7e980181a2ed54c9caa4e2ada9822d68" kindref="member">PLAYLIST_RESUME</ref>, pl_Unlocked)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="242" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="242" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="define" id="group__playlist_1ga8ace70a6963b1b7bc25a92d1203b9358" prot="public" static="no">
+        <name>playlist_VolumeDown</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>playlist_VolumeUp(a, -(b), c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" line="407" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_playlist.h" bodystart="407" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>VLC playlist controls </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

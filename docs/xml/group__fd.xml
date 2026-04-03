@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__fd" kind="group">
+    <compoundname>fd</compoundname>
+    <title>File descriptors</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__fd_1gaff8546bcd073ab5f14cfcfea33ae970a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_open</definition>
+        <argsstring>(const char *filename, int flags,...) VLC_USED</argsstring>
+        <name>vlc_open</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens a system file handle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file path to open (with UTF-8 encoding) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>open() flags, see the C library open() documentation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a file handle on success, -1 on error (see errno). </para>
+</simplesect>
+<simplesect kind="note"><para>Contrary to standard open(), this function returns a file handle with the close-on-exec flag preset. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="85" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="85" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1gaefea762c641eadc895984c81b6938c6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_openat</definition>
+        <argsstring>(int fd, const char *filename, int flags,...) VLC_USED</argsstring>
+        <name>vlc_openat</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens a system file handle relative to an existing directory handle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>directory file descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file path to open (with UTF-8 encoding) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>open() flags, see the C library open() documentation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a file handle on success, -1 on error (see errno). </para>
+</simplesect>
+<simplesect kind="note"><para>Contrary to standard open(), this function returns a file handle with the close-on-exec flag preset. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="97" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="97" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1ga49ed4726fbea4068224964070b768001" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_mkstemp</definition>
+        <argsstring>(char *)</argsstring>
+        <name>vlc_mkstemp</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="99" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="99" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1ga6f00c8143a69db1eb119b8c174acb187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_dup</definition>
+        <argsstring>(int) VLC_USED</argsstring>
+        <name>vlc_dup</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Duplicates a file descriptor. The new file descriptor has the close-on-exec descriptor flag preset. <simplesect kind="return"><para>a new file descriptor, -1 (see errno) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="106" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="106" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1ga17e06dd3b2a0f8ffa4bdc1fa14e0dc6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_pipe</definition>
+        <argsstring>(int[2]) VLC_USED</argsstring>
+        <name>vlc_pipe</name>
+        <param>
+          <type>int</type>
+          <array>[2]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a pipe (see &quot;man pipe&quot; for further reference). The new file descriptors have the close-on-exec flag preset. <simplesect kind="return"><para>0 on success, -1 on error (see errno) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="113" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="113" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1ga4dedb30ee2c959abc992de15b4d81607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_memfd</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_memfd</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an anonymous regular file descriptor, i.e. a descriptor for a temporary file.</para>
+<para>The file is initially empty. The storage space is automatically reclaimed when all file descriptors referencing it are closed.</para>
+<para>The new file descriptor has the close-on-exec flag preset.</para>
+<para><simplesect kind="return"><para>a file descriptor on success, -1 on error (see errno) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="126" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="126" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1gafb376789d9d716a4bbef5f8a19638d71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_write</definition>
+        <argsstring>(int, const void *, size_t)</argsstring>
+        <name>vlc_write</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>const void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes data to a file descriptor. Unlike write(), if EPIPE error occurs, this function does not generate a SIGPIPE signal. <simplesect kind="note"><para>If the file descriptor is known to be neither a pipe/FIFO nor a connection-oriented socket, the normal write() should be used. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="134" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="134" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1ga6771710089889fa64d928b35ebb2a70c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API ssize_t</type>
+        <definition>VLC_API ssize_t vlc_writev</definition>
+        <argsstring>(int, const struct iovec *, int)</argsstring>
+        <name>vlc_writev</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>const struct iovec *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes data from an iovec structure to a file descriptor. Unlike writev(), if EPIPE error occurs, this function does not generate a SIGPIPE signal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="140" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="140" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fd_1ga323c8f656dd7f8612a1c7a1eb74d0187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_close</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>vlc_close</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes a file descriptor.</para>
+<para>This closes a file descriptor. If this is a last file descriptor for the underlying open file, the file is closed too; the exact semantics depend on the type of file.</para>
+<para><simplesect kind="note"><para>The file descriptor is always closed when the function returns, even if the function returns an error. The sole exception is if the file descriptor was not currently valid, and thus cannot be closed (errno will then be set to EBADF).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file descriptor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Normally, zero is returned. If an I/O error is detected before or while closing, the function may return -1. Such an error is unrecoverable since the descriptor is closed.</para>
+</simplesect>
+A nul return value does not necessarily imply that all pending I/O succeeded, since I/O might still occur asynchronously afterwards. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="162" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="162" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

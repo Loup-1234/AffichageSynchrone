@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structmeta__fetcher__t" kind="struct" language="C++" prot="public">
+    <compoundname>meta_fetcher_t</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmeta__fetcher__t_1a18d9c3b18a0a35bdadfb2375e7b27019" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> <ref refid="structinput__item__t" kindref="compound">input_item_t</ref> *</type>
+        <definition>VLC_COMMON_MEMBERS input_item_t* meta_fetcher_t::p_item</definition>
+        <argsstring></argsstring>
+        <name>p_item</name>
+        <qualifiedname>meta_fetcher_t::p_item</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_meta_fetcher.h" line="34" column="18" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_meta_fetcher.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmeta__fetcher__t_1ad66d801c99793ed783f7ac877fd369b4" prot="public" static="no" mutable="no">
+        <type>meta_fetcher_scope_t</type>
+        <definition>meta_fetcher_scope_t meta_fetcher_t::e_scope</definition>
+        <argsstring></argsstring>
+        <name>e_scope</name>
+        <qualifiedname>meta_fetcher_t::e_scope</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_meta_fetcher.h" line="35" column="26" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_meta_fetcher.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>audio_format_t</label>
+        <link refid="structaudio__format__t"/>
+      </node>
+      <node id="8">
+        <label>audio_replay_gain_t</label>
+        <link refid="structaudio__replay__gain__t"/>
+      </node>
+      <node id="5">
+        <label>es_format_t</label>
+        <link refid="structes__format__t"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+p_extra_languages</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+audio</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+audio_replay_gain</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+video</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>+subs</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>extra_languages_t</label>
+        <link refid="structextra__languages__t"/>
+      </node>
+      <node id="3">
+        <label>info_category_t</label>
+        <link refid="structinfo__category__t"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+pp_infos</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>info_t</label>
+        <link refid="structinfo__t"/>
+      </node>
+      <node id="17">
+        <label>input_item_slave</label>
+        <link refid="structinput__item__slave"/>
+      </node>
+      <node id="2">
+        <label>input_item_t</label>
+        <link refid="structinput__item__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+pp_categories</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+es</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>+p_stats</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>+p_epg_table</edgelabel>
+          <edgelabel>+pp_epg</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>+pp_slaves</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>+event_manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>input_stats_t</label>
+        <link refid="structinput__stats__t"/>
+      </node>
+      <node id="1">
+        <label>meta_fetcher_t</label>
+        <link refid="structmeta__fetcher__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_item</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>subs_format_t</label>
+        <link refid="structsubs__format__t"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>+p_style</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>text_style_t</label>
+        <link refid="structtext__style__t"/>
+      </node>
+      <node id="9">
+        <label>video_format_t</label>
+        <link refid="structvideo__format__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>+p_palette</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>+pose</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>video_palette_t</label>
+        <link refid="structvideo__palette__t"/>
+      </node>
+      <node id="16">
+        <label>vlc_epg_event_t</label>
+        <link refid="structvlc__epg__event__t"/>
+      </node>
+      <node id="15">
+        <label>vlc_epg_t</label>
+        <link refid="structvlc__epg__t"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>+p_current</edgelabel>
+          <edgelabel>+pp_event</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>vlc_event_listeners_group_t</label>
+        <link refid="structvlc__event__listeners__group__t"/>
+      </node>
+      <node id="18">
+        <label>vlc_event_manager_t</label>
+        <link refid="structvlc__event__manager__t"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>+events</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>vlc_viewpoint_t</label>
+        <link refid="structvlc__viewpoint__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_meta_fetcher.h" line="31" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_meta_fetcher.h" bodystart="32" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structmeta__fetcher__t_1ad66d801c99793ed783f7ac877fd369b4" prot="public" virt="non-virtual"><scope>meta_fetcher_t</scope><name>e_scope</name></member>
+      <member refid="structmeta__fetcher__t_1a18d9c3b18a0a35bdadfb2375e7b27019" prot="public" virt="non-virtual"><scope>meta_fetcher_t</scope><name>p_item</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

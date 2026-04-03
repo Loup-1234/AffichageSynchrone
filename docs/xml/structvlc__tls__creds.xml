@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structvlc__tls__creds" kind="struct" language="C++" prot="public">
+    <compoundname>vlc_tls_creds</compoundname>
+    <includes refid="vlc__tls_8h" local="no">vlc_tls.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structvlc__tls__creds_1ab613a99c82185aa7f41341ed6f119447" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> module_t *</type>
+        <definition>VLC_COMMON_MEMBERS module_t* vlc_tls_creds::module</definition>
+        <argsstring></argsstring>
+        <name>module</name>
+        <qualifiedname>vlc_tls_creds::module</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="71" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__tls__creds_1a1b7f038db21f8a38dd3eeda28f099a74" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vlc_tls_creds::sys</definition>
+        <argsstring></argsstring>
+        <name>sys</name>
+        <qualifiedname>vlc_tls_creds::sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="72" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__tls__creds_1a9cf843918f2db92c827ad87817243cca" prot="public" static="no" mutable="no">
+        <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *(*</type>
+        <definition>vlc_tls_t *(* vlc_tls_creds::open) (struct vlc_tls_creds *, vlc_tls_t *sock, const char *host, const char *const *alpn)</definition>
+        <argsstring>)(struct vlc_tls_creds *, vlc_tls_t *sock, const char *host, const char *const *alpn)</argsstring>
+        <name>open</name>
+        <qualifiedname>vlc_tls_creds::open</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="74" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__tls__creds_1a1d2233fe6d5936746a6a66f1ce83e04b" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* vlc_tls_creds::handshake) (struct vlc_tls_creds *, vlc_tls_t *session, const char *hostname, const char *service, char ** alp)</definition>
+        <argsstring>)(struct vlc_tls_creds *, vlc_tls_t *session, const char *hostname, const char *service, char **alp)</argsstring>
+        <name>handshake</name>
+        <qualifiedname>vlc_tls_creds::handshake</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="76" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>TLS credentials</para>
+<para>This structure contains the credentials for establishing TLS sessions. This includes root Certificate Authorities (on client side), trust and cryptographic parameters, public certificates and private keys. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>vlc_tls</label>
+        <link refid="structvlc__tls"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>vlc_tls_creds</label>
+        <link refid="structvlc__tls__creds"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+open</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="67" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="68" bodyend="79"/>
+    <listofallmembers>
+      <member refid="structvlc__tls__creds_1a1d2233fe6d5936746a6a66f1ce83e04b" prot="public" virt="non-virtual"><scope>vlc_tls_creds</scope><name>handshake</name></member>
+      <member refid="structvlc__tls__creds_1ab613a99c82185aa7f41341ed6f119447" prot="public" virt="non-virtual"><scope>vlc_tls_creds</scope><name>module</name></member>
+      <member refid="structvlc__tls__creds_1a9cf843918f2db92c827ad87817243cca" prot="public" virt="non-virtual"><scope>vlc_tls_creds</scope><name>open</name></member>
+      <member refid="structvlc__tls__creds_1a1b7f038db21f8a38dd3eeda28f099a74" prot="public" virt="non-virtual"><scope>vlc_tls_creds</scope><name>sys</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

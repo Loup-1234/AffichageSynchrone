@@ -1,0 +1,1376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__audio__output" kind="group">
+    <compoundname>audio_output</compoundname>
+    <title>Audio output</title>
+    <innerfile refid="vlc__aout_8h">vlc_aout.h</innerfile>
+    <innerclass refid="structaudio__output" prot="public">audio_output</innerclass>
+    <innerclass refid="structaout__filters__cfg__t" prot="public">aout_filters_cfg_t</innerclass>
+    <innergroup refid="group__audio__volume">Audio output volume</innergroup>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__audio__output_1ga780ac32d829a5f950fa3811165a76f0c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vlc_chan_order_idx_t</name>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0ca6cccc4774b3e9f61a28001f62ff146c1" prot="public">
+          <name>AOUT_CHANIDX_DISABLE</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0cac417d19012b72997aa334822ad1f76af" prot="public">
+          <name>AOUT_CHANIDX_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0ca86ec78962fc0d2f71a10d9e0d6a11090" prot="public">
+          <name>AOUT_CHANIDX_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0ca35596054cbf18519f56b89451fcee8e0" prot="public">
+          <name>AOUT_CHANIDX_MIDDLELEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0ca6e792167c54a4b0a179ef8276e014852" prot="public">
+          <name>AOUT_CHANIDX_MIDDLERIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0cae1f470d2e02d8cdcc79938aa511a33b1" prot="public">
+          <name>AOUT_CHANIDX_REARLEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0cae430eb3a887858fe7a489746d8a37ca1" prot="public">
+          <name>AOUT_CHANIDX_REARRIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0caf02a5fc5e5a368aa5b086021bb37f284" prot="public">
+          <name>AOUT_CHANIDX_REARCENTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0ca3250fdf1a7133a9fdd083fb67f249f61" prot="public">
+          <name>AOUT_CHANIDX_CENTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0caa06a3e0e290e46b400d49b4be3569575" prot="public">
+          <name>AOUT_CHANIDX_LFE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__audio__output_1gga780ac32d829a5f950fa3811165a76f0ca0bc69586c568c1bcae8d1e330d7c217a" prot="public">
+          <name>AOUT_CHANIDX_MAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="190" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="191" bodyend="203"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__audio__output_1ga1b606bb533ec8c882a3d29eb5d05c89e" prot="public" static="no">
+        <type>struct aout_filters</type>
+        <definition>typedef struct aout_filters aout_filters_t</definition>
+        <argsstring></argsstring>
+        <name>aout_filters_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="386" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__audio__output_1ga1236f5d352d848ca3d2014eb66511300" prot="public" static="no">
+        <type>struct aout_request_vout</type>
+        <definition>typedef struct aout_request_vout aout_request_vout_t</definition>
+        <argsstring></argsstring>
+        <name>aout_request_vout_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="387" column="32" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="387" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group__audio__output_1gade4ebdf940d8f0cea0a16b8ebad386d7" prot="public" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t pi_vlc_chan_order_wg4[]</definition>
+        <argsstring>[]</argsstring>
+        <name>pi_vlc_chan_order_wg4</name>
+        <initializer>=
+{
+    AOUT_CHAN_LEFT, AOUT_CHAN_RIGHT,
+    AOUT_CHAN_MIDDLELEFT, AOUT_CHAN_MIDDLERIGHT,
+    AOUT_CHAN_REARLEFT, AOUT_CHAN_REARRIGHT, AOUT_CHAN_REARCENTER,
+    AOUT_CHAN_CENTER, AOUT_CHAN_LFE, 0
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>It describes the audio channel order VLC expect. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="222" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="222" bodyend="228"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__audio__output_1ga4af190c5ecee734b0528b877ba959fd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API unsigned</type>
+        <definition>VLC_API unsigned aout_CheckChannelReorder</definition>
+        <argsstring>(const uint32_t *, const uint32_t *, uint32_t mask, uint8_t *table)</argsstring>
+        <name>aout_CheckChannelReorder</name>
+        <param>
+          <type>const uint32_t *</type>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the reordering needed to go from pi_chan_order_in to pi_chan_order_out. If pi_chan_order_in or pi_chan_order_out is NULL, it will assume that vlc internal (WG4) order is requested. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="244" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="244" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga430b0be06c5a868cd418c9630b50ec33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_ChannelReorder</definition>
+        <argsstring>(void *, size_t, uint8_t, const uint8_t *, vlc_fourcc_t)</argsstring>
+        <name>aout_ChannelReorder</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">vlc_fourcc_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="246" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="246" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga78a81b4d36c1db0be0af331931829450" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_Interleave</definition>
+        <argsstring>(void *dst, const void *const *planes, unsigned samples, unsigned channels, vlc_fourcc_t fourcc)</argsstring>
+        <name>aout_Interleave</name>
+        <param>
+          <type>void *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const void *const *</type>
+          <declname>planes</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>samples</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>channels</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">vlc_fourcc_t</ref></type>
+          <declname>fourcc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="248" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="248" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gad372a28f37de9187a5cf8a2c0c9e1e0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_Deinterleave</definition>
+        <argsstring>(void *dst, const void *src, unsigned samples, unsigned channels, vlc_fourcc_t fourcc)</argsstring>
+        <name>aout_Deinterleave</name>
+        <param>
+          <type>void *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>samples</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>channels</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">vlc_fourcc_t</ref></type>
+          <declname>fourcc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="251" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="251" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga7fb5221cf23c31bee3dc0ab37c3b3020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool aout_CheckChannelExtraction</definition>
+        <argsstring>(int *pi_selection, uint32_t *pi_layout, int *pi_channels, const uint32_t pi_order_dst[AOUT_CHAN_MAX], const uint32_t *pi_order_src, int i_channels)</argsstring>
+        <name>aout_CheckChannelExtraction</name>
+        <param>
+          <type>int *</type>
+          <declname>pi_selection</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>pi_layout</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pi_channels</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>pi_order_dst</declname>
+          <array>[AOUT_CHAN_MAX]</array>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>pi_order_src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_channels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will compute the extraction parameter into pi_selection to go from i_channels with their type given by pi_order_src[] into the order describe by pi_order_dst. It will also set :<itemizedlist>
+<listitem><para>*pi_channels as the number of channels that will be extracted which is lower (in case of non understood channels type) or equal to i_channels.</para>
+</listitem><listitem><para>the layout of the channels (*pi_layout).</para>
+</listitem></itemizedlist>
+</para>
+<para>It will return true if channel extraction is really needed, in which case aout_ChannelExtract must be used</para>
+<para>XXX It must be used when the source may have channel type not understood by VLC. In this case the channel type pi_order_src[] must be set to 0. XXX It must also be used if multiple channels have the same type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="270" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="270" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga0c8443a1ff71bb3b1b91780140d21ddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_ChannelExtract</definition>
+        <argsstring>(void *p_dst, int i_dst_channels, const void *p_src, int i_src_channels, int i_sample_count, const int *pi_selection, int i_bits_per_sample)</argsstring>
+        <name>aout_ChannelExtract</name>
+        <param>
+          <type>void *</type>
+          <declname>p_dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_dst_channels</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p_src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_src_channels</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_sample_count</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>pi_selection</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_bits_per_sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Do the actual channels extraction using the parameters created by aout_CheckChannelExtraction.</para>
+<para>XXX this function does not work in place (p_dst and p_src must not overlap). XXX Only 8, 16, 32, 64 bits per sample are supported. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="279" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="279" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga95974d96925fd6a77f1e0a77a8eeef82" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned</type>
+        <definition>static unsigned aout_FormatNbChannels</definition>
+        <argsstring>(const audio_sample_format_t *fmt)</argsstring>
+        <name>aout_FormatNbChannels</name>
+        <param>
+          <type>const <ref refid="structaudio__format__t" kindref="compound">audio_sample_format_t</ref> *</type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="282" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="282" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gaebd451ca88bf0e8d717969ea0eebe78d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API unsigned int</type>
+        <definition>VLC_API unsigned int aout_BitsPerSample</definition>
+        <argsstring>(vlc_fourcc_t i_format) VLC_USED</argsstring>
+        <name>aout_BitsPerSample</name>
+        <param>
+          <type><ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">vlc_fourcc_t</ref></type>
+          <declname>i_format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="287" column="22" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="287" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gac91b2b1a8541aa2a7ae393a3cb096776" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_FormatPrepare</definition>
+        <argsstring>(audio_sample_format_t *p_format)</argsstring>
+        <name>aout_FormatPrepare</name>
+        <param>
+          <type><ref refid="structaudio__format__t" kindref="compound">audio_sample_format_t</ref> *</type>
+          <declname>p_format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="288" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="288" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gaf8de1aeaf723f2cbdf733ba148ba2f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_FormatPrint</definition>
+        <argsstring>(vlc_object_t *, const char *, const audio_sample_format_t *)</argsstring>
+        <name>aout_FormatPrint</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structaudio__format__t" kindref="compound">audio_sample_format_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="289" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="289" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga61b1b97efca463bafb64b99c050fc54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const char *</type>
+        <definition>VLC_API const char * aout_FormatPrintChannels</definition>
+        <argsstring>(const audio_sample_format_t *) VLC_USED</argsstring>
+        <name>aout_FormatPrintChannels</name>
+        <param>
+          <type>const <ref refid="structaudio__format__t" kindref="compound">audio_sample_format_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="292" column="21" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="292" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga618243b50706d36c7b1bbac782c28e36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API float</type>
+        <definition>VLC_API float aout_VolumeGet</definition>
+        <argsstring>(audio_output_t *)</argsstring>
+        <name>aout_VolumeGet</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="297" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="297" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga760bd05f7d604568ce87539654bd24e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int aout_VolumeSet</definition>
+        <argsstring>(audio_output_t *, float)</argsstring>
+        <name>aout_VolumeSet</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <param>
+          <type>float</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="298" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="298" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gac0fd45c7ee5e1b95eb7c6bab57634bc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int aout_VolumeUpdate</definition>
+        <argsstring>(audio_output_t *, int, float *)</argsstring>
+        <name>aout_VolumeUpdate</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>float *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="299" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="299" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga6311bf16a7f9d4d3b25208a5bb5f6c7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int aout_MuteGet</definition>
+        <argsstring>(audio_output_t *)</argsstring>
+        <name>aout_MuteGet</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="300" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="300" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga6ec126abde151978750ab938937f256f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int aout_MuteSet</definition>
+        <argsstring>(audio_output_t *, bool)</argsstring>
+        <name>aout_MuteSet</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="301" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="301" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga99fc6eb3ff965795bbc3aefb8ed31c00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API char *</type>
+        <definition>VLC_API char * aout_DeviceGet</definition>
+        <argsstring>(audio_output_t *)</argsstring>
+        <name>aout_DeviceGet</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="302" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="302" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga9969e957a6ffc59c2c2dc9690bf76507" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int aout_DeviceSet</definition>
+        <argsstring>(audio_output_t *, const char *)</argsstring>
+        <name>aout_DeviceSet</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="303" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="303" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga39f6f2ca6ecb6ae27a9d4ed9fdbca794" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int aout_DevicesList</definition>
+        <argsstring>(audio_output_t *, char ***, char ***)</argsstring>
+        <name>aout_DevicesList</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+        </param>
+        <param>
+          <type>char ***</type>
+        </param>
+        <param>
+          <type>char ***</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="304" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="304" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gac83bb0d67e4ac659a16a2b504171ebac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void aout_VolumeReport</definition>
+        <argsstring>(audio_output_t *aout, float volume)</argsstring>
+        <name>aout_VolumeReport</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>volume</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Report change of configured audio volume to the core and UI. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="309" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="309" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga5a9ea6f82bc953e6f6eb88cd9584c916" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void aout_MuteReport</definition>
+        <argsstring>(audio_output_t *aout, bool mute)</argsstring>
+        <name>aout_MuteReport</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>mute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Report change of muted flag to the core and UI. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="317" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="317" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gaf0ecde7f2b636cddfb3620ca009a2d4f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void aout_PolicyReport</definition>
+        <argsstring>(audio_output_t *aout, bool cork)</argsstring>
+        <name>aout_PolicyReport</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cork</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Report audio policy status. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cork</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to request a cork, false to undo any pending cork. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="326" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="326" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gae775ca584ea46ca84e84c1c2319a40f6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void aout_DeviceReport</definition>
+        <argsstring>(audio_output_t *aout, const char *id)</argsstring>
+        <name>aout_DeviceReport</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Report change of output device. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="334" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="334" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gadf1098c373804c60ef3397247ab504cd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void aout_HotplugReport</definition>
+        <argsstring>(audio_output_t *aout, const char *id, const char *name)</argsstring>
+        <name>aout_HotplugReport</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Report a device hot-plug event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>device ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>human-readable device name (NULL for hot unplug) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="344" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="344" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gadf1b8baa32979cec368818d86bab62f6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int aout_GainRequest</definition>
+        <argsstring>(audio_output_t *aout, float gain)</argsstring>
+        <name>aout_GainRequest</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Request a change of software audio amplification. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>linear amplitude gain (must be positive) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Values in excess 1.0 may cause overflow and distorsion. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="355" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="355" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga2e54b5bf3d48cb40ea59658e44d769b5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void aout_RestartRequest</definition>
+        <argsstring>(audio_output_t *aout, unsigned mode)</argsstring>
+        <name>aout_RestartRequest</name>
+        <param>
+          <type><ref refid="structaudio__output" kindref="compound">audio_output_t</ref> *</type>
+          <declname>aout</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="360" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="360" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga3c331c1a702fb0b903fb1c7f2f6ba6d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API aout_filters_t *</type>
+        <definition>VLC_API aout_filters_t * aout_FiltersNew</definition>
+        <argsstring>(vlc_object_t *, const audio_sample_format_t *, const audio_sample_format_t *, const aout_request_vout_t *, const aout_filters_cfg_t *cfg) VLC_USED</argsstring>
+        <name>aout_FiltersNew</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structaudio__format__t" kindref="compound">audio_sample_format_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structaudio__format__t" kindref="compound">audio_sample_format_t</ref> *</type>
+        </param>
+        <param>
+          <type>const aout_request_vout_t *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structaout__filters__cfg__t" kindref="compound">aout_filters_cfg_t</ref> *</type>
+          <declname>cfg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="389" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="389" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga132c301f3abcb9130b8852abc26ae821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_FiltersDelete</definition>
+        <argsstring>(vlc_object_t *, aout_filters_t *)</argsstring>
+        <name>aout_FiltersDelete</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>aout_filters_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="396" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="396" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga4f1c1e28af733aaf1ef79dcd4dbcc914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool aout_FiltersAdjustResampling</definition>
+        <argsstring>(aout_filters_t *, int)</argsstring>
+        <name>aout_FiltersAdjustResampling</name>
+        <param>
+          <type>aout_filters_t *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="399" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="399" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gaed24f62e2c85102929147f51af3c146f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * aout_FiltersPlay</definition>
+        <argsstring>(aout_filters_t *, block_t *, int rate)</argsstring>
+        <name>aout_FiltersPlay</name>
+        <param>
+          <type>aout_filters_t *</type>
+        </param>
+        <param>
+          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="400" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="400" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1gaf56e24513a61ab31d0e26a2f6a8ef821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * aout_FiltersDrain</definition>
+        <argsstring>(aout_filters_t *)</argsstring>
+        <name>aout_FiltersDrain</name>
+        <param>
+          <type>aout_filters_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="401" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="401" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga450a5ca04c80c734d83a761d258e91cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_FiltersFlush</definition>
+        <argsstring>(aout_filters_t *)</argsstring>
+        <name>aout_FiltersFlush</name>
+        <param>
+          <type>aout_filters_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="402" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="402" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga4a6bf045e4305b73838cda7a3dfeb76d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void aout_FiltersChangeViewpoint</definition>
+        <argsstring>(aout_filters_t *, const vlc_viewpoint_t *vp)</argsstring>
+        <name>aout_FiltersChangeViewpoint</name>
+        <param>
+          <type>aout_filters_t *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structvlc__viewpoint__t" kindref="compound">vlc_viewpoint_t</ref> *</type>
+          <declname>vp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="403" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="403" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__audio__output_1ga3d4ea7e4a70543344e96723f80374b3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+        <definition>VLC_API vout_thread_t * aout_filter_RequestVout</definition>
+        <argsstring>(filter_t *, vout_thread_t *p_vout, const video_format_t *p_fmt)</argsstring>
+        <name>aout_filter_RequestVout</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
+          <declname>p_vout</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>p_fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="405" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" declline="405" declcolumn="24"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__audio__output_1ga6ea1b1265db493a2a7630d706dfda5a8" prot="public" static="no">
+        <name>AOUT_MAX_ADVANCE_TIME</name>
+        <initializer>(AOUT_MAX_PREPARE_TIME + CLOCK_FREQ)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="38" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga71b80e99ba15152c66bb09c70e3d0b98" prot="public" static="no">
+        <name>AOUT_MAX_PREPARE_TIME</name>
+        <initializer>(2 * CLOCK_FREQ)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="42" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga1e205f05b8c1a8af50ce74790e0b1dee" prot="public" static="no">
+        <name>AOUT_MIN_PREPARE_TIME</name>
+        <initializer><ref refid="group__audio__output_1gae1b40326b9ed3d3950412dafd9920bb0" kindref="member">AOUT_MAX_PTS_ADVANCE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="46" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gae1b40326b9ed3d3950412dafd9920bb0" prot="public" static="no">
+        <name>AOUT_MAX_PTS_ADVANCE</name>
+        <initializer>(CLOCK_FREQ / 25)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum advance of actual audio playback time to coded PTS, above which downsampling will be performed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="51" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga22e6cdffa959cff0d8907c59b98e0f8a" prot="public" static="no">
+        <name>AOUT_MAX_PTS_DELAY</name>
+        <initializer>(3 * CLOCK_FREQ / 50)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum delay of actual audio playback time from coded PTS, above which upsampling will be performed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="55" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga310bc2d6c8ef4755675e5a19864fe3be" prot="public" static="no">
+        <name>AOUT_MAX_RESAMPLING</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="58" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga48e9d5b43cf209e46e57c37a5e3bfae4" prot="public" static="no">
+        <name>AOUT_FMTS_IDENTICAL</name>
+        <param><defname>p_first</defname></param>
+        <param><defname>p_second</defname></param>
+        <initializer>    (                          \
+    ((p_first)-&gt;i_format == (p_second)-&gt;i_format)                           \
+      &amp;&amp; AOUT_FMTS_SIMILAR(p_first, p_second) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="62" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga5f23ab2ec9b054976e79ae00bb29cb1e" prot="public" static="no">
+        <name>AOUT_FMTS_SIMILAR</name>
+        <param><defname>p_first</defname></param>
+        <param><defname>p_second</defname></param>
+        <initializer>    (                            \
+    ((p_first)-&gt;i_rate == (p_second)-&gt;i_rate)                               \
+      &amp;&amp; ((p_first)-&gt;channel_type == (p_second)-&gt;channel_type)            \
+      &amp;&amp; ((p_first)-&gt;i_physical_channels == (p_second)-&gt;i_physical_channels)\
+      &amp;&amp; ((p_first)-&gt;i_chan_mode == (p_second)-&gt;i_chan_mode) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="67" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga034680e2a643cbd7c562e53f8feedbff" prot="public" static="no">
+        <name>AOUT_FMT_LINEAR</name>
+        <param><defname>p_format</defname></param>
+        <initializer>    (aout_BitsPerSample((p_format)-&gt;i_format) != 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="73" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="73" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga07d42f477de53b0c4dc93a3c6b575bdc" prot="public" static="no">
+        <name>VLC_CODEC_SPDIFL</name>
+        <initializer>VLC_FOURCC(&apos;s&apos;,&apos;p&apos;,&apos;d&apos;,&apos;i&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="76" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga47f94c8a5644eba94d8059f49399dde9" prot="public" static="no">
+        <name>VLC_CODEC_SPDIFB</name>
+        <initializer>VLC_FOURCC(&apos;s&apos;,&apos;p&apos;,&apos;d&apos;,&apos;b&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="77" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gab0027e2d762ce23bc77d1e113b5eba3f" prot="public" static="no">
+        <name>AOUT_FMT_SPDIF</name>
+        <param><defname>p_format</defname></param>
+        <initializer>    ( ((p_format)-&gt;i_format == VLC_CODEC_SPDIFL)       \
+       || ((p_format)-&gt;i_format == VLC_CODEC_SPDIFB)   \
+       || ((p_format)-&gt;i_format == VLC_CODEC_A52)      \
+       || ((p_format)-&gt;i_format == VLC_CODEC_DTS) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="79" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="79" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga4dececf46ec2c0dcfbdcad9c5ed464d1" prot="public" static="no">
+        <name>AOUT_FMT_HDMI</name>
+        <param><defname>p_format</defname></param>
+        <initializer>    ( (p_format)-&gt;i_format == VLC_CODEC_EAC3        \
+    ||(p_format)-&gt;i_format == VLC_CODEC_TRUEHD      \
+    ||(p_format)-&gt;i_format == VLC_CODEC_MLP         \
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="85" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga1d6ad3b4ced2d8c574dbf0c5227fe824" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_UNSET</name>
+        <initializer>0 /* must be zero */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="92" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga2e56f8ffc07739efc15cfb8ab813bf49" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_STEREO</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="93" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gae22fb96b718cf3e409c34642066b7f33" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_RSTEREO</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="94" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga7af3e62c16b5e994171789c9afd91fe8" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_LEFT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="95" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gab7e6b937c810c843c67b0bcb053a130b" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_RIGHT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="96" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga4734e087b3493f6f2192d63f11493512" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_DOLBYS</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="97" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga91f5cb115f19f4bc442f789318b5de9e" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_HEADPHONES</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="98" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga8a658b859b39b576cf32b45dc60ba884" prot="public" static="no">
+        <name>AOUT_VAR_CHAN_MONO</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="99" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga274aff07ae2e969c4219d6a287bfae59" prot="public" static="no">
+        <name>AOUT_SPDIF_SIZE</name>
+        <initializer>6144</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="106" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gaaf3809b83a5db6577a9b5b89d9822f73" prot="public" static="no">
+        <name>A52_FRAME_NB</name>
+        <initializer>1536</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="109" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gaa220dfee36f0570f799bd099c5dec79e" prot="public" static="no">
+        <name>AOUT_CHAN_REMAP_INIT</name>
+        <initializer>    { \
+    AOUT_CHANIDX_LEFT,  \
+    AOUT_CHANIDX_RIGHT, \
+    AOUT_CHANIDX_MIDDLELEFT, \
+    AOUT_CHANIDX_MIDDLERIGHT, \
+    AOUT_CHANIDX_REARLEFT, \
+    AOUT_CHANIDX_REARRIGHT, \
+    AOUT_CHANIDX_REARCENTER, \
+    AOUT_CHANIDX_CENTER, \
+    AOUT_CHANIDX_LFE, \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="207" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="207" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gab09fdb538e76f1489e4ca9aa0a632cb6" prot="public" static="no">
+        <name>AOUT_RESTART_FILTERS</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="230" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gadd43b93f54c768dd467dfccf82c1c8ec" prot="public" static="no">
+        <name>AOUT_RESTART_OUTPUT</name>
+        <initializer>(AOUT_RESTART_FILTERS|0x2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="231" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga5449b7be9c4dcb64fb1ef11fa201eb80" prot="public" static="no">
+        <name>AOUT_RESTART_STEREOMODE</name>
+        <initializer>(AOUT_RESTART_OUTPUT|0x4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="232" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gaeb579d4ac951d54f181ff3efda461bfd" prot="public" static="no">
+        <name>aout_FormatPrint</name>
+        <param><defname>o</defname></param>
+        <param><defname>t</defname></param>
+        <param><defname>f</defname></param>
+        <initializer>aout_FormatPrint(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o), t, f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="291" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga644c99ca1fe38e5d592185451095e4de" prot="public" static="no">
+        <name>AOUT_VOLUME_DEFAULT</name>
+        <initializer>256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="294" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gaa316cc900014d398e301ff43cdcad852" prot="public" static="no">
+        <name>AOUT_VOLUME_MAX</name>
+        <initializer>512</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="295" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga4a1fc955316c4c0dd288ac2a0645dde5" prot="public" static="no">
+        <name>AOUT_FILTERS_CFG_INIT</name>
+        <initializer>    (<ref refid="structaout__filters__cfg__t" kindref="compound">aout_filters_cfg_t</ref>) \
+    { .remap = AOUT_CHAN_REMAP_INIT, \
+      .headphones = false, \
+    };</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="381" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="381" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1gae5e1a0d254096863185c5f581ba3e5be" prot="public" static="no">
+        <name>aout_FiltersNew</name>
+        <param><defname>o</defname></param>
+        <param><defname>inf</defname></param>
+        <param><defname>outf</defname></param>
+        <param><defname>rv</defname></param>
+        <param><defname>remap</defname></param>
+        <initializer>        aout_FiltersNew(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o),inf,outf,rv,remap)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="394" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="394" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="define" id="group__audio__output_1ga941c7c15515a9d88f0911a7c5b46080c" prot="public" static="no">
+        <name>aout_FiltersDelete</name>
+        <param><defname>o</defname></param>
+        <param><defname>f</defname></param>
+        <initializer>        aout_FiltersDelete(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o),f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="397" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="397" bodyend="398"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

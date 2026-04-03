@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_configuration.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_configuration.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_configuration.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_configuration.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-configuration-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-configuration-h"></span><h1>Program Listing for File vlc_configuration.h<a class="headerlink" href="#program-listing-for-file-vlc-configuration-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_configuration.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-configuration-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_configuration.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_configuration.h : configuration management module</span>
+<span class="cm"> * This file describes the programming interface for the configuration module.</span>
+<span class="cm"> * It includes functions allowing to declare, get or set configuration options.</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2006 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Gildas Bazin &lt;gbazin@videolan.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_CONFIGURATION_H</span>
+<span class="cp">#define VLC_CONFIGURATION_H 1</span>
+
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/types.h&gt;</span><span class="c1">  /* for ssize_t */</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">config_category_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_id</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_help</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">union</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">       </span><span class="o">*</span><span class="n">psz</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">     </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">       </span><span class="n">f</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">module_value_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">vlc_string_list_cb</span><span class="p">)(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                  </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">);</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">vlc_integer_list_cb</span><span class="p">)(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">int64_t</span><span class="w"> </span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">);</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">module_config_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">i_type</span><span class="p">;</span><span class="w">                        </span><span class="cm">/* Configuration type */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="n">i_short</span><span class="p">;</span><span class="w">               </span><span class="cm">/* Optional short option name */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">b_advanced</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span><span class="w">                     </span><span class="cm">/* Advanced option */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">b_internal</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span><span class="w">          </span><span class="cm">/* Hidden from prefs and help */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">b_unsaveable</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span><span class="w">       </span><span class="cm">/* Not stored in configuration */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">b_safe</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span><span class="w">       </span><span class="cm">/* Safe in web plugins and playlists */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">    </span><span class="n">b_removed</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span><span class="w">                           </span><span class="cm">/* Deprecated */</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_type</span><span class="p">;</span><span class="w">                           </span><span class="cm">/* Configuration subtype */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span><span class="w">                                     </span><span class="cm">/* Option name */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_text</span><span class="p">;</span><span class="w">       </span><span class="cm">/* Short comment on the configuration option */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_longtext</span><span class="p">;</span><span class="w">    </span><span class="cm">/* Long comment on the configuration option */</span>
+
+<span class="w">    </span><span class="n">module_value_t</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">                                    </span><span class="cm">/* Option value */</span>
+<span class="w">    </span><span class="n">module_value_t</span><span class="w"> </span><span class="n">orig</span><span class="p">;</span>
+<span class="w">    </span><span class="n">module_value_t</span><span class="w"> </span><span class="n">min</span><span class="p">;</span>
+<span class="w">    </span><span class="n">module_value_t</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Values list */</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">list_count</span><span class="p">;</span><span class="w">                                </span><span class="cm">/* Options list size */</span>
+<span class="w">    </span><span class="k">union</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">psz</span><span class="p">;</span><span class="w">          </span><span class="cm">/* List of possible values for the option */</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w">  </span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="n">vlc_string_list_cb</span><span class="w"> </span><span class="n">psz_cb</span><span class="p">;</span>
+<span class="w">        </span><span class="n">vlc_integer_list_cb</span><span class="w"> </span><span class="n">i_cb</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">list_text</span><span class="p">;</span><span class="w">                </span><span class="cm">/* Friendly names for list values */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">list_cb_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">owner</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/*****************************************************************************</span>
+<span class="cm"> * Prototypes - these methods are used to get, set or manipulate configuration</span>
+<span class="cm"> * data.</span>
+<span class="cm"> *****************************************************************************/</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">config_GetType</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">config_GetInt</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_PutInt</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int64_t</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">config_GetFloat</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_PutFloat</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_GetPsz</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_PutPsz</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">config_GetIntChoices</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">int64_t</span><span class="w"> </span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">config_GetPszChoices</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">***</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">config_SaveConfigFile</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define config_SaveConfigFile(a) config_SaveConfigFile(VLC_OBJECT(a))</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_ResetAll</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define config_ResetAll(a) config_ResetAll(VLC_OBJECT(a))</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">module_config_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_FindConfig</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_GetDataDir</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">config_GetLibDir</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">vlc_userdir</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_HOME_DIR</span><span class="p">,</span><span class="w"> </span><span class="cm">/* User&#39;s home */</span>
+<span class="w">    </span><span class="n">VLC_CONFIG_DIR</span><span class="p">,</span><span class="w"> </span><span class="cm">/* VLC-specific configuration directory */</span>
+<span class="w">    </span><span class="n">VLC_DATA_DIR</span><span class="p">,</span><span class="w"> </span><span class="cm">/* VLC-specific data directory */</span>
+<span class="w">    </span><span class="n">VLC_CACHE_DIR</span><span class="p">,</span><span class="w"> </span><span class="cm">/* VLC-specific user cached data directory */</span>
+<span class="w">    </span><span class="cm">/* Generic directories (same as XDG) */</span>
+<span class="w">    </span><span class="n">VLC_DESKTOP_DIR</span><span class="o">=</span><span class="mh">0x80</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_DOWNLOAD_DIR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_TEMPLATES_DIR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_PUBLICSHARE_DIR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_DOCUMENTS_DIR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_MUSIC_DIR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_PICTURES_DIR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLC_VIDEOS_DIR</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_userdir_t</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_GetUserDir</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_userdir_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_AddIntf</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_RemoveIntf</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">config_ExistIntf</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="cp">#define config_GetInt(a,b) config_GetInt(VLC_OBJECT(a),b)</span>
+<span class="cp">#define config_PutInt(a,b,c) config_PutInt(VLC_OBJECT(a),b,c)</span>
+<span class="cp">#define config_GetFloat(a,b) config_GetFloat(VLC_OBJECT(a),b)</span>
+<span class="cp">#define config_PutFloat(a,b,c) config_PutFloat(VLC_OBJECT(a),b,c)</span>
+<span class="cp">#define config_GetPsz(a,b) config_GetPsz(VLC_OBJECT(a),b)</span>
+<span class="cp">#define config_PutPsz(a,b,c) config_PutPsz(VLC_OBJECT(a),b,c)</span>
+
+<span class="cp">#define config_AddIntf(a,b) config_AddIntf(VLC_OBJECT(a),b)</span>
+<span class="cp">#define config_RemoveIntf(a,b) config_RemoveIntf(VLC_OBJECT(a),b)</span>
+<span class="cp">#define config_ExistIntf(a,b) config_ExistIntf(VLC_OBJECT(a),b)</span>
+
+<span class="cm">/****************************************************************************</span>
+<span class="cm"> * config_chain_t:</span>
+<span class="cm"> ****************************************************************************/</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">config_chain_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_next</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="o">*</span><span class="n">psz_value</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_ChainParse</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_prefix</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">ppsz_options</span><span class="p">,</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define config_ChainParse( a, b, c, d ) config_ChainParse( VLC_OBJECT(a), b, c, d )</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">config_ChainParseOptions</span><span class="p">(</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_cfg</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ppsz_opts</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">config_ChainCreate</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">ppsz_name</span><span class="p">,</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">**</span><span class="n">pp_cfg</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_string</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">config_ChainDestroy</span><span class="p">(</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_ChainDuplicate</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_StringUnescape</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_string</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_StringEscape</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_string</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="w"> </span><span class="n">VLC_MALLOC</span><span class="p">;</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#endif </span><span class="cm">/* _VLC_CONFIGURATION_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File AffichageSynchrone.cpp &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File AffichageSynchrone.cpp</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File AffichageSynchrone.cpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_src_AffichageSynchrone.cpp.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-affichagesynchrone-cpp">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-src-affichagesynchrone-cpp"></span><h1>Program Listing for File AffichageSynchrone.cpp<a class="headerlink" href="#program-listing-for-file-affichagesynchrone-cpp" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_src_AffichageSynchrone.cpp.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-src-affichagesynchrone-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\src\AffichageSynchrone.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define RAYGUI_IMPLEMENTATION</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;AffichageSynchrone/AffichageSynchrone.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;SynchroniseurMultiVideo/SynchroniseurMultiVideo.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;raygui.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;filesystem&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">filesystem</span><span class="p">;</span>
+
+<span class="c1">// --- Callbacks VLC ---</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">verrouiller</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">donnees</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">p_pixels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="o">*</span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">AffichageSynchrone</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">donnees</span><span class="p">);</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">mutexImage</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+<span class="w">    </span><span class="o">*</span><span class="n">p_pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">pixelsVideo</span><span class="p">.</span><span class="n">data</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deverrouiller</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">donnees</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="o">*</span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">AffichageSynchrone</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">donnees</span><span class="p">);</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">mutexImage</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">framePrete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="nf">configurerVideo</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">donnees</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">largeur</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">hauteur</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">pas</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">lignes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="o">*</span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">AffichageSynchrone</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">donnees</span><span class="p">);</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">mutexImage</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">largeurVideo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">largeur</span><span class="p">;</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">hauteurVideo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">hauteur</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Redimensionne le buffer de pixels pour correspondre à la nouvelle taille vidéo</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">pixelsVideo</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">app</span><span class="o">-&gt;</span><span class="n">largeurVideo</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">hauteurVideo</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;RGBA&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="o">*</span><span class="n">pas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">largeurVideo</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="o">*</span><span class="n">lignes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">hauteurVideo</span><span class="p">;</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">textureDoitEtreRedimensionnee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">app</span><span class="o">-&gt;</span><span class="n">mutexImage</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// --- Implémentation AffichageSynchrone ---</span>
+
+<span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">AffichageSynchrone</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">SetConfigFlags</span><span class="p">(</span><span class="n">FLAG_MSAA_4X_HINT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">FLAG_VSYNC_HINT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">FLAG_WINDOW_RESIZABLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">InitWindow</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Test affichage synchrone&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">SetWindowMinSize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">450</span><span class="p">);</span>
+<span class="w">    </span><span class="n">InitAudioDevice</span><span class="p">();</span>
+<span class="w">    </span><span class="n">chargerListeVideos</span><span class="p">();</span>
+<span class="w">    </span><span class="n">SetTargetFPS</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Initialisation de VLC</span>
+<span class="w">    </span><span class="n">instanceVLC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lecteurVLC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_media_player_new</span><span class="p">(</span><span class="n">instanceVLC</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">textureVideo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">miseAJourDisposition</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fs</span><span class="o">::</span><span class="n">exists</span><span class="p">(</span><span class="n">cheminVideoComplexe</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">chargerVideo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">AffichageSynchrone</span><span class="o">::~</span><span class="n">AffichageSynchrone</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">threadGeneration</span><span class="p">.</span><span class="n">joinable</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">threadGeneration</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">libvlc_media_player_stop</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">        </span><span class="n">libvlc_media_player_release</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instanceVLC</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">libvlc_release</span><span class="p">(</span><span class="n">instanceVLC</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">UnloadTexture</span><span class="p">(</span><span class="n">textureVideo</span><span class="p">);</span>
+<span class="w">    </span><span class="n">CloseAudioDevice</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CloseWindow</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">miseAJourDisposition</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">GetScreenWidth</span><span class="p">());</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">GetScreenHeight</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Définition des zones de l&#39;interface (liste, boutons, vidéo, contrôles)</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">96</span><span class="p">};</span><span class="w"> </span><span class="c1">// Vue en liste</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">};</span><span class="w"> </span><span class="c1">// Bouton Générer</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">72</span><span class="p">};</span><span class="w"> </span><span class="c1">// Zone vidéo</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span><span class="w"> </span><span class="c1">// Ligne de délimitation</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">158</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">};</span><span class="w"> </span><span class="c1">// Bouton Lecture/Pause</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">198</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">382</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">};</span><span class="w"> </span><span class="c1">// Étiquette d&#39;horodatage</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">198</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">382</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">};</span><span class="w"> </span><span class="c1">// Curseur de progression</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">176</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">};</span><span class="w"> </span><span class="c1">// Bouton Muet</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">136</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">};</span><span class="w"> </span><span class="c1">// Étiquette de volume</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">largeurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">136</span><span class="p">,</span><span class="w"> </span><span class="n">hauteurEcran</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">};</span><span class="w"> </span><span class="c1">// Curseur de volume</span>
+<span class="w">    </span><span class="n">zones</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">};</span><span class="w"> </span><span class="c1">// Bouton Ouvrir dossier</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">chargerListeVideos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fichiersVideo</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">videosSelectionnees</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ordreSelection</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">chemin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;videos&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fs</span><span class="o">::</span><span class="n">exists</span><span class="p">(</span><span class="n">chemin</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fs</span><span class="o">::</span><span class="n">is_directory</span><span class="p">(</span><span class="n">chemin</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">entree</span><span class="o">:</span><span class="w"> </span><span class="n">fs</span><span class="o">::</span><span class="n">directory_iterator</span><span class="p">(</span><span class="n">chemin</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">entree</span><span class="p">.</span><span class="n">is_regular_file</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">string</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entree</span><span class="p">.</span><span class="n">path</span><span class="p">().</span><span class="n">extension</span><span class="p">().</span><span class="n">string</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;.mp4&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;.mp3&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">fichiersVideo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">entree</span><span class="p">.</span><span class="n">path</span><span class="p">().</span><span class="n">filename</span><span class="p">().</span><span class="n">string</span><span class="p">());</span>
+<span class="w">                    </span><span class="n">videosSelectionnees</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">chargerVideo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">libvlc_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_media_new_path</span><span class="p">(</span><span class="n">instanceVLC</span><span class="p">,</span><span class="w"> </span><span class="n">cheminVideoComplexe</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">media</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">duree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">libvlc_media_player_set_media</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="p">);</span>
+<span class="w">    </span><span class="n">libvlc_media_release</span><span class="p">(</span><span class="n">media</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Configuration des callbacks pour le rendu vidéo dans une texture Raylib</span>
+<span class="w">    </span><span class="n">libvlc_video_set_callbacks</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="n">verrouiller</span><span class="p">,</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">libvlc_video_unlock_cb</span><span class="o">&gt;</span><span class="p">(</span><span class="n">deverrouiller</span><span class="p">),</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="n">libvlc_video_set_format_callbacks</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">libvlc_video_format_cb</span><span class="o">&gt;</span><span class="p">(</span><span class="n">configurerVideo</span><span class="p">),</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">libvlc_media_player_play</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Attendre un peu pour que VLC initialise la vidéo</span>
+<span class="w">    </span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
+<span class="w">    </span><span class="n">libvlc_media_player_set_pause</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">libvlc_time_t</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_media_player_get_length</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">    </span><span class="n">duree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">len</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000.0f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">libvlc_audio_set_volume</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">generer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">generationEnCours</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">videos</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">fs</span><span class="o">::</span><span class="n">path</span><span class="w"> </span><span class="n">cheminBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;videos&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ordreSelection</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fichiersVideo</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">videos</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="n">cheminBase</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fichiersVideo</span><span class="p">[</span><span class="n">index</span><span class="p">]).</span><span class="n">string</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">videos</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fs</span><span class="o">::</span><span class="n">path</span><span class="p">(</span><span class="n">videos</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="n">extension</span><span class="p">().</span><span class="n">string</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">estMp3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">extension</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;.mp3&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Vérification du nombre de fichiers requis</span>
+<span class="w">    </span><span class="c1">// Si le premier est un MP3, il faut au moins 3 fichiers (1 MP3 + 2 vidéos)</span>
+<span class="w">    </span><span class="c1">// Sinon, il faut au moins 2 fichiers (2 vidéos)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">estMp3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">videos</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">estMp3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">videos</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">libvlc_media_player_stop</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">    </span><span class="n">duree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+<span class="w">    </span><span class="n">valeurSliderProgression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">generationEnCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">threadGeneration</span><span class="p">.</span><span class="n">joinable</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">threadGeneration</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Lancement de la génération dans un thread séparé pour ne pas bloquer l&#39;UI</span>
+<span class="w">    </span><span class="n">threadGeneration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">thread</span><span class="p">([</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">videos</span><span class="p">,</span><span class="w"> </span><span class="n">estMp3</span><span class="p">]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">SynchroniseurMultiVideo</span><span class="w"> </span><span class="n">synchroniseur</span><span class="p">;</span>
+<span class="w">        </span><span class="n">synchroniseur</span><span class="p">.</span><span class="n">configurerAnalyse</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span><span class="w"> </span><span class="mf">30.0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">succes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estMp3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">videosSeules</span><span class="p">(</span><span class="n">videos</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">videos</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">            </span><span class="n">succes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">synchroniseur</span><span class="p">.</span><span class="n">genererVideoSynchronisee</span><span class="p">(</span><span class="n">videos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">videosSeules</span><span class="p">,</span><span class="w"> </span><span class="n">cheminVideoComplexe</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">succes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">synchroniseur</span><span class="p">.</span><span class="n">genererVideoSynchronisee</span><span class="p">(</span><span class="n">videos</span><span class="p">,</span><span class="w"> </span><span class="n">cheminVideoComplexe</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">succes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">videoGeneree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">generationEnCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">ouvrirDossierVideos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">chemin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;videos&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">fs</span><span class="o">::</span><span class="n">exists</span><span class="p">(</span><span class="n">chemin</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fs</span><span class="o">::</span><span class="n">create_directory</span><span class="p">(</span><span class="n">chemin</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cp">#ifdef _WIN32</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;explorer &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">chemin</span><span class="p">;</span>
+<span class="w">    </span><span class="cp">#elif __APPLE__</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;open &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">chemin</span><span class="p">;</span>
+<span class="w">    </span><span class="cp">#else</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;xdg-open &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">chemin</span><span class="p">;</span>
+<span class="w">    </span><span class="cp">#endif</span>
+
+<span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="n">commande</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">lecturePause</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">libvlc_media_player_is_playing</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">libvlc_media_player_set_pause</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">libvlc_media_player_play</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">son</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">estMuet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">estMuet</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estMuet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">valeurSliderSonPrecedent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeurSliderSon</span><span class="p">;</span>
+<span class="w">        </span><span class="n">valeurSliderSon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">valeurSliderSon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeurSliderSonPrecedent</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">setVolume</span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">barreProgression</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="o">&amp;</span><span class="n">enGlissement</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="o">&amp;</span><span class="n">etaitEnLecture</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">&amp;</span><span class="n">delaiRecherche</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">estEnLecture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_media_player_is_playing</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Gestion du clic sur la barre de progression</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CheckCollisionPointRec</span><span class="p">(</span><span class="n">GetMousePosition</span><span class="p">(),</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="mi">6</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsMouseButtonPressed</span><span class="p">(</span><span class="n">MOUSE_LEFT_BUTTON</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">enGlissement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">etaitEnLecture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estEnLecture</span><span class="p">;</span>
+<span class="w">            </span><span class="n">libvlc_media_player_set_pause</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">libvlc_audio_set_volume</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ancienneValeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeurSliderProgression</span><span class="p">;</span>
+<span class="w">    </span><span class="n">GuiSliderBar</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valeurSliderProgression</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="n">duree</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">enGlissement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valeurSliderProgression</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ancienneValeur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">libvlc_media_player_set_time</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">libvlc_time_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderProgression</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsMouseButtonReleased</span><span class="p">(</span><span class="n">MOUSE_LEFT_BUTTON</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">IsMouseButtonDown</span><span class="p">(</span><span class="n">MOUSE_LEFT_BUTTON</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">enGlissement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">etaitEnLecture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">libvlc_media_player_play</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">libvlc_audio_set_volume</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="p">));</span>
+<span class="w">            </span><span class="n">delaiRecherche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2f</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">barreVolume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">nouveauVolume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeurSliderSon</span><span class="p">;</span>
+<span class="w">    </span><span class="n">GuiSliderBar</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nouveauVolume</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nouveauVolume</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">valeurSliderSon</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">valeurSliderSon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nouveauVolume</span><span class="p">;</span>
+<span class="w">        </span><span class="n">estMuet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setVolume</span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">afficherVideo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Mise à jour de la texture si une nouvelle frame est prête</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">framePrete</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mutexImage</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">largeurVideo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hauteurVideo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">UpdateTexture</span><span class="p">(</span><span class="n">textureVideo</span><span class="p">,</span><span class="w"> </span><span class="n">pixelsVideo</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">mutexImage</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+<span class="w">        </span><span class="n">framePrete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">largeurVideo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">hauteurVideo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Calcul de l&#39;échelle pour garder le ratio d&#39;aspect</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">echelleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">largeurVideo</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">echelleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">hauteurVideo</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">echelle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">echelleX</span><span class="p">,</span><span class="w"> </span><span class="n">echelleY</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">destLargeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">largeurVideo</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">echelle</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">destHauteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">hauteurVideo</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">echelle</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">destX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">destLargeur</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">destY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">destHauteur</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">largeurVideo</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">hauteurVideo</span><span class="p">)};</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">destX</span><span class="p">,</span><span class="w"> </span><span class="n">destY</span><span class="p">,</span><span class="w"> </span><span class="n">destLargeur</span><span class="p">,</span><span class="w"> </span><span class="n">destHauteur</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">DrawTexturePro</span><span class="p">(</span><span class="n">textureVideo</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="n">WHITE</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">afficherListeFichiers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">vue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// Calcul de la hauteur du contenu</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">contentHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fichiersVideo</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Utilisation de GuiScrollPanel</span>
+<span class="w">    </span><span class="n">GuiScrollPanel</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span>
+<span class="w">                   </span><span class="p">(</span><span class="n">Rectangle</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">contentHeight</span><span class="p">},</span>
+<span class="w">                   </span><span class="o">&amp;</span><span class="n">positionDefilement</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vue</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">BeginScissorMode</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vue</span><span class="p">.</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vue</span><span class="p">.</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vue</span><span class="p">.</span><span class="n">width</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vue</span><span class="p">.</span><span class="n">height</span><span class="p">));</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fichiersVideo</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">itemRect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">zones</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">positionDefilement</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+<span class="w">            </span><span class="n">zones</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">positionDefilement</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+<span class="w">            </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span>
+<span class="w">        </span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">// Vérifier si l&#39;élément est visible avant de le dessiner (optimisation)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">itemRect</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">itemRect</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vue</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">itemRect</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">vue</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vue</span><span class="p">.</span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">videosSelectionnees</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ranges</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">ordreSelection</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ordreSelection</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">ordre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">ordreSelection</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">it</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">etiquette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fichiersVideo</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ordre</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">etiquette</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot; (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">to_string</span><span class="p">(</span><span class="n">ordre</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">coche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">videosSelectionnees</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">etaitCoche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coche</span><span class="p">;</span>
+<span class="w">        </span><span class="n">GuiCheckBox</span><span class="p">(</span><span class="n">itemRect</span><span class="p">,</span><span class="w"> </span><span class="n">etiquette</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">coche</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">coche</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">etaitCoche</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">videosSelectionnees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coche</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">coche</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">ordreSelection</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ranges</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">ordreSelection</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ordreSelection</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">ordreSelection</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">EndScissorMode</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">executer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">enGlissement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">etaitEnLecture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">delaiRecherche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">rotationChargement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">WindowShouldClose</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsWindowResized</span><span class="p">())</span><span class="w"> </span><span class="n">miseAJourDisposition</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">videoGeneree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">chargerVideo</span><span class="p">();</span>
+<span class="w">            </span><span class="n">videoGeneree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Redimensionnement de la texture si la vidéo change de résolution</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">textureDoitEtreRedimensionnee</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mutexImage</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">textureVideo</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">UnloadTexture</span><span class="p">(</span><span class="n">textureVideo</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">largeurVideo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hauteurVideo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Image</span><span class="w"> </span><span class="n">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenImageColor</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">largeurVideo</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">hauteurVideo</span><span class="p">),</span><span class="w"> </span><span class="n">BLACK</span><span class="p">);</span>
+<span class="w">                </span><span class="n">textureVideo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoadTextureFromImage</span><span class="p">(</span><span class="n">img</span><span class="p">);</span>
+<span class="w">                </span><span class="n">UnloadImage</span><span class="p">(</span><span class="n">img</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">textureVideo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">textureDoitEtreRedimensionnee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">mutexImage</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delaiRecherche</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">delaiRecherche</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">GetFrameTime</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">enGlissement</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">delaiRecherche</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">libvlc_time_t</span><span class="w"> </span><span class="n">tempsActuel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_media_player_get_time</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tempsActuel</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">valeurSliderProgression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tempsActuel</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000.0f</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">BeginDrawing</span><span class="p">();</span>
+<span class="w">        </span><span class="n">ClearBackground</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">GuiGetStyle</span><span class="p">(</span><span class="n">DEFAULT</span><span class="p">,</span><span class="w"> </span><span class="n">BACKGROUND_COLOR</span><span class="p">)));</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">duree</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">textureVideo</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">afficherVideo</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">DrawRectangleRec</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">GRAY</span><span class="p">);</span>
+<span class="w">        </span><span class="n">afficherListeFichiers</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">GuiSetState</span><span class="p">(</span><span class="n">generationEnCours</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">STATE_DISABLED</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">STATE_NORMAL</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GuiButton</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">TEXTE_BOUTON_GENERER</span><span class="p">))</span><span class="w"> </span><span class="n">generer</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GuiButton</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="w"> </span><span class="n">TEXTE_BOUTON_OUVRIR_DOSSIER</span><span class="p">))</span><span class="w"> </span><span class="n">ouvrirDossierVideos</span><span class="p">();</span>
+<span class="w">        </span><span class="n">GuiSetState</span><span class="p">(</span><span class="n">STATE_NORMAL</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">estEnLecture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libvlc_media_player_is_playing</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GuiButton</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="n">estEnLecture</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;#132#&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;#131#&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">lecturePause</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderProgression</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">secondes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderProgression</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dureeMinutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">duree</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dureeSecondes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">duree</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">        </span><span class="n">GuiLabel</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="n">TextFormat</span><span class="p">(</span><span class="s">&quot;%02d:%02d / %02d:%02d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">minutes</span><span class="p">,</span><span class="w"> </span><span class="n">secondes</span><span class="p">,</span><span class="w"> </span><span class="n">dureeMinutes</span><span class="p">,</span><span class="w"> </span><span class="n">dureeSecondes</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">barreProgression</span><span class="p">(</span><span class="n">enGlissement</span><span class="p">,</span><span class="w"> </span><span class="n">etaitEnLecture</span><span class="p">,</span><span class="w"> </span><span class="n">delaiRecherche</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GuiButton</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="w"> </span><span class="n">estMuet</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;#128#&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;#122#&quot;</span><span class="p">))</span><span class="w"> </span><span class="n">son</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">GuiLabel</span><span class="p">(</span><span class="n">zones</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="w"> </span><span class="n">TextFormat</span><span class="p">(</span><span class="s">&quot;%d%%&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="p">)));</span>
+<span class="w">        </span><span class="n">barreVolume</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">generationEnCours</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">DrawRectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">GetScreenWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">GetScreenHeight</span><span class="p">(),</span><span class="w"> </span><span class="n">Fade</span><span class="p">(</span><span class="n">BLACK</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">));</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">texteChargement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Génération en cours...&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tailleTexte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MeasureText</span><span class="p">(</span><span class="n">texteChargement</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="w">            </span><span class="n">DrawText</span><span class="p">(</span><span class="n">texteChargement</span><span class="p">,</span><span class="w"> </span><span class="n">GetScreenWidth</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tailleTexte</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">GetScreenHeight</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">WHITE</span><span class="p">);</span>
+<span class="w">            </span><span class="n">rotationChargement</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">4.0f</span><span class="p">;</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">rectChargement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">GetScreenWidth</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">GetScreenHeight</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span>
+<span class="w">            </span><span class="n">DrawRectanglePro</span><span class="p">(</span><span class="n">rectChargement</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">},</span><span class="w"> </span><span class="n">rotationChargement</span><span class="p">,</span><span class="w"> </span><span class="n">WHITE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">EndDrawing</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">AffichageSynchrone</span><span class="o">::</span><span class="n">setVolume</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">volume</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">valeurSliderSon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">volume</span><span class="p">;</span>
+<span class="w">    </span><span class="n">libvlc_audio_set_volume</span><span class="p">(</span><span class="n">lecteurVLC</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valeurSliderSon</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

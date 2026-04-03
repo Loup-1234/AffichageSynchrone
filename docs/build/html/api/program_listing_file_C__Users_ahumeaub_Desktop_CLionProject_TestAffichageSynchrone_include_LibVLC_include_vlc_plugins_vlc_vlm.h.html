@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_vlm.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_vlm.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_vlm.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_vlm.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-vlm-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-vlm-h"></span><h1>Program Listing for File vlc_vlm.h<a class="headerlink" href="#program-listing-for-file-vlc-vlm-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_vlm.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-vlm-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_vlm.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_vlm.h: VLM core structures</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2000, 2001 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Simon Latapie &lt;garf@videolan.org&gt;</span>
+<span class="cm"> *          Laurent Aimar &lt;fenrir@videolan.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_VLM_H</span>
+<span class="cp">#define VLC_VLM_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_input.h&gt;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">     </span><span class="n">id</span><span class="p">;</span><span class="w">     </span><span class="cm">/*&lt; numeric id for vlm_media_t item */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">  </span><span class="n">b_enabled</span><span class="p">;</span><span class="w">    </span><span class="cm">/*&lt; vlm_media_t is enabled */</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span><span class="w">     </span><span class="cm">/*&lt; descriptive name of vlm_media_t item */</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i_input</span><span class="p">;</span><span class="w">       </span><span class="cm">/*&lt; number of input options */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">ppsz_input</span><span class="p">;</span><span class="w">  </span><span class="cm">/*&lt; array of input options */</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i_option</span><span class="p">;</span><span class="w">      </span><span class="cm">/*&lt; number of output options */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">ppsz_option</span><span class="p">;</span><span class="w"> </span><span class="cm">/*&lt; array of output options */</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_output</span><span class="p">;</span><span class="w">   </span><span class="cm">/*&lt; */</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_vod</span><span class="p">;</span><span class="w">         </span><span class="cm">/*&lt; vlm_media_t is of type VOD */</span>
+<span class="w">    </span><span class="k">struct</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_loop</span><span class="p">;</span><span class="w">    </span><span class="cm">/*&lt; this vlc_media_t broadcast item should loop */</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">broadcast</span><span class="p">;</span><span class="w">        </span><span class="cm">/*&lt; Broadcast specific information */</span>
+<span class="w">    </span><span class="k">struct</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_mux</span><span class="p">;</span><span class="w">  </span><span class="cm">/*&lt; name of muxer to use */</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">vod</span><span class="p">;</span><span class="w">              </span><span class="cm">/*&lt; VOD specific information */</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span><span class="w">         </span><span class="cm">/*&lt; vlm media instance descriptive name */</span>
+
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">     </span><span class="n">i_time</span><span class="p">;</span><span class="w">     </span><span class="cm">/*&lt; vlm media instance vlm media current time */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">     </span><span class="n">i_length</span><span class="p">;</span><span class="w">   </span><span class="cm">/*&lt; vlm media instance vlm media item length */</span>
+<span class="w">    </span><span class="kt">double</span><span class="w">      </span><span class="n">d_position</span><span class="p">;</span><span class="w"> </span><span class="cm">/*&lt; vlm media instance position in stream */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">b_paused</span><span class="p">;</span><span class="w">   </span><span class="cm">/*&lt; vlm media instance is paused */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">i_rate</span><span class="p">;</span><span class="w">     </span><span class="c1">// normal is INPUT_RATE_DEFAULT</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlm_media_instance_t</span><span class="p">;</span>
+
+<span class="cp">#if 0</span>
+<span class="c">typedef struct</span>
+<span class="c">{</span>
+
+<span class="c">} vlm_schedule_t</span>
+<span class="cp">#endif</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">vlm_event_type_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">VLM_EVENT_MEDIA_ADDED</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLM_EVENT_MEDIA_REMOVED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLM_EVENT_MEDIA_CHANGED</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">VLM_EVENT_MEDIA_INSTANCE_STARTED</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mh">0x200</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLM_EVENT_MEDIA_INSTANCE_STOPPED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VLM_EVENT_MEDIA_INSTANCE_STATE</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">            </span><span class="n">i_type</span><span class="p">;</span><span class="w">            </span><span class="cm">/* a vlm_event_type_e value */</span>
+<span class="w">    </span><span class="kt">int64_t</span><span class="w">        </span><span class="n">id</span><span class="p">;</span><span class="w">                </span><span class="cm">/* Media ID */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w">    </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span><span class="w">          </span><span class="cm">/* Media name */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w">    </span><span class="o">*</span><span class="n">psz_instance_name</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Instance name or NULL */</span>
+<span class="w">    </span><span class="n">input_state_e</span><span class="w">  </span><span class="n">input_state</span><span class="p">;</span><span class="w">       </span><span class="cm">/* Input instance event type */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlm_event_t</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">vlm_query_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* --- Media control */</span>
+<span class="w">    </span><span class="cm">/* Get all medias */</span>
+<span class="w">    </span><span class="n">VLM_GET_MEDIAS</span><span class="p">,</span><span class="w">                     </span><span class="cm">/* arg1=vlm_media_t ***, int *pi_media      */</span>
+<span class="w">    </span><span class="cm">/* Delete all medias */</span>
+<span class="w">    </span><span class="n">VLM_CLEAR_MEDIAS</span><span class="p">,</span><span class="w">                   </span><span class="cm">/* no arg */</span>
+
+<span class="w">    </span><span class="cm">/* Add a new media */</span>
+<span class="w">    </span><span class="n">VLM_ADD_MEDIA</span><span class="p">,</span><span class="w">                      </span><span class="cm">/* arg1=vlm_media_t* arg2=int64_t *p_id         res=can fail */</span>
+<span class="w">    </span><span class="cm">/* Delete an existing media */</span>
+<span class="w">    </span><span class="n">VLM_DEL_MEDIA</span><span class="p">,</span><span class="w">                      </span><span class="cm">/* arg1=int64_t id */</span>
+<span class="w">    </span><span class="cm">/* Change properties of an existing media (all fields but id and b_vod) */</span>
+<span class="w">    </span><span class="n">VLM_CHANGE_MEDIA</span><span class="p">,</span><span class="w">                   </span><span class="cm">/* arg1=vlm_media_t*                            res=can fail */</span>
+<span class="w">    </span><span class="cm">/* Get 1 media by it&#39;s ID */</span>
+<span class="w">    </span><span class="n">VLM_GET_MEDIA</span><span class="p">,</span><span class="w">                      </span><span class="cm">/* arg1=int64_t id arg2=vlm_media_t **  */</span>
+<span class="w">    </span><span class="cm">/* Get media ID from its name */</span>
+<span class="w">    </span><span class="n">VLM_GET_MEDIA_ID</span><span class="p">,</span><span class="w">                   </span><span class="cm">/* arg1=const char *psz_name arg2=int64_t*  */</span>
+
+<span class="w">    </span><span class="cm">/* Media instance control XXX VOD control are for internal use only */</span>
+<span class="w">    </span><span class="cm">/* Get all media instances */</span>
+<span class="w">    </span><span class="n">VLM_GET_MEDIA_INSTANCES</span><span class="p">,</span><span class="w">            </span><span class="cm">/* arg1=int64_t id arg2=vlm_media_instance_t *** arg3=int *pi_instance */</span>
+<span class="w">    </span><span class="cm">/* Delete all media instances */</span>
+<span class="w">    </span><span class="n">VLM_CLEAR_MEDIA_INSTANCES</span><span class="p">,</span><span class="w">          </span><span class="cm">/* arg1=int64_t id */</span>
+<span class="w">    </span><span class="cm">/* Control broadcast instance */</span>
+<span class="w">    </span><span class="n">VLM_START_MEDIA_BROADCAST_INSTANCE</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name, int i_input_index  res=can fail */</span>
+<span class="w">    </span><span class="cm">/* Control VOD instance */</span>
+<span class="w">    </span><span class="n">VLM_START_MEDIA_VOD_INSTANCE</span><span class="p">,</span><span class="w">       </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name, int i_input_index char *psz_vod_output res=can fail */</span>
+<span class="w">    </span><span class="cm">/* Stop an instance */</span>
+<span class="w">    </span><span class="n">VLM_STOP_MEDIA_INSTANCE</span><span class="p">,</span><span class="w">            </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name      res=can fail */</span>
+<span class="w">    </span><span class="cm">/* Pause an instance */</span>
+<span class="w">    </span><span class="n">VLM_PAUSE_MEDIA_INSTANCE</span><span class="p">,</span><span class="w">           </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name      res=can fail */</span>
+<span class="w">    </span><span class="cm">/* Get instance position time (in microsecond) */</span>
+<span class="w">    </span><span class="n">VLM_GET_MEDIA_INSTANCE_TIME</span><span class="p">,</span><span class="w">        </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name arg3=int64_t *   */</span>
+<span class="w">    </span><span class="cm">/* Set instance position time (in microsecond) */</span>
+<span class="w">    </span><span class="n">VLM_SET_MEDIA_INSTANCE_TIME</span><span class="p">,</span><span class="w">        </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name arg3=int64_t     */</span>
+<span class="w">    </span><span class="cm">/* Get instance position ([0.0 .. 1.0]) */</span>
+<span class="w">    </span><span class="n">VLM_GET_MEDIA_INSTANCE_POSITION</span><span class="p">,</span><span class="w">    </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name arg3=double *   */</span>
+<span class="w">    </span><span class="cm">/* Set instance position ([0.0 .. 1.0]) */</span>
+<span class="w">    </span><span class="n">VLM_SET_MEDIA_INSTANCE_POSITION</span><span class="p">,</span><span class="w">    </span><span class="cm">/* arg1=int64_t id, arg2=const char *psz_instance_name arg3=double     */</span>
+
+<span class="w">    </span><span class="cm">/* Schedule control */</span>
+<span class="w">    </span><span class="n">VLM_CLEAR_SCHEDULES</span><span class="p">,</span><span class="w">                </span><span class="cm">/* no arg */</span>
+<span class="w">    </span><span class="cm">/* TODO: missing schedule control */</span>
+
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="p">};</span>
+
+
+<span class="cm">/* VLM specific - structures and functions */</span>
+
+<span class="cm">/* ok, here is the structure of a vlm_message:</span>
+<span class="cm">   The parent node is ( name_of_the_command , NULL ), or</span>
+<span class="cm">   ( name_of_the_command , message_error ) on error.</span>
+<span class="cm">   If a node has children, it should not have a value (=NULL).*/</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">vlm_message_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span><span class="w">         </span><span class="cm">/*&lt; message name */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_value</span><span class="p">;</span><span class="w">        </span><span class="cm">/*&lt; message value */</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">           </span><span class="n">i_child</span><span class="p">;</span><span class="w">  </span><span class="cm">/*&lt; number of child messages */</span>
+<span class="w">    </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">**</span><span class="n">child</span><span class="p">;</span><span class="w">  </span><span class="cm">/*&lt; array of vlm_message_t */</span>
+<span class="p">};</span>
+
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#endif</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlm_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlm_New</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#define vlm_New( a ) vlm_New( VLC_OBJECT(a) )</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlm_ExecuteCommand</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlm_Control</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_vlm</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_query</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlm_MessageSimpleNew</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlm_MessageNew</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">VLC_FORMAT</span><span class="p">(</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlm_MessageAdd</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_MessageDelete</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_message_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cm">/* media helpers */</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlm_media_Init</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_media</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">vlm_media_t</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">// invalid id</span>
+<span class="w">    </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">TAB_INIT</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">i_input</span><span class="p">,</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">ppsz_input</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">TAB_INIT</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">i_option</span><span class="p">,</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">ppsz_option</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">psz_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">b_vod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">vod</span><span class="p">.</span><span class="n">psz_mux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">broadcast</span><span class="p">.</span><span class="n">b_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span>
+<span class="cp">#ifndef __cplusplus</span>
+<span class="n">vlm_media_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="kr">restrict</span><span class="w"> </span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="kr">restrict</span><span class="w"> </span><span class="n">p_src</span><span class="w"> </span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="n">vlm_media_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="w"> </span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="w"> </span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">vlm_media_t</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">b_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">b_enabled</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">i_input</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">TAB_APPEND_CAST</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">**</span><span class="p">),</span><span class="w"> </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">i_input</span><span class="p">,</span><span class="w"> </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">ppsz_input</span><span class="p">,</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">ppsz_input</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">i_option</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">TAB_APPEND_CAST</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">**</span><span class="p">),</span><span class="w"> </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">i_option</span><span class="p">,</span><span class="w"> </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">ppsz_option</span><span class="p">,</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">ppsz_option</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">psz_output</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">psz_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">psz_output</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">b_vod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">b_vod</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">b_vod</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">vod</span><span class="p">.</span><span class="n">psz_mux</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">vod</span><span class="p">.</span><span class="n">psz_mux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">vod</span><span class="p">.</span><span class="n">psz_mux</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">broadcast</span><span class="p">.</span><span class="n">b_loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">broadcast</span><span class="p">.</span><span class="n">b_loop</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_media_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_media</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">i_input</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">ppsz_input</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">TAB_CLEAN</span><span class="p">(</span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">i_input</span><span class="p">,</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">ppsz_input</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">i_option</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">ppsz_option</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">TAB_CLEAN</span><span class="p">(</span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">i_option</span><span class="p">,</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">ppsz_option</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">psz_output</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">b_vod</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="o">-&gt;</span><span class="n">vod</span><span class="p">.</span><span class="n">psz_mux</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlm_media_New</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">vlm_media_t</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">vlm_media_Init</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_media</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_media_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_media</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlm_media_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_media</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlm_media_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlm_media_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlm_media_New</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_dst</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">vlm_media_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="n">p_src</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_dst</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* media instance helpers */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_media_instance_Init</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="w"> </span><span class="n">p_instance</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">vlm_media_instance_t</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">i_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">i_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">d_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">b_paused</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">i_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INPUT_RATE_DEFAULT</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_media_instance_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_instance</span><span class="o">-&gt;</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">vlm_media_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlm_media_instance_New</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlm_media_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">vlm_media_instance_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">vlm_media_instance_t</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_instance</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">vlm_media_instance_Init</span><span class="p">(</span><span class="w"> </span><span class="n">p_instance</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_instance</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlm_media_instance_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">vlm_media_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlm_media_instance_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">p_instance</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_instance</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.. _exhale_typedef_vlc__common_8h_1a7d307e616de00831678135d89cb7bdb4:
+
+Typedef audio_format_t
+======================
+
+- Defined in :ref:`file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_common.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: audio_format_t
+   :project: TestAffichageSynchrone

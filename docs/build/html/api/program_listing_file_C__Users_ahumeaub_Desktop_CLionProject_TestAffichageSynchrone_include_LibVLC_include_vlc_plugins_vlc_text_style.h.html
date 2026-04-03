@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_text_style.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_text_style.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_text_style.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_text_style.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-text-style-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-text-style-h"></span><h1>Program Listing for File vlc_text_style.h<a class="headerlink" href="#program-listing-for-file-vlc-text-style-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_text_style.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-text-style-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_text_style.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_text_style.h: text_style_t definition and helpers.</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2010 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Derk-Jan Hartman &lt;hartman _AT_ videolan _DOT_ org&gt;</span>
+<span class="cm"> *          basOS G &lt;noxelia 4t gmail , com&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_TEXT_STYLE_H</span>
+<span class="cp">#define VLC_TEXT_STYLE_H 1</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#endif</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Family font names */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w">     </span><span class="n">psz_fontname</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w">     </span><span class="n">psz_monofontname</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w">   </span><span class="n">i_features</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w">   </span><span class="n">i_style_flags</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Font style */</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">      </span><span class="n">f_font_relsize</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_font_size</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_font_color</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="n">i_font_alpha</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_spacing</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Outline */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_outline_color</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="n">i_outline_alpha</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_outline_width</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Shadow */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_shadow_color</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="n">i_shadow_alpha</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_shadow_width</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Background (and karaoke) */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_background_color</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="n">i_background_alpha</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="n">i_karaoke_background_color</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">    </span><span class="n">i_karaoke_background_alpha</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Line breaking */</span>
+<span class="w">    </span><span class="k">enum</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">STYLE_WRAP_DEFAULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">STYLE_WRAP_CHAR</span><span class="p">,</span>
+<span class="w">        </span><span class="n">STYLE_WRAP_NONE</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">e_wrapinfo</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">text_style_t</span><span class="p">;</span>
+
+<span class="cp">#define STYLE_ALPHA_OPAQUE      0xFF</span>
+<span class="cp">#define STYLE_ALPHA_TRANSPARENT 0x00</span>
+
+<span class="cm">/* Features flags for \ref i_features */</span>
+<span class="cp">#define STYLE_NO_DEFAULTS               0x0</span>
+<span class="cp">#define STYLE_FULLY_SET                 0xFFFF</span>
+<span class="cp">#define STYLE_HAS_FONT_COLOR            (1 &lt;&lt; 0)</span>
+<span class="cp">#define STYLE_HAS_FONT_ALPHA            (1 &lt;&lt; 1)</span>
+<span class="cp">#define STYLE_HAS_FLAGS                 (1 &lt;&lt; 2)</span>
+<span class="cp">#define STYLE_HAS_OUTLINE_COLOR         (1 &lt;&lt; 3)</span>
+<span class="cp">#define STYLE_HAS_OUTLINE_ALPHA         (1 &lt;&lt; 4)</span>
+<span class="cp">#define STYLE_HAS_SHADOW_COLOR          (1 &lt;&lt; 5)</span>
+<span class="cp">#define STYLE_HAS_SHADOW_ALPHA          (1 &lt;&lt; 6)</span>
+<span class="cp">#define STYLE_HAS_BACKGROUND_COLOR      (1 &lt;&lt; 7)</span>
+<span class="cp">#define STYLE_HAS_BACKGROUND_ALPHA      (1 &lt;&lt; 8)</span>
+<span class="cp">#define STYLE_HAS_K_BACKGROUND_COLOR    (1 &lt;&lt; 9)</span>
+<span class="cp">#define STYLE_HAS_K_BACKGROUND_ALPHA    (1 &lt;&lt; 10)</span>
+<span class="cp">#define STYLE_HAS_WRAP_INFO             (1 &lt;&lt; 11)</span>
+
+<span class="cm">/* Style flags for \ref text_style_t */</span>
+<span class="cp">#define STYLE_BOLD              (1 &lt;&lt; 0)</span>
+<span class="cp">#define STYLE_ITALIC            (1 &lt;&lt; 1)</span>
+<span class="cp">#define STYLE_OUTLINE           (1 &lt;&lt; 2)</span>
+<span class="cp">#define STYLE_SHADOW            (1 &lt;&lt; 3)</span>
+<span class="cp">#define STYLE_BACKGROUND        (1 &lt;&lt; 4)</span>
+<span class="cp">#define STYLE_UNDERLINE         (1 &lt;&lt; 5)</span>
+<span class="cp">#define STYLE_STRIKEOUT         (1 &lt;&lt; 6)</span>
+<span class="cp">#define STYLE_HALFWIDTH         (1 &lt;&lt; 7)</span>
+<span class="cp">#define STYLE_MONOSPACED        (1 &lt;&lt; 8)</span>
+<span class="cp">#define STYLE_DOUBLEWIDTH       (1 &lt;&lt; 9)</span>
+<span class="cp">#define STYLE_BLINK_FOREGROUND  (1 &lt;&lt; 10)</span>
+<span class="cp">#define STYLE_BLINK_BACKGROUND  (1 &lt;&lt; 11)</span>
+
+<span class="cp">#define STYLE_DEFAULT_FONT_SIZE 20</span>
+<span class="cp">#define STYLE_DEFAULT_REL_FONT_SIZE 6.25</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">text_segment_t</span><span class="w"> </span><span class="n">text_segment_t</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">text_segment_t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_text</span><span class="p">;</span>
+<span class="w">    </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="n">style</span><span class="p">;</span>
+<span class="w">    </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_next</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">text_style_New</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">text_style_Create</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">text_style_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">text_style_Duplicate</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">text_style_Merge</span><span class="p">(</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_override</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">text_style_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="n">text_segment_New</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="n">text_segment_NewInheritStyle</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">text_style_t</span><span class="o">*</span><span class="w"> </span><span class="n">p_style</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">text_segment_Delete</span><span class="p">(</span><span class="w"> </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">text_segment_ChainDelete</span><span class="p">(</span><span class="w"> </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">text_segment_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">text_segment_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w">   </span><span class="n">i_value</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">p_html_colors</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Official html colors */</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Aqua&quot;</span><span class="p">,</span><span class="w">    </span><span class="mh">0x00FFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Black&quot;</span><span class="p">,</span><span class="w">   </span><span class="mh">0x000000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Blue&quot;</span><span class="p">,</span><span class="w">    </span><span class="mh">0x0000FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Fuchsia&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF00FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Gray&quot;</span><span class="p">,</span><span class="w">    </span><span class="mh">0x808080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Green&quot;</span><span class="p">,</span><span class="w">   </span><span class="mh">0x008000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Lime&quot;</span><span class="p">,</span><span class="w">    </span><span class="mh">0x00FF00</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Maroon&quot;</span><span class="p">,</span><span class="w">  </span><span class="mh">0x800000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Navy&quot;</span><span class="p">,</span><span class="w">    </span><span class="mh">0x000080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Olive&quot;</span><span class="p">,</span><span class="w">   </span><span class="mh">0x808000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Purple&quot;</span><span class="p">,</span><span class="w">  </span><span class="mh">0x800080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Red&quot;</span><span class="p">,</span><span class="w">     </span><span class="mh">0xFF0000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Silver&quot;</span><span class="p">,</span><span class="w">  </span><span class="mh">0xC0C0C0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Teal&quot;</span><span class="p">,</span><span class="w">    </span><span class="mh">0x008080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;White&quot;</span><span class="p">,</span><span class="w">   </span><span class="mh">0xFFFFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Yellow&quot;</span><span class="p">,</span><span class="w">  </span><span class="mh">0xFFFF00</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="cm">/* Common ones */</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;AliceBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF0F8FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;AntiqueWhite&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFAEBD7</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Aqua&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00FFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Aquamarine&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x7FFFD4</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Azure&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF0FFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Beige&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF5F5DC</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Bisque&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFE4C4</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Black&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x000000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;BlanchedAlmond&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFEBCD</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;BlueViolet&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8A2BE2</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Brown&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xA52A2A</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;BurlyWood&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xDEB887</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;CadetBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x5F9EA0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Chartreuse&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x7FFF00</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Chocolate&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xD2691E</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Coral&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF7F50</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;CornflowerBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6495ED</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Cornsilk&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFF8DC</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Crimson&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xDC143C</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Cyan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00FFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00008B</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkCyan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x008B8B</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkGoldenRod&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB8860B</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkGray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xA9A9A9</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkGrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xA9A9A9</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x006400</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkKhaki&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xBDB76B</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkMagenta&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8B008B</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkOliveGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x556B2F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Darkorange&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF8C00</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkOrchid&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9932CC</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkRed&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8B0000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkSalmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xE9967A</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkSeaGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8FBC8F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkSlateBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x483D8B</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkSlateGray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F4F4F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkSlateGrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F4F4F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkTurquoise&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00CED1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DarkViolet&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9400D3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DeepPink&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF1493</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DeepSkyBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00BFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DimGray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x696969</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DimGrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x696969</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;DodgerBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1E90FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;FireBrick&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB22222</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;FloralWhite&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFAF0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;ForestGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x228B22</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Fuchsia&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF00FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Gainsboro&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xDCDCDC</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;GhostWhite&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF8F8FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFD700</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;GoldenRod&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xDAA520</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x808080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Grey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x808080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Green&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x008000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;GreenYellow&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xADFF2F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;HoneyDew&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF0FFF0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;HotPink&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF69B4</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;IndianRed&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xCD5C5C</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Indigo&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x4B0082</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Ivory&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFF0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Khaki&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF0E68C</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Lavender&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xE6E6FA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LavenderBlush&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFF0F5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LawnGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x7CFC00</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LemonChiffon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFACD</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xADD8E6</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightCoral&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF08080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightCyan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xE0FFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightGoldenRodYellow&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFAFAD2</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightGray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xD3D3D3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightGrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xD3D3D3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x90EE90</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightPink&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFB6C1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightSalmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFA07A</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightSeaGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x20B2AA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightSkyBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x87CEFA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightSlateGray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x778899</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightSlateGrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x778899</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightSteelBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB0C4DE</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LightYellow&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFE0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Lime&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00FF00</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;LimeGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x32CD32</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Linen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFAF0E6</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Magenta&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF00FF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Maroon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x800000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumAquaMarine&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x66CDAA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000CD</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumOrchid&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xBA55D3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumPurple&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9370D8</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumSeaGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x3CB371</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumSlateBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x7B68EE</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumSpringGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00FA9A</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumTurquoise&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x48D1CC</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MediumVioletRed&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xC71585</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MidnightBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x191970</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MintCream&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF5FFFA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;MistyRose&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFE4E1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Moccasin&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFE4B5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;NavajoWhite&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFDEAD</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Navy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x000080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;OldLace&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFDF5E6</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Olive&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x808000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;OliveDrab&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6B8E23</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFA500</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;OrangeRed&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF4500</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Orchid&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xDA70D6</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PaleGoldenRod&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xEEE8AA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PaleGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x98FB98</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PaleTurquoise&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xAFEEEE</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PaleVioletRed&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xD87093</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PapayaWhip&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFEFD5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PeachPuff&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFDAB9</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Peru&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xCD853F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Pink&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFC0CB</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Plum&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xDDA0DD</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;PowderBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB0E0E6</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Purple&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x800080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;RebeccaPurple&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x663399</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Red&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF0000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;RosyBrown&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xBC8F8F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;RoyalBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x4169E1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SaddleBrown&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8B4513</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Salmon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFA8072</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SandyBrown&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF4A460</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SeaGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2E8B57</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SeaShell&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFF5EE</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Sienna&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xA0522D</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Silver&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xC0C0C0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SkyBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x87CEEB</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SlateBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6A5ACD</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SlateGray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x708090</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SlateGrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x708090</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Snow&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFAFA</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SpringGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00FF7F</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;SteelBlue&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x4682B4</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Tan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xD2B48C</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Teal&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x008080</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Thistle&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xD8BFD8</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Tomato&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF6347</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Turquoise&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x40E0D0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Violet&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xEE82EE</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Wheat&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF5DEB3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;White&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFF</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;WhiteSmoke&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF5F5F5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Yellow&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFF00</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;YellowGreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9ACD32</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_html_color</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_value</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="o">*</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="p">);</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#endif </span><span class="cm">/* VLC_TEXT_STYLE_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

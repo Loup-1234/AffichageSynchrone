@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File libvlc_vlm.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File libvlc_vlm.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File libvlc_vlm.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_libvlc_vlm.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-libvlc-vlm-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-libvlc-vlm-h"></span><h1>Program Listing for File libvlc_vlm.h<a class="headerlink" href="#program-listing-for-file-libvlc-vlm-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_libvlc_vlm.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-libvlc-vlm-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\libvlc_vlm.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * libvlc_vlm.h:  libvlc_* new external API</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1998-2008 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Clément Stenac &lt;zorglub@videolan.org&gt;</span>
+<span class="cm"> *          Jean-Paul Saman &lt;jpsaman _at_ m2x _dot_ nl&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef LIBVLC_VLM_H</span>
+<span class="cp">#define LIBVLC_VLM_H 1</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_vlm_release</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_add_broadcast</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_input</span><span class="p">,</span>
+<span class="w">                                             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_output</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_options</span><span class="p">,</span>
+<span class="w">                                             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">ppsz_options</span><span class="p">,</span>
+<span class="w">                                             </span><span class="kt">int</span><span class="w"> </span><span class="n">b_enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b_loop</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_add_vod</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_input</span><span class="p">,</span>
+<span class="w">                                       </span><span class="kt">int</span><span class="w"> </span><span class="n">i_options</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">ppsz_options</span><span class="p">,</span>
+<span class="w">                                       </span><span class="kt">int</span><span class="w"> </span><span class="n">b_enabled</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_mux</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_del_media</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_set_enabled</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                           </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b_enabled</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_set_output</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_output</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_set_input</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_input</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_add_input</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_input</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_set_loop</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                        </span><span class="kt">int</span><span class="w"> </span><span class="n">b_loop</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_set_mux</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_mux</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_change_media</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                            </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_input</span><span class="p">,</span>
+<span class="w">                                            </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_output</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_options</span><span class="p">,</span>
+<span class="w">                                            </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">ppsz_options</span><span class="p">,</span>
+<span class="w">                                            </span><span class="kt">int</span><span class="w"> </span><span class="n">b_enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b_loop</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_play_media</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                           </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_stop_media</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                           </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_pause_media</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                           </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_seek_media</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                          </span><span class="kt">float</span><span class="w"> </span><span class="n">f_percentage</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">libvlc_vlm_show_media</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                                  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">libvlc_vlm_get_media_instance_position</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                                             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                                             </span><span class="kt">int</span><span class="w"> </span><span class="n">i_instance</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_get_media_instance_time</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                                       </span><span class="kt">int</span><span class="w"> </span><span class="n">i_instance</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_get_media_instance_length</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                                         </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                                         </span><span class="kt">int</span><span class="w"> </span><span class="n">i_instance</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">libvlc_vlm_get_media_instance_rate</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="p">,</span>
+<span class="w">                                                       </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_name</span><span class="p">,</span>
+<span class="w">                                                       </span><span class="kt">int</span><span class="w"> </span><span class="n">i_instance</span><span class="w"> </span><span class="p">);</span>
+<span class="cp">#if 0</span>
+<span class="c">LIBVLC_API int libvlc_vlm_get_media_instance_title( libvlc_instance_t *p_instance,</span>
+<span class="c">                                                        const char *psz_name, int i_instance );</span>
+
+<span class="c">LIBVLC_API int libvlc_vlm_get_media_instance_chapter( libvlc_instance_t *p_instance,</span>
+<span class="c">                                                          const char *psz_name, int i_instance );</span>
+
+<span class="c">LIBVLC_API int libvlc_vlm_get_media_instance_seekable( libvlc_instance_t *p_instance,</span>
+<span class="c">                                                           const char *psz_name, int i_instance );</span>
+<span class="cp">#endif</span>
+<span class="n">LIBVLC_API</span><span class="w"> </span><span class="n">libvlc_event_manager_t</span><span class="w"> </span><span class="o">*</span>
+<span class="w">    </span><span class="n">libvlc_vlm_get_event_manager</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_instance_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_instance</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#endif </span><span class="cm">/* &lt;vlc/libvlc_vlm.h&gt; */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

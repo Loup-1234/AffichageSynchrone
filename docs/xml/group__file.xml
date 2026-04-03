@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__file" kind="group">
+    <compoundname>file</compoundname>
+    <title>File system</title>
+    <innerfile refid="vlc__fs_8h">vlc_fs.h</innerfile>
+    <innergroup refid="group__fd">File descriptors</innergroup>
+    <innergroup refid="group__dir">Directories</innergroup>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__file_1ga30cd710c055ba3e4018e186fe1e2c607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_stat</definition>
+        <argsstring>(const char *filename, struct stat *) VLC_USED</argsstring>
+        <name>vlc_stat</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>struct stat *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds file/inode information - like stat(). <simplesect kind="note"><para>As far as possible, fstat() should be used instead.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UTF-8 file path </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="174" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="174" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__file_1gad1c02c4ebf7413a21cb90986007c0bad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_lstat</definition>
+        <argsstring>(const char *filename, struct stat *) VLC_USED</argsstring>
+        <name>vlc_lstat</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>struct stat *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds file/inode information, as lstat(). Consider using fstat() instead, if possible.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UTF-8 file path </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="182" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="182" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__file_1gaa11d5cec32eccc0aa3b5be6c9af158a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_unlink</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>vlc_unlink</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes a file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a UTF-8 string with the name of the file you want to delete. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A 0 return value indicates success. A -1 return value indicates an error, and an error code is stored in errno </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="191" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="191" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__file_1gafcf3430aa9165d0006aed45001b79698" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_rename</definition>
+        <argsstring>(const char *oldpath, const char *newpath)</argsstring>
+        <name>vlc_rename</name>
+        <param>
+          <type>const char *</type>
+          <declname>oldpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>newpath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves a file atomically. This only works within a single file system.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>oldpath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to the file before the move </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newpath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>intended path to the file after the move </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A 0 return value indicates success. A -1 return value indicates an error, and an error code is stored in errno </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="201" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="201" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__file_1gad8675192624476fc15f28f89abd6a9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API FILE *</type>
+        <definition>VLC_API FILE * vlc_fopen</definition>
+        <argsstring>(const char *filename, const char *mode) VLC_USED</argsstring>
+        <name>vlc_fopen</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" line="203" column="15" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fs.h" declline="203" declcolumn="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

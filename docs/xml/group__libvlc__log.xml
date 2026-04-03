@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__log" kind="group">
+    <compoundname>libvlc_log</compoundname>
+    <title>LibVLC logging</title>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>libvlc_log_level</name>
+        <enumvalue id="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaf9c82a86ac07470ff2bce574a37c7fd8" prot="public">
+          <name>LIBVLC_DEBUG</name>
+          <initializer>=0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Debug message </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaadba41359b9572613c9aad1f8d7dcadf" prot="public">
+          <name>LIBVLC_NOTICE</name>
+          <initializer>=2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Important informational message </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda808a15b1ed05efe7fe021c84f4d01d08" prot="public">
+          <name>LIBVLC_WARNING</name>
+          <initializer>=3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Warning (potential error) message </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda53be6dc6f7aa8d745361db18f1075d6f" prot="public">
+          <name>LIBVLC_ERROR</name>
+          <initializer>=4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error message </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Logging messages level. <simplesect kind="note"><para>Future LibVLC versions may define new levels. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="374" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" bodystart="375" bodyend="380"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__libvlc__log_1ga19466271b245f5b8ebfaf8b35e7ed11c" prot="public" static="no">
+        <type>struct <ref refid="structvlc__log__t" kindref="compound">vlc_log_t</ref></type>
+        <definition>typedef struct vlc_log_t libvlc_log_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_log_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="382" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* libvlc_log_cb) (void *data, int level, const libvlc_log_t *ctx, const char *fmt, va_list args)</definition>
+        <argsstring>)(void *data, int level, const libvlc_log_t *ctx, const char *fmt, va_list args)</argsstring>
+        <name>libvlc_log_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback prototype for LibVLC log message handler.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer as given to <ref refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" kindref="member">libvlc_log_set()</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message level (<ref refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" kindref="member">libvlc_log_level</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message context (meta-information about the message) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>printf() format string (as defined by ISO C11) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable argument list for the format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Log message handlers <bold>must</bold> be thread-safe. </para>
+</simplesect>
+<simplesect kind="warning"><para>The message context pointer, the format string parameters and the variable arguments are only valid until the callback returns. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="447" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" bodystart="447" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_log_get_context</definition>
+        <argsstring>(const libvlc_log_t *ctx, const char **module, const char **file, unsigned *line)</argsstring>
+        <name>libvlc_log_get_context</name>
+        <param>
+          <type>const <ref refid="structvlc__log__t" kindref="compound">libvlc_log_t</ref> *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets log message debug infos.</para>
+<para>This function retrieves self-debug information about a log message:<itemizedlist>
+<listitem><para>the name of the VLC module emitting the message,</para>
+</listitem><listitem><para>the name of the source code module (i.e. file) and</para>
+</listitem><listitem><para>the line number within the source code module.</para>
+</listitem></itemizedlist>
+</para>
+<para>The returned module name and file name will be NULL if unknown. The returned line number will similarly be zero if unknown.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message context (as passed to the <ref refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">libvlc_log_cb</ref> callback) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>module</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>module name storage (or NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source code file name storage (or NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source code file line number storage (or NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The returned module name and source code file name, if non-NULL, are only valid until the logging callback returns.</para>
+</simplesect>
+<simplesect kind="version"><para>LibVLC 2.1.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="404" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="404" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_log_get_object</definition>
+        <argsstring>(const libvlc_log_t *ctx, const char **name, const char **header, uintptr_t *id)</argsstring>
+        <name>libvlc_log_get_object</name>
+        <param>
+          <type>const <ref refid="structvlc__log__t" kindref="compound">libvlc_log_t</ref> *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>uintptr_t *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets log message info.</para>
+<para>This function retrieves meta-information about a log message:<itemizedlist>
+<listitem><para>the type name of the VLC object emitting the message,</para>
+</listitem><listitem><para>the object header if any, and</para>
+</listitem><listitem><para>a temporaly-unique object identifier.</para>
+</listitem></itemizedlist>
+</para>
+<para>This information is mainly meant for <bold>manual</bold> troubleshooting.</para>
+<para>The returned type name may be &quot;generic&quot; if unknown, but it cannot be NULL. The returned header will be NULL if unset; in current versions, the header is used to distinguish for VLM inputs. The returned object ID will be zero if the message is not associated with any VLC object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message context (as passed to the <ref refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">libvlc_log_cb</ref> callback) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object name storage (or NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object header (or NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source code file line number storage (or NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The returned module name and source code file name, if non-NULL, are only valid until the logging callback returns.</para>
+</simplesect>
+<simplesect kind="version"><para>LibVLC 2.1.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="432" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="432" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_log_unset</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_log_unset</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unsets the logging callback.</para>
+<para>This function deregisters the logging callback for a LibVLC instance. This is rarely needed as the callback is implicitly unset when the instance is destroyed.</para>
+<para><simplesect kind="note"><para>This function will wait for any pending callbacks invocation to complete (causing a deadlock if called from within the callback).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.1.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="463" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="463" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_log_set</definition>
+        <argsstring>(libvlc_instance_t *p_instance, libvlc_log_cb cb, void *data)</argsstring>
+        <name>libvlc_log_set</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type><ref refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">libvlc_log_cb</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the logging callback for a LibVLC instance.</para>
+<para>This function is thread-safe: it will wait for any pending callbacks invocation to complete.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback function pointer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opaque data pointer for the callback function</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Some log messages (especially debug) are emitted by LibVLC while is being initialized. These messages cannot be captured with this interface.</para>
+</simplesect>
+<simplesect kind="warning"><para>A deadlock may occur if this function is called from the callback.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.1.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="482" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="482" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_log_set_file</definition>
+        <argsstring>(libvlc_instance_t *p_instance, FILE *stream)</argsstring>
+        <name>libvlc_log_set_file</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets up logging to a file. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FILE pointer opened for writing (the FILE pointer must remain valid until <ref refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" kindref="member">libvlc_log_unset()</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.1.0 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="493" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="493" declcolumn="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>libvlc_log_* functions provide access to the LibVLC messages log. This is used for logging and debugging. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

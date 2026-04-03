@@ -1,0 +1,1134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__filter" kind="group">
+    <compoundname>filter</compoundname>
+    <title>Filters</title>
+    <innerfile refid="vlc__filter_8h">vlc_filter.h</innerfile>
+    <innerclass refid="structfilter__owner__t" prot="public">filter_owner_t</innerclass>
+    <innerclass refid="structfilter__t" prot="public">filter_t</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__filter_1gaa02f5ff6f559c3713fd8121b0f41e476" prot="public" static="no">
+        <type>struct filter_owner_sys_t</type>
+        <definition>typedef struct filter_owner_sys_t filter_owner_sys_t</definition>
+        <argsstring></argsstring>
+        <name>filter_owner_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="39" column="33" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__filter_1ga1044146e30c60c44c1f9d2458954b5d6" prot="public" static="no">
+        <type>struct filter_owner_t</type>
+        <definition>typedef struct filter_owner_t filter_owner_t</definition>
+        <argsstring></argsstring>
+        <name>filter_owner_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="56" column="16"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" prot="public" static="no">
+        <type>struct <ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref></type>
+        <definition>typedef struct filter_chain_t filter_chain_t</definition>
+        <argsstring></argsstring>
+        <name>filter_chain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Filter chain management API The filter chain management API is used to dynamically construct filters and add them in a chain. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="307" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__filter_1ga95fbb352785fe78e5ea78bb5151888de" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+        <definition>static picture_t * filter_NewPicture</definition>
+        <argsstring>(filter_t *p_filter)</argsstring>
+        <name>filter_NewPicture</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will return a new picture usable by p_filter as an output buffer. You have to release it using picture_Release or by returning it to the caller as a pf_video_filter return value. Provided for convenience.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structfilter__t" kindref="compound">filter_t</ref> object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>new picture on success or NULL on failure </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="163" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="163" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gad125143a56f6c08565a54dcb4368ee5b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void filter_Flush</definition>
+        <argsstring>(filter_t *p_filter)</argsstring>
+        <name>filter_Flush</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flush a filter</para>
+<para>This function will flush the state of a filter (audio or video). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="176" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="176" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga017b276dbed1884b148e8a13fa5f759f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void filter_ChangeViewpoint</definition>
+        <argsstring>(filter_t *p_filter, const vlc_viewpoint_t *vp)</argsstring>
+        <name>filter_ChangeViewpoint</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_filter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvlc__viewpoint__t" kindref="compound">vlc_viewpoint_t</ref> *</type>
+          <declname>vp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="182" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="182" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gac3a01ba4da4316b55cbf5dcc5754f465" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>static block_t * filter_DrainAudio</definition>
+        <argsstring>(filter_t *p_filter)</argsstring>
+        <name>filter_DrainAudio</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will drain, then flush an audio filter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="192" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="192" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga3d20df0ed14daf21d0d2b880fee32f3b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        <definition>static subpicture_t * filter_NewSubpicture</definition>
+        <argsstring>(filter_t *p_filter)</argsstring>
+        <name>filter_NewSubpicture</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will return a new subpicture usable by p_filter as an output buffer. You have to release it using subpicture_Delete or by returning it to the caller as a pf_sub_source return value. Provided for convenience.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structfilter__t" kindref="compound">filter_t</ref> object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>new subpicture </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="209" column="28" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="209" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga34953cebf2d2b0f58d2842ccfad8125c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int filter_GetInputAttachments</definition>
+        <argsstring>(filter_t *p_filter, input_attachment_t ***ppp_attachment, int *pi_attachment)</argsstring>
+        <name>filter_GetInputAttachments</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_filter</declname>
+        </param>
+        <param>
+          <type><ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref> ***</type>
+          <declname>ppp_attachment</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>pi_attachment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function gives all input attachments at once.</para>
+<para>You MUST release the returned values </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="222" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="222" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga13401882ce164269fdfc211a4bd72cbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_AddProxyCallbacks</definition>
+        <argsstring>(vlc_object_t *obj, filter_t *filter, vlc_callback_t restart_cb)</argsstring>
+        <name>filter_AddProxyCallbacks</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type>vlc_callback_t</type>
+          <declname>restart_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function duplicates every variables from the filter, and adds a proxy callback to trigger filter events from obj.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>restart_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vlc_callback_t to call if the event means restarting the filter (i.e. an event on a non-command variable) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="239" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="239" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga681d6c88d9f0f755d432f68032df9f38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_DelProxyCallbacks</definition>
+        <argsstring>(vlc_object_t *obj, filter_t *filter, vlc_callback_t restart_cb)</argsstring>
+        <name>filter_DelProxyCallbacks</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type>vlc_callback_t</type>
+          <declname>restart_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function removes the callbacks previously added to every duplicated variables, and removes them afterward.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>restart_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the same vlc_callback_t passed to filter_AddProxyCallbacks </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="250" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="250" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gac7d4773e8f71de3606f63caa787cf729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+        <definition>VLC_API filter_t * filter_NewBlend</definition>
+        <argsstring>(vlc_object_t *, const video_format_t *p_dst_chroma) VLC_USED</argsstring>
+        <name>filter_NewBlend</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>p_dst_chroma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>It creates a blend filter.</para>
+<para>Only the chroma properties of the dest format is used (chroma type, rgb masks and shifts) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="261" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="261" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga6e7e4a139fd845c9c20b3ddb58a348e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int filter_ConfigureBlend</definition>
+        <argsstring>(filter_t *, int i_dst_width, int i_dst_height, const video_format_t *p_src)</argsstring>
+        <name>filter_ConfigureBlend</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_dst_width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_dst_height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>p_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>It configures blend filter parameters that are allowed to changed after the creation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="267" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="267" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga92a1f739bcb591af0b37d7832cdded94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int filter_Blend</definition>
+        <argsstring>(filter_t *, picture_t *p_dst, int i_dst_x, int i_dst_y, const picture_t *p_src, int i_alpha)</argsstring>
+        <name>filter_Blend</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+          <declname>p_dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_dst_x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_dst_y</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+          <declname>p_src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>It blends a picture into another one.</para>
+<para>The input picture is not modified and not released. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="274" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="274" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga0123678766875bfc0f185c820abc1e4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_DeleteBlend</definition>
+        <argsstring>(filter_t *)</argsstring>
+        <name>filter_DeleteBlend</name>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>It destroys a blend filter created by filter_NewBlend. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="279" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="279" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga9bf43214e05aa4d5fd3edf09b912f0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        <definition>filter_chain_t * filter_chain_New</definition>
+        <argsstring>(vlc_object_t *, const char *, enum es_format_category_e) VLC_USED</argsstring>
+        <name>filter_chain_New</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>enum</type>
+          <declname>es_format_category_e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create new filter chain</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to a vlc object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz_capability</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vlc capability of filters in filter chain </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to a filter chain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="316" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="316" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga397928d6b715916c4e4b3d7a8cfeea4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        <definition>VLC_API filter_chain_t * filter_chain_NewVideo</definition>
+        <argsstring>(vlc_object_t *obj, bool change, const filter_owner_t *owner) VLC_USED</argsstring>
+        <name>filter_chain_NewVideo</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>change</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structfilter__owner__t" kindref="compound">filter_owner_t</ref> *</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new video filter chain.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to parent VLC object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to allow changing the output format </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>owner video buffer callbacks </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>new filter chain, or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="328" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="328" declcolumn="25"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gac4ccee8f5515c64e4ac3b1a00763801e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_chain_Delete</definition>
+        <argsstring>(filter_chain_t *)</argsstring>
+        <name>filter_chain_Delete</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete filter chain will delete all filters in the chain and free all allocated data. The pointer to the filter chain is then no longer valid.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to filter chain </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="340" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="340" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gadceda1250dd2df45b27d12876ce19855" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_chain_Reset</definition>
+        <argsstring>(filter_chain_t *, const es_format_t *, const es_format_t *)</argsstring>
+        <name>filter_chain_Reset</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reset filter chain will delete all filters in the chain and reset p_fmt_in and p_fmt_out to the new values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to filter chain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_fmt_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>new fmt_in params, may be NULL to leave input fmt unchanged </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_fmt_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>new fmt_out params, may be NULL to leave output fmt unchanged </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="350" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="350" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gafad8c65c6115fefad22cdefff6b5b813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+        <definition>VLC_API filter_t * filter_chain_AppendFilter</definition>
+        <argsstring>(filter_chain_t *chain, const char *name, config_chain_t *cfg, const es_format_t *fmt_in, const es_format_t *fmt_out)</argsstring>
+        <name>filter_chain_AppendFilter</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structconfig__chain__t" kindref="compound">config_chain_t</ref> *</type>
+          <declname>cfg</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+          <declname>fmt_in</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+          <declname>fmt_out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append a filter to the chain.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain to append a filter to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter input format </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter output format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to the filter or NULL on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="361" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="361" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga4f1c2735459ee25b39a7bfc71c4911fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int filter_chain_AppendConverter</definition>
+        <argsstring>(filter_chain_t *chain, const es_format_t *fmt_in, const es_format_t *fmt_out)</argsstring>
+        <name>filter_chain_AppendConverter</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+          <declname>fmt_in</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+          <declname>fmt_out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append a conversion to the chain.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain to append a filter to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt_in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter input format </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter output format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>-1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on failure </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="374" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="374" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga195a3b1209f384a991c18bc18bb7dd3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int filter_chain_AppendFromString</definition>
+        <argsstring>(filter_chain_t *chain, const char *str)</argsstring>
+        <name>filter_chain_AppendFromString</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append new filter to filter chain from string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain to append a filter to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filters chain nul-terminated string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="383" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="383" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga846890e14977b818321d9ac5536379c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_chain_DeleteFilter</definition>
+        <argsstring>(filter_chain_t *chain, filter_t *filter)</argsstring>
+        <name>filter_chain_DeleteFilter</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete filter from filter chain. This function also releases the filter object and unloads the filter modules. The pointer to p_filter is no longer valid after this function successfully returns.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain to remove the filter from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter to remove from the chain and delete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="394" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="394" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga0f766f27be27281c1e354f2472061ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API bool</type>
+        <definition>VLC_API bool filter_chain_IsEmpty</definition>
+        <argsstring>(const filter_chain_t *chain)</argsstring>
+        <name>filter_chain_IsEmpty</name>
+        <param>
+          <type>const <ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the filter chain is empty.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to filter chain </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if and only if there are no filters in this filter chain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="403" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="403" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga5b33621321517e180f8ca4a3beb41456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+        <definition>VLC_API const es_format_t * filter_chain_GetFmtOut</definition>
+        <argsstring>(filter_chain_t *chain)</argsstring>
+        <name>filter_chain_GetFmtOut</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get last output format of the last element in the filter chain.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="410" column="27" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="410" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gad2af119436d047df3cdb2cb8fb7078ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+        <definition>VLC_API picture_t * filter_chain_VideoFilter</definition>
+        <argsstring>(filter_chain_t *chain, picture_t *pic)</argsstring>
+        <name>filter_chain_VideoFilter</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+          <declname>pic</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Apply the filter chain to a video picture.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to filter chain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>picture to apply filters to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>modified picture after applying all video filters </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="419" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="419" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gabdd5198a44123740d54884fc70f8d440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void filter_chain_VideoFlush</definition>
+        <argsstring>(filter_chain_t *)</argsstring>
+        <name>filter_chain_VideoFlush</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flush a video filter chain. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="425" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="425" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga54e4413dda4b2fe24c4d87692ef6db71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void filter_chain_SubSource</definition>
+        <argsstring>(filter_chain_t *chain, spu_t *, vlc_tick_t display_date)</argsstring>
+        <name>filter_chain_SubSource</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>display_date</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate subpictures from a chain of subpicture source &quot;filters&quot;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>display_date</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of subpictures </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="433" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="433" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga98a2de873e17eda86ec04f6798508a60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        <definition>VLC_API subpicture_t * filter_chain_SubFilter</definition>
+        <argsstring>(filter_chain_t *chain, subpicture_t *subpic)</argsstring>
+        <name>filter_chain_SubFilter</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+          <declname>subpic</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Apply filter chain to subpictures.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filter chain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>subpic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>subpicture to apply filters on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>modified subpicture after applying all subpicture filters </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="443" column="22" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="443" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1gaa53b26df6a7adb3ff2559aba753ecb79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int filter_chain_MouseFilter</definition>
+        <argsstring>(filter_chain_t *, struct vlc_mouse_t *, const struct vlc_mouse_t *)</argsstring>
+        <name>filter_chain_MouseFilter</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        </param>
+        <param>
+          <type>struct <ref refid="structvlc__mouse__t" kindref="compound">vlc_mouse_t</ref> *</type>
+        </param>
+        <param>
+          <type>const struct <ref refid="structvlc__mouse__t" kindref="compound">vlc_mouse_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Apply the filter chain to a mouse state.</para>
+<para>It will be applied from the output to the input. It makes sense only for a video filter chain.</para>
+<para>The vlc_mouse_t* pointers may be the same. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="454" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="454" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga0074326e9303f64d5275416eb96547dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int filter_chain_MouseEvent</definition>
+        <argsstring>(filter_chain_t *, const struct vlc_mouse_t *, const video_format_t *)</argsstring>
+        <name>filter_chain_MouseEvent</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+        </param>
+        <param>
+          <type>const struct <ref refid="structvlc__mouse__t" kindref="compound">vlc_mouse_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inform the filter chain of mouse state.</para>
+<para>It makes sense only for a sub source chain. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="462" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="462" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__filter_1ga425b975ca711775f6aa24bf6ca59aecf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int filter_chain_ForEach</definition>
+        <argsstring>(filter_chain_t *chain, int(*cb)(filter_t *, void *), void *opaque)</argsstring>
+        <name>filter_chain_ForEach</name>
+        <param>
+          <type><ref refid="group__filter_1ga36dbcb3bbc94c103ad2b9b6b9e5ee367" kindref="member">filter_chain_t</ref> *</type>
+          <declname>chain</declname>
+        </param>
+        <param>
+          <type>int(*)(<ref refid="structfilter__t" kindref="compound">filter_t</ref> *, void *)</type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>opaque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="466" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" declline="466" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__filter_1ga320e16dcc82bcc254567576248b9f668" prot="public" static="no">
+        <name>filter_AddProxyCallbacks</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>    filter_AddProxyCallbacks(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="241" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="241" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="define" id="group__filter_1gad6014127cf32fdafeb0593549d90ac3b" prot="public" static="no">
+        <name>filter_DelProxyCallbacks</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>    filter_DelProxyCallbacks(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), b, c)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="252" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="252" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="define" id="group__filter_1gaf11ceb6838529661f9569ba17c51dc32" prot="public" static="no">
+        <name>VIDEO_FILTER_WRAPPER</name>
+        <param><defname>name</defname></param>
+        <initializer>    static <ref refid="structpicture__t" kindref="compound">picture_t</ref> *name ## _Filter ( <ref refid="structfilter__t" kindref="compound">filter_t</ref> *p_filter,             \
+                                        <ref refid="structpicture__t" kindref="compound">picture_t</ref> *p_pic )              \
+    {                                                                   \
+        <ref refid="structpicture__t" kindref="compound">picture_t</ref> *p_outpic = filter_NewPicture( p_filter );            \
+        if( p_outpic )                                                  \
+        {                                                               \
+            name( p_filter, p_pic, p_outpic );                          \
+            <ref refid="vlc__picture_8h_1a4a04e110aba4790fc6849e8c87323369" kindref="member">picture_CopyProperties</ref>( p_outpic, p_pic );                  \
+        }                                                               \
+        <ref refid="vlc__picture_8h_1ac6d35f6432c90cfbe6d0aa93759bed5a" kindref="member">picture_Release</ref>( p_pic );                                       \
+        return p_outpic;                                                \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a <ref refid="structpicture__t" kindref="compound">picture_t</ref> *(*)( <ref refid="structfilter__t" kindref="compound">filter_t</ref> *, <ref refid="structpicture__t" kindref="compound">picture_t</ref> * ) compatible wrapper using a void (*)( <ref refid="structfilter__t" kindref="compound">filter_t</ref> *, <ref refid="structpicture__t" kindref="compound">picture_t</ref> *, <ref refid="structpicture__t" kindref="compound">picture_t</ref> * ) function</para>
+<para>Currently used by the chroma video filters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="287" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="287" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="define" id="group__filter_1ga9266d33aaec81ed67d2dd5c37033cd1f" prot="public" static="no">
+        <name>filter_chain_New</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>filter_chain_New( <ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>( a ), b, c )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="318" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__filter_1ga8ab06e67d56acbc2e5952686f39f9380" prot="public" static="no">
+        <name>filter_chain_NewVideo</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>        filter_chain_NewVideo( <ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>( a ), b, c )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" line="331" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_filter.h" bodystart="331" bodyend="332"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Audio, video, text filters </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

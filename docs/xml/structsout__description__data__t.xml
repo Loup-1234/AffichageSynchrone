@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structsout__description__data__t" kind="struct" language="C++" prot="public">
+    <compoundname>sout_description_data_t</compoundname>
+    <includes refid="vlc__sout_8h" local="no">vlc_sout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsout__description__data__t_1a6de74fabd6a56a560dd2a4787454bdca" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sout_description_data_t::i_es</definition>
+        <argsstring></argsstring>
+        <name>i_es</name>
+        <qualifiedname>sout_description_data_t::i_es</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="300" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsout__description__data__t_1a81fedac962dffc1fccd4788be5be3065" prot="public" static="no" mutable="no">
+        <type><ref refid="structes__format__t" kindref="compound">es_format_t</ref> **</type>
+        <definition>es_format_t** sout_description_data_t::es</definition>
+        <argsstring></argsstring>
+        <name>es</name>
+        <qualifiedname>sout_description_data_t::es</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="301" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsout__description__data__t_1a3c9b5de75f15e054f4420ddf5dc50e1d" prot="public" static="no" mutable="no">
+        <type><ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref> *</type>
+        <definition>vlc_sem_t* sout_description_data_t::sem</definition>
+        <argsstring></argsstring>
+        <name>sem</name>
+        <qualifiedname>sout_description_data_t::sem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="302" column="15" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Description module </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>audio_format_t</label>
+        <link refid="structaudio__format__t"/>
+      </node>
+      <node id="5">
+        <label>audio_replay_gain_t</label>
+        <link refid="structaudio__replay__gain__t"/>
+      </node>
+      <node id="2">
+        <label>es_format_t</label>
+        <link refid="structes__format__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_extra_languages</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+audio</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+audio_replay_gain</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+video</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+subs</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>extra_languages_t</label>
+        <link refid="structextra__languages__t"/>
+      </node>
+      <node id="1">
+        <label>sout_description_data_t</label>
+        <link refid="structsout__description__data__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+es</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>subs_format_t</label>
+        <link refid="structsubs__format__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>+p_style</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>text_style_t</label>
+        <link refid="structtext__style__t"/>
+      </node>
+      <node id="6">
+        <label>video_format_t</label>
+        <link refid="structvideo__format__t"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+p_palette</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+pose</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>video_palette_t</label>
+        <link refid="structvideo__palette__t"/>
+      </node>
+      <node id="8">
+        <label>vlc_viewpoint_t</label>
+        <link refid="structvlc__viewpoint__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="298" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="299" bodyend="303"/>
+    <listofallmembers>
+      <member refid="structsout__description__data__t_1a81fedac962dffc1fccd4788be5be3065" prot="public" virt="non-virtual"><scope>sout_description_data_t</scope><name>es</name></member>
+      <member refid="structsout__description__data__t_1a6de74fabd6a56a560dd2a4787454bdca" prot="public" virt="non-virtual"><scope>sout_description_data_t</scope><name>i_es</name></member>
+      <member refid="structsout__description__data__t_1a3c9b5de75f15e054f4420ddf5dc50e1d" prot="public" virt="non-virtual"><scope>sout_description_data_t</scope><name>sem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

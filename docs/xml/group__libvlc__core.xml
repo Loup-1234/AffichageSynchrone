@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__core" kind="group">
+    <compoundname>libvlc_core</compoundname>
+    <title>LibVLC core</title>
+    <innerclass refid="structlibvlc__module__description__t" prot="public">libvlc_module_description_t</innerclass>
+    <innergroup refid="group__libvlc__log__deprecated">LibVLC logging (legacy)</innergroup>
+    <innergroup refid="group__libvlc__error">LibVLC error handling</innergroup>
+    <innergroup refid="group__libvlc__event">LibVLC asynchronous events</innergroup>
+    <innergroup refid="group__libvlc__log">LibVLC logging</innergroup>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="group__libvlc__core_1ga8b60fa21d15392338a17c89414502d40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_DEPRECATED LIBVLC_API void</type>
+        <definition>LIBVLC_DEPRECATED LIBVLC_API void libvlc_wait</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_wait</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits until an interface causes the instance to exit. You should start at least one interface first, using <ref refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" kindref="member">libvlc_add_intf()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>This function wastes one thread doing basically nothing. <ref refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" kindref="member">libvlc_set_exit_handler()</ref> should be used instead. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" line="335" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/deprecated.h" declline="335" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" prot="public" static="no">
+        <type>struct <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref></type>
+        <definition>typedef struct libvlc_instance_t libvlc_instance_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_instance_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This structure is opaque. It represents a libvlc instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="77" column="32" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__core_1gac790344dd4f83d3c81562e0251169890" prot="public" static="no">
+        <type>int64_t</type>
+        <definition>typedef int64_t libvlc_time_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_time_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="79" column="17" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__libvlc__core_1ga301b5d0f5c23a39df6f6cfbd4dc9e32d" prot="public" static="no">
+        <type>struct libvlc_module_description_t</type>
+        <definition>typedef struct libvlc_module_description_t libvlc_module_description_t</definition>
+        <argsstring></argsstring>
+        <name>libvlc_module_description_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description of a module. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="507" column="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+        <definition>LIBVLC_API libvlc_instance_t * libvlc_new</definition>
+        <argsstring>(int argc, const char *const *argv)</argsstring>
+        <name>libvlc_new</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>const char *const *</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create and initialize a libvlc instance. This functions accept a list of &quot;command line&quot; arguments similar to the main(). These arguments affect the LibVLC instance default configuration.</para>
+<para><simplesect kind="note"><para>LibVLC may create threads. Therefore, any thread-unsafe process initialization must be performed before calling <ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kindref="member">libvlc_new()</ref>. In particular and where applicable:<itemizedlist>
+<listitem><para>setlocale() and textdomain(),</para>
+</listitem><listitem><para>setenv(), unsetenv() and putenv(),</para>
+</listitem><listitem><para>with the X11 display system, XInitThreads() (see also <ref refid="group__libvlc__media__player_1ga31827df3a665a72410cb95695147ba5b" kindref="member">libvlc_media_player_set_xwindow()</ref>) and</para>
+</listitem><listitem><para>on Microsoft Windows, SetErrorMode().</para>
+</listitem><listitem><para>sigprocmask() shall never be invoked; pthread_sigmask() can be used.</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+On POSIX systems, the SIGCHLD signal <bold>must not</bold> be ignored, i.e. the signal handler must set to SIG_DFL or a function pointer, not SIG_IGN. Also while LibVLC is active, the wait() function shall not be called, and any call to waitpid() shall use a strictly positive value for the first parameter (i.e. the PID). Failure to follow those rules may lead to a deadlock or a busy loop. Also on POSIX systems, it is recommended that the SIGPIPE signal be blocked, even if it is not, in principles, necessary, e.g.: <programlisting><codeline><highlight class="normal">sigset_t<sp/>set;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">signal(SIGCHLD,<sp/>SIG_DFL);</highlight></codeline>
+<codeline><highlight class="normal">sigemptyset(&amp;set);</highlight></codeline>
+<codeline><highlight class="normal">sigaddset(&amp;set,<sp/>SIGPIPE);</highlight></codeline>
+<codeline><highlight class="normal">pthread_sigmask(SIG_BLOCK,<sp/>&amp;set,<sp/>NULL);</highlight></codeline>
+</programlisting></para>
+<para>On Microsoft Windows Vista/2008, the process error mode SEM_FAILCRITICALERRORS flag <bold>must</bold> be set before using LibVLC. On later versions, that is optional and unnecessary. Also on Microsoft Windows (Vista and any later version), setting the default DLL directories to SYSTEM32 exclusively is strongly recommended for security reasons: <programlisting><codeline><highlight class="normal">SetErrorMode(SEM_FAILCRITICALERRORS);</highlight></codeline>
+<codeline><highlight class="normal">SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_SYSTEM32);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="version"><para>Arguments are meant to be passed from the command line to LibVLC, just like VLC media player does. The list of valid arguments depends on the LibVLC version, the operating system and platform, and set of available LibVLC plugins. Invalid or unsupported arguments will cause the function to fail (i.e. return NULL). Also, some arguments may alter the behaviour or otherwise interfere with other LibVLC functions.</para>
+</simplesect>
+<simplesect kind="warning"><para>There is absolutely no warranty or promise of forward, backward and cross-platform compatibility with regards to <ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kindref="member">libvlc_new()</ref> arguments. We recommend that you do not use them, other than when debugging.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of arguments (should be 0) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of arguments (should be NULL) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the libvlc instance or NULL in case of error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="184" column="1" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="184" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_release</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_release</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement the reference count of a libvlc instance, and destroy it if it reaches zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance to destroy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="192" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="192" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_retain</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_retain</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increments the reference count of a libvlc instance. The initial reference count is 1 after <ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kindref="member">libvlc_new()</ref> returns.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance to reference </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="200" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="200" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int</type>
+        <definition>LIBVLC_API int libvlc_add_intf</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *name)</argsstring>
+        <name>libvlc_add_intf</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try to start a user interface for the libvlc instance.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>interface name, or NULL for default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="210" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="210" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_set_exit_handler</definition>
+        <argsstring>(libvlc_instance_t *p_instance, void(*cb)(void *), void *opaque)</argsstring>
+        <name>libvlc_set_exit_handler</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>opaque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers a callback for the LibVLC exit event. This is mostly useful if the VLC playlist and/or at least one interface are started with <ref refid="group__libvlc__playlist_1ga6382c543b2a88894cb7bfc4e2f9fbe74" kindref="member">libvlc_playlist_play()</ref> or <ref refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" kindref="member">libvlc_add_intf()</ref> respectively. Typically, this function will wake up your application main loop (from another thread).</para>
+<para><simplesect kind="note"><para>This function should be called before the playlist or interface are started. Otherwise, there is a small race condition: the exit event could be raised before the handler is registered.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LibVLC instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback to invoke when LibVLC wants to exit, or NULL to disable the exit handler (as by default) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data pointer for the callback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>This function and <ref refid="group__libvlc__core_1ga8b60fa21d15392338a17c89414502d40" kindref="member">libvlc_wait()</ref> cannot be used at the same time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="230" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="230" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_set_user_agent</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *name, const char *http)</argsstring>
+        <name>libvlc_set_user_agent</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>http</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the application name. LibVLC passes this as the user agent string when a protocol requires it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LibVLC instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>human-readable application name, e.g. &quot;FooBar player 1.2.3&quot; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>http</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>HTTP User Agent, e.g. &quot;FooBar/1.2.3 Python/2.6.0&quot; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 1.1.1 or later </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="243" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="243" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_set_app_id</definition>
+        <argsstring>(libvlc_instance_t *p_instance, const char *id, const char *version, const char *icon)</argsstring>
+        <name>libvlc_set_app_id</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>version</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>icon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets some meta-information about the application. See also <ref refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" kindref="member">libvlc_set_user_agent()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LibVLC instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Java-style application identifier, e.g. &quot;com.acme.foobar&quot; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application version numbers, e.g. &quot;1.2.3&quot; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>icon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application icon name, e.g. &quot;foobar&quot; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="version"><para>LibVLC 2.1.0 or later. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="257" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="257" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_get_version</definition>
+        <argsstring>(void)</argsstring>
+        <name>libvlc_get_version</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve libvlc version.</para>
+<para>Example: &quot;1.1.0-git The Luggage&quot;</para>
+<para><simplesect kind="return"><para>a string containing the libvlc version </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="267" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="267" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_get_compiler</definition>
+        <argsstring>(void)</argsstring>
+        <name>libvlc_get_compiler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve libvlc compiler version.</para>
+<para>Example: &quot;gcc version 4.2.3 (Ubuntu 4.2.3-2ubuntu6)&quot;</para>
+<para><simplesect kind="return"><para>a string containing the libvlc compiler version </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="276" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="276" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API const char *</type>
+        <definition>LIBVLC_API const char * libvlc_get_changeset</definition>
+        <argsstring>(void)</argsstring>
+        <name>libvlc_get_changeset</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve libvlc changeset.</para>
+<para>Example: &quot;aa9bce0bc4&quot;</para>
+<para><simplesect kind="return"><para>a string containing the libvlc changeset </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="285" column="24" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="285" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_free</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>libvlc_free</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frees an heap allocation returned by a LibVLC function. If you know you&apos;re using the same underlying C run-time as the LibVLC implementation, then you can call ANSI C free() directly instead.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="294" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="294" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API void</type>
+        <definition>LIBVLC_API void libvlc_module_description_list_release</definition>
+        <argsstring>(libvlc_module_description_t *p_list)</argsstring>
+        <name>libvlc_module_description_list_release</name>
+        <param>
+          <type><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref> *</type>
+          <declname>p_list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release a list of module descriptions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list to be released </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="515" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="515" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref> *</type>
+        <definition>LIBVLC_API libvlc_module_description_t * libvlc_audio_filter_list_get</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_audio_filter_list_get</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of audio filters that are available.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a list of module descriptions. It should be freed with <ref refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kindref="member">libvlc_module_description_list_release()</ref>. In case of an error, NULL is returned.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kindref="member">libvlc_module_description_list_release</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="529" column="29" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="529" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref> *</type>
+        <definition>LIBVLC_API libvlc_module_description_t * libvlc_video_filter_list_get</definition>
+        <argsstring>(libvlc_instance_t *p_instance)</argsstring>
+        <name>libvlc_video_filter_list_get</name>
+        <param>
+          <type><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref> *</type>
+          <declname>p_instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of video filters that are available.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>libvlc instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a list of module descriptions. It should be freed with <ref refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kindref="member">libvlc_module_description_list_release()</ref>. In case of an error, NULL is returned.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kindref="member">libvlc_module_description_list_release</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="543" column="29" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="543" declcolumn="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Before it can do anything useful, LibVLC must be initialized. You can create one (or more) instance(s) of LibVLC in a given process, with <ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kindref="member">libvlc_new()</ref> and destroy them with <ref refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" kindref="member">libvlc_release()</ref>.</para>
+<para><simplesect kind="version"><para>Unless otherwise stated, these functions are available from LibVLC versions numbered 1.1.0 or more. Earlier versions (0.9.x and 1.0.x) are <bold>not</bold> compatible. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

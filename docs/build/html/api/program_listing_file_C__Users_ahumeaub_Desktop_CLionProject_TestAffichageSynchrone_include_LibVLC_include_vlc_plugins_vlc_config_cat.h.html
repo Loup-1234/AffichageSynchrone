@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_config_cat.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_config_cat.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_config_cat.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_config_cat.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-config-cat-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-config-cat-h"></span><h1>Program Listing for File vlc_config_cat.h<a class="headerlink" href="#program-listing-for-file-vlc-config-cat-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_config_cat.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-config-cat-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_config_cat.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_config_cat.h : Definition of configuration categories</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2003 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Clément Stenac &lt;zorglub@videolan.org&gt;</span>
+<span class="cm"> *          Anil Daoud &lt;anil@videolan.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_HELP_H</span>
+<span class="cp">#define VLC_HELP_H 1</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;vlc_plugin.h&gt;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  First, we need help strings for the General Settings and for the</span>
+<span class="cm"> *  Plugins screen</span>
+<span class="cm"> */</span>
+<span class="cp">#define MAIN_TITLE N_( &quot;VLC preferences&quot; )</span>
+<span class="cp">#define MAIN_HELP N_( \</span>
+<span class="cp">    &quot;Select \&quot;Advanced Options\&quot; to see all options.&quot; )</span>
+
+<span class="cm">/* Interface */</span>
+<span class="cp">#define INTF_TITLE N_(&quot;Interface&quot;)</span>
+<span class="cp">#define INTF_HELP  N_( &quot;Settings for VLC&#39;s interfaces&quot; )</span>
+
+<span class="cp">#define INTF_GENERAL_HELP N_( &quot;Main interfaces settings&quot; )</span>
+
+<span class="cp">#define INTF_MAIN_TITLE  N_( &quot;Main interfaces&quot; )</span>
+<span class="cp">#define INTF_MAIN_HELP N_( &quot;Settings for the main interface&quot; )</span>
+
+<span class="cp">#define INTF_CONTROL_TITLE N_( &quot;Control interfaces&quot; )</span>
+<span class="cp">#define INTF_CONTROL_HELP N_( &quot;Settings for VLC&#39;s control interfaces&quot; )</span>
+
+<span class="cp">#define INTF_HOTKEYS_TITLE N_( &quot;Hotkeys settings&quot; )</span>
+<span class="cp">#define INTF_HOTKEYS_HELP N_( &quot;Hotkeys settings&quot; )</span>
+
+<span class="cm">/* Audio */</span>
+<span class="cp">#define AUDIO_TITLE N_( &quot;Audio&quot; )</span>
+<span class="cp">#define AUDIO_HELP N_( &quot;Audio settings&quot; )</span>
+
+<span class="cp">#define AUDIO_GENERAL_HELP N_(&quot;General audio settings&quot;)</span>
+
+<span class="cp">#define AFILTER_TITLE N_(&quot;Filters&quot;)</span>
+<span class="cp">#define AFILTER_HELP N_( &quot;Audio filters are used to process the audio stream.&quot; )</span>
+
+<span class="cp">#define ARESAMPLER_TITLE N_(&quot;Audio resampler&quot;)</span>
+
+<span class="cp">#define AVISUAL_TITLE N_(&quot;Visualizations&quot;)</span>
+<span class="cp">#define AVISUAL_HELP N_( &quot;Audio visualizations&quot; )</span>
+
+<span class="cp">#define AOUT_TITLE N_( &quot;Output modules&quot; )</span>
+<span class="cp">#define AOUT_HELP N_(&quot;General settings for audio output modules.&quot;)</span>
+
+<span class="cp">#define AMISC_TITLE N_(&quot;Miscellaneous&quot;)</span>
+<span class="cp">#define AMISC_HELP N_( &quot;Miscellaneous audio settings and modules.&quot; )</span>
+
+<span class="cm">/* Video */</span>
+<span class="cp">#define VIDEO_TITLE N_(&quot;Video&quot;)</span>
+<span class="cp">#define VIDEO_HELP N_(&quot;Video settings&quot;)</span>
+
+<span class="cp">#define VIDEO_GENERAL_HELP N_( &quot;General video settings&quot; )</span>
+
+<span class="cp">#define _VOUT_TITLE N_(&quot;Output modules&quot; )</span>
+<span class="cp">#define VOUT_HELP N_(&quot;General settings for video output modules.&quot;)</span>
+
+<span class="cp">#define VFILTER_TITLE N_(&quot;Filters&quot; )</span>
+<span class="cp">#define VFILTER_HELP N_(&quot;Video filters are used to process the video stream.&quot; )</span>
+
+<span class="cp">#define SUBPIC_TITLE N_( &quot;Subtitles / OSD&quot;)</span>
+<span class="cp">#define SUBPIC_HELP N_( &quot;Settings related to On-Screen-Display,&quot;\</span>
+<span class="cp">        &quot; subtitles and \&quot;overlay subpictures\&quot;&quot;)</span>
+
+<span class="cp">#define SPLITTER_TITLE N_(&quot;Splitters&quot;)</span>
+<span class="cp">#define SPLITTER_HELP N_(&quot;Video splitters separate the stream into multiple videos.&quot;)</span>
+
+<span class="cm">/*</span>
+<span class="cm">#define TEXT_HELP N_( \</span>
+<span class="cm">    &quot;Use the settings of the \&quot;freetype\&quot; module to choose the font you &quot; \</span>
+<span class="cm">    &quot;want VLC to use for text rendering (to display subtitles for example).&quot;)</span>
+<span class="cm">*/</span>
+<span class="cm">/* Input */</span>
+<span class="cp">#define INPUT_TITLE N_( &quot;Input / Codecs&quot; )</span>
+<span class="cp">#define INPUT_HELP N_( &quot;Settings for input, demultiplexing, &quot; \</span>
+<span class="cp">         &quot;decoding and encoding&quot;)</span>
+
+<span class="cp">#define ACCESS_TITLE N_( &quot;Access modules&quot; )</span>
+<span class="cp">#define ACCESS_HELP N_( \</span>
+<span class="cp">    &quot;Settings related to the various access methods. &quot; \</span>
+<span class="cp">    &quot;Common settings you may want to alter are HTTP proxy or &quot; \</span>
+<span class="cp">    &quot;caching settings.&quot; )</span>
+
+<span class="cp">#define STREAM_FILTER_TITLE N_( &quot;Stream filters&quot; )</span>
+<span class="cp">#define STREAM_FILTER_HELP N_( \</span>
+<span class="cp">    &quot;Stream filters are special modules that allow advanced operations on &quot; \</span>
+<span class="cp">    &quot;the input side of VLC. Use with care...&quot; )</span>
+
+<span class="cp">#define DEMUX_TITLE N_(&quot;Demuxers&quot;)</span>
+<span class="cp">#define DEMUX_HELP N_( &quot;Demuxers are used to separate audio and video streams.&quot; )</span>
+
+<span class="cp">#define VDEC_TITLE  N_( &quot;Video codecs&quot; )</span>
+<span class="cp">#define VDEC_HELP N_( &quot;Settings for the video, images or video+audio decoders and encoders.&quot; )</span>
+
+<span class="cp">#define ADEC_TITLE  N_( &quot;Audio codecs&quot; )</span>
+<span class="cp">#define ADEC_HELP N_( &quot;Settings for the audio-only decoders and encoders.&quot; )</span>
+
+<span class="cp">#define SDEC_TITLE N_( &quot;Subtitle codecs&quot;)</span>
+<span class="cp">#define SDEC_HELP N_( &quot;Settings for subtitle, teletext and CC decoders and encoders.&quot; )</span>
+
+<span class="cp">#define ADVANCED_HELP N_( &quot;General input settings. Use with care...&quot; )</span>
+
+<span class="cm">/* Sout */</span>
+<span class="cp">#define SOUT_TITLE N_( &quot;Stream output&quot; )</span>
+<span class="cp">#define SOUT_HELP N_( \</span>
+<span class="cp">      &quot;Stream output settings are used when acting as a streaming server &quot; \</span>
+<span class="cp">      &quot;or when saving incoming streams.\n&quot; \</span>
+<span class="cp">      &quot;Streams are first muxed and then sent through an \&quot;access output\&quot; &quot;\</span>
+<span class="cp">      &quot;module that can either save the stream to a file, or stream &quot; \</span>
+<span class="cp">      &quot;it (UDP, HTTP, RTP/RTSP).\n&quot; \</span>
+<span class="cp">      &quot;Sout streams modules allow advanced stream processing (transcoding, &quot;\</span>
+<span class="cp">      &quot;duplicating...).&quot;)</span>
+
+<span class="cp">#define SOUT_GENERAL_HELP N_( &quot;General stream output settings&quot;)</span>
+
+<span class="cp">#define SOUT_MUX_TITLE N_( &quot;Muxers&quot; )</span>
+<span class="cp">#define SOUT_MUX_HELP N_( \</span>
+<span class="cp">       &quot;Muxers create the encapsulation formats that are used to &quot; \</span>
+<span class="cp">       &quot;put all the elementary streams (video, audio, ...) &quot; \</span>
+<span class="cp">       &quot;together. This setting allows you to always force a specific muxer. &quot; \</span>
+<span class="cp">       &quot;You should probably not do that.\n&quot; \</span>
+<span class="cp">       &quot;You can also set default parameters for each muxer.&quot; )</span>
+
+<span class="cp">#define SOUT_ACO_TITLE N_( &quot;Access output&quot; )</span>
+<span class="cp">#define SOUT_ACO_HELP N_( \</span>
+<span class="cp">   &quot;Access output modules control the ways the muxed streams are sent. &quot; \</span>
+<span class="cp">   &quot;This setting allows you to always force a specific access output method. &quot; \</span>
+<span class="cp">   &quot;You should probably not do that.\n&quot; \</span>
+<span class="cp">   &quot;You can also set default parameters for each access output.&quot;)</span>
+
+<span class="cp">#define SOUT_PACKET_TITLE N_( &quot;Packetizers&quot; )</span>
+<span class="cp">#define SOUT_PACKET_HELP N_( \</span>
+<span class="cp">        &quot;Packetizers are used to \&quot;preprocess\&quot; the elementary &quot;\</span>
+<span class="cp">        &quot;streams before muxing. &quot; \</span>
+<span class="cp">        &quot;This setting allows you to always force a packetizer. &quot; \</span>
+<span class="cp">        &quot;You should probably not do that.\n&quot; \</span>
+<span class="cp">        &quot;You can also set default parameters for each packetizer.&quot; )</span>
+
+<span class="cp">#define SOUT_STREAM_TITLE N_(&quot;Sout stream&quot;)</span>
+<span class="cp">#define SOUT_STREAM_HELP N_( &quot;Sout stream modules allow to build a sout &quot; \</span>
+<span class="cp">                &quot;processing chain. Please refer to the Streaming Howto for &quot; \</span>
+<span class="cp">                &quot;more information. You can configure default options for &quot; \</span>
+<span class="cp">                &quot;each sout stream module here.&quot;)</span>
+
+<span class="cp">#define SOUT_VOD_TITLE N_( &quot;VOD&quot; )</span>
+<span class="cp">#define SOUT_VOD_HELP N_( &quot;VLC&#39;s implementation of Video On Demand&quot; )</span>
+
+
+<span class="cm">/* Playlist */</span>
+<span class="cp">#define PLAYLIST_TITLE N_( &quot;Playlist&quot; )</span>
+<span class="cp">#define PLAYLIST_HELP N_( &quot;Settings related to playlist behaviour &quot; \</span>
+<span class="cp">        &quot;(e.g. playback mode) and to modules that automatically add &quot;\</span>
+<span class="cp">        &quot;items to the playlist (\&quot;service discovery\&quot; modules).&quot;)</span>
+
+<span class="cp">#define PGENERAL_HELP N_( &quot;General playlist behaviour&quot;)</span>
+<span class="cp">#define SD_TITLE N_(&quot;Services discovery&quot;)</span>
+<span class="cp">#define SD_HELP N_(&quot;Services discovery modules are facilities &quot;\</span>
+<span class="cp">        &quot;that automatically add items to playlist.&quot;)</span>
+
+<span class="cm">/* Advanced */</span>
+<span class="cp">#define AADVANCED_TITLE N_( &quot;Advanced&quot; )</span>
+<span class="cp">#define AADVANCED_HELP N_( &quot;Advanced settings. Use with care...&quot;)</span>
+
+<span class="cp">#define MISC_TITLE N_( &quot;Advanced settings&quot; )</span>
+
+<span class="cm">/* This function is deprecated and is kept only for compatibility */</span>
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">config_category_t</span><span class="w"> </span><span class="n">categories_array</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Interface */</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_INTERFACE</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INTERFACE_GENERAL</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_GENERAL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INTERFACE_MAIN</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_MAIN_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_MAIN_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INTERFACE_CONTROL</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_CONTROL_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_CONTROL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INTERFACE_HOTKEYS</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_HOTKEYS_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INTF_HOTKEYS_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_AUDIO</span><span class="p">,</span><span class="w"> </span><span class="n">AUDIO_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AUDIO_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_AUDIO_GENERAL</span><span class="p">,</span><span class="w"> </span><span class="n">AUDIO_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AUDIO_GENERAL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_AUDIO_AOUT</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AOUT_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_AUDIO_AFILTER</span><span class="p">,</span><span class="w"> </span><span class="n">AFILTER_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AFILTER_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_AUDIO_RESAMPLER</span><span class="p">,</span><span class="w"> </span><span class="n">ARESAMPLER_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AFILTER_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_AUDIO_VISUAL</span><span class="p">,</span><span class="w"> </span><span class="n">AVISUAL_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AVISUAL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_AUDIO_MISC</span><span class="p">,</span><span class="w"> </span><span class="n">AMISC_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AMISC_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_VIDEO</span><span class="p">,</span><span class="w"> </span><span class="n">VIDEO_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">VIDEO_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_VIDEO_GENERAL</span><span class="p">,</span><span class="w"> </span><span class="n">VIDEO_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">VIDEO_GENERAL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_VIDEO_VOUT</span><span class="p">,</span><span class="w"> </span><span class="n">_VOUT_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_VIDEO_VFILTER</span><span class="p">,</span><span class="w"> </span><span class="n">VFILTER_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">VFILTER_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_VIDEO_SUBPIC</span><span class="p">,</span><span class="w"> </span><span class="n">SUBPIC_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SUBPIC_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_VIDEO_SPLITTER</span><span class="p">,</span><span class="w"> </span><span class="n">SPLITTER_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SPLITTER_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_INPUT</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_GENERAL</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_ACCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ACCESS_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">ACCESS_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_DEMUX</span><span class="p">,</span><span class="w"> </span><span class="n">DEMUX_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">DEMUX_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_VCODEC</span><span class="p">,</span><span class="w"> </span><span class="n">VDEC_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">VDEC_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_ACODEC</span><span class="p">,</span><span class="w"> </span><span class="n">ADEC_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">ADEC_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_SCODEC</span><span class="p">,</span><span class="w"> </span><span class="n">SDEC_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SDEC_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_INPUT_STREAM_FILTER</span><span class="p">,</span><span class="w"> </span><span class="n">STREAM_FILTER_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">STREAM_FILTER_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_SOUT</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_SOUT_GENERAL</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_GENERAL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_SOUT_STREAM</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_STREAM_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_STREAM_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_SOUT_MUX</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_MUX_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_MUX_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_SOUT_ACO</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_ACO_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_ACO_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_SOUT_PACKETIZER</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_PACKET_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_PACKET_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_SOUT_VOD</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_VOD_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SOUT_VOD_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_PLAYLIST</span><span class="p">,</span><span class="w"> </span><span class="n">PLAYLIST_TITLE</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">PLAYLIST_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_PLAYLIST_GENERAL</span><span class="p">,</span><span class="w"> </span><span class="n">PLAYLIST_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">PGENERAL_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_PLAYLIST_SD</span><span class="p">,</span><span class="w"> </span><span class="n">SD_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">SD_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">CAT_ADVANCED</span><span class="p">,</span><span class="w"> </span><span class="n">AADVANCED_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AADVANCED_HELP</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">SUBCAT_ADVANCED_MISC</span><span class="p">,</span><span class="w"> </span><span class="n">MISC_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">AADVANCED_HELP</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">config_CategoryNameGet</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_value</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">categories_array</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">psz_name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">categories_array</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">i_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i_value</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">vlc_gettext</span><span class="p">(</span><span class="n">categories_array</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">psz_name</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">config_CategoryHelpGet</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_value</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">categories_array</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">psz_help</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">categories_array</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">i_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i_value</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">vlc_gettext</span><span class="p">(</span><span class="n">categories_array</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">psz_help</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#endif </span><span class="cm">/* VLC_HELP_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

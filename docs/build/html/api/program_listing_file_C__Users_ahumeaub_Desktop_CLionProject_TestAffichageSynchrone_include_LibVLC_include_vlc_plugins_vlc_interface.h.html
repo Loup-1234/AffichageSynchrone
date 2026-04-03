@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_interface.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_interface.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_interface.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_interface.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-interface-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-interface-h"></span><h1>Program Listing for File vlc_interface.h<a class="headerlink" href="#program-listing-for-file-vlc-interface-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_interface.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-interface-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_interface.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_interface.h: interface access for other threads</span>
+<span class="cm"> * This library provides basic functions for threads to interact with user</span>
+<span class="cm"> * interface, such as message output.</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999, 2000 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Vincent Seguin &lt;seguin@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_INTF_H_</span>
+<span class="cp">#define VLC_INTF_H_</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">intf_dialog_args_t</span><span class="w"> </span><span class="n">intf_dialog_args_t</span><span class="p">;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">intf_sys_t</span><span class="w"> </span><span class="n">intf_sys_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">intf_thread_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">intf_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_next</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Specific interfaces */</span>
+<span class="w">    </span><span class="n">intf_sys_t</span><span class="w"> </span><span class="o">*</span><span class="w">        </span><span class="n">p_sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">module_t</span><span class="w"> </span><span class="o">*</span><span class="w">   </span><span class="n">p_module</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="n">pf_show_dialog</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">intf_thread_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span>
+<span class="w">                               </span><span class="n">intf_dialog_args_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">config_chain_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_cfg</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">intf_thread_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">intf_dialog_args_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">intf_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_intf</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_title</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">psz_results</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i_results</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf_callback</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">intf_dialog_args_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_arg</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Specifically for INTF_DIALOG_FILE_GENERIC */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_extensions</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_save</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_multiple</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Specific to INTF_DIALOG_INTERACTION */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">interaction_dialog_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dialog</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">intf_Create</span><span class="p">(</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">libvlc_Quit</span><span class="p">(</span><span class="w"> </span><span class="n">libvlc_int_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="nf">pl_Get</span><span class="p">(</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">intf_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">intf</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">playlist_t</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">intf</span><span class="o">-&gt;</span><span class="n">obj</span><span class="p">.</span><span class="n">parent</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#define pl_CurrentInput(intf) (playlist_CurrentInput(pl_Get(intf)))</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_LogSet</span><span class="p">(</span><span class="n">libvlc_int_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_log_cb</span><span class="w"> </span><span class="n">cb</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">);</span>
+
+
+<span class="cm">/* Interface dialog ids for dialog providers */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">vlc_intf_dialog</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_FILE_SIMPLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_FILE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_DISC</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_NET</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_CAPTURE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_SAT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_DIRECTORY</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">INTF_DIALOG_STREAMWIZARD</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_WIZARD</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">INTF_DIALOG_PLAYLIST</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_MESSAGES</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_FILEINFO</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_PREFS</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_BOOKMARKS</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_EXTENDED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_RENDERER</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">INTF_DIALOG_POPUPMENU</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_AUDIOPOPUPMENU</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_VIDEOPOPUPMENU</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_MISCPOPUPMENU</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">INTF_DIALOG_FILE_GENERIC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_INTERACTION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_SENDKEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">INTF_DIALOG_UPDATEVLC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTF_DIALOG_VLM</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">INTF_DIALOG_EXIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_intf_dialog</span><span class="p">;</span>
+
+<span class="cm">/* Useful text messages shared by interfaces */</span>
+<span class="cp">#define INTF_ABOUT_MSG LICENSE_MSG</span>
+
+<span class="cp">#define EXTENSIONS_AUDIO_CSV &quot;3ga&quot;, &quot;669&quot;, &quot;a52&quot;, &quot;aac&quot;, &quot;ac3&quot;, &quot;adt&quot;, &quot;adts&quot;, &quot;aif&quot;, &quot;aifc&quot;, &quot;aiff&quot;, \</span>
+<span class="cp">                         &quot;amb&quot;, &quot;amr&quot;, &quot;aob&quot;, &quot;ape&quot;, &quot;au&quot;, &quot;awb&quot;, &quot;caf&quot;, &quot;dts&quot;, &quot;flac&quot;, &quot;it&quot;, &quot;kar&quot;, \</span>
+<span class="cp">                         &quot;m4a&quot;, &quot;m4b&quot;, &quot;m4p&quot;, &quot;m5p&quot;, &quot;mka&quot;, &quot;mlp&quot;, &quot;mod&quot;, &quot;mpa&quot;, &quot;mp1&quot;, &quot;mp2&quot;, &quot;mp3&quot;, &quot;mpc&quot;, &quot;mpga&quot;, &quot;mus&quot;, \</span>
+<span class="cp">                         &quot;oga&quot;, &quot;ogg&quot;, &quot;oma&quot;, &quot;opus&quot;, &quot;qcp&quot;, &quot;ra&quot;, &quot;rmi&quot;, &quot;s3m&quot;, &quot;sid&quot;, &quot;spx&quot;, &quot;tak&quot;, &quot;thd&quot;, &quot;tta&quot;, \</span>
+<span class="cp">                         &quot;voc&quot;, &quot;vqf&quot;, &quot;w64&quot;, &quot;wav&quot;, &quot;wma&quot;, &quot;wv&quot;, &quot;xa&quot;, &quot;xm&quot;</span>
+
+<span class="cp">#define EXTENSIONS_VIDEO_CSV &quot;3g2&quot;, &quot;3gp&quot;, &quot;3gp2&quot;, &quot;3gpp&quot;, &quot;amv&quot;, &quot;asf&quot;, &quot;avi&quot;, &quot;bik&quot;, &quot;crf&quot;, &quot;dav&quot;, &quot;divx&quot;, &quot;drc&quot;, &quot;dv&quot;, &quot;dvr-ms&quot; \</span>
+<span class="cp">                             &quot;evo&quot;, &quot;f4v&quot;, &quot;flv&quot;, &quot;gvi&quot;, &quot;gxf&quot;, &quot;iso&quot;, \</span>
+<span class="cp">                             &quot;m1v&quot;, &quot;m2v&quot;, &quot;m2t&quot;, &quot;m2ts&quot;, &quot;m4v&quot;, &quot;mkv&quot;, &quot;mov&quot;,\</span>
+<span class="cp">                             &quot;mp2&quot;, &quot;mp2v&quot;, &quot;mp4&quot;, &quot;mp4v&quot;, &quot;mpe&quot;, &quot;mpeg&quot;, &quot;mpeg1&quot;, \</span>
+<span class="cp">                             &quot;mpeg2&quot;, &quot;mpeg4&quot;, &quot;mpg&quot;, &quot;mpv2&quot;, &quot;mts&quot;, &quot;mtv&quot;, &quot;mxf&quot;, &quot;mxg&quot;, &quot;nsv&quot;, &quot;nuv&quot;, \</span>
+<span class="cp">                             &quot;ogg&quot;, &quot;ogm&quot;, &quot;ogv&quot;, &quot;ogx&quot;, &quot;ps&quot;, \</span>
+<span class="cp">                             &quot;rec&quot;, &quot;rm&quot;, &quot;rmvb&quot;, &quot;rpl&quot;, &quot;thp&quot;, &quot;tod&quot;, &quot;ts&quot;, &quot;tts&quot;, &quot;txd&quot;, &quot;vob&quot;, &quot;vro&quot;, \</span>
+<span class="cp">                             &quot;webm&quot;, &quot;wm&quot;, &quot;wmv&quot;, &quot;wtv&quot;, &quot;xesc&quot;</span>
+
+<span class="cp">#define EXTENSIONS_AUDIO \</span>
+<span class="cp">    &quot;*.3ga;&quot; \</span>
+<span class="cp">    &quot;*.669;&quot; \</span>
+<span class="cp">    &quot;*.a52;&quot; \</span>
+<span class="cp">    &quot;*.aac;&quot; \</span>
+<span class="cp">    &quot;*.ac3;&quot; \</span>
+<span class="cp">    &quot;*.adt;&quot; \</span>
+<span class="cp">    &quot;*.adts;&quot; \</span>
+<span class="cp">    &quot;*.aif;&quot;\</span>
+<span class="cp">    &quot;*.aifc;&quot;\</span>
+<span class="cp">    &quot;*.aiff;&quot;\</span>
+<span class="cp">    &quot;*.amb;&quot; \</span>
+<span class="cp">    &quot;*.amr;&quot; \</span>
+<span class="cp">    &quot;*.aob;&quot; \</span>
+<span class="cp">    &quot;*.ape;&quot; \</span>
+<span class="cp">    &quot;*.au;&quot; \</span>
+<span class="cp">    &quot;*.awb;&quot; \</span>
+<span class="cp">    &quot;*.caf;&quot; \</span>
+<span class="cp">    &quot;*.dts;&quot; \</span>
+<span class="cp">    &quot;*.flac;&quot;\</span>
+<span class="cp">    &quot;*.it;&quot;  \</span>
+<span class="cp">    &quot;*.kar;&quot; \</span>
+<span class="cp">    &quot;*.m4a;&quot; \</span>
+<span class="cp">    &quot;*.m4b;&quot; \</span>
+<span class="cp">    &quot;*.m4p;&quot; \</span>
+<span class="cp">    &quot;*.m5p;&quot; \</span>
+<span class="cp">    &quot;*.mid;&quot; \</span>
+<span class="cp">    &quot;*.mka;&quot; \</span>
+<span class="cp">    &quot;*.mlp;&quot; \</span>
+<span class="cp">    &quot;*.mod;&quot; \</span>
+<span class="cp">    &quot;*.mpa;&quot; \</span>
+<span class="cp">    &quot;*.mp1;&quot; \</span>
+<span class="cp">    &quot;*.mp2;&quot; \</span>
+<span class="cp">    &quot;*.mp3;&quot; \</span>
+<span class="cp">    &quot;*.mpc;&quot; \</span>
+<span class="cp">    &quot;*.mpga;&quot; \</span>
+<span class="cp">    &quot;*.mus;&quot; \</span>
+<span class="cp">    &quot;*.oga;&quot; \</span>
+<span class="cp">    &quot;*.ogg;&quot; \</span>
+<span class="cp">    &quot;*.oma;&quot; \</span>
+<span class="cp">    &quot;*.opus;&quot; \</span>
+<span class="cp">    &quot;*.qcp;&quot; \</span>
+<span class="cp">    &quot;*.ra;&quot; \</span>
+<span class="cp">    &quot;*.rmi;&quot; \</span>
+<span class="cp">    &quot;*.s3m;&quot; \</span>
+<span class="cp">    &quot;*.sid;&quot; \</span>
+<span class="cp">    &quot;*.spx;&quot; \</span>
+<span class="cp">    &quot;*.tak;&quot; \</span>
+<span class="cp">    &quot;*.thd;&quot; \</span>
+<span class="cp">    &quot;*.tta;&quot; \</span>
+<span class="cp">    &quot;*.voc;&quot; \</span>
+<span class="cp">    &quot;*.vqf;&quot; \</span>
+<span class="cp">    &quot;*.w64;&quot; \</span>
+<span class="cp">    &quot;*.wav;&quot; \</span>
+<span class="cp">    &quot;*.wma;&quot; \</span>
+<span class="cp">    &quot;*.wv;&quot;  \</span>
+<span class="cp">    &quot;*.xa;&quot;  \</span>
+<span class="cp">    &quot;*.xm&quot;</span>
+
+<span class="cp">#define EXTENSIONS_VIDEO &quot;*.3g2;*.3gp;*.3gp2;*.3gpp;*.amv;*.asf;*.avi;*.bik;*.bin;*.crf;*.dav;*.divx;*.drc;*.dv;*.dvr-ms;*.evo;*.f4v;*.flv;*.gvi;*.gxf;*.iso;*.m1v;*.m2v;&quot; \</span>
+<span class="cp">                         &quot;*.m2t;*.m2ts;*.m4v;*.mkv;*.mov;*.mp2;*.mp2v;*.mp4;*.mp4v;*.mpe;*.mpeg;*.mpeg1;&quot; \</span>
+<span class="cp">                         &quot;*.mpeg2;*.mpeg4;*.mpg;*.mpv2;*.mts;*.mtv;*.mxf;*.mxg;*.nsv;*.nuv;&quot; \</span>
+<span class="cp">                         &quot;*.ogg;*.ogm;*.ogv;*.ogx;*.ps;&quot; \</span>
+<span class="cp">                         &quot;*.rec;*.rm;*.rmvb;*.rpl;*.thp;*.tod;*.tp;*.ts;*.tts;*.txd;*.vob;*.vro;*.webm;*.wm;*.wmv;*.wtv;*.xesc&quot;</span>
+
+<span class="cp">#define EXTENSIONS_PLAYLIST &quot;*.asx;*.b4s;*.cue;*.ifo;*.m3u;*.m3u8;*.pls;*.ram;*.rar;*.sdp;*.vlc;*.xspf;*.wax;*.wvx;*.zip;*.conf&quot;</span>
+
+<span class="cp">#define EXTENSIONS_MEDIA EXTENSIONS_VIDEO &quot;;&quot; EXTENSIONS_AUDIO &quot;;&quot; \</span>
+<span class="cp">                          EXTENSIONS_PLAYLIST</span>
+
+<span class="cp">#define EXTENSIONS_SUBTITLE &quot;*.cdg;*.idx;*.srt;&quot; \</span>
+<span class="cp">                            &quot;*.sub;*.utf;*.ass;&quot; \</span>
+<span class="cp">                            &quot;*.ssa;*.aqt;&quot; \</span>
+<span class="cp">                            &quot;*.jss;*.psb;&quot; \</span>
+<span class="cp">                            &quot;*.rt;*.sami;*.smi;*.txt;&quot; \</span>
+<span class="cp">                            &quot;*.smil;*.stl;*.usf;&quot; \</span>
+<span class="cp">                            &quot;*.dks;*.pjs;*.mpl2;*.mks;&quot; \</span>
+<span class="cp">                            &quot;*.vtt;*.tt;*.ttml;*.dfxp;&quot; \</span>
+<span class="cp">                            &quot;*.scc&quot;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">interaction_dialog_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_type</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">           </span><span class="o">*</span><span class="n">psz_title</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">           </span><span class="o">*</span><span class="n">psz_description</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">           </span><span class="o">*</span><span class="n">psz_default_button</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">           </span><span class="o">*</span><span class="n">psz_alternate_button</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">           </span><span class="o">*</span><span class="n">psz_other_button</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w">           </span><span class="o">*</span><span class="n">psz_returned</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="w">    </span><span class="n">vlc_value_t</span><span class="w">     </span><span class="n">val</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_timeToGo</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">      </span><span class="n">b_cancelled</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w">          </span><span class="n">p_private</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_status</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_action</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_flags</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_object_t</span><span class="w">   </span><span class="o">*</span><span class="n">p_parent</span><span class="p">;</span>
+<span class="w">                                        </span><span class="c1">//for interaction</span>
+<span class="w">    </span><span class="n">intf_thread_t</span><span class="w">  </span><span class="o">*</span><span class="n">p_interface</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_mutex_t</span><span class="w">    </span><span class="o">*</span><span class="n">p_lock</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">interaction_dialog_t</span><span class="p">;</span>
+
+<span class="cp">#define DIALOG_GOT_ANSWER           0x01</span>
+<span class="cp">#define DIALOG_YES_NO_CANCEL        0x02</span>
+<span class="cp">#define DIALOG_LOGIN_PW_OK_CANCEL   0x04</span>
+<span class="cp">#define DIALOG_PSZ_INPUT_OK_CANCEL  0x08</span>
+<span class="cp">#define DIALOG_BLOCKING_ERROR       0x10</span>
+<span class="cp">#define DIALOG_NONBLOCKING_ERROR    0x20</span>
+<span class="cp">#define DIALOG_USER_PROGRESS        0x80</span>
+<span class="cp">#define DIALOG_INTF_PROGRESS        0x100</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">DIALOG_OK_YES</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DIALOG_NO</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DIALOG_CANCELLED</span>
+<span class="p">};</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ANSWERED_DIALOG</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DESTROYED_DIALOG</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">INTERACT_NEW</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTERACT_UPDATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTERACT_HIDE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">INTERACT_DESTROY</span>
+<span class="p">};</span>
+
+<span class="cp">#define intf_UserStringInput( a, b, c, d ) (VLC_OBJECT(a),b,c,d, VLC_EGENERIC)</span>
+<span class="cp">#define interaction_Register( t ) (t, VLC_EGENERIC)</span>
+<span class="cp">#define interaction_Unregister( t ) (t, VLC_EGENERIC)</span>
+
+
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

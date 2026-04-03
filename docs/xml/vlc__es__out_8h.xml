@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__es__out_8h" kind="file" language="C++">
+    <compoundname>vlc_es_out.h</compoundname>
+    <includedby refid="vlc__demux_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h</label>
+        <link refid="vlc__demux_8h"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_es_out.h</label>
+        <link refid="vlc__es__out_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structes__out__t" prot="public">es_out_t</innerclass>
+    <sectiondef kind="enum">
+      <member refid="group__es__out_1ga71feaf039ccac134a8a57d15af618550" kind="enum"><name>es_out_query_e</name></member>
+      <member refid="group__es__out_1ga4a1dabd9a1feeeffb79f1c4e780c1b13" kind="enum"><name>es_out_policy_e</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__es__out_1ga5ecbd70f9951f572f4f4f6ed47f6a6c3" kind="function"><name>es_out_Add</name></member>
+      <member refid="group__es__out_1ga6dadd92987c1910ba80d1fe37f3fa202" kind="function"><name>es_out_Del</name></member>
+      <member refid="group__es__out_1ga48c43a82dfc7887b5f3211b07fa91f9f" kind="function"><name>es_out_Send</name></member>
+      <member refid="group__es__out_1gab03e728ec986274635c6281d83990c16" kind="function"><name>es_out_vaControl</name></member>
+      <member refid="group__es__out_1ga6b104856190b8d508b569caca7eb7631" kind="function"><name>es_out_Control</name></member>
+      <member refid="group__es__out_1ga834a2b2bb08c3753ecdc88b07acbe8fc" kind="function"><name>es_out_Delete</name></member>
+      <member refid="group__es__out_1gae5f941fb40873a55cdfd13392acbfd12" kind="function"><name>es_out_SetPCR</name></member>
+      <member refid="group__es__out_1gad04c6f2881cb2f0e0b2c0541764d4d46" kind="function"><name>es_out_ControlSetMeta</name></member>
+      <member refid="group__es__out_1gac02593ea1ea91946d24a709ab688ef1b" kind="function"><name>es_out_ControlGetPcrSystem</name></member>
+      <member refid="group__es__out_1ga2a5101670f4e9ea4d936ec1d2fb34eab" kind="function"><name>es_out_ControlModifyPcrSystem</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Elementary streams output interface </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_es_out.h:<sp/>es_out<sp/>(demuxer<sp/>output)<sp/>descriptor,<sp/>queries<sp/>and<sp/>methods</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1999-2004<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_ES_OUT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_ES_OUT_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>es_out_query_e</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>set<sp/>or<sp/>change<sp/>the<sp/>selected<sp/>ES<sp/>in<sp/>its<sp/>category<sp/>(audio/video/spu)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_ES,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>es_out_id_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_RESTART_ES,<sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>es_out_id_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_RESTART_ALL_ES,<sp/></highlight><highlight class="comment">/*<sp/>Deprecated,<sp/>no<sp/>effect<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>set<sp/>&apos;default&apos;<sp/>tag<sp/>on<sp/>ES<sp/>(copied<sp/>across<sp/>from<sp/>container)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_ES_DEFAULT,<sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>es_out_id_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>force<sp/>(un)selection<sp/>of<sp/>the<sp/>ES<sp/>(bypass<sp/>current<sp/>mode)</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XXX:<sp/>this<sp/>will<sp/>not<sp/>change<sp/>the<sp/>state<sp/>of<sp/>any<sp/>other<sp/>ES<sp/>!<sp/>(see<sp/>SET_ES)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_ES_STATE,</highlight><highlight class="comment">/*<sp/>arg1=<sp/>es_out_id_t*<sp/>arg2=bool<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_GET_ES_STATE,</highlight><highlight class="comment">/*<sp/>arg1=<sp/>es_out_id_t*<sp/>arg2=bool*<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>sets<sp/>es<sp/>selection<sp/>policy<sp/>when<sp/>in<sp/>auto<sp/>mode<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_ES_CAT_POLICY,<sp/></highlight><highlight class="comment">/*<sp/>arg1=es_format_category_e<sp/>arg2=es_out_policy_e<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_GROUP,<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>PCR<sp/>handling,<sp/>DTS/PTS<sp/>will<sp/>be<sp/>automatically<sp/>computed<sp/>using<sp/>thoses<sp/>PCR</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>XXX:<sp/>SET_PCR(_GROUP)<sp/>are<sp/>in<sp/>charge<sp/>of<sp/>the<sp/>pace<sp/>control.<sp/>They<sp/>will<sp/>wait</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>slow<sp/>down<sp/>the<sp/>demuxer<sp/>so<sp/>that<sp/>it<sp/>reads<sp/>at<sp/>the<sp/>right<sp/>speed.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>XXX:<sp/>if<sp/>you<sp/>want<sp/>PREROLL<sp/>just<sp/>call<sp/>ES_OUT_SET_NEXT_DISPLAY_TIME<sp/>and<sp/>send</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>as<sp/>you<sp/>would<sp/>normally<sp/>do.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_PCR,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int64_t<sp/>i_pcr(microsecond!)<sp/>(using<sp/>default<sp/>group<sp/>0)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_GROUP_PCR,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>int<sp/>i_group,<sp/>arg2=int64_t<sp/>i_pcr(microsecond!)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_RESET_PCR,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>no<sp/>arg<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>not<sp/>to<sp/>use<sp/>this<sp/>one<sp/>as<sp/>it<sp/>is<sp/>a<sp/>bit<sp/>hacky<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_ES_FMT,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=<sp/>es_out_id_t*<sp/>arg2=es_format_t*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allow<sp/>preroll<sp/>of<sp/>data<sp/>(data<sp/>with<sp/>dts/pts<sp/>&lt;<sp/>i_pts<sp/>for<sp/>all<sp/>ES<sp/>will<sp/>be<sp/>decoded<sp/>but<sp/>not<sp/>displayed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_NEXT_DISPLAY_TIME,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int64_t<sp/>i_pts(microsecond)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>meta<sp/>data<sp/>for<sp/>group<sp/>(dynamic)<sp/>(The<sp/>vlc_meta_t<sp/>is<sp/>not<sp/>modified<sp/>nor<sp/>released)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_GROUP_META,<sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>i_group<sp/>arg2=const<sp/>vlc_meta_t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>epg<sp/>for<sp/>group<sp/>(dynamic)<sp/>(The<sp/>vlc_epg_t<sp/>is<sp/>not<sp/>modified<sp/>nor<sp/>released)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_GROUP_EPG,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>i_group<sp/>arg2=const<sp/>vlc_epg_t<sp/>*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_GROUP_EPG_EVENT,<sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>i_group<sp/>arg2=const<sp/>vlc_epg_event_t<sp/>*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_EPG_TIME,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>int64_t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_DEL_GROUP,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>i_group<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>scrambled<sp/>state<sp/>for<sp/>one<sp/>es<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_ES_SCRAMBLED_STATE,<sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>i_group<sp/>arg2=es_out_id_t*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Stop<sp/>any<sp/>buffering<sp/>being<sp/>done,<sp/>and<sp/>ask<sp/>if<sp/>es_out<sp/>has<sp/>no<sp/>more<sp/>data<sp/>to</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>play.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>It<sp/>will<sp/>not<sp/>block<sp/>and<sp/>so<sp/>MUST<sp/>be<sp/>used<sp/>carrefully.<sp/>The<sp/>only<sp/>good<sp/>reason</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>is<sp/>for<sp/>interactive<sp/>playback<sp/>(like<sp/>for<sp/>DVD<sp/>menu).</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>XXX<sp/>You<sp/>SHALL<sp/>call<sp/>ES_OUT_RESET_PCR<sp/>before<sp/>any<sp/>other<sp/>es_out_Control/Send<sp/>calls.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_GET_EMPTY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>arg1=bool*<sp/><sp/><sp/>res=cannot<sp/>fail<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>global<sp/>meta<sp/>data<sp/>(The<sp/>vlc_meta_t<sp/>is<sp/>not<sp/>modified<sp/>nor<sp/>released)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_SET_META,<sp/></highlight><highlight class="comment">/*<sp/>arg1=const<sp/>vlc_meta_t<sp/>*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>PCR<sp/>system<sp/>clock<sp/>manipulation<sp/>for<sp/>external<sp/>clock<sp/>synchronization<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_GET_PCR_SYSTEM,<sp/></highlight><highlight class="comment">/*<sp/>arg1=vlc_tick_t<sp/>*,<sp/>arg2=vlc_tick_t<sp/>*<sp/>res=can<sp/>fail<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_MODIFY_PCR_SYSTEM,<sp/></highlight><highlight class="comment">/*<sp/>arg1=int<sp/>is_absolute,<sp/>arg2=vlc_tick_t,<sp/>res=can<sp/>fail<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_POST_SUBNODE,<sp/></highlight><highlight class="comment">/*<sp/>arg1=input_item_node_t<sp/>*,<sp/>res=can<sp/>fail<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>First<sp/>value<sp/>usable<sp/>for<sp/>private<sp/>control<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_PRIVATE_START<sp/>=<sp/>0x10000,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>es_out_policy_e</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_ES_POLICY_EXCLUSIVE<sp/>=<sp/>0,</highlight><highlight class="comment">/*<sp/>Enforces<sp/>single<sp/>ES<sp/>selection<sp/>only<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>ES_OUT_ES_POLICY_SIMULTANEOUS,<sp/></highlight><highlight class="comment">/*<sp/>Allows<sp/>multiple<sp/>ES<sp/>per<sp/>cat<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="structes__out__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structes__out__t" kindref="compound">es_out_t</ref></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>es_out_id_t<sp/>*(*pf_add)<sp/><sp/><sp/><sp/>(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structes__format__t" kindref="compound">es_format_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pf_send)<sp/><sp/><sp/>(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*,<sp/>es_out_id_t<sp/>*,<sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pf_del)<sp/><sp/><sp/><sp/>(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*,<sp/>es_out_id_t<sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pf_control)(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_query,<sp/>va_list<sp/>);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pf_destroy)(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>es_out_sys_t<sp/><sp/><sp/><sp/>*p_sys;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">VLC_USED</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>es_out_id_t<sp/>*<sp/>es_out_Add(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structes__format__t" kindref="compound">es_format_t</ref><sp/>*fmt<sp/>)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out-&gt;pf_add(<sp/>out,<sp/>fmt<sp/>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>es_out_Del(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/>es_out_id_t<sp/>*</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>out-&gt;pf_del(<sp/>out,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_Send(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/>es_out_id_t<sp/>*</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structblock__t" kindref="compound">block_t</ref><sp/>*p_block<sp/>)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out-&gt;pf_send(<sp/>out,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>p_block<sp/>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_vaControl(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_query,<sp/>va_list<sp/>args<sp/>)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out-&gt;pf_control(<sp/>out,<sp/>i_query,<sp/>args<sp/>);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_Control(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_query,<sp/>...<sp/>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>va_list<sp/>args;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i_result;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>va_start(<sp/>args,<sp/>i_query<sp/>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>i_result<sp/>=<sp/>es_out_vaControl(<sp/>out,<sp/>i_query,<sp/>args<sp/>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>va_end(<sp/>args<sp/>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i_result;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>es_out_Delete(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*p_out<sp/>)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>p_out-&gt;pf_destroy(<sp/>p_out<sp/>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_SetPCR(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/>int64_t<sp/>pcr<sp/>)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>es_out_Control(<sp/>out,<sp/>ES_OUT_SET_PCR,<sp/>pcr<sp/>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_ControlSetMeta(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vlc_meta_t<sp/>*p_meta<sp/>)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>es_out_Control(<sp/>out,<sp/>ES_OUT_SET_META,<sp/>p_meta<sp/>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_ControlGetPcrSystem(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>*pi_system,<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>*pi_delay<sp/>)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>es_out_Control(<sp/>out,<sp/>ES_OUT_GET_PCR_SYSTEM,<sp/>pi_system,<sp/>pi_delay<sp/>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>es_out_ControlModifyPcrSystem(<sp/><ref refid="structes__out__t" kindref="compound">es_out_t</ref><sp/>*out,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b_absolute,<sp/><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>i_system<sp/>)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>es_out_Control(<sp/>out,<sp/>ES_OUT_MODIFY_PCR_SYSTEM,<sp/>b_absolute,<sp/>i_system<sp/>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_es_out.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_vout_display.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_vout_display.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_vout_display.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_vout_display.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-vout-display-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-vout-display-h"></span><h1>Program Listing for File vlc_vout_display.h<a class="headerlink" href="#program-listing-for-file-vlc-vout-display-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_vout_display.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-vout-display-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_vout_display.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_vout_display.h: vout_display_t definitions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 2009 Laurent Aimar</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Laurent Aimar &lt;fenrir _AT_ videolan _DOT_ org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_VOUT_DISPLAY_H</span>
+<span class="cp">#define VLC_VOUT_DISPLAY_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_es.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_picture.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_picture_pool.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_subpicture.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_actions.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_mouse.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_vout.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_vout_window.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_viewpoint.h&gt;</span>
+
+
+<span class="cm">/* XXX</span>
+<span class="cm"> * Do NOT use video_format_t::i_aspect but i_sar_num/den everywhere. i_aspect</span>
+<span class="cm"> * will be removed as soon as possible.</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vout_display_t</span><span class="w"> </span><span class="n">vout_display_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vout_display_sys_t</span><span class="w"> </span><span class="n">vout_display_sys_t</span><span class="p">;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vout_display_owner_t</span><span class="w"> </span><span class="n">vout_display_owner_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_ALIGN_CENTER</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_ALIGN_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_ALIGN_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_ALIGN_TOP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_ALIGN_BOTTOM</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vout_display_align_t</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">VOUT_WINDOW_STATE_NORMAL</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_WINDOW_STATE_ABOVE</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_WINDOW_STATE_BELOW</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_WINDOW_STACK_MASK</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if defined(_WIN32) || defined(__OS2__)</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_fullscreen</span><span class="w"> </span><span class="n">VLC_DEPRECATED</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Is the display fullscreen */</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="cm">/* Display properties */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* Window title (may be NULL) */</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">title</span><span class="p">;</span>
+
+<span class="w">        </span><span class="cm">/* Display size */</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w">  </span><span class="n">width</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w">  </span><span class="n">height</span><span class="p">;</span>
+
+<span class="w">        </span><span class="cm">/* Display SAR */</span>
+<span class="w">        </span><span class="n">vlc_rational_t</span><span class="w"> </span><span class="n">sar</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">display</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Alignment of the picture inside the display */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">horizontal</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">vertical</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">align</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Do we fill up the display with the video */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_display_filled</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Zoom to use</span>
+<span class="cm">     * It will be applied to the whole display if b_display_filled is set, otherwise</span>
+<span class="cm">     * only on the video source */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">den</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">zoom</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="n">viewpoint</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vout_display_cfg_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_slow</span><span class="p">;</span><span class="w">                           </span><span class="cm">/* The picture memory has slow read/write */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">has_double_click</span><span class="p">;</span><span class="w">                  </span><span class="cm">/* Is double-click generated */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">needs_hide_mouse</span><span class="p">;</span><span class="w">                  </span><span class="cm">/* Needs VOUT_DISPLAY_HIDE_MOUSE,</span>
+<span class="cm">                                             * needs to call vout_display_SendEventMouseMoved()</span>
+<span class="cm">                                             * or vout_display_SendEventMouseState() */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">has_pictures_invalid</span><span class="p">;</span><span class="w">              </span><span class="cm">/* Will VOUT_DISPLAY_EVENT_PICTURES_INVALID be used */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="o">*</span><span class="n">subpicture_chromas</span><span class="p">;</span><span class="w"> </span><span class="cm">/* List of supported chromas for subpicture rendering. */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vout_display_info_t</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Hide the mouse. It will be sent when</span>
+<span class="cm">     * vout_display_t::info.needs_hide_mouse is true */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_HIDE_MOUSE</span><span class="w"> </span><span class="n">VLC_DEPRECATED_ENUM</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Ask to reset the internal buffers after a VOUT_DISPLAY_EVENT_PICTURES_INVALID</span>
+<span class="cm">     * request.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_RESET_PICTURES</span><span class="p">,</span>
+
+<span class="cp">#if defined(_WIN32) || defined(__OS2__)</span>
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse the fullscreen state change after</span>
+<span class="cm">     * being requested (externally or by VOUT_DISPLAY_EVENT_FULLSCREEN */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_FULLSCREEN</span><span class="w"> </span><span class="n">VLC_DEPRECATED_ENUM</span><span class="p">,</span><span class="w">     </span><span class="cm">/* bool fs */</span>
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse the window management state change</span>
+<span class="cm">     * after being requested externally or by VOUT_DISPLAY_WINDOW_STATE */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_WINDOW_STATE</span><span class="w"> </span><span class="n">VLC_DEPRECATED_ENUM</span><span class="p">,</span><span class="w">   </span><span class="cm">/* unsigned state */</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse the display size change requested</span>
+<span class="cm">     * (externally or by VOUT_DISPLAY_EVENT_DISPLAY_SIZE) */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_DISPLAY_SIZE</span><span class="p">,</span><span class="w">   </span><span class="cm">/* const vout_display_cfg_t *p_cfg */</span>
+
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse fill display state change after</span>
+<span class="cm">     * being requested externally */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_DISPLAY_FILLED</span><span class="p">,</span><span class="w"> </span><span class="cm">/* const vout_display_cfg_t *p_cfg */</span>
+
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse zoom change after being requested</span>
+<span class="cm">     * externally */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_ZOOM</span><span class="p">,</span><span class="w"> </span><span class="cm">/* const vout_display_cfg_t *p_cfg */</span>
+
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse source aspect ratio after being</span>
+<span class="cm">     * requested externally */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_SOURCE_ASPECT</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse source crop change after being</span>
+<span class="cm">     * requested externally.</span>
+<span class="cm">     * The cropping requested is stored by video_format_t::i_x/y_offset and</span>
+<span class="cm">     * video_format_t::i_visible_width/height */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_SOURCE_CROP</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Ask the module to acknowledge/refuse VR/360° viewing direction after</span>
+<span class="cm">     * being requested externally */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_CHANGE_VIEWPOINT</span><span class="p">,</span><span class="w">   </span><span class="cm">/* const vout_display_cfg_t *p_cfg */</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* TODO:</span>
+<span class="cm">     * ZOOM ? DISPLAY_FILLED ? ON_TOP ?</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_PICTURES_INVALID</span><span class="p">,</span><span class="w">    </span><span class="cm">/* The buffer are now invalid and need to be changed */</span>
+
+<span class="cp">#if defined(_WIN32) || defined(__OS2__)</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_FULLSCREEN</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_WINDOW_STATE</span><span class="p">,</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_DISPLAY_SIZE</span><span class="p">,</span><span class="w">        </span><span class="cm">/* The display size need to change : int i_width, int i_height */</span>
+
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_CLOSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_KEY</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Full mouse state.</span>
+<span class="cm">     * You can use it OR use the other mouse events. The core will do</span>
+<span class="cm">     * the conversion.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_STATE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Mouse event */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_MOVED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_PRESSED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_RELEASED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_DOUBLE_CLICK</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* VR navigation */</span>
+<span class="w">    </span><span class="n">VOUT_DISPLAY_EVENT_VIEWPOINT_MOVED</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vout_display_owner_t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Private place holder for the vout_display_t creator</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Event coming from the module</span>
+<span class="cm">     *</span>
+<span class="cm">     * This function is set prior to the module instantiation and must not</span>
+<span class="cm">     * be overwritten nor used directly (use the vout_display_SendEvent*</span>
+<span class="cm">     * wrapper.</span>
+<span class="cm">     *</span>
+<span class="cm">     * You can send it at any time i.e. from any vout_display_t functions or</span>
+<span class="cm">     * from another thread.</span>
+<span class="cm">     * Be careful, it does not ensure correct serialization if it is used</span>
+<span class="cm">     * from multiple threads.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">            </span><span class="p">(</span><span class="o">*</span><span class="n">event</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Window management</span>
+<span class="cm">     *</span>
+<span class="cm">     * These functions are set prior to the module instantiation and must not</span>
+<span class="cm">     * be overwritten nor used directly (use the vout_display_*Window</span>
+<span class="cm">     * wrapper */</span>
+<span class="w">    </span><span class="n">vout_window_t</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">window_new</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">           </span><span class="p">(</span><span class="o">*</span><span class="n">window_del</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vout_window_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">vout_display_t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="cm">/* Module */</span>
+<span class="w">    </span><span class="n">module_t</span><span class="w"> </span><span class="o">*</span><span class="k">module</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Initial and current configuration.</span>
+<span class="cm">     * You cannot modify it directly, you must use the appropriate events.</span>
+<span class="cm">     *</span>
+<span class="cm">     * It reflects the current values, i.e. after the event has been accepted</span>
+<span class="cm">     * and applied/configured if needed.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">vout_display_cfg_t</span><span class="w"> </span><span class="o">*</span><span class="n">cfg</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* video source format.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Cropping is not requested while in the open function.</span>
+<span class="cm">     * You cannot change it.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">video_format_t</span><span class="w"> </span><span class="n">source</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* picture_t format.</span>
+<span class="cm">     *</span>
+<span class="cm">     * You can only change it inside the module open function to</span>
+<span class="cm">     * match what you want, and when a VOUT_DISPLAY_RESET_PICTURES control</span>
+<span class="cm">     * request is made and succeeds.</span>
+<span class="cm">     *</span>
+<span class="cm">     * By default, it is equal to ::source except for the aspect ratio</span>
+<span class="cm">     * which is undefined(0) and is ignored.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">video_format_t</span><span class="w"> </span><span class="n">fmt</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Information</span>
+<span class="cm">     *</span>
+<span class="cm">     * You can only set them in the open function.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">vout_display_info_t</span><span class="w"> </span><span class="n">info</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Return a pointer over the current picture_pool_t* (mandatory).</span>
+<span class="cm">     *</span>
+<span class="cm">     * For performance reasons, it is best to provide at least count</span>
+<span class="cm">     * pictures but it is not mandatory.</span>
+<span class="cm">     * You can return NULL when you cannot/do not want to allocate</span>
+<span class="cm">     * pictures.</span>
+<span class="cm">     * The vout display module keeps the ownership of the pool and can</span>
+<span class="cm">     * destroy it only when closing or on invalid pictures control.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">picture_pool_t</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pool</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Prepare a picture and an optional subpicture for display (optional).</span>
+<span class="cm">     *</span>
+<span class="cm">     * It is called before the next pf_display call to provide as much</span>
+<span class="cm">     * time as possible to prepare the given picture and the subpicture</span>
+<span class="cm">     * for display.</span>
+<span class="cm">     * You are guaranted that pf_display will always be called and using</span>
+<span class="cm">     * the exact same picture_t and subpicture_t.</span>
+<span class="cm">     * You cannot change the pixel content of the picture_t or of the</span>
+<span class="cm">     * subpicture_t.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">       </span><span class="p">(</span><span class="o">*</span><span class="n">prepare</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Display a picture and an optional subpicture (mandatory).</span>
+<span class="cm">     *</span>
+<span class="cm">     * The picture and the optional subpicture must be displayed as soon as</span>
+<span class="cm">     * possible.</span>
+<span class="cm">     * You cannot change the pixel content of the picture_t or of the</span>
+<span class="cm">     * subpicture_t.</span>
+<span class="cm">     *</span>
+<span class="cm">     * This function gives away the ownership of the picture and of the</span>
+<span class="cm">     * subpicture, so you must release them as soon as possible.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">       </span><span class="p">(</span><span class="o">*</span><span class="n">display</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">picture_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">subpicture_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Control on the module (mandatory) */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">control</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Manage pending event (optional) */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">       </span><span class="p">(</span><span class="o">*</span><span class="n">manage</span><span class="p">)(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_DEPRECATED</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Private place holder for the vout_display_t module (optional)</span>
+<span class="cm">     *</span>
+<span class="cm">     * A module is free to use it as it wishes.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">vout_display_sys_t</span><span class="w"> </span><span class="o">*</span><span class="n">sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Reserved for the vout_display_t owner.</span>
+<span class="cm">     *</span>
+<span class="cm">     * It must not be overwritten nor used directly by a module.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">vout_display_owner_t</span><span class="w"> </span><span class="n">owner</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEvent</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">va_list</span><span class="w"> </span><span class="n">args</span><span class="p">;</span>
+<span class="w">    </span><span class="n">va_start</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vd</span><span class="o">-&gt;</span><span class="n">owner</span><span class="p">.</span><span class="n">event</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="w">    </span><span class="n">va_end</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventDisplaySize</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_DISPLAY_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventPicturesInvalid</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_PICTURES_INVALID</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventClose</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_CLOSE</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventKey</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_KEY</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#if defined(_WIN32) || defined(__OS2__)</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventFullscreen</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_fullscreen</span><span class="p">,</span>
+<span class="w">                                                    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_window_fullscreen</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_FULLSCREEN</span><span class="p">,</span><span class="w"> </span><span class="n">is_fullscreen</span><span class="p">,</span><span class="w"> </span><span class="n">is_window_fullscreen</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendWindowState</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">state</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_WINDOW_STATE</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="cm">/* The mouse position (State and Moved event) must be expressed against vout_display_t::source unit */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventMouseState</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">button_mask</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_STATE</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">button_mask</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventMouseMoved</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_MOVED</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventMousePressed</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_PRESSED</span><span class="p">,</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventMouseReleased</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_RELEASED</span><span class="p">,</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventMouseDoubleClick</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_MOUSE_DOUBLE_CLICK</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_SendEventViewpointMoved</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span>
+<span class="w">                                                        </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="o">*</span><span class="n">vp</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_display_SendEvent</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_DISPLAY_EVENT_VIEWPOINT_MOVED</span><span class="p">,</span><span class="w"> </span><span class="n">vp</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">vout_window_t</span><span class="w"> </span><span class="o">*</span><span class="nf">vout_display_NewWindow</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vd</span><span class="o">-&gt;</span><span class="n">owner</span><span class="p">.</span><span class="n">window_new</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vout_display_DeleteWindow</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">vout_window_t</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vd</span><span class="o">-&gt;</span><span class="n">owner</span><span class="p">.</span><span class="n">window_del</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">vout_display_IsWindowed</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vout_window_t</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vout_display_NewWindow</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">VOUT_WINDOW_TYPE_INVALID</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<span class="w">        </span><span class="n">vout_display_DeleteWindow</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vout_display_GetDefaultDisplaySize</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vout_display_cfg_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vout_display_place_t</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vout_display_PlacePicture</span><span class="p">(</span><span class="n">vout_display_place_t</span><span class="w"> </span><span class="o">*</span><span class="n">place</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vout_display_cfg_t</span><span class="w"> </span><span class="o">*</span><span class="n">cfg</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">do_clipping</span><span class="p">);</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vout_display_SendMouseMovedDisplayCoordinates</span><span class="p">(</span><span class="n">vout_display_t</span><span class="w"> </span><span class="o">*</span><span class="n">vd</span><span class="p">,</span><span class="w"> </span><span class="n">video_orientation_t</span><span class="w"> </span><span class="n">orient_display</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m_x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m_y</span><span class="p">,</span>
+<span class="w">                                                           </span><span class="n">vout_display_place_t</span><span class="w"> </span><span class="o">*</span><span class="n">place</span><span class="p">);</span>
+
+<span class="cp">#endif </span><span class="cm">/* VLC_VOUT_DISPLAY_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structstream__extractor__t" kind="struct" language="C++" prot="public">
+    <compoundname>stream_extractor_t</compoundname>
+    <sectiondef kind="user-defined">
+      <header>Callbacks for entity extraction</header>
+      <description><para>The following members shall be populated as specified by the documentation associated with <ref refid="structstream__t" kindref="compound">stream_t</ref> for the equivalent name. </para>
+</description>
+      <memberdef kind="variable" id="structstream__extractor__t_1a11e6d4e05f6154e929ff4374d9053eeb" prot="public" static="no" mutable="no">
+        <type>ssize_t(*</type>
+        <definition>ssize_t(* stream_extractor_t::pf_read) (struct stream_extractor_t *, void *buf, size_t len)</definition>
+        <argsstring>)(struct stream_extractor_t *, void *buf, size_t len)</argsstring>
+        <name>pf_read</name>
+        <qualifiedname>stream_extractor_t::pf_read</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="61" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstream__extractor__t_1afafe2a251c78adef2a2b7b20f4945933" prot="public" static="no" mutable="no">
+        <type><ref refid="structblock__t" kindref="compound">block_t</ref> *(*</type>
+        <definition>block_t *(* stream_extractor_t::pf_block) (struct stream_extractor_t *, bool *eof)</definition>
+        <argsstring>)(struct stream_extractor_t *, bool *eof)</argsstring>
+        <name>pf_block</name>
+        <qualifiedname>stream_extractor_t::pf_block</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="62" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstream__extractor__t_1abc349246b9976a31b30f304a6113d4e2" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* stream_extractor_t::pf_seek) (struct stream_extractor_t *, uint64_t)</definition>
+        <argsstring>)(struct stream_extractor_t *, uint64_t)</argsstring>
+        <name>pf_seek</name>
+        <qualifiedname>stream_extractor_t::pf_seek</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="63" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstream__extractor__t_1a4c3e4573b29476988e671262dedb03ef" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* stream_extractor_t::pf_control) (struct stream_extractor_t *, int request, va_list args)</definition>
+        <argsstring>)(struct stream_extractor_t *, int request, va_list args)</argsstring>
+        <name>pf_control</name>
+        <qualifiedname>stream_extractor_t::pf_control</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="64" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstream__extractor__t_1a4193155f0ddda62e49698b119b36f21a" prot="public" static="no" mutable="no">
+        <type>char const  *</type>
+        <definition>char const* stream_extractor_t::identifier</definition>
+        <argsstring></argsstring>
+        <name>identifier</name>
+        <qualifiedname>stream_extractor_t::identifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the name of the entity to be extracted </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="67" column="16" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstream__extractor__t_1af5acb2c4d8c1bcfbb8fd4d5b3c8655ee" prot="public" static="no" mutable="no">
+        <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
+        <definition>stream_t* stream_extractor_t::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <qualifiedname>stream_extractor_t::source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the source stream to be consumed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="68" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstream__extractor__t_1ae9fff24affaa9162e9225e6d0fb63aac" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* stream_extractor_t::p_sys</definition>
+        <argsstring></argsstring>
+        <name>p_sys</name>
+        <qualifiedname>stream_extractor_t::p_sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>private opaque handle to be used by the module </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="69" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>block_t</label>
+        <link refid="structblock__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+          <edgelabel>+pf_release</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>input_thread_t</label>
+        <link refid="structinput__thread__t"/>
+      </node>
+      <node id="1">
+        <label>stream_extractor_t</label>
+        <link refid="structstream__extractor__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pf_block</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+source</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stream_t</label>
+        <link refid="structstream__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_source</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pf_block</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+p_input</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" line="50" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_stream_extractor.h" bodystart="50" bodyend="71"/>
+    <listofallmembers>
+      <member refid="structstream__extractor__t_1a4193155f0ddda62e49698b119b36f21a" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>identifier</name></member>
+      <member refid="structstream__extractor__t_1ae9fff24affaa9162e9225e6d0fb63aac" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>p_sys</name></member>
+      <member refid="structstream__extractor__t_1afafe2a251c78adef2a2b7b20f4945933" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>pf_block</name></member>
+      <member refid="structstream__extractor__t_1a4c3e4573b29476988e671262dedb03ef" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>pf_control</name></member>
+      <member refid="structstream__extractor__t_1a11e6d4e05f6154e929ff4374d9053eeb" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>pf_read</name></member>
+      <member refid="structstream__extractor__t_1abc349246b9976a31b30f304a6113d4e2" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>pf_seek</name></member>
+      <member refid="structstream__extractor__t_1af5acb2c4d8c1bcfbb8fd4d5b3c8655ee" prot="public" virt="non-virtual"><scope>stream_extractor_t</scope><name>source</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

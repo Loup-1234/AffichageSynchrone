@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__libvlc__clock" kind="group">
+    <compoundname>libvlc_clock</compoundname>
+    <title>LibVLC time</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LIBVLC_API int64_t</type>
+        <definition>LIBVLC_API int64_t libvlc_clock</definition>
+        <argsstring>(void)</argsstring>
+        <name>libvlc_clock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the current time as defined by LibVLC. The unit is the microsecond. Time increases monotonically (regardless of time zone changes and RTC adjustements). The origin is arbitrary but consistent across the whole system (e.g. the system uptim, the time since the system was booted). <simplesect kind="note"><para>On systems that support it, the POSIX monotonic clock is used. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="561" column="9" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" declline="561" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__libvlc__clock_1gaf7fb616bf05e66c6ba879f5664d9deb7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int64_t</type>
+        <definition>static int64_t libvlc_delay</definition>
+        <argsstring>(int64_t pts)</argsstring>
+        <name>libvlc_delay</name>
+        <param>
+          <type>int64_t</type>
+          <declname>pts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the delay (in microseconds) until a certain timestamp. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timestamp </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>negative if timestamp is in the past, positive if it is in the future </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" line="569" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/libvlc.h" bodystart="569" bodyend="572"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>These functions provide access to the LibVLC time/clock. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

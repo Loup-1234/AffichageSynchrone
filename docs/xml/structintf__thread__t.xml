@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structintf__thread__t" kind="struct" language="C++" prot="public">
+    <compoundname>intf_thread_t</compoundname>
+    <includes refid="vlc__interface_8h" local="no">vlc_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <member refid="group__interface_1ga9d4027e1dfdfe56384301421469b5910" kind="variable"><name>p_next</name></member>
+      <member refid="group__interface_1ga68f9736b254fe419b8e0bebcdd66cce8" kind="variable"><name>p_sys</name></member>
+      <member refid="group__interface_1ga7aa3dad03a7cbb85ffc02099d05476cb" kind="variable"><name>p_module</name></member>
+      <member refid="group__interface_1gad60f7448d71fbbcb50c9acb9d2b5268d" kind="variable"><name>pf_show_dialog</name></member>
+      <member refid="group__interface_1ga80ec0bead511a9a0060d5f5385fd2ffc" kind="variable"><name>p_cfg</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Describe all interface-specific data of the interface thread </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>config_chain_t</label>
+        <link refid="structconfig__chain__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>intf_thread_t</label>
+        <link refid="structintf__thread__t"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_cfg</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" line="46" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" bodystart="47" bodyend="63"/>
+    <listofallmembers>
+      <member refid="group__interface_1ga80ec0bead511a9a0060d5f5385fd2ffc" prot="public" virt="non-virtual"><scope>intf_thread_t</scope><name>p_cfg</name></member>
+      <member refid="group__interface_1ga7aa3dad03a7cbb85ffc02099d05476cb" prot="public" virt="non-virtual"><scope>intf_thread_t</scope><name>p_module</name></member>
+      <member refid="group__interface_1ga9d4027e1dfdfe56384301421469b5910" prot="public" virt="non-virtual"><scope>intf_thread_t</scope><name>p_next</name></member>
+      <member refid="group__interface_1ga68f9736b254fe419b8e0bebcdd66cce8" prot="public" virt="non-virtual"><scope>intf_thread_t</scope><name>p_sys</name></member>
+      <member refid="group__interface_1gad60f7448d71fbbcb50c9acb9d2b5268d" prot="public" virt="non-virtual"><scope>intf_thread_t</scope><name>pf_show_dialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

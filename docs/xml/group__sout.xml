@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__sout" kind="group">
+    <compoundname>sout</compoundname>
+    <title>Stream output</title>
+    <innerfile refid="vlc__sout_8h">vlc_sout.h</innerfile>
+    <innerclass refid="structsout__instance__t" prot="public">sout_instance_t</innerclass>
+    <innerclass refid="structsout__stream__t" prot="public">sout_stream_t</innerclass>
+    <innerclass refid="structsout__description__data__t" prot="public">sout_description_data_t</innerclass>
+    <innergroup refid="group__sout__access">Access output</innergroup>
+    <innergroup refid="group__sout__mux">Multiplexer</innergroup>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__sout_1gac0c27296818b55cd5b4407bfaa16b188" prot="public" static="no" strong="no">
+        <type></type>
+        <name>sout_stream_query_e</name>
+        <enumvalue id="group__sout_1ggac0c27296818b55cd5b4407bfaa16b188a7bc00c9129b7518e227f4507f3bb3e9b" prot="public">
+          <name>SOUT_STREAM_EMPTY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="193" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="193" bodyend="195"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__sout_1ga1240377314c4f5e005be0593b6242619" prot="public" static="no">
+        <type>struct sout_stream_id_sys_t</type>
+        <definition>typedef struct sout_stream_id_sys_t sout_stream_id_sys_t</definition>
+        <argsstring></argsstring>
+        <name>sout_stream_id_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="64" column="35" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__sout_1ga4dc1ebedfc4383af3a74e4f08dd54b0e" prot="public" static="no">
+        <type>VLC_API void struct sout_description_data_t</type>
+        <definition>typedef VLC_API void struct sout_description_data_t sout_description_data_t</definition>
+        <argsstring></argsstring>
+        <name>sout_description_data_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Description module </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="303" column="25"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__sout_1ga3ff295ce347071efb34c98c946b31f1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void sout_StreamChainDelete</definition>
+        <argsstring>(sout_stream_t *p_first, sout_stream_t *p_last)</argsstring>
+        <name>sout_StreamChainDelete</name>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>p_first</declname>
+        </param>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>p_last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="220" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="220" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1gad611acf854b6c791450111a4af59c4e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+        <definition>VLC_API sout_stream_t * sout_StreamChainNew</definition>
+        <argsstring>(sout_instance_t *p_sout, const char *psz_chain, sout_stream_t *p_next, sout_stream_t **p_last) VLC_USED</argsstring>
+        <name>sout_StreamChainNew</name>
+        <param>
+          <type><ref refid="structsout__instance__t" kindref="compound">sout_instance_t</ref> *</type>
+          <declname>p_sout</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>psz_chain</declname>
+        </param>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>p_next</declname>
+        </param>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> **</type>
+          <declname>p_last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="221" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="221" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1gab3d807a92480dadfc64bd8f82ece3e55" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>sout_stream_id_sys_t *</type>
+        <definition>static sout_stream_id_sys_t * sout_StreamIdAdd</definition>
+        <argsstring>(sout_stream_t *s, const es_format_t *fmt)</argsstring>
+        <name>sout_StreamIdAdd</name>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structes__format__t" kindref="compound">es_format_t</ref> *</type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="224" column="36" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="224" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1ga18723525b39718cc3129773d2a75bb56" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void sout_StreamIdDel</definition>
+        <argsstring>(sout_stream_t *s, sout_stream_id_sys_t *id)</argsstring>
+        <name>sout_StreamIdDel</name>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>sout_stream_id_sys_t *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="230" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="230" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1gae04c2bc4eddc3347982b8dc1592bb1c4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int sout_StreamIdSend</definition>
+        <argsstring>(sout_stream_t *s, sout_stream_id_sys_t *id, block_t *b)</argsstring>
+        <name>sout_StreamIdSend</name>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>sout_stream_id_sys_t *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="236" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="236" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1gaeb733ead6e01d8319c88baf5929f4a57" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void sout_StreamFlush</definition>
+        <argsstring>(sout_stream_t *s, sout_stream_id_sys_t *id)</argsstring>
+        <name>sout_StreamFlush</name>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>sout_stream_id_sys_t *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="242" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="242" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1ga27b9a1a8b276be4e4df0b58851258497" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int sout_StreamControl</definition>
+        <argsstring>(sout_stream_t *s, int i_query,...)</argsstring>
+        <name>sout_StreamControl</name>
+        <param>
+          <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i_query</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="249" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="249" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1ga9ca3807705649b8f9a530420914f85e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structencoder__t" kindref="compound">encoder_t</ref> *</type>
+        <definition>VLC_API encoder_t * sout_EncoderCreate</definition>
+        <argsstring>(vlc_object_t *obj)</argsstring>
+        <name>sout_EncoderCreate</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="267" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="267" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1ga9fcd8958eb29920820f90c19f8082b52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API session_descriptor_t *</type>
+        <definition>VLC_API session_descriptor_t * sout_AnnounceRegisterSDP</definition>
+        <argsstring>(vlc_object_t *, const char *, const char *) VLC_USED</argsstring>
+        <name>sout_AnnounceRegisterSDP</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="273" column="30" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="273" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1gaa1ed71726f60f300f96d9e322f5656c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void sout_AnnounceUnRegister</definition>
+        <argsstring>(vlc_object_t *, session_descriptor_t *)</argsstring>
+        <name>sout_AnnounceUnRegister</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type>session_descriptor_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="274" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="274" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1gaaaae1f5ac869e4d4d130b53399544efb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_sdp_Start</definition>
+        <argsstring>(struct vlc_memstream *, vlc_object_t *obj, const char *cfgpref, const struct sockaddr *src, size_t slen, const struct sockaddr *addr, size_t alen) VLC_USED</argsstring>
+        <name>vlc_sdp_Start</name>
+        <param>
+          <type>struct <ref refid="structvlc__memstream" kindref="compound">vlc_memstream</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>cfgpref</declname>
+        </param>
+        <param>
+          <type>const struct sockaddr *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>slen</declname>
+        </param>
+        <param>
+          <type>const struct sockaddr *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>alen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="285" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="285" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1ga14ee4378a91f7e5f8c008571b69584a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void sdp_AddMedia</definition>
+        <argsstring>(struct vlc_memstream *, const char *type, const char *protocol, int dport, unsigned pt, bool bw_indep, unsigned bw, const char *ptname, unsigned clockrate, unsigned channels, const char *fmtp)</argsstring>
+        <name>sdp_AddMedia</name>
+        <param>
+          <type>struct <ref refid="structvlc__memstream" kindref="compound">vlc_memstream</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dport</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>pt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bw_indep</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>bw</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>ptname</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>clockrate</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>channels</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fmtp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="289" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" declline="289" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sout_1ga2d7472a1b61e319b2ad6c03c389bb72c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void sdp_AddAttribute</definition>
+        <argsstring>(struct vlc_memstream *, const char *name, const char *fmt,...) VLC_FORMAT(3</argsstring>
+        <name>sdp_AddAttribute</name>
+        <param>
+          <type>struct <ref refid="structvlc__memstream" kindref="compound">vlc_memstream</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="294" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__sout_1ga31c773ec9722fc1269abeb7e66bd5a51" prot="public" static="no">
+        <name>sout_EncoderCreate</name>
+        <param><defname>o</defname></param>
+        <initializer>sout_EncoderCreate(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(o))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="268" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sout_1ga5d12a84fe6f4548fd1049bae1da833e4" prot="public" static="no">
+        <name>sout_AnnounceRegisterSDP</name>
+        <param><defname>o</defname></param>
+        <param><defname>sdp</defname></param>
+        <param><defname>addr</defname></param>
+        <initializer>        sout_AnnounceRegisterSDP(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref> (o), sdp, addr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="275" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="275" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sout_1ga7bedf8062b1f67dc561fab36701fa34b" prot="public" static="no">
+        <name>sout_AnnounceUnRegister</name>
+        <param><defname>o</defname></param>
+        <param><defname>a</defname></param>
+        <initializer>        sout_AnnounceUnRegister(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref> (o), a)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="277" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="277" bodyend="278"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

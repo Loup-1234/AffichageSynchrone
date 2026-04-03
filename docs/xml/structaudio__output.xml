@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structaudio__output" kind="struct" language="C++" prot="public">
+    <compoundname>audio_output</compoundname>
+    <includes refid="vlc__aout_8h" local="no">vlc_aout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structaudio__output_1a88143cf6018fefbba4a9a0e8284067b9" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> struct aout_sys_t *</type>
+        <definition>VLC_COMMON_MEMBERS struct aout_sys_t* audio_output::sys</definition>
+        <argsstring></argsstring>
+        <name>sys</name>
+        <qualifiedname>audio_output::sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private data for callbacks </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="119" column="21" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a41bc9e8671e11adb721781af2a277cc7" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* audio_output::start) (audio_output_t *, audio_sample_format_t *fmt)</definition>
+        <argsstring>)(audio_output_t *, audio_sample_format_t *fmt)</argsstring>
+        <name>start</name>
+        <qualifiedname>audio_output::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a new stream (mandatory, cannot be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input stream sample format upon entry, output stream sample format upon return [IN/OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>VLC_SUCCESS on success, non-zero on failure </para>
+</simplesect>
+<simplesect kind="note"><para>No other stream may be already started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="121" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1ad045b1c68f0e60ed577046bd77e3591b" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::stop) (audio_output_t *)</definition>
+        <argsstring>)(audio_output_t *)</argsstring>
+        <name>stop</name>
+        <qualifiedname>audio_output::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops the existing stream (optional, may be NULL). <simplesect kind="note"><para>A stream must have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="128" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1ac90ddecb52ee78022adf0dfe3a35ffab" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* audio_output::time_get) (audio_output_t *, vlc_tick_t *delay)</definition>
+        <argsstring>)(audio_output_t *, vlc_tick_t *delay)</argsstring>
+        <name>time_get</name>
+        <qualifiedname>audio_output::time_get</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Estimates playback buffer latency (optional, may be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the delay until the next sample to be written to the playback buffer is rendered [OUT] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, non-zero on failure or lack of data </para>
+</simplesect>
+<simplesect kind="note"><para>A stream must have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="132" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1aed30544225e26db43e161ac68782fb48" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::play) (audio_output_t *, block_t *)</definition>
+        <argsstring>)(audio_output_t *, block_t *)</argsstring>
+        <name>play</name>
+        <qualifiedname>audio_output::play</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Queues a block of samples for playback (mandatory, cannot be NULL). <simplesect kind="note"><para>A stream must have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="139" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a57cc0133ca030e3de45b5a5bfc158092" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::pause) (audio_output_t *, bool pause, vlc_tick_t date)</definition>
+        <argsstring>)(audio_output_t *, bool pause, vlc_tick_t date)</argsstring>
+        <name>pause</name>
+        <qualifiedname>audio_output::pause</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pauses or resumes playback (optional, may be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pause</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pause if true, resume from pause if false </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>date</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timestamp when the pause or resume was requested </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>A stream must have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="143" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1ac88458a193c7b6656f043df672f3687b" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::flush) (audio_output_t *, bool wait)</definition>
+        <argsstring>)(audio_output_t *, bool wait)</argsstring>
+        <name>flush</name>
+        <qualifiedname>audio_output::flush</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flushes or drains the playback buffers (mandatory, cannot be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to wait for playback of pending buffers (drain), false to discard pending buffers (flush) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>A stream must have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="149" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a38d3e01f0ae4d0a266510a7321b3a9f2" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* audio_output::volume_set) (audio_output_t *, float volume)</definition>
+        <argsstring>)(audio_output_t *, float volume)</argsstring>
+        <name>volume_set</name>
+        <qualifiedname>audio_output::volume_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Changes playback volume (optional, may be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>requested volume (0. = mute, 1. = nominal) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The volume is always a positive number. </para>
+</simplesect>
+<simplesect kind="warning"><para>A stream may or may not have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="155" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a9ed26f41b18750a73cd52b4c1b3e9369" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* audio_output::mute_set) (audio_output_t *, bool mute)</definition>
+        <argsstring>)(audio_output_t *, bool mute)</argsstring>
+        <name>mute_set</name>
+        <qualifiedname>audio_output::mute_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Changes muting (optinal, may be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to mute, false to unmute </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>A stream may or may not have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="161" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a9e4f5e7ddf9fafe634225ca67de65b39" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* audio_output::device_select) (audio_output_t *, const char *id)</definition>
+        <argsstring>)(audio_output_t *, const char *id)</argsstring>
+        <name>device_select</name>
+        <qualifiedname>audio_output::device_select</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Selects an audio output device (optional, may be NULL). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nul-terminated device unique identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, non-zero on failure. </para>
+</simplesect>
+<simplesect kind="warning"><para>A stream may or may not have been started when called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="166" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a2d2df784ac59a79aa545c4aeb2cf370a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool audio_output::headphones</definition>
+        <argsstring></argsstring>
+        <name>headphones</name>
+        <qualifiedname>audio_output::headphones</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default to false, set it to true if the current sink is using headphones </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="174" column="14" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1aedb52d48c9296e900019b7b430766a27" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structaudio__output" kindref="compound">audio_output</ref></type>
+        <definition>struct audio_output audio_output::current_sink_info</definition>
+        <argsstring></argsstring>
+        <name>current_sink_info</name>
+        <qualifiedname>audio_output::current_sink_info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current sink informations set by the module from the <ref refid="structaudio__output_1a41bc9e8671e11adb721781af2a277cc7" kindref="member">start()</ref> function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="177" column="9"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a48e1bb14fa5e245f1bbb9e24e2d1c890" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::volume_report) (audio_output_t *, float)</definition>
+        <argsstring>)(audio_output_t *, float)</argsstring>
+        <name>volume_report</name>
+        <qualifiedname>audio_output::volume_report</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="180" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1afc21af25075dbdbe19b2d8529c3f64d3" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::mute_report) (audio_output_t *, bool)</definition>
+        <argsstring>)(audio_output_t *, bool)</argsstring>
+        <name>mute_report</name>
+        <qualifiedname>audio_output::mute_report</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="181" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1ad82c33d99832a285efd1143c92e36bfd" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::policy_report) (audio_output_t *, bool)</definition>
+        <argsstring>)(audio_output_t *, bool)</argsstring>
+        <name>policy_report</name>
+        <qualifiedname>audio_output::policy_report</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="182" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1abc739bd92eac88ce68875ab648dd0a8d" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::device_report) (audio_output_t *, const char *)</definition>
+        <argsstring>)(audio_output_t *, const char *)</argsstring>
+        <name>device_report</name>
+        <qualifiedname>audio_output::device_report</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="183" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1ac3379b4640c4cf3968e663d9e764f211" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::hotplug_report) (audio_output_t *, const char *, const char *)</definition>
+        <argsstring>)(audio_output_t *, const char *, const char *)</argsstring>
+        <name>hotplug_report</name>
+        <qualifiedname>audio_output::hotplug_report</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="184" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1aaffd0efd2b2c34c1e8f4d358456af73c" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* audio_output::gain_request) (audio_output_t *, float)</definition>
+        <argsstring>)(audio_output_t *, float)</argsstring>
+        <name>gain_request</name>
+        <qualifiedname>audio_output::gain_request</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="185" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a18c5e68e3bd3fa0711b4e8582ff190e6" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* audio_output::restart_request) (audio_output_t *, unsigned)</definition>
+        <argsstring>)(audio_output_t *, unsigned)</argsstring>
+        <name>restart_request</name>
+        <qualifiedname>audio_output::restart_request</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="186" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaudio__output_1a2d1350100d79d6fad690a588e53b9470" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structaudio__output" kindref="compound">audio_output</ref></type>
+        <definition>struct audio_output audio_output::event</definition>
+        <argsstring></argsstring>
+        <name>event</name>
+        <qualifiedname>audio_output::event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="187" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Audio output object </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>audio_output</label>
+        <link refid="structaudio__output"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" line="115" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_aout.h" bodystart="116" bodyend="188"/>
+    <listofallmembers>
+      <member refid="structaudio__output_1aedb52d48c9296e900019b7b430766a27" prot="public" virt="non-virtual"><scope>audio_output</scope><name>current_sink_info</name></member>
+      <member refid="structaudio__output_1abc739bd92eac88ce68875ab648dd0a8d" prot="public" virt="non-virtual"><scope>audio_output</scope><name>device_report</name></member>
+      <member refid="structaudio__output_1a9e4f5e7ddf9fafe634225ca67de65b39" prot="public" virt="non-virtual"><scope>audio_output</scope><name>device_select</name></member>
+      <member refid="structaudio__output_1a2d1350100d79d6fad690a588e53b9470" prot="public" virt="non-virtual"><scope>audio_output</scope><name>event</name></member>
+      <member refid="structaudio__output_1ac88458a193c7b6656f043df672f3687b" prot="public" virt="non-virtual"><scope>audio_output</scope><name>flush</name></member>
+      <member refid="structaudio__output_1aaffd0efd2b2c34c1e8f4d358456af73c" prot="public" virt="non-virtual"><scope>audio_output</scope><name>gain_request</name></member>
+      <member refid="structaudio__output_1a2d2df784ac59a79aa545c4aeb2cf370a" prot="public" virt="non-virtual"><scope>audio_output</scope><name>headphones</name></member>
+      <member refid="structaudio__output_1ac3379b4640c4cf3968e663d9e764f211" prot="public" virt="non-virtual"><scope>audio_output</scope><name>hotplug_report</name></member>
+      <member refid="structaudio__output_1afc21af25075dbdbe19b2d8529c3f64d3" prot="public" virt="non-virtual"><scope>audio_output</scope><name>mute_report</name></member>
+      <member refid="structaudio__output_1a9ed26f41b18750a73cd52b4c1b3e9369" prot="public" virt="non-virtual"><scope>audio_output</scope><name>mute_set</name></member>
+      <member refid="structaudio__output_1a57cc0133ca030e3de45b5a5bfc158092" prot="public" virt="non-virtual"><scope>audio_output</scope><name>pause</name></member>
+      <member refid="structaudio__output_1aed30544225e26db43e161ac68782fb48" prot="public" virt="non-virtual"><scope>audio_output</scope><name>play</name></member>
+      <member refid="structaudio__output_1ad82c33d99832a285efd1143c92e36bfd" prot="public" virt="non-virtual"><scope>audio_output</scope><name>policy_report</name></member>
+      <member refid="structaudio__output_1a18c5e68e3bd3fa0711b4e8582ff190e6" prot="public" virt="non-virtual"><scope>audio_output</scope><name>restart_request</name></member>
+      <member refid="structaudio__output_1a41bc9e8671e11adb721781af2a277cc7" prot="public" virt="non-virtual"><scope>audio_output</scope><name>start</name></member>
+      <member refid="structaudio__output_1ad045b1c68f0e60ed577046bd77e3591b" prot="public" virt="non-virtual"><scope>audio_output</scope><name>stop</name></member>
+      <member refid="structaudio__output_1a88143cf6018fefbba4a9a0e8284067b9" prot="public" virt="non-virtual"><scope>audio_output</scope><name>sys</name></member>
+      <member refid="structaudio__output_1ac90ddecb52ee78022adf0dfe3a35ffab" prot="public" virt="non-virtual"><scope>audio_output</scope><name>time_get</name></member>
+      <member refid="structaudio__output_1a48e1bb14fa5e245f1bbb9e24e2d1c890" prot="public" virt="non-virtual"><scope>audio_output</scope><name>volume_report</name></member>
+      <member refid="structaudio__output_1a38d3e01f0ae4d0a266510a7321b3a9f2" prot="public" virt="non-virtual"><scope>audio_output</scope><name>volume_set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

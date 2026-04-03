@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_arrays.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_arrays.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_arrays.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_arrays.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-arrays-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-arrays-h"></span><h1>Program Listing for File vlc_arrays.h<a class="headerlink" href="#program-listing-for-file-vlc-arrays-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_arrays.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-arrays-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_arrays.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_arrays.h : Arrays and data structures handling</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2004 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Samuel Hocevar &lt;sam@zoy.org&gt;</span>
+<span class="cm"> *          Clément Stenac &lt;zorglub@videolan.org&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_ARRAYS_H_</span>
+<span class="cp">#define VLC_ARRAYS_H_</span>
+
+
+<span class="cm">/* realloc() that never fails *if* downsizing */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">realloc_down</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realloc</span><span class="p">(</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#define TAB_INIT( count, tab )                  \</span>
+<span class="cp">  do {                                          \</span>
+<span class="cp">    (count) = 0;                                \</span>
+<span class="cp">    (tab) = NULL;                               \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define TAB_CLEAN( count, tab )                 \</span>
+<span class="cp">  do {                                          \</span>
+<span class="cp">    free( tab );                                \</span>
+<span class="cp">    (count)= 0;                                 \</span>
+<span class="cp">    (tab)= NULL;                                \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define TAB_APPEND_CAST( cast, count, tab, p )             \</span>
+<span class="cp">  do {                                          \</span>
+<span class="cp">    if( (count) &gt; 0 )                           \</span>
+<span class="cp">        (tab) = cast realloc( tab, sizeof( *(tab) ) * ( (count) + 1 ) ); \</span>
+<span class="cp">    else                                        \</span>
+<span class="cp">        (tab) = cast malloc( sizeof( *(tab) ) );    \</span>
+<span class="cp">    if( !(tab) ) abort();                       \</span>
+<span class="cp">    (tab)[count] = (p);                         \</span>
+<span class="cp">    (count)++;                                  \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define TAB_APPEND( count, tab, p )             \</span>
+<span class="cp">    TAB_APPEND_CAST( , count, tab, p )</span>
+
+<span class="cp">#define TAB_FIND( count, tab, p, idx )          \</span>
+<span class="cp">  do {                                          \</span>
+<span class="cp">    for( (idx) = 0; (idx) &lt; (count); (idx)++ )  \</span>
+<span class="cp">        if( (tab)[(idx)] == (p) )               \</span>
+<span class="cp">            break;                              \</span>
+<span class="cp">    if( (idx) &gt;= (count) )                      \</span>
+<span class="cp">        (idx) = -1;                             \</span>
+<span class="cp">  } while(0)</span>
+
+
+<span class="cp">#define TAB_ERASE( count, tab, index )      \</span>
+<span class="cp">  do {                                      \</span>
+<span class="cp">        if( (count) &gt; 1 )                   \</span>
+<span class="cp">            memmove( (tab) + (index),       \</span>
+<span class="cp">                     (tab) + (index) + 1,   \</span>
+<span class="cp">                     ((count) - (index) - 1 ) * sizeof( *(tab) ) );\</span>
+<span class="cp">        (count)--;                          \</span>
+<span class="cp">        if( (count) == 0 )                  \</span>
+<span class="cp">        {                                   \</span>
+<span class="cp">            free( tab );                    \</span>
+<span class="cp">            (tab) = NULL;                   \</span>
+<span class="cp">        }                                   \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define TAB_REMOVE( count, tab, p )             \</span>
+<span class="cp">  do {                                          \</span>
+<span class="cp">        int i_index;                            \</span>
+<span class="cp">        TAB_FIND( count, tab, p, i_index );     \</span>
+<span class="cp">        if( i_index &gt;= 0 )                      \</span>
+<span class="cp">            TAB_ERASE( count, tab, i_index );   \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define TAB_INSERT_CAST( cast, count, tab, p, index ) do { \</span>
+<span class="cp">    if( (count) &gt; 0 )                           \</span>
+<span class="cp">        (tab) = cast realloc( tab, sizeof( *(tab) ) * ( (count) + 1 ) ); \</span>
+<span class="cp">    else                                        \</span>
+<span class="cp">        (tab) = cast malloc( sizeof( *(tab) ) );       \</span>
+<span class="cp">    if( !(tab) ) abort();                       \</span>
+<span class="cp">    if( (count) - (index) &gt; 0 )                 \</span>
+<span class="cp">        memmove( (tab) + (index) + 1,           \</span>
+<span class="cp">                 (tab) + (index),               \</span>
+<span class="cp">                 ((count) - (index)) * sizeof( *(tab) ) );\</span>
+<span class="cp">    (tab)[(index)] = (p);                       \</span>
+<span class="cp">    (count)++;                                  \</span>
+<span class="cp">} while(0)</span>
+
+<span class="cp">#define TAB_INSERT( count, tab, p, index )      \</span>
+<span class="cp">    TAB_INSERT_CAST( , count, tab, p, index )</span>
+
+<span class="cp">#define BSEARCH( entries, count, elem, zetype, key, answer ) \</span>
+<span class="cp">   do {  \</span>
+<span class="cp">    int low = 0, high = count - 1;   \</span>
+<span class="cp">    answer = -1; \</span>
+<span class="cp">    while( low &lt;= high ) {\</span>
+<span class="cp">        int mid = ((unsigned int)low + (unsigned int)high) &gt;&gt; 1;\</span>
+<span class="cp">        zetype mid_val = entries[mid] elem;\</span>
+<span class="cp">        if( mid_val &lt; key ) \</span>
+<span class="cp">            low = mid + 1; \</span>
+<span class="cp">        else if ( mid_val &gt; key ) \</span>
+<span class="cp">            high = mid -1;  \</span>
+<span class="cp">        else    \</span>
+<span class="cp">        {   \</span>
+<span class="cp">            answer = mid;  break;   \</span>
+<span class="cp">        }\</span>
+<span class="cp">    } \</span>
+<span class="cp"> } while(0)</span>
+
+
+<span class="cm">/************************************************************************</span>
+<span class="cm"> * Dynamic arrays with progressive allocation</span>
+<span class="cm"> ************************************************************************/</span>
+
+<span class="cm">/* Internal functions */</span>
+<span class="cp">#define _ARRAY_ALLOC(array, newsize) {                                      \</span>
+<span class="cp">    (array).i_alloc = newsize;                                              \</span>
+<span class="cp">    (array).p_elems = realloc( (array).p_elems, (array).i_alloc *           \</span>
+<span class="cp">                               sizeof(*(array).p_elems) );                  \</span>
+<span class="cp">    if( !(array).p_elems ) abort();                                         \</span>
+<span class="cp">}</span>
+
+<span class="cp">#define _ARRAY_GROW1(array) {                                               \</span>
+<span class="cp">    if( (array).i_alloc &lt; 10 )                                              \</span>
+<span class="cp">        _ARRAY_ALLOC(array, 10 )                                            \</span>
+<span class="cp">    else if( (array).i_alloc == (array).i_size )                            \</span>
+<span class="cp">        _ARRAY_ALLOC(array, (int)((array).i_alloc * 1.5) )                    \</span>
+<span class="cp">}</span>
+
+<span class="cp">#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))</span>
+
+<span class="cm">/* API */</span>
+<span class="cp">#define DECL_ARRAY(type) struct {                                           \</span>
+<span class="cp">    int i_alloc;                                                            \</span>
+<span class="cp">    int i_size;                                                             \</span>
+<span class="cp">    type *p_elems;                                                          \</span>
+<span class="cp">}</span>
+
+<span class="cp">#define TYPEDEF_ARRAY(type, name) typedef DECL_ARRAY(type) name;</span>
+
+<span class="cp">#define ARRAY_INIT(array)                                                   \</span>
+<span class="cp">  do {                                                                      \</span>
+<span class="cp">    (array).i_alloc = 0;                                                    \</span>
+<span class="cp">    (array).i_size = 0;                                                     \</span>
+<span class="cp">    (array).p_elems = NULL;                                                 \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define ARRAY_RESET(array)                                                  \</span>
+<span class="cp">  do {                                                                      \</span>
+<span class="cp">    (array).i_alloc = 0;                                                    \</span>
+<span class="cp">    (array).i_size = 0;                                                     \</span>
+<span class="cp">    free( (array).p_elems ); (array).p_elems = NULL;                        \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define ARRAY_APPEND(array, elem)                                           \</span>
+<span class="cp">  do {                                                                      \</span>
+<span class="cp">    _ARRAY_GROW1(array);                                                    \</span>
+<span class="cp">    (array).p_elems[(array).i_size] = elem;                                 \</span>
+<span class="cp">    (array).i_size++;                                                       \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define ARRAY_INSERT(array,elem,pos)                                        \</span>
+<span class="cp">  do {                                                                      \</span>
+<span class="cp">    _ARRAY_GROW1(array);                                                    \</span>
+<span class="cp">    if( (array).i_size - pos ) {                                            \</span>
+<span class="cp">        memmove( (array).p_elems + pos + 1, (array).p_elems + pos,          \</span>
+<span class="cp">                 ((array).i_size-pos) * sizeof(*(array).p_elems) );         \</span>
+<span class="cp">    }                                                                       \</span>
+<span class="cp">    (array).p_elems[pos] = elem;                                            \</span>
+<span class="cp">    (array).i_size++;                                                       \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define _ARRAY_SHRINK(array) {                                              \</span>
+<span class="cp">    if( (array).i_size &gt; 10 &amp;&amp; (array).i_size &lt; (int)((array).i_alloc / 1.5) ) {  \</span>
+<span class="cp">        _ARRAY_ALLOC(array, (array).i_size + 5);                            \</span>
+<span class="cp">    }                                                                       \</span>
+<span class="cp">}</span>
+
+<span class="cp">#define ARRAY_REMOVE(array,pos)                                             \</span>
+<span class="cp">  do {                                                                      \</span>
+<span class="cp">    if( (array).i_size - (pos) - 1 )                                        \</span>
+<span class="cp">    {                                                                       \</span>
+<span class="cp">        memmove( (array).p_elems + pos, (array).p_elems + pos + 1,          \</span>
+<span class="cp">                 ( (array).i_size - pos - 1 ) *sizeof(*(array).p_elems) );  \</span>
+<span class="cp">    }                                                                       \</span>
+<span class="cp">    (array).i_size--;                                                       \</span>
+<span class="cp">    _ARRAY_SHRINK(array);                                                   \</span>
+<span class="cp">  } while(0)</span>
+
+<span class="cp">#define ARRAY_VAL(array, pos) array.p_elems[pos]</span>
+
+<span class="cp">#define ARRAY_BSEARCH(array, elem, zetype, key, answer) \</span>
+<span class="cp">    BSEARCH( (array).p_elems, (array).i_size, elem, zetype, key, answer)</span>
+
+<span class="cp">#define FOREACH_ARRAY( item, array ) { \</span>
+<span class="cp">    int fe_idx; \</span>
+<span class="cp">    for( fe_idx = 0 ; fe_idx &lt; (array).i_size ; fe_idx++ ) \</span>
+<span class="cp">    { \</span>
+<span class="cp">        item = (array).p_elems[fe_idx];</span>
+
+<span class="cp">#define FOREACH_END() } }</span>
+
+
+<span class="cm">/************************************************************************</span>
+<span class="cm"> * Dynamic arrays with progressive allocation (Preferred API)</span>
+<span class="cm"> ************************************************************************/</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_array_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_count</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">pp_elems</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_array_init</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_array</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">p_array</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_array</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_array_clear</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_array</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_array</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">vlc_array_init</span><span class="p">(</span><span class="w"> </span><span class="n">p_array</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* Read */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">vlc_array_count</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_array</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_array</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#ifndef __cplusplus</span>
+<span class="cp"># define vlc_array_item_at_index(ar, idx) \</span>
+<span class="cp">    _Generic((ar), \</span>
+<span class="cp">        const vlc_array_t *: ((ar)-&gt;pp_elems[idx]), \</span>
+<span class="cp">        vlc_array_t *: ((ar)-&gt;pp_elems[idx]))</span>
+<span class="cp">#else</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_array_item_at_index</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">vlc_array_item_at_index</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span>
+<span class="w">                                                   </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="nf">vlc_array_index_of_item</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span>
+<span class="w">                                               </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">elem</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* Write */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_array_insert</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">elem</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">pp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="n">realloc</span><span class="p">(</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">unlikely</span><span class="p">(</span><span class="n">pp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">memmove</span><span class="p">(</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">pp</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elem</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_array_insert_or_abort</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">elem</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_insert</span><span class="p">(</span><span class="w"> </span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="n">elem</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">abort</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_array_append</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">elem</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">pp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="n">realloc</span><span class="p">(</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">unlikely</span><span class="p">(</span><span class="n">pp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">pp</span><span class="p">[</span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elem</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_array_append_or_abort</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">elem</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_append</span><span class="p">(</span><span class="w"> </span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">abort</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_array_remove</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_array_t</span><span class="w"> </span><span class="o">*</span><span class="n">ar</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">pp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">memmove</span><span class="p">(</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="o">--</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="n">realloc</span><span class="p">(</span><span class="w"> </span><span class="n">pp</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">i_count</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">likely</span><span class="p">(</span><span class="n">pp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">ar</span><span class="o">-&gt;</span><span class="n">pp_elems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="cm">/************************************************************************</span>
+<span class="cm"> * Dictionaries</span>
+<span class="cm"> ************************************************************************/</span>
+
+<span class="cm">/* This function is not intended to be crypto-secure, we only want it to be</span>
+<span class="cm"> * fast and not suck too much. This one is pretty fast and did 0 collisions</span>
+<span class="cm"> * in wenglish&#39;s dictionary.</span>
+<span class="cm"> */</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="nf">DictHash</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hashsize</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">i_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">psz_string</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="n">psz_string</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">i_hash</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="o">*</span><span class="n">psz_string</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">i_hash</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i_hash</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">            </span><span class="n">i_hash</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">i_hash</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i_hash</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">hashsize</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_dictionary_entry_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w">   </span><span class="n">psz_key</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w">   </span><span class="n">p_value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_dictionary_entry_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_dictionary_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_size</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">p_entries</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">kVLCDictionaryNotFound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_dictionary_init</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_size</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">i_size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="w"> </span><span class="n">i_size</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">i_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vlc_dictionary_clear</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span>
+<span class="w">                                         </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_free</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_obj</span><span class="w"> </span><span class="p">),</span>
+<span class="w">                                         </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_obj</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_current</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">            </span><span class="n">p_current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_current</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">p_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_current</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pf_free</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                    </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_free</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="n">p_current</span><span class="o">-&gt;</span><span class="n">p_value</span><span class="p">,</span><span class="w"> </span><span class="n">p_obj</span><span class="w"> </span><span class="p">);</span>
+<span class="w">                </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_current</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="p">);</span>
+<span class="w">                </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_current</span><span class="w"> </span><span class="p">);</span>
+<span class="w">                </span><span class="n">p_current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span>
+<span class="nf">vlc_dictionary_has_key</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_key</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DictHash</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i_pos</span><span class="p">];</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span>
+<span class="nf">vlc_dictionary_value_for_key</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_key</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">kVLCDictionaryNotFound</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DictHash</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i_pos</span><span class="p">];</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_entry</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">kVLCDictionaryNotFound</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Make sure we return the right item. (Hash collision) */</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_value</span><span class="p">;</span>
+<span class="w">        </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">kVLCDictionaryNotFound</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span>
+<span class="nf">vlc_dictionary_keys_count</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span>
+<span class="nf">vlc_dictionary_is_empty</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span>
+<span class="nf">vlc_dictionary_all_keys</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">ppsz_ret</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlc_dictionary_keys_count</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">ppsz_ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">unlikely</span><span class="p">(</span><span class="o">!</span><span class="n">ppsz_ret</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">ppsz_ret</span><span class="p">[</span><span class="n">count</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ppsz_ret</span><span class="p">[</span><span class="n">count</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ppsz_ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span>
+<span class="nf">vlc_dictionary_insert_impl_</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span>
+<span class="w">                             </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_value</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">rebuild</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">vlc_dictionary_init</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DictHash</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">p_entry</span><span class="p">));</span>
+<span class="w">    </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strdup</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i_pos</span><span class="p">];</span>
+<span class="w">    </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i_pos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">rebuild</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* Count how many items there was */</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span><span class="w"> </span><span class="n">count</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* XXX: this need tuning */</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="cm">/* Here it starts to be not good, rebuild a bigger dictionary */</span>
+<span class="w">            </span><span class="k">struct</span><span class="w"> </span><span class="nc">vlc_dictionary_t</span><span class="w"> </span><span class="n">new_dict</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">i_new_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="cm">/* XXX: this need tuning */</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">            </span><span class="n">vlc_dictionary_init</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">new_dict</span><span class="p">,</span><span class="w"> </span><span class="n">i_new_size</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">vlc_dictionary_insert_impl_</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">new_dict</span><span class="p">,</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_value</span><span class="p">,</span>
+<span class="w">                                             </span><span class="nb">false</span><span class="w"> </span><span class="cm">/* To avoid multiple rebuild loop */</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">vlc_dictionary_clear</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_dict</span><span class="p">.</span><span class="n">i_size</span><span class="p">;</span>
+<span class="w">            </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_dict</span><span class="p">.</span><span class="n">p_entries</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span>
+<span class="nf">vlc_dictionary_insert</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_value</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_dictionary_insert_impl_</span><span class="p">(</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_value</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span>
+<span class="nf">vlc_dictionary_remove_value_for_key</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vlc_dictionary_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_dict</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_free</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_data</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_obj</span><span class="w"> </span><span class="p">),</span>
+<span class="w">                                     </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_obj</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DictHash</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">i_size</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i_pos</span><span class="p">];</span>
+<span class="w">    </span><span class="n">vlc_dictionary_entry_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_prev</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_entry</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Not found, nothing to do */</span>
+
+<span class="w">    </span><span class="cm">/* Hash collision */</span>
+<span class="w">    </span><span class="n">p_prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="w"> </span><span class="n">psz_key</span><span class="p">,</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pf_free</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                </span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pf_free</span><span class="w"> </span><span class="p">)(</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_value</span><span class="p">,</span><span class="w"> </span><span class="n">p_obj</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_prev</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                </span><span class="n">p_dict</span><span class="o">-&gt;</span><span class="n">p_entries</span><span class="p">[</span><span class="n">i_pos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="n">p_prev</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">psz_key</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">p_prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="p">;</span>
+<span class="w">        </span><span class="n">p_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_entry</span><span class="o">-&gt;</span><span class="n">p_next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">p_entry</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* No key was found */</span>
+<span class="p">}</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="c1">// C++ helpers</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">vlc_delete_all</span><span class="p">(</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="n">container</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="p">;</span>
+<span class="w">        </span><span class="o">++</span><span class="n">it</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">#endif</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

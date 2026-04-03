@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__subpicture" kind="group">
+    <compoundname>subpicture</compoundname>
+    <title>Video sub-pictures</title>
+    <innerfile refid="vlc__subpicture_8h">vlc_subpicture.h</innerfile>
+    <innerclass refid="structsubpicture__region__t" prot="public">subpicture_region_t</innerclass>
+    <innerclass refid="structsubpicture__updater__t" prot="public">subpicture_updater_t</innerclass>
+    <innerclass refid="structsubpicture__t" prot="public">subpicture_t</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__subpicture_1ga9be3c246cffef0547fcebbc5d9282ebb" prot="public" static="no">
+        <type>struct <ref refid="group__subpicture_1ga9be3c246cffef0547fcebbc5d9282ebb" kindref="member">subpicture_region_private_t</ref></type>
+        <definition>typedef struct subpicture_region_private_t subpicture_region_private_t</definition>
+        <argsstring></argsstring>
+        <name>subpicture_region_private_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Video subtitle region spu core private </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="48" column="42" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__subpicture_1ga20c82bab2734b73e9921f1bf416c4415" prot="public" static="no">
+        <type>struct subpicture_updater_sys_t</type>
+        <definition>typedef struct subpicture_updater_sys_t subpicture_updater_sys_t</definition>
+        <argsstring></argsstring>
+        <name>subpicture_updater_sys_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="121" column="39" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__subpicture_1ga0e38c3a6ef1f162cb7eb5a3c823dceab" prot="public" static="no">
+        <type>struct subpicture_private_t</type>
+        <definition>typedef struct subpicture_private_t subpicture_private_t</definition>
+        <argsstring></argsstring>
+        <name>subpicture_private_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="143" column="35" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__subpicture_1ga688f373dbfb2a24000965b48f7d52557" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structsubpicture__region__t" kindref="compound">subpicture_region_t</ref> *</type>
+        <definition>VLC_API subpicture_region_t * subpicture_region_New</definition>
+        <argsstring>(const video_format_t *p_fmt)</argsstring>
+        <name>subpicture_region_New</name>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>p_fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will create a new subpicture region.</para>
+<para>You must use subpicture_region_Delete to destroy it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="92" column="30" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="92" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1gacac77af39686761bc175d12b769c3dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void subpicture_region_Delete</definition>
+        <argsstring>(subpicture_region_t *p_region)</argsstring>
+        <name>subpicture_region_Delete</name>
+        <param>
+          <type><ref refid="structsubpicture__region__t" kindref="compound">subpicture_region_t</ref> *</type>
+          <declname>p_region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will destroy a subpicture region allocated by subpicture_region_New.</para>
+<para>You may give it NULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="100" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="100" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1gac38fccf7b141ea5d16d875d05412dace" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void subpicture_region_ChainDelete</definition>
+        <argsstring>(subpicture_region_t *p_head)</argsstring>
+        <name>subpicture_region_ChainDelete</name>
+        <param>
+          <type><ref refid="structsubpicture__region__t" kindref="compound">subpicture_region_t</ref> *</type>
+          <declname>p_head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will destroy a list of subpicture regions allocated by subpicture_region_New.</para>
+<para>Provided for convenience. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="108" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="108" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1ga40d4d62b7587c08783b0b55b084e7c12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structsubpicture__region__t" kindref="compound">subpicture_region_t</ref> *</type>
+        <definition>VLC_API subpicture_region_t * subpicture_region_Copy</definition>
+        <argsstring>(subpicture_region_t *p_region)</argsstring>
+        <name>subpicture_region_Copy</name>
+        <param>
+          <type><ref refid="structsubpicture__region__t" kindref="compound">subpicture_region_t</ref> *</type>
+          <declname>p_region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will copy a subpicture region to a new allocated one and transfer all the properties</para>
+<para>Provided for convenience. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="116" column="29" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="116" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1ga1e768046646536b15df93b993d616a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        <definition>VLC_API subpicture_t * subpicture_New</definition>
+        <argsstring>(const subpicture_updater_t *)</argsstring>
+        <name>subpicture_New</name>
+        <param>
+          <type>const <ref refid="structsubpicture__updater__t" kindref="compound">subpicture_updater_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function create a new empty subpicture.</para>
+<para>You must use subpicture_Delete to destroy it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="200" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="200" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1ga86b24b8b7a37505a97ce99e34b8fa83e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void subpicture_Delete</definition>
+        <argsstring>(subpicture_t *p_subpic)</argsstring>
+        <name>subpicture_Delete</name>
+        <param>
+          <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+          <declname>p_subpic</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function delete a subpicture created by subpicture_New. You may give it NULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="206" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="206" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1gaf3108e4c91f0802d668ec467b3ae01c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        <definition>VLC_API subpicture_t * subpicture_NewFromPicture</definition>
+        <argsstring>(vlc_object_t *, picture_t *, vlc_fourcc_t i_chroma)</argsstring>
+        <name>subpicture_NewFromPicture</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">vlc_fourcc_t</ref></type>
+          <declname>i_chroma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will create a subpicture having one region in the requested chroma showing the given picture.</para>
+<para>The <ref refid="structpicture__t" kindref="compound">picture_t</ref> given is not released nor used inside the returned <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="215" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="215" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1gabafefe85899d876a0606516033509258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void subpicture_Update</definition>
+        <argsstring>(subpicture_t *, const video_format_t *src, const video_format_t *, vlc_tick_t)</argsstring>
+        <name>subpicture_Update</name>
+        <param>
+          <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will update the content of a subpicture created with a non NULL <ref refid="structsubpicture__updater__t" kindref="compound">subpicture_updater_t</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="221" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="221" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__subpicture_1ga5ceafd0a2f9ac2816ddf168b79d01b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API unsigned</type>
+        <definition>VLC_API unsigned picture_BlendSubpicture</definition>
+        <argsstring>(picture_t *, filter_t *p_blend, subpicture_t *)</argsstring>
+        <name>picture_BlendSubpicture</name>
+        <param>
+          <type><ref refid="structpicture__t" kindref="compound">picture_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structfilter__t" kindref="compound">filter_t</ref> *</type>
+          <declname>p_blend</declname>
+        </param>
+        <param>
+          <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will blend a given subpicture onto a picture.</para>
+<para>The subpicture and all its region must:<itemizedlist>
+<listitem><para>be absolute.</para>
+</listitem><listitem><para>not be ephemere.</para>
+</listitem><listitem><para>not have the fade flag.</para>
+</listitem><listitem><para>contains only picture (no text rendering). <simplesect kind="return"><para>the number of region(s) successfully blent </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="233" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" declline="233" declcolumn="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__subpicture_1ga68e8b82681f8d3075f8108b0efdfd817" prot="public" static="no">
+        <name>SUBPICTURE_ALIGN_LEFT</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="81" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__subpicture_1ga7b9087eee7079ddcc3eeff14b51a9f44" prot="public" static="no">
+        <name>SUBPICTURE_ALIGN_RIGHT</name>
+        <initializer>0x2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="82" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__subpicture_1ga3a549cdc9ab0089f26945ac2e952c5f2" prot="public" static="no">
+        <name>SUBPICTURE_ALIGN_TOP</name>
+        <initializer>0x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="83" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__subpicture_1ga93aea6df99b28c007fc30dfdf592dc3f" prot="public" static="no">
+        <name>SUBPICTURE_ALIGN_BOTTOM</name>
+        <initializer>0x8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="84" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__subpicture_1gafb486c60f13abd7a6105f24af6d7df3a" prot="public" static="no">
+        <name>SUBPICTURE_ALIGN_MASK</name>
+        <initializer>                                ( SUBPICTURE_ALIGN_LEFT|SUBPICTURE_ALIGN_RIGHT| \
+                                SUBPICTURE_ALIGN_TOP |SUBPICTURE_ALIGN_BOTTOM )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="85" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="85" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Subpictures are pictures that should be displayed on top of the video, like subtitles and OSD </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

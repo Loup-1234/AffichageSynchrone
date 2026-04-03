@@ -1,0 +1,1960 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__thread" kind="group">
+    <compoundname>thread</compoundname>
+    <title>Threads and synchronization primitives</title>
+    <innerfile refid="vlc__threads_8h">vlc_threads.h</innerfile>
+    <innerclass refid="structvlc__thread__t" prot="public">vlc_thread_t</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__thread_1ga4e76c53251ddef709f76f34d408e72eb" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__thread_1gga4e76c53251ddef709f76f34d408e72eba98990409f8ff9da29ad4b28d9fb65335" prot="public">
+          <name>VLC_CLEANUP_PUSH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga4e76c53251ddef709f76f34d408e72eba86a7de494d5ff96156687aa25fa42be4" prot="public">
+          <name>VLC_CLEANUP_POP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga4e76c53251ddef709f76f34d408e72ebabd530dc6f4903b8e40bc49d354ed8e65" prot="public">
+          <name>VLC_CANCEL_ADDR_SET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga4e76c53251ddef709f76f34d408e72eba900a879d5cac47a87d5b0adedf5fcd3c" prot="public">
+          <name>VLC_CANCEL_ADDR_CLEAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="949" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="950" bodyend="955"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__thread_1ga785b8ee7950754ac3a51e4a459811672" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <enumvalue id="group__thread_1gga785b8ee7950754ac3a51e4a459811672abd0adc94fc2147b1672cf1df6cf20328" prot="public">
+          <name>VLC_AVCODEC_MUTEX</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga785b8ee7950754ac3a51e4a459811672aa476f7365134aba4fa5357b11beb69ab" prot="public">
+          <name>VLC_GCRYPT_MUTEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga785b8ee7950754ac3a51e4a459811672acb9b916bbc419e0bbfea37afdefda795" prot="public">
+          <name>VLC_XLIB_MUTEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga785b8ee7950754ac3a51e4a459811672ae6191196801619e7b5b285dd3597c6b1" prot="public">
+          <name>VLC_MOSAIC_MUTEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga785b8ee7950754ac3a51e4a459811672ab8d22d0e451f5a35976ac83aa4241d01" prot="public">
+          <name>VLC_HIGHLIGHT_MUTEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__thread_1gga785b8ee7950754ac3a51e4a459811672a3234ff055baa1cdbc3a12b0f464b0c7f" prot="public">
+          <name>VLC_MAX_MUTEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1049" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1050" bodyend="1061"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" prot="public" static="no">
+        <type>pthread_mutex_t</type>
+        <definition>typedef pthread_mutex_t vlc_mutex_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_mutex_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mutex.</para>
+<para>Storage space for a mutual exclusion lock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="267" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" prot="public" static="no">
+        <type>pthread_cond_t</type>
+        <definition>typedef pthread_cond_t vlc_cond_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_cond_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Condition variable.</para>
+<para>Storage space for a thread condition variable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="279" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" prot="public" static="no">
+        <type>sem_t</type>
+        <definition>typedef sem_t vlc_sem_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_sem_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Semaphore.</para>
+<para>Storage space for a thread-safe semaphore. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="297" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c" prot="public" static="no">
+        <type>pthread_rwlock_t</type>
+        <definition>typedef pthread_rwlock_t vlc_rwlock_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_rwlock_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read/write lock.</para>
+<para>Storage space for a slim reader/writer lock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="304" column="26" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__thread_1ga0d1018cf815d96bfdbf085daf9a8bc25" prot="public" static="no">
+        <type>pthread_key_t</type>
+        <definition>typedef pthread_key_t vlc_threadvar_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_threadvar_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread-local key handle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="314" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__thread_1ga5c35c719bf1ebc1111978e24f66e60b8" prot="public" static="no">
+        <type>struct vlc_timer *</type>
+        <definition>typedef struct vlc_timer* vlc_timer_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_timer_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Threaded timer handle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="319" column="24" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__thread_1gaba57d505d7e964799540aa2f054c6954" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_testcancel</definition>
+        <argsstring>(void)</argsstring>
+        <name>vlc_testcancel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Issues an explicit deferred cancellation point.</para>
+<para>This has no effects if thread cancellation is disabled. This can be called when there is a rather slow non-sleeping operation. This is also used to force a cancellation point in a function that would otherwise <emphasis>not always</emphasis> be one (<ref refid="group__fifo_1ga3da75b8e3e7a7315b3ac39cfd1f7d3de" kindref="member">block_FifoGet()</ref> is an example). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="47" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="47" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga660e087861f3484e7ee42f52f7bd917e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_mutex_init</definition>
+        <argsstring>(vlc_mutex_t *)</argsstring>
+        <name>vlc_mutex_init</name>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a fast mutex.</para>
+<para>Recursive locking of a fast mutex is undefined behaviour. (In debug builds, recursive locking will cause an assertion failure.) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="363" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="363" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga9a0785911907da6b086b0cda99653a78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_mutex_init_recursive</definition>
+        <argsstring>(vlc_mutex_t *)</argsstring>
+        <name>vlc_mutex_init_recursive</name>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a recursive mutex. <simplesect kind="warning"><para>This is strongly discouraged. Please use normal mutexes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="369" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="369" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga12b9b026eb9e5a7ad2887060162c7512" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_mutex_destroy</definition>
+        <argsstring>(vlc_mutex_t *)</argsstring>
+        <name>vlc_mutex_destroy</name>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deinitializes a mutex.</para>
+<para>The mutex must not be locked, otherwise behaviour is undefined. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="376" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="376" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga5ca171a3fdcc88d7140b8b07e8c062e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_mutex_lock</definition>
+        <argsstring>(vlc_mutex_t *)</argsstring>
+        <name>vlc_mutex_lock</name>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Acquires a mutex.</para>
+<para>If needed, this waits for any other thread to release it.</para>
+<para><simplesect kind="warning"><para>Beware of deadlocks when locking multiple mutexes at the same time, or when using mutexes from callbacks.</para>
+</simplesect>
+<simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="388" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="388" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaf78345239e01702947192a01e7608760" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_mutex_trylock</definition>
+        <argsstring>(vlc_mutex_t *) VLC_USED</argsstring>
+        <name>vlc_mutex_trylock</name>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tries to acquire a mutex.</para>
+<para>This function acquires the mutex if and only if it is not currently held by another thread. This function never sleeps and can be used in delay-critical code paths.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>If this function fails, then the mutex is held... by another thread. The calling thread must deal with the error appropriately. That typically implies postponing the operations that would have required the mutex. If the thread cannot defer those operations, then it must use <ref refid="group__thread_1ga5ca171a3fdcc88d7140b8b07e8c062e2" kindref="member">vlc_mutex_lock()</ref>. If in doubt, use <ref refid="group__thread_1ga5ca171a3fdcc88d7140b8b07e8c062e2" kindref="member">vlc_mutex_lock()</ref> instead.</para>
+</simplesect>
+<simplesect kind="return"><para>0 if the mutex could be acquired, an error code otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="407" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="407" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga2d9b8768ff0af713ab020f66c79f3637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_mutex_unlock</definition>
+        <argsstring>(vlc_mutex_t *)</argsstring>
+        <name>vlc_mutex_unlock</name>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases a mutex.</para>
+<para>If the mutex is not held by the calling thread, the behaviour is undefined.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="416" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="416" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gadd1b498d459bda64a717f023073c9e23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_cond_init</definition>
+        <argsstring>(vlc_cond_t *)</argsstring>
+        <name>vlc_cond_init</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a condition variable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="421" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="421" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gadb0bb49b2824fbef0a6e9c4709f32cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_cond_init_daytime</definition>
+        <argsstring>(vlc_cond_t *)</argsstring>
+        <name>vlc_cond_init_daytime</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a condition variable (wall clock).</para>
+<para>This function initializes a condition variable for timed waiting using the UTC wall clock time. The time reference is the same as with time() and with timespec_get() and TIME_UTC. vlc_cond_timedwait_daytime() must be instead of <ref refid="group__thread_1gaaecb0c77335ff83e4e1529d836c9c482" kindref="member">vlc_cond_timedwait()</ref> for actual waiting. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="432" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="432" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gad399ee8455df3680b0881138a6e2bbfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_cond_destroy</definition>
+        <argsstring>(vlc_cond_t *)</argsstring>
+        <name>vlc_cond_destroy</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deinitializes a condition variable.</para>
+<para>No threads shall be waiting or signaling the condition, otherwise the behavior is undefined. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="440" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="440" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga6d3ae6c039b3dabe4b6ade3a39af1a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_cond_signal</definition>
+        <argsstring>(vlc_cond_t *)</argsstring>
+        <name>vlc_cond_signal</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wakes up one thread waiting on a condition variable.</para>
+<para>If any thread is currently waiting on the condition variable, at least one of those threads will be woken up. Otherwise, this function has no effects.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="450" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="450" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaf39147e51466dd4dc92775dabbded9a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_cond_broadcast</definition>
+        <argsstring>(vlc_cond_t *)</argsstring>
+        <name>vlc_cond_broadcast</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wakes up all threads waiting on a condition variable.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="457" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="457" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaa4182903deb4277f148ec5c0b250167f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_cond_wait</definition>
+        <argsstring>(vlc_cond_t *cond, vlc_mutex_t *mutex)</argsstring>
+        <name>vlc_cond_wait</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits on a condition variable.</para>
+<para>The calling thread will be suspended until another thread calls <ref refid="group__thread_1ga6d3ae6c039b3dabe4b6ade3a39af1a16" kindref="member">vlc_cond_signal()</ref> or <ref refid="group__thread_1gaf39147e51466dd4dc92775dabbded9a2" kindref="member">vlc_cond_broadcast()</ref> on the same condition variable, the thread is cancelled with <ref refid="group__thread_1gaa01d87b577819120098cb6e9e26269ad" kindref="member">vlc_cancel()</ref>, or the system causes a <emphasis>spurious</emphasis> unsolicited wake-up.</para>
+<para>A mutex is needed to wait on a condition variable. It must <bold>not</bold> be a recursive mutex. Although it is possible to use the same mutex for multiple condition, it is not valid to use different mutexes for the same condition variable at the same time from different threads.</para>
+<para>The canonical way to use a condition variable to wait for event foobar is: <programlisting><codeline><highlight class="normal">vlc_mutex_lock(&amp;lock);</highlight></codeline>
+<codeline><highlight class="normal">mutex_cleanup_push(&amp;lock);<sp/>//<sp/>release<sp/>the<sp/>mutex<sp/>in<sp/>case<sp/>of<sp/>cancellation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">while<sp/>(!foobar)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vlc_cond_wait(&amp;wait,<sp/>&amp;lock);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>--<sp/>foobar<sp/>is<sp/>now<sp/>true,<sp/>do<sp/>something<sp/>about<sp/>it<sp/>here<sp/>--</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">vlc_cleanup_pop();</highlight></codeline>
+<codeline><highlight class="normal">vlc_mutex_unlock(&amp;lock);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>This function is a cancellation point. In case of thread cancellation, the mutex is always locked before cancellation proceeds.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>condition variable to wait on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mutex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mutex which is unlocked while waiting, then locked again when waking up. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="493" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="493" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaaecb0c77335ff83e4e1529d836c9c482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_cond_timedwait</definition>
+        <argsstring>(vlc_cond_t *cond, vlc_mutex_t *mutex, vlc_tick_t deadline)</argsstring>
+        <name>vlc_cond_timedwait</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+          <declname>cond</declname>
+        </param>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+          <declname>mutex</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>deadline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits on a condition variable up to a certain date.</para>
+<para>This works like <ref refid="group__thread_1gaa4182903deb4277f148ec5c0b250167f" kindref="member">vlc_cond_wait()</ref> but with an additional time-out. The time-out is expressed as an absolute timestamp using the same arbitrary time reference as the <ref refid="group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b" kindref="member">mdate()</ref> and mwait() functions.</para>
+<para><simplesect kind="note"><para>This function is a cancellation point. In case of thread cancellation, the mutex is always locked before cancellation proceeds.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>condition variable to wait on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mutex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mutex which is unlocked while waiting, then locked again when waking up </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deadline</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><bold>absolute</bold> timeout</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>If the variable was initialized with <ref refid="group__thread_1gadb0bb49b2824fbef0a6e9c4709f32cca" kindref="member">vlc_cond_init_daytime()</ref>, or was statically initialized with <ref refid="group__thread_1ga18c464ebf9c574074ab1af2e61f8ada7" kindref="member">VLC_STATIC_COND</ref>, the time reference used by this function is unspecified (depending on the implementation, it might be the Unix epoch or the <ref refid="group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b" kindref="member">mdate()</ref> clock).</para>
+</simplesect>
+<simplesect kind="return"><para>0 if the condition was signaled, an error code in case of timeout. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="517" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="517" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gacc7664751630a14a71eb75249a4378eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int vlc_cond_timedwait_daytime</definition>
+        <argsstring>(vlc_cond_t *, vlc_mutex_t *, time_t)</argsstring>
+        <name>vlc_cond_timedwait_daytime</name>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref> *</type>
+        </param>
+        <param>
+          <type>time_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="520" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="520" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaf30051af153b2ea69d81e948b3f35ef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_sem_init</definition>
+        <argsstring>(vlc_sem_t *, unsigned count)</argsstring>
+        <name>vlc_sem_init</name>
+        <param>
+          <type><ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref> *</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a semaphore.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initial semaphore value (typically 0) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="527" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="527" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga07da8dc1c139e78389a6122fb3cb752a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_sem_destroy</definition>
+        <argsstring>(vlc_sem_t *)</argsstring>
+        <name>vlc_sem_destroy</name>
+        <param>
+          <type><ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deinitializes a semaphore. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="532" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="532" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga1c89019e116ba396f8f6949da119ed87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_sem_post</definition>
+        <argsstring>(vlc_sem_t *)</argsstring>
+        <name>vlc_sem_post</name>
+        <param>
+          <type><ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increments the value of a semaphore.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="return"><para>0 on success, EOVERFLOW in case of integer overflow. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="541" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="541" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gad690a85e538e894a8646788466a1fcbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_sem_wait</definition>
+        <argsstring>(vlc_sem_t *)</argsstring>
+        <name>vlc_sem_wait</name>
+        <param>
+          <type><ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits on a semaphore.</para>
+<para>This function atomically waits for the semaphore to become non-zero then decrements it, and returns. If the semaphore is non-zero on entry, it is immediately decremented.</para>
+<para><simplesect kind="note"><para>This function may be a point of cancellation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="552" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="552" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga8fff20c3562ba4f8b231cf43069e5710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_rwlock_init</definition>
+        <argsstring>(vlc_rwlock_t *)</argsstring>
+        <name>vlc_rwlock_init</name>
+        <param>
+          <type><ref refid="group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c" kindref="member">vlc_rwlock_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes a read/write lock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="557" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="557" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga1121ff7b3e19bcedd424eafa579a23f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_rwlock_destroy</definition>
+        <argsstring>(vlc_rwlock_t *)</argsstring>
+        <name>vlc_rwlock_destroy</name>
+        <param>
+          <type><ref refid="group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c" kindref="member">vlc_rwlock_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys an initialized unused read/write lock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="562" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="562" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga04613b9870fa2d1f0329c73a22e3bf22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_rwlock_rdlock</definition>
+        <argsstring>(vlc_rwlock_t *)</argsstring>
+        <name>vlc_rwlock_rdlock</name>
+        <param>
+          <type><ref refid="group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c" kindref="member">vlc_rwlock_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Acquires a read/write lock for reading.</para>
+<para><simplesect kind="note"><para>Recursion is allowed. </para>
+</simplesect>
+<simplesect kind="note"><para>This function may be a point of cancellation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="570" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="570" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga682dbd6f2f1ace2eb93f431801a47e4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_rwlock_wrlock</definition>
+        <argsstring>(vlc_rwlock_t *)</argsstring>
+        <name>vlc_rwlock_wrlock</name>
+        <param>
+          <type><ref refid="group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c" kindref="member">vlc_rwlock_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Acquires a read/write lock for writing. Recursion is not allowed. <simplesect kind="note"><para>This function may be a point of cancellation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="576" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="576" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga208963c7ee66cec383fc186653462b08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_rwlock_unlock</definition>
+        <argsstring>(vlc_rwlock_t *)</argsstring>
+        <name>vlc_rwlock_unlock</name>
+        <param>
+          <type><ref refid="group__thread_1gabb4cd013c20bf5c5e783f39088bfab0c" kindref="member">vlc_rwlock_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases a read/write lock.</para>
+<para>The calling thread must hold the lock. Otherwise behaviour is undefined.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="585" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="585" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga2071eee55ea93d40cd2d889edae76f75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_threadvar_create</definition>
+        <argsstring>(vlc_threadvar_t *key, void(*destr)(void *))</argsstring>
+        <name>vlc_threadvar_create</name>
+        <param>
+          <type><ref refid="group__thread_1ga0d1018cf815d96bfdbf085daf9a8bc25" kindref="member">vlc_threadvar_t</ref> *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>destr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a thread-specific variable.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to store the thread-specific variable handle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a destruction callback. It is called whenever a thread exits and the thread-specific variable has a non-NULL value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, a system error code otherwise. This function can actually fail: on most systems, there is a fixed limit to the number of thread-specific variables in a given process. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="598" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="598" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga562d702e02763372b0f39cdd9cfb5f29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_threadvar_delete</definition>
+        <argsstring>(vlc_threadvar_t *)</argsstring>
+        <name>vlc_threadvar_delete</name>
+        <param>
+          <type><ref refid="group__thread_1ga0d1018cf815d96bfdbf085daf9a8bc25" kindref="member">vlc_threadvar_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deallocates a thread-specific variable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="603" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="603" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaca658b8b5492c78736cccd584d8252b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_threadvar_set</definition>
+        <argsstring>(vlc_threadvar_t key, void *value)</argsstring>
+        <name>vlc_threadvar_set</name>
+        <param>
+          <type><ref refid="group__thread_1ga0d1018cf815d96bfdbf085daf9a8bc25" kindref="member">vlc_threadvar_t</ref></type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets a thread-specific variable.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>thread-local variable key (created with <ref refid="group__thread_1ga2071eee55ea93d40cd2d889edae76f75" kindref="member">vlc_threadvar_create()</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>new value for the variable for the calling thread </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, a system error code otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="612" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="612" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gadb08da692a9c414c57d9163cb1448e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void *</type>
+        <definition>VLC_API void * vlc_threadvar_get</definition>
+        <argsstring>(vlc_threadvar_t)</argsstring>
+        <name>vlc_threadvar_get</name>
+        <param>
+          <type><ref refid="group__thread_1ga0d1018cf815d96bfdbf085daf9a8bc25" kindref="member">vlc_threadvar_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the value of a thread-local variable for the calling thread. This function cannot fail.</para>
+<para><simplesect kind="return"><para>the value associated with the given variable for the calling or NULL if no value was set. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="621" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="621" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gab308300ea9c5e26ca7bcb64afed1ada3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_addr_wait</definition>
+        <argsstring>(void *addr, unsigned val)</argsstring>
+        <name>vlc_addr_wait</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits on an address.</para>
+<para>Puts the calling thread to sleep if a specific value is stored at a specified address. The thread will sleep until it is woken up by a call to <ref refid="group__thread_1gaa7a9c5fb4f9371ca875293037a55878a" kindref="member">vlc_addr_signal()</ref> or <ref refid="group__thread_1gae458cb00d001966325088fbcdec93ac8" kindref="member">vlc_addr_broadcast()</ref> in another thread, or spuriously.</para>
+<para>If the value does not match, do nothing and return immediately.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address to check for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to match at the address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="635" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="635" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaf1e30c3d1002c46e511ce82fa1f1f4b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool vlc_addr_timedwait</definition>
+        <argsstring>(void *addr, unsigned val, vlc_tick_t delay)</argsstring>
+        <name>vlc_addr_timedwait</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits on an address with a time-out.</para>
+<para>This function operates as <ref refid="group__thread_1gab308300ea9c5e26ca7bcb64afed1ada3" kindref="member">vlc_addr_wait()</ref> but provides an additional time-out. If the time-out elapses, the thread resumes and the function returns.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address to check for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to match at the address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time-out duration</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the function was woken up before the time-out, false if the time-out elapsed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="651" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="651" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaa7a9c5fb4f9371ca875293037a55878a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_addr_signal</definition>
+        <argsstring>(void *addr)</argsstring>
+        <name>vlc_addr_signal</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wakes up one thread on an address.</para>
+<para>Wakes up (at least) one of the thread sleeping on the specified address. The address must be equal to the first parameter given by at least one thread sleeping within the <ref refid="group__thread_1gab308300ea9c5e26ca7bcb64afed1ada3" kindref="member">vlc_addr_wait()</ref> or <ref refid="group__thread_1gaf1e30c3d1002c46e511ce82fa1f1f4b3" kindref="member">vlc_addr_timedwait()</ref> functions. If no threads are found, this function does nothing.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address identifying which threads may be woken up </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="663" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="663" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gae458cb00d001966325088fbcdec93ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vlc_addr_broadcast</definition>
+        <argsstring>(void *addr)</argsstring>
+        <name>vlc_addr_broadcast</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wakes up all thread on an address.</para>
+<para>Wakes up all threads sleeping on the specified address (if any). Any thread sleeping within a call to <ref refid="group__thread_1gab308300ea9c5e26ca7bcb64afed1ada3" kindref="member">vlc_addr_wait()</ref> or <ref refid="group__thread_1gaf1e30c3d1002c46e511ce82fa1f1f4b3" kindref="member">vlc_addr_timedwait()</ref> with the specified address as first call parameter will be woken up.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address identifying which threads to wake up </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="674" column="6" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="674" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaddffb928a1966cf64dada5d913248514" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_clone</definition>
+        <argsstring>(vlc_thread_t *th, void *(*entry)(void *), void *data, int priority) VLC_USED</argsstring>
+        <name>vlc_clone</name>
+        <param>
+          <type><ref refid="structvlc__thread__t" kindref="compound">vlc_thread_t</ref> *</type>
+          <declname>th</declname>
+        </param>
+        <param>
+          <type>void *(*)(void *)</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates and starts a new thread.</para>
+<para>The thread must be <emphasis>joined</emphasis> with <ref refid="group__thread_1ga05befb3e4d38e135447d9d9eb996da8f" kindref="member">vlc_join()</ref> to reclaim resources when it is not needed anymore.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>th</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>storage space for the handle of the new thread (cannot be NULL) [OUT] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>entry point for the thread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data parameter given to the entry point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>thread priority value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, a standard error code on error. </para>
+</simplesect>
+<simplesect kind="note"><para>In case of error, the value of *th is undefined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="690" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="690" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaa01d87b577819120098cb6e9e26269ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_cancel</definition>
+        <argsstring>(vlc_thread_t)</argsstring>
+        <name>vlc_cancel</name>
+        <param>
+          <type><ref refid="structvlc__thread__t" kindref="compound">vlc_thread_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Marks a thread as cancelled.</para>
+<para>Next time the target thread reaches a cancellation point (while not having disabled cancellation), it will run its cancellation cleanup handler, the thread variable destructors, and terminate.</para>
+<para><ref refid="group__thread_1ga05befb3e4d38e135447d9d9eb996da8f" kindref="member">vlc_join()</ref> must be used regardless of a thread being cancelled or not, to avoid leaking resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="703" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="703" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga05befb3e4d38e135447d9d9eb996da8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_join</definition>
+        <argsstring>(vlc_thread_t th, void **result)</argsstring>
+        <name>vlc_join</name>
+        <param>
+          <type><ref refid="structvlc__thread__t" kindref="compound">vlc_thread_t</ref></type>
+          <declname>th</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits for a thread to complete (if needed), then destroys it.</para>
+<para><simplesect kind="note"><para>This is a cancellation point. In case of cancellation, the thread is <bold>not</bold> joined.</para>
+</simplesect>
+<simplesect kind="warning"><para>A thread cannot join itself (normally VLC will abort if this is attempted). Also a detached thread <bold>cannot</bold> be joined.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>th</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>thread handle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[OUT] pointer to write the thread return value or NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="717" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="717" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga92a0f9c42e70edb2ffa3dbc095a48b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_savecancel</definition>
+        <argsstring>(void)</argsstring>
+        <name>vlc_savecancel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Disables thread cancellation.</para>
+<para>This functions saves the current cancellation state (enabled or disabled), then disables cancellation for the calling thread. It must be called before entering a piece of code that is not cancellation-safe, unless it can be proven that the calling thread will not be cancelled.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="return"><para>Previous cancellation state (opaque value for <ref refid="group__thread_1ga7d45f13a05b62e665daf69db4f820c7a" kindref="member">vlc_restorecancel()</ref>). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="731" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="731" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga7d45f13a05b62e665daf69db4f820c7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_restorecancel</definition>
+        <argsstring>(int state)</argsstring>
+        <name>vlc_restorecancel</name>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Restores the cancellation state.</para>
+<para>This function restores the cancellation state of the calling thread to a state previously saved by <ref refid="group__thread_1ga92a0f9c42e70edb2ffa3dbc095a48b27" kindref="member">vlc_savecancel()</ref>.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>previous state as returned by <ref refid="group__thread_1ga92a0f9c42e70edb2ffa3dbc095a48b27" kindref="member">vlc_savecancel()</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="743" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="743" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaeeccd6907169b461f054877229fe50b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_control_cancel</definition>
+        <argsstring>(int cmd,...)</argsstring>
+        <name>vlc_control_cancel</name>
+        <param>
+          <type>int</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal handler for thread cancellation.</para>
+<para>Do not call this function directly. Use wrapper macros instead: <ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push()</ref>, <ref refid="group__thread_1ga027a7d8748800afff5e4535209c0d90b" kindref="member">vlc_cleanup_pop()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="751" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="751" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga2438e817e125b1fe22397faff8e9baf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structvlc__thread__t" kindref="compound">vlc_thread_t</ref></type>
+        <definition>VLC_API vlc_thread_t vlc_thread_self</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_thread_self</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread handle.</para>
+<para>This function returns the thread handle of the calling thread.</para>
+<para><simplesect kind="note"><para>The exact type of the thread handle depends on the platform, including an integer type, a pointer type or a compound type of any size. If you need an integer identifier, use <ref refid="group__thread_1ga645b01e9cdd9cd21a98b3d984831f844" kindref="member">vlc_thread_id()</ref> instead.</para>
+</simplesect>
+<simplesect kind="note"><para>vlc_join(vlc_thread_self(), NULL) is undefined, as it obviously does not make any sense (it might result in a deadlock, but there are no warranties that it will).</para>
+</simplesect>
+<simplesect kind="return"><para>the thread handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="768" column="22" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="768" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga645b01e9cdd9cd21a98b3d984831f844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API unsigned long</type>
+        <definition>VLC_API unsigned long vlc_thread_id</definition>
+        <argsstring>(void) VLC_USED</argsstring>
+        <name>vlc_thread_id</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thread identifier.</para>
+<para>This function returns the identifier of the calling thread. The identifier cannot change for the entire duration of the thread, and no other thread can have the same identifier at the same time in the same process. Typically, the identifier is also unique across all running threads of all existing processes, but that depends on the operating system.</para>
+<para>There are no particular semantics to the thread ID with LibVLC. It is provided mainly for tracing and debugging.</para>
+<para><simplesect kind="warning"><para>This function is not currently implemented on all supported platforms. Where not implemented, it returns (unsigned long)-1.</para>
+</simplesect>
+<simplesect kind="return"><para>the thread identifier (or -1 if unimplemented) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="787" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="787" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+        <definition>VLC_API vlc_tick_t mdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>mdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Precision monotonic clock.</para>
+<para>In principles, the clock has a precision of 1 MHz. But the actual resolution may be much lower, especially when it comes to sleeping with mwait() or msleep(). Most general-purpose operating systems provide a resolution of only 100 to 1000 Hz.</para>
+<para><simplesect kind="warning"><para>The origin date (time value &quot;zero&quot;) is not specified. It is typically the time the kernel started, but this is platform-dependent. If you need wall clock time, use gettimeofday() instead.</para>
+</simplesect>
+<simplesect kind="return"><para>a timestamp in microseconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="803" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="803" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga6e03b768bdc640314117bd1c5d20d393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void mwait</definition>
+        <argsstring>(vlc_tick_t deadline)</argsstring>
+        <name>mwait</name>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>deadline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits until a deadline.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deadline</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timestamp to wait for (<ref refid="group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b" kindref="member">mdate()</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The deadline may be exceeded due to OS scheduling. </para>
+</simplesect>
+<simplesect kind="note"><para>This function is a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="813" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="813" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaa915ef105ccc23dcb3c87ced63cad088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void msleep</definition>
+        <argsstring>(vlc_tick_t delay)</argsstring>
+        <name>msleep</name>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits for an interval of time.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>how long to wait (in microseconds)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The delay may be exceeded due to OS scheduling. </para>
+</simplesect>
+<simplesect kind="note"><para>This function is a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="823" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="823" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gac582bbcd866fff4c700f1ae359ad55e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_timer_create</definition>
+        <argsstring>(vlc_timer_t *id, void(*func)(void *), void *data) VLC_USED</argsstring>
+        <name>vlc_timer_create</name>
+        <param>
+          <type><ref refid="group__thread_1ga5c35c719bf1ebc1111978e24f66e60b8" kindref="member">vlc_timer_t</ref> *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes an asynchronous timer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to timer to be initialized </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function that the timer will call </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter for the timer function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, a system error code otherwise.</para>
+</simplesect>
+<simplesect kind="warning"><para>Asynchronous timers are processed from an unspecified thread. </para>
+</simplesect>
+<simplesect kind="note"><para>Multiple occurrences of a single interval timer are serialized: they cannot run concurrently. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="893" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="893" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gafc0cd5594b3cfd1db212ab3d6231f988" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_timer_destroy</definition>
+        <argsstring>(vlc_timer_t timer)</argsstring>
+        <name>vlc_timer_destroy</name>
+        <param>
+          <type><ref refid="group__thread_1ga5c35c719bf1ebc1111978e24f66e60b8" kindref="member">vlc_timer_t</ref></type>
+          <declname>timer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys an initialized timer.</para>
+<para>If needed, the timer is first disarmed. Behaviour is undefined if the specified timer is not initialized.</para>
+<para><simplesect kind="warning"><para>This function <bold>must</bold> be called before the timer data can be freed and before the timer callback function can be unmapped/unloaded.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timer to destroy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="907" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="907" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gaff3929fb12a5a55484443501454bdeae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_timer_schedule</definition>
+        <argsstring>(vlc_timer_t timer, bool absolute, vlc_tick_t value, vlc_tick_t interval)</argsstring>
+        <name>vlc_timer_schedule</name>
+        <param>
+          <type><ref refid="group__thread_1ga5c35c719bf1ebc1111978e24f66e60b8" kindref="member">vlc_timer_t</ref></type>
+          <declname>timer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>absolute</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+          <declname>interval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Arms or disarms an initialized timer.</para>
+<para>This functions overrides any previous call to itself.</para>
+<para><simplesect kind="note"><para>A timer can fire later than requested due to system scheduling limitations. An interval timer can fail to trigger sometimes, either because the system is busy or suspended, or because a previous iteration of the timer is still running. See also <ref refid="group__thread_1ga72e653f83aa45db5eaf0808df9a4b7ea" kindref="member">vlc_timer_getoverrun()</ref>.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initialized timer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>absolute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the timer value origin is the same as <ref refid="group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b" kindref="member">mdate()</ref> if true, the timer value is relative to now if false. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>zero to disarm the timer, otherwise the initial time to wait before firing the timer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>zero to fire the timer just once, otherwise the timer repetition interval. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="927" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="927" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga72e653f83aa45db5eaf0808df9a4b7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API unsigned</type>
+        <definition>VLC_API unsigned vlc_timer_getoverrun</definition>
+        <argsstring>(vlc_timer_t) VLC_USED</argsstring>
+        <name>vlc_timer_getoverrun</name>
+        <param>
+          <type><ref refid="group__thread_1ga5c35c719bf1ebc1111978e24f66e60b8" kindref="member">vlc_timer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fetches and resets the overrun counter for a timer.</para>
+<para>This functions returns the number of times that the interval timer should have fired, but the callback was not invoked due to scheduling problems. The call resets the counter to zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initialized timer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the timer overrun counter (typically zero) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="940" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="940" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga532d4077c5c133dee5b937b0126b33bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API unsigned</type>
+        <definition>VLC_API unsigned vlc_GetCPUCount</definition>
+        <argsstring>(void)</argsstring>
+        <name>vlc_GetCPUCount</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Count CPUs.</para>
+<para><simplesect kind="return"><para>number of available (logical) CPUs. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="947" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="947" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga0c08c6c3f35ba11f40daa51dc2436617" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlc_cleanup_lock</definition>
+        <argsstring>(void *lock)</argsstring>
+        <name>vlc_cleanup_lock</name>
+        <param>
+          <type>void *</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1009" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1009" bodyend="1012"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gae9039a11e237421cd132f83943841bbd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlc_cancel_addr_set</definition>
+        <argsstring>(void *addr)</argsstring>
+        <name>vlc_cancel_addr_set</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1015" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1015" bodyend="1018"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1ga56ecd6829c1c4a4d0f91215c683ec98b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlc_cancel_addr_clear</definition>
+        <argsstring>(void *addr)</argsstring>
+        <name>vlc_cancel_addr_clear</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1020" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1020" bodyend="1023"/>
+      </memberdef>
+      <memberdef kind="function" id="group__thread_1gab9f6c69caae21aab54cb24f13e7f2f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_global_mutex</definition>
+        <argsstring>(unsigned, bool)</argsstring>
+        <name>vlc_global_mutex</name>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal handler for global mutexes.</para>
+<para>Do not use this function directly. Use helper macros instead: <ref refid="group__thread_1ga1d6f2fe1b518f075be9607e7da332743" kindref="member">vlc_global_lock()</ref>, <ref refid="group__thread_1gacaff2e0df7412c40994155cb12713f4c" kindref="member">vlc_global_unlock()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1069" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" declline="1069" declcolumn="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__thread_1ga0d943bc9c02ff07a476f61beefa86b63" prot="public" static="no">
+        <name>LIBVLC_USE_PTHREAD</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether LibVLC threads are based on POSIX threads. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="242" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gae45a668a1ae722a6eac727af8625cab6" prot="public" static="no">
+        <name>LIBVLC_USE_PTHREAD_CLEANUP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether LibVLC thread cancellation is based on POSIX threads. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="247" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga20ebef5ea28637629561ada839cb1c62" prot="public" static="no">
+        <name>VLC_THREAD_CANCELED</name>
+        <initializer>PTHREAD_CANCELED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return value of a canceled thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="260" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gac3cbb7445bb65ad5a86b1d338ae853a4" prot="public" static="no">
+        <name>VLC_STATIC_MUTEX</name>
+        <initializer>PTHREAD_MUTEX_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Static initializer for (static) mutex. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="272" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga18c464ebf9c574074ab1af2e61f8ada7" prot="public" static="no">
+        <name>VLC_STATIC_COND</name>
+        <initializer>PTHREAD_COND_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Static initializer for (static) condition variable.</para>
+<para><simplesect kind="note"><para>The condition variable will use the default clock, which is OS-dependent. Therefore, where timed waits are necessary the condition variable should always be initialized dynamically explicit instead of using this initializer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="290" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga1dabcdecdea118c8fabdc5acbc3377b5" prot="public" static="no">
+        <name>VLC_STATIC_RWLOCK</name>
+        <initializer>PTHREAD_RWLOCK_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Static initializer for (static) read/write lock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="309" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga8fce225438265f9bb92542cbbcc84aef" prot="public" static="no">
+        <name>VLC_THREAD_PRIORITY_LOW</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="321" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga967945286ebb11bfc6bad728c6718072" prot="public" static="no">
+        <name>VLC_THREAD_PRIORITY_INPUT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="322" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga0b0c9381347b1c5251223bab1a43ac4c" prot="public" static="no">
+        <name>VLC_THREAD_PRIORITY_AUDIO</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="323" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gabf534e13fa64d11ab054e1c7e29fff13" prot="public" static="no">
+        <name>VLC_THREAD_PRIORITY_VIDEO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="324" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga28b65e33fa073664f50df89c8b8c48b2" prot="public" static="no">
+        <name>VLC_THREAD_PRIORITY_OUTPUT</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="325" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gaceef3755b7a979a13003c7f1c23e7030" prot="public" static="no">
+        <name>VLC_THREAD_PRIORITY_HIGHEST</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="326" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gab49c8f82b705b38c636bce96417ea903" prot="public" static="no">
+        <name>VLC_HARD_MIN_SLEEP</name>
+        <initializer>10000 /* 10 milliseconds = 1 tick at 100Hz */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="825" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="825" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gabbcf7a09262f19dd9a3e2c4b7d3c600b" prot="public" static="no">
+        <name>VLC_SOFT_MIN_SLEEP</name>
+        <initializer>9000000 /* 9 seconds */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="826" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="826" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga940d33666229c2784cb772b6f8051d08" prot="public" static="no">
+        <name>check_delay</name>
+        <param><defname>d</defname></param>
+        <initializer>(d)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="874" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="874" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga59862480b193f842adadfc269aff4cd3" prot="public" static="no">
+        <name>check_deadline</name>
+        <param><defname>d</defname></param>
+        <initializer>(d)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="875" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="875" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga992f2dd04e7ca2bddb0caf67990cafc4" prot="public" static="no">
+        <name>msleep</name>
+        <param><defname>d</defname></param>
+        <initializer>msleep(check_delay(d))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="878" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="878" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga46dc2fd43b10639b221faa7d8d2fea01" prot="public" static="no">
+        <name>mwait</name>
+        <param><defname>d</defname></param>
+        <initializer>mwait(check_deadline(d))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="879" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="879" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" prot="public" static="no">
+        <name>vlc_cleanup_push</name>
+        <param><defname>routine</defname></param>
+        <param><defname>arg</defname></param>
+        <initializer>pthread_cleanup_push (routine, arg)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers a thread cancellation handler.</para>
+<para>This pushes a function to run if the thread is cancelled (or otherwise exits prematurely).</para>
+<para>If multiple procedures are registered, they are handled in last-in first-out order.</para>
+<para><simplesect kind="note"><para>Any call to <ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push()</ref> <bold>must</bold> paired with a call to <ref refid="group__thread_1ga027a7d8748800afff5e4535209c0d90b" kindref="member">vlc_cleanup_pop()</ref>. </para>
+</simplesect>
+<simplesect kind="warning"><para>Branching into or out of the block between these two function calls is not allowed (read: it will likely crash the whole process).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>routine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>procedure to call if the thread ends </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>argument for the procedure </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="975" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="975" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga027a7d8748800afff5e4535209c0d90b" prot="public" static="no">
+        <name>vlc_cleanup_pop</name>
+        <param></param>
+        <initializer>pthread_cleanup_pop (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unregisters the last cancellation handler.</para>
+<para>This pops the cancellation handler that was last pushed with <ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push()</ref> in the calling thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="983" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="983" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga25c4c336935b27c5eee9743a4136e3ee" prot="public" static="no">
+        <name>mutex_cleanup_push</name>
+        <param><defname>lock</defname></param>
+        <initializer><ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push</ref> (vlc_cleanup_lock, lock)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1013" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1013" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1ga1d6f2fe1b518f075be9607e7da332743" prot="public" static="no">
+        <name>vlc_global_lock</name>
+        <param><defname>n</defname></param>
+        <initializer><ref refid="group__thread_1gab9f6c69caae21aab54cb24f13e7f2f49" kindref="member">vlc_global_mutex</ref>(n, true)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Acquires a global mutex. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1074" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1074" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__thread_1gacaff2e0df7412c40994155cb12713f4c" prot="public" static="no">
+        <name>vlc_global_unlock</name>
+        <param><defname>n</defname></param>
+        <initializer><ref refid="group__thread_1gab9f6c69caae21aab54cb24f13e7f2f49" kindref="member">vlc_global_mutex</ref>(n, false)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases a global mutex. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" line="1079" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_threads.h" bodystart="1079" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

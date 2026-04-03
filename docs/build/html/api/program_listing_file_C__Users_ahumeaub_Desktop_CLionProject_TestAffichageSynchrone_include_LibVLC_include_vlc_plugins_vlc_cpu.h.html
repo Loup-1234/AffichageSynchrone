@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_cpu.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_cpu.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_cpu.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_cpu.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-cpu-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-cpu-h"></span><h1>Program Listing for File vlc_cpu.h<a class="headerlink" href="#program-listing-for-file-vlc-cpu-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_cpu.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-cpu-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_cpu.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_cpu.h: CPU capabilities</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1998-2009 VLC authors and VideoLAN</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+
+<span class="cp">#ifndef VLC_CPU_H</span>
+<span class="cp"># define VLC_CPU_H 1</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">vlc_CPU</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cp"># if defined (__i386__) || defined (__x86_64__)</span>
+<span class="cp">#  define HAVE_FPU 1</span>
+<span class="cp">#  define VLC_CPU_MMX    0x00000008</span>
+<span class="cp">#  define VLC_CPU_3dNOW  0x00000010</span>
+<span class="cp">#  define VLC_CPU_MMXEXT 0x00000020</span>
+<span class="cp">#  define VLC_CPU_SSE    0x00000040</span>
+<span class="cp">#  define VLC_CPU_SSE2   0x00000080</span>
+<span class="cp">#  define VLC_CPU_SSE3   0x00000100</span>
+<span class="cp">#  define VLC_CPU_SSSE3  0x00000200</span>
+<span class="cp">#  define VLC_CPU_SSE4_1 0x00000400</span>
+<span class="cp">#  define VLC_CPU_SSE4_2 0x00000800</span>
+<span class="cp">#  define VLC_CPU_SSE4A  0x00001000</span>
+<span class="cp">#  define VLC_CPU_AVX    0x00002000</span>
+<span class="cp">#  define VLC_CPU_AVX2   0x00004000</span>
+<span class="cp">#  define VLC_CPU_XOP    0x00008000</span>
+<span class="cp">#  define VLC_CPU_FMA4   0x00010000</span>
+
+<span class="cp"># if defined (__MMX__)</span>
+<span class="cp">#  define vlc_CPU_MMX() (1)</span>
+<span class="cp">#  define VLC_MMX</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_MMX() ((vlc_CPU() &amp; VLC_CPU_MMX) != 0)</span>
+<span class="cp">#  define VLC_MMX __attribute__ ((__target__ (&quot;mmx&quot;)))</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># if defined (__SSE__)</span>
+<span class="cp">#  define vlc_CPU_MMXEXT() (1)</span>
+<span class="cp">#  define vlc_CPU_SSE() (1)</span>
+<span class="cp">#  define VLC_SSE</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_MMXEXT() ((vlc_CPU() &amp; VLC_CPU_MMXEXT) != 0)</span>
+<span class="cp">#  define vlc_CPU_SSE() ((vlc_CPU() &amp; VLC_CPU_SSE) != 0)</span>
+<span class="cp">#  define VLC_SSE __attribute__ ((__target__ (&quot;sse&quot;)))</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __SSE2__</span>
+<span class="cp">#  define vlc_CPU_SSE2() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_SSE2() ((vlc_CPU() &amp; VLC_CPU_SSE2) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __SSE3__</span>
+<span class="cp">#  define vlc_CPU_SSE3() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_SSE3() ((vlc_CPU() &amp; VLC_CPU_SSE3) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __SSSE3__</span>
+<span class="cp">#  define vlc_CPU_SSSE3() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_SSSE3() ((vlc_CPU() &amp; VLC_CPU_SSSE3) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __SSE4_1__</span>
+<span class="cp">#  define vlc_CPU_SSE4_1() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_SSE4_1() ((vlc_CPU() &amp; VLC_CPU_SSE4_1) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __SSE4_2__</span>
+<span class="cp">#  define vlc_CPU_SSE4_2() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_SSE4_2() ((vlc_CPU() &amp; VLC_CPU_SSE4_2) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __SSE4A__</span>
+<span class="cp">#  define vlc_CPU_SSE4A() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_SSE4A() ((vlc_CPU() &amp; VLC_CPU_SSE4A) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __AVX__</span>
+<span class="cp">#  define vlc_CPU_AVX() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_AVX() ((vlc_CPU() &amp; VLC_CPU_AVX) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __AVX2__</span>
+<span class="cp">#  define vlc_CPU_AVX2() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_AVX2() ((vlc_CPU() &amp; VLC_CPU_AVX2) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __3dNOW__</span>
+<span class="cp">#  define vlc_CPU_3dNOW() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_3dNOW() ((vlc_CPU() &amp; VLC_CPU_3dNOW) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __XOP__</span>
+<span class="cp">#  define vlc_CPU_XOP() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_XOP() ((vlc_CPU() &amp; VLC_CPU_XOP) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># ifdef __FMA4__</span>
+<span class="cp">#  define vlc_CPU_FMA4() (1)</span>
+<span class="cp"># else</span>
+<span class="cp">#  define vlc_CPU_FMA4() ((vlc_CPU() &amp; VLC_CPU_FMA4) != 0)</span>
+<span class="cp"># endif</span>
+
+<span class="cp"># elif defined (__ppc__) || defined (__ppc64__) || defined (__powerpc__)</span>
+<span class="cp">#  define HAVE_FPU 1</span>
+<span class="cp">#  define VLC_CPU_ALTIVEC 2</span>
+
+<span class="cp">#  ifdef ALTIVEC</span>
+<span class="cp">#   define vlc_CPU_ALTIVEC() (1)</span>
+<span class="cp">#   define VLC_ALTIVEC</span>
+<span class="cp">#  else</span>
+<span class="cp">#   define vlc_CPU_ALTIVEC() ((vlc_CPU() &amp; VLC_CPU_ALTIVEC) != 0)</span>
+<span class="cp">#   define VLC_ALTIVEC __attribute__ ((__target__ (&quot;altivec&quot;)))</span>
+<span class="cp">#  endif</span>
+
+<span class="cp"># elif defined (__arm__)</span>
+<span class="cp">#  if defined (__VFP_FP__) &amp;&amp; !defined (__SOFTFP__)</span>
+<span class="cp">#   define HAVE_FPU 1</span>
+<span class="cp">#  else</span>
+<span class="cp">#   define HAVE_FPU 0</span>
+<span class="cp">#  endif</span>
+<span class="cp">#  define VLC_CPU_ARMv6    4</span>
+<span class="cp">#  define VLC_CPU_ARM_NEON 2</span>
+
+<span class="cp">#  if defined (__ARM_ARCH_7A__)</span>
+<span class="cp">#   define VLC_CPU_ARM_ARCH 7</span>
+<span class="cp">#  elif defined (__ARM_ARCH_6__) || defined (__ARM_ARCH_6T2__)</span>
+<span class="cp">#   define VLC_CPU_ARM_ARCH 6</span>
+<span class="cp">#  else</span>
+<span class="cp">#   define VLC_CPU_ARM_ARCH 4</span>
+<span class="cp">#  endif</span>
+
+<span class="cp">#  if (VLC_CPU_ARM_ARCH &gt;= 6)</span>
+<span class="cp">#   define vlc_CPU_ARMv6() (1)</span>
+<span class="cp">#  else</span>
+<span class="cp">#   define vlc_CPU_ARMv6() ((vlc_CPU() &amp; VLC_CPU_ARMv6) != 0)</span>
+<span class="cp">#  endif</span>
+
+<span class="cp">#  ifdef __ARM_NEON__</span>
+<span class="cp">#   define vlc_CPU_ARM_NEON() (1)</span>
+<span class="cp">#  else</span>
+<span class="cp">#   define vlc_CPU_ARM_NEON() ((vlc_CPU() &amp; VLC_CPU_ARM_NEON) != 0)</span>
+<span class="cp">#  endif</span>
+
+<span class="cp"># elif defined (__aarch64__)</span>
+<span class="cp">#  define HAVE_FPU 1</span>
+<span class="c1">// NEON is mandatory for general purpose ARMv8-a CPUs</span>
+<span class="cp">#  define vlc_CPU_ARM64_NEON() (1)</span>
+
+<span class="cp"># elif defined (__sparc__)</span>
+<span class="cp">#  define HAVE_FPU 1</span>
+
+<span class="cp"># elif defined (__mips_hard_float)</span>
+<span class="cp">#  define HAVE_FPU 1</span>
+
+<span class="cp"># elif defined (__riscv)</span>
+<span class="cp">#  ifdef __riscv_flen</span>
+<span class="cp">#   define HAVE_FPU 1</span>
+<span class="cp">#  endif</span>
+
+<span class="cp"># else</span>
+<span class="cp">#  define HAVE_FPU 0</span>
+
+<span class="cp"># endif</span>
+
+<span class="cp">#endif </span><span class="cm">/* !VLC_CPU_H */</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

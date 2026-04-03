@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structvlc__event__t" kind="struct" language="C++" prot="public">
+    <compoundname>vlc_event_t</compoundname>
+    <innerclass refid="unionvlc__event__t_1_1vlc__event__type__specific" prot="public">vlc_event_t::vlc_event_type_specific</innerclass>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structvlc__event__t_1a6d9620f99d3ae9a7d065596667499c65" prot="public" static="no" mutable="no">
+        <type>vlc_event_type_t</type>
+        <definition>vlc_event_type_t vlc_event_t::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>vlc_event_t::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="126" column="22" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__event__t_1a0343bdb2d1a5fb478d16f84b2b761598" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* vlc_event_t::p_obj</definition>
+        <argsstring></argsstring>
+        <name>p_obj</name>
+        <qualifiedname>vlc_event_t::p_obj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="127" column="11" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvlc__event__t_1a593256bcf96c66a0f4cc9fb11c7b763f" prot="public" static="no" mutable="no">
+        <type>union <ref refid="unionvlc__event__t_1_1vlc__event__type__specific" kindref="compound">vlc_event_t::vlc_event_type_specific</ref></type>
+        <definition>union vlc_event_t::vlc_event_type_specific vlc_event_t::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <qualifiedname>vlc_event_t::u</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="167" column="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="10">
+        <label>audio_format_t</label>
+        <link refid="structaudio__format__t"/>
+      </node>
+      <node id="11">
+        <label>audio_replay_gain_t</label>
+        <link refid="structaudio__replay__gain__t"/>
+      </node>
+      <node id="8">
+        <label>es_format_t</label>
+        <link refid="structes__format__t"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+p_extra_languages</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>+audio</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>+audio_replay_gain</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>+video</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>+subs</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>extra_languages_t</label>
+        <link refid="structextra__languages__t"/>
+      </node>
+      <node id="6">
+        <label>info_category_t</label>
+        <link refid="structinfo__category__t"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+pp_infos</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>info_t</label>
+        <link refid="structinfo__t"/>
+      </node>
+      <node id="24">
+        <label>input_item_node_t</label>
+        <link refid="structinput__item__node__t"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+p_item</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>+pp_children</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>input_item_slave</label>
+        <link refid="structinput__item__slave"/>
+      </node>
+      <node id="5">
+        <label>input_item_t</label>
+        <link refid="structinput__item__t"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+pp_categories</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+es</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>+p_stats</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>+p_epg_table</edgelabel>
+          <edgelabel>+pp_epg</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>+pp_slaves</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>+event_manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>input_stats_t</label>
+        <link refid="structinput__stats__t"/>
+      </node>
+      <node id="15">
+        <label>subs_format_t</label>
+        <link refid="structsubs__format__t"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>+p_style</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>text_style_t</label>
+        <link refid="structtext__style__t"/>
+      </node>
+      <node id="12">
+        <label>video_format_t</label>
+        <link refid="structvideo__format__t"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>+p_palette</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>+pose</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>video_palette_t</label>
+        <link refid="structvideo__palette__t"/>
+      </node>
+      <node id="19">
+        <label>vlc_epg_event_t</label>
+        <link refid="structvlc__epg__event__t"/>
+      </node>
+      <node id="18">
+        <label>vlc_epg_t</label>
+        <link refid="structvlc__epg__t"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>+p_current</edgelabel>
+          <edgelabel>+pp_event</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>vlc_event_listeners_group_t</label>
+        <link refid="structvlc__event__listeners__group__t"/>
+      </node>
+      <node id="21">
+        <label>vlc_event_manager_t</label>
+        <link refid="structvlc__event__manager__t"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>+events</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>vlc_event_t</label>
+        <link refid="structvlc__event__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+u</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_event_t::vlc_event_type_specific</label>
+        <link refid="unionvlc__event__t_1_1vlc__event__type__specific"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+input_item_meta_changed</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+input_item_subitem_added</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>+input_item_subitem_tree_added</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>+input_item_duration_changed</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>+input_item_preparsed_changed</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>+input_item_name_changed</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>+input_item_info_changed</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>+input_item_error_when_reading_changed</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>+input_item_preparse_ended</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>vlc_event_t::vlc_event_type_specific::input_item_error_when_reading_changed</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__error__when__reading__changed"/>
+      </node>
+      <node id="30">
+        <label>vlc_event_t::vlc_event_type_specific::input_item_preparse_ended</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1input__item__preparse__ended"/>
+      </node>
+      <node id="25">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_duration_changed</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__duration__changed"/>
+      </node>
+      <node id="28">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_info_changed</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__info__changed"/>
+      </node>
+      <node id="3">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_meta_changed</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__meta__changed"/>
+      </node>
+      <node id="27">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_name_changed</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__name__changed"/>
+      </node>
+      <node id="26">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_preparsed_changed</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__preparsed__changed"/>
+      </node>
+      <node id="4">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_subitem_added</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__added"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+p_new_child</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>vlc_event_t::vlc_event_type_specific::vlc_input_item_subitem_tree_added</label>
+        <link refid="structvlc__event__t_1_1vlc__event__type__specific_1_1vlc__input__item__subitem__tree__added"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>+p_root</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>vlc_viewpoint_t</label>
+        <link refid="structvlc__viewpoint__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" line="124" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_events.h" bodystart="125" bodyend="168"/>
+    <listofallmembers>
+      <member refid="structvlc__event__t_1a0343bdb2d1a5fb478d16f84b2b761598" prot="public" virt="non-virtual"><scope>vlc_event_t</scope><name>p_obj</name></member>
+      <member refid="structvlc__event__t_1a6d9620f99d3ae9a7d065596667499c65" prot="public" virt="non-virtual"><scope>vlc_event_t</scope><name>type</name></member>
+      <member refid="structvlc__event__t_1a593256bcf96c66a0f4cc9fb11c7b763f" prot="public" virt="non-virtual"><scope>vlc_event_t</scope><name>u</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

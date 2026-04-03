@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structsout__instance__t" kind="struct" language="C++" prot="public">
+    <compoundname>sout_instance_t</compoundname>
+    <includes refid="vlc__sout_8h" local="no">vlc_sout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsout__instance__t_1a441d87a5c868a5b28c9b83cf1cc58ffa" prot="public" static="no" mutable="no">
+        <type><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref> char *</type>
+        <definition>VLC_COMMON_MEMBERS char* sout_instance_t::psz_sout</definition>
+        <argsstring></argsstring>
+        <name>psz_sout</name>
+        <qualifiedname>sout_instance_t::psz_sout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="52" column="10" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsout__instance__t_1a55c1c27c76856e0a042d76ab57a994f3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sout_instance_t::i_out_pace_nocontrol</definition>
+        <argsstring></argsstring>
+        <name>i_out_pace_nocontrol</name>
+        <qualifiedname>sout_instance_t::i_out_pace_nocontrol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>count of output that can&apos;t control the space </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="55" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsout__instance__t_1ac05b735be0cc636810579ae56cbb62a2" prot="public" static="no" mutable="no">
+        <type><ref refid="group__thread_1gaec8f015c2773bbea62fb04ec9fcf4ce7" kindref="member">vlc_mutex_t</ref></type>
+        <definition>vlc_mutex_t sout_instance_t::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <qualifiedname>sout_instance_t::lock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="57" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsout__instance__t_1a338ffad6288d16d33df3f765824a7489" prot="public" static="no" mutable="no">
+        <type><ref refid="structsout__stream__t" kindref="compound">sout_stream_t</ref> *</type>
+        <definition>sout_stream_t* sout_instance_t::p_stream</definition>
+        <argsstring></argsstring>
+        <name>p_stream</name>
+        <qualifiedname>sout_instance_t::p_stream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="58" column="25" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Stream output instance (FIXME: should be private to src/ to avoid invalid unsynchronized access) </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>config_chain_t</label>
+        <link refid="structconfig__chain__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>sout_instance_t</label>
+        <link refid="structsout__instance__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_stream</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sout_stream_t</label>
+        <link refid="structsout__stream__t"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+p_sout</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_cfg</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" line="48" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_sout.h" bodystart="49" bodyend="59"/>
+    <listofallmembers>
+      <member refid="structsout__instance__t_1a55c1c27c76856e0a042d76ab57a994f3" prot="public" virt="non-virtual"><scope>sout_instance_t</scope><name>i_out_pace_nocontrol</name></member>
+      <member refid="structsout__instance__t_1ac05b735be0cc636810579ae56cbb62a2" prot="public" virt="non-virtual"><scope>sout_instance_t</scope><name>lock</name></member>
+      <member refid="structsout__instance__t_1a338ffad6288d16d33df3f765824a7489" prot="public" virt="non-virtual"><scope>sout_instance_t</scope><name>p_stream</name></member>
+      <member refid="structsout__instance__t_1a441d87a5c868a5b28c9b83cf1cc58ffa" prot="public" virt="non-virtual"><scope>sout_instance_t</scope><name>psz_sout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

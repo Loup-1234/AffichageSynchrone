@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__fifo" kind="group">
+    <compoundname>fifo</compoundname>
+    <title>Block FIFO</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__fifo_1ga3cd9a84c5b30fae4305ad2d6d06b291b" prot="public" static="no">
+        <type>struct block_fifo_t</type>
+        <definition>typedef struct block_fifo_t vlc_fifo_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_fifo_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="479" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="479" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__fifo_1ga76589cb22cfd4e8b1a8d8eb90f5f8be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API block_fifo_t *</type>
+        <definition>VLC_API block_fifo_t * block_FifoNew</definition>
+        <argsstring>(void) VLC_USED VLC_MALLOC</argsstring>
+        <name>block_FifoNew</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a thread-safe FIFO queue of blocks.</para>
+<para>See also <ref refid="group__fifo_1gabb730ded02a2635e7805c76f60f0efee" kindref="member">block_FifoPut()</ref> and <ref refid="group__fifo_1ga3da75b8e3e7a7315b3ac39cfd1f7d3de" kindref="member">block_FifoGet()</ref>. The created queue must be released with <ref refid="group__fifo_1ga22f649fecc82b557f94653eb05ead15a" kindref="member">block_FifoRelease()</ref>.</para>
+<para><simplesect kind="return"><para>the FIFO or NULL on memory error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="431" column="22" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="431" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga22f649fecc82b557f94653eb05ead15a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void block_FifoRelease</definition>
+        <argsstring>(block_fifo_t *)</argsstring>
+        <name>block_FifoRelease</name>
+        <param>
+          <type>block_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a FIFO created by <ref refid="group__fifo_1ga76589cb22cfd4e8b1a8d8eb90f5f8be0" kindref="member">block_FifoNew()</ref>.</para>
+<para><simplesect kind="note"><para>Any queued blocks are also destroyed. </para>
+</simplesect>
+<simplesect kind="warning"><para>No other threads may be using the FIFO when this function is called. Otherwise, undefined behaviour will occur. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="440" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="440" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gadeb75f1d534d07686f7ee0eca76399de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void block_FifoEmpty</definition>
+        <argsstring>(block_fifo_t *)</argsstring>
+        <name>block_FifoEmpty</name>
+        <param>
+          <type>block_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears all blocks in a FIFO. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="445" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="445" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gabb730ded02a2635e7805c76f60f0efee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void block_FifoPut</definition>
+        <argsstring>(block_fifo_t *fifo, block_t *block)</argsstring>
+        <name>block_FifoPut</name>
+        <param>
+          <type>block_fifo_t *</type>
+          <declname>fifo</declname>
+        </param>
+        <param>
+          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Immediately queue one block at the end of a FIFO.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fifo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>queue </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>head of a block list to queue (may be NULL) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="453" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="453" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga3da75b8e3e7a7315b3ac39cfd1f7d3de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * block_FifoGet</definition>
+        <argsstring>(block_fifo_t *) VLC_USED</argsstring>
+        <name>block_FifoGet</name>
+        <param>
+          <type>block_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dequeue the first block from the FIFO. If necessary, wait until there is one block in the queue. This function is (always) cancellation point.</para>
+<para><simplesect kind="return"><para>a valid block </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="461" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="461" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga1fa9047826a8a0aec48c3281c572b23b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * block_FifoShow</definition>
+        <argsstring>(block_fifo_t *)</argsstring>
+        <name>block_FifoShow</name>
+        <param>
+          <type>block_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Peeks the first block in the FIFO.</para>
+<para><simplesect kind="warning"><para>This function leaves the block in the FIFO. You need to protect against concurrent threads who could dequeue the block. Preferably, there should be only one thread reading from the FIFO.</para>
+</simplesect>
+<simplesect kind="warning"><para>This function is undefined if the FIFO is empty.</para>
+</simplesect>
+<simplesect kind="return"><para>a valid block. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="474" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="474" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga5dfb33a71637fb341513eb1fdeddfc99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t block_FifoSize</definition>
+        <argsstring>(block_fifo_t *) VLC_USED VLC_DEPRECATED</argsstring>
+        <name>block_FifoSize</name>
+        <param>
+          <type>block_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="476" column="8" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="476" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gac713843e2cd2347ab7337bfc7b25a4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API size_t</type>
+        <definition>VLC_API size_t block_FifoCount</definition>
+        <argsstring>(block_fifo_t *) VLC_USED VLC_DEPRECATED</argsstring>
+        <name>block_FifoCount</name>
+        <param>
+          <type>block_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="477" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="477" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_fifo_Lock</definition>
+        <argsstring>(vlc_fifo_t *)</argsstring>
+        <name>vlc_fifo_Lock</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Locks a block FIFO.</para>
+<para>No more than one thread can lock the FIFO at any given time, and no other thread can modify the FIFO while it is locked. <ref refid="group__fifo_1ga986af097c87339596885781781d4906a" kindref="member">vlc_fifo_Unlock()</ref> releases the lock.</para>
+<para><simplesect kind="note"><para>If the FIFO is already locked by another thread, this function waits. This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>Recursively locking a single FIFO is undefined. Locking more than one FIFO at a time may lead to lock inversion; mind the locking order. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="494" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="494" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga986af097c87339596885781781d4906a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_fifo_Unlock</definition>
+        <argsstring>(vlc_fifo_t *)</argsstring>
+        <name>vlc_fifo_Unlock</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlocks a block FIFO.</para>
+<para>The calling thread must have locked the FIFO previously with <ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock()</ref>. Otherwise, the behaviour is undefined.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="504" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="504" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gad4157ac4c846ae51abfc96837b4c2ac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_fifo_Signal</definition>
+        <argsstring>(vlc_fifo_t *)</argsstring>
+        <name>vlc_fifo_Signal</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wakes up one thread waiting on the FIFO, if any.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>For race-free operations, the FIFO should be locked by the calling thread. The function can be called on a unlocked FIFO however. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="514" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="514" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga3907f356b23df01c92864fd7eba77295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_fifo_Wait</definition>
+        <argsstring>(vlc_fifo_t *)</argsstring>
+        <name>vlc_fifo_Wait</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits on the FIFO.</para>
+<para>Atomically unlocks the FIFO and waits until one thread signals the FIFO, then locks the FIFO again. A signal can be sent by queueing a block to the previously empty FIFO or by calling <ref refid="group__fifo_1gad4157ac4c846ae51abfc96837b4c2ac3" kindref="member">vlc_fifo_Signal()</ref> directly. This function may also return spuriously at any moment.</para>
+<para><simplesect kind="note"><para>This function is a cancellation point. In case of cancellation, the the FIFO will be locked before cancellation cleanup handlers are processed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="527" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="527" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga197c03707b1d4a39ed38a9425a211f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_fifo_WaitCond</definition>
+        <argsstring>(vlc_fifo_t *, vlc_cond_t *)</argsstring>
+        <name>vlc_fifo_WaitCond</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="529" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="529" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga61a95a397b7b00ef4ea8a14f07d38619" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int vlc_fifo_TimedWaitCond</definition>
+        <argsstring>(vlc_fifo_t *, vlc_cond_t *, vlc_tick_t)</argsstring>
+        <name>vlc_fifo_TimedWaitCond</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <param>
+          <type><ref refid="group__thread_1gae1427dd44afbfddc5df5faba4bf3e890" kindref="member">vlc_cond_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timed variant of vlc_fifo_WaitCond().</para>
+<para>Atomically unlocks the FIFO and waits until one thread signals the FIFO up to a certain date, then locks the FIFO again. See <ref refid="group__fifo_1ga3907f356b23df01c92864fd7eba77295" kindref="member">vlc_fifo_Wait()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="537" column="5" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="537" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gabfae6e5f9929f0b20280919b6ae1100a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_fifo_QueueUnlocked</definition>
+        <argsstring>(vlc_fifo_t *, block_t *)</argsstring>
+        <name>vlc_fifo_QueueUnlocked</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <param>
+          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Queues a linked-list of blocks into a locked FIFO.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the head of the list of blocks (if NULL, this function has no effects)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>The FIFO must be locked by the calling thread using <ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock()</ref>. Otherwise behaviour is undefined. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="550" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="550" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga2734c4d814d8f2b6b2c0edbb12e1bb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * vlc_fifo_DequeueUnlocked</definition>
+        <argsstring>(vlc_fifo_t *) VLC_USED</argsstring>
+        <name>vlc_fifo_DequeueUnlocked</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dequeues the first block from a locked FIFO, if any.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>The FIFO must be locked by the calling thread using <ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock()</ref>. Otherwise behaviour is undefined.</para>
+</simplesect>
+<simplesect kind="return"><para>the first block in the FIFO or NULL if the FIFO is empty </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="562" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="562" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1ga3d5ce7e8b5140220f23cdaa342ce0f0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+        <definition>VLC_API block_t * vlc_fifo_DequeueAllUnlocked</definition>
+        <argsstring>(vlc_fifo_t *) VLC_USED</argsstring>
+        <name>vlc_fifo_DequeueAllUnlocked</name>
+        <param>
+          <type>vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dequeues the all blocks from a locked FIFO.</para>
+<para>This is equivalent to calling <ref refid="group__fifo_1ga2734c4d814d8f2b6b2c0edbb12e1bb92" kindref="member">vlc_fifo_DequeueUnlocked()</ref> repeatedly until the FIFO is emptied, but this function is much faster.</para>
+<para><simplesect kind="note"><para>This function is not a cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>The FIFO must be locked by the calling thread using <ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock()</ref>. Otherwise behaviour is undefined.</para>
+</simplesect>
+<simplesect kind="return"><para>a linked-list of all blocks in the FIFO (possibly NULL) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="577" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="577" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gae9dfe07e14f835524ed1bef319fddd8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API size_t</type>
+        <definition>VLC_API size_t vlc_fifo_GetCount</definition>
+        <argsstring>(const vlc_fifo_t *) VLC_USED</argsstring>
+        <name>vlc_fifo_GetCount</name>
+        <param>
+          <type>const vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Counts blocks in a FIFO.</para>
+<para>Checks how many blocks are queued in a locked FIFO.</para>
+<para><simplesect kind="note"><para>This function is not cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>The FIFO must be locked by the calling thread using <ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock()</ref>. Otherwise behaviour is undefined.</para>
+</simplesect>
+<simplesect kind="return"><para>the number of blocks in the FIFO (zero if it is empty) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="591" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="591" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gac31ab97850c8dc420326e2c59291341d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API size_t</type>
+        <definition>VLC_API size_t vlc_fifo_GetBytes</definition>
+        <argsstring>(const vlc_fifo_t *) VLC_USED</argsstring>
+        <name>vlc_fifo_GetBytes</name>
+        <param>
+          <type>const vlc_fifo_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Counts bytes in a FIFO.</para>
+<para>Checks how many bytes are queued in a locked FIFO.</para>
+<para><simplesect kind="note"><para>This function is not cancellation point.</para>
+</simplesect>
+<simplesect kind="warning"><para>The FIFO must be locked by the calling thread using <ref refid="group__fifo_1gae03d77fb47001cfb35223b0b3cdc28df" kindref="member">vlc_fifo_Lock()</ref>. Otherwise behaviour is undefined.</para>
+</simplesect>
+<simplesect kind="return"><para>the total number of bytes</para>
+</simplesect>
+<simplesect kind="note"><para>Zero bytes does not necessarily mean that the FIFO is empty since a block could contain zero bytes. Use <ref refid="group__fifo_1gae9dfe07e14f835524ed1bef319fddd8c" kindref="member">vlc_fifo_GetCount()</ref> to determine if a FIFO is empty. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="609" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="609" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gae16732e911ca5b573a18650b4111c559" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>VLC_USED bool</type>
+        <definition>static VLC_USED bool vlc_fifo_IsEmpty</definition>
+        <argsstring>(const vlc_fifo_t *fifo)</argsstring>
+        <name>vlc_fifo_IsEmpty</name>
+        <param>
+          <type>const vlc_fifo_t *</type>
+          <declname>fifo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="611" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="611" bodyend="614"/>
+      </memberdef>
+      <memberdef kind="function" id="group__fifo_1gafd468cd07b043720a4da5e72f05703c4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void vlc_fifo_Cleanup</definition>
+        <argsstring>(void *fifo)</argsstring>
+        <name>vlc_fifo_Cleanup</name>
+        <param>
+          <type>void *</type>
+          <declname>fifo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="616" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="616" bodyend="619"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__fifo_1ga9f6ac3d3ef5ec2e29cb876a861a29fb9" prot="public" static="no">
+        <name>vlc_fifo_CleanupPush</name>
+        <param><defname>fifo</defname></param>
+        <initializer><ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push</ref>(vlc_fifo_Cleanup, fifo)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="620" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="620" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Thread-safe block queue functions </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

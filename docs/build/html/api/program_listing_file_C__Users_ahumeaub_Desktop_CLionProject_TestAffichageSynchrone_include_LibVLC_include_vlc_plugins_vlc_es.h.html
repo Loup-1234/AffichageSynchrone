@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_es.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_es.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_es.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_es.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-es-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-es-h"></span><h1>Program Listing for File vlc_es.h<a class="headerlink" href="#program-listing-for-file-vlc-es-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_es.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-es-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_es.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_es.h: Elementary stream formats descriptions</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2012 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Laurent Aimar &lt;fenrir@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_ES_H</span>
+<span class="cp">#define VLC_ES_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_common.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_fourcc.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_text_style.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_viewpoint.h&gt;</span>
+
+
+<span class="cp">#define VIDEO_PALETTE_COLORS_MAX 256</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">video_palette_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_entries</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">palette</span><span class="p">[</span><span class="n">VIDEO_PALETTE_COLORS_MAX</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="cp">#define AUDIO_REPLAY_GAIN_MAX (2)</span>
+<span class="cp">#define AUDIO_REPLAY_GAIN_TRACK (0)</span>
+<span class="cp">#define AUDIO_REPLAY_GAIN_ALBUM (1)</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* true if we have the peak value */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">pb_peak</span><span class="p">[</span><span class="n">AUDIO_REPLAY_GAIN_MAX</span><span class="p">];</span>
+<span class="w">    </span><span class="cm">/* peak value where 1.0 means full sample value */</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">      </span><span class="n">pf_peak</span><span class="p">[</span><span class="n">AUDIO_REPLAY_GAIN_MAX</span><span class="p">];</span>
+
+<span class="w">    </span><span class="cm">/* true if we have the gain value */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">pb_gain</span><span class="p">[</span><span class="n">AUDIO_REPLAY_GAIN_MAX</span><span class="p">];</span>
+<span class="w">    </span><span class="cm">/* gain value in dB */</span>
+<span class="w">    </span><span class="kt">float</span><span class="w">      </span><span class="n">pf_gain</span><span class="p">[</span><span class="n">AUDIO_REPLAY_GAIN_MAX</span><span class="p">];</span>
+<span class="p">}</span><span class="w"> </span><span class="n">audio_replay_gain_t</span><span class="p">;</span>
+
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">audio_channel_type_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">AUDIO_CHANNEL_TYPE_BITMAP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AUDIO_CHANNEL_TYPE_AMBISONICS</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">audio_channel_type_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">audio_format_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_format</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_rate</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Describes the channels configuration of the samples (ie. number of</span>
+<span class="cm">     * channels which are available in the buffer, and positions). */</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w">     </span><span class="n">i_physical_channels</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Describes the chan mode, either set from the input</span>
+<span class="cm">     * (demux/codec/packetizer) or overridden by the user, used by audio</span>
+<span class="cm">     * filters. */</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w">     </span><span class="n">i_chan_mode</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Channel type */</span>
+<span class="w">    </span><span class="n">audio_channel_type_t</span><span class="w"> </span><span class="n">channel_type</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Optional - for A/52, SPDIF and DTS types : */</span>
+<span class="w">    </span><span class="cm">/* Bytes used by one compressed frame, depends on bitrate. */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_bytes_per_frame</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Number of sampleframes contained in one compressed frame. */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_frame_length</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/* Please note that it may be completely arbitrary - buffers are not</span>
+<span class="cm">     * obliged to contain a integral number of so-called &quot;frames&quot;. It&#39;s</span>
+<span class="cm">     * just here for the division :</span>
+<span class="cm">     * buffer_size = i_nb_samples * i_bytes_per_frame / i_frame_length</span>
+<span class="cm">     */</span>
+
+<span class="w">    </span><span class="cm">/* FIXME ? (used by the codecs) */</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">     </span><span class="n">i_bitspersample</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">     </span><span class="n">i_blockalign</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">      </span><span class="n">i_channels</span><span class="p">;</span><span class="w"> </span><span class="cm">/* must be &lt;=32 */</span>
+<span class="p">};</span>
+
+<span class="cm">/* Values available for audio channels */</span>
+<span class="cp">#define AOUT_CHAN_CENTER            0x1</span>
+<span class="cp">#define AOUT_CHAN_LEFT              0x2</span>
+<span class="cp">#define AOUT_CHAN_RIGHT             0x4</span>
+<span class="cp">#define AOUT_CHAN_REARCENTER        0x10</span>
+<span class="cp">#define AOUT_CHAN_REARLEFT          0x20</span>
+<span class="cp">#define AOUT_CHAN_REARRIGHT         0x40</span>
+<span class="cp">#define AOUT_CHAN_MIDDLELEFT        0x100</span>
+<span class="cp">#define AOUT_CHAN_MIDDLERIGHT       0x200</span>
+<span class="cp">#define AOUT_CHAN_LFE               0x1000</span>
+
+<span class="cp">#define AOUT_CHANS_FRONT  (AOUT_CHAN_LEFT       | AOUT_CHAN_RIGHT)</span>
+<span class="cp">#define AOUT_CHANS_MIDDLE (AOUT_CHAN_MIDDLELEFT | AOUT_CHAN_MIDDLERIGHT)</span>
+<span class="cp">#define AOUT_CHANS_REAR   (AOUT_CHAN_REARLEFT   | AOUT_CHAN_REARRIGHT)</span>
+<span class="cp">#define AOUT_CHANS_CENTER (AOUT_CHAN_CENTER     | AOUT_CHAN_REARCENTER)</span>
+
+<span class="cp">#define AOUT_CHANS_STEREO AOUT_CHANS_2_0</span>
+<span class="cp">#define AOUT_CHANS_2_0    (AOUT_CHANS_FRONT)</span>
+<span class="cp">#define AOUT_CHANS_2_1    (AOUT_CHANS_FRONT | AOUT_CHAN_LFE)</span>
+<span class="cp">#define AOUT_CHANS_3_0    (AOUT_CHANS_FRONT | AOUT_CHAN_CENTER)</span>
+<span class="cp">#define AOUT_CHANS_3_1    (AOUT_CHANS_3_0   | AOUT_CHAN_LFE)</span>
+<span class="cp">#define AOUT_CHANS_4_0    (AOUT_CHANS_FRONT | AOUT_CHANS_REAR)</span>
+<span class="cp">#define AOUT_CHANS_4_1    (AOUT_CHANS_4_0   | AOUT_CHAN_LFE)</span>
+<span class="cp">#define AOUT_CHANS_5_0    (AOUT_CHANS_4_0   | AOUT_CHAN_CENTER)</span>
+<span class="cp">#define AOUT_CHANS_5_1    (AOUT_CHANS_5_0   | AOUT_CHAN_LFE)</span>
+<span class="cp">#define AOUT_CHANS_6_0    (AOUT_CHANS_4_0   | AOUT_CHANS_MIDDLE)</span>
+<span class="cp">#define AOUT_CHANS_7_0    (AOUT_CHANS_6_0   | AOUT_CHAN_CENTER)</span>
+<span class="cp">#define AOUT_CHANS_7_1    (AOUT_CHANS_5_1   | AOUT_CHANS_MIDDLE)</span>
+<span class="cp">#define AOUT_CHANS_8_1    (AOUT_CHANS_7_1   | AOUT_CHAN_REARCENTER)</span>
+
+<span class="cp">#define AOUT_CHANS_4_0_MIDDLE (AOUT_CHANS_FRONT | AOUT_CHANS_MIDDLE)</span>
+<span class="cp">#define AOUT_CHANS_4_CENTER_REAR (AOUT_CHANS_FRONT | AOUT_CHANS_CENTER)</span>
+<span class="cp">#define AOUT_CHANS_5_0_MIDDLE (AOUT_CHANS_4_0_MIDDLE | AOUT_CHAN_CENTER)</span>
+<span class="cp">#define AOUT_CHANS_6_1_MIDDLE (AOUT_CHANS_5_0_MIDDLE | AOUT_CHAN_REARCENTER | AOUT_CHAN_LFE)</span>
+
+<span class="cm">/* Maximum number of mapped channels (or the maximum of bits set in</span>
+<span class="cm"> * i_physical_channels) */</span>
+<span class="cp">#define AOUT_CHAN_MAX               9</span>
+<span class="cm">/* Maximum number of unmapped channels */</span>
+<span class="cp">#define INPUT_CHAN_MAX              64</span>
+
+<span class="cm">/* Values available for i_chan_mode only */</span>
+<span class="cp">#define AOUT_CHANMODE_DUALMONO    0x1</span>
+<span class="cp">#define AOUT_CHANMODE_DOLBYSTEREO 0x2</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_orientation_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ORIENT_TOP_LEFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_TOP_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_BOTTOM_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_BOTTOM_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_LEFT_TOP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_LEFT_BOTTOM</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_RIGHT_TOP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_RIGHT_BOTTOM</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">ORIENT_NORMAL</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_TOP_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_TRANSPOSED</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_LEFT_TOP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_ANTI_TRANSPOSED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_RIGHT_BOTTOM</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_HFLIPPED</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_TOP_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_VFLIPPED</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_BOTTOM_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_ROTATED_180</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_BOTTOM_RIGHT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_ROTATED_270</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_LEFT_BOTTOM</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ORIENT_ROTATED_90</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_RIGHT_TOP</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_orientation_t</span><span class="p">;</span>
+<span class="cp">#define ORIENT_FROM_EXIF(exif) ((0x57642310U &gt;&gt; (4 * ((exif) - 1))) &amp; 7)</span>
+<span class="cp">#define ORIENT_TO_EXIF(orient) ((0x76853421U &gt;&gt; (4 * (orient))) &amp; 15)</span>
+<span class="cp">#define ORIENT_IS_MIRROR(orient) parity(orient)</span>
+<span class="cp">#define ORIENT_IS_SWAP(orient) (((orient) &amp; 4) != 0)</span>
+<span class="cp">#define ORIENT_HFLIP(orient) ((orient) ^ 1)</span>
+<span class="cp">#define ORIENT_VFLIP(orient) ((orient) ^ 2)</span>
+<span class="cp">#define ORIENT_ROTATE_180(orient) ((orient) ^ 3)</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_transform_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">TRANSFORM_IDENTITY</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_NORMAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_HFLIP</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_HFLIPPED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_VFLIP</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_VFLIPPED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_R180</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_ROTATED_180</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_R270</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_ROTATED_270</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_R90</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_ROTATED_90</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_TRANSPOSE</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_TRANSPOSED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFORM_ANTI_TRANSPOSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ORIENT_ANTI_TRANSPOSED</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_transform_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_multiview_mode_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* No stereoscopy: 2D picture. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_2D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Side-by-side with left eye first. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_STEREO_SBS</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Top-bottom with left eye first. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_STEREO_TB</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Row sequential with left eye first. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_STEREO_ROW</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Column sequential with left eye first. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_STEREO_COL</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Frame sequential with left eye first. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_STEREO_FRAME</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* Checkerboard pattern with left eye first. */</span>
+<span class="w">    </span><span class="n">MULTIVIEW_STEREO_CHECKERBOARD</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_multiview_mode_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_projection_mode_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">PROJECTION_MODE_RECTANGULAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PROJECTION_MODE_EQUIRECTANGULAR</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">PROJECTION_MODE_CUBEMAP_LAYOUT_STANDARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_projection_mode_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_color_primaries_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_UNDEF</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_BT601_525</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_BT601_625</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_BT709</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_BT2020</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_DCI_P3</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_PRIMARIES_FCC1953</span><span class="p">,</span>
+<span class="cp">#define COLOR_PRIMARIES_SRGB            COLOR_PRIMARIES_BT709</span>
+<span class="cp">#define COLOR_PRIMARIES_SMTPE_170       COLOR_PRIMARIES_BT601_525</span>
+<span class="cp">#define COLOR_PRIMARIES_SMTPE_240       COLOR_PRIMARIES_BT601_525 </span><span class="cm">/* Only differs from 1e10-4 in white Y */</span>
+<span class="cp">#define COLOR_PRIMARIES_SMTPE_RP145     COLOR_PRIMARIES_BT601_525</span>
+<span class="cp">#define COLOR_PRIMARIES_EBU_3213        COLOR_PRIMARIES_BT601_625</span>
+<span class="cp">#define COLOR_PRIMARIES_BT470_BG        COLOR_PRIMARIES_BT601_625</span>
+<span class="cp">#define COLOR_PRIMARIES_BT470_M         COLOR_PRIMARIES_FCC1953</span>
+<span class="cp">#define COLOR_PRIMARIES_MAX             COLOR_PRIMARIES_FCC1953</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_color_primaries_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_transfer_func_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_UNDEF</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_LINEAR</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_SRGB</span><span class="w"> </span><span class="cm">/*&lt; Gamma 2.2 */</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_BT470_BG</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_BT470_M</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_BT709</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_SMPTE_ST2084</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_SMPTE_240</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TRANSFER_FUNC_HLG</span><span class="p">,</span>
+<span class="cp">#define TRANSFER_FUNC_BT2020            TRANSFER_FUNC_BT709</span>
+<span class="cp">#define TRANSFER_FUNC_SMPTE_170         TRANSFER_FUNC_BT709</span>
+<span class="cp">#define TRANSFER_FUNC_SMPTE_274         TRANSFER_FUNC_BT709</span>
+<span class="cp">#define TRANSFER_FUNC_SMPTE_293         TRANSFER_FUNC_BT709</span>
+<span class="cp">#define TRANSFER_FUNC_SMPTE_296         TRANSFER_FUNC_BT709</span>
+<span class="cp">#define TRANSFER_FUNC_ARIB_B67          TRANSFER_FUNC_HLG</span>
+<span class="cp">#define TRANSFER_FUNC_MAX               TRANSFER_FUNC_HLG</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_transfer_func_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_color_space_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">COLOR_SPACE_UNDEF</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_SPACE_BT601</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_SPACE_BT709</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COLOR_SPACE_BT2020</span><span class="p">,</span>
+<span class="cp">#define COLOR_SPACE_SRGB      COLOR_SPACE_BT709</span>
+<span class="cp">#define COLOR_SPACE_SMPTE_170 COLOR_SPACE_BT601</span>
+<span class="cp">#define COLOR_SPACE_SMPTE_240 COLOR_SPACE_SMPTE_170</span>
+<span class="cp">#define COLOR_SPACE_MAX       COLOR_SPACE_BT2020</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_color_space_t</span><span class="p">;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">video_chroma_location_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_UNDEF</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_LEFT</span><span class="p">,</span><span class="w">   </span><span class="cm">/*&lt; Most common in MPEG-2 Video, H.264/265 */</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_CENTER</span><span class="p">,</span><span class="w"> </span><span class="cm">/*&lt; Most common in MPEG-1 Video, JPEG */</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_TOP_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_TOP_CENTER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_BOTTOM_LEFT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CHROMA_LOCATION_BOTTOM_CENTER</span><span class="p">,</span>
+<span class="cp">#define CHROMA_LOCATION_MAX CHROMA_LOCATION_BOTTOM_CENTER</span>
+<span class="p">}</span><span class="w"> </span><span class="n">video_chroma_location_t</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">video_format_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_chroma</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_height</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_x_offset</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_y_offset</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_visible_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_visible_height</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_bits_per_pixel</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_sar_num</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_sar_den</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_frame_rate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_frame_rate_base</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">i_rmask</span><span class="p">,</span><span class="w"> </span><span class="n">i_gmask</span><span class="p">,</span><span class="w"> </span><span class="n">i_bmask</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_rrshift</span><span class="p">,</span><span class="w"> </span><span class="n">i_lrshift</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_rgshift</span><span class="p">,</span><span class="w"> </span><span class="n">i_lgshift</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_rbshift</span><span class="p">,</span><span class="w"> </span><span class="n">i_lbshift</span><span class="p">;</span>
+<span class="w">    </span><span class="n">video_palette_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_palette</span><span class="p">;</span>
+<span class="w">    </span><span class="n">video_orientation_t</span><span class="w"> </span><span class="n">orientation</span><span class="p">;</span>
+<span class="w">    </span><span class="n">video_color_primaries_t</span><span class="w"> </span><span class="n">primaries</span><span class="p">;</span>
+<span class="w">    </span><span class="n">video_transfer_func_t</span><span class="w"> </span><span class="n">transfer</span><span class="p">;</span>
+<span class="w">    </span><span class="n">video_color_space_t</span><span class="w"> </span><span class="n">space</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_color_range_full</span><span class="p">;</span>
+<span class="w">    </span><span class="n">video_chroma_location_t</span><span class="w"> </span><span class="n">chroma_location</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">video_multiview_mode_t</span><span class="w"> </span><span class="n">multiview_mode</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">video_projection_mode_t</span><span class="w"> </span><span class="n">projection_mode</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_viewpoint_t</span><span class="w"> </span><span class="n">pose</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* similar to SMPTE ST 2086 mastering display color volume */</span>
+<span class="w">        </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">primaries</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="cm">/* G,B,R / x,y */</span>
+<span class="w">        </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">white_point</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="cm">/* x,y */</span>
+<span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">max_luminance</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">min_luminance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">mastering</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* similar to CTA-861.3 content light level */</span>
+<span class="w">        </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">MaxCLL</span><span class="p">;</span><span class="w">  </span><span class="cm">/* max content light level */</span>
+<span class="w">        </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">MaxFALL</span><span class="p">;</span><span class="w"> </span><span class="cm">/* max frame average light level */</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">lighting</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">i_cubemap_padding</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">video_format_Init</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_chroma</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">i_chroma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_chroma</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_viewpoint_init</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">pose</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">video_format_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="w"> </span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="n">p_src</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">video_palette_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">video_palette_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">VLC_ENOMEM</span><span class="p">;</span>
+<span class="w">        </span><span class="n">memcpy</span><span class="p">(</span><span class="w"> </span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="p">,</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">VLC_SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">video_format_AdjustColorSpace</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_fmt</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">primaries</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">COLOR_PRIMARIES_UNDEF</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">i_visible_height</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">576</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1">// HD</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">primaries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COLOR_PRIMARIES_BT709</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">i_visible_height</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">525</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1">// PAL</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">primaries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COLOR_PRIMARIES_BT601_625</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">primaries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COLOR_PRIMARIES_BT601_525</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">transfer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TRANSFER_FUNC_UNDEF</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">i_visible_height</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">576</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1">// HD</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">transfer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRANSFER_FUNC_BT709</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">transfer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRANSFER_FUNC_SRGB</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">space</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">COLOR_SPACE_UNDEF</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">i_visible_height</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">576</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1">// HD</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COLOR_SPACE_BT709</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">p_fmt</span><span class="o">-&gt;</span><span class="n">space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COLOR_SPACE_BT601</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">video_format_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="o">-&gt;</span><span class="n">p_palette</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="w"> </span><span class="n">p_src</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_Setup</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_chroma</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_height</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_visible_width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_visible_height</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i_sar_num</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_sar_den</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_CopyCrop</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_ScaleCropAr</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_ApplyRotation</span><span class="p">(</span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="cm">/*restrict*/</span><span class="w"> </span><span class="n">out</span><span class="p">,</span>
+<span class="w">                                        </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">in</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_TransformBy</span><span class="p">(</span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt</span><span class="p">,</span><span class="w"> </span><span class="n">video_transform_t</span><span class="w"> </span><span class="n">transform</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_TransformTo</span><span class="p">(</span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt</span><span class="p">,</span><span class="w"> </span><span class="n">video_orientation_t</span><span class="w"> </span><span class="n">dst_orientation</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">video_transform_t</span><span class="w"> </span><span class="n">video_format_GetTransform</span><span class="p">(</span><span class="n">video_orientation_t</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">video_orientation_t</span><span class="w"> </span><span class="n">dst</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">video_format_IsSimilar</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_Print</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">video_transform_t</span><span class="w"> </span><span class="nf">transform_Inverse</span><span class="p">(</span><span class="w"> </span><span class="n">video_transform_t</span><span class="w"> </span><span class="n">transform</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">transform</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">TRANSFORM_R90</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">TRANSFORM_R270</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">TRANSFORM_R270</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">TRANSFORM_R90</span><span class="p">;</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">transform</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">subs_format_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* the character encoding of the text of the subtitle.</span>
+<span class="cm">     * all gettext recognized shorts can be used */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_encoding</span><span class="p">;</span>
+
+
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i_x_origin</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i_y_origin</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">struct</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/*  */</span>
+<span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">palette</span><span class="p">[</span><span class="mi">16</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="cm">/* CLUT Palette AYVU */</span>
+
+<span class="w">        </span><span class="cm">/* the width of the original movie the spu was extracted from */</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i_original_frame_width</span><span class="p">;</span>
+<span class="w">        </span><span class="cm">/* the height of the original movie the spu was extracted from */</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i_original_frame_height</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">spu</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">struct</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i_id</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">dvb</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i_magazine</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i_page</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">teletext</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i_channel</span><span class="p">;</span>
+<span class="w">        </span><span class="cm">/* Reorder depth of transport video, -1 for no reordering */</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i_reorder_depth</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">cc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">text_style_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_style</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Default styles to use */</span>
+<span class="p">};</span>
+
+<span class="cp">#define SPU_PALETTE_DEFINED  0xbeefbeef</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">extra_languages_t</span>
+<span class="p">{</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_language</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_description</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">extra_languages_t</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">es_format_category_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">UNKNOWN_ES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VIDEO_ES</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AUDIO_ES</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SPU_ES</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DATA_ES</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="cp">#define ES_CATEGORY_COUNT (DATA_ES + 1)</span>
+
+<span class="cp">#define ES_PRIORITY_NOT_SELECTABLE  -2</span>
+<span class="cp">#define ES_PRIORITY_NOT_DEFAULTABLE -1</span>
+<span class="cp">#define ES_PRIORITY_SELECTABLE_MIN   0</span>
+<span class="cp">#define ES_PRIORITY_MIN ES_PRIORITY_NOT_SELECTABLE</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">es_format_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="nc">es_format_category_e</span><span class="w"> </span><span class="n">i_cat</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_fourcc_t</span><span class="w">    </span><span class="n">i_codec</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vlc_fourcc_t</span><span class="w">    </span><span class="n">i_original_fourcc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_id</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_group</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">i_priority</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w">            </span><span class="o">*</span><span class="n">psz_language</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">            </span><span class="o">*</span><span class="n">psz_description</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w">        </span><span class="n">i_extra_languages</span><span class="p">;</span>
+<span class="w">    </span><span class="n">extra_languages_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_extra_languages</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">audio_format_t</span><span class="w">  </span><span class="n">audio</span><span class="p">;</span>
+<span class="w">            </span><span class="n">audio_replay_gain_t</span><span class="w"> </span><span class="n">audio_replay_gain</span><span class="p">;</span><span class="w"> </span><span class="cm">/*&lt; audio replay gain information */</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="n">video_format_t</span><span class="w"> </span><span class="n">video</span><span class="p">;</span>
+<span class="w">        </span><span class="n">subs_format_t</span><span class="w">  </span><span class="n">subs</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">i_bitrate</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">      </span><span class="n">i_profile</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">      </span><span class="n">i_level</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w">     </span><span class="n">b_packetized</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">     </span><span class="n">i_extra</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">    </span><span class="o">*</span><span class="n">p_extra</span><span class="p">;</span>
+
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">video_format_FixRgb</span><span class="p">(</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">es_format_Init</span><span class="p">(</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_cat</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_codec</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">es_format_InitFromVideo</span><span class="p">(</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">video_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">es_format_Copy</span><span class="p">(</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_dst</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_src</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">es_format_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">es_format_IsSimilar</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">es_format_Change</span><span class="p">(</span><span class="w"> </span><span class="n">es_format_t</span><span class="w"> </span><span class="o">*</span><span class="n">fmt</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_cat</span><span class="p">,</span><span class="w"> </span><span class="n">vlc_fourcc_t</span><span class="w"> </span><span class="n">i_codec</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">es_format_Clean</span><span class="p">(</span><span class="w"> </span><span class="n">fmt</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">es_format_Init</span><span class="p">(</span><span class="w"> </span><span class="n">fmt</span><span class="p">,</span><span class="w"> </span><span class="n">i_cat</span><span class="p">,</span><span class="w"> </span><span class="n">i_codec</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__inputvariable" kind="group">
+    <compoundname>inputvariable</compoundname>
+    <title>Input variables</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The input provides multiples variable you can write to and/or read from.</para>
+<para>TODO complete the documentation. The read only variables are:<itemizedlist>
+<listitem><para>&quot;length&quot;</para>
+</listitem><listitem><para>&quot;can-seek&quot; (if you can seek, it doesn&apos;t say if &apos;bar display&apos; has be shown or not, for that check position != 0.0)</para>
+</listitem><listitem><para>&quot;can-pause&quot;</para>
+</listitem><listitem><para>&quot;can-rate&quot;</para>
+</listitem><listitem><para>&quot;can-rewind&quot;</para>
+</listitem><listitem><para>&quot;can-record&quot; (if a stream can be recorded while playing)</para>
+</listitem><listitem><para>&quot;teletext-es&quot; (list of id from the spu tracks (spu-es) that are teletext, the variable value being the one currently selected, -1 if no teletext)</para>
+</listitem><listitem><para>&quot;signal-quality&quot;</para>
+</listitem><listitem><para>&quot;signal-strength&quot;</para>
+</listitem><listitem><para>&quot;program-scrambled&quot; (if the current program is scrambled)</para>
+</listitem><listitem><para>&quot;cache&quot; (level of data cached [0 .. 1])</para>
+</listitem></itemizedlist>
+</para>
+<para>The read-write variables are:<itemizedlist>
+<listitem><para>state (<simplesect kind="see"><para><ref refid="group__input_1ga50f8cb1c3cdf6bfc02752c1d41b723b4" kindref="member">input_state_e</ref>)</para>
+</simplesect>
+</para>
+</listitem><listitem><para>rate</para>
+</listitem><listitem><para>position</para>
+</listitem><listitem><para>time, time-offset</para>
+</listitem><listitem><para>title, next-title, prev-title</para>
+</listitem><listitem><para>chapter, next-chapter, next-chapter-prev</para>
+</listitem><listitem><para>program, audio-es, video-es, spu-es</para>
+</listitem><listitem><para>audio-delay, spu-delay</para>
+</listitem><listitem><para>bookmark (bookmark list)</para>
+</listitem><listitem><para>record</para>
+</listitem><listitem><para>frame-next</para>
+</listitem><listitem><para>navigation (list of &quot;title %2i&quot;)</para>
+</listitem><listitem><para>&quot;title %2i&quot;</para>
+</listitem></itemizedlist>
+</para>
+<para>The variable used for event is<itemizedlist>
+<listitem><para>intf-event (<simplesect kind="see"><para><ref refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">input_event_type_e</ref>) </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

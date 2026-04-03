@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structintf__dialog__args__t" kind="struct" language="C++" prot="public">
+    <compoundname>intf_dialog_args_t</compoundname>
+    <includes refid="vlc__interface_8h" local="no">vlc_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <member refid="group__interface_1gafb29b9b5dffbf46423090907f06e0669" kind="variable"><name>p_intf</name></member>
+      <member refid="group__interface_1gaad17faeca8a3b2c243d7883d84f78750" kind="variable"><name>psz_title</name></member>
+      <member refid="group__interface_1gacdaa05ac4095f7d08ae4208383b1b187" kind="variable"><name>psz_results</name></member>
+      <member refid="group__interface_1ga468bb8421ba26e3f7cd51b7f93c5b249" kind="variable"><name>i_results</name></member>
+      <member refid="group__interface_1gac8a6c698305abfaa4695c4ececff1baa" kind="variable"><name>pf_callback</name></member>
+      <member refid="group__interface_1gad6cb3f0195992ab6bded7fc51bf0da51" kind="variable"><name>p_arg</name></member>
+      <member refid="group__interface_1gaf93c406be3d0966fcd46a98eae5ee924" kind="variable"><name>psz_extensions</name></member>
+      <member refid="group__interface_1gad5f635312ec8171508514c28f8f8c970" kind="variable"><name>b_save</name></member>
+      <member refid="group__interface_1gae58a9787d2666461108524f82a803795" kind="variable"><name>b_multiple</name></member>
+      <member refid="group__interface_1gaee0b2590d749b6a1532e849a08029276" kind="variable"><name>p_dialog</name></member>
+    </sectiondef>
+    <briefdescription>
+<para>Arguments passed to a dialogs provider This describes the arguments passed to the dialogs provider. They are mainly used with INTF_DIALOG_FILE_GENERIC. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>config_chain_t</label>
+        <link refid="structconfig__chain__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>interaction_dialog_t</label>
+        <link refid="structinteraction__dialog__t"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+val</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+p_parent</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>intf_dialog_args_t</label>
+        <link refid="structintf__dialog__args__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_intf</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+p_dialog</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>intf_thread_t</label>
+        <link refid="structintf__thread__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+p_next</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+p_cfg</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>vlc_list_t</label>
+        <link refid="structvlc__list__t"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+p_values</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>vlc_object_t</label>
+        <link refid="structvlc__object__t"/>
+      </node>
+      <node id="5">
+        <label>vlc_value_t</label>
+        <link refid="unionvlc__value__t"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+p_list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" line="69" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interface.h" bodystart="70" bodyend="87"/>
+    <listofallmembers>
+      <member refid="group__interface_1gae58a9787d2666461108524f82a803795" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>b_multiple</name></member>
+      <member refid="group__interface_1gad5f635312ec8171508514c28f8f8c970" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>b_save</name></member>
+      <member refid="group__interface_1ga468bb8421ba26e3f7cd51b7f93c5b249" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>i_results</name></member>
+      <member refid="group__interface_1gad6cb3f0195992ab6bded7fc51bf0da51" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>p_arg</name></member>
+      <member refid="group__interface_1gaee0b2590d749b6a1532e849a08029276" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>p_dialog</name></member>
+      <member refid="group__interface_1gafb29b9b5dffbf46423090907f06e0669" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>p_intf</name></member>
+      <member refid="group__interface_1gac8a6c698305abfaa4695c4ececff1baa" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>pf_callback</name></member>
+      <member refid="group__interface_1gaf93c406be3d0966fcd46a98eae5ee924" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>psz_extensions</name></member>
+      <member refid="group__interface_1gacdaa05ac4095f7d08ae4208383b1b187" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>psz_results</name></member>
+      <member refid="group__interface_1gaad17faeca8a3b2c243d7883d84f78750" prot="public" virt="non-virtual"><scope>intf_dialog_args_t</scope><name>psz_title</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

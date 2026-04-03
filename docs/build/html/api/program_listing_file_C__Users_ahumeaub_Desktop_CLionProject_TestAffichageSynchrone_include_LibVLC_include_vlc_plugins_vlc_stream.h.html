@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File vlc_stream.h &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AffichageSynchrone
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Program Listing for File vlc_stream.h</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AffichageSynchrone</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File vlc_stream.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_stream.h.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-vlc-stream-h">
+<span id="program-listing-file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-stream-h"></span><h1>Program Listing for File vlc_stream.h<a class="headerlink" href="#program-listing-for-file-vlc-stream-h" title="Lien vers cette rubrique"></a></h1>
+<p>↰ <a class="reference internal" href="file_C__Users_ahumeaub_Desktop_CLionProject_TestAffichageSynchrone_include_LibVLC_include_vlc_plugins_vlc_stream.h.html#file-c-users-ahumeaub-desktop-clionproject-testaffichagesynchrone-include-libvlc-include-vlc-plugins-vlc-stream-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">C:\Users\ahumeaub\Desktop\CLionProject\TestAffichageSynchrone\include\LibVLC\include\vlc\plugins\vlc_stream.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************************************************************************</span>
+<span class="cm"> * vlc_stream.h: Stream (between access and demux) descriptor and methods</span>
+<span class="cm"> *****************************************************************************</span>
+<span class="cm"> * Copyright (C) 1999-2004 VLC authors and VideoLAN</span>
+<span class="cm"> * $Id$</span>
+<span class="cm"> *</span>
+<span class="cm"> * Authors: Laurent Aimar &lt;fenrir@via.ecp.fr&gt;</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software; you can redistribute it and/or modify it</span>
+<span class="cm"> * under the terms of the GNU Lesser General Public License as published by</span>
+<span class="cm"> * the Free Software Foundation; either version 2.1 of the License, or</span>
+<span class="cm"> * (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="cm"> * GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span class="cm"> * along with this program; if not, write to the Free Software Foundation,</span>
+<span class="cm"> * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.</span>
+<span class="cm"> *****************************************************************************/</span>
+
+<span class="cp">#ifndef VLC_STREAM_H</span>
+<span class="cp">#define VLC_STREAM_H 1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vlc_block.h&gt;</span>
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># endif</span>
+
+
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">stream_t</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">VLC_COMMON_MEMBERS</span>
+
+<span class="w">    </span><span class="cm">/* Module properties for stream filter */</span>
+<span class="w">    </span><span class="n">module_t</span><span class="w">    </span><span class="o">*</span><span class="n">p_module</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="o">*</span><span class="n">psz_name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="o">*</span><span class="n">psz_url</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w">  </span><span class="o">*</span><span class="n">psz_location</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">        </span><span class="o">*</span><span class="n">psz_filepath</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">         </span><span class="n">b_preparsing</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Stream source for stream filter */</span>
+<span class="w">    </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_source</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">ssize_t</span><span class="w">     </span><span class="p">(</span><span class="o">*</span><span class="n">pf_read</span><span class="p">)(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">block_t</span><span class="w">    </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf_block</span><span class="p">)(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="o">*</span><span class="n">eof</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="p">(</span><span class="o">*</span><span class="n">pf_readdir</span><span class="p">)(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="p">(</span><span class="o">*</span><span class="n">pf_seek</span><span class="p">)(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="p">(</span><span class="o">*</span><span class="n">pf_control</span><span class="p">)(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i_query</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_sys</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Weak link to parent input */</span>
+<span class="w">    </span><span class="n">input_thread_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_input</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">stream_query_e</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* capabilities */</span>
+<span class="w">    </span><span class="n">STREAM_CAN_SEEK</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_CAN_FASTSEEK</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_CAN_PAUSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_CAN_CONTROL_PACE</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">STREAM_GET_SIZE</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_IS_DIRECTORY</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* */</span>
+<span class="w">    </span><span class="n">STREAM_GET_PTS_DELAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x101</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_TITLE_INFO</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_TITLE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_SEEKPOINT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_META</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_CONTENT_TYPE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_SIGNAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_GET_TAGS</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">STREAM_SET_PAUSE_STATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x200</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_SET_TITLE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">STREAM_SET_SEEKPOINT</span><span class="p">,</span>
+
+<span class="w">    </span><span class="cm">/* XXX only data read through vlc_stream_Read/Block will be recorded */</span>
+<span class="w">    </span><span class="n">STREAM_SET_RECORD_STATE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">STREAM_SET_PRIVATE_ID_STATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1000</span><span class="p">,</span><span class="w"> </span><span class="cm">/* arg1= int i_private_data, bool b_selected    res=can fail */</span>
+<span class="w">    </span><span class="n">STREAM_SET_PRIVATE_ID_CA</span><span class="p">,</span><span class="w">             </span><span class="cm">/* arg1= int i_program_number, uint16_t i_vpid, uint16_t i_apid1, uint16_t i_apid2, uint16_t i_apid3, uint8_t i_length, uint8_t *p_data */</span>
+<span class="w">    </span><span class="n">STREAM_GET_PRIVATE_ID_STATE</span><span class="p">,</span><span class="w">          </span><span class="cm">/* arg1=int i_private_data arg2=bool *          res=can fail */</span>
+<span class="p">};</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">vlc_stream_Read</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">vlc_stream_ReadPartial</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+<span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">vlc_stream_Peek</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_stream_ReadBlock</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">vlc_stream_Tell</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">vlc_stream_Eof</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_stream_Seek</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_stream_vaControl</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">vlc_stream_Control</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vlc_stream_vaControl</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span>
+<span class="w">    </span><span class="n">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_stream_Block</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_stream_ReadLine</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_stream_ReadDir</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_stream_Delete</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_stream_CommonNew</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="p">));</span>
+
+<span class="n">VLC_USED</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_stream_GetSize</span><span class="p">(</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="o">*</span><span class="n">size</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vlc_stream_Control</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">STREAM_GET_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">stream_Size</span><span class="p">(</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">i_pos</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_stream_GetSize</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i_pos</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">i_pos</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int64_t</span><span class="p">)</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">62</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i_pos</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">stream_HasExtension</span><span class="p">(</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">extension</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">psz_filepath</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">psz_filepath</span>
+<span class="w">                                                 </span><span class="o">:</span><span class="w"> </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">psz_url</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strrchr</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;.&#39;</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">strcasecmp</span><span class="p">(</span><span class="w"> </span><span class="n">ext</span><span class="p">,</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">stream_ContentType</span><span class="p">(</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">vlc_stream_Control</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">STREAM_GET_CONTENT_TYPE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">res</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">stream_MimeType</span><span class="p">(</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">mime_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream_ContentType</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">mime_type</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* strip parameters */</span>
+<span class="w">        </span><span class="n">mime_type</span><span class="p">[</span><span class="n">strcspn</span><span class="p">(</span><span class="w"> </span><span class="n">mime_type</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; ;&quot;</span><span class="w"> </span><span class="p">)]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mime_type</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_USED</span>
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">stream_IsMimeType</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">type</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">mime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream_MimeType</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mime</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">strcasecmp</span><span class="p">(</span><span class="n">mime</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">mime</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ok</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_stream_MemoryNew</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">base</span><span class="p">,</span>
+<span class="w">                                       </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">preserve</span><span class="p">)</span><span class="w"> </span><span class="n">VLC_USED</span><span class="p">;</span>
+<span class="cp">#define vlc_stream_MemoryNew(a, b, c, d) \</span>
+<span class="cp">        vlc_stream_MemoryNew(VLC_OBJECT(a), b, c, d)</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vlc_stream_NewURL</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">url</span><span class="p">)</span>
+<span class="n">VLC_USED</span><span class="p">;</span>
+<span class="cp">#define vlc_stream_NewURL(a, b) vlc_stream_NewURL(VLC_OBJECT(a), b)</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">vlc_stream_fifo_New</span><span class="p">(</span><span class="n">vlc_object_t</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_stream_fifo_Queue</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">block_t</span><span class="w"> </span><span class="o">*</span><span class="n">block</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">vlc_stream_fifo_Write</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span>
+<span class="w">                                      </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vlc_stream_fifo_Close</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span>
+
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="n">stream_t</span><span class="o">*</span><span class="w"> </span><span class="n">vlc_stream_FilterNew</span><span class="p">(</span><span class="w"> </span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_source</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">psz_stream_filter</span><span class="w"> </span><span class="p">);</span>
+
+<span class="n">VLC_API</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vlc_stream_FilterDefaultReadDir</span><span class="p">(</span><span class="n">stream_t</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span>
+<span class="w">                                            </span><span class="n">input_item_node_t</span><span class="w"> </span><span class="o">*</span><span class="n">p_node</span><span class="p">);</span>
+
+<span class="cp">#define stream_FilterSetDefaultReadDir(stream) \</span>
+<span class="cp">do { \</span>
+<span class="cp">    (stream)-&gt;pf_readdir = vlc_stream_FilterDefaultReadDir; \</span>
+<span class="cp">} while (0)</span>
+
+
+<span class="cp"># ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp"># endif</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

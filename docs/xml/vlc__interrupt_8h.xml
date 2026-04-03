@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="vlc__interrupt_8h" kind="file" language="C++">
+    <compoundname>vlc_interrupt.h</compoundname>
+    <includes refid="vlc__threads_8h" local="no">vlc_threads.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h</label>
+        <link refid="vlc__interrupt_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vlc_threads.h</label>
+        <link refid="vlc__threads_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>pthread.h</label>
+      </node>
+      <node id="5">
+        <label>semaphore.h</label>
+      </node>
+      <node id="6">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="3">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="typedef">
+      <member refid="group__interrupt__context_1gaea171ef7c3f05d7a4554deed598f32ea" kind="typedef"><name>vlc_interrupt_t</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__interrupt__sleep_1ga3452730f2502295ab9dbcd425f057a64" kind="function"><name>vlc_sem_wait_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga8a7768b29bb48325af490ae45c1e9112" kind="function"><name>vlc_mwait_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga14953a1074d3d00a16cd00b3c0bda974" kind="function"><name>vlc_msleep_i11e</name></member>
+      <member refid="group__interrupt__sleep_1gac9afbeb073fe629c591b75d5ff90f140" kind="function"><name>vlc_poll_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga46585c2dc5bd45254111f3d7d522185a" kind="function"><name>vlc_readv_i11e</name></member>
+      <member refid="group__interrupt__sleep_1gae00b9378d8260a3dd5046f45b12f5a5f" kind="function"><name>vlc_writev_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga2ec5295cb51673a8320ad1607650d1aa" kind="function"><name>vlc_read_i11e</name></member>
+      <member refid="group__interrupt__sleep_1gac6d4f7482c98245d2fc4b5311338bca6" kind="function"><name>vlc_write_i11e</name></member>
+      <member refid="group__interrupt__sleep_1gacf6e2392d27167dcfea77dcd578efa01" kind="function"><name>vlc_recvmsg_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga0ee57749ab063d0b8094e05db333e2af" kind="function"><name>vlc_sendmsg_i11e</name></member>
+      <member refid="group__interrupt__sleep_1gad545c26c488809cdcbcbbd0cba1ab845" kind="function"><name>vlc_recvfrom_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga9c1818738a1ad5364de119beb5af4ca3" kind="function"><name>vlc_sendto_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga7d43b40cf69aeb75afdb80151c793fcc" kind="function"><name>vlc_recv_i11e</name></member>
+      <member refid="group__interrupt__sleep_1gaa92a36914255a418b8e9ac5139d18ac1" kind="function"><name>vlc_send_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga4635a067fb92a743b561ca7c6ef58693" kind="function"><name>vlc_accept_i11e</name></member>
+      <member refid="group__interrupt__sleep_1ga876cba0868915478d41ff496ecd9cdc9" kind="function"><name>vlc_interrupt_register</name></member>
+      <member refid="group__interrupt__sleep_1ga6bf76a4b5e4f24e2ff437bec451a7791" kind="function"><name>vlc_interrupt_unregister</name></member>
+      <member refid="group__interrupt__context_1ga51d7d1af91400610f0b2226bc30270b1" kind="function"><name>vlc_interrupt_create</name></member>
+      <member refid="group__interrupt__context_1ga9344075b949fe0bcf51a63565f774e5a" kind="function"><name>vlc_interrupt_destroy</name></member>
+      <member refid="group__interrupt__context_1ga493327cca117b02f4361992444330c71" kind="function"><name>vlc_interrupt_set</name></member>
+      <member refid="group__interrupt__context_1ga6ad7acf9e5d0639e9e0ffc81b477dc1b" kind="function"><name>vlc_interrupt_raise</name></member>
+      <member refid="group__interrupt__context_1ga12685d4b7ba71818f4a59e28db0ccc09" kind="function"><name>vlc_interrupt_kill</name></member>
+      <member refid="group__interrupt__context_1ga5922738084d4992960c624967e4d99c9" kind="function"><name>vlc_killed</name></member>
+      <member refid="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" kind="function"><name>vlc_interrupt_forward_start</name></member>
+      <member refid="group__interrupt__context_1gaad177c327afe520dbc62fa5beadf0137" kind="function"><name>vlc_interrupt_forward_stop</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file declares interruptible sleep functions. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_interrupt.h:</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2015<sp/>Remlab<sp/>T:mi</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_INTERRUPT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>VLC_INTERRUPT_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;<ref refid="vlc__threads_8h" kindref="compound">vlc_threads.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>socklen_t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;ws2tcpip.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">pollfd;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">iovec;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">msghdr;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="group__interrupt__sleep_1ga3452730f2502295ab9dbcd425f057a64" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__sleep_1ga3452730f2502295ab9dbcd425f057a64" kindref="member">vlc_sem_wait_i11e</ref>(<ref refid="group__thread_1gaefec241da45a9c83371c3a69e5359fb9" kindref="member">vlc_sem_t</ref><sp/>*);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="group__interrupt__sleep_1ga8a7768b29bb48325af490ae45c1e9112" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__sleep_1ga8a7768b29bb48325af490ae45c1e9112" kindref="member">vlc_mwait_i11e</ref>(<ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_msleep_i11e(<ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref><sp/>delay)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__sleep_1ga8a7768b29bb48325af490ae45c1e9112" kindref="member">vlc_mwait_i11e</ref>(<ref refid="group__thread_1ga5aa7b01176460b7e8e51fb8ca582614b" kindref="member">mdate</ref>()<sp/>+<sp/>delay);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="group__interrupt__sleep_1gac9afbeb073fe629c591b75d5ff90f140" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__sleep_1gac9afbeb073fe629c591b75d5ff90f140" kindref="member">vlc_poll_i11e</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>pollfd<sp/>*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_readv_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>iovec<sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_writev_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>iovec<sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_read_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_write_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_recvmsg_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>msghdr<sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_sendmsg_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>msghdr<sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_recvfrom_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*,<sp/>socklen_t<sp/>*);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">VLC_API<sp/>ssize_t<sp/>vlc_sendto_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*,<sp/>socklen_t);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>ssize_t<sp/>vlc_recv_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vlc_recvfrom_i11e(fd,<sp/>buf,<sp/>len,<sp/>flags,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">ssize_t<sp/>vlc_send_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vlc_sendto_i11e(fd,<sp/>buf,<sp/>len,<sp/>flags,<sp/>NULL,<sp/>0);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_accept_i11e(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*,<sp/>socklen_t<sp/>*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="group__interrupt__sleep_1ga876cba0868915478d41ff496ecd9cdc9" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__sleep_1ga876cba0868915478d41ff496ecd9cdc9" kindref="member">vlc_interrupt_register</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*cb)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*opaque);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_interrupt_unregister(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">vlc_interrupt<sp/>vlc_interrupt_t;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="group__interrupt__context_1ga51d7d1af91400610f0b2226bc30270b1" refkind="member"><highlight class="normal">VLC_API<sp/>vlc_interrupt_t<sp/>*<ref refid="group__interrupt__context_1ga51d7d1af91400610f0b2226bc30270b1" kindref="member">vlc_interrupt_create</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="group__interrupt__context_1ga9344075b949fe0bcf51a63565f774e5a" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__context_1ga9344075b949fe0bcf51a63565f774e5a" kindref="member">vlc_interrupt_destroy</ref>(vlc_interrupt_t<sp/>*);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="group__interrupt__context_1ga493327cca117b02f4361992444330c71" refkind="member"><highlight class="normal">VLC_API<sp/>vlc_interrupt_t<sp/>*<ref refid="group__interrupt__context_1ga493327cca117b02f4361992444330c71" kindref="member">vlc_interrupt_set</ref>(vlc_interrupt_t<sp/>*);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="group__interrupt__context_1ga6ad7acf9e5d0639e9e0ffc81b477dc1b" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__context_1ga6ad7acf9e5d0639e9e0ffc81b477dc1b" kindref="member">vlc_interrupt_raise</ref>(vlc_interrupt_t<sp/>*);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="group__interrupt__context_1ga12685d4b7ba71818f4a59e28db0ccc09" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__context_1ga12685d4b7ba71818f4a59e28db0ccc09" kindref="member">vlc_interrupt_kill</ref>(vlc_interrupt_t<sp/>*);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="group__interrupt__context_1ga5922738084d4992960c624967e4d99c9" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__context_1ga5922738084d4992960c624967e4d99c9" kindref="member">vlc_killed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>VLC_USED;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__context_1gaf0d736d73a8a0f409cd121f863835e8b" kindref="member">vlc_interrupt_forward_start</ref>(vlc_interrupt_t<sp/>*to,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data[2]);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235" refid="group__interrupt__context_1gaad177c327afe520dbc62fa5beadf0137" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__interrupt__context_1gaad177c327afe520dbc62fa5beadf0137" kindref="member">vlc_interrupt_forward_stop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data[2]);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_interrupt.h"/>
+  </compounddef>
+</doxygen>

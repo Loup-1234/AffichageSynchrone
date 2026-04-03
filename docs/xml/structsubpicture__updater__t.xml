@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="structsubpicture__updater__t" kind="struct" language="C++" prot="public">
+    <compoundname>subpicture_updater_t</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsubpicture__updater__t_1a9310b60aab0228422a537a067741c8ea" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* subpicture_updater_t::pf_validate) (subpicture_t *, bool has_src_changed, const video_format_t *p_fmt_src, bool has_dst_changed, const video_format_t *p_fmt_dst, vlc_tick_t)</definition>
+        <argsstring>)(subpicture_t *, bool has_src_changed, const video_format_t *p_fmt_src, bool has_dst_changed, const video_format_t *p_fmt_dst, vlc_tick_t)</argsstring>
+        <name>pf_validate</name>
+        <qualifiedname>subpicture_updater_t::pf_validate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Optional pre update callback, usually useful on video format change. Will skip pf_update on VLC_SUCCESS, or will delete every region before the call to pf_update </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="127" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsubpicture__updater__t_1a327c294235efb69e80d9669a48466800" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* subpicture_updater_t::pf_update) (subpicture_t *, const video_format_t *p_fmt_src, const video_format_t *p_fmt_dst, vlc_tick_t)</definition>
+        <argsstring>)(subpicture_t *, const video_format_t *p_fmt_src, const video_format_t *p_fmt_dst, vlc_tick_t)</argsstring>
+        <name>pf_update</name>
+        <qualifiedname>subpicture_updater_t::pf_update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mandatory callback called after pf_validate and doing the main job of creating the subpicture regions for the current video_format </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="134" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsubpicture__updater__t_1a41fd162685e187e8df36fbe5565fada0" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* subpicture_updater_t::pf_destroy) (subpicture_t *)</definition>
+        <argsstring>)(subpicture_t *)</argsstring>
+        <name>pf_destroy</name>
+        <qualifiedname>subpicture_updater_t::pf_destroy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Optional callback for subpicture private data cleanup </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="139" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsubpicture__updater__t_1af8c21645e22f267929ac7729e7faf591" prot="public" static="no" mutable="no">
+        <type>subpicture_updater_sys_t *</type>
+        <definition>subpicture_updater_sys_t* subpicture_updater_t::p_sys</definition>
+        <argsstring></argsstring>
+        <name>p_sys</name>
+        <qualifiedname>subpicture_updater_t::p_sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="140" column="30" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>subpicture_updater_t</label>
+        <link refid="structsubpicture__updater__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" line="122" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_subpicture.h" bodystart="123" bodyend="141"/>
+    <listofallmembers>
+      <member refid="structsubpicture__updater__t_1af8c21645e22f267929ac7729e7faf591" prot="public" virt="non-virtual"><scope>subpicture_updater_t</scope><name>p_sys</name></member>
+      <member refid="structsubpicture__updater__t_1a41fd162685e187e8df36fbe5565fada0" prot="public" virt="non-virtual"><scope>subpicture_updater_t</scope><name>pf_destroy</name></member>
+      <member refid="structsubpicture__updater__t_1a327c294235efb69e80d9669a48466800" prot="public" virt="non-virtual"><scope>subpicture_updater_t</scope><name>pf_update</name></member>
+      <member refid="structsubpicture__updater__t_1a9310b60aab0228422a537a067741c8ea" prot="public" virt="non-virtual"><scope>subpicture_updater_t</scope><name>pf_validate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

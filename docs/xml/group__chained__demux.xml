@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="group__chained__demux" kind="group">
+    <compoundname>chained_demux</compoundname>
+    <title>Chained demultiplexer</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__chained__demux_1gafabbab967a761ef52bfa77ca02583cea" prot="public" static="no">
+        <type>struct vlc_demux_chained_t</type>
+        <definition>typedef struct vlc_demux_chained_t vlc_demux_chained_t</definition>
+        <argsstring></argsstring>
+        <name>vlc_demux_chained_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="448" column="34" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__chained__demux_1ga2d69b8d5f935ebdd3dd1153f112959a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API vlc_demux_chained_t *</type>
+        <definition>VLC_API vlc_demux_chained_t * vlc_demux_chained_New</definition>
+        <argsstring>(vlc_object_t *parent, const char *name, es_out_t *out)</argsstring>
+        <name>vlc_demux_chained_New</name>
+        <param>
+          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structes__out__t" kindref="compound">es_out_t</ref> *</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a chained demuxer.</para>
+<para>This creates a thread running a demuxer whose input stream is generated directly by the caller. This typically handles some sort of stream within a stream, e.g. MPEG-TS within something else.</para>
+<para><simplesect kind="note"><para>There are a number of limitations to this approach. The chained demuxer is run asynchronously in a separate thread. Most demuxer controls are synchronous and therefore unavailable in this case. Also the input stream is a simple FIFO, so the chained demuxer cannot perform seeks. Lastly, most errors cannot be detected.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parent VLC object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>chained demux module name (e.g. &quot;ts&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>elementary stream output for the chained demux </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a non-NULL pointer on success, NULL on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="468" column="29" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="468" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="group__chained__demux_1ga87c6308df3705f3405d1af5865aab59b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_demux_chained_Delete</definition>
+        <argsstring>(vlc_demux_chained_t *)</argsstring>
+        <name>vlc_demux_chained_Delete</name>
+        <param>
+          <type>vlc_demux_chained_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a chained demuxer.</para>
+<para>Sends an end-of-stream to the chained demuxer, and releases all underlying allocated resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="478" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="478" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__chained__demux_1ga8b6869372d13deff41c584d13817ace6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API void</type>
+        <definition>VLC_API void vlc_demux_chained_Send</definition>
+        <argsstring>(vlc_demux_chained_t *, block_t *block)</argsstring>
+        <name>vlc_demux_chained_Send</name>
+        <param>
+          <type>vlc_demux_chained_t *</type>
+        </param>
+        <param>
+          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends data to a chained demuxer.</para>
+<para>This queues data for a chained demuxer to consume.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data block to queue </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="487" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="487" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__chained__demux_1ga1d5b73a5fed30823fa47994460f73bcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VLC_API int</type>
+        <definition>VLC_API int vlc_demux_chained_ControlVa</definition>
+        <argsstring>(vlc_demux_chained_t *, int query, va_list args)</argsstring>
+        <name>vlc_demux_chained_ControlVa</name>
+        <param>
+          <type>vlc_demux_chained_t *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls a chained demuxer.</para>
+<para>This performs a <bold>demux</bold> (i.e. DEMUX_...) control request on a chained demux.</para>
+<para><simplesect kind="note"><para>In most cases, vlc_demux_chained_Control() should be used instead. </para>
+</simplesect>
+<simplesect kind="warning"><para>As per <ref refid="group__chained__demux_1ga2d69b8d5f935ebdd3dd1153f112959a0" kindref="member">vlc_demux_chained_New()</ref>, most demux controls are not, and cannot be, supported; VLC_EGENERIC is returned.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>demux control (see <ref refid="group__demux_1ga8a50c1738c3b314f887d0630ee6ab434" kindref="member">demux_query_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>variable arguments (depending on the query) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="502" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" declline="502" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__chained__demux_1ga42135d6980b6d49d02c8cdb06d972d8a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int vlc_demux_chained_Control</definition>
+        <argsstring>(vlc_demux_chained_t *dc, int query,...)</argsstring>
+        <name>vlc_demux_chained_Control</name>
+        <param>
+          <type>vlc_demux_chained_t *</type>
+          <declname>dc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" line="505" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/TestAffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_demux.h" bodystart="505" bodyend="515"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Demultiplexers wrapped by another demultiplexer </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
