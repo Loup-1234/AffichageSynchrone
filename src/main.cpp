@@ -1,6 +1,7 @@
-#include <iostream>
+#include "../include/Master/Master.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Master monInterface;
+    monInterface.executer();
     return 0;
 }
