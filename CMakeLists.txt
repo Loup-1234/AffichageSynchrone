@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD 23)
 
 if (WIN32) # WINDOWS
 
+    add_definitions(-DWIN32_LEAN_AND_MEAN -DNOMINMAX)
+
     include(FetchContent)
 
     FetchContent_Declare(
@@ -37,10 +39,12 @@ endif ()
 set(SOURCE_FILES
         src/main.cpp
         include/Master/Master.cpp
+        include/ExpediteurUDP_W/ExpediteurUDP_W.cpp
 )
 
 set(HEADER_FILES
         include/Master/Master.h
+        include/ExpediteurUDP_W/ExpediteurUDP_W.h
 )
 
 add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
@@ -58,6 +62,7 @@ if (WIN32) # WINDOWS
             raylib
             winmm
             gdi32
+            ws2_32
             libvlc
             libvlccore
     )
