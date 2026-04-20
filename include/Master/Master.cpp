@@ -1,8 +1,8 @@
 #define RAYGUI_IMPLEMENTATION
 
 #include "Master.h"
-#include "../include/raygui/raygui.h" // Vérifie ce chemin
-#include "VideoComplexe.h" // <-- Remplacement ici
+#include "../raygui/raygui.h"
+#include "../SessionLecture/SessionLecture.h"
 #include <filesystem>
 #include <algorithm>
 #include <chrono>
@@ -47,7 +47,9 @@ static unsigned configurerVideo(void **donnees, char *chroma, const unsigned *la
 // Implémentation de la classe Master
 // ==========================================
 
-Master::Master(const string &ipGroupe, const int port) : udp(ipGroupe, port) {
+Master::Master(const string &ipGroupe, const int port, const vector<vector<string>> &config)
+    : udp(ipGroupe, port), configLecteurs(config) {
+
     // Initialisation Raylib
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
     InitWindow(800, 450, "Master UI - Connecté au Réseau");
@@ -56,8 +58,14 @@ Master::Master(const string &ipGroupe, const int port) : udp(ipGroupe, port) {
     chargerListeVideos();
     SetTargetFPS(30);
 
-    // Initialisation VLC
+    // Initialisation VLC Sécurisée
     instanceVLC = libvlc_new(0, nullptr);
+    if (!instanceVLC) {
+        CloseAudioDevice();
+        CloseWindow();
+        throw runtime_error("Erreur critique : Impossible d'initialiser VLC. Le dossier 'plugins' est-il manquant ?");
+    }
+
     lecteurVLC = libvlc_media_player_new(instanceVLC);
     textureVideo = {0};
 
@@ -171,13 +179,26 @@ void Master::generer() {
     if (threadGeneration.joinable()) threadGeneration.join();
 
     threadGeneration = thread([this, videos]() {
-        VideoComplexe videoComplexe;
         try {
-            // Appel direct, la classe VideoComplexe s'occupe de la logique
-            videoComplexe.genererVideoComplexe(videos, cheminVideoComplexe);
+            if (!fs::exists("videosComplexes")) {
+                fs::create_directory("videosComplexes");
+            }
+
+            SessionLecture session;
+
+            // On utilise la configuration transmise par le main
+            session.preparerSessionLecture(this->configLecteurs);
+
+            cout << "[Système] Creation des videos complexes..." << endl;
+            session.genererVideoComplexe(videos);
+
+            cout << "[Système] Lancement du telechargement TFTP..." << endl;
+            session.uploaderVideoComplexe();
+
             videoGeneree = true;
+
         } catch (const exception& e) {
-            cerr << "Erreur lors de la génération : " << e.what() << endl;
+            cerr << "Erreur lors de la generation/upload : " << e.what() << endl;
         }
         generationEnCours = false;
     });

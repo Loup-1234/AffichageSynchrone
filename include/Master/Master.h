@@ -7,7 +7,7 @@
 #include <atomic>
 #include <mutex>
 #include <thread>
-#include "../ExpediteurUDP_W/ExpediteurUDP_W.h" // Vérifie ce chemin selon ton projet
+#include "../ExpediteurUDP_W/ExpediteurUDP_W.h"
 
 using namespace std;
 
@@ -37,7 +37,8 @@ static unsigned configurerVideo(void **donnees, char *chroma, const unsigned *la
  */
 class Master {
 public:
-    Master(const string &ipGroupe, const int port);
+    // Le constructeur prend désormais la configuration des lecteurs en paramètre
+    Master(const string &ipGroupe, const int port, const vector<vector<string>> &configLecteurs);
     ~Master();
 
     void executer();
@@ -45,6 +46,7 @@ public:
 
 private:
     ExpediteurUDP_W udp;
+    vector<vector<string>> configLecteurs; // Stockage de la configuration des esclaves
 
     // --- VLC & Gestion Vidéo ---
     libvlc_instance_t *instanceVLC = nullptr;
@@ -54,7 +56,7 @@ private:
     mutex mutexImage;
     unsigned int largeurVideo = 0;
     unsigned int hauteurVideo = 0;
-    string cheminVideoComplexe = "sortie_synchro.mp4";
+    string cheminVideoComplexe = "videosComplexes/VideoComplexe_0.mp4"; // Lecture de la première vidéo générée
     float duree{};
 
     // --- Callbacks VLC (Amis) ---
