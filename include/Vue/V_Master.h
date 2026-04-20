@@ -1,0 +1,39 @@
+#pragma once
+
+#include "raylib.h"
+#include "Controleur/C_LecteurPhysiqueLocal.h"
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class V_Master {
+public:
+    V_Master(const string &ipGroupe, int port, const vector<vector<string>> &specLecteurs);
+    ~V_Master();
+
+    void executer();
+
+private:
+    C_LecteurPhysiqueLocal controleur;
+
+    Texture2D textureVideo{};
+    Rectangle zones[11]{};
+
+    float valeurProgression = 0.0f;
+    float valeurVolume = 100.0f;
+    bool estMuet = false;
+    bool enGlissement = false;
+    bool etaitEnLecture = false;
+    float delaiRecherche = 0.0f;
+
+    vector<string> fichiersVideo;
+    vector<bool> videosCochees;
+    vector<int> ordreSelection;
+    Vector2 positionDefilement = {0, 0};
+
+    void miseAJourDisposition();
+    void chargerListeVideos();
+    vector<string> getVideosSelectionnees() const;
+    static void ouvrirDossierVideos();
+};

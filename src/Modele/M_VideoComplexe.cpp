@@ -1,4 +1,4 @@
-#include "VideoComplexe.h"
+#include "../../include/Modele/M_VideoComplexe.h"
 
 // Bibliothèques tierces
 #include <fftw3.h>
@@ -23,7 +23,7 @@
 
 mutex fftwMutex;
 
-void VideoComplexe::genererVideoComplexe(const vector<string> &listeFichierEntree, const string &fichierSortie) {
+void M_VideoComplexe::genererVideoComplexe(const vector<string> &listeFichierEntree, const string &fichierSortie) {
     const auto tempsDebut = chrono::high_resolution_clock::now();
     const int nbVideos = static_cast<int>(listeFichierEntree.size());
 
@@ -58,7 +58,8 @@ void VideoComplexe::genererVideoComplexe(const vector<string> &listeFichierEntre
     cout << format("\nTemps total : {:.2f} secondes.\n", chrono::duration<float>(tempsFin - tempsDebut).count());
 }
 
-vector<double> VideoComplexe::calculerDecalages(const vector<vector<float> > &audios, const vector<string>& listeFichiers) {
+vector<double> M_VideoComplexe::calculerDecalages(const vector<vector<float> > &audios,
+                                                  const vector<string> &listeFichiers) {
     const size_t nbVideos = audios.size();
     vector decalages(nbVideos, 0.0);
     vector<future<void> > futures;
@@ -80,7 +81,7 @@ vector<double> VideoComplexe::calculerDecalages(const vector<vector<float> > &au
     for (size_t i = 0; i < nbVideos; ++i) {
         if (i == static_cast<size_t>(indexRef)) {
             bool estAudio = listeFichiers[0].ends_with(".mp3");
-            cout << " -> "<< (estAudio ? "Son " : "Video ") << i + 1 << " [REFERENCE]" << endl;
+            cout << " -> " << (estAudio ? "Son " : "Video ") << i + 1 << " [REFERENCE]" << endl;
         } else {
             cout << " -> Decalage video " << i + 1 << " : " << decalages[i] << " s" << endl;
         }
@@ -89,11 +90,12 @@ vector<double> VideoComplexe::calculerDecalages(const vector<vector<float> > &au
     return decalages;
 }
 
-string VideoComplexe::construireCommandeFFmpeg(const vector<string> &listeFichierEntree,
-                                               const vector<double> &decalagesEnSecondes, const string &fichierSortie) {
+string M_VideoComplexe::construireCommandeFFmpeg(const vector<string> &listeFichierEntree,
+                                                 const vector<double> &decalagesEnSecondes,
+                                                 const string &fichierSortie) {
     constexpr int indexRef = 0;
 
-    const string& refPath = listeFichierEntree[indexRef];
+    const string &refPath = listeFichierEntree[indexRef];
     const bool refEstAudioSeul = refPath.ends_with(".mp3");
 
     vector<int> indexVideos;
@@ -144,7 +146,7 @@ string VideoComplexe::construireCommandeFFmpeg(const vector<string> &listeFichie
     return cmd.str();
 }
 
-vector<vector<float> > VideoComplexe::extraireEtChargerAudios(const vector<string> &listeFichierEntree) {
+vector<vector<float> > M_VideoComplexe::extraireEtChargerAudios(const vector<string> &listeFichierEntree) {
     const size_t nbVideos = listeFichierEntree.size();
 
     vector<future<vector<float> > > futures;
@@ -192,7 +194,7 @@ vector<vector<float> > VideoComplexe::extraireEtChargerAudios(const vector<strin
     return audios;
 }
 
-int VideoComplexe::xcorr(const vector<float> &sig1, const vector<float> &sig2) {
+int M_VideoComplexe::xcorr(const vector<float> &sig1, const vector<float> &sig2) {
     // Étape 1 : Vérification des données
     // On s'assure qu'aucun des deux signaux n'est vide avant de commencer les calculs.
     if (sig1.empty() || sig2.empty()) {
@@ -216,9 +218,12 @@ int VideoComplexe::xcorr(const vector<float> &sig1, const vector<float> &sig2) {
     const unique_ptr<double, decltype(deleterReel)> signalTemporel2(fftw_alloc_real(tailleFFT), deleterReel);
     const unique_ptr<double, decltype(deleterReel)> signalResultat(fftw_alloc_real(tailleFFT), deleterReel);
 
-    const unique_ptr<fftw_complex, decltype(deleterComplexe)> spectre1(fftw_alloc_complex(tailleFrequence), deleterComplexe);
-    const unique_ptr<fftw_complex, decltype(deleterComplexe)> spectre2(fftw_alloc_complex(tailleFrequence), deleterComplexe);
-    const unique_ptr<fftw_complex, decltype(deleterComplexe)> spectreCroise(fftw_alloc_complex(tailleFrequence), deleterComplexe);
+    const unique_ptr<fftw_complex, decltype(deleterComplexe)> spectre1(fftw_alloc_complex(tailleFrequence),
+                                                                       deleterComplexe);
+    const unique_ptr<fftw_complex, decltype(deleterComplexe)> spectre2(fftw_alloc_complex(tailleFrequence),
+                                                                       deleterComplexe);
+    const unique_ptr<fftw_complex, decltype(deleterComplexe)> spectreCroise(
+        fftw_alloc_complex(tailleFrequence), deleterComplexe);
 
     // On vérifie que la mémoire a bien été allouée pour tous les tableaux.
     if (!signalTemporel1 || !signalTemporel2 || !signalResultat || !spectre1 || !spectre2 || !spectreCroise) {
@@ -245,8 +250,10 @@ int VideoComplexe::xcorr(const vector<float> &sig1, const vector<float> &sig2) {
     fftw_plan planAller1, planAller2;
     {
         lock_guard lock(fftwMutex);
-        planAller1 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel1.get(), spectre1.get(), FFTW_ESTIMATE);
-        planAller2 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel2.get(), spectre2.get(), FFTW_ESTIMATE);
+        planAller1 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel1.get(), spectre1.get(),
+                                          FFTW_ESTIMATE);
+        planAller2 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel2.get(), spectre2.get(),
+                                          FFTW_ESTIMATE);
     }
 
     fftw_execute(planAller1);
@@ -270,7 +277,8 @@ int VideoComplexe::xcorr(const vector<float> &sig1, const vector<float> &sig2) {
     fftw_plan planRetour;
     {
         lock_guard lock(fftwMutex);
-        planRetour = fftw_plan_dft_c2r_1d(static_cast<int>(tailleFFT), spectreCroise.get(), signalResultat.get(), FFTW_ESTIMATE);
+        planRetour = fftw_plan_dft_c2r_1d(static_cast<int>(tailleFFT), spectreCroise.get(), signalResultat.get(),
+                                          FFTW_ESTIMATE);
     }
 
     fftw_execute(planRetour);
@@ -298,7 +306,7 @@ int VideoComplexe::xcorr(const vector<float> &sig1, const vector<float> &sig2) {
     return indexMaxSigne > tailleFFTSigne / 2 ? indexMaxSigne - tailleFFTSigne : indexMaxSigne;
 }
 
-void VideoComplexe::nettoyerTemporaires(const int nbVideos) {
+void M_VideoComplexe::nettoyerTemporaires(const int nbVideos) {
     for (int i = 0; i < nbVideos; ++i) {
         string nomFichier = TEMP_AUDIO_PREFIX + to_string(i) + ".bin";
         remove(nomFichier.c_str());

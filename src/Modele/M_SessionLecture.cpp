@@ -1,9 +1,9 @@
-#include "SessionLecture.h"
+#include "../../include/Modele/M_SessionLecture.h"
 
 #include <fstream>
 #include <iostream>
 
-void SessionLecture::preparerSessionLecture(const vector<vector<string>> &specLecteurs) {
+void M_SessionLecture::preparerSessionLecture(const vector<vector<string> > &specLecteurs) {
     IdLecteurs.clear();
     IpLecteurs.clear();
     NbVideos.clear();
@@ -15,12 +15,12 @@ void SessionLecture::preparerSessionLecture(const vector<vector<string>> &specLe
     }
 }
 
-void SessionLecture::genererVideoComplexe(const vector<string> &listeFichierEntree) {
+void M_SessionLecture::genererVideoComplexe(const vector<string> &listeFichierEntree) {
     if (listeFichierEntree.empty()) {
         return;
     }
 
-    vector<vector<string>> videosParLecteur(NbVideos.size());
+    vector<vector<string> > videosParLecteur(NbVideos.size());
     int placesDisponibles = 0;
 
     for (size_t i = 0; i < NbVideos.size(); i++) {
@@ -56,7 +56,7 @@ void SessionLecture::genererVideoComplexe(const vector<string> &listeFichierEntr
     }
 }
 
-void SessionLecture::uploaderVideoComplexe() {
+void M_SessionLecture::uploaderVideoComplexe() {
     const string config = "listeLecteurs.json";
     const string path = "videosComplexes";
 
@@ -93,10 +93,9 @@ void SessionLecture::uploaderVideoComplexe() {
     cout << "\nFichier JSON genere. Lancement du transfert TFTP...\n" << endl;
 
     try {
-        ServeurTFTP_W tftpServer(config, path);
+        M_ServeurTFTP_W tftpServer(config, path);
         tftpServer.runAllTransfers();
-    }
-    catch (const exception& e) {
+    } catch (const exception &e) {
         cerr << "\nUne erreur critique est survenue: " << e.what() << endl;
     }
 }

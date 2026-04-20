@@ -10,11 +10,11 @@
 
 using namespace std;
 
-class ExpediteurUDP_W {
+class M_ExpediteurUDP_W {
 public:
-    ExpediteurUDP_W(const string& ipGroupe, const int port);
+    M_ExpediteurUDP_W(const string& ipGroupe, const int port);
 
-    ~ExpediteurUDP_W();
+    ~M_ExpediteurUDP_W();
 
     bool Envoyer(const void* donnees, const int taille);
 

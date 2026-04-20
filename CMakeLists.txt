@@ -19,7 +19,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(raylib)
 
 # 3. Téléchargement de Raygui
-set(RAYGUI_HEADER_PATH "include/raygui/raygui.h")
+set(RAYGUI_HEADER_PATH "libs/raygui/raygui.h")
 if(NOT EXISTS "${RAYGUI_HEADER_PATH}")
     message(STATUS "Téléchargement de raygui.h (version 4.0) depuis GitHub...")
     file(DOWNLOAD
@@ -34,19 +34,21 @@ endif()
 
 set(SOURCE_FILES
         src/main.cpp
-        include/Master/Master.cpp
-        include/ExpediteurUDP_W/ExpediteurUDP_W.cpp
-        include/VideoComplexe/VideoComplexe.cpp
-        include/ServeurTFTP_W/ServeurTFTP_W.cpp
-        include/SessionLecture/SessionLecture.cpp
+        src/Vue/V_Master.cpp
+        src/Modele/M_ExpediteurUDP_W.cpp
+        src/Modele/M_VideoComplexe.cpp
+        src/Modele/M_ServeurTFTP_W.cpp
+        src/Modele/M_SessionLecture.cpp
+        src/Controleur/C_LecteurPhysiqueLocal.cpp
 )
 
 set(HEADER_FILES
-        include/Master/Master.h
-        include/ExpediteurUDP_W/ExpediteurUDP_W.h
-        include/VideoComplexe/VideoComplexe.h
-        include/ServeurTFTP_W/ServeurTFTP_W.h
-        include/SessionLecture/SessionLecture.h
+        include/Vue/V_Master.h
+        include/Modele/M_ExpediteurUDP_W.h
+        include/Modele/M_VideoComplexe.h
+        include/Modele/M_ServeurTFTP_W.h
+        include/Modele/M_SessionLecture.h
+        include/Controleur/C_LecteurPhysiqueLocal.h
 )
 
 add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
@@ -57,11 +59,11 @@ add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
 
 target_include_directories(AffichageSynchrone PRIVATE
         include
-        "include/LibVLC/include"
-        "${CMAKE_SOURCE_DIR}/include/FFTW"
+        "libs/LibVLC/include"
+        "${CMAKE_SOURCE_DIR}/libs/FFTW"
 )
 
-target_link_directories(AffichageSynchrone PRIVATE "include/LibVLC/lib")
+target_link_directories(AffichageSynchrone PRIVATE "libs/LibVLC/lib")
 
 target_link_libraries(AffichageSynchrone PRIVATE
         raylib
@@ -71,7 +73,7 @@ target_link_libraries(AffichageSynchrone PRIVATE
         wsock32
         libvlc
         libvlccore
-        ${CMAKE_SOURCE_DIR}/include/FFTW/libfftw3-3.dll
+        ${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll
 )
 
 # ==========================================

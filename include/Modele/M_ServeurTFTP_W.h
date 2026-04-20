@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "../JSON/json.hpp"
+#include "../../libs/JSON/json.hpp"
 
 #define BLOCK_SIZE 512
 
@@ -21,11 +21,11 @@ enum class TransferStatus {
     INVALID_ACK
 };
 
-class ServeurTFTP_W {
+class M_ServeurTFTP_W {
 public:
-    ServeurTFTP_W(const string& jsonPath, const string& docRoot);
+    M_ServeurTFTP_W(const string& jsonPath, const string& docRoot);
 
-    ~ServeurTFTP_W();
+    ~M_ServeurTFTP_W();
 
     void runAllTransfers();
 

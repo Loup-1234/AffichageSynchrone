@@ -1,16 +1,16 @@
 #pragma once
 
-#include "../VideoComplexe/VideoComplexe.h"
-#include "../ServeurTFTP_W/ServeurTFTP_W.h"
+#include "M_VideoComplexe.h"
+#include "../Modele/M_ServeurTFTP_W.h"
 
 #include <vector>
 #include <string>
 
 using namespace std;
 
-class SessionLecture {
+class M_SessionLecture {
 private:
-    VideoComplexe videoComplexe;
+    M_VideoComplexe videoComplexe;
 
     vector<int> IdLecteurs;
     vector<string> IpLecteurs;

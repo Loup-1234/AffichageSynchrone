@@ -8,7 +8,7 @@ using namespace std;
 constexpr int FREQUENCE_ECHANTILLONNAGE = 44100;
 const string TEMP_AUDIO_PREFIX = "temp_audio_";
 
-class VideoComplexe {
+class M_VideoComplexe {
 public:
     void genererVideoComplexe(const vector<string> &listeFichierEntree, const string &fichierSortie);
 

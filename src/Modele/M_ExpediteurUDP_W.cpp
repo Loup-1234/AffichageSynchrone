@@ -1,8 +1,8 @@
-#include "ExpediteurUDP_W.h"
+#include "../../include/Modele/M_ExpediteurUDP_W.h"
 
 #include <ws2tcpip.h>
 
-ExpediteurUDP_W::ExpediteurUDP_W(const string& ipGroupe, const int port) {
+M_ExpediteurUDP_W::M_ExpediteurUDP_W(const string &ipGroupe, const int port) {
     WSADATA donneesWsa;
     if (WSAStartup(MAKEWORD(2, 2), &donneesWsa) != 0) return;
 
@@ -14,12 +14,12 @@ ExpediteurUDP_W::ExpediteurUDP_W(const string& ipGroupe, const int port) {
     }
 }
 
-ExpediteurUDP_W::~ExpediteurUDP_W() {
+M_ExpediteurUDP_W::~M_ExpediteurUDP_W() {
     if (descripteurSocket != INVALID_SOCKET) closesocket(descripteurSocket);
     WSACleanup();
 }
 
-bool ExpediteurUDP_W::Envoyer(const void* donnees, const int taille) {
+bool M_ExpediteurUDP_W::Envoyer(const void *donnees, const int taille) {
     if (descripteurSocket == INVALID_SOCKET) return false;
 
     return sendto(descripteurSocket, static_cast<const char *>(donnees), taille, 0,
