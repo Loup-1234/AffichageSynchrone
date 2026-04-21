@@ -19,7 +19,7 @@ M_ExpediteurUDP_W::~M_ExpediteurUDP_W() {
     WSACleanup();
 }
 
-bool M_ExpediteurUDP_W::Envoyer(const void *donnees, const int taille) {
+bool M_ExpediteurUDP_W::envoyer(const void *donnees, const int taille) {
     if (descripteurSocket == INVALID_SOCKET) return false;
 
     return sendto(descripteurSocket, static_cast<const char *>(donnees), taille, 0,

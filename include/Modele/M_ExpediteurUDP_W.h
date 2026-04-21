@@ -16,7 +16,7 @@ public:
 
     ~M_ExpediteurUDP_W();
 
-    bool Envoyer(const void* donnees, const int taille);
+    bool envoyer(const void* donnees, const int taille);
 
 private:
     SOCKET descripteurSocket = INVALID_SOCKET;
