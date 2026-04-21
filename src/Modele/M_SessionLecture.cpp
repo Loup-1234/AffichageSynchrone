@@ -51,7 +51,7 @@ void M_SessionLecture::genererVideoComplexe(const vector<string> &listeFichierEn
 
         if (!mesVideos.empty()) {
             string nomFichierSortie = "videosComplexes/VideoComplexe_" + to_string(IdLecteurs[i]) + ".mp4";
-            videoComplexe.genererVideoComplexe(mesVideos, nomFichierSortie);
+            M_VideoComplexe.genererVideoComplexe(mesVideos, nomFichierSortie);
         }
     }
 }

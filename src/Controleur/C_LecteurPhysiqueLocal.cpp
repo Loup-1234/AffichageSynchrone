@@ -113,7 +113,7 @@ void C_LecteurPhysiqueLocal::actualiserVideoGeneree() {
 
 void C_LecteurPhysiqueLocal::transmettreCommande(const TypeCommande type, const float valeur) {
     const PaquetControle p{0x5453454D, type, valeur};
-    udp.Envoyer(&p, sizeof(p));
+    udp.envoyer(&p, sizeof(p));
 }
 
 void C_LecteurPhysiqueLocal::basculerPlayPause() {

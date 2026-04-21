@@ -10,7 +10,7 @@ using namespace std;
 
 class M_SessionLecture {
 private:
-    M_VideoComplexe videoComplexe;
+    M_VideoComplexe M_VideoComplexe;
 
     vector<int> IdLecteurs;
     vector<string> IpLecteurs;
