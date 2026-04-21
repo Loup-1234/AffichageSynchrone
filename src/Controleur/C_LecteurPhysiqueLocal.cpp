@@ -112,7 +112,7 @@ void C_LecteurPhysiqueLocal::actualiserVideoGeneree() {
 // RÉSEAU UDP ET COMMANDES
 
 void C_LecteurPhysiqueLocal::transmettreCommande(const TypeCommande type, const float valeur) {
-    const PaquetControle p{0x5453454D, type, valeur};
+    const PaquetControle p{type, valeur};
     udp.envoyer(&p, sizeof(p));
 }
 

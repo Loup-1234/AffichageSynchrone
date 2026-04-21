@@ -19,7 +19,6 @@ enum class TypeCommande : uint8_t {
 
 #pragma pack(push, 1)
 struct PaquetControle {
-    uint32_t signature = 0x5453454D;
     TypeCommande type;
     float valeur;
 };
@@ -76,7 +75,7 @@ private:
 
     void initialiserVLC();
     void chargerVideoLocal();
-    void transmettreCommande(TypeCommande type, float valeur); // Signature propre
+    void transmettreCommande(TypeCommande type, float valeur);
 
     // Callbacks C
     friend void *verrouiller(void *donnees, void **p_pixels);
