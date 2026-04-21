@@ -36,4 +36,12 @@ private:
     void chargerListeVideos();
     vector<string> getVideosSelectionnees() const;
     static void ouvrirDossierVideos();
+
+    void mettreAJourLogiqueVideo();
+    void dessinerZoneVideo();
+    void dessinerListeFichiers();
+    void dessinerPanneauControle();
+    void gererBarreProgression();
+    void gererControlesVolume();
+    void dessinerOverlayChargement();
 };

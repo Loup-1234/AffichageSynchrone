@@ -85,143 +85,177 @@ void V_Master::executer() {
     while (!WindowShouldClose()) {
         if (IsWindowResized()) miseAJourDisposition();
 
-        // 1. Mise à jour de la logique interne via le contrôleur
-        controleur.actualiserVideoGeneree();
+        mettreAJourLogiqueVideo();
 
-        if (controleur.doitRedimensionnerTexture()) {
-            controleur.lockMutexImage();
-            if (textureVideo.id > 0) UnloadTexture(textureVideo);
-            if (controleur.getLargeurVideo() > 0 && controleur.getHauteurVideo() > 0) {
-                Image img = GenImageColor(controleur.getLargeurVideo(), controleur.getHauteurVideo(), BLACK);
-                textureVideo = LoadTextureFromImage(img);
-                UnloadImage(img);
-            }
-            controleur.resetRedimensionnementTexture();
-            controleur.unlockMutexImage();
-        }
-
-        if (controleur.getFramePrete()) {
-            controleur.lockMutexImage();
-            if (controleur.getLargeurVideo() > 0) {
-                UpdateTexture(textureVideo, controleur.getPixelsVideo());
-            }
-            controleur.setFramePrete(false);
-            controleur.unlockMutexImage();
-        }
-
-        if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
-        if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
-            valeurProgression = controleur.getProgressionActuelle();
-        }
-
-        // 2. Début du dessin (Raylib)
         BeginDrawing();
+
         ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
-        // --- Affichage Vidéo ---
-        DrawRectangleRec(zones[2], BLACK);
-        if (controleur.getLargeurVideo() > 0 && controleur.getHauteurVideo() > 0 && textureVideo.id > 0) {
-            float echelleX = zones[2].width / static_cast<float>(controleur.getLargeurVideo());
-            float echelleY = zones[2].height / static_cast<float>(controleur.getHauteurVideo());
-            const float echelle = min(echelleX, echelleY);
+        dessinerZoneVideo();
 
-            const float destLargeur = static_cast<float>(controleur.getLargeurVideo()) * echelle;
-            const float destHauteur = static_cast<float>(controleur.getHauteurVideo()) * echelle;
-            const float destX = zones[2].x + (zones[2].width - destLargeur) / 2.0f;
-            const float destY = zones[2].y + (zones[2].height - destHauteur) / 2.0f;
-
-            DrawTexturePro(textureVideo,
-                           {
-                               0.0f, 0.0f, static_cast<float>(controleur.getLargeurVideo()),
-                               static_cast<float>(controleur.getHauteurVideo())
-                           },
-                           {destX, destY, destLargeur, destHauteur}, {0, 0}, 0.0f, WHITE);
-        }
-
-        // --- Affichage Interface ---
         DrawRectangleRec(zones[3], GRAY);
 
-        // Liste des fichiers
-        Rectangle vue = {0};
-        const float contentHeight = static_cast<float>(fichiersVideo.size()) * 30;
-        GuiScrollPanel(zones[0], nullptr, (Rectangle){0, 0, zones[0].width - 16, contentHeight}, &positionDefilement,
-                       &vue);
-        BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width),
-                         static_cast<int>(vue.height));
-        for (size_t i = 0; i < fichiersVideo.size(); ++i) {
-            const Rectangle itemRect = {
-                zones[0].x + 10 + positionDefilement.x,
-                zones[0].y + 10 + static_cast<float>(i) * 30 + positionDefilement.y, 20, 20
-            };
-            if (itemRect.y + itemRect.height < vue.y || itemRect.y > vue.y + vue.height) continue;
+        dessinerListeFichiers();
 
-            int ordre = 0;
-            if (videosCochees[i]) {
-                auto it = ranges::find(ordreSelection, static_cast<int>(i));
-                if (it != ordreSelection.end()) ordre = static_cast<int>(distance(ordreSelection.begin(), it)) + 1;
-            }
-            string etiquette = fichiersVideo[i] + (ordre > 0 ? " (" + to_string(ordre) + ")" : "");
-            bool coche = videosCochees[i];
-            GuiCheckBox(itemRect, etiquette.c_str(), &coche);
+        dessinerPanneauControle();
 
-            if (coche != videosCochees[i]) {
-                videosCochees[i] = coche;
-                if (coche) ordreSelection.push_back(static_cast<int>(i));
-                else ordreSelection.erase(ranges::find(ordreSelection, static_cast<int>(i)));
-            }
-        }
-        EndScissorMode();
-
-        // Boutons actions
-        GuiSetState(controleur.estGenerationEnCours() ? STATE_DISABLED : STATE_NORMAL);
-        if (GuiButton(zones[1], "GÉNÉRER")) controleur.initialiserSession(getVideosSelectionnees());
-        if (GuiButton(zones[10], "DOSSIER")) ouvrirDossierVideos();
-        GuiSetState(STATE_NORMAL);
-
-        if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) controleur.basculerPlayPause();
-
-        // Slider Progression
-        const int minutes = static_cast<int>(valeurProgression) / 60;
-        const int secondes = static_cast<int>(valeurProgression) % 60;
-        const int dureeMinutes = static_cast<int>(controleur.getDureeTotale()) / 60;
-        const int dureeSecondes = static_cast<int>(controleur.getDureeTotale()) % 60;
-        GuiLabel(zones[5], TextFormat("%02d:%02d / %02d:%02d", minutes, secondes, dureeMinutes, dureeSecondes));
-
-        const float ancienneProg = valeurProgression;
-        if (CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            enGlissement = true;
-            etaitEnLecture = controleur.estEnLecture();
-        }
-        GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, controleur.getDureeTotale());
-
-        if (enGlissement && valeurProgression != ancienneProg) {
-            controleur.modifierProgression(valeurProgression, true);
-        }
-        if (enGlissement && (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) || !IsMouseButtonDown(MOUSE_LEFT_BUTTON))) {
-            enGlissement = false;
-            delaiRecherche = 0.2f;
-            controleur.modifierProgression(valeurProgression, false);
-            if (etaitEnLecture) controleur.basculerPlayPause();
-        }
-
-        // Slider Volume
-        if (GuiButton(zones[7], estMuet ? "#128#" : "#122#")) {
-            estMuet = !estMuet;
-            controleur.modifierVolume(valeurVolume, estMuet);
-        }
-        GuiLabel(zones[8], TextFormat("%d%%", static_cast<int>(valeurVolume)));
-        const float ancienVol = valeurVolume;
-        GuiSliderBar(zones[9], "", nullptr, &valeurVolume, 0.0f, 100.0f);
-        if (valeurVolume != ancienVol) {
-            estMuet = (valeurVolume <= 0.0f);
-            controleur.modifierVolume(valeurVolume, estMuet);
-        }
-
-        if (controleur.estGenerationEnCours()) {
-            DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.5f));
-            DrawText("Génération en cours...", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2, 20, WHITE);
-        }
+        dessinerOverlayChargement();
 
         EndDrawing();
+    }
+}
+
+void V_Master::mettreAJourLogiqueVideo() {
+    controleur.actualiserVideoGeneree();
+
+    // Redimensionnement de la texture si nécessaire
+    if (controleur.doitRedimensionnerTexture()) {
+        controleur.lockMutexImage();
+        if (textureVideo.id > 0) UnloadTexture(textureVideo);
+        if (controleur.getLargeurVideo() > 0 && controleur.getHauteurVideo() > 0) {
+            Image img = GenImageColor(controleur.getLargeurVideo(), controleur.getHauteurVideo(), BLACK);
+            textureVideo = LoadTextureFromImage(img);
+            UnloadImage(img);
+        }
+        controleur.resetRedimensionnementTexture();
+        controleur.unlockMutexImage();
+    }
+
+    // Mise à jour de la frame si prête
+    if (controleur.getFramePrete()) {
+        controleur.lockMutexImage();
+        if (controleur.getLargeurVideo() > 0) {
+            UpdateTexture(textureVideo, controleur.getPixelsVideo());
+        }
+        controleur.setFramePrete(false);
+        controleur.unlockMutexImage();
+    }
+
+    // Gestion du délai de recherche (seek)
+    if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
+    if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
+        valeurProgression = controleur.getProgressionActuelle();
+    }
+}
+
+void V_Master::dessinerZoneVideo() {
+    DrawRectangleRec(zones[2], BLACK);
+
+    if (controleur.getLargeurVideo() > 0 && controleur.getHauteurVideo() > 0 && textureVideo.id > 0) {
+        float echelleX = zones[2].width / static_cast<float>(controleur.getLargeurVideo());
+        float echelleY = zones[2].height / static_cast<float>(controleur.getHauteurVideo());
+        const float echelle = min(echelleX, echelleY);
+
+        const float destLargeur = static_cast<float>(controleur.getLargeurVideo()) * echelle;
+        const float destHauteur = static_cast<float>(controleur.getHauteurVideo()) * echelle;
+        const float destX = zones[2].x + (zones[2].width - destLargeur) / 2.0f;
+        const float destY = zones[2].y + (zones[2].height - destHauteur) / 2.0f;
+
+        DrawTexturePro(textureVideo,
+                       { 0.0f, 0.0f, static_cast<float>(controleur.getLargeurVideo()), static_cast<float>(controleur.getHauteurVideo()) },
+                       { destX, destY, destLargeur, destHauteur },
+                       { 0, 0 }, 0.0f, WHITE);
+    }
+}
+
+void V_Master::dessinerListeFichiers() {
+    Rectangle vue = {0};
+    const float contentHeight = static_cast<float>(fichiersVideo.size()) * 30;
+
+    GuiScrollPanel(zones[0], nullptr, (Rectangle){0, 0, zones[0].width - 16, contentHeight}, &positionDefilement, &vue);
+
+    BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width), static_cast<int>(vue.height));
+    for (size_t i = 0; i < fichiersVideo.size(); ++i) {
+        const Rectangle itemRect = {
+            zones[0].x + 10 + positionDefilement.x,
+            zones[0].y + 10 + static_cast<float>(i) * 30 + positionDefilement.y, 20, 20
+        };
+
+        // Optimisation : ne pas dessiner ce qui est hors de vue
+        if (itemRect.y + itemRect.height < vue.y || itemRect.y > vue.y + vue.height) continue;
+
+        int ordre = 0;
+        if (videosCochees[i]) {
+            auto it = ranges::find(ordreSelection, static_cast<int>(i));
+            if (it != ordreSelection.end()) ordre = static_cast<int>(distance(ordreSelection.begin(), it)) + 1;
+        }
+
+        string etiquette = fichiersVideo[i] + (ordre > 0 ? " (" + to_string(ordre) + ")" : "");
+        bool coche = videosCochees[i];
+        GuiCheckBox(itemRect, etiquette.c_str(), &coche);
+
+        if (coche != videosCochees[i]) {
+            videosCochees[i] = coche;
+            if (coche) ordreSelection.push_back(static_cast<int>(i));
+            else ordreSelection.erase(ranges::find(ordreSelection, static_cast<int>(i)));
+        }
+    }
+    EndScissorMode();
+}
+
+void V_Master::dessinerPanneauControle() {
+    // Boutons actions (Générer / Dossier)
+    GuiSetState(controleur.estGenerationEnCours() ? STATE_DISABLED : STATE_NORMAL);
+    if (GuiButton(zones[1], "GÉNÉRER")) controleur.initialiserSession(getVideosSelectionnees());
+    if (GuiButton(zones[10], "DOSSIER")) ouvrirDossierVideos();
+    GuiSetState(STATE_NORMAL);
+
+    // Bouton Play/Pause
+    if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) controleur.basculerPlayPause();
+
+    // Sous-composants
+    gererBarreProgression();
+    gererControlesVolume();
+}
+
+void V_Master::gererBarreProgression() {
+    const int minutes = static_cast<int>(valeurProgression) / 60;
+    const int secondes = static_cast<int>(valeurProgression) % 60;
+    const int dureeMinutes = static_cast<int>(controleur.getDureeTotale()) / 60;
+    const int dureeSecondes = static_cast<int>(controleur.getDureeTotale()) % 60;
+
+    GuiLabel(zones[5], TextFormat("%02d:%02d / %02d:%02d", minutes, secondes, dureeMinutes, dureeSecondes));
+
+    const float ancienneProg = valeurProgression;
+    if (CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        enGlissement = true;
+        etaitEnLecture = controleur.estEnLecture();
+    }
+
+    GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, controleur.getDureeTotale());
+
+    if (enGlissement && valeurProgression != ancienneProg) {
+        controleur.modifierProgression(valeurProgression, true);
+    }
+
+    if (enGlissement && (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) || !IsMouseButtonDown(MOUSE_LEFT_BUTTON))) {
+        enGlissement = false;
+        delaiRecherche = 0.2f;
+        controleur.modifierProgression(valeurProgression, false);
+        if (etaitEnLecture) controleur.basculerPlayPause();
+    }
+}
+
+void V_Master::gererControlesVolume() {
+    if (GuiButton(zones[7], estMuet ? "#128#" : "#122#")) {
+        estMuet = !estMuet;
+        controleur.modifierVolume(valeurVolume, estMuet);
+    }
+
+    GuiLabel(zones[8], TextFormat("%d%%", static_cast<int>(valeurVolume)));
+
+    const float ancienVol = valeurVolume;
+    GuiSliderBar(zones[9], "", nullptr, &valeurVolume, 0.0f, 100.0f);
+
+    if (valeurVolume != ancienVol) {
+        estMuet = (valeurVolume <= 0.0f);
+        controleur.modifierVolume(valeurVolume, estMuet);
+    }
+}
+
+void V_Master::dessinerOverlayChargement() {
+    if (controleur.estGenerationEnCours()) {
+        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.5f));
+        DrawText("Génération en cours...", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2, 20, WHITE);
     }
 }
