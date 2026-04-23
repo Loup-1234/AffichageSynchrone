@@ -17,6 +17,8 @@ V_Master::V_Master(const string &ipGroupe, const int port, const vector<vector<s
 
     chargerListeVideos();
     miseAJourDisposition();
+
+    controleur.modifierVolume(valeurVolume, estMuet);
 }
 
 V_Master::~V_Master() {
@@ -81,78 +83,74 @@ void V_Master::ouvrirDossierVideos() {
 #endif
 }
 
+// BOUCLE PRINCIPALE
+
 void V_Master::executer() {
     while (!WindowShouldClose()) {
-        if (IsWindowResized()) miseAJourDisposition();
-
-        mettreAJourLogiqueVideo();
-
-        BeginDrawing();
-
-        ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
-
-        dessinerZoneVideo();
-
-        DrawRectangleRec(zones[3], GRAY);
-
-        dessinerListeFichiers();
-
-        dessinerPanneauControle();
-
-        dessinerOverlayChargement();
-
-        EndDrawing();
+        gererLogique();
+        dessinerInterface();
     }
 }
 
-void V_Master::mettreAJourLogiqueVideo() {
-    controleur.actualiserVideoGeneree();
+void V_Master::gererLogique() {
+    if (IsWindowResized()) miseAJourDisposition();
 
-    // Redimensionnement de la texture si nécessaire
-    if (controleur.doitRedimensionnerTexture()) {
-        controleur.lockMutexImage();
-        if (textureVideo.id > 0) UnloadTexture(textureVideo);
-        if (controleur.getLargeurVideo() > 0 && controleur.getHauteurVideo() > 0) {
-            Image img = GenImageColor(controleur.getLargeurVideo(), controleur.getHauteurVideo(), BLACK);
-            textureVideo = LoadTextureFromImage(img);
-            UnloadImage(img);
+    controleur.mettreAJour();
+
+    controleur.consommerFrameVideo([this](void* pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement) {
+        largeurVideoCache = largeur;
+        hauteurVideoCache = hauteur;
+
+        if (redimensionnement) {
+            if (textureVideo.id > 0) UnloadTexture(textureVideo);
+            if (largeur > 0 && hauteur > 0) {
+                Image img = GenImageColor(largeur, hauteur, BLACK);
+                textureVideo = LoadTextureFromImage(img);
+                UnloadImage(img);
+            }
         }
-        controleur.resetRedimensionnementTexture();
-        controleur.unlockMutexImage();
-    }
 
-    // Mise à jour de la frame si prête
-    if (controleur.getFramePrete()) {
-        controleur.lockMutexImage();
-        if (controleur.getLargeurVideo() > 0) {
-            UpdateTexture(textureVideo, controleur.getPixelsVideo());
+        if (largeur > 0 && hauteur > 0 && pixels) {
+            UpdateTexture(textureVideo, pixels);
         }
-        controleur.setFramePrete(false);
-        controleur.unlockMutexImage();
-    }
+    });
 
-    // Gestion du délai de recherche (seek)
     if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
     if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
         valeurProgression = controleur.getProgressionActuelle();
     }
 }
 
-void V_Master::dessinerZoneVideo() {
+void V_Master::dessinerInterface() {
+    BeginDrawing();
+    ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
+
+    dessinerZoneVideo();
+    DrawRectangleRec(zones[3], GRAY); // Ligne de séparation
+    dessinerListeFichiers();
+    dessinerPanneauControle();
+    dessinerOverlayChargement();
+
+    EndDrawing();
+}
+
+// SOUS-FONCTIONS DE DESSIN
+
+void V_Master::dessinerZoneVideo() const {
     DrawRectangleRec(zones[2], BLACK);
 
-    if (controleur.getLargeurVideo() > 0 && controleur.getHauteurVideo() > 0 && textureVideo.id > 0) {
-        float echelleX = zones[2].width / static_cast<float>(controleur.getLargeurVideo());
-        float echelleY = zones[2].height / static_cast<float>(controleur.getHauteurVideo());
+    if (largeurVideoCache > 0 && hauteurVideoCache > 0 && textureVideo.id > 0) {
+        float echelleX = zones[2].width / static_cast<float>(largeurVideoCache);
+        float echelleY = zones[2].height / static_cast<float>(hauteurVideoCache);
         const float echelle = min(echelleX, echelleY);
 
-        const float destLargeur = static_cast<float>(controleur.getLargeurVideo()) * echelle;
-        const float destHauteur = static_cast<float>(controleur.getHauteurVideo()) * echelle;
+        const float destLargeur = static_cast<float>(largeurVideoCache) * echelle;
+        const float destHauteur = static_cast<float>(hauteurVideoCache) * echelle;
         const float destX = zones[2].x + (zones[2].width - destLargeur) / 2.0f;
         const float destY = zones[2].y + (zones[2].height - destHauteur) / 2.0f;
 
         DrawTexturePro(textureVideo,
-                       { 0.0f, 0.0f, static_cast<float>(controleur.getLargeurVideo()), static_cast<float>(controleur.getHauteurVideo()) },
+                       { 0.0f, 0.0f, static_cast<float>(largeurVideoCache), static_cast<float>(hauteurVideoCache) },
                        { destX, destY, destLargeur, destHauteur },
                        { 0, 0 }, 0.0f, WHITE);
     }
@@ -171,7 +169,6 @@ void V_Master::dessinerListeFichiers() {
             zones[0].y + 10 + static_cast<float>(i) * 30 + positionDefilement.y, 20, 20
         };
 
-        // Optimisation : ne pas dessiner ce qui est hors de vue
         if (itemRect.y + itemRect.height < vue.y || itemRect.y > vue.y + vue.height) continue;
 
         int ordre = 0;
@@ -194,16 +191,13 @@ void V_Master::dessinerListeFichiers() {
 }
 
 void V_Master::dessinerPanneauControle() {
-    // Boutons actions (Générer / Dossier)
     GuiSetState(controleur.estGenerationEnCours() ? STATE_DISABLED : STATE_NORMAL);
     if (GuiButton(zones[1], "GÉNÉRER")) controleur.initialiserSession(getVideosSelectionnees());
     if (GuiButton(zones[10], "DOSSIER")) ouvrirDossierVideos();
     GuiSetState(STATE_NORMAL);
 
-    // Bouton Play/Pause
     if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) controleur.basculerPlayPause();
 
-    // Sous-composants
     gererBarreProgression();
     gererControlesVolume();
 }
@@ -253,7 +247,7 @@ void V_Master::gererControlesVolume() {
     }
 }
 
-void V_Master::dessinerOverlayChargement() {
+void V_Master::dessinerOverlayChargement() const {
     if (controleur.estGenerationEnCours()) {
         DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.5f));
         DrawText("Génération en cours...", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2, 20, WHITE);

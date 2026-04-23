@@ -8,21 +8,9 @@
 #include <atomic>
 #include <mutex>
 #include <thread>
+#include <functional>
 
 using namespace std;
-
-enum class TypeCommande : uint8_t {
-    LECTURE_PAUSE = 0,
-    VOLUME = 1,
-    PROGRESSION = 2
-};
-
-#pragma pack(push, 1)
-struct PaquetControle {
-    TypeCommande type;
-    float valeur;
-};
-#pragma pack(pop)
 
 class C_LecteurPhysiqueLocal {
 public:
@@ -34,22 +22,13 @@ public:
     void modifierVolume(float volume, bool muet);
     void modifierProgression(float progression, bool enGlissement);
 
-    void* getPixelsVideo();
-    void lockMutexImage();
-    void unlockMutexImage();
-    bool getFramePrete() const { return framePrete; }
-    void setFramePrete(const bool val) { framePrete = val; }
+    void mettreAJour();
+    void consommerFrameVideo(const std::function<void(void* pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement)>& action);
 
-    unsigned int getLargeurVideo() const { return largeurVideo; }
-    unsigned int getHauteurVideo() const { return hauteurVideo; }
     float getDureeTotale() const { return dureeTotale; }
     float getProgressionActuelle() const;
     bool estEnLecture() const;
     bool estGenerationEnCours() const { return generationEnCours; }
-    bool doitRedimensionnerTexture() const { return textureDoitEtreRedimensionnee; }
-    void resetRedimensionnementTexture() { textureDoitEtreRedimensionnee = false; }
-
-    void actualiserVideoGeneree();
 
 private:
     M_ExpediteurUDP_W udp;
@@ -63,7 +42,7 @@ private:
     mutex mutexImage;
     unsigned int largeurVideo = 0;
     unsigned int hauteurVideo = 0;
-    string cheminVideoComplexe = "videosComplexes/VideoComplexe_0.mp4";
+    const string cheminVideoComplexe = "videosComplexes/VideoComplexe_0.mp4";
     float dureeTotale = 0.0f;
 
     // Threads
@@ -75,10 +54,8 @@ private:
 
     void initialiserVLC();
     void chargerVideoLocal();
-    void transmettreCommande(TypeCommande type, float valeur);
 
-    // Callbacks C
-    friend void *verrouiller(void *donnees, void **p_pixels);
-    friend void deverrouiller(void *donnees);
-    friend unsigned configurerVideo(void **donnees, char *chroma, const unsigned *largeur, const unsigned *hauteur, unsigned *pas, unsigned *lignes);
+    static void* cb_verrouiller(void* opaque, void** planes);
+    static void cb_deverrouiller(void* opaque, void* picture, void* const* planes);
+    static unsigned cb_configurerVideo(void** opaque, char* chroma, unsigned* width, unsigned* height, unsigned* pitches, unsigned* lines);
 };

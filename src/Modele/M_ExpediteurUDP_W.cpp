@@ -1,5 +1,4 @@
 #include "../../include/Modele/M_ExpediteurUDP_W.h"
-
 #include <ws2tcpip.h>
 
 M_ExpediteurUDP_W::M_ExpediteurUDP_W(const string &ipGroupe, const int port) {
@@ -24,4 +23,10 @@ bool M_ExpediteurUDP_W::envoyer(const void *donnees, const int taille) {
 
     return sendto(descripteurSocket, static_cast<const char *>(donnees), taille, 0,
                   reinterpret_cast<sockaddr *>(&adresseDest), sizeof(adresseDest)) != SOCKET_ERROR;
+}
+
+// Implémentation de la méthode déplacée
+void M_ExpediteurUDP_W::transmettreCommande(TypeCommande type, float valeur) {
+    const PaquetControle p{0x5453454D, type, valeur};
+    envoyer(&p, sizeof(p));
 }

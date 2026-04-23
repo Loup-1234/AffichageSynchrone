@@ -6,36 +6,39 @@
 using namespace std;
 namespace fs = filesystem;
 
-// Callbacks VLC
+// CALLBACKS VLC
 
-void *verrouiller(void *donnees, void **p_pixels) {
-    auto *ctrl = static_cast<C_LecteurPhysiqueLocal *>(donnees);
+void* C_LecteurPhysiqueLocal::cb_verrouiller(void* opaque, void** planes) {
+    auto* ctrl = static_cast<C_LecteurPhysiqueLocal*>(opaque);
     ctrl->mutexImage.lock();
-    *p_pixels = ctrl->pixelsVideo.data();
+    *planes = ctrl->pixelsVideo.data();
     return nullptr;
 }
 
-void deverrouiller(void *donnees) {
-    auto *ctrl = static_cast<C_LecteurPhysiqueLocal *>(donnees);
-    ctrl->mutexImage.unlock();
+void C_LecteurPhysiqueLocal::cb_deverrouiller(void* opaque, void* /*picture*/, void* const* /*planes*/) {
+    auto* ctrl = static_cast<C_LecteurPhysiqueLocal*>(opaque);
     ctrl->framePrete = true;
+    ctrl->mutexImage.unlock();
 }
 
-unsigned configurerVideo(void **donnees, char *chroma, const unsigned *largeur, const unsigned *hauteur, unsigned *pas, unsigned *lignes) {
-    auto *ctrl = static_cast<C_LecteurPhysiqueLocal *>(*donnees);
-    ctrl->mutexImage.lock();
-    ctrl->largeurVideo = *largeur;
-    ctrl->hauteurVideo = *hauteur;
+unsigned C_LecteurPhysiqueLocal::cb_configurerVideo(void** opaque, char* chroma, unsigned* width, unsigned* height, unsigned* pitches, unsigned* lines) {
+    auto* ctrl = static_cast<C_LecteurPhysiqueLocal*>(*opaque);
+
+    lock_guard lock(ctrl->mutexImage);
+
+    ctrl->largeurVideo = *width;
+    ctrl->hauteurVideo = *height;
     ctrl->pixelsVideo.resize(ctrl->largeurVideo * ctrl->hauteurVideo * 4);
+
     memcpy(chroma, "RGBA", 4);
-    *pas = ctrl->largeurVideo * 4;
-    *lignes = ctrl->hauteurVideo;
+    *pitches = ctrl->largeurVideo * 4;
+    *lines = ctrl->hauteurVideo;
     ctrl->textureDoitEtreRedimensionnee = true;
-    ctrl->mutexImage.unlock();
+
     return 1;
 }
 
-// Implémentation du Contrôleur
+// IMPLÉMENTATION DU CONTRÔLEUR
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipGroupe, int port, const vector<vector<string>> &configLecteurs)
     : udp(ipGroupe, port), configLecteurs(configLecteurs) {
@@ -68,8 +71,8 @@ void C_LecteurPhysiqueLocal::chargerVideoLocal() {
     libvlc_media_player_set_media(lecteurVLC, media);
     libvlc_media_release(media);
 
-    libvlc_video_set_callbacks(lecteurVLC, verrouiller, reinterpret_cast<libvlc_video_unlock_cb>(deverrouiller), nullptr, this);
-    libvlc_video_set_format_callbacks(lecteurVLC, reinterpret_cast<libvlc_video_format_cb>(configurerVideo), nullptr);
+    libvlc_video_set_callbacks(lecteurVLC, cb_verrouiller, cb_deverrouiller, nullptr, this);
+    libvlc_video_set_format_callbacks(lecteurVLC, cb_configurerVideo, nullptr);
 
     libvlc_media_player_play(lecteurVLC);
     this_thread::sleep_for(chrono::milliseconds(200));
@@ -102,30 +105,32 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiersSe
     });
 }
 
-void C_LecteurPhysiqueLocal::actualiserVideoGeneree() {
+void C_LecteurPhysiqueLocal::mettreAJour() {
     if (videoGeneree) {
         chargerVideoLocal();
         videoGeneree = false;
     }
 }
 
-// RÉSEAU UDP ET COMMANDES
-
-void C_LecteurPhysiqueLocal::transmettreCommande(const TypeCommande type, const float valeur) {
-    const PaquetControle p{type, valeur};
-    udp.envoyer(&p, sizeof(p));
+void C_LecteurPhysiqueLocal::consommerFrameVideo(const std::function<void(void* pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement)>& action) {
+    lock_guard<mutex> lock(mutexImage);
+    if (textureDoitEtreRedimensionnee || framePrete) {
+        action(pixelsVideo.data(), largeurVideo, hauteurVideo, textureDoitEtreRedimensionnee);
+        textureDoitEtreRedimensionnee = false;
+        framePrete = false;
+    }
 }
 
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
     const bool enLecture = libvlc_media_player_is_playing(lecteurVLC);
     libvlc_media_player_set_pause(lecteurVLC, enLecture ? 1 : 0);
-    transmettreCommande(TypeCommande::LECTURE_PAUSE, enLecture ? 0.0f : 1.0f);
+    udp.transmettreCommande(TypeCommande::LECTURE_PAUSE, enLecture ? 0.0f : 1.0f);
 }
 
 void C_LecteurPhysiqueLocal::modifierVolume(const float volume, const bool muet) {
     const float volumeCible = muet ? 0.0f : volume;
     libvlc_audio_set_volume(lecteurVLC, static_cast<int>(volumeCible));
-    transmettreCommande(TypeCommande::VOLUME, volumeCible);
+    udp.transmettreCommande(TypeCommande::VOLUME, volumeCible);
 }
 
 void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement) {
@@ -134,13 +139,12 @@ void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const 
         libvlc_audio_set_volume(lecteurVLC, 0);
     }
     libvlc_media_player_set_time(lecteurVLC, progression * 1000);
-    transmettreCommande(TypeCommande::PROGRESSION, progression);
+    udp.transmettreCommande(TypeCommande::PROGRESSION, progression);
 }
 
-void* C_LecteurPhysiqueLocal::getPixelsVideo() { return pixelsVideo.data(); }
-void C_LecteurPhysiqueLocal::lockMutexImage() { mutexImage.lock(); }
-void C_LecteurPhysiqueLocal::unlockMutexImage() { mutexImage.unlock(); }
-bool C_LecteurPhysiqueLocal::estEnLecture() const { return libvlc_media_player_is_playing(lecteurVLC); }
+bool C_LecteurPhysiqueLocal::estEnLecture() const {
+    return libvlc_media_player_is_playing(lecteurVLC);
+}
 
 float C_LecteurPhysiqueLocal::getProgressionActuelle() const {
     const libvlc_time_t t = libvlc_media_player_get_time(lecteurVLC);

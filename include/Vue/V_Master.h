@@ -20,6 +20,10 @@ private:
     Texture2D textureVideo{};
     Rectangle zones[11]{};
 
+    // Cache des dimensions pour l'affichage
+    unsigned int largeurVideoCache = 0;
+    unsigned int hauteurVideoCache = 0;
+
     float valeurProgression = 0.0f;
     float valeurVolume = 100.0f;
     bool estMuet = false;
@@ -32,16 +36,21 @@ private:
     vector<int> ordreSelection;
     Vector2 positionDefilement = {0, 0};
 
+    // Fonctions utilitaires
     void miseAJourDisposition();
     void chargerListeVideos();
     vector<string> getVideosSelectionnees() const;
     static void ouvrirDossierVideos();
 
-    void mettreAJourLogiqueVideo();
-    void dessinerZoneVideo();
+    // Boucle principale
+    void gererLogique();
+    void dessinerInterface();
+
+    // Sous-fonctions de dessin
+    void dessinerZoneVideo() const;
     void dessinerListeFichiers();
     void dessinerPanneauControle();
     void gererBarreProgression();
     void gererControlesVolume();
-    void dessinerOverlayChargement();
+    void dessinerOverlayChargement() const;
 };
