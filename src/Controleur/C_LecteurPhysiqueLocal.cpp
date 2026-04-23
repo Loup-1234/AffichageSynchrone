@@ -8,31 +8,31 @@ namespace fs = filesystem;
 
 // CALLBACKS VLC
 
-void* C_LecteurPhysiqueLocal::cb_verrouiller(void* opaque, void** planes) {
+void* C_LecteurPhysiqueLocal::cb_verrouiller(void* opaque, void** plans) {
     auto* ctrl = static_cast<C_LecteurPhysiqueLocal*>(opaque);
     ctrl->mutexImage.lock();
-    *planes = ctrl->pixelsVideo.data();
+    *plans = ctrl->pixelsVideo.data();
     return nullptr;
 }
 
-void C_LecteurPhysiqueLocal::cb_deverrouiller(void* opaque, void* /*picture*/, void* const* /*planes*/) {
+void C_LecteurPhysiqueLocal::cb_deverrouiller(void* opaque, void* /*image*/, void* const* /*plans*/) {
     auto* ctrl = static_cast<C_LecteurPhysiqueLocal*>(opaque);
     ctrl->framePrete = true;
     ctrl->mutexImage.unlock();
 }
 
-unsigned C_LecteurPhysiqueLocal::cb_configurerVideo(void** opaque, char* chroma, unsigned* width, unsigned* height, unsigned* pitches, unsigned* lines) {
+unsigned C_LecteurPhysiqueLocal::cb_configurerVideo(void** opaque, char* chrominance, unsigned* largeur, unsigned* hauteur, unsigned* pas, unsigned* lignes) {
     auto* ctrl = static_cast<C_LecteurPhysiqueLocal*>(*opaque);
 
     lock_guard lock(ctrl->mutexImage);
 
-    ctrl->largeurVideo = *width;
-    ctrl->hauteurVideo = *height;
+    ctrl->largeurVideo = *largeur;
+    ctrl->hauteurVideo = *hauteur;
     ctrl->pixelsVideo.resize(ctrl->largeurVideo * ctrl->hauteurVideo * 4);
 
-    memcpy(chroma, "RGBA", 4);
-    *pitches = ctrl->largeurVideo * 4;
-    *lines = ctrl->hauteurVideo;
+    memcpy(chrominance, "RGBA", 4);
+    *pas = ctrl->largeurVideo * 4;
+    *lignes = ctrl->hauteurVideo;
     ctrl->textureDoitEtreRedimensionnee = true;
 
     return 1;

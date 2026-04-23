@@ -55,7 +55,7 @@ private:
     void initialiserVLC();
     void chargerVideoLocal();
 
-    static void* cb_verrouiller(void* opaque, void** planes);
-    static void cb_deverrouiller(void* opaque, void* picture, void* const* planes);
-    static unsigned cb_configurerVideo(void** opaque, char* chroma, unsigned* width, unsigned* height, unsigned* pitches, unsigned* lines);
+    static void* cb_verrouiller(void* opaque, void** plans);
+    static void cb_deverrouiller(void* opaque, void* image, void* const* plans);
+    static unsigned cb_configurerVideo(void** opaque, char* chrominance, unsigned* largeur, unsigned* hauteur, unsigned* pas, unsigned* lignes);
 };
