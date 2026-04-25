@@ -28,7 +28,6 @@ private:
     float valeurVolume = 100.0f;
     bool estMuet = false;
     bool enGlissement = false;
-    bool etaitEnLecture = false;
     float delaiRecherche = 0.0f;
 
     vector<string> fichiersVideo;

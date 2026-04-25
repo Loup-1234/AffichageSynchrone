@@ -3,42 +3,33 @@
 #include <iostream>
 
 using namespace std;
-namespace fs = filesystem;
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipGroupe, int port, const vector<vector<string>> &configLecteurs)
     : udp(ipGroupe, port), configLecteurs(configLecteurs) {
-    if (fs::exists(cheminVideoComplexe)) {
-        chargerVideoLocal();
-    }
+    if (filesystem::exists(CHEMIN_VIDEO)) modeleLecteur.lireVideoComplexe(CHEMIN_VIDEO);
 }
 
 C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
-    if (threadGeneration.joinable()) {
-        threadGeneration.join();
-    }
+    if (threadGeneration.joinable()) threadGeneration.join();
 }
 
-void C_LecteurPhysiqueLocal::chargerVideoLocal() {
-    modeleLecteur.lireVideoComplexe(cheminVideoComplexe);
-}
-
-void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiersSelectionnes) {
-    if (generationEnCours || fichiersSelectionnes.size() < 2) return;
+void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiers) {
+    if (generationEnCours || fichiers.size() < 2) return;
 
     modeleLecteur.pause();
     generationEnCours = true;
 
     if (threadGeneration.joinable()) threadGeneration.join();
 
-    threadGeneration = thread([this, fichiersSelectionnes]() {
+    threadGeneration = thread([this, fichiers]() {
         try {
-            if (!fs::exists("videosComplexes")) fs::create_directory("videosComplexes");
+            if (!filesystem::exists("videosComplexes")) filesystem::create_directory("videosComplexes");
             session.preparerSessionLecture(configLecteurs);
-            session.genererVideoComplexe(fichiersSelectionnes);
+            session.genererVideoComplexe(fichiers);
             session.uploaderVideoComplexe();
             videoGeneree = true;
         } catch (const exception& e) {
-            cerr << "Erreur Génération: " << e.what() << endl;
+            cerr << "Erreur Génération: " << e.what() << '\n';
         }
         generationEnCours = false;
     });
@@ -46,36 +37,33 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiersSe
 
 void C_LecteurPhysiqueLocal::mettreAJour() {
     if (videoGeneree) {
-        chargerVideoLocal();
+        modeleLecteur.lireVideoComplexe(CHEMIN_VIDEO);
         videoGeneree = false;
     }
 }
 
-void C_LecteurPhysiqueLocal::consommerFrameVideo(const std::function<void(void* pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement)>& action) {
-    modeleLecteur.consommerFrameVideo(action);
-}
-
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
     const bool enLecture = modeleLecteur.estEnLecture();
-    if (enLecture) {
-        modeleLecteur.pause();
-    } else {
-        modeleLecteur.play();
-    }
+    enLecture ? modeleLecteur.pause() : modeleLecteur.play();
     udp.transmettreCommande(TypeCommande::LECTURE_PAUSE, enLecture ? 0.0f : 1.0f);
 }
 
 void C_LecteurPhysiqueLocal::modifierVolume(const float volume, const bool muet) {
-    const float volumeCible = muet ? 0.0f : volume;
-    modeleLecteur.setVolume(static_cast<int>(volumeCible));
-    udp.transmettreCommande(TypeCommande::VOLUME, volumeCible);
+    volumeCourant = muet ? 0.0f : volume;
+    modeleLecteur.setVolume(static_cast<int>(volumeCourant));
+    udp.transmettreCommande(TypeCommande::VOLUME, volumeCourant);
 }
 
 void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement) {
+    modeleLecteur.setTime(progression);
+    udp.transmettreCommande(TypeCommande::PROGRESSION, progression);
+
     if (enGlissement) {
         modeleLecteur.pause();
         modeleLecteur.setVolume(0);
+    } else {
+        modeleLecteur.setVolume(static_cast<int>(volumeCourant));
+        modeleLecteur.play();
+        udp.transmettreCommande(TypeCommande::LECTURE_PAUSE, 0.0f);
     }
-    modeleLecteur.setTime(progression);
-    udp.transmettreCommande(TypeCommande::PROGRESSION, progression);
 }

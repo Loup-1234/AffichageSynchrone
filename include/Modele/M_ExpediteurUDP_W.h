@@ -5,13 +5,11 @@
 
 #include <winsock2.h>
 #include <string>
-#include <cstdint> // Ajouté pour uint8_t et uint32_t
+#include <cstdint>
 
 #pragma comment(lib, "ws2_32.lib")
 
 using namespace std;
-
-// --- DÉPLACEMENT DEPUIS LE LECTEUR ---
 
 enum class TypeCommande : uint8_t {
     LECTURE_PAUSE = 0,
@@ -27,8 +25,6 @@ struct PaquetControle {
 };
 #pragma pack(pop)
 
-// -------------------------------------
-
 class M_ExpediteurUDP_W {
 public:
     M_ExpediteurUDP_W(const string& ipGroupe, const int port);
@@ -36,7 +32,6 @@ public:
 
     bool envoyer(const void* donnees, const int taille);
 
-    // Nouvelle méthode déplacée
     void transmettreCommande(TypeCommande type, float valeur);
 
 private:

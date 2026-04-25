@@ -25,7 +25,6 @@ bool M_ExpediteurUDP_W::envoyer(const void *donnees, const int taille) {
                   reinterpret_cast<sockaddr *>(&adresseDest), sizeof(adresseDest)) != SOCKET_ERROR;
 }
 
-// Implémentation de la méthode déplacée
 void M_ExpediteurUDP_W::transmettreCommande(TypeCommande type, float valeur) {
     const PaquetControle p{0x5453454D, type, valeur};
     envoyer(&p, sizeof(p));

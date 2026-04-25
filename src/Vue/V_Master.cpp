@@ -213,7 +213,6 @@ void V_Master::gererBarreProgression() {
     const float ancienneProg = valeurProgression;
     if (CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         enGlissement = true;
-        etaitEnLecture = controleur.estEnLecture();
     }
 
     GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, controleur.getDureeTotale());
@@ -226,7 +225,6 @@ void V_Master::gererBarreProgression() {
         enGlissement = false;
         delaiRecherche = 0.2f;
         controleur.modifierProgression(valeurProgression, false);
-        if (etaitEnLecture) controleur.basculerPlayPause();
     }
 }
 
