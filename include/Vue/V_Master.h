@@ -21,6 +21,8 @@ private:
     Texture2D textureVideo{};
     Rectangle zones[11]{};
 
+    float rotationChargement = 0.0f;
+
     // Cache des dimensions pour l'affichage
     unsigned int largeurVideoCache = 0;
     unsigned int hauteurVideoCache = 0;
