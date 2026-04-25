@@ -15,7 +15,7 @@ M_LecteurPhysique::~M_LecteurPhysique() {
     if (instanceVLC) { libvlc_release(instanceVLC); }
 }
 
-void M_LecteurPhysique::lireVideoComplexe(const string& cheminVideo) {
+void M_LecteurPhysique::lireVideo(const string& cheminVideo) {
     if (!filesystem::exists(cheminVideo)) return;
 
     libvlc_media_t *media = libvlc_media_new_path(instanceVLC, cheminVideo.c_str());
@@ -36,7 +36,7 @@ void M_LecteurPhysique::lireVideoComplexe(const string& cheminVideo) {
 }
 
 void M_LecteurPhysique::consommerFrameVideo(const function<void(void*, unsigned int, unsigned int, bool)>& action) {
-    lock_guard<mutex> lock(mutexImage);
+    lock_guard lock(mutexImage);
     if (textureDoitEtreRedimensionnee || framePrete) {
         action(pixelsVideo.data(), largeurVideo, hauteurVideo, textureDoitEtreRedimensionnee);
         textureDoitEtreRedimensionnee = false;

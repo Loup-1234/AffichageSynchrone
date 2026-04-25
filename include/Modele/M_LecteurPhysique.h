@@ -14,7 +14,7 @@ public:
     M_LecteurPhysique();
     ~M_LecteurPhysique();
 
-    void lireVideoComplexe(const string& cheminVideo);
+    void lireVideo(const string& cheminVideo);
     void consommerFrameVideo(const function<void(void* pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement)>& action);
 
     void demarrer() const { libvlc_media_player_play(lecteurVLC); }

@@ -6,7 +6,7 @@ using namespace std;
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipGroupe, int port, const vector<vector<string>> &configLecteurs)
     : udp(ipGroupe, port), configLecteurs(configLecteurs) {
-    if (filesystem::exists(CHEMIN_VIDEO)) modeleLecteur.lireVideoComplexe(CHEMIN_VIDEO);
+    if (filesystem::exists(CHEMIN_VIDEO)) modeleLecteur.lireVideo(CHEMIN_VIDEO);
 }
 
 C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
@@ -37,7 +37,7 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiers) 
 
 void C_LecteurPhysiqueLocal::mettreAJour() {
     if (videoGeneree) {
-        modeleLecteur.lireVideoComplexe(CHEMIN_VIDEO);
+        modeleLecteur.lireVideo(CHEMIN_VIDEO);
         videoGeneree = false;
     }
 }
