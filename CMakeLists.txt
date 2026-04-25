@@ -40,6 +40,7 @@ set(SOURCE_FILES
         src/Modele/M_ServeurTFTP_W.cpp
         src/Modele/M_SessionLecture.cpp
         src/Controleur/C_LecteurPhysiqueLocal.cpp
+        src/Modele/M_LecteurPhysique.cpp
 )
 
 set(HEADER_FILES
@@ -49,6 +50,7 @@ set(HEADER_FILES
         include/Modele/M_ServeurTFTP_W.h
         include/Modele/M_SessionLecture.h
         include/Controleur/C_LecteurPhysiqueLocal.h
+        include/Modele/M_LecteurPhysique.h
 )
 
 add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
