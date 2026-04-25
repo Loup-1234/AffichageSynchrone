@@ -17,7 +17,9 @@ private:
     vector<int> NbVideos;
 
 public:
-    void preparerSessionLecture(const vector<vector<string>> &specLecteurs);
+    void preparerSessionLecture(const vector<vector<string> > &specLecteurs);
+
     void genererVideoComplexe(const vector<string> &listeFichierEntree);
+
     void uploaderVideoComplexe();
 };

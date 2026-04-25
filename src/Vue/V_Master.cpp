@@ -97,23 +97,24 @@ void V_Master::gererLogique() {
 
     controleur.mettreAJour();
 
-    controleur.consommerFrameVideo([this](void* pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement) {
-        largeurVideoCache = largeur;
-        hauteurVideoCache = hauteur;
+    controleur.consommerFrameVideo(
+        [this](void *pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement) {
+            largeurVideoCache = largeur;
+            hauteurVideoCache = hauteur;
 
-        if (redimensionnement) {
-            if (textureVideo.id > 0) UnloadTexture(textureVideo);
-            if (largeur > 0 && hauteur > 0) {
-                Image img = GenImageColor(largeur, hauteur, BLACK);
-                textureVideo = LoadTextureFromImage(img);
-                UnloadImage(img);
+            if (redimensionnement) {
+                if (textureVideo.id > 0) UnloadTexture(textureVideo);
+                if (largeur > 0 && hauteur > 0) {
+                    Image img = GenImageColor(largeur, hauteur, BLACK);
+                    textureVideo = LoadTextureFromImage(img);
+                    UnloadImage(img);
+                }
             }
-        }
 
-        if (largeur > 0 && hauteur > 0 && pixels) {
-            UpdateTexture(textureVideo, pixels);
-        }
-    });
+            if (largeur > 0 && hauteur > 0 && pixels) {
+                UpdateTexture(textureVideo, pixels);
+            }
+        });
 
     if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
     if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
@@ -150,9 +151,9 @@ void V_Master::dessinerZoneVideo() const {
         const float destY = zones[2].y + (zones[2].height - destHauteur) / 2.0f;
 
         DrawTexturePro(textureVideo,
-                       { 0.0f, 0.0f, static_cast<float>(largeurVideoCache), static_cast<float>(hauteurVideoCache) },
-                       { destX, destY, destLargeur, destHauteur },
-                       { 0, 0 }, 0.0f, WHITE);
+                       {0.0f, 0.0f, static_cast<float>(largeurVideoCache), static_cast<float>(hauteurVideoCache)},
+                       {destX, destY, destLargeur, destHauteur},
+                       {0, 0}, 0.0f, WHITE);
     }
 }
 
@@ -162,7 +163,8 @@ void V_Master::dessinerListeFichiers() {
 
     GuiScrollPanel(zones[0], nullptr, (Rectangle){0, 0, zones[0].width - 16, contentHeight}, &positionDefilement, &vue);
 
-    BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width), static_cast<int>(vue.height));
+    BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width),
+                     static_cast<int>(vue.height));
     for (size_t i = 0; i < fichiersVideo.size(); ++i) {
         const Rectangle itemRect = {
             zones[0].x + 10 + positionDefilement.x,

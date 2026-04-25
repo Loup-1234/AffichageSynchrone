@@ -13,8 +13,7 @@ public:
     void genererVideoComplexe(const vector<string> &listeFichierEntree, const string &fichierSortie);
 
 private:
-
-    vector<double> calculerDecalages(const vector<vector<float> > &audios, const vector<string>& listeFichiers);
+    vector<double> calculerDecalages(const vector<vector<float> > &audios, const vector<string> &listeFichiers);
 
     string construireCommandeFFmpeg(const vector<string> &listeFichierEntree, const vector<double> &decalagesEnSecondes,
                                     const string &fichierSortie);

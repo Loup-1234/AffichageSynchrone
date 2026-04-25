@@ -15,7 +15,7 @@ M_LecteurPhysique::~M_LecteurPhysique() {
     if (instanceVLC) { libvlc_release(instanceVLC); }
 }
 
-void M_LecteurPhysique::lireVideo(const string& cheminVideo) {
+void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
     if (!filesystem::exists(cheminVideo)) return;
 
     libvlc_media_t *media = libvlc_media_new_path(instanceVLC, cheminVideo.c_str());
@@ -35,7 +35,7 @@ void M_LecteurPhysique::lireVideo(const string& cheminVideo) {
     dureeTotale = (len != -1) ? static_cast<float>(len) / 1000.0f : 0.0f;
 }
 
-void M_LecteurPhysique::consommerFrameVideo(const function<void(void*, unsigned int, unsigned int, bool)>& action) {
+void M_LecteurPhysique::consommerFrameVideo(const function<void(void *, unsigned int, unsigned int, bool)> &action) {
     lock_guard lock(mutexImage);
     if (textureDoitEtreRedimensionnee || framePrete) {
         action(pixelsVideo.data(), largeurVideo, hauteurVideo, textureDoitEtreRedimensionnee);
@@ -45,21 +45,22 @@ void M_LecteurPhysique::consommerFrameVideo(const function<void(void*, unsigned 
 }
 
 // --- CALLBACKS VLC ---
-void* M_LecteurPhysique::cb_verrouiller(void* opaque, void** plans) {
-    auto* mod = static_cast<M_LecteurPhysique*>(opaque);
+void *M_LecteurPhysique::cb_verrouiller(void *opaque, void **plans) {
+    auto *mod = static_cast<M_LecteurPhysique *>(opaque);
     mod->mutexImage.lock();
     *plans = mod->pixelsVideo.data();
     return nullptr;
 }
 
-void M_LecteurPhysique::cb_deverrouiller(void* opaque, void*, void* const*) {
-    auto* mod = static_cast<M_LecteurPhysique*>(opaque);
+void M_LecteurPhysique::cb_deverrouiller(void *opaque, void *, void *const*) {
+    auto *mod = static_cast<M_LecteurPhysique *>(opaque);
     mod->framePrete = true;
     mod->mutexImage.unlock();
 }
 
-unsigned M_LecteurPhysique::cb_configurerVideo(void** opaque, char* chrominance, const unsigned* largeur, const unsigned* hauteur, unsigned* pas, unsigned* lignes) {
-    auto* mod = static_cast<M_LecteurPhysique*>(*opaque);
+unsigned M_LecteurPhysique::cb_configurerVideo(void **opaque, char *chrominance, const unsigned *largeur,
+                                               const unsigned *hauteur, unsigned *pas, unsigned *lignes) {
+    auto *mod = static_cast<M_LecteurPhysique *>(*opaque);
     lock_guard lock(mod->mutexImage);
 
     mod->largeurVideo = *largeur;

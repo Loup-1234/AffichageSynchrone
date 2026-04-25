@@ -9,7 +9,8 @@ using namespace std;
 
 class V_Master {
 public:
-    V_Master(const string &ipGroupe, int port, const vector<vector<string>> &specLecteurs);
+    V_Master(const string &ipGroupe, int port, const vector<vector<string> > &specLecteurs);
+
     ~V_Master();
 
     void executer();
@@ -37,19 +38,28 @@ private:
 
     // Fonctions utilitaires
     void miseAJourDisposition();
+
     void chargerListeVideos();
+
     vector<string> getVideosSelectionnees() const;
+
     static void ouvrirDossierVideos();
 
     // Boucle principale
     void gererLogique();
+
     void dessinerInterface();
 
     // Sous-fonctions de dessin
     void dessinerZoneVideo() const;
+
     void dessinerListeFichiers();
+
     void dessinerPanneauControle();
+
     void gererBarreProgression();
+
     void gererControlesVolume();
+
     void dessinerOverlayChargement() const;
 };

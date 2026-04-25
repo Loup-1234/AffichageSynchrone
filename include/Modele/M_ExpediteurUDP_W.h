@@ -27,10 +27,11 @@ struct PaquetControle {
 
 class M_ExpediteurUDP_W {
 public:
-    M_ExpediteurUDP_W(const string& ipGroupe, const int port);
+    M_ExpediteurUDP_W(const string &ipGroupe, int port);
+
     ~M_ExpediteurUDP_W();
 
-    bool envoyer(const void* donnees, const int taille);
+    bool envoyer(const void *donnees, int taille);
 
     void transmettreCommande(TypeCommande type, float valeur);
 

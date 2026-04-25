@@ -4,7 +4,8 @@
 
 using namespace std;
 
-C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipGroupe, int port, const vector<vector<string>> &configLecteurs)
+C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipGroupe, const int port,
+                                               const vector<vector<string> > &configLecteurs)
     : udp(ipGroupe, port), configLecteurs(configLecteurs) {
     if (filesystem::exists(CHEMIN_VIDEO)) modeleLecteur.lireVideo(CHEMIN_VIDEO);
 }
@@ -13,7 +14,7 @@ C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
     if (threadGeneration.joinable()) threadGeneration.join();
 }
 
-void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiers) {
+void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) {
     if (generationEnCours || fichiers.size() < 2) return;
 
     modeleLecteur.pause();
@@ -28,7 +29,7 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string>& fichiers) 
             session.genererVideoComplexe(fichiers);
             session.uploaderVideoComplexe();
             videoGeneree = true;
-        } catch (const exception& e) {
+        } catch (const exception &e) {
             cerr << "Erreur Génération: " << e.what() << '\n';
         }
         generationEnCours = false;
