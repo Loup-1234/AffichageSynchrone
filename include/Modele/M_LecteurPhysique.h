@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vlc/vlc.h>
+#include <vlc.h>
 #include <string>
 #include <vector>
 #include <atomic>

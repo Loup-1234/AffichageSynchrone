@@ -247,7 +247,7 @@ void V_Master::gererControlesVolume() {
     }
 }
 
-void V_Master::dessinerOverlayChargement() const {
+void V_Master::dessinerOverlayChargement() {
     if (controleur.estGenerationEnCours()) {
         DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.5f));
         DrawText("Génération en cours...", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2, 20, WHITE);

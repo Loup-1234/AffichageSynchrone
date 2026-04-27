@@ -63,5 +63,5 @@ private:
 
     void gererControlesVolume();
 
-    void dessinerOverlayChargement() const;
+    void dessinerOverlayChargement();
 };

@@ -62,6 +62,7 @@ add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
 target_include_directories(AffichageSynchrone PRIVATE
         include
         "libs/LibVLC/include"
+        "libs/LibVLC/include/vlc"
         "${CMAKE_SOURCE_DIR}/libs/FFTW"
 )
 
