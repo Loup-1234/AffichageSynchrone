@@ -6,11 +6,8 @@ project(AffichageSynchrone)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_definitions(-DWIN32_LEAN_AND_MEAN -DNOMINMAX)
-
-include(FetchContent)
-
 # 1. Téléchargement de Raylib
+include(FetchContent)
 FetchContent_Declare(
         raylib
         GIT_REPOSITORY https://github.com/raysan5/raylib.git
@@ -54,6 +51,13 @@ set(HEADER_FILES
 )
 
 add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
+
+target_compile_definitions(AffichageSynchrone PRIVATE
+    WIN32_LEAN_AND_MEAN
+    NOMINMAX
+    NOGDI
+    NOUSER
+)
 
 # ==========================================
 # INCLUSIONS ET LIENS
