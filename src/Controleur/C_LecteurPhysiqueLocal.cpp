@@ -25,9 +25,33 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
     threadGeneration = thread([this, fichiers]() {
         try {
             if (!filesystem::exists("videosComplexes")) filesystem::create_directory("videosComplexes");
-            session.preparerSessionLecture(configLecteurs);
-            session.genererVideoComplexe(fichiers);
+
+            // 1. Conversion de la configuration en tableau de LecteurSpec
+            size_t nbLecteurs = configLecteurs.size();
+            LecteurSpec* specs = new LecteurSpec[nbLecteurs];
+
+            for (size_t i = 0; i < nbLecteurs; ++i) {
+                // Vérification de sécurité pour s'assurer que le vecteur contient bien les 3 éléments attendus
+                if (configLecteurs[i].size() >= 3) {
+                    specs[i].id = configLecteurs[i][0];
+                    specs[i].ip = configLecteurs[i][1];
+                    specs[i].nbVideos = configLecteurs[i][2];
+                }
+            }
+
+            // 2. Préparation de la session avec le nouveau format
+            session.preparerSessionLecture(specs, nbLecteurs);
+
+            // Nettoyage immédiat du tableau temporaire
+            delete[] specs;
+
+            // 3. Génération de la vidéo
+            // fichiers.data() fournit le const string* attendu, fichiers.size() fournit la taille
+            session.genererVideoComplexe(fichiers.data(), fichiers.size());
+
+            // 4. Upload
             session.uploaderVideoComplexe();
+
             videoGeneree = true;
         } catch (const exception &e) {
             cerr << "Erreur Génération: " << e.what() << '\n';
@@ -45,26 +69,38 @@ void C_LecteurPhysiqueLocal::mettreAJour() {
 
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
     const bool enLecture = modeleLecteur.estEnLecture();
-    enLecture ? modeleLecteur.pause() : modeleLecteur.play();
-    udp.transmettreCommande(TypeCommande::LECTURE_PAUSE, enLecture ? 0.0f : 1.0f);
+
+    if (enLecture) {
+        modeleLecteur.pause();
+        udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PAUSE, 0.0f);
+    } else {
+        modeleLecteur.play();
+        udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PLAY, 0.0f);
+    }
 }
 
 void C_LecteurPhysiqueLocal::modifierVolume(const float volume, const bool muet) {
     volumeCourant = muet ? 0.0f : volume;
     modeleLecteur.setVolume(static_cast<int>(volumeCourant));
-    udp.transmettreCommande(TypeCommande::VOLUME, volumeCourant);
+
+    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VOLUME, volumeCourant);
 }
 
-void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement) {
+void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement, const bool restaurerLecture) {
     modeleLecteur.setTime(progression);
-    udp.transmettreCommande(TypeCommande::PROGRESSION, progression);
+
+    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PROGRESSION, progression);
 
     if (enGlissement) {
         modeleLecteur.pause();
         modeleLecteur.setVolume(0);
     } else {
         modeleLecteur.setVolume(static_cast<int>(volumeCourant));
-        modeleLecteur.play();
-        udp.transmettreCommande(TypeCommande::LECTURE_PAUSE, 0.0f);
+
+        if (restaurerLecture) {
+            modeleLecteur.play();
+        } else {
+            modeleLecteur.pause();
+        }
     }
 }

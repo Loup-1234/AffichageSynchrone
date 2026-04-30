@@ -36,13 +36,22 @@ void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
     dureeTotale = (len != -1) ? static_cast<float>(len) / 1000.0f : 0.0f;
 }
 
-void M_LecteurPhysique::consommerFrameVideo(const function<void(void *, unsigned int, unsigned int, bool)> &action) {
+bool M_LecteurPhysique::recupererFrameVideo(void*& outPixels, unsigned int& outLargeur, unsigned int& outHauteur, bool& outRedimensionnement) {
     lock_guard lock(mutexImage);
+
     if (textureDoitEtreRedimensionnee || framePrete) {
-        action(pixelsVideo.data(), largeurVideo, hauteurVideo, textureDoitEtreRedimensionnee);
+        outPixels = pixelsVideo.data();
+        outLargeur = largeurVideo;
+        outHauteur = hauteurVideo;
+        outRedimensionnement = textureDoitEtreRedimensionnee;
+
         textureDoitEtreRedimensionnee = false;
         framePrete = false;
+
+        return true;
     }
+
+    return false;
 }
 
 // --- CALLBACKS VLC ---

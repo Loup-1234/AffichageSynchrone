@@ -25,7 +25,7 @@ bool M_ExpediteurUDP_W::envoyer(const void *donnees, const int taille) {
                   reinterpret_cast<sockaddr *>(&adresseDest), sizeof(adresseDest)) != SOCKET_ERROR;
 }
 
-void M_ExpediteurUDP_W::transmettreCommande(const TypeCommande type, const float valeur) {
-    const PaquetControle p{ type, valeur};
+void M_ExpediteurUDP_W::transmettreCommande(const Expediteur exp, const TypeCommande type, const Action action, const float valeur) {
+    const PaquetControle p{ exp, type, action, valeur};
     envoyer(&p, sizeof(p));
 }

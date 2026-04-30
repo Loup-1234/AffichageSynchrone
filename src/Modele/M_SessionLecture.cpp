@@ -3,57 +3,81 @@
 #include <fstream>
 #include <iostream>
 
-void M_SessionLecture::preparerSessionLecture(const vector<vector<string> > &specLecteurs) {
-    IdLecteurs.clear();
-    IpLecteurs.clear();
-    NbVideos.clear();
+#include "../../include/Modele/M_ServeurTFTP_W.h"
 
-    for (size_t i = 0; i < specLecteurs.size(); i++) {
-        IdLecteurs.push_back(stoi(specLecteurs[i][0]));
-        IpLecteurs.push_back(specLecteurs[i][1]);
-        NbVideos.push_back(stoi(specLecteurs[i][2]));
+M_SessionLecture::~M_SessionLecture() {
+    delete[] idLecteurs;
+    delete[] ipLecteurs;
+    delete[] nbVideos;
+}
+
+void M_SessionLecture::preparerSessionLecture(const LecteurSpec* specLecteurs, size_t nbLecteurs) {
+    delete[] idLecteurs;
+    delete[] ipLecteurs;
+    delete[] nbVideos;
+
+    nbLecteursTotal = nbLecteurs;
+
+    idLecteurs = new int[nbLecteursTotal];
+    ipLecteurs = new string[nbLecteursTotal];
+    nbVideos = new int[nbLecteursTotal];
+
+    for (size_t i = 0; i < nbLecteursTotal; i++) {
+        idLecteurs[i] = stoi(specLecteurs[i].id);
+        ipLecteurs[i] = specLecteurs[i].ip;
+        nbVideos[i] = stoi(specLecteurs[i].nbVideos);
     }
 }
 
-void M_SessionLecture::genererVideoComplexe(const vector<string> &listeFichierEntree) {
-    if (listeFichierEntree.empty()) {
+void M_SessionLecture::genererVideoComplexe(const string* listeFichiersEntree, size_t nbFichiers) {
+    if (nbFichiers == 0 || nbLecteursTotal == 0) {
         return;
     }
 
-    vector<vector<string> > videosParLecteur(NbVideos.size());
+    string** videosParLecteur = new string*[nbLecteursTotal];
+    size_t* nbVideosAffectees = new size_t[nbLecteursTotal]();
     int placesDisponibles = 0;
 
-    for (size_t i = 0; i < NbVideos.size(); i++) {
-        if (NbVideos[i] > 0) {
-            videosParLecteur[i].push_back(listeFichierEntree[0]); // La première vidéo (audio) pour tous
+    for (size_t i = 0; i < nbLecteursTotal; i++) {
+        videosParLecteur[i] = new string[nbVideos[i]];
+
+        if (nbVideos[i] > 0) {
+            videosParLecteur[i][0] = listeFichiersEntree[0];
+            nbVideosAffectees[i] = 1;
         }
-        placesDisponibles += (NbVideos[i] - videosParLecteur[i].size());
+
+        placesDisponibles += (nbVideos[i] - nbVideosAffectees[i]);
     }
 
     size_t indexVideo = 1;
     size_t lecteurActuel = 0;
 
-    while (indexVideo < listeFichierEntree.size() && placesDisponibles > 0) {
-        if (videosParLecteur[lecteurActuel].size() < NbVideos[lecteurActuel]) {
-            videosParLecteur[lecteurActuel].push_back(listeFichierEntree[indexVideo]);
+    while (indexVideo < nbFichiers && placesDisponibles > 0) {
+        if (nbVideosAffectees[lecteurActuel] < static_cast<size_t>(nbVideos[lecteurActuel])) {
+            videosParLecteur[lecteurActuel][nbVideosAffectees[lecteurActuel]] = listeFichiersEntree[indexVideo];
+            nbVideosAffectees[lecteurActuel]++;
             indexVideo++;
             placesDisponibles--;
         }
 
         lecteurActuel++;
-        if (lecteurActuel >= NbVideos.size()) {
+        if (lecteurActuel >= nbLecteursTotal) {
             lecteurActuel = 0;
         }
     }
 
-    for (size_t i = 0; i < videosParLecteur.size(); i++) {
-        vector<string> mesVideos = videosParLecteur[i];
-
-        if (!mesVideos.empty()) {
-            string nomFichierSortie = "videosComplexes/VideoComplexe_" + to_string(IdLecteurs[i]) + ".mp4";
-            VideoComplexe.genererVideoComplexe(mesVideos, nomFichierSortie);
+    for (size_t i = 0; i < nbLecteursTotal; i++) {
+        if (nbVideosAffectees[i] > 0) {
+            string nomFichierSortie = "videosComplexes/VideoComplexe_" + to_string(idLecteurs[i]) + ".mp4";
+            instanceVideoComplexe.genererVideoComplexe(videosParLecteur[i], nbVideosAffectees[i], nomFichierSortie);
         }
     }
+
+    for (size_t i = 0; i < nbLecteursTotal; ++i) {
+        delete[] videosParLecteur[i];
+    }
+    delete[] videosParLecteur;
+    delete[] nbVideosAffectees;
 }
 
 void M_SessionLecture::uploaderVideoComplexe() {
@@ -70,15 +94,16 @@ void M_SessionLecture::uploaderVideoComplexe() {
     fichierJson << "[\n";
     bool premierElement = true;
 
-    for (size_t i = 0; i < IdLecteurs.size(); i++) {
-        if (NbVideos[i] > 0) {
+    for (size_t i = 0; i < nbLecteursTotal; i++) {
+        if (nbVideos[i] > 0) {
+
             if (!premierElement) {
                 fichierJson << ",\n";
             }
             premierElement = false;
 
-            string pathVideo = "VideoComplexe_" + to_string(IdLecteurs[i]) + ".mp4";
-            string ipActuelle = IpLecteurs[i];
+            string pathVideo = "VideoComplexe_" + to_string(idLecteurs[i]) + ".mp4";
+            string ipActuelle = ipLecteurs[i];
 
             fichierJson << "  {\n";
             fichierJson << "    \"ip\": \"" << ipActuelle << "\",\n";
@@ -93,9 +118,10 @@ void M_SessionLecture::uploaderVideoComplexe() {
     cout << "\nFichier JSON genere. Lancement du transfert TFTP...\n" << endl;
 
     try {
-        M_ServeurTFTP_W tftpServer(config, path);
-        tftpServer.runAllTransfers();
-    } catch (const exception &e) {
+        M_ServeurTFTP_W serveurTftp(config, path);
+        serveurTftp.runAllTransfers();
+    }
+    catch (const exception& e) {
         cerr << "\nUne erreur critique est survenue: " << e.what() << endl;
     }
 }

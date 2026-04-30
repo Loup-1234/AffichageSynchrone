@@ -32,6 +32,7 @@ private:
     bool estMuet = false;
     bool enGlissement = false;
     float delaiRecherche = 0.0f;
+    bool etaitEnLectureAvantGlissement = false;
 
     vector<string> fichiersVideo;
     vector<bool> videosCochees;

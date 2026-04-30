@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include <string>
 
 using namespace std;
@@ -10,17 +9,16 @@ const string TEMP_AUDIO_PREFIX = "temp_audio_";
 
 class M_VideoComplexe {
 public:
-    void genererVideoComplexe(const vector<string> &listeFichierEntree, const string &fichierSortie);
+    void genererVideoComplexe(const string* listeFichierEntree, size_t nbVideos, const string &fichierSortie);
 
 private:
-    vector<double> calculerDecalages(const vector<vector<float> > &audios, const vector<string> &listeFichiers);
+    double* calculerDecalages(const float* const* audios, const size_t* taillesAudios, size_t nbVideos, const string* listeFichiers);
 
-    string construireCommandeFFmpeg(const vector<string> &listeFichierEntree, const vector<double> &decalagesEnSecondes,
-                                    const string &fichierSortie);
+    string construireCommandeFFmpeg(const string* listeFichierEntree, size_t nbVideos, const double* decalagesEnSecondes, const string &fichierSortie);
 
-    vector<vector<float> > extraireEtChargerAudios(const vector<string> &listeFichierEntree);
+    float** extraireEtChargerAudios(const string* listeFichierEntree, size_t nbVideos, size_t* taillesAudios);
 
-    int xcorr(const vector<float> &sig1, const vector<float> &sig2);
+    int xcorr(const float* video1, size_t taille1, const float* video2, size_t taille2);
 
     void nettoyerTemporaires(int nbVideos);
 };

@@ -6,28 +6,22 @@
 #include <vector>
 #include <atomic>
 #include <thread>
-#include <functional>
 
 using namespace std;
 
 class C_LecteurPhysiqueLocal {
 public:
     C_LecteurPhysiqueLocal(const string &ipGroupe, int port, const vector<vector<string> > &configLecteurs);
-
     ~C_LecteurPhysiqueLocal();
 
     void initialiserSession(const vector<string> &fichiers);
-
     void basculerPlayPause();
-
     void modifierVolume(float volume, bool muet);
-
-    void modifierProgression(float progression, bool enGlissement);
-
+    void modifierProgression(float progression, bool enGlissement, bool restaurerLecture = false);
     void mettreAJour();
 
-    void consommerFrameVideo(const function<void(void *, unsigned int, unsigned int, bool)> &action) {
-        modeleLecteur.consommerFrameVideo(action);
+    bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement) {
+        return modeleLecteur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement);
     }
 
     float getDureeTotale() const { return modeleLecteur.getDureeTotale(); }

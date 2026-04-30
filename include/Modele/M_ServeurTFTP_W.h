@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "../../libs/JSON/json.hpp"
+#include "../JSON/json.hpp"
 
 #define BLOCK_SIZE 512
 
@@ -23,7 +23,7 @@ enum class TransferStatus {
 
 class M_ServeurTFTP_W {
 public:
-    M_ServeurTFTP_W(const string &jsonPath, const string &docRoot);
+    M_ServeurTFTP_W(const string& jsonPath, const string& docRoot);
 
     ~M_ServeurTFTP_W();
 
@@ -38,5 +38,5 @@ private:
 
     void loadConfig();
 
-    TransferStatus sendTftpTransfer(const string &ip, const string &filePath);
+    TransferStatus sendTftpTransfer(const string& ip, const string& filePath);
 };

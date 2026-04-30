@@ -97,24 +97,28 @@ void V_Master::gererLogique() {
 
     controleur.mettreAJour();
 
-    controleur.consommerFrameVideo(
-        [this](void *pixels, unsigned int largeur, unsigned int hauteur, bool redimensionnement) {
-            largeurVideoCache = largeur;
-            hauteurVideoCache = hauteur;
+    void* pixels = nullptr;
+    unsigned int largeur = 0;
+    unsigned int hauteur = 0;
+    bool redimensionnement = false;
 
-            if (redimensionnement) {
-                if (textureVideo.id > 0) UnloadTexture(textureVideo);
-                if (largeur > 0 && hauteur > 0) {
-                    Image img = GenImageColor(largeur, hauteur, BLACK);
-                    textureVideo = LoadTextureFromImage(img);
-                    UnloadImage(img);
-                }
-            }
+    if (controleur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement)) {
+        largeurVideoCache = largeur;
+        hauteurVideoCache = hauteur;
 
-            if (largeur > 0 && hauteur > 0 && pixels) {
-                UpdateTexture(textureVideo, pixels);
+        if (redimensionnement) {
+            if (textureVideo.id > 0) UnloadTexture(textureVideo);
+            if (largeur > 0 && hauteur > 0) {
+                const Image img = GenImageColor(largeur, hauteur, BLACK);
+                textureVideo = LoadTextureFromImage(img);
+                UnloadImage(img);
             }
-        });
+        }
+
+        if (largeur > 0 && hauteur > 0 && pixels != nullptr) {
+            UpdateTexture(textureVideo, pixels);
+        }
+    }
 
     if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
     if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
@@ -213,8 +217,10 @@ void V_Master::gererBarreProgression() {
     GuiLabel(zones[5], TextFormat("%02d:%02d / %02d:%02d", minutes, secondes, dureeMinutes, dureeSecondes));
 
     const float ancienneProg = valeurProgression;
+
     if (CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         enGlissement = true;
+        etaitEnLectureAvantGlissement = controleur.estEnLecture();
     }
 
     GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, controleur.getDureeTotale());
@@ -226,7 +232,7 @@ void V_Master::gererBarreProgression() {
     if (enGlissement && (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) || !IsMouseButtonDown(MOUSE_LEFT_BUTTON))) {
         enGlissement = false;
         delaiRecherche = 0.2f;
-        controleur.modifierProgression(valeurProgression, false);
+        controleur.modifierProgression(valeurProgression, false, etaitEnLectureAvantGlissement);
     }
 }
 

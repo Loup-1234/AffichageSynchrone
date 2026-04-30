@@ -5,20 +5,17 @@
 #include <vector>
 #include <atomic>
 #include <mutex>
-#include <functional>
 
 using namespace std;
 
 class M_LecteurPhysique {
 public:
     M_LecteurPhysique();
-
     ~M_LecteurPhysique();
 
     void lireVideo(const string &cheminVideo);
 
-    void consommerFrameVideo(const function<void(void *pixels, unsigned int largeur, unsigned int hauteur,
-                                                 bool redimensionnement)> &action);
+    bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement);
 
     void demarrer() const { libvlc_media_player_play(lecteurVLC); }
     void play() const { libvlc_media_player_set_pause(lecteurVLC, 0); }
@@ -47,9 +44,7 @@ private:
 
     // Callbacks VLC
     static void *cb_verrouiller(void *opaque, void **plans);
-
     static void cb_deverrouiller(void *opaque, void *image, void *const*plans);
-
     static unsigned cb_configurerVideo(void **opaque, char *chrominance, const unsigned *largeur,
                                        const unsigned *hauteur, unsigned *pas, unsigned *lignes);
 };

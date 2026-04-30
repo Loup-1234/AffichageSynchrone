@@ -9,7 +9,7 @@
 #include <filesystem>
 #include <stdexcept>
 
-M_ServeurTFTP_W::M_ServeurTFTP_W(const string &jsonPath, const string &docRoot)
+M_ServeurTFTP_W::M_ServeurTFTP_W(const string& jsonPath, const string& docRoot)
     : configPath(jsonPath), documentRoot(docRoot) {
     initWinsock();
     loadConfig();
@@ -20,22 +20,21 @@ M_ServeurTFTP_W::~M_ServeurTFTP_W() {
 }
 
 void M_ServeurTFTP_W::runAllTransfers() {
-    vector<future<TransferStatus> > futures;
+    vector<future<TransferStatus>> futures;
     vector<json> entries;
 
-    for (const auto &entry: transferData) {
+    for (const auto& entry : transferData) {
         entries.push_back(entry);
         auto filename = entry["path"].get<string>();
         string fullPath = documentRoot + "/" + filename;
-        futures.push_back(async(launch::async, &M_ServeurTFTP_W::sendTftpTransfer, this, entry["ip"].get<string>(),
-                                fullPath));
+        futures.push_back(async(launch::async, &M_ServeurTFTP_W::sendTftpTransfer, this, entry["ip"].get<string>(), fullPath));
     }
 
     cout << "--- RAPPORT DES TRANSFERTS ---\n";
     int successCount = 0;
     for (size_t i = 0; i < futures.size(); ++i) {
         const TransferStatus status = futures[i].get();
-        const auto &entry = entries[i];
+        const auto& entry = entries[i];
         cout << "Fichier: " << entry["path"].get<string>() << " -> IP: " << entry["ip"].get<string>() << " ... ";
 
         switch (status) {
@@ -74,13 +73,12 @@ void M_ServeurTFTP_W::initWinsock() {
 void M_ServeurTFTP_W::loadConfig() {
     ifstream f(configPath);
     if (!f) {
-        throw runtime_error(
-            "Impossible de trouver '" + configPath + "'. Assurez-vous qu'il est a la racine du projet.");
+        throw runtime_error("Impossible de trouver '" + configPath + "'. Assurez-vous qu'il est a la racine du projet.");
     }
     transferData = json::parse(f);
 }
 
-TransferStatus M_ServeurTFTP_W::sendTftpTransfer(const string &ip, const string &filePath) {
+TransferStatus M_ServeurTFTP_W::sendTftpTransfer(const string& ip, const string& filePath) {
     ifstream file(filePath, ios::binary);
     if (!file) {
         return TransferStatus::LOCAL_FILE_NOT_FOUND;
@@ -92,7 +90,7 @@ TransferStatus M_ServeurTFTP_W::sendTftpTransfer(const string &ip, const string 
     }
 
     DWORD timeout = 10000; // 10,000 millisecondes
-    if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (char *) &timeout, sizeof(timeout)) == SOCKET_ERROR) {
+    if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
         closesocket(sock);
         return TransferStatus::TRANSFER_SOCKET_ERROR;
     }
@@ -121,12 +119,9 @@ TransferStatus M_ServeurTFTP_W::sendTftpTransfer(const string &ip, const string 
 
     if (recvSize == SOCKET_ERROR) {
         closesocket(sock);
-        return (WSAGetLastError() == WSAETIMEDOUT)
-                   ? TransferStatus::NO_INITIAL_ACK
-                   : TransferStatus::TRANSFER_SOCKET_ERROR;
+        return (WSAGetLastError() == WSAETIMEDOUT) ? TransferStatus::NO_INITIAL_ACK : TransferStatus::TRANSFER_SOCKET_ERROR;
     }
-    if (recvSize < 4 || ntohs(*reinterpret_cast<uint16_t *>(ackBuffer)) != ACK || ntohs(
-            *reinterpret_cast<uint16_t *>(ackBuffer + 2)) != 0) {
+    if (recvSize < 4 || ntohs(*reinterpret_cast<uint16_t*>(ackBuffer)) != ACK || ntohs(*reinterpret_cast<uint16_t*>(ackBuffer + 2)) != 0) {
         closesocket(sock);
         return TransferStatus::INVALID_ACK;
     }
@@ -138,21 +133,19 @@ TransferStatus M_ServeurTFTP_W::sendTftpTransfer(const string &ip, const string 
         file.read(dataPacket.data() + 4, BLOCK_SIZE);
         size_t bytesRead = file.gcount();
 
-        *reinterpret_cast<uint16_t *>(dataPacket.data()) = htons(DATA);
-        *reinterpret_cast<uint16_t *>(dataPacket.data() + 2) = htons(blockNumber);
+        *reinterpret_cast<uint16_t*>(dataPacket.data()) = htons(DATA);
+        *reinterpret_cast<uint16_t*>(dataPacket.data() + 2) = htons(blockNumber);
 
         sendto(sock, dataPacket.data(), bytesRead + 4, 0, reinterpret_cast<sockaddr *>(&destAddr), sizeof(destAddr));
 
         recvSize = recvfrom(sock, ackBuffer, sizeof(ackBuffer), 0, reinterpret_cast<sockaddr *>(&destAddr), &serverLen);
         if (recvSize == SOCKET_ERROR) {
             closesocket(sock);
-            return (WSAGetLastError() == WSAETIMEDOUT)
-                       ? TransferStatus::DATA_ACK_TIMEOUT
-                       : TransferStatus::TRANSFER_SOCKET_ERROR;
+            return (WSAGetLastError() == WSAETIMEDOUT) ? TransferStatus::DATA_ACK_TIMEOUT : TransferStatus::TRANSFER_SOCKET_ERROR;
         }
 
-        uint16_t ackBlock = ntohs(*reinterpret_cast<uint16_t *>(ackBuffer + 2));
-        if (ntohs(*reinterpret_cast<uint16_t *>(ackBuffer)) != ACK || ackBlock != blockNumber) {
+        uint16_t ackBlock = ntohs(*reinterpret_cast<uint16_t*>(ackBuffer + 2));
+        if (ntohs(*reinterpret_cast<uint16_t*>(ackBuffer)) != ACK || ackBlock != blockNumber) {
             closesocket(sock);
             return TransferStatus::INVALID_ACK;
         }

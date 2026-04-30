@@ -4,9 +4,6 @@
 #define WIN32_LEAN_AND_MEAN
 #endif
 
-#define NOGDI
-#define NOUSER
-
 #include <winsock2.h>
 #include <string>
 #include <cstdint>
@@ -15,15 +12,30 @@
 
 using namespace std;
 
+enum class Expediteur : uint8_t {
+    MASTER = 0,
+    AUTRE = 1,
+};
+
 enum class TypeCommande : uint8_t {
-    LECTURE_PAUSE = 0,
-    VOLUME = 1,
-    PROGRESSION = 2
+    ORDRE = 0,
+    CONNECTION = 1,
+};
+
+enum class Action : uint8_t {
+    PLAY = 0,
+    PAUSE = 1,
+    STOP = 2,
+    VOLUME = 3,
+    PROGRESSION = 4,
+    VITESSE = 5
 };
 
 #pragma pack(push, 1)
 struct PaquetControle {
+    Expediteur exp;
     TypeCommande type;
+    Action action;
     float valeur;
 };
 #pragma pack(pop)
@@ -36,7 +48,7 @@ public:
 
     bool envoyer(const void *donnees, int taille);
 
-    void transmettreCommande(TypeCommande type, float valeur);
+    void transmettreCommande(const Expediteur exp, const TypeCommande type, const Action action, const float valeur);
 
 private:
     SOCKET descripteurSocket = INVALID_SOCKET;
