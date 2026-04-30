@@ -4,9 +4,9 @@
 
 using namespace std;
 
-C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipGroupe, const int port,
+C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipBroadcast, const int port,
                                                const vector<vector<string> > &configLecteurs)
-    : udp(ipGroupe, port), configLecteurs(configLecteurs) {
+    : udp(ipBroadcast, port), configLecteurs(configLecteurs) {
     if (filesystem::exists(CHEMIN_VIDEO)) modeleLecteur.lireVideo(CHEMIN_VIDEO);
 }
 

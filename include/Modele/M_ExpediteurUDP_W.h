@@ -42,7 +42,7 @@ struct PaquetControle {
 
 class M_ExpediteurUDP_W {
 public:
-    M_ExpediteurUDP_W(const string &ipGroupe, int port);
+    M_ExpediteurUDP_W(const string &ipBroadcast, int port);
 
     ~M_ExpediteurUDP_W();
 
