@@ -7,7 +7,8 @@ using namespace std;
 
 int main() {
     try {
-        const string IP_MULTICAST = "224.67.67.67";
+        // IP_MULTICAST doit être entre 224.0.0.0 et 239.255.255.255
+        const string IP_MULTICAST = "224.0.0.1";
         constexpr int PORT_RESEAU = 54321;
 
         const vector<vector<string> > specLecteurs = {
