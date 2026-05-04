@@ -11,7 +11,7 @@ using namespace std;
 
 class C_LecteurPhysiqueLocal {
 public:
-    C_LecteurPhysiqueLocal(const string &ipBroadcast, int port, const vector<vector<string> > &configLecteurs);
+    C_LecteurPhysiqueLocal(const string &ipMulticast, int port, const vector<vector<string> > &configLecteurs);
     ~C_LecteurPhysiqueLocal();
 
     void initialiserSession(const vector<string> &fichiers);

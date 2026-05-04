@@ -7,8 +7,8 @@
 using namespace std;
 namespace fs = filesystem;
 
-V_Master::V_Master(const string &ipBroadcast, const int port, const vector<vector<string> > &specLecteurs)
-    : controleur(ipBroadcast, port, specLecteurs) {
+V_Master::V_Master(const string &ipMulticast, const int port, const vector<vector<string> > &specLecteurs)
+    : controleur(ipMulticast, port, specLecteurs) {
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
     InitWindow(800, 450, "Master UI - Contrôleur MVC");
     SetWindowMinSize(800, 450);

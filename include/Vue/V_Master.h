@@ -9,7 +9,7 @@ using namespace std;
 
 class V_Master {
 public:
-    V_Master(const string &ipBroadcast, int port, const vector<vector<string> > &specLecteurs);
+    V_Master(const string &ipMulticast, int port, const vector<vector<string> > &specLecteurs);
 
     ~V_Master();
 

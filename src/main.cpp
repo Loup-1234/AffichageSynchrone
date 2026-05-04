@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
     try {
-        const string IP_BROADCAST = "172.31.71.255";
+        const string IP_MULTICAST = "224.67.67.67";
         constexpr int PORT_RESEAU = 54321;
 
         const vector<vector<string> > specLecteurs = {
@@ -16,7 +16,7 @@ int main() {
             {"2", "0.0.0.0", "3"}
         };
 
-        V_Master master(IP_BROADCAST, PORT_RESEAU, specLecteurs);
+        V_Master master(IP_MULTICAST, PORT_RESEAU, specLecteurs);
         master.executer();
     } catch (const exception &e) {
         cerr << "[Erreur Critique] : " << e.what() << endl;
