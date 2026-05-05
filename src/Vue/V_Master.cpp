@@ -122,7 +122,12 @@ void V_Master::gererLogique() {
 
     if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
     if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
-        valeurProgression = controleur.getProgressionActuelle();
+
+        if (controleur.estTermine()) {
+            valeurProgression = controleur.getDureeTotale();
+        } else {
+            valeurProgression = controleur.getProgressionActuelle();
+        }
     }
 }
 
@@ -209,26 +214,47 @@ void V_Master::dessinerPanneauControle() {
 }
 
 void V_Master::gererBarreProgression() {
+    const float dureeTotale = controleur.getDureeTotale();
+
     const int minutes = static_cast<int>(valeurProgression) / 60;
     const int secondes = static_cast<int>(valeurProgression) % 60;
-    const int dureeMinutes = static_cast<int>(controleur.getDureeTotale()) / 60;
-    const int dureeSecondes = static_cast<int>(controleur.getDureeTotale()) % 60;
+    const int dureeMinutes = static_cast<int>(dureeTotale) / 60;
+    const int dureeSecondes = static_cast<int>(dureeTotale) % 60;
 
     GuiLabel(zones[5], TextFormat("%02d:%02d / %02d:%02d", minutes, secondes, dureeMinutes, dureeSecondes));
 
     const float ancienneProg = valeurProgression;
 
-    if (CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+    // Nouvelles conditions
+    const bool estA100 = controleur.estTermine();
+    const bool aucuneVideoChargee = (dureeTotale <= 0.0f);
+    const bool desactiverSlider = estA100 || aucuneVideoChargee;
+
+    // Griser le slider si terminé OU si aucune vidéo
+    if (desactiverSlider) {
+        GuiSetState(STATE_DISABLED);
+    }
+
+    // Autoriser le clic uniquement si le slider est actif
+    if (!desactiverSlider && CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         enGlissement = true;
         etaitEnLectureAvantGlissement = controleur.estEnLecture();
     }
 
-    GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, controleur.getDureeTotale());
+    // Rendu du slider (sécurité : si durée=0, on passe 1.0f comme maximum pour éviter les bugs d'affichage Raygui)
+    GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, aucuneVideoChargee ? 1.0f : dureeTotale);
 
-    if (enGlissement && valeurProgression != ancienneProg) {
+    // Restaurer l'état normal pour les composants suivants
+    if (desactiverSlider) {
+        GuiSetState(STATE_NORMAL);
+    }
+
+    // Gestion du glissement
+    if (enGlissement && !desactiverSlider && valeurProgression != ancienneProg) {
         controleur.modifierProgression(valeurProgression, true);
     }
 
+    // Relâchement du clic
     if (enGlissement && (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) || !IsMouseButtonDown(MOUSE_LEFT_BUTTON))) {
         enGlissement = false;
         delaiRecherche = 0.2f;

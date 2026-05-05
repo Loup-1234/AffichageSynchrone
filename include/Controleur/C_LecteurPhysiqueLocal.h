@@ -27,6 +27,7 @@ public:
     float getDureeTotale() const { return modeleLecteur.getDureeTotale(); }
     float getProgressionActuelle() const { return modeleLecteur.getProgressionActuelle(); }
     bool estEnLecture() const { return modeleLecteur.estEnLecture(); }
+    bool estTermine() const { return modeleLecteur.estTermine(); }
     bool estGenerationEnCours() const { return generationEnCours; }
 
 private:

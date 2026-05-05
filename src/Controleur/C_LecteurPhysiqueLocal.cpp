@@ -74,8 +74,15 @@ void C_LecteurPhysiqueLocal::basculerPlayPause() {
         modeleLecteur.pause();
         udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PAUSE, 0.0f);
     } else {
-        modeleLecteur.play();
-        udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PLAY, 0.0f);
+        if (modeleLecteur.estTermine()) {
+
+            modeleLecteur.stop();
+            modeleLecteur.demarrer();
+
+            udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PROGRESSION, 0.0f);
+        } else {
+            modeleLecteur.play();
+        }
     }
 }
 

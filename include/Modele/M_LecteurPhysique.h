@@ -18,12 +18,14 @@ public:
     bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement);
 
     void demarrer() const { libvlc_media_player_play(lecteurVLC); }
+    void stop() const { libvlc_media_player_stop(lecteurVLC); }
     void play() const { libvlc_media_player_set_pause(lecteurVLC, 0); }
     void pause() const { libvlc_media_player_set_pause(lecteurVLC, 1); }
     void setVolume(const int volume) const { libvlc_audio_set_volume(lecteurVLC, volume); }
     void setTime(const float tempsSec) const { libvlc_media_player_set_time(lecteurVLC, tempsSec * 1000); }
 
     bool estEnLecture() const { return libvlc_media_player_is_playing(lecteurVLC); }
+    bool estTermine() const { return libvlc_media_player_get_state(lecteurVLC) == libvlc_Ended; }
     float getDureeTotale() const { return dureeTotale; }
 
     float getProgressionActuelle() const {
