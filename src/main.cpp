@@ -8,13 +8,19 @@ using namespace std;
 int main() {
     try {
         // IP_MULTICAST doit être entre 224.0.0.0 et 239.255.255.255
-        const string IP_MULTICAST = "224.0.0.1";
+        const string IP_MULTICAST = "224.0.0.69";
         constexpr int PORT_RESEAU = 54321;
 
+        /*
         const vector<vector<string> > specLecteurs = {
             {"0", "172.31.71.104", "2"},
             {"1", "0.0.0.0", "3"},
             {"2", "0.0.0.0", "3"}
+        };
+        */
+
+        const vector<vector<string> > specLecteurs = {
+            {"0", "172.31.71.104", "3"},
         };
 
         V_Master master(IP_MULTICAST, PORT_RESEAU, specLecteurs);
