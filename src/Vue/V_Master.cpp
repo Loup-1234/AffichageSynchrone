@@ -53,7 +53,7 @@ void V_Master::chargerListeVideos() {
         for (const auto &entree: fs::directory_iterator("videos")) {
             if (entree.is_regular_file()) {
                 string ext = entree.path().extension().string();
-                if (ext == ".mp4" || ext == ".mp3") {
+                if (ext == ".mp4" || ext == ".mp3" || ext == ".avi" || ext == ".wav") {
                     fichiersVideo.push_back(entree.path().filename().string());
                     videosCochees.push_back(false);
                 }

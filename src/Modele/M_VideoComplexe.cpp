@@ -81,7 +81,7 @@ double* M_VideoComplexe::calculerDecalages(const float* const* audios, const siz
         tachesFutures[i] = async(launch::async, [&, i, indexRef] {
             if (audios[indexRef] != nullptr && taillesAudios[indexRef] > 0 &&
                 audios[i] != nullptr && taillesAudios[i] > 0) {
-                auto resultatXcorr = -static_cast<double>(xcorr(audios[indexRef], taillesAudios[indexRef], audios[i], taillesAudios[i]));
+                const auto resultatXcorr = -static_cast<double>(xcorr(audios[indexRef], taillesAudios[indexRef], audios[i], taillesAudios[i]));
                 decalages[i] = resultatXcorr / FREQUENCE_ECHANTILLONNAGE;
             }
         });
@@ -95,7 +95,10 @@ double* M_VideoComplexe::calculerDecalages(const float* const* audios, const siz
 
     for (size_t i = 0; i < nbVideos; ++i) {
         if (i == static_cast<size_t>(indexRef)) {
-            bool estAudio = listeFichiers[0].ends_with(".mp3");
+            string extension = listeFichiers[0];
+            ranges::transform(extension, extension.begin(), ::tolower);
+            const bool estAudio = extension.ends_with(".mp3") || extension.ends_with(".wav");
+
             cout << " -> "<< (estAudio ? "Son " : "Video ") << i + 1 << " [REFERENCE]" << endl;
         } else {
             cout << " -> Decalage video " << i + 1 << " : " << decalages[i] << " s" << endl;
@@ -106,12 +109,15 @@ double* M_VideoComplexe::calculerDecalages(const float* const* audios, const siz
     return decalages;
 }
 
-string M_VideoComplexe::construireCommandeFFmpeg(const string* listeFichiersEntree, const size_t nbVideos,
+string M_VideoComplexe::construireCommandeFFmpeg(const string* listeFichiersEntree, size_t nbVideos,
                                                const double* decalagesEnSecondes, const string &fichierSortie) {
     constexpr int indexRef = 0;
 
     const string& cheminRef = listeFichiersEntree[indexRef];
-    const bool refEstAudioSeul = cheminRef.ends_with(".mp3");
+
+    string cheminMinuscule = cheminRef;
+    ranges::transform(cheminMinuscule, cheminMinuscule.begin(), ::tolower);
+    const bool refEstAudioSeul = cheminMinuscule.ends_with(".mp3") || cheminMinuscule.ends_with(".wav");
 
     int* indexVideos = new int[nbVideos];
     size_t nbVideosMosaique = 0;
@@ -163,7 +169,7 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string* listeFichiersEntr
     return fluxCommande.str();
 }
 
-float** M_VideoComplexe::extraireEtChargerAudios(const string* listeFichiersEntree, const size_t nbVideos, size_t* taillesAudios) {
+float** M_VideoComplexe::extraireEtChargerAudios(const string* listeFichiersEntree, size_t nbVideos, size_t* taillesAudios) {
 
     struct ResultatAudio {
         float* donnees;
@@ -217,8 +223,8 @@ float** M_VideoComplexe::extraireEtChargerAudios(const string* listeFichiersEntr
     return audios;
 }
 
-int M_VideoComplexe::xcorr(const float* video1, const size_t taille1, const float* video2, const size_t taille2) {
-    if (video1 == nullptr || taille1 == 0 || video2 == nullptr || taille2 == 0) {
+int M_VideoComplexe::xcorr(const float* sig1, size_t taille1, const float* sig2, size_t taille2) {
+    if (sig1 == nullptr || taille1 == 0 || sig2 == nullptr || taille2 == 0) {
         throw invalid_argument("Un ou plusieurs signaux sont vides, correlation impossible.");
     }
 
@@ -241,11 +247,11 @@ int M_VideoComplexe::xcorr(const float* video1, const size_t taille1, const floa
         throw bad_alloc();
     }
 
-    const double moyenne1 = accumulate(video1, video1 + taille1, 0.0) / static_cast<double>(taille1);
-    const double moyenne2 = accumulate(video2, video2 + taille2, 0.0) / static_cast<double>(taille2);
+    const double moyenne1 = accumulate(sig1, sig1 + taille1, 0.0) / static_cast<double>(taille1);
+    const double moyenne2 = accumulate(sig2, sig2 + taille2, 0.0) / static_cast<double>(taille2);
 
-    for (size_t i = 0; i < taille1; ++i) signalTemporel1.get()[i] = video1[i] - moyenne1;
-    for (size_t i = 0; i < taille2; ++i) signalTemporel2.get()[i] = video2[i] - moyenne2;
+    for (size_t i = 0; i < taille1; ++i) signalTemporel1.get()[i] = sig1[i] - moyenne1;
+    for (size_t i = 0; i < taille2; ++i) signalTemporel2.get()[i] = sig2[i] - moyenne2;
 
     fill(signalTemporel1.get() + taille1, signalTemporel1.get() + tailleFFT, 0.0);
     fill(signalTemporel2.get() + taille2, signalTemporel2.get() + tailleFFT, 0.0);
