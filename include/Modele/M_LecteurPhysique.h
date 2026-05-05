@@ -23,6 +23,7 @@ public:
     void pause() const { libvlc_media_player_set_pause(lecteurVLC, 1); }
     void setVolume(const int volume) const { libvlc_audio_set_volume(lecteurVLC, volume); }
     void setTime(const float tempsSec) const { libvlc_media_player_set_time(lecteurVLC, tempsSec * 1000); }
+    void setVitesse(const float vitesse) const { libvlc_media_player_set_rate(lecteurVLC, vitesse); }
 
     bool estEnLecture() const { return libvlc_media_player_is_playing(lecteurVLC); }
     bool estTermine() const { return libvlc_media_player_get_state(lecteurVLC) == libvlc_Ended; }

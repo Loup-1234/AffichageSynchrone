@@ -111,3 +111,8 @@ void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const 
         }
     }
 }
+
+void C_LecteurPhysiqueLocal::modifierVitesse(const float vitesse) {
+    modeleLecteur.setVitesse(vitesse);
+    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VITESSE, vitesse);
+}

@@ -42,6 +42,7 @@ void V_Master::miseAJourDisposition() {
     zones[8] = {L - 136, H - 72, 128, 32}; // Label Volume
     zones[9] = {L - 136, H - 40, 128, 32}; // Slider Volume
     zones[10] = {0, 0, 150, 48}; // Bouton Dossier
+    zones[11] = {L - 136, 10.0f, 128.0f, 32.0f};
 }
 
 void V_Master::chargerListeVideos() {
@@ -139,6 +140,7 @@ void V_Master::dessinerInterface() {
     DrawRectangleRec(zones[3], GRAY); // Ligne de séparation
     dessinerListeFichiers();
     dessinerPanneauControle();
+    gererVitesse();
     dessinerOverlayChargement();
 
     EndDrawing();
@@ -276,6 +278,28 @@ void V_Master::gererControlesVolume() {
     if (valeurVolume != ancienVol) {
         estMuet = (valeurVolume <= 0.0f);
         controleur.modifierVolume(valeurVolume, estMuet);
+    }
+}
+
+void V_Master::gererVitesse() {
+    // Les valeurs correspondantes aux choix du menu
+    const float valeursVitesse[] = {0.5f, 1.0f, 1.5f, 2.0f};
+    const int ancienIndex = indexVitesse;
+
+    // Griser le menu si aucune vidéo n'est chargée
+    const bool aucuneVideoChargee = (controleur.getDureeTotale() <= 0.0f);
+    if (aucuneVideoChargee) GuiSetState(STATE_DISABLED);
+
+    // Dessin du menu déroulant (Raygui)
+    if (GuiDropdownBox(zones[11], "Vitesse: 0.5x;Vitesse: 1.0x;Vitesse: 1.5x;Vitesse: 2.0x", &indexVitesse, menuVitesseActif)) {
+        menuVitesseActif = !menuVitesseActif; // Ouvre/ferme le menu
+    }
+
+    if (aucuneVideoChargee) GuiSetState(STATE_NORMAL);
+
+    // Si la valeur a changé et que le menu vient de se fermer
+    if (indexVitesse != ancienIndex && !menuVitesseActif) {
+        controleur.modifierVitesse(valeursVitesse[indexVitesse]);
     }
 }
 

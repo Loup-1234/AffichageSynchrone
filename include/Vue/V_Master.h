@@ -19,7 +19,7 @@ private:
     C_LecteurPhysiqueLocal controleur;
 
     Texture2D textureVideo{};
-    Rectangle zones[11]{};
+    Rectangle zones[12]{};
 
     float rotationChargement = 0.0f;
 
@@ -33,6 +33,8 @@ private:
     bool enGlissement = false;
     float delaiRecherche = 0.0f;
     bool etaitEnLectureAvantGlissement = false;
+    int indexVitesse = 1;
+    bool menuVitesseActif = false;
 
     vector<string> fichiersVideo;
     vector<bool> videosCochees;
@@ -63,6 +65,8 @@ private:
     void gererBarreProgression();
 
     void gererControlesVolume();
+
+    void gererVitesse();
 
     void dessinerOverlayChargement();
 };

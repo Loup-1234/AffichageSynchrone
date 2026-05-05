@@ -18,6 +18,7 @@ public:
     void basculerPlayPause();
     void modifierVolume(float volume, bool muet);
     void modifierProgression(float progression, bool enGlissement, bool restaurerLecture = false);
+    void modifierVitesse(float vitesse);
     void mettreAJour();
 
     bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement) {
