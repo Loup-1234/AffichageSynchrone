@@ -1,14 +1,28 @@
 #pragma once
 
-#include <string>
+// --- PROTECTIONS WINSOCK / WINDOWS ---
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#define NOGDI
+#define NOUSER
 
-#include "../JSON/json.hpp"
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <string>
+#include <vector>
+
+// On lie la bibliothèque Winsock (pour éviter les erreurs de "LNK" plus tard)
+#pragma comment(lib, "ws2_32.lib")
 
 #define BLOCK_SIZE 512
 
-using json = nlohmann::json;
-
 using namespace std;
+
+struct TransferInfo {
+    string ip;
+    string path;
+};
 
 enum OPCODE { WRQ = 2, DATA = 3, ACK = 4 };
 
@@ -23,20 +37,15 @@ enum class TransferStatus {
 
 class M_ServeurTFTP_W {
 public:
-    M_ServeurTFTP_W(const string& jsonPath, const string& docRoot);
-
+    M_ServeurTFTP_W(const vector<TransferInfo>& transfers, const string& docRoot);
     ~M_ServeurTFTP_W();
 
     void runAllTransfers();
 
 private:
-    string configPath;
     string documentRoot;
-    json transferData;
+    vector<TransferInfo> transferData;
 
     void initWinsock();
-
-    void loadConfig();
-
     TransferStatus sendTftpTransfer(const string& ip, const string& filePath);
 };
