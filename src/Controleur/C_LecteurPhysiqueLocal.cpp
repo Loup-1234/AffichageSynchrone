@@ -50,7 +50,9 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
             session.genererVideoComplexe(fichiers.data(), fichiers.size());
 
             // 4. Upload
+            transfertEnCours = true;
             session.uploaderVideoComplexe();
+            transfertEnCours = false;
 
             videoGeneree = true;
         } catch (const exception &e) {
@@ -58,13 +60,6 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
         }
         generationEnCours = false;
     });
-}
-
-void C_LecteurPhysiqueLocal::mettreAJour() {
-    if (videoGeneree) {
-        modeleLecteur.lireVideo(CHEMIN_VIDEO);
-        videoGeneree = false;
-    }
 }
 
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
@@ -116,4 +111,16 @@ void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const 
 void C_LecteurPhysiqueLocal::modifierVitesse(const float vitesse) {
     modeleLecteur.setVitesse(vitesse);
     udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VITESSE, vitesse);
+}
+
+void C_LecteurPhysiqueLocal::mettreAJour() {
+    if (videoGeneree) {
+        modeleLecteur.lireVideo(CHEMIN_VIDEO);
+        videoGeneree = false;
+    }
+}
+
+void C_LecteurPhysiqueLocal::stopper() {
+    modeleLecteur.stop();
+    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::STOP, 0.0f);
 }

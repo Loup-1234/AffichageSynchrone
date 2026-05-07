@@ -20,6 +20,7 @@ public:
     void modifierProgression(float progression, bool enGlissement, bool restaurerLecture = false);
     void modifierVitesse(float vitesse);
     void mettreAJour();
+    void stopper();
 
     bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement) {
         return modeleLecteur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement);
@@ -30,6 +31,7 @@ public:
     bool estEnLecture() const { return modeleLecteur.estEnLecture(); }
     bool estTermine() const { return modeleLecteur.estTermine(); }
     bool estGenerationEnCours() const { return generationEnCours; }
+    bool estTransfertEnCours() const { return transfertEnCours; }
 
 private:
     float volumeCourant = 100.0f;
@@ -41,6 +43,6 @@ private:
 
     static constexpr auto CHEMIN_VIDEO = "videosComplexes/VideoComplexe_0.mp4";
 
-    atomic<bool> videoGeneree{false}, generationEnCours{false};
+    atomic<bool> videoGeneree{false}, generationEnCours{false}, transfertEnCours{false};
     thread threadGeneration;
 };

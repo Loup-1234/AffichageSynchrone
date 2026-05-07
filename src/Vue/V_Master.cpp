@@ -22,6 +22,8 @@ V_Master::V_Master(const string &ipMulticast, const int port, const vector<vecto
 }
 
 V_Master::~V_Master() {
+    controleur.stopper();
+
     if (textureVideo.id > 0) UnloadTexture(textureVideo);
     CloseAudioDevice();
     CloseWindow();
@@ -205,7 +207,7 @@ void V_Master::dessinerListeFichiers() {
 
 void V_Master::dessinerPanneauControle() {
     GuiSetState(controleur.estGenerationEnCours() ? STATE_DISABLED : STATE_NORMAL);
-    if (GuiButton(zones[1], "GÉNÉRER")) controleur.initialiserSession(getVideosSelectionnees());
+    if (GuiButton(zones[1], "GÉNÉRER ET\nTRANSFÉRER")) controleur.initialiserSession(getVideosSelectionnees());
     if (GuiButton(zones[10], "DOSSIER")) ouvrirDossierVideos();
     GuiSetState(STATE_NORMAL);
 
@@ -305,10 +307,24 @@ void V_Master::gererVitesse() {
 
 void V_Master::dessinerOverlayChargement() {
     if (controleur.estGenerationEnCours()) {
-        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.5f));
-        ::DrawText("Génération en cours...", GetScreenWidth() / 2 - 100, GetScreenHeight() / 2, 20, WHITE);
+        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.7f)); // Assombri un peu plus pour la lisibilité
+
+        // 1. Choix du texte en fonction de l'état
+        const char* texteAffichage = controleur.estTransfertEnCours()
+                                     ? "Transfert en cours..."
+                                     : "Génération vidéo en cours...";
+
+        // 2. Dessin du texte (centré, légèrement au-dessus du centre)
+        int largeurTexte = MeasureText(texteAffichage, 20);
+        ::DrawText(texteAffichage, (GetScreenWidth() - largeurTexte) / 2, GetScreenHeight() / 2 - 30, 20, WHITE);
+
+        // 3. Dessin de l'animation (placée sous le texte)
         rotationChargement += 4.0f;
-        const Rectangle rectChargement = {static_cast<float>(GetScreenWidth()) / 2, static_cast<float>(GetScreenHeight()) / 2 - 40, 20, 20};
+        const Rectangle rectChargement = {
+            static_cast<float>(GetScreenWidth()) / 2,
+            static_cast<float>(GetScreenHeight()) / 2 + 20, // +20 pour descendre sous le texte
+            20, 20
+        };
         DrawRectanglePro(rectChargement, {10, 10}, rotationChargement, WHITE);
     }
 }
