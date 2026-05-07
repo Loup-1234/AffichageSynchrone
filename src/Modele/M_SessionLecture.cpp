@@ -1,7 +1,8 @@
 #include "../../include/Modele/M_SessionLecture.h"
 #include <fstream>
 #include <iostream>
-#include <vector> // Nécessaire pour TransferInfo
+#include <vector>
+#include <string>
 
 #include "../../include/Modele/M_ServeurTFTP_W.h"
 
@@ -68,6 +69,7 @@ void M_SessionLecture::genererVideoComplexe(const string* listeFichiersEntree, s
 
     for (size_t i = 0; i < nbLecteursTotal; i++) {
         if (nbVideosAffectees[i] > 0) {
+            // Dossier "videosComplexes" doit exister
             string nomFichierSortie = "videosComplexes/VideoComplexe_" + to_string(idLecteurs[i]) + ".mp4";
             instanceVideoComplexe.genererVideoComplexe(videosParLecteur[i], nbVideosAffectees[i], nomFichierSortie);
         }
@@ -83,19 +85,27 @@ void M_SessionLecture::genererVideoComplexe(const string* listeFichiersEntree, s
 void M_SessionLecture::uploaderVideoComplexe() {
     const string dossierSource = "videosComplexes";
 
-    // 1. Préparation du vecteur pour le serveur TFTP
+    // 1. Préparation du vecteur TransferInfo pour le serveur TFTP
+    // On convertit tes tableaux internes en structure compréhensible par le serveur
     vector<TransferInfo> listeTransferts;
 
     for (size_t i = 0; i < nbLecteursTotal; i++) {
         if (nbVideos[i] > 0) {
             TransferInfo info;
             info.ip = ipLecteurs[i];
+            // Le nom du fichier doit correspondre à celui généré dans genererVideoComplexe
             info.path = "VideoComplexe_" + to_string(idLecteurs[i]) + ".mp4";
             listeTransferts.push_back(info);
         }
     }
 
-    // 2. Generation du fichier JSON (pour archive ou autre usage)
+    // 2. Vérification si on a quelque chose à envoyer
+    if (listeTransferts.empty()) {
+        cout << "[SESSION] Aucun fichier à uploader." << endl;
+        return;
+    }
+
+    // 3. Optionnel : Génération du JSON pour archive
     ofstream fichierJson("listeLecteurs.json");
     if (fichierJson.is_open()) {
         fichierJson << "[\n";
@@ -110,20 +120,19 @@ void M_SessionLecture::uploaderVideoComplexe() {
         fichierJson.close();
     }
 
-    // 3. Lancement du transfert
-    if (listeTransferts.empty()) {
-        cout << "[SESSION] Aucun transfert a effectuer." << endl;
-        return;
-    }
-
-    cout << "\nLancement du streaming TFTP (Mode sans ACK)..." << endl;
+    // 4. Lancement du serveur TFTP avec gestion des ACK
+    cout << "\n[SESSION] Initialisation du serveur TFTP (Mode Fiable avec ACK)..." << endl;
 
     try {
-        // On passe maintenant le VECTEUR et le DOSSIER SOURCE
+        // On instancie le serveur avec la liste de transferts et le dossier racine
         M_ServeurTFTP_W serveurTftp(listeTransferts, dossierSource);
+
+        // Lance les transferts en parallèle (multithreadé via async)
         serveurTftp.runAllTransfers();
+
+        cout << "[SESSION] Fin de la session d'upload." << endl;
     }
     catch (const exception& e) {
-        cerr << "\nErreur lors de l'upload: " << e.what() << endl;
+        cerr << "[ERREUR CRITIQUE] Echec durant l'upload TFTP : " << e.what() << endl;
     }
 }
