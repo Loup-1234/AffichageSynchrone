@@ -1,7 +1,7 @@
 #include "../../include/Modele/M_SessionLecture.h"
-
 #include <fstream>
 #include <iostream>
+#include <vector> // Nécessaire pour TransferInfo
 
 #include "../../include/Modele/M_ServeurTFTP_W.h"
 
@@ -81,47 +81,49 @@ void M_SessionLecture::genererVideoComplexe(const string* listeFichiersEntree, s
 }
 
 void M_SessionLecture::uploaderVideoComplexe() {
-    const string config = "listeLecteurs.json";
-    const string path = "videosComplexes";
+    const string dossierSource = "videosComplexes";
 
-    ofstream fichierJson(config);
-
-    if (!fichierJson.is_open()) {
-        cerr << "Erreur: Impossible de créer le fichier JSON de configuration." << endl;
-        return;
-    }
-
-    fichierJson << "[\n";
-    bool premierElement = true;
+    // 1. Préparation du vecteur pour le serveur TFTP
+    vector<TransferInfo> listeTransferts;
 
     for (size_t i = 0; i < nbLecteursTotal; i++) {
         if (nbVideos[i] > 0) {
-
-            if (!premierElement) {
-                fichierJson << ",\n";
-            }
-            premierElement = false;
-
-            string pathVideo = "VideoComplexe_" + to_string(idLecteurs[i]) + ".mp4";
-            string ipActuelle = ipLecteurs[i];
-
-            fichierJson << "  {\n";
-            fichierJson << "    \"ip\": \"" << ipActuelle << "\",\n";
-            fichierJson << "    \"path\": \"" << pathVideo << "\"\n";
-            fichierJson << "  }";
+            TransferInfo info;
+            info.ip = ipLecteurs[i];
+            info.path = "VideoComplexe_" + to_string(idLecteurs[i]) + ".mp4";
+            listeTransferts.push_back(info);
         }
     }
 
-    fichierJson << "\n]\n";
-    fichierJson.close();
+    // 2. Generation du fichier JSON (pour archive ou autre usage)
+    ofstream fichierJson("listeLecteurs.json");
+    if (fichierJson.is_open()) {
+        fichierJson << "[\n";
+        for (size_t i = 0; i < listeTransferts.size(); i++) {
+            fichierJson << "  {\n";
+            fichierJson << "    \"ip\": \"" << listeTransferts[i].ip << "\",\n";
+            fichierJson << "    \"path\": \"" << listeTransferts[i].path << "\"\n";
+            fichierJson << "  }" << (i == listeTransferts.size() - 1 ? "" : ",");
+            fichierJson << "\n";
+        }
+        fichierJson << "]\n";
+        fichierJson.close();
+    }
 
-    cout << "\nFichier JSON genere. Lancement du transfert TFTP...\n" << endl;
+    // 3. Lancement du transfert
+    if (listeTransferts.empty()) {
+        cout << "[SESSION] Aucun transfert a effectuer." << endl;
+        return;
+    }
+
+    cout << "\nLancement du streaming TFTP (Mode sans ACK)..." << endl;
 
     try {
-        M_ServeurTFTP_W serveurTftp(config, path);
+        // On passe maintenant le VECTEUR et le DOSSIER SOURCE
+        M_ServeurTFTP_W serveurTftp(listeTransferts, dossierSource);
         serveurTftp.runAllTransfers();
     }
     catch (const exception& e) {
-        cerr << "\nUne erreur critique est survenue: " << e.what() << endl;
+        cerr << "\nErreur lors de l'upload: " << e.what() << endl;
     }
 }
