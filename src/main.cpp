@@ -17,10 +17,16 @@ int main() {
             {"1", "0.0.0.0", "3"},
             {"2", "0.0.0.0", "3"}
         };
-        */
 
         const vector<vector<string> > specLecteurs = {
             {"0", "172.31.71.104", "3"},
+        };
+        */
+
+        const vector<vector<string> > specLecteurs = {
+            {"0", "", "2"},
+            {"1", "127.0.0.1", "2"},
+            {"2", "172.31.71.104", "2"}
         };
 
         V_Master master(IP_MULTICAST, PORT_RESEAU, specLecteurs);

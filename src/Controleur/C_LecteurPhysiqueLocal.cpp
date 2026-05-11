@@ -46,7 +46,7 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
             delete[] specs;
 
             // 3. Génération de la vidéo
-            // fichiers.data() fournit le const string* attendu, fichiers.size() fournit la taille
+            // fichiers.data() fournit le const string* attendu, fichiers.size() fournit le nombre de vidéos
             session.genererVideoComplexe(fichiers.data(), fichiers.size());
 
             // 4. Upload

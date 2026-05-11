@@ -89,7 +89,7 @@ void M_SessionLecture::uploaderVideoComplexe() {
     // On convertit tes tableaux internes en structure compréhensible par le serveur
     vector<TransferInfo> listeTransferts;
 
-    for (size_t i = 0; i < nbLecteursTotal; i++) {
+    for (size_t i = 1; i < nbLecteursTotal; i++) {
         if (nbVideos[i] > 0) {
             TransferInfo info;
             info.ip = ipLecteurs[i];
