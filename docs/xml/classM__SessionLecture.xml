@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="classM__SessionLecture" kind="class" language="C++" prot="public">
+    <compoundname>M_SessionLecture</compoundname>
+    <includes refid="M__SessionLecture_8h" local="no">M_SessionLecture.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" prot="private" static="no" mutable="no">
+        <type><ref refid="classM__VideoComplexe" kindref="compound">M_VideoComplexe</ref></type>
+        <definition>M_VideoComplexe M_SessionLecture::instanceVideoComplexe</definition>
+        <argsstring></argsstring>
+        <name>instanceVideoComplexe</name>
+        <qualifiedname>M_SessionLecture::instanceVideoComplexe</qualifiedname>
+        <briefdescription>
+<para>Module de synthèse vidéo (FFmpeg). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="26" column="21" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" prot="private" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* M_SessionLecture::idLecteurs</definition>
+        <argsstring></argsstring>
+        <name>idLecteurs</name>
+        <qualifiedname>M_SessionLecture::idLecteurs</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Tableau dynamique des identifiants (convertis). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="28" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" prot="private" static="no" mutable="no">
+        <type>string *</type>
+        <definition>string* M_SessionLecture::ipLecteurs</definition>
+        <argsstring></argsstring>
+        <name>ipLecteurs</name>
+        <qualifiedname>M_SessionLecture::ipLecteurs</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Tableau dynamique des adresses IP. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="29" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" prot="private" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* M_SessionLecture::nbVideos</definition>
+        <argsstring></argsstring>
+        <name>nbVideos</name>
+        <qualifiedname>M_SessionLecture::nbVideos</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Tableau dynamique des capacités de stockage/lecture. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="30" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t M_SessionLecture::nbLecteursTotal</definition>
+        <argsstring></argsstring>
+        <name>nbLecteursTotal</name>
+        <qualifiedname>M_SessionLecture::nbLecteursTotal</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Nombre total de lecteurs configurés. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="31" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_SessionLecture::M_SessionLecture</definition>
+        <argsstring>()=default</argsstring>
+        <name>M_SessionLecture</name>
+        <qualifiedname>M_SessionLecture::M_SessionLecture</qualifiedname>
+        <briefdescription>
+<para>Constructeur par défaut. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="37" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_SessionLecture::~M_SessionLecture</definition>
+        <argsstring>()</argsstring>
+        <name>~M_SessionLecture</name>
+        <qualifiedname>M_SessionLecture::~M_SessionLecture</qualifiedname>
+        <briefdescription>
+<para>Destructeur gérant la libération des tableaux dynamiques. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="42" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp" bodystart="9" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_SessionLecture::preparerSessionLecture</definition>
+        <argsstring>(const LecteurSpec *specLecteurs, size_t nbLecteurs)</argsstring>
+        <name>preparerSessionLecture</name>
+        <qualifiedname>M_SessionLecture::preparerSessionLecture</qualifiedname>
+        <param>
+          <type>const <ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref> *</type>
+          <declname>specLecteurs</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nbLecteurs</declname>
+        </param>
+        <briefdescription>
+<para>Alloue et configure les données de la session à partir des spécifications. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>specLecteurs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointeur vers le tableau de spécifications. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbLecteurs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre d&apos;éléments dans le tableau. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="49" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp" bodystart="16" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_SessionLecture::genererVideoComplexe</definition>
+        <argsstring>(const string *listeFichiersEntree, size_t nbFichiers)</argsstring>
+        <name>genererVideoComplexe</name>
+        <qualifiedname>M_SessionLecture::genererVideoComplexe</qualifiedname>
+        <param>
+          <type>const string *</type>
+          <declname>listeFichiersEntree</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nbFichiers</declname>
+        </param>
+        <briefdescription>
+<para>Répartit les fichiers d&apos;entrée entre les lecteurs et lance la génération des fichiers MP4. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listeFichiersEntree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tableau des chemins de fichiers sources. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbFichiers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre total de fichiers sources. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="56" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp" bodystart="36" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__SessionLecture_1a4a47020ae51713573ce1a43baebddf9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_SessionLecture::uploaderVideoComplexe</definition>
+        <argsstring>()</argsstring>
+        <name>uploaderVideoComplexe</name>
+        <qualifiedname>M_SessionLecture::uploaderVideoComplexe</qualifiedname>
+        <briefdescription>
+<para>Prépare les tâches de transfert et lance le serveur TFTP pour l&apos;envoi aux clients. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="61" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp" bodystart="92" bodyend="140"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Chef d&apos;orchestre gérant la répartition, la génération et l&apos;envoi des vidéos aux lecteurs. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>M_SessionLecture</label>
+        <link refid="classM__SessionLecture"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-instanceVideoComplexe</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>M_VideoComplexe</label>
+        <link refid="classM__VideoComplexe"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" line="24" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h" bodystart="24" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" prot="public" virt="non-virtual"><scope>M_SessionLecture</scope><name>genererVideoComplexe</name></member>
+      <member refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" prot="private" virt="non-virtual"><scope>M_SessionLecture</scope><name>idLecteurs</name></member>
+      <member refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" prot="private" virt="non-virtual"><scope>M_SessionLecture</scope><name>instanceVideoComplexe</name></member>
+      <member refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" prot="private" virt="non-virtual"><scope>M_SessionLecture</scope><name>ipLecteurs</name></member>
+      <member refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" prot="public" virt="non-virtual"><scope>M_SessionLecture</scope><name>M_SessionLecture</name></member>
+      <member refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" prot="private" virt="non-virtual"><scope>M_SessionLecture</scope><name>nbLecteursTotal</name></member>
+      <member refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" prot="private" virt="non-virtual"><scope>M_SessionLecture</scope><name>nbVideos</name></member>
+      <member refid="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" prot="public" virt="non-virtual"><scope>M_SessionLecture</scope><name>preparerSessionLecture</name></member>
+      <member refid="classM__SessionLecture_1a4a47020ae51713573ce1a43baebddf9c" prot="public" virt="non-virtual"><scope>M_SessionLecture</scope><name>uploaderVideoComplexe</name></member>
+      <member refid="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" prot="public" virt="non-virtual"><scope>M_SessionLecture</scope><name>~M_SessionLecture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

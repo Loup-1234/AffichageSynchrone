@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="M__VideoComplexe_8h" kind="file" language="C++">
+    <compoundname>M_VideoComplexe.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="M__SessionLecture_8h" local="yes">/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h</includedby>
+    <includedby refid="M__VideoComplexe_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h</label>
+        <link refid="M__VideoComplexe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h</label>
+        <link refid="C__LecteurPhysiqueLocal_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h</label>
+        <link refid="M__SessionLecture_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h</label>
+        <link refid="M__VideoComplexe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</label>
+        <link refid="V__Master_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classM__VideoComplexe" prot="public">M_VideoComplexe</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="M__VideoComplexe_8h_1af5c42669e6a6e71cc3265ad2da2cc1ba" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int FREQUENCE_ECHANTILLONNAGE</definition>
+        <argsstring></argsstring>
+        <name>FREQUENCE_ECHANTILLONNAGE</name>
+        <initializer>= 44100</initializer>
+        <briefdescription>
+<para>Fréquence utilisée pour l&apos;échantillonnage des pistes audio extraites. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="8" column="15" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="M__VideoComplexe_8h_1aca8b5f249bb368b6430198b5c3480bf2" prot="public" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string TEMP_AUDIO_PREFIX</definition>
+        <argsstring></argsstring>
+        <name>TEMP_AUDIO_PREFIX</name>
+        <initializer>= &quot;temp_audio_&quot;</initializer>
+        <briefdescription>
+<para>Préfixe utilisé pour les fichiers binaires audio temporaires. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="10" column="14" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FREQUENCE_ECHANTILLONNAGE<sp/>=<sp/>44100;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>TEMP_AUDIO_PREFIX<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;temp_audio_&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classM__VideoComplexe" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classM__VideoComplexe" kindref="compound">M_VideoComplexe</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__VideoComplexe_1a29b35aeed832e4fc28440e9420d1532b" kindref="member">genererVideoComplexe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>listeFichierEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbVideos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;fichierSortie);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/><ref refid="classM__VideoComplexe_1a0cbad12de98a105e72b3393287f8f7de" kindref="member">calculerDecalages</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>audios,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>taillesAudios,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbVideos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>listeFichiers);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classM__VideoComplexe_1a217c0581bc7f2deb5318f940e4c313ba" kindref="member">construireCommandeFFmpeg</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>listeFichierEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbVideos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>decalagesEnSecondes,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;fichierSortie);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">**<sp/><ref refid="classM__VideoComplexe_1adc091005f186e3bce93453514c65a159" kindref="member">extraireEtChargerAudios</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>listeFichierEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbVideos,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>taillesAudios);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classM__VideoComplexe_1aabbff5c3c8d3e3526772c5664d3b10f1" kindref="member">xcorr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>video1,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>taille1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>video2,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>taille2);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__VideoComplexe_1a7732262290c711952caa5e944e9858d1" kindref="member">nettoyerTemporaires</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbVideos);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h"/>
+  </compounddef>
+</doxygen>

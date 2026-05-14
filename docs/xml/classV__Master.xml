@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="classV__Master" kind="class" language="C++" prot="public">
+    <compoundname>V_Master</compoundname>
+    <includes refid="V__Master_8h" local="no">V_Master.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" prot="private" static="no" mutable="no">
+        <type><ref refid="classC__LecteurPhysiqueLocal" kindref="compound">C_LecteurPhysiqueLocal</ref></type>
+        <definition>C_LecteurPhysiqueLocal V_Master::controleur</definition>
+        <argsstring></argsstring>
+        <name>controleur</name>
+        <qualifiedname>V_Master::controleur</qualifiedname>
+        <briefdescription>
+<para>Référence vers le contrôleur (MVC). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="36" column="28" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" prot="private" static="no" mutable="no">
+        <type>Texture2D</type>
+        <definition>Texture2D V_Master::textureVideo</definition>
+        <argsstring></argsstring>
+        <name>textureVideo</name>
+        <qualifiedname>V_Master::textureVideo</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Texture GPU stockant la frame vidéo actuelle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="38" column="15" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1afe0669f96767b79acd6a7d51a30a3754" prot="private" static="no" mutable="no">
+        <type>Rectangle</type>
+        <definition>Rectangle V_Master::zones[12]</definition>
+        <argsstring>[12]</argsstring>
+        <name>zones</name>
+        <qualifiedname>V_Master::zones</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Définition des régions rectangulaires de l&apos;UI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="39" column="15" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float V_Master::rotationChargement</definition>
+        <argsstring></argsstring>
+        <name>rotationChargement</name>
+        <qualifiedname>V_Master::rotationChargement</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+<para>Angle pour l&apos;animation du spinner. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="41" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a384165f4e3d38eebfead142155b16a7f" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int V_Master::largeurVideoCache</definition>
+        <argsstring></argsstring>
+        <name>largeurVideoCache</name>
+        <qualifiedname>V_Master::largeurVideoCache</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Largeur de la dernière frame reçue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="43" column="18" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a59b2af1f62769b342b116ca467f1186e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int V_Master::hauteurVideoCache</definition>
+        <argsstring></argsstring>
+        <name>hauteurVideoCache</name>
+        <qualifiedname>V_Master::hauteurVideoCache</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Hauteur de la dernière frame reçue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="44" column="18" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a7fd7f67ddefb1961e260c6a71fc0f16f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float V_Master::valeurProgression</definition>
+        <argsstring></argsstring>
+        <name>valeurProgression</name>
+        <qualifiedname>V_Master::valeurProgression</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+<para>Valeur actuelle du slider de temps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="46" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1ab86407a54b643f032b3ddbc8fd198326" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float V_Master::valeurVolume</definition>
+        <argsstring></argsstring>
+        <name>valeurVolume</name>
+        <qualifiedname>V_Master::valeurVolume</qualifiedname>
+        <initializer>= 100.0f</initializer>
+        <briefdescription>
+<para>Niveau sonore (0-100). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="47" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a7476ab17bd5be04b031320ce2cd80b7f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool V_Master::estMuet</definition>
+        <argsstring></argsstring>
+        <name>estMuet</name>
+        <qualifiedname>V_Master::estMuet</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>État du mode muet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="48" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a691efa36e61a5d1d2d732f3a7c34c355" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool V_Master::enGlissement</definition>
+        <argsstring></argsstring>
+        <name>enGlissement</name>
+        <qualifiedname>V_Master::enGlissement</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Indique si l&apos;utilisateur manipule le slider de temps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="49" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1ad6a2c688b446c11477cebee1350bfe9e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float V_Master::delaiRecherche</definition>
+        <argsstring></argsstring>
+        <name>delaiRecherche</name>
+        <qualifiedname>V_Master::delaiRecherche</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+<para>Anti-rebond après une recherche temporelle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="50" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a338b939350aab76d0d5d8d481fd3216e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool V_Master::etaitEnLectureAvantGlissement</definition>
+        <argsstring></argsstring>
+        <name>etaitEnLectureAvantGlissement</name>
+        <qualifiedname>V_Master::etaitEnLectureAvantGlissement</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>État mémorisé pour reprise après recherche. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="51" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a140e01258979429d8f18b910edeb4569" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int V_Master::indexVitesse</definition>
+        <argsstring></argsstring>
+        <name>indexVitesse</name>
+        <qualifiedname>V_Master::indexVitesse</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Index sélectionné dans le menu vitesse. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="52" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a4d110be51ef0c72612d4adde9dab3568" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool V_Master::menuVitesseActif</definition>
+        <argsstring></argsstring>
+        <name>menuVitesseActif</name>
+        <qualifiedname>V_Master::menuVitesseActif</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>État d&apos;ouverture du menu déroulant vitesse. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="53" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a2e132439931f5e5dd07714cf46af7ae6" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; V_Master::fichiersVideo</definition>
+        <argsstring></argsstring>
+        <name>fichiersVideo</name>
+        <qualifiedname>V_Master::fichiersVideo</qualifiedname>
+        <briefdescription>
+<para>Liste des noms de fichiers dans le dossier /videos. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="55" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" prot="private" static="no" mutable="no">
+        <type>vector&lt; bool &gt;</type>
+        <definition>vector&lt;bool&gt; V_Master::videosCochees</definition>
+        <argsstring></argsstring>
+        <name>videosCochees</name>
+        <qualifiedname>V_Master::videosCochees</qualifiedname>
+        <briefdescription>
+<para>État de sélection de chaque fichier. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="56" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1a509185fdc5714eb025782889ecf820be" prot="private" static="no" mutable="no">
+        <type>vector&lt; int &gt;</type>
+        <definition>vector&lt;int&gt; V_Master::ordreSelection</definition>
+        <argsstring></argsstring>
+        <name>ordreSelection</name>
+        <qualifiedname>V_Master::ordreSelection</qualifiedname>
+        <briefdescription>
+<para>Pile mémorisant l&apos;ordre de sélection pour la composition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="57" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 V_Master::positionDefilement</definition>
+        <argsstring></argsstring>
+        <name>positionDefilement</name>
+        <qualifiedname>V_Master::positionDefilement</qualifiedname>
+        <initializer>= {0, 0}</initializer>
+        <briefdescription>
+<para>Position du scroll dans la liste de fichiers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="58" column="13" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classV__Master_1abc0cd4b8ebf3cb13b66381716dc982fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>V_Master::V_Master</definition>
+        <argsstring>(const string &amp;ipMulticast, int port, const vector&lt; vector&lt; string &gt; &gt; &amp;specLecteurs)</argsstring>
+        <name>V_Master</name>
+        <qualifiedname>V_Master::V_Master</qualifiedname>
+        <param>
+          <type>const string &amp;</type>
+          <declname>ipMulticast</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>const vector&lt; vector&lt; string &gt; &gt; &amp;</type>
+          <declname>specLecteurs</declname>
+        </param>
+        <briefdescription>
+<para>Initialise la fenêtre Raylib et configure le contrôleur. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ipMulticast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adresse pour les commandes UDP. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port pour les commandes UDP. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>specLecteurs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Spécifications techniques des clients distants. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="23" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="10" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a535f43888fb4360425a2999e19c31ef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>V_Master::~V_Master</definition>
+        <argsstring>()</argsstring>
+        <name>~V_Master</name>
+        <qualifiedname>V_Master::~V_Master</qualifiedname>
+        <briefdescription>
+<para>Ferme proprement les ressources graphiques, sonores et réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="28" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1adf0913106fb6a88b07f046ae3e83a538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::executer</definition>
+        <argsstring>()</argsstring>
+        <name>executer</name>
+        <qualifiedname>V_Master::executer</qualifiedname>
+        <briefdescription>
+<para>Lance la boucle de rendu et de gestion des événements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="33" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="92" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classV__Master_1afff0d53fd6ccad1a8d9575120ad3cbd8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::miseAJourDisposition</definition>
+        <argsstring>()</argsstring>
+        <name>miseAJourDisposition</name>
+        <qualifiedname>V_Master::miseAJourDisposition</qualifiedname>
+        <briefdescription>
+<para>Recalcule la taille et la position des éléments lors d&apos;un redimensionnement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="61" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="34" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1ad10097c3907bc86ed82ebbb241cb2f31" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::chargerListeVideos</definition>
+        <argsstring>()</argsstring>
+        <name>chargerListeVideos</name>
+        <qualifiedname>V_Master::chargerListeVideos</qualifiedname>
+        <briefdescription>
+<para>Scanne le dossier &quot;videos&quot; pour lister les médias compatibles. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="64" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="53" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a97bdceaf8ab5c380948e4eaea08ed164" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; V_Master::getVideosSelectionnees</definition>
+        <argsstring>() const</argsstring>
+        <name>getVideosSelectionnees</name>
+        <qualifiedname>V_Master::getVideosSelectionnees</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>La liste des chemins complets des vidéos sélectionnées dans l&apos;ordre. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="67" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="71" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1ae5a6f5bd54c531fe0d0e4a8e948c16b7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::gererLogique</definition>
+        <argsstring>()</argsstring>
+        <name>gererLogique</name>
+        <qualifiedname>V_Master::gererLogique</qualifiedname>
+        <briefdescription>
+<para>Traite les entrées utilisateur et met à jour l&apos;état du contrôleur. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="73" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="99" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1ae1c9d9d181d76804b218a253c0e59a01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::dessinerInterface</definition>
+        <argsstring>()</argsstring>
+        <name>dessinerInterface</name>
+        <qualifiedname>V_Master::dessinerInterface</qualifiedname>
+        <briefdescription>
+<para>Orchestre le dessin de tous les composants de la fenêtre. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="76" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="139" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a14b55f4f94514e9d6c1d34d5612fe092" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::dessinerZoneVideo</definition>
+        <argsstring>() const</argsstring>
+        <name>dessinerZoneVideo</name>
+        <qualifiedname>V_Master::dessinerZoneVideo</qualifiedname>
+        <briefdescription>
+<para>Affiche la texture vidéo avec maintien du ratio d&apos;aspect. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="79" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="153" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a124fb71b5c7edf6c25cdc46a61b9b472" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::dessinerListeFichiers</definition>
+        <argsstring>()</argsstring>
+        <name>dessinerListeFichiers</name>
+        <qualifiedname>V_Master::dessinerListeFichiers</qualifiedname>
+        <briefdescription>
+<para>Affiche la liste des fichiers avec cases à cocher et numéros d&apos;ordre. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="82" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="174" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a54279d74979778dcce8397d134b74410" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::dessinerPanneauControle</definition>
+        <argsstring>()</argsstring>
+        <name>dessinerPanneauControle</name>
+        <qualifiedname>V_Master::dessinerPanneauControle</qualifiedname>
+        <briefdescription>
+<para>Dessine les boutons principaux (Générer, Play/Pause). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="85" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="211" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a9a449789d48edde357a604dd93144cc9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::gererBarreProgression</definition>
+        <argsstring>()</argsstring>
+        <name>gererBarreProgression</name>
+        <qualifiedname>V_Master::gererBarreProgression</qualifiedname>
+        <briefdescription>
+<para>Gère l&apos;affichage et l&apos;interaction avec le slider de temps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="88" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="228" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1a64f0592d7a5d5fc106a2e72ad0dde1f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::gererControlesVolume</definition>
+        <argsstring>()</argsstring>
+        <name>gererControlesVolume</name>
+        <qualifiedname>V_Master::gererControlesVolume</qualifiedname>
+        <briefdescription>
+<para>Gère l&apos;affichage et l&apos;interaction avec les contrôles audio. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="91" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="265" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1af89e643656d832c1f0f54317b5a57940" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::gererVitesse</definition>
+        <argsstring>()</argsstring>
+        <name>gererVitesse</name>
+        <qualifiedname>V_Master::gererVitesse</qualifiedname>
+        <briefdescription>
+<para>Gère le menu déroulant de sélection de vitesse. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="94" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="282" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classV__Master_1ab6b839f9bdd8ebf758add384ff60e2f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::dessinerOverlayChargement</definition>
+        <argsstring>()</argsstring>
+        <name>dessinerOverlayChargement</name>
+        <qualifiedname>V_Master::dessinerOverlayChargement</qualifiedname>
+        <briefdescription>
+<para>Affiche un écran de verrouillage durant la génération ou le transfert. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="97" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="299" bodyend="314"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classV__Master_1a79d1e228a1b4cfefbec3006dafcb37be" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void V_Master::ouvrirDossierVideos</definition>
+        <argsstring>()</argsstring>
+        <name>ouvrirDossierVideos</name>
+        <qualifiedname>V_Master::ouvrirDossierVideos</qualifiedname>
+        <briefdescription>
+<para>Ouvre l&apos;explorateur de fichiers du système dans le dossier videos. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="70" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Vue/V_Master.cpp" bodystart="81" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Classe gérant l&apos;interface utilisateur (Vue) et les interactions avec le contrôleur. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Utilise Raylib pour le rendu et Raygui pour les composants de contrôle. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>C_LecteurPhysiqueLocal</label>
+        <link refid="classC__LecteurPhysiqueLocal"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-modeleLecteur</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-udp</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-session</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>M_ExpediteurUDP</label>
+        <link refid="classM__ExpediteurUDP"/>
+      </node>
+      <node id="3">
+        <label>M_LecteurPhysique</label>
+        <link refid="classM__LecteurPhysique"/>
+      </node>
+      <node id="5">
+        <label>M_SessionLecture</label>
+        <link refid="classM__SessionLecture"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-instanceVideoComplexe</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>M_VideoComplexe</label>
+        <link refid="classM__VideoComplexe"/>
+      </node>
+      <node id="1">
+        <label>V_Master</label>
+        <link refid="classV__Master"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-controleur</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" line="15" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h" bodystart="15" bodyend="98"/>
+    <listofallmembers>
+      <member refid="classV__Master_1ad10097c3907bc86ed82ebbb241cb2f31" prot="private" virt="non-virtual"><scope>V_Master</scope><name>chargerListeVideos</name></member>
+      <member refid="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" prot="private" virt="non-virtual"><scope>V_Master</scope><name>controleur</name></member>
+      <member refid="classV__Master_1ad6a2c688b446c11477cebee1350bfe9e" prot="private" virt="non-virtual"><scope>V_Master</scope><name>delaiRecherche</name></member>
+      <member refid="classV__Master_1ae1c9d9d181d76804b218a253c0e59a01" prot="private" virt="non-virtual"><scope>V_Master</scope><name>dessinerInterface</name></member>
+      <member refid="classV__Master_1a124fb71b5c7edf6c25cdc46a61b9b472" prot="private" virt="non-virtual"><scope>V_Master</scope><name>dessinerListeFichiers</name></member>
+      <member refid="classV__Master_1ab6b839f9bdd8ebf758add384ff60e2f1" prot="private" virt="non-virtual"><scope>V_Master</scope><name>dessinerOverlayChargement</name></member>
+      <member refid="classV__Master_1a54279d74979778dcce8397d134b74410" prot="private" virt="non-virtual"><scope>V_Master</scope><name>dessinerPanneauControle</name></member>
+      <member refid="classV__Master_1a14b55f4f94514e9d6c1d34d5612fe092" prot="private" virt="non-virtual"><scope>V_Master</scope><name>dessinerZoneVideo</name></member>
+      <member refid="classV__Master_1a691efa36e61a5d1d2d732f3a7c34c355" prot="private" virt="non-virtual"><scope>V_Master</scope><name>enGlissement</name></member>
+      <member refid="classV__Master_1a7476ab17bd5be04b031320ce2cd80b7f" prot="private" virt="non-virtual"><scope>V_Master</scope><name>estMuet</name></member>
+      <member refid="classV__Master_1a338b939350aab76d0d5d8d481fd3216e" prot="private" virt="non-virtual"><scope>V_Master</scope><name>etaitEnLectureAvantGlissement</name></member>
+      <member refid="classV__Master_1adf0913106fb6a88b07f046ae3e83a538" prot="public" virt="non-virtual"><scope>V_Master</scope><name>executer</name></member>
+      <member refid="classV__Master_1a2e132439931f5e5dd07714cf46af7ae6" prot="private" virt="non-virtual"><scope>V_Master</scope><name>fichiersVideo</name></member>
+      <member refid="classV__Master_1a9a449789d48edde357a604dd93144cc9" prot="private" virt="non-virtual"><scope>V_Master</scope><name>gererBarreProgression</name></member>
+      <member refid="classV__Master_1a64f0592d7a5d5fc106a2e72ad0dde1f8" prot="private" virt="non-virtual"><scope>V_Master</scope><name>gererControlesVolume</name></member>
+      <member refid="classV__Master_1ae5a6f5bd54c531fe0d0e4a8e948c16b7" prot="private" virt="non-virtual"><scope>V_Master</scope><name>gererLogique</name></member>
+      <member refid="classV__Master_1af89e643656d832c1f0f54317b5a57940" prot="private" virt="non-virtual"><scope>V_Master</scope><name>gererVitesse</name></member>
+      <member refid="classV__Master_1a97bdceaf8ab5c380948e4eaea08ed164" prot="private" virt="non-virtual"><scope>V_Master</scope><name>getVideosSelectionnees</name></member>
+      <member refid="classV__Master_1a59b2af1f62769b342b116ca467f1186e" prot="private" virt="non-virtual"><scope>V_Master</scope><name>hauteurVideoCache</name></member>
+      <member refid="classV__Master_1a140e01258979429d8f18b910edeb4569" prot="private" virt="non-virtual"><scope>V_Master</scope><name>indexVitesse</name></member>
+      <member refid="classV__Master_1a384165f4e3d38eebfead142155b16a7f" prot="private" virt="non-virtual"><scope>V_Master</scope><name>largeurVideoCache</name></member>
+      <member refid="classV__Master_1a4d110be51ef0c72612d4adde9dab3568" prot="private" virt="non-virtual"><scope>V_Master</scope><name>menuVitesseActif</name></member>
+      <member refid="classV__Master_1afff0d53fd6ccad1a8d9575120ad3cbd8" prot="private" virt="non-virtual"><scope>V_Master</scope><name>miseAJourDisposition</name></member>
+      <member refid="classV__Master_1a509185fdc5714eb025782889ecf820be" prot="private" virt="non-virtual"><scope>V_Master</scope><name>ordreSelection</name></member>
+      <member refid="classV__Master_1a79d1e228a1b4cfefbec3006dafcb37be" prot="private" virt="non-virtual"><scope>V_Master</scope><name>ouvrirDossierVideos</name></member>
+      <member refid="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" prot="private" virt="non-virtual"><scope>V_Master</scope><name>positionDefilement</name></member>
+      <member refid="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" prot="private" virt="non-virtual"><scope>V_Master</scope><name>rotationChargement</name></member>
+      <member refid="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" prot="private" virt="non-virtual"><scope>V_Master</scope><name>textureVideo</name></member>
+      <member refid="classV__Master_1abc0cd4b8ebf3cb13b66381716dc982fd" prot="public" virt="non-virtual"><scope>V_Master</scope><name>V_Master</name></member>
+      <member refid="classV__Master_1a7fd7f67ddefb1961e260c6a71fc0f16f" prot="private" virt="non-virtual"><scope>V_Master</scope><name>valeurProgression</name></member>
+      <member refid="classV__Master_1ab86407a54b643f032b3ddbc8fd198326" prot="private" virt="non-virtual"><scope>V_Master</scope><name>valeurVolume</name></member>
+      <member refid="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" prot="private" virt="non-virtual"><scope>V_Master</scope><name>videosCochees</name></member>
+      <member refid="classV__Master_1afe0669f96767b79acd6a7d51a30a3754" prot="private" virt="non-virtual"><scope>V_Master</scope><name>zones</name></member>
+      <member refid="classV__Master_1a535f43888fb4360425a2999e19c31ef4" prot="public" virt="non-virtual"><scope>V_Master</scope><name>~V_Master</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

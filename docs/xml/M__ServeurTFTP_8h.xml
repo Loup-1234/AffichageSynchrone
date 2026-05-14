@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="M__ServeurTFTP_8h" kind="file" language="C++">
+    <compoundname>M_ServeurTFTP.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includedby refid="M__SessionLecture_8h" local="yes">/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h</includedby>
+    <includedby refid="M__ServeurTFTP_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ServeurTFTP.cpp</includedby>
+    <includedby refid="M__SessionLecture_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h</label>
+        <link refid="M__ServeurTFTP_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h</label>
+        <link refid="C__LecteurPhysiqueLocal_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h</label>
+        <link refid="M__ServeurTFTP_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h</label>
+        <link refid="M__SessionLecture_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</label>
+        <link refid="V__Master_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTransferInfo" prot="public">TransferInfo</innerclass>
+    <innerclass refid="classM__ServeurTFTP" prot="public">M_ServeurTFTP</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="M__ServeurTFTP_8h_1a26769957ec1a2beaf223f33b66ee64ab" prot="public" static="no">
+        <name>INVALID_SOCKET</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="19" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="M__ServeurTFTP_8h_1a633b0396ff93d336a088412a190a5072" prot="public" static="no">
+        <name>SOCKET_ERROR</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="20" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="M__ServeurTFTP_8h_1ad51ded0bbd705f02f73fc60c0b721ced" prot="public" static="no">
+        <name>BLOCK_SIZE</name>
+        <initializer>512</initializer>
+        <briefdescription>
+<para>Taille standard d&apos;un bloc de données TFTP. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="23" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="M__ServeurTFTP_8h_1aae4693759624167b03e9b584f16e8687" prot="public" static="no" strong="no">
+        <type></type>
+        <name>OPCODE</name>
+        <enumvalue id="M__ServeurTFTP_8h_1aae4693759624167b03e9b584f16e8687a4b1e86a8ec7c469dc35d1f2aad701474" prot="public">
+          <name>WRQ</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Write Request (Requête d&apos;écriture). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1aae4693759624167b03e9b584f16e8687a9d7d6f31868d66330397c967c4afd2d2" prot="public">
+          <name>DATA</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Data packet (Paquet de données). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1aae4693759624167b03e9b584f16e8687a41246e9c8691b7e33bc79b345e06b48e" prot="public">
+          <name>ACK</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Acknowledgment (Accusé de réception). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1aae4693759624167b03e9b584f16e8687a0f886785b600b91048fcdc434c6b4a8e" prot="public">
+          <name>ERR</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>Error (Message d&apos;erreur). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Codes d&apos;opération du protocole TFTP (RFC 1350). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="38" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="enum" id="M__ServeurTFTP_8h_1a76784bf32657f20ab9496532d0d50158" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>TransferStatus</name>
+        <enumvalue id="M__ServeurTFTP_8h_1a76784bf32657f20ab9496532d0d50158ad0749aaba8b833466dfcbb0428e4f89c" prot="public">
+          <name>SUCCESS</name>
+          <briefdescription>
+<para>Le transfert s&apos;est terminé avec succès. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1a76784bf32657f20ab9496532d0d50158a1c25fee9e097c3cdd159eed3496c483c" prot="public">
+          <name>LOCAL_FILE_NOT_FOUND</name>
+          <briefdescription>
+<para>Le fichier source est introuvable. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1a76784bf32657f20ab9496532d0d50158a51a3f36937e1599271d1a0b2e62fc745" prot="public">
+          <name>TRANSFER_SOCKET_ERROR</name>
+          <briefdescription>
+<para>Erreur lors de la création ou config du socket. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1a76784bf32657f20ab9496532d0d50158ace94bad90093a6a2538689ddfbb5462f" prot="public">
+          <name>TIMEOUT_ERROR</name>
+          <briefdescription>
+<para>Le destinataire n&apos;a pas répondu (ACK manquant). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="M__ServeurTFTP_8h_1a76784bf32657f20ab9496532d0d50158a8a42d1b80a7bbadf1080915cb5f4f810" prot="public">
+          <name>NOT_IMPLEMENTED_ON_OS</name>
+          <briefdescription>
+<para>Fonctionnalité non disponible sur cet OS. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>États de sortie possibles d&apos;une opération de transfert. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="49" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="49" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifndef<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;ws2tcpip.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#pragma<sp/>comment(lib,<sp/>&quot;ws2_32.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">SocketType<sp/>=<sp/>SOCKET;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">SocketType<sp/>=<sp/>int;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INVALID_SOCKET<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKET_ERROR<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_SIZE<sp/>512<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structTransferInfo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structTransferInfo" kindref="compound">TransferInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="30" refid="structTransferInfo_1afebab064ac47052cfae4f5f6319f1c16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structTransferInfo_1afebab064ac47052cfae4f5f6319f1c16" kindref="member">ip</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="structTransferInfo_1ac984385168ca6b3758df46cba55ca9b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structTransferInfo_1ac984385168ca6b3758df46cba55ca9b0" kindref="member">path</ref>;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>OPCODE<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>WRQ<sp/>=<sp/>2,<sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>DATA<sp/>=<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>ACK<sp/>=<sp/>4,<sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>ERR<sp/>=<sp/>5<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>TransferStatus<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>SUCCESS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>LOCAL_FILE_NOT_FOUND,<sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>TRANSFER_SOCKET_ERROR,<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>TIMEOUT_ERROR,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>NOT_IMPLEMENTED_ON_OS<sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classM__ServeurTFTP" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classM__ServeurTFTP_1a5d0f7e28ea68f8cbb7150f2bd4d30346" kindref="member">M_ServeurTFTP</ref><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ServeurTFTP_1a5d0f7e28ea68f8cbb7150f2bd4d30346" kindref="member">M_ServeurTFTP</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;TransferInfo&gt;&amp;<sp/>transfers,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>docRoot);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ServeurTFTP_1a1c88136056b72baee67bece56c3e12b3" kindref="member">~M_ServeurTFTP</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ServeurTFTP_1a02acc0fd8fe9c6e6aa19973672dfc324" kindref="member">runAllTransfers</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81" refid="classM__ServeurTFTP_1af884aa6d6c19866574bee6ac37d9cc9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classM__ServeurTFTP_1af884aa6d6c19866574bee6ac37d9cc9f" kindref="member">documentRoot</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82" refid="classM__ServeurTFTP_1ad90119ff1f6f8daa96b90bf487a05194" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;TransferInfo&gt;<sp/><ref refid="classM__ServeurTFTP_1ad90119ff1f6f8daa96b90bf487a05194" kindref="member">transferData</ref>;<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ServeurTFTP_1a477f7c8a9875e1fd49e887134170989a" kindref="member">initNetwork</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>TransferStatus<sp/><ref refid="classM__ServeurTFTP_1a10418da7828d19e598c686e990ca494e" kindref="member">sendTftpTransfer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>ip,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filePath);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h"/>
+  </compounddef>
+</doxygen>

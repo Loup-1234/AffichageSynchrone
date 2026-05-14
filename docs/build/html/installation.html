@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documentation de AffichageSynchrone &mdash; Documentation AffichageSynchrone </title>
+  <title>Installation et Compilation &mdash; Documentation AffichageSynchrone </title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=7ab3649f" />
 
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Référence de l’API (Classes C++)" href="api.html" /> 
+    <link rel="prev" title="Référence de l’API (Classes C++)" href="api.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +31,7 @@
 
           
           
-          <a href="#" class="icon icon-home">
+          <a href="index.html" class="icon icon-home">
             AffichageSynchrone
           </a>
 <div role="search">
@@ -43,9 +43,12 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">Référence de l’API (Classes C++)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation et Compilation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation et Compilation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -54,17 +57,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">AffichageSynchrone</a>
+          <a href="index.html">AffichageSynchrone</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Documentation de AffichageSynchrone</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation et Compilation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/installation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -72,40 +75,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="documentation-de-affichagesynchrone">
-<h1>Documentation de AffichageSynchrone<a class="headerlink" href="#documentation-de-affichagesynchrone" title="Lien vers cette rubrique"></a></h1>
-<a class="reference external image-reference" href="https://isocpp.org/"><img alt="https://img.shields.io/badge/C%2B%2B-20-blue.svg" src="https://img.shields.io/badge/C%2B%2B-20-blue.svg" />
-</a>
-<p>Bienvenue sur la documentation technique du projet <strong>AffichageSynchrone</strong>.</p>
-<p>Ce logiciel permet de piloter un mur d’écrans de manière synchronisée via un protocole UDP,
-incluant la génération de vidéos complexes et le déploiement par TFTP.</p>
-<section id="description-du-projet">
-<h2>Description du Projet<a class="headerlink" href="#description-du-projet" title="Lien vers cette rubrique"></a></h2>
-<p>Le système repose sur une architecture <strong>MVC</strong> (Modèle-Vue-Contrôleur) :</p>
+  <section id="installation-et-compilation">
+<h1>Installation et Compilation<a class="headerlink" href="#installation-et-compilation" title="Lien vers cette rubrique"></a></h1>
+<section id="prerequis">
+<h2>Prérequis<a class="headerlink" href="#prerequis" title="Lien vers cette rubrique"></a></h2>
+<p>Pour compiler ce projet, vous aurez besoin des éléments suivants :</p>
 <ul class="simple">
-<li><p><strong>Vue</strong> : Interface graphique développée avec Raylib.</p></li>
-<li><p><strong>Contrôleur</strong> : Gestionnaire de l’état de lecture et des threads de fond.</p></li>
-<li><p><strong>Modèle</strong> : Moteurs de lecture (VLC), de réseau (UDP/TFTP) et de traitement (FFmpeg/FFTW).</p></li>
+<li><p><strong>C++20</strong> (via GCC, Clang ou MSVC)</p></li>
+<li><p><strong>CMake</strong> (version 3.10 ou supérieure)</p></li>
+<li><p><strong>Raylib</strong> &amp; <strong>Raygui</strong> (pour l’interface graphique)</p></li>
+<li><p><strong>LibVLC</strong> (pour la lecture vidéo)</p></li>
+<li><p><strong>FFmpeg</strong> &amp; <strong>FFTW3</strong> (pour le traitement de signal)</p></li>
 </ul>
-</section>
-<section id="guide-de-navigation">
-<h2>Guide de Navigation<a class="headerlink" href="#guide-de-navigation" title="Lien vers cette rubrique"></a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">Référence de l’API (Classes C++)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#controleur-principal">Contrôleur Principal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#gestion-de-session-et-video">Gestion de Session et Vidéo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#communication-reseau">Communication Réseau</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#moteur-de-lecture">Moteur de Lecture</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation et Compilation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequis">Prérequis</a></li>
-</ul>
-</li>
-</ul>
-</div>
 </section>
 </section>
 
@@ -113,7 +94,7 @@ incluant la génération de vidéos complexes et le déploiement par TFTP.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="api.html" class="btn btn-neutral float-right" title="Référence de l’API (Classes C++)" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api.html" class="btn btn-neutral float-left" title="Référence de l’API (Classes C++)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
 
   <hr/>

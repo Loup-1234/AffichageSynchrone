@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="classM__ServeurTFTP" kind="class" language="C++" prot="public">
+    <compoundname>M_ServeurTFTP</compoundname>
+    <includes refid="M__ServeurTFTP_8h" local="no">M_ServeurTFTP.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classM__ServeurTFTP_1af884aa6d6c19866574bee6ac37d9cc9f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string M_ServeurTFTP::documentRoot</definition>
+        <argsstring></argsstring>
+        <name>documentRoot</name>
+        <qualifiedname>M_ServeurTFTP::documentRoot</qualifiedname>
+        <briefdescription>
+<para>Chemin racine pour la lecture des fichiers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="81" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__ServeurTFTP_1ad90119ff1f6f8daa96b90bf487a05194" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structTransferInfo" kindref="compound">TransferInfo</ref> &gt;</type>
+        <definition>std::vector&lt;TransferInfo&gt; M_ServeurTFTP::transferData</definition>
+        <argsstring></argsstring>
+        <name>transferData</name>
+        <qualifiedname>M_ServeurTFTP::transferData</qualifiedname>
+        <briefdescription>
+<para>Liste des tâches de transfert. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="82" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classM__ServeurTFTP_1a5d0f7e28ea68f8cbb7150f2bd4d30346" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_ServeurTFTP::M_ServeurTFTP</definition>
+        <argsstring>(const std::vector&lt; TransferInfo &gt; &amp;transfers, const std::string &amp;docRoot)</argsstring>
+        <name>M_ServeurTFTP</name>
+        <qualifiedname>M_ServeurTFTP::M_ServeurTFTP</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="structTransferInfo" kindref="compound">TransferInfo</ref> &gt; &amp;</type>
+          <declname>transfers</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>docRoot</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur du serveur. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>transfers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Liste des couples IP/Fichier à traiter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>docRoot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dossier racine contenant les fichiers vidéos. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="68" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ServeurTFTP.cpp" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ServeurTFTP_1a1c88136056b72baee67bece56c3e12b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_ServeurTFTP::~M_ServeurTFTP</definition>
+        <argsstring>()</argsstring>
+        <name>~M_ServeurTFTP</name>
+        <qualifiedname>M_ServeurTFTP::~M_ServeurTFTP</qualifiedname>
+        <briefdescription>
+<para>Nettoie les ressources réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="73" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ServeurTFTP.cpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ServeurTFTP_1a02acc0fd8fe9c6e6aa19973672dfc324" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ServeurTFTP::runAllTransfers</definition>
+        <argsstring>()</argsstring>
+        <name>runAllTransfers</name>
+        <qualifiedname>M_ServeurTFTP::runAllTransfers</qualifiedname>
+        <briefdescription>
+<para>Lance tous les transferts en parallèle de manière asynchrone. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="78" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ServeurTFTP.cpp" bodystart="25" bodyend="42"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classM__ServeurTFTP_1a477f7c8a9875e1fd49e887134170989a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ServeurTFTP::initNetwork</definition>
+        <argsstring>()</argsstring>
+        <name>initNetwork</name>
+        <qualifiedname>M_ServeurTFTP::initNetwork</qualifiedname>
+        <briefdescription>
+<para>Initialise la pile réseau (spécifique à Windows). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="87" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ServeurTFTP.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ServeurTFTP_1a10418da7828d19e598c686e990ca494e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TransferStatus</type>
+        <definition>TransferStatus M_ServeurTFTP::sendTftpTransfer</definition>
+        <argsstring>(const std::string &amp;ip, const std::string &amp;filePath)</argsstring>
+        <name>sendTftpTransfer</name>
+        <qualifiedname>M_ServeurTFTP::sendTftpTransfer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ip</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Effectue un transfert TFTP complet vers une destination. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adresse IP cible. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemin complet du fichier source. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Statut final du transfert. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="95" column="20" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ServeurTFTP.cpp" bodystart="44" bodyend="130"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Gère l&apos;envoi de fichiers vers plusieurs clients via le protocole TFTP. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>M_ServeurTFTP</label>
+        <link refid="classM__ServeurTFTP"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" line="61" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ServeurTFTP.h" bodystart="61" bodyend="96"/>
+    <listofallmembers>
+      <member refid="classM__ServeurTFTP_1af884aa6d6c19866574bee6ac37d9cc9f" prot="private" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>documentRoot</name></member>
+      <member refid="classM__ServeurTFTP_1a477f7c8a9875e1fd49e887134170989a" prot="private" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>initNetwork</name></member>
+      <member refid="classM__ServeurTFTP_1a5d0f7e28ea68f8cbb7150f2bd4d30346" prot="public" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>M_ServeurTFTP</name></member>
+      <member refid="classM__ServeurTFTP_1a02acc0fd8fe9c6e6aa19973672dfc324" prot="public" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>runAllTransfers</name></member>
+      <member refid="classM__ServeurTFTP_1a10418da7828d19e598c686e990ca494e" prot="private" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>sendTftpTransfer</name></member>
+      <member refid="classM__ServeurTFTP_1ad90119ff1f6f8daa96b90bf487a05194" prot="private" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>transferData</name></member>
+      <member refid="classM__ServeurTFTP_1a1c88136056b72baee67bece56c3e12b3" prot="public" virt="non-virtual"><scope>M_ServeurTFTP</scope><name>~M_ServeurTFTP</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

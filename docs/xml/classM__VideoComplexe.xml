@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="classM__VideoComplexe" kind="class" language="C++" prot="public">
+    <compoundname>M_VideoComplexe</compoundname>
+    <includes refid="M__VideoComplexe_8h" local="no">M_VideoComplexe.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classM__VideoComplexe_1a29b35aeed832e4fc28440e9420d1532b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_VideoComplexe::genererVideoComplexe</definition>
+        <argsstring>(const string *listeFichierEntree, size_t nbVideos, const string &amp;fichierSortie)</argsstring>
+        <name>genererVideoComplexe</name>
+        <qualifiedname>M_VideoComplexe::genererVideoComplexe</qualifiedname>
+        <param>
+          <type>const string *</type>
+          <declname>listeFichierEntree</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nbVideos</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fichierSortie</declname>
+        </param>
+        <briefdescription>
+<para>Orchestre la génération de la vidéo complexe synchronisée. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listeFichierEntree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tableau des chemins des vidéos sources. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbVideos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre de vidéos à traiter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fichierSortie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemin du fichier MP4 final. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="26" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp" bodystart="22" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classM__VideoComplexe_1a0cbad12de98a105e72b3393287f8f7de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double * M_VideoComplexe::calculerDecalages</definition>
+        <argsstring>(const float *const *audios, const size_t *taillesAudios, size_t nbVideos, const string *listeFichiers)</argsstring>
+        <name>calculerDecalages</name>
+        <qualifiedname>M_VideoComplexe::calculerDecalages</qualifiedname>
+        <param>
+          <type>const float *const *</type>
+          <declname>audios</declname>
+        </param>
+        <param>
+          <type>const size_t *</type>
+          <declname>taillesAudios</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nbVideos</declname>
+        </param>
+        <param>
+          <type>const string *</type>
+          <declname>listeFichiers</declname>
+        </param>
+        <briefdescription>
+<para>Calcule les décalages (en secondes) de chaque vidéo par rapport à la première (référence). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>audios</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tableau de pointeurs vers les échantillons audio (float). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taillesAudios</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tableau contenant le nombre d&apos;échantillons par vidéo. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbVideos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre de vidéos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>listeFichiers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemins des fichiers (pour log et détection du type). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Un tableau dynamique de doubles contenant les décalages. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="37" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp" bodystart="73" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__VideoComplexe_1a217c0581bc7f2deb5318f940e4c313ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string M_VideoComplexe::construireCommandeFFmpeg</definition>
+        <argsstring>(const string *listeFichierEntree, size_t nbVideos, const double *decalagesEnSecondes, const string &amp;fichierSortie)</argsstring>
+        <name>construireCommandeFFmpeg</name>
+        <qualifiedname>M_VideoComplexe::construireCommandeFFmpeg</qualifiedname>
+        <param>
+          <type>const string *</type>
+          <declname>listeFichierEntree</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nbVideos</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>decalagesEnSecondes</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fichierSortie</declname>
+        </param>
+        <briefdescription>
+<para>Génère la ligne de commande FFmpeg complexe (filtres xstack, scale, sync). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listeFichierEntree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemins des sources. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbVideos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre de vidéos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>decalagesEnSecondes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valeurs de synchronisation calculées. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fichierSortie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination du fichier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>La chaîne de caractères prête à être exécutée. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="47" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp" bodystart="104" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__VideoComplexe_1adc091005f186e3bce93453514c65a159" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float **</type>
+        <definition>float ** M_VideoComplexe::extraireEtChargerAudios</definition>
+        <argsstring>(const string *listeFichierEntree, size_t nbVideos, size_t *taillesAudios)</argsstring>
+        <name>extraireEtChargerAudios</name>
+        <qualifiedname>M_VideoComplexe::extraireEtChargerAudios</qualifiedname>
+        <param>
+          <type>const string *</type>
+          <declname>listeFichierEntree</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nbVideos</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>taillesAudios</declname>
+        </param>
+        <briefdescription>
+<para>Extrait les pistes audio des vidéos en parallèle et les charge en mémoire. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listeFichierEntree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemins des sources. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbVideos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre de vidéos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taillesAudios</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Tableau rempli avec les tailles des flux chargés. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Un tableau de pointeurs vers les données audio brutes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="56" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp" bodystart="169" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__VideoComplexe_1aabbff5c3c8d3e3526772c5664d3b10f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int M_VideoComplexe::xcorr</definition>
+        <argsstring>(const float *video1, size_t taille1, const float *video2, size_t taille2)</argsstring>
+        <name>xcorr</name>
+        <qualifiedname>M_VideoComplexe::xcorr</qualifiedname>
+        <param>
+          <type>const float *</type>
+          <declname>video1</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>taille1</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>video2</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>taille2</declname>
+        </param>
+        <briefdescription>
+<para>Calcule la corrélation croisée entre deux signaux via FFT pour trouver le décalage optimal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>video1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Signal de référence. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taille1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre d&apos;échantillons signal 1. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>video2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Signal à synchroniser. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taille2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre d&apos;échantillons signal 2. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Le décalage en nombre d&apos;échantillons. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="66" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp" bodystart="217" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__VideoComplexe_1a7732262290c711952caa5e944e9858d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_VideoComplexe::nettoyerTemporaires</definition>
+        <argsstring>(int nbVideos)</argsstring>
+        <name>nettoyerTemporaires</name>
+        <qualifiedname>M_VideoComplexe::nettoyerTemporaires</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>nbVideos</declname>
+        </param>
+        <briefdescription>
+<para>Supprime les fichiers binaires temporaires créés durant l&apos;extraction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nbVideos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nombre de fichiers à nettoyer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="72" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_VideoComplexe.cpp" bodystart="293" bodyend="298"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Module de traitement haute performance pour la synchronisation et la composition de vidéos. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Cette classe permet de calculer les décalages temporels entre plusieurs vidéos par corrélation croisée acoustique et de produire une vidéo mosaïque finale via FFmpeg. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>M_VideoComplexe</label>
+        <link refid="classM__VideoComplexe"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" line="18" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_VideoComplexe.h" bodystart="18" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classM__VideoComplexe_1a0cbad12de98a105e72b3393287f8f7de" prot="private" virt="non-virtual"><scope>M_VideoComplexe</scope><name>calculerDecalages</name></member>
+      <member refid="classM__VideoComplexe_1a217c0581bc7f2deb5318f940e4c313ba" prot="private" virt="non-virtual"><scope>M_VideoComplexe</scope><name>construireCommandeFFmpeg</name></member>
+      <member refid="classM__VideoComplexe_1adc091005f186e3bce93453514c65a159" prot="private" virt="non-virtual"><scope>M_VideoComplexe</scope><name>extraireEtChargerAudios</name></member>
+      <member refid="classM__VideoComplexe_1a29b35aeed832e4fc28440e9420d1532b" prot="public" virt="non-virtual"><scope>M_VideoComplexe</scope><name>genererVideoComplexe</name></member>
+      <member refid="classM__VideoComplexe_1a7732262290c711952caa5e944e9858d1" prot="private" virt="non-virtual"><scope>M_VideoComplexe</scope><name>nettoyerTemporaires</name></member>
+      <member refid="classM__VideoComplexe_1aabbff5c3c8d3e3526772c5664d3b10f1" prot="private" virt="non-virtual"><scope>M_VideoComplexe</scope><name>xcorr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

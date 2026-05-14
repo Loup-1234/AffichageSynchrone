@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="classM__ExpediteurUDP" kind="class" language="C++" prot="public">
+    <compoundname>M_ExpediteurUDP</compoundname>
+    <includes refid="M__ExpediteurUDP_8h" local="no">M_ExpediteurUDP.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classM__ExpediteurUDP_1a12e40677ecc2bdaae88413a530ba9f88" prot="private" static="no" mutable="no">
+        <type>SocketType</type>
+        <definition>SocketType M_ExpediteurUDP::descripteurSocket</definition>
+        <argsstring></argsstring>
+        <name>descripteurSocket</name>
+        <qualifiedname>M_ExpediteurUDP::descripteurSocket</qualifiedname>
+        <initializer>= INVALID_SOCKET</initializer>
+        <briefdescription>
+<para>Identifiant système du socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="106" column="16" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__ExpediteurUDP_1a04046ae611f9c46b94b7c7952629f38a" prot="private" static="no" mutable="no">
+        <type>sockaddr_in</type>
+        <definition>sockaddr_in M_ExpediteurUDP::adresseDest</definition>
+        <argsstring></argsstring>
+        <name>adresseDest</name>
+        <qualifiedname>M_ExpediteurUDP::adresseDest</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Structure d&apos;adresse réseau de destination. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="107" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="107" bodyend="107"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classM__ExpediteurUDP_1a3995caf513bcf7f85468094bf36df146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_ExpediteurUDP::M_ExpediteurUDP</definition>
+        <argsstring>(const std::string &amp;ip, int port)</argsstring>
+        <name>M_ExpediteurUDP</name>
+        <qualifiedname>M_ExpediteurUDP::M_ExpediteurUDP</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ip</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+<para>Initialise le socket et prépare l&apos;adresse de destination. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adresse IP de destination (souvent une adresse de Multicast ou Broadcast). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port de destination. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="81" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ExpediteurUDP.cpp" bodystart="3" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ExpediteurUDP_1a1b3d2c5ed35d4f2011bcd53e467e5fd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_ExpediteurUDP::~M_ExpediteurUDP</definition>
+        <argsstring>()</argsstring>
+        <name>~M_ExpediteurUDP</name>
+        <qualifiedname>M_ExpediteurUDP::~M_ExpediteurUDP</qualifiedname>
+        <briefdescription>
+<para>Ferme le socket et nettoie les ressources réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="86" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ExpediteurUDP.cpp" bodystart="38" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ExpediteurUDP_1a7f44e84bd98f7862ba2f6d283f65b0e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool M_ExpediteurUDP::envoyer</definition>
+        <argsstring>(const void *donnees, int taille)</argsstring>
+        <name>envoyer</name>
+        <qualifiedname>M_ExpediteurUDP::envoyer</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>donnees</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>taille</declname>
+        </param>
+        <briefdescription>
+<para>Envoie des données brutes via le socket UDP. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>donnees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointeur vers les données à envoyer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taille</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Taille des données en octets. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true si l&apos;envoi a réussi, false sinon. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="94" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ExpediteurUDP.cpp" bodystart="49" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ExpediteurUDP_1afa992a2524e8263e0253de300dcaf5f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ExpediteurUDP::transmettreCommande</definition>
+        <argsstring>(Expediteur exp, TypeCommande type, Action action, float valeur)</argsstring>
+        <name>transmettreCommande</name>
+        <qualifiedname>M_ExpediteurUDP::transmettreCommande</qualifiedname>
+        <param>
+          <type>Expediteur</type>
+          <declname>exp</declname>
+        </param>
+        <param>
+          <type>TypeCommande</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>Action</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>valeur</declname>
+        </param>
+        <briefdescription>
+<para>Encapsule et transmet une commande de contrôle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>exp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Origine de la commande. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nature du message. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Commande à exécuter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valeur</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Donnée numérique associée à l&apos;action. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="103" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ExpediteurUDP.cpp" bodystart="59" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Gère l&apos;envoi de paquets UDP pour la synchronisation multi-écrans. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>M_ExpediteurUDP</label>
+        <link refid="classM__ExpediteurUDP"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="74" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="74" bodyend="108"/>
+    <listofallmembers>
+      <member refid="classM__ExpediteurUDP_1a04046ae611f9c46b94b7c7952629f38a" prot="private" virt="non-virtual"><scope>M_ExpediteurUDP</scope><name>adresseDest</name></member>
+      <member refid="classM__ExpediteurUDP_1a12e40677ecc2bdaae88413a530ba9f88" prot="private" virt="non-virtual"><scope>M_ExpediteurUDP</scope><name>descripteurSocket</name></member>
+      <member refid="classM__ExpediteurUDP_1a7f44e84bd98f7862ba2f6d283f65b0e8" prot="public" virt="non-virtual"><scope>M_ExpediteurUDP</scope><name>envoyer</name></member>
+      <member refid="classM__ExpediteurUDP_1a3995caf513bcf7f85468094bf36df146" prot="public" virt="non-virtual"><scope>M_ExpediteurUDP</scope><name>M_ExpediteurUDP</name></member>
+      <member refid="classM__ExpediteurUDP_1afa992a2524e8263e0253de300dcaf5f6" prot="public" virt="non-virtual"><scope>M_ExpediteurUDP</scope><name>transmettreCommande</name></member>
+      <member refid="classM__ExpediteurUDP_1a1b3d2c5ed35d4f2011bcd53e467e5fd4" prot="public" virt="non-virtual"><scope>M_ExpediteurUDP</scope><name>~M_ExpediteurUDP</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
