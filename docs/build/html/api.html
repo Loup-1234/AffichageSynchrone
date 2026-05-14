@@ -1,27 +1,27 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="fr" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documentation de l’API &mdash; ClassSynchroniseurMultiVideo  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+  <title>Référence de l’API (Classes C++) &mdash; Documentation AffichageSynchrone </title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=7ab3649f" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9bcbadda"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Documentation de ClassSynchroniseurMultiVideo" href="index.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Installation et Compilation" href="installation.html" />
+    <link rel="prev" title="Documentation de AffichageSynchrone" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,11 +33,11 @@
           
           
           <a href="index.html" class="icon icon-home">
-            ClassSynchroniseurMultiVideo
+            AffichageSynchrone
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,14 +45,84 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation de l’API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#_CPPv423SynchroniseurMultiVideo"><code class="docutils literal notranslate"><span class="pre">SynchroniseurMultiVideo</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N23SynchroniseurMultiVideoD0Ev"><code class="docutils literal notranslate"><span class="pre">~SynchroniseurMultiVideo()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv4NK23SynchroniseurMultiVideo24GenererVideoSynchroniseeERK6vectorI6stringERK6string"><code class="docutils literal notranslate"><span class="pre">GenererVideoSynchronisee()</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Référence de l’API (Classes C++)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#controleur-principal">Contrôleur Principal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422C_LecteurPhysiqueLocal"><code class="docutils literal notranslate"><span class="pre">C_LecteurPhysiqueLocal</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal22C_LecteurPhysiqueLocalERK6stringiRK6vectorI6vectorI6stringEE"><code class="docutils literal notranslate"><span class="pre">C_LecteurPhysiqueLocal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocalD0Ev"><code class="docutils literal notranslate"><span class="pre">~C_LecteurPhysiqueLocal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal18initialiserSessionERK6vectorI6stringE"><code class="docutils literal notranslate"><span class="pre">initialiserSession()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal17basculerPlayPauseEv"><code class="docutils literal notranslate"><span class="pre">basculerPlayPause()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal14modifierVolumeEfb"><code class="docutils literal notranslate"><span class="pre">modifierVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal19modifierProgressionEfbb"><code class="docutils literal notranslate"><span class="pre">modifierProgression()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal15modifierVitesseEf"><code class="docutils literal notranslate"><span class="pre">modifierVitesse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal11mettreAJourEv"><code class="docutils literal notranslate"><span class="pre">mettreAJour()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal7stopperEv"><code class="docutils literal notranslate"><span class="pre">stopper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22C_LecteurPhysiqueLocal19recupererFrameVideoERPvRjRjRb"><code class="docutils literal notranslate"><span class="pre">recupererFrameVideo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK22C_LecteurPhysiqueLocal14getDureeTotaleEv"><code class="docutils literal notranslate"><span class="pre">getDureeTotale()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK22C_LecteurPhysiqueLocal22getProgressionActuelleEv"><code class="docutils literal notranslate"><span class="pre">getProgressionActuelle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK22C_LecteurPhysiqueLocal12estEnLectureEv"><code class="docutils literal notranslate"><span class="pre">estEnLecture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK22C_LecteurPhysiqueLocal10estTermineEv"><code class="docutils literal notranslate"><span class="pre">estTermine()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK22C_LecteurPhysiqueLocal20estGenerationEnCoursEv"><code class="docutils literal notranslate"><span class="pre">estGenerationEnCours()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK22C_LecteurPhysiqueLocal19estTransfertEnCoursEv"><code class="docutils literal notranslate"><span class="pre">estTransfertEnCours()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-de-session-et-video">Gestion de Session et Vidéo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv416M_SessionLecture"><code class="docutils literal notranslate"><span class="pre">M_SessionLecture</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N16M_SessionLecture16M_SessionLectureEv"><code class="docutils literal notranslate"><span class="pre">M_SessionLecture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N16M_SessionLectureD0Ev"><code class="docutils literal notranslate"><span class="pre">~M_SessionLecture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N16M_SessionLecture22preparerSessionLectureEPK11LecteurSpec6size_t"><code class="docutils literal notranslate"><span class="pre">preparerSessionLecture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N16M_SessionLecture20genererVideoComplexeEPK6string6size_t"><code class="docutils literal notranslate"><span class="pre">genererVideoComplexe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N16M_SessionLecture21uploaderVideoComplexeEv"><code class="docutils literal notranslate"><span class="pre">uploaderVideoComplexe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415M_VideoComplexe"><code class="docutils literal notranslate"><span class="pre">M_VideoComplexe</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15M_VideoComplexe20genererVideoComplexeEPK6string6size_tRK6string"><code class="docutils literal notranslate"><span class="pre">genererVideoComplexe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-reseau">Communication Réseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415M_ExpediteurUDP"><code class="docutils literal notranslate"><span class="pre">M_ExpediteurUDP</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15M_ExpediteurUDP15M_ExpediteurUDPERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">M_ExpediteurUDP()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15M_ExpediteurUDPD0Ev"><code class="docutils literal notranslate"><span class="pre">~M_ExpediteurUDP()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15M_ExpediteurUDP7envoyerEPKvi"><code class="docutils literal notranslate"><span class="pre">envoyer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15M_ExpediteurUDP19transmettreCommandeE10Expediteur12TypeCommande6Actionf"><code class="docutils literal notranslate"><span class="pre">transmettreCommande()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv413M_ServeurTFTP"><code class="docutils literal notranslate"><span class="pre">M_ServeurTFTP</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13M_ServeurTFTP13M_ServeurTFTPERKNSt6vectorI12TransferInfoEERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">M_ServeurTFTP()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13M_ServeurTFTPD0Ev"><code class="docutils literal notranslate"><span class="pre">~M_ServeurTFTP()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13M_ServeurTFTP15runAllTransfersEv"><code class="docutils literal notranslate"><span class="pre">runAllTransfers()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#moteur-de-lecture">Moteur de Lecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv417M_LecteurPhysique"><code class="docutils literal notranslate"><span class="pre">M_LecteurPhysique</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N17M_LecteurPhysique17M_LecteurPhysiqueEv"><code class="docutils literal notranslate"><span class="pre">M_LecteurPhysique()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N17M_LecteurPhysiqueD0Ev"><code class="docutils literal notranslate"><span class="pre">~M_LecteurPhysique()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N17M_LecteurPhysique9lireVideoERK6string"><code class="docutils literal notranslate"><span class="pre">lireVideo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N17M_LecteurPhysique19recupererFrameVideoERPvRjRjRb"><code class="docutils literal notranslate"><span class="pre">recupererFrameVideo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique8demarrerEv"><code class="docutils literal notranslate"><span class="pre">demarrer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique4stopEv"><code class="docutils literal notranslate"><span class="pre">stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique4playEv"><code class="docutils literal notranslate"><span class="pre">play()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique5pauseEv"><code class="docutils literal notranslate"><span class="pre">pause()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique9setVolumeEKi"><code class="docutils literal notranslate"><span class="pre">setVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique7setTimeEKf"><code class="docutils literal notranslate"><span class="pre">setTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique10setVitesseEKf"><code class="docutils literal notranslate"><span class="pre">setVitesse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique12estEnLectureEv"><code class="docutils literal notranslate"><span class="pre">estEnLecture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique10estTermineEv"><code class="docutils literal notranslate"><span class="pre">estTermine()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique14getDureeTotaleEv"><code class="docutils literal notranslate"><span class="pre">getDureeTotale()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4NK17M_LecteurPhysique22getProgressionActuelleEv"><code class="docutils literal notranslate"><span class="pre">getProgressionActuelle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation et Compilation</a></li>
 </ul>
 
         </div>
@@ -61,7 +131,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">ClassSynchroniseurMultiVideo</a>
+          <a href="index.html">AffichageSynchrone</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -69,9 +139,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Documentation de l’API</li>
+      <li class="breadcrumb-item active">Référence de l’API (Classes C++)</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/api.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -79,44 +149,182 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="documentation-de-l-api">
-<h1>Documentation de l’API<a class="headerlink" href="#documentation-de-l-api" title="Link to this heading"></a></h1>
-<p>Cette section détaille les classes et méthodes disponibles dans la bibliothèque.</p>
+  <section id="reference-de-l-api-classes-c">
+<h1>Référence de l’API (Classes C++)<a class="headerlink" href="#reference-de-l-api-classes-c" title="Lien vers cette rubrique"></a></h1>
+<p>Cette section détaille les classes principales du projet, extraites automatiquement depuis les sources.</p>
+<section id="controleur-principal">
+<h2>Contrôleur Principal<a class="headerlink" href="#controleur-principal" title="Lien vers cette rubrique"></a></h2>
 <dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv423SynchroniseurMultiVideo">
-<span id="_CPPv323SynchroniseurMultiVideo"></span><span id="_CPPv223SynchroniseurMultiVideo"></span><span id="SynchroniseurMultiVideo"></span><span class="target" id="classSynchroniseurMultiVideo"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SynchroniseurMultiVideo</span></span></span><a class="headerlink" href="#_CPPv423SynchroniseurMultiVideo" title="Link to this definition"></a><br /></dt>
-<dd><p>Classe permettant de synchroniser plusieurs vidéos basées sur leur piste audio. </p>
-<p>Cette classe analyse les pistes audio de plusieurs fichiers vidéo pour déterminer le décalage temporel entre elles et générer une vidéo synchronisée (par exemple, une vue mosaïque). </p>
+<dt class="sig sig-object cpp" id="_CPPv422C_LecteurPhysiqueLocal">
+<span id="_CPPv322C_LecteurPhysiqueLocal"></span><span id="_CPPv222C_LecteurPhysiqueLocal"></span><span id="C_LecteurPhysiqueLocal"></span><span class="target" id="classC__LecteurPhysiqueLocal"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">C_LecteurPhysiqueLocal</span></span></span><a class="headerlink" href="#_CPPv422C_LecteurPhysiqueLocal" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Contrôleur gérant la lecture vidéo locale et la synchronisation avec des lecteurs distants via UDP. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N23SynchroniseurMultiVideoD0Ev">
-<span id="_CPPv3N23SynchroniseurMultiVideoD0Ev"></span><span id="_CPPv2N23SynchroniseurMultiVideoD0Ev"></span><span id="SynchroniseurMultiVideo::~SynchroniseurMultiVideo"></span><span class="target" id="classSynchroniseurMultiVideo_1a3eb3d7a7d856da575313caca3a50ede6"></span><span class="sig-name descname"><span class="n"><span class="pre">~SynchroniseurMultiVideo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23SynchroniseurMultiVideoD0Ev" title="Link to this definition"></a><br /></dt>
-<dd><p>Destructeur de la classe <a class="reference internal" href="#classSynchroniseurMultiVideo"><span class="std std-ref">SynchroniseurMultiVideo</span></a>. </p>
-<p>Supprime les fichiers temporaires créés lors de l’analyse audio. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal22C_LecteurPhysiqueLocalERK6stringiRK6vectorI6vectorI6stringEE">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal22C_LecteurPhysiqueLocalERK6stringiRK6vectorI6vectorI6stringEE"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal22C_LecteurPhysiqueLocalERK6stringiRK6vectorI6vectorI6stringEE"></span><span id="C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal__stringCR.i.vector:vector:string::CR"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a4c38ef4415c10725fddc697447048a2e"></span><span class="sig-name descname"><span class="n"><span class="pre">C_LecteurPhysiqueLocal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ipMulticast</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">port</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">configLecteurs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal22C_LecteurPhysiqueLocalERK6stringiRK6vectorI6vectorI6stringEE" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Constructeur de la classe. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipMulticast</strong> – Adresse IP pour la diffusion des commandes UDP. </p></li>
+<li><p><strong>port</strong> – Port utilisé pour la communication UDP. </p></li>
+<li><p><strong>configLecteurs</strong> – Configuration des lecteurs (ID, IP, nombre de vidéos). </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK23SynchroniseurMultiVideo24GenererVideoSynchroniseeERK6vectorI6stringERK6string">
-<span id="_CPPv3NK23SynchroniseurMultiVideo24GenererVideoSynchroniseeERK6vectorI6stringERK6string"></span><span id="_CPPv2NK23SynchroniseurMultiVideo24GenererVideoSynchroniseeERK6vectorI6stringERK6string"></span><span id="SynchroniseurMultiVideo::GenererVideoSynchronisee__vector:string:CR.stringCRC"></span><span class="target" id="classSynchroniseurMultiVideo_1abe9b4059307ef8a5e2c3a84eac6d3e8e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GenererVideoSynchronisee</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fichiersEntree</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fichierSortie</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK23SynchroniseurMultiVideo24GenererVideoSynchroniseeERK6vectorI6stringERK6string" title="Link to this definition"></a><br /></dt>
-<dd><p>Génère une vidéo synchronisée à partir de plusieurs fichiers d’entrée. </p>
-<p>Cette méthode prend la première vidéo comme référence, calcule les décalages des autres vidéos, et génère une vidéo de sortie combinée (ex: stack horizontal ou mosaïque).</p>
-<p>
-Orchestre le processus complet : extraction audio, calcul des décalages, et génération de la vidéo finale avec FFmpeg.</p>
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocalD0Ev">
+<span id="_CPPv3N22C_LecteurPhysiqueLocalD0Ev"></span><span id="_CPPv2N22C_LecteurPhysiqueLocalD0Ev"></span><span id="C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a6b644cc18b28d56441245e9bcd2507c6"></span><span class="sig-name descname"><span class="n"><span class="pre">~C_LecteurPhysiqueLocal</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocalD0Ev" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Destructeur assurant la fermeture propre des threads. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal18initialiserSessionERK6vectorI6stringE">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal18initialiserSessionERK6vectorI6stringE"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal18initialiserSessionERK6vectorI6stringE"></span><span id="C_LecteurPhysiqueLocal::initialiserSession__vector:string:CR"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a5f054c55fc130e4c913d7eaea8ff2a3d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialiserSession</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fichiers</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal18initialiserSessionERK6vectorI6stringE" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Initialise une nouvelle session de lecture et génère les fichiers nécessaires. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fichiers</strong> – Liste des chemins des fichiers vidéos à traiter. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal17basculerPlayPauseEv">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal17basculerPlayPauseEv"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal17basculerPlayPauseEv"></span><span id="C_LecteurPhysiqueLocal::basculerPlayPause"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a3d7063264ecdb418926e864d3bc3d1f0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">basculerPlayPause</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal17basculerPlayPauseEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Bascule entre l’état de lecture et de pause. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal14modifierVolumeEfb">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal14modifierVolumeEfb"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal14modifierVolumeEfb"></span><span id="C_LecteurPhysiqueLocal::modifierVolume__float.b"></span><span class="target" id="classC__LecteurPhysiqueLocal_1ace095a3d427b9a480fde8e0ea92eec4f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modifierVolume</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">volume</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">muet</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal14modifierVolumeEfb" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Modifie le volume sonore local et distant. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>fichiersEntree</strong> – Liste des chemins des fichiers vidéo à synchroniser. </p></li>
-<li><p><strong>fichierSortie</strong> – Chemin du fichier vidéo de sortie. </p></li>
-<li><p><strong>fichiersEntree</strong> – Liste des chemins des fichiers vidéo à synchroniser. </p></li>
-<li><p><strong>fichierSortie</strong> – Chemin du fichier vidéo de sortie. </p></li>
+<li><p><strong>volume</strong> – Valeur du volume (0 à 100). </p></li>
+<li><p><strong>muet</strong> – Indicateur de mode muet. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>true si la génération a réussi, false sinon.</p>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal19modifierProgressionEfbb">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal19modifierProgressionEfbb"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal19modifierProgressionEfbb"></span><span id="C_LecteurPhysiqueLocal::modifierProgression__float.b.b"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a99a6769e6b2ea90266f5fbcdfe765c22"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modifierProgression</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">progression</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enGlissement</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">restaurerLecture</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal19modifierProgressionEfbb" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Modifie la position temporelle de la vidéo. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>progression</strong> – Temps en secondes. </p></li>
+<li><p><strong>enGlissement</strong> – Indique si l’utilisateur est en train de déplacer le curseur. </p></li>
+<li><p><strong>restaurerLecture</strong> – Indique s’il faut reprendre la lecture après modification. </p></li>
+</ul>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>true si la génération a réussi, false sinon. </p>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal15modifierVitesseEf">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal15modifierVitesseEf"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal15modifierVitesseEf"></span><span id="C_LecteurPhysiqueLocal::modifierVitesse__float"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a299a159c14b6a04f19effa13a97c5bc3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modifierVitesse</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vitesse</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal15modifierVitesseEf" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Modifie la vitesse de lecture. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vitesse</strong> – Facteur de vitesse (ex: 1.0f pour normal). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal11mettreAJourEv">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal11mettreAJourEv"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal11mettreAJourEv"></span><span id="C_LecteurPhysiqueLocal::mettreAJour"></span><span class="target" id="classC__LecteurPhysiqueLocal_1af5202cf4c5232ddbc7ad8436bd676710"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mettreAJour</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal11mettreAJourEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Met à jour l’état du lecteur, notamment après une génération vidéo. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal7stopperEv">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal7stopperEv"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal7stopperEv"></span><span id="C_LecteurPhysiqueLocal::stopper"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a06899e29efbc7533a2228c317dbf0162"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stopper</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal7stopperEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Arrête la lecture locale et distante. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N22C_LecteurPhysiqueLocal19recupererFrameVideoERPvRjRjRb">
+<span id="_CPPv3N22C_LecteurPhysiqueLocal19recupererFrameVideoERPvRjRjRb"></span><span id="_CPPv2N22C_LecteurPhysiqueLocal19recupererFrameVideoERPvRjRjRb"></span><span id="C_LecteurPhysiqueLocal::recupererFrameVideo__voidPR.unsigned-iR.unsigned-iR.bR"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">recupererFrameVideo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pixels</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">largeur</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hauteur</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">redimensionnement</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N22C_LecteurPhysiqueLocal19recupererFrameVideoERPvRjRjRb" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Récupère les données de la frame vidéo actuelle pour l’affichage. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pixels</strong> – Pointeur vers les données de pixels. </p></li>
+<li><p><strong>largeur</strong> – Largeur de l’image retournée. </p></li>
+<li><p><strong>hauteur</strong> – Hauteur de l’image retournée. </p></li>
+<li><p><strong>redimensionnement</strong> – Indique si la taille a changé. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>true si une frame a été récupérée, false sinon. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK22C_LecteurPhysiqueLocal14getDureeTotaleEv">
+<span id="_CPPv3NK22C_LecteurPhysiqueLocal14getDureeTotaleEv"></span><span id="_CPPv2NK22C_LecteurPhysiqueLocal14getDureeTotaleEv"></span><span id="C_LecteurPhysiqueLocal::getDureeTotaleC"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDureeTotale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK22C_LecteurPhysiqueLocal14getDureeTotaleEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>La durée totale de la vidéo en secondes. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK22C_LecteurPhysiqueLocal22getProgressionActuelleEv">
+<span id="_CPPv3NK22C_LecteurPhysiqueLocal22getProgressionActuelleEv"></span><span id="_CPPv2NK22C_LecteurPhysiqueLocal22getProgressionActuelleEv"></span><span id="C_LecteurPhysiqueLocal::getProgressionActuelleC"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getProgressionActuelle</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK22C_LecteurPhysiqueLocal22getProgressionActuelleEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>La progression actuelle en secondes. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK22C_LecteurPhysiqueLocal12estEnLectureEv">
+<span id="_CPPv3NK22C_LecteurPhysiqueLocal12estEnLectureEv"></span><span id="_CPPv2NK22C_LecteurPhysiqueLocal12estEnLectureEv"></span><span id="C_LecteurPhysiqueLocal::estEnLectureC"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">estEnLecture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK22C_LecteurPhysiqueLocal12estEnLectureEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true si la vidéo est en cours de lecture. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK22C_LecteurPhysiqueLocal10estTermineEv">
+<span id="_CPPv3NK22C_LecteurPhysiqueLocal10estTermineEv"></span><span id="_CPPv2NK22C_LecteurPhysiqueLocal10estTermineEv"></span><span id="C_LecteurPhysiqueLocal::estTermineC"></span><span class="target" id="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">estTermine</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK22C_LecteurPhysiqueLocal10estTermineEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true si la vidéo est arrivée à la fin. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK22C_LecteurPhysiqueLocal20estGenerationEnCoursEv">
+<span id="_CPPv3NK22C_LecteurPhysiqueLocal20estGenerationEnCoursEv"></span><span id="_CPPv2NK22C_LecteurPhysiqueLocal20estGenerationEnCoursEv"></span><span id="C_LecteurPhysiqueLocal::estGenerationEnCoursC"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">estGenerationEnCours</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK22C_LecteurPhysiqueLocal20estGenerationEnCoursEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true si une opération de génération est en cours. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK22C_LecteurPhysiqueLocal19estTransfertEnCoursEv">
+<span id="_CPPv3NK22C_LecteurPhysiqueLocal19estTransfertEnCoursEv"></span><span id="_CPPv2NK22C_LecteurPhysiqueLocal19estTransfertEnCoursEv"></span><span id="C_LecteurPhysiqueLocal::estTransfertEnCoursC"></span><span class="target" id="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">estTransfertEnCours</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK22C_LecteurPhysiqueLocal19estTransfertEnCoursEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true si l’upload vers les clients est en cours. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -125,23 +333,348 @@ Orchestre le processus complet : extraction audio, calcul des décalages, et gé
 </dd></dl>
 
 </section>
+<section id="gestion-de-session-et-video">
+<h2>Gestion de Session et Vidéo<a class="headerlink" href="#gestion-de-session-et-video" title="Lien vers cette rubrique"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv416M_SessionLecture">
+<span id="_CPPv316M_SessionLecture"></span><span id="_CPPv216M_SessionLecture"></span><span id="M_SessionLecture"></span><span class="target" id="classM__SessionLecture"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_SessionLecture</span></span></span><a class="headerlink" href="#_CPPv416M_SessionLecture" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Chef d’orchestre gérant la répartition, la génération et l’envoi des vidéos aux lecteurs. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16M_SessionLecture16M_SessionLectureEv">
+<span id="_CPPv3N16M_SessionLecture16M_SessionLectureEv"></span><span id="_CPPv2N16M_SessionLecture16M_SessionLectureEv"></span><span id="M_SessionLecture::M_SessionLecture"></span><span class="target" id="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c"></span><span class="sig-name descname"><span class="n"><span class="pre">M_SessionLecture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N16M_SessionLecture16M_SessionLectureEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Constructeur par défaut. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16M_SessionLectureD0Ev">
+<span id="_CPPv3N16M_SessionLectureD0Ev"></span><span id="_CPPv2N16M_SessionLectureD0Ev"></span><span id="M_SessionLecture::~M_SessionLecture"></span><span class="target" id="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a"></span><span class="sig-name descname"><span class="n"><span class="pre">~M_SessionLecture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16M_SessionLectureD0Ev" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Destructeur gérant la libération des tableaux dynamiques. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16M_SessionLecture22preparerSessionLectureEPK11LecteurSpec6size_t">
+<span id="_CPPv3N16M_SessionLecture22preparerSessionLectureEPK11LecteurSpec6size_t"></span><span id="_CPPv2N16M_SessionLecture22preparerSessionLectureEPK11LecteurSpec6size_t"></span><span id="M_SessionLecture::preparerSessionLecture__LecteurSpecCP.s"></span><span class="target" id="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preparerSessionLecture</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LecteurSpec</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">specLecteurs</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nbLecteurs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16M_SessionLecture22preparerSessionLectureEPK11LecteurSpec6size_t" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Alloue et configure les données de la session à partir des spécifications. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specLecteurs</strong> – Pointeur vers le tableau de spécifications. </p></li>
+<li><p><strong>nbLecteurs</strong> – Nombre d’éléments dans le tableau. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16M_SessionLecture20genererVideoComplexeEPK6string6size_t">
+<span id="_CPPv3N16M_SessionLecture20genererVideoComplexeEPK6string6size_t"></span><span id="_CPPv2N16M_SessionLecture20genererVideoComplexeEPK6string6size_t"></span><span id="M_SessionLecture::genererVideoComplexe__stringCP.s"></span><span class="target" id="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">genererVideoComplexe</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">listeFichiersEntree</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nbFichiers</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16M_SessionLecture20genererVideoComplexeEPK6string6size_t" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Répartit les fichiers d’entrée entre les lecteurs et lance la génération des fichiers MP4. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>listeFichiersEntree</strong> – Tableau des chemins de fichiers sources. </p></li>
+<li><p><strong>nbFichiers</strong> – Nombre total de fichiers sources. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16M_SessionLecture21uploaderVideoComplexeEv">
+<span id="_CPPv3N16M_SessionLecture21uploaderVideoComplexeEv"></span><span id="_CPPv2N16M_SessionLecture21uploaderVideoComplexeEv"></span><span id="M_SessionLecture::uploaderVideoComplexe"></span><span class="target" id="classM__SessionLecture_1a4a47020ae51713573ce1a43baebddf9c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uploaderVideoComplexe</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16M_SessionLecture21uploaderVideoComplexeEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Prépare les tâches de transfert et lance le serveur TFTP pour l’envoi aux clients. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv415M_VideoComplexe">
+<span id="_CPPv315M_VideoComplexe"></span><span id="_CPPv215M_VideoComplexe"></span><span id="M_VideoComplexe"></span><span class="target" id="classM__VideoComplexe"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_VideoComplexe</span></span></span><a class="headerlink" href="#_CPPv415M_VideoComplexe" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Module de traitement haute performance pour la synchronisation et la composition de vidéos. </p>
+<p><ul class="simple">
+<li><p>Cette classe permet de calculer les décalages temporels entre plusieurs vidéos par corrélation croisée acoustique et de produire une vidéo mosaïque finale via FFmpeg. </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15M_VideoComplexe20genererVideoComplexeEPK6string6size_tRK6string">
+<span id="_CPPv3N15M_VideoComplexe20genererVideoComplexeEPK6string6size_tRK6string"></span><span id="_CPPv2N15M_VideoComplexe20genererVideoComplexeEPK6string6size_tRK6string"></span><span id="M_VideoComplexe::genererVideoComplexe__stringCP.s.stringCR"></span><span class="target" id="classM__VideoComplexe_1a29b35aeed832e4fc28440e9420d1532b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">genererVideoComplexe</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">listeFichierEntree</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nbVideos</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fichierSortie</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15M_VideoComplexe20genererVideoComplexeEPK6string6size_tRK6string" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Orchestre la génération de la vidéo complexe synchronisée. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>listeFichierEntree</strong> – Tableau des chemins des vidéos sources. </p></li>
+<li><p><strong>nbVideos</strong> – Nombre de vidéos à traiter. </p></li>
+<li><p><strong>fichierSortie</strong> – Chemin du fichier MP4 final. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="communication-reseau">
+<h2>Communication Réseau<a class="headerlink" href="#communication-reseau" title="Lien vers cette rubrique"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv415M_ExpediteurUDP">
+<span id="_CPPv315M_ExpediteurUDP"></span><span id="_CPPv215M_ExpediteurUDP"></span><span id="M_ExpediteurUDP"></span><span class="target" id="classM__ExpediteurUDP"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_ExpediteurUDP</span></span></span><a class="headerlink" href="#_CPPv415M_ExpediteurUDP" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Gère l’envoi de paquets UDP pour la synchronisation multi-écrans. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15M_ExpediteurUDP15M_ExpediteurUDPERKNSt6stringEi">
+<span id="_CPPv3N15M_ExpediteurUDP15M_ExpediteurUDPERKNSt6stringEi"></span><span id="_CPPv2N15M_ExpediteurUDP15M_ExpediteurUDPERKNSt6stringEi"></span><span id="M_ExpediteurUDP::M_ExpediteurUDP__ssCR.i"></span><span class="target" id="classM__ExpediteurUDP_1a3995caf513bcf7f85468094bf36df146"></span><span class="sig-name descname"><span class="n"><span class="pre">M_ExpediteurUDP</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ip</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">port</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15M_ExpediteurUDP15M_ExpediteurUDPERKNSt6stringEi" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Initialise le socket et prépare l’adresse de destination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ip</strong> – Adresse IP de destination (souvent une adresse de Multicast ou Broadcast). </p></li>
+<li><p><strong>port</strong> – Port de destination. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15M_ExpediteurUDPD0Ev">
+<span id="_CPPv3N15M_ExpediteurUDPD0Ev"></span><span id="_CPPv2N15M_ExpediteurUDPD0Ev"></span><span id="M_ExpediteurUDP::~M_ExpediteurUDP"></span><span class="target" id="classM__ExpediteurUDP_1a1b3d2c5ed35d4f2011bcd53e467e5fd4"></span><span class="sig-name descname"><span class="n"><span class="pre">~M_ExpediteurUDP</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15M_ExpediteurUDPD0Ev" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Ferme le socket et nettoie les ressources réseau. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15M_ExpediteurUDP7envoyerEPKvi">
+<span id="_CPPv3N15M_ExpediteurUDP7envoyerEPKvi"></span><span id="_CPPv2N15M_ExpediteurUDP7envoyerEPKvi"></span><span id="M_ExpediteurUDP::envoyer__voidCP.i"></span><span class="target" id="classM__ExpediteurUDP_1a7f44e84bd98f7862ba2f6d283f65b0e8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">envoyer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">donnees</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">taille</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15M_ExpediteurUDP7envoyerEPKvi" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Envoie des données brutes via le socket UDP. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>donnees</strong> – Pointeur vers les données à envoyer. </p></li>
+<li><p><strong>taille</strong> – Taille des données en octets. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>true si l’envoi a réussi, false sinon. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15M_ExpediteurUDP19transmettreCommandeE10Expediteur12TypeCommande6Actionf">
+<span id="_CPPv3N15M_ExpediteurUDP19transmettreCommandeE10Expediteur12TypeCommande6Actionf"></span><span id="_CPPv2N15M_ExpediteurUDP19transmettreCommandeE10Expediteur12TypeCommande6Actionf"></span><span id="M_ExpediteurUDP::transmettreCommande__Expediteur.TypeCommande.Action.float"></span><span class="target" id="classM__ExpediteurUDP_1afa992a2524e8263e0253de300dcaf5f6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transmettreCommande</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Expediteur</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">exp</span></span>, <span class="n"><span class="pre">TypeCommande</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="n"><span class="pre">Action</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">action</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">valeur</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15M_ExpediteurUDP19transmettreCommandeE10Expediteur12TypeCommande6Actionf" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Encapsule et transmet une commande de contrôle. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Origine de la commande. </p></li>
+<li><p><strong>type</strong> – Nature du message. </p></li>
+<li><p><strong>action</strong> – Commande à exécuter. </p></li>
+<li><p><strong>valeur</strong> – Donnée numérique associée à l’action. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv413M_ServeurTFTP">
+<span id="_CPPv313M_ServeurTFTP"></span><span id="_CPPv213M_ServeurTFTP"></span><span id="M_ServeurTFTP"></span><span class="target" id="classM__ServeurTFTP"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_ServeurTFTP</span></span></span><a class="headerlink" href="#_CPPv413M_ServeurTFTP" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Gère l’envoi de fichiers vers plusieurs clients via le protocole TFTP. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13M_ServeurTFTP13M_ServeurTFTPERKNSt6vectorI12TransferInfoEERKNSt6stringE">
+<span id="_CPPv3N13M_ServeurTFTP13M_ServeurTFTPERKNSt6vectorI12TransferInfoEERKNSt6stringE"></span><span id="_CPPv2N13M_ServeurTFTP13M_ServeurTFTPERKNSt6vectorI12TransferInfoEERKNSt6stringE"></span><span id="M_ServeurTFTP::M_ServeurTFTP__std::vector:TransferInfo:CR.ssCR"></span><span class="target" id="classM__ServeurTFTP_1a5d0f7e28ea68f8cbb7150f2bd4d30346"></span><span class="sig-name descname"><span class="n"><span class="pre">M_ServeurTFTP</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TransferInfo</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">transfers</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">docRoot</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13M_ServeurTFTP13M_ServeurTFTPERKNSt6vectorI12TransferInfoEERKNSt6stringE" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Constructeur du serveur. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transfers</strong> – Liste des couples IP/Fichier à traiter. </p></li>
+<li><p><strong>docRoot</strong> – Dossier racine contenant les fichiers vidéos. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13M_ServeurTFTPD0Ev">
+<span id="_CPPv3N13M_ServeurTFTPD0Ev"></span><span id="_CPPv2N13M_ServeurTFTPD0Ev"></span><span id="M_ServeurTFTP::~M_ServeurTFTP"></span><span class="target" id="classM__ServeurTFTP_1a1c88136056b72baee67bece56c3e12b3"></span><span class="sig-name descname"><span class="n"><span class="pre">~M_ServeurTFTP</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13M_ServeurTFTPD0Ev" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Nettoie les ressources réseau. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13M_ServeurTFTP15runAllTransfersEv">
+<span id="_CPPv3N13M_ServeurTFTP15runAllTransfersEv"></span><span id="_CPPv2N13M_ServeurTFTP15runAllTransfersEv"></span><span id="M_ServeurTFTP::runAllTransfers"></span><span class="target" id="classM__ServeurTFTP_1a02acc0fd8fe9c6e6aa19973672dfc324"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">runAllTransfers</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13M_ServeurTFTP15runAllTransfersEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Lance tous les transferts en parallèle de manière asynchrone. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="moteur-de-lecture">
+<h2>Moteur de Lecture<a class="headerlink" href="#moteur-de-lecture" title="Lien vers cette rubrique"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv417M_LecteurPhysique">
+<span id="_CPPv317M_LecteurPhysique"></span><span id="_CPPv217M_LecteurPhysique"></span><span id="M_LecteurPhysique"></span><span class="target" id="classM__LecteurPhysique"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_LecteurPhysique</span></span></span><a class="headerlink" href="#_CPPv417M_LecteurPhysique" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Moteur de lecture vidéo basé sur LibVLC utilisant un rendu en mémoire (callbacks). </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N17M_LecteurPhysique17M_LecteurPhysiqueEv">
+<span id="_CPPv3N17M_LecteurPhysique17M_LecteurPhysiqueEv"></span><span id="_CPPv2N17M_LecteurPhysique17M_LecteurPhysiqueEv"></span><span id="M_LecteurPhysique::M_LecteurPhysique"></span><span class="target" id="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5"></span><span class="sig-name descname"><span class="n"><span class="pre">M_LecteurPhysique</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17M_LecteurPhysique17M_LecteurPhysiqueEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Constructeur. Initialise l’instance VLC et le lecteur. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N17M_LecteurPhysiqueD0Ev">
+<span id="_CPPv3N17M_LecteurPhysiqueD0Ev"></span><span id="_CPPv2N17M_LecteurPhysiqueD0Ev"></span><span id="M_LecteurPhysique::~M_LecteurPhysique"></span><span class="target" id="classM__LecteurPhysique_1aa576e14b299ea3e1c176b093e03ea6a3"></span><span class="sig-name descname"><span class="n"><span class="pre">~M_LecteurPhysique</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17M_LecteurPhysiqueD0Ev" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Destructeur. Libère les ressources VLC et arrête les threads internes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N17M_LecteurPhysique9lireVideoERK6string">
+<span id="_CPPv3N17M_LecteurPhysique9lireVideoERK6string"></span><span id="_CPPv2N17M_LecteurPhysique9lireVideoERK6string"></span><span id="M_LecteurPhysique::lireVideo__stringCR"></span><span class="target" id="classM__LecteurPhysique_1a20ce647b80d9e95233f41f7f1d4f7754"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lireVideo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cheminVideo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17M_LecteurPhysique9lireVideoERK6string" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Charge et prépare une vidéo pour la lecture. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cheminVideo</strong> – Chemin local vers le fichier vidéo. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N17M_LecteurPhysique19recupererFrameVideoERPvRjRjRb">
+<span id="_CPPv3N17M_LecteurPhysique19recupererFrameVideoERPvRjRjRb"></span><span id="_CPPv2N17M_LecteurPhysique19recupererFrameVideoERPvRjRjRb"></span><span id="M_LecteurPhysique::recupererFrameVideo__voidPR.unsigned-iR.unsigned-iR.bR"></span><span class="target" id="classM__LecteurPhysique_1ab8954b25b9ca42be9f51f081f5104fec"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">recupererFrameVideo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pixels</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">largeur</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hauteur</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">redimensionnement</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N17M_LecteurPhysique19recupererFrameVideoERPvRjRjRb" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Fournit les données de l’image actuelle pour l’affichage externe. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pixels</strong> – [out] Pointeur vers le tableau d’octets (RGBA). </p></li>
+<li><p><strong>largeur</strong> – [out] Largeur de l’image en pixels. </p></li>
+<li><p><strong>hauteur</strong> – [out] Hauteur de l’image en pixels. </p></li>
+<li><p><strong>redimensionnement</strong> – [out] Indique si le buffer a changé de taille. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>true si une nouvelle frame ou un redimensionnement est disponible. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique8demarrerEv">
+<span id="_CPPv3NK17M_LecteurPhysique8demarrerEv"></span><span id="_CPPv2NK17M_LecteurPhysique8demarrerEv"></span><span id="M_LecteurPhysique::demarrerC"></span><span class="target" id="classM__LecteurPhysique_1a69104ad0ae40c3c4122f8beaa3e25ada"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">demarrer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique8demarrerEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Démarre la lecture. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique4stopEv">
+<span id="_CPPv3NK17M_LecteurPhysique4stopEv"></span><span id="_CPPv2NK17M_LecteurPhysique4stopEv"></span><span id="M_LecteurPhysique::stopC"></span><span class="target" id="classM__LecteurPhysique_1a79c4e5c299a3b2531a578547c7629b42"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique4stopEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Arrête la lecture. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique4playEv">
+<span id="_CPPv3NK17M_LecteurPhysique4playEv"></span><span id="_CPPv2NK17M_LecteurPhysique4playEv"></span><span id="M_LecteurPhysique::playC"></span><span class="target" id="classM__LecteurPhysique_1ad15593f4f51d8c74c52468a48fe48376"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">play</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique4playEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Reprend la lecture après une pause. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique5pauseEv">
+<span id="_CPPv3NK17M_LecteurPhysique5pauseEv"></span><span id="_CPPv2NK17M_LecteurPhysique5pauseEv"></span><span id="M_LecteurPhysique::pauseC"></span><span class="target" id="classM__LecteurPhysique_1a190e4ecec014c17665cd519107f7036f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pause</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique5pauseEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Met la lecture en pause. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique9setVolumeEKi">
+<span id="_CPPv3NK17M_LecteurPhysique9setVolumeEKi"></span><span id="_CPPv2NK17M_LecteurPhysique9setVolumeEKi"></span><span id="M_LecteurPhysique::setVolume__iCC"></span><span class="target" id="classM__LecteurPhysique_1a7910579332ee50abaa96b705ce2c55c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVolume</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">volume</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique9setVolumeEKi" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Définit le volume sonore (0-100). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique7setTimeEKf">
+<span id="_CPPv3NK17M_LecteurPhysique7setTimeEKf"></span><span id="_CPPv2NK17M_LecteurPhysique7setTimeEKf"></span><span id="M_LecteurPhysique::setTime__floatCC"></span><span class="target" id="classM__LecteurPhysique_1ab5cc830d9445a4801792ec276deb0273"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTime</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tempsSec</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique7setTimeEKf" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Définit la position temporelle en secondes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique10setVitesseEKf">
+<span id="_CPPv3NK17M_LecteurPhysique10setVitesseEKf"></span><span id="_CPPv2NK17M_LecteurPhysique10setVitesseEKf"></span><span id="M_LecteurPhysique::setVitesse__floatCC"></span><span class="target" id="classM__LecteurPhysique_1a91ae5a77ae06afd675a02ebd55e68007"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVitesse</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vitesse</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique10setVitesseEKf" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Définit le facteur de vitesse de lecture. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique12estEnLectureEv">
+<span id="_CPPv3NK17M_LecteurPhysique12estEnLectureEv"></span><span id="_CPPv2NK17M_LecteurPhysique12estEnLectureEv"></span><span id="M_LecteurPhysique::estEnLectureC"></span><span class="target" id="classM__LecteurPhysique_1ae5f8407804eb844d35bab5d950ddf1d0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">estEnLecture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique12estEnLectureEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true si le média est en cours de lecture. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique10estTermineEv">
+<span id="_CPPv3NK17M_LecteurPhysique10estTermineEv"></span><span id="_CPPv2NK17M_LecteurPhysique10estTermineEv"></span><span id="M_LecteurPhysique::estTermineC"></span><span class="target" id="classM__LecteurPhysique_1aa9906082c32e3bd3f8ec2c2ee5cba05e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">estTermine</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique10estTermineEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true si la vidéo a atteint la fin. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique14getDureeTotaleEv">
+<span id="_CPPv3NK17M_LecteurPhysique14getDureeTotaleEv"></span><span id="_CPPv2NK17M_LecteurPhysique14getDureeTotaleEv"></span><span id="M_LecteurPhysique::getDureeTotaleC"></span><span class="target" id="classM__LecteurPhysique_1a7c65ccdf3fe5495702dfc71e73dce36f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDureeTotale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique14getDureeTotaleEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>La durée totale du média chargé en secondes. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK17M_LecteurPhysique22getProgressionActuelleEv">
+<span id="_CPPv3NK17M_LecteurPhysique22getProgressionActuelleEv"></span><span id="_CPPv2NK17M_LecteurPhysique22getProgressionActuelleEv"></span><span id="M_LecteurPhysique::getProgressionActuelleC"></span><span class="target" id="classM__LecteurPhysique_1ab18421fa7bd3af78d82536350103823f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getProgressionActuelle</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK17M_LecteurPhysique22getProgressionActuelleEv" title="Lien vers cette définition"></a><br /></dt>
+<dd><p>Calcule la position actuelle dans le média. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Progression en secondes. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Documentation de ClassSynchroniseurMultiVideo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Documentation de AffichageSynchrone" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation et Compilation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2026, Loup_1234.</p>
+    <p>&#169; Droits d'auteur 2026, Alain, Robin.M, Robin.C.</p>
   </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
    
 
 </footer>

@@ -1,0 +1,22 @@
+Installation et Compilation
+===========================
+
+Prérequis
+---------
+Pour compiler ce projet, vous aurez besoin des éléments suivants :
+
+* **C++20** (via GCC, Clang ou MSVC)
+* **CMake** (version 3.10 ou supérieure)
+* **Raylib** & **Raygui** (pour l'interface graphique)
+* **LibVLC** (pour la lecture vidéo)
+* **FFmpeg** & **FFTW3** (pour le traitement de signal)
+
+Instructions de compilation
+---------------------------
+
+.. code-block:: bash
+
+   mkdir build
+   cd build
+   cmake ..
+   cmake --build .

@@ -1,41 +1,54 @@
-cmake_minimum_required(VERSION 4.1)
-set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+cmake_minimum_required(VERSION 3.20)
+project(AffichageSynchrone CXX)
 
-project(AffichageSynchrone)
-
+# Configuration C++
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc")
 
-# 1. Téléchargement de Raylib
-include(FetchContent)
-FetchContent_Declare(
-        raylib
-        GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG 5.0
-)
-FetchContent_MakeAvailable(raylib)
+# Gestion des Dépendances (Spécifique à l'OS)
+if(WIN32)
+    message(STATUS "Configuration pour Windows détectée")
 
-# 3. Téléchargement de Raygui
-set(RAYGUI_HEADER_PATH "libs/raygui/raygui.h")
+    # 1. Téléchargement de Raylib (Windows n'a pas de gestionnaire de paquets natif)
+    include(FetchContent)
+    FetchContent_Declare(
+            raylib
+            GIT_REPOSITORY https://github.com/raysan5/raylib.git
+            GIT_TAG 5.0
+    )
+    FetchContent_MakeAvailable(raylib)
+
+    # Définitions spécifiques pour Windows
+    add_definitions(-DWIN32_LEAN_AND_MEAN -DNOMINMAX -DNOGDI -DNOUSER)
+
+elseif(UNIX AND NOT APPLE)
+    message(STATUS "Configuration pour Linux détectée")
+
+    # 1. Utilisation de PkgConfig pour trouver les libs système (pacman/paru)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(RAYLIB REQUIRED IMPORTED_TARGET raylib)
+    pkg_check_modules(VLC REQUIRED IMPORTED_TARGET libvlc)
+    pkg_check_modules(FFTW REQUIRED IMPORTED_TARGET fftw3)
+endif()
+
+# Raygui (Header-only, commun aux deux)
+set(RAYGUI_HEADER_PATH "${CMAKE_SOURCE_DIR}/libs/raygui/raygui.h")
 if(NOT EXISTS "${RAYGUI_HEADER_PATH}")
-    message(STATUS "Téléchargement de raygui.h (version 4.0) depuis GitHub...")
+    message(STATUS "Téléchargement de raygui.h...")
     file(DOWNLOAD
             "https://raw.githubusercontent.com/raysan5/raygui/4.0/src/raygui.h"
             "${RAYGUI_HEADER_PATH}"
     )
 endif()
 
-# ==========================================
-# FICHIERS DU PROJET
-# ==========================================
-
+# Fichiers du Projet
 set(SOURCE_FILES
         src/main.cpp
         src/Vue/V_Master.cpp
-        src/Modele/M_ExpediteurUDP_W.cpp
+        src/Modele/M_ExpediteurUDP.cpp
         src/Modele/M_VideoComplexe.cpp
-        src/Modele/M_ServeurTFTP_W.cpp
+        src/Modele/M_ServeurTFTP.cpp
         src/Modele/M_SessionLecture.cpp
         src/Controleur/C_LecteurPhysiqueLocal.cpp
         src/Modele/M_LecteurPhysique.cpp
@@ -43,46 +56,49 @@ set(SOURCE_FILES
 
 set(HEADER_FILES
         include/Vue/V_Master.h
-        include/Modele/M_ExpediteurUDP_W.h
+        include/Modele/M_ExpediteurUDP.h
         include/Modele/M_VideoComplexe.h
-        include/Modele/M_ServeurTFTP_W.h
+        include/Modele/M_ServeurTFTP.h
         include/Modele/M_SessionLecture.h
         include/Controleur/C_LecteurPhysiqueLocal.h
         include/Modele/M_LecteurPhysique.h
 )
 
-add_executable(AffichageSynchrone ${SOURCE_FILES} ${HEADER_FILES})
+# Création de l'Exécutable
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
 
-target_compile_definitions(AffichageSynchrone PRIVATE
-    WIN32_LEAN_AND_MEAN
-    NOMINMAX
-    NOGDI
-    NOUSER
-)
-
-# ==========================================
-# INCLUSIONS ET LIENS
-# ==========================================
-
-target_include_directories(AffichageSynchrone PRIVATE
+# Inclusions et Liens
+target_include_directories(${PROJECT_NAME} PRIVATE
         include
-        "libs/LibVLC/include"
-        "libs/LibVLC/include/vlc"
-        "${CMAKE_SOURCE_DIR}/libs/FFTW"
+        "libs/raygui"
 )
 
-target_link_directories(AffichageSynchrone PRIVATE "libs/LibVLC/lib")
+if(WIN32)
+    target_include_directories(${PROJECT_NAME} PRIVATE
+            "libs/LibVLC/include"
+            "libs/FFTW"
+    )
+    target_link_directories(${PROJECT_NAME} PRIVATE "libs/LibVLC/lib")
 
-target_link_libraries(AffichageSynchrone PRIVATE
-        raylib
-        winmm
-        gdi32
-        ws2_32
-        wsock32
-        libvlc
-        libvlccore
-        ${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll
-)
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+            raylib
+            winmm
+            gdi32
+            ws2_32
+            wsock32
+            libvlc
+            libvlccore
+            "${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll"
+    )
+else()
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+            PkgConfig::RAYLIB
+            PkgConfig::VLC
+            PkgConfig::FFTW
+            m
+            pthread
+    )
+endif()
 
 # ==========================================
 # DOCUMENTATION (Doxygen & Sphinx)

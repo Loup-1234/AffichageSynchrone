@@ -9,6 +9,7 @@ namespace fs = filesystem;
 
 V_Master::V_Master(const string &ipMulticast, const int port, const vector<vector<string> > &specLecteurs)
     : controleur(ipMulticast, port, specLecteurs) {
+    // Configuration des paramètres de fenêtre et du moteur de rendu
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
     InitWindow(800, 450, "Master UI - Contrôleur MVC");
     SetWindowMinSize(800, 450);
@@ -18,6 +19,7 @@ V_Master::V_Master(const string &ipMulticast, const int port, const vector<vecto
     chargerListeVideos();
     miseAJourDisposition();
 
+    // Synchronisation initiale du volume
     controleur.modifierVolume(valeurVolume, estMuet);
 }
 
@@ -33,18 +35,19 @@ void V_Master::miseAJourDisposition() {
     const auto L = static_cast<float>(GetScreenWidth());
     const auto H = static_cast<float>(GetScreenHeight());
 
-    zones[0] = {0, 48, 150, H - 96}; // Liste fichiers
-    zones[1] = {0, H - 48, 150, 48}; // Bouton Générer
-    zones[2] = {150, 0, L - 150, H - 72}; // Zone Vidéo
-    zones[3] = {150, H - 72, L - 150, 2}; // Séparateur
-    zones[4] = {158, H - 40, 32, 32}; // Play/Pause
-    zones[5] = {198, H - 72, L - 382, 32}; // Label Temps
-    zones[6] = {198, H - 40, L - 382, 32}; // Slider Progress
-    zones[7] = {L - 176, H - 40, 32, 32}; // Bouton Muet
-    zones[8] = {L - 136, H - 72, 128, 32}; // Label Volume
-    zones[9] = {L - 136, H - 40, 128, 32}; // Slider Volume
-    zones[10] = {0, 0, 150, 48}; // Bouton Dossier
-    zones[11] = {L - 136, 10.0f, 128.0f, 32.0f};
+    // Définition statique des zones de l'interface (Ancrages)
+    zones[0] = {0, 48, 150, H - 96};        // Liste fichiers
+    zones[1] = {0, H - 48, 150, 48};        // Bouton Générer
+    zones[2] = {150, 0, L - 150, H - 72};   // Zone Vidéo
+    zones[3] = {150, H - 72, L - 150, 2};   // Séparateur horizontal
+    zones[4] = {158, H - 40, 32, 32};       // Play/Pause
+    zones[5] = {198, H - 72, L - 382, 32};  // Label Temps
+    zones[6] = {198, H - 40, L - 382, 32};  // Slider Progress
+    zones[7] = {L - 176, H - 40, 32, 32};   // Bouton Muet
+    zones[8] = {L - 136, H - 72, 128, 32};  // Label Volume
+    zones[9] = {L - 136, H - 40, 128, 32};  // Slider Volume
+    zones[10] = {0, 0, 150, 48};            // Bouton Dossier
+    zones[11] = {L - 136, 10.0f, 128.0f, 32.0f}; // Menu Vitesse
 }
 
 void V_Master::chargerListeVideos() {
@@ -86,8 +89,6 @@ void V_Master::ouvrirDossierVideos() {
 #endif
 }
 
-// BOUCLE PRINCIPALE
-
 void V_Master::executer() {
     while (!WindowShouldClose()) {
         gererLogique();
@@ -98,17 +99,20 @@ void V_Master::executer() {
 void V_Master::gererLogique() {
     if (IsWindowResized()) miseAJourDisposition();
 
+    // Demande au contrôleur de mettre à jour son état interne (VLC, etc.)
     controleur.mettreAJour();
 
-    void* pixels = nullptr;
+    void *pixels = nullptr;
     unsigned int largeur = 0;
     unsigned int hauteur = 0;
     bool redimensionnement = false;
 
+    // Récupération de la frame décodée par VLC via le contrôleur
     if (controleur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement)) {
         largeurVideoCache = largeur;
         hauteurVideoCache = hauteur;
 
+        // Recréation de la texture si la résolution de la vidéo a changé
         if (redimensionnement) {
             if (textureVideo.id > 0) UnloadTexture(textureVideo);
             if (largeur > 0 && hauteur > 0) {
@@ -118,19 +122,17 @@ void V_Master::gererLogique() {
             }
         }
 
+        // Mise à jour des pixels en mémoire GPU
         if (largeur > 0 && hauteur > 0 && pixels != nullptr) {
             UpdateTexture(textureVideo, pixels);
         }
     }
 
+    // Mise à jour de la barre de progression (si on n'est pas en train de chercher)
     if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
     if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
-
-        if (controleur.estTermine()) {
-            valeurProgression = controleur.getDureeTotale();
-        } else {
-            valeurProgression = controleur.getProgressionActuelle();
-        }
+        valeurProgression = controleur.estTermine() ?
+            controleur.getDureeTotale() : controleur.getProgressionActuelle();
     }
 }
 
@@ -139,21 +141,20 @@ void V_Master::dessinerInterface() {
     ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
     dessinerZoneVideo();
-    DrawRectangleRec(zones[3], GRAY); // Ligne de séparation
+    DrawRectangleRec(zones[3], GRAY);
     dessinerListeFichiers();
     dessinerPanneauControle();
     gererVitesse();
-    dessinerOverlayChargement();
+    dessinerOverlayChargement(); // Toujours dessiné en dernier (au-dessus)
 
     EndDrawing();
 }
-
-// SOUS-FONCTIONS DE DESSIN
 
 void V_Master::dessinerZoneVideo() const {
     DrawRectangleRec(zones[2], BLACK);
 
     if (largeurVideoCache > 0 && hauteurVideoCache > 0 && textureVideo.id > 0) {
+        // Calcul du ratio pour l'affichage "Letterbox"
         float echelleX = zones[2].width / static_cast<float>(largeurVideoCache);
         float echelleY = zones[2].height / static_cast<float>(hauteurVideoCache);
         const float echelle = min(echelleX, echelleY);
@@ -174,6 +175,7 @@ void V_Master::dessinerListeFichiers() {
     Rectangle vue = {0};
     const float contentHeight = static_cast<float>(fichiersVideo.size()) * 30;
 
+    // Panneau scrollable pour la liste des fichiers
     GuiScrollPanel(zones[0], nullptr, (Rectangle){0, 0, zones[0].width - 16, contentHeight}, &positionDefilement, &vue);
 
     BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width),
@@ -186,6 +188,7 @@ void V_Master::dessinerListeFichiers() {
 
         if (itemRect.y + itemRect.height < vue.y || itemRect.y > vue.y + vue.height) continue;
 
+        // Gestion de l'ordre de sélection (pour FFmpeg)
         int ordre = 0;
         if (videosCochees[i]) {
             auto it = ranges::find(ordreSelection, static_cast<int>(i));
@@ -206,12 +209,17 @@ void V_Master::dessinerListeFichiers() {
 }
 
 void V_Master::dessinerPanneauControle() {
+    // Désactivation des boutons pendant les traitements lourds (Génération/TFTP)
     GuiSetState(controleur.estGenerationEnCours() ? STATE_DISABLED : STATE_NORMAL);
-    if (GuiButton(zones[1], "GÉNÉRER ET\nTRANSFÉRER")) controleur.initialiserSession(getVideosSelectionnees());
+    if (GuiButton(zones[1], "GÉNÉRER ET\nTRANSFÉRER")) {
+        controleur.initialiserSession(getVideosSelectionnees());
+    }
     if (GuiButton(zones[10], "DOSSIER")) ouvrirDossierVideos();
     GuiSetState(STATE_NORMAL);
 
-    if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) controleur.basculerPlayPause();
+    if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) {
+        controleur.basculerPlayPause();
+    }
 
     gererBarreProgression();
     gererControlesVolume();
@@ -219,7 +227,9 @@ void V_Master::dessinerPanneauControle() {
 
 void V_Master::gererBarreProgression() {
     const float dureeTotale = controleur.getDureeTotale();
+    const bool desactiverSlider = (dureeTotale <= 0.0f) || controleur.estTermine();
 
+    // Formatage du temps HH:MM
     const int minutes = static_cast<int>(valeurProgression) / 60;
     const int secondes = static_cast<int>(valeurProgression) % 60;
     const int dureeMinutes = static_cast<int>(dureeTotale) / 60;
@@ -227,38 +237,24 @@ void V_Master::gererBarreProgression() {
 
     GuiLabel(zones[5], TextFormat("%02d:%02d / %02d:%02d", minutes, secondes, dureeMinutes, dureeSecondes));
 
-    const float ancienneProg = valeurProgression;
+    if (desactiverSlider) GuiSetState(STATE_DISABLED);
 
-    // Nouvelles conditions
-    const bool estA100 = controleur.estTermine();
-    const bool aucuneVideoChargee = (dureeTotale <= 0.0f);
-    const bool desactiverSlider = estA100 || aucuneVideoChargee;
-
-    // Griser le slider si terminé OU si aucune vidéo
-    if (desactiverSlider) {
-        GuiSetState(STATE_DISABLED);
-    }
-
-    // Autoriser le clic uniquement si le slider est actif
+    // Détection du début de glissement (clic sur le slider)
     if (!desactiverSlider && CheckCollisionPointRec(GetMousePosition(), zones[6]) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         enGlissement = true;
         etaitEnLectureAvantGlissement = controleur.estEnLecture();
     }
 
-    // Rendu du slider (sécurité : si durée=0, on passe 1.0f comme maximum pour éviter les bugs d'affichage Raygui)
-    GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, aucuneVideoChargee ? 1.0f : dureeTotale);
+    const float ancienneProg = valeurProgression;
+    GuiSliderBar(zones[6], "", nullptr, &valeurProgression, 0.0f, (dureeTotale <= 0.0f) ? 1.0f : dureeTotale);
 
-    // Restaurer l'état normal pour les composants suivants
-    if (desactiverSlider) {
-        GuiSetState(STATE_NORMAL);
-    }
+    if (desactiverSlider) GuiSetState(STATE_NORMAL);
 
-    // Gestion du glissement
-    if (enGlissement && !desactiverSlider && valeurProgression != ancienneProg) {
+    // Envoi des ordres de "Seek" au contrôleur pendant et après le glissement
+    if (enGlissement && valeurProgression != ancienneProg) {
         controleur.modifierProgression(valeurProgression, true);
     }
 
-    // Relâchement du clic
     if (enGlissement && (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) || !IsMouseButtonDown(MOUSE_LEFT_BUTTON))) {
         enGlissement = false;
         delaiRecherche = 0.2f;
@@ -284,47 +280,35 @@ void V_Master::gererControlesVolume() {
 }
 
 void V_Master::gererVitesse() {
-    // Les valeurs correspondantes aux choix du menu
     const float valeursVitesse[] = {0.5f, 1.0f, 1.5f, 2.0f};
     const int ancienIndex = indexVitesse;
 
-    // Griser le menu si aucune vidéo n'est chargée
-    const bool aucuneVideoChargee = (controleur.getDureeTotale() <= 0.0f);
-    if (aucuneVideoChargee) GuiSetState(STATE_DISABLED);
+    if (controleur.getDureeTotale() <= 0.0f) GuiSetState(STATE_DISABLED);
 
-    // Dessin du menu déroulant (Raygui)
     if (GuiDropdownBox(zones[11], "Vitesse: 0.5x;Vitesse: 1.0x;Vitesse: 1.5x;Vitesse: 2.0x", &indexVitesse, menuVitesseActif)) {
-        menuVitesseActif = !menuVitesseActif; // Ouvre/ferme le menu
+        menuVitesseActif = !menuVitesseActif;
     }
 
-    if (aucuneVideoChargee) GuiSetState(STATE_NORMAL);
+    GuiSetState(STATE_NORMAL);
 
-    // Si la valeur a changé et que le menu vient de se fermer
     if (indexVitesse != ancienIndex && !menuVitesseActif) {
         controleur.modifierVitesse(valeursVitesse[indexVitesse]);
     }
 }
 
 void V_Master::dessinerOverlayChargement() {
+    // Si une génération ou un transfert est en cours dans le thread de fond
     if (controleur.estGenerationEnCours()) {
-        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.7f)); // Assombri un peu plus pour la lisibilité
+        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), Fade(BLACK, 0.7f));
 
-        // 1. Choix du texte en fonction de l'état
-        const char* texteAffichage = controleur.estTransfertEnCours()
-                                     ? "Transfert en cours..."
-                                     : "Génération vidéo en cours...";
+        const char *texteAffichage = controleur.estTransfertEnCours() ? "Transfert en cours..." : "Génération vidéo en cours...";
 
-        // 2. Dessin du texte (centré, légèrement au-dessus du centre)
         int largeurTexte = MeasureText(texteAffichage, 20);
         ::DrawText(texteAffichage, (GetScreenWidth() - largeurTexte) / 2, GetScreenHeight() / 2 - 30, 20, WHITE);
 
-        // 3. Dessin de l'animation (placée sous le texte)
+        // Petit carré blanc qui tourne pour l'animation
         rotationChargement += 4.0f;
-        const Rectangle rectChargement = {
-            static_cast<float>(GetScreenWidth()) / 2,
-            static_cast<float>(GetScreenHeight()) / 2 + 20, // +20 pour descendre sous le texte
-            20, 20
-        };
+        const Rectangle rectChargement = { static_cast<float>(GetScreenWidth()) / 2, static_cast<float>(GetScreenHeight()) / 2 + 20, 20, 20 };
         DrawRectanglePro(rectChargement, {10, 10}, rotationChargement, WHITE);
     }
 }

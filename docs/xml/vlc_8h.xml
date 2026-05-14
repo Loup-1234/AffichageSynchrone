@@ -1,179 +1,451 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="vlc_8h" kind="file" language="C++">
-    <compoundname>vlc.h</compoundname>
-    <includes refid="libvlc_8h" local="no">vlc/libvlc.h</includes>
-    <includes refid="libvlc__renderer__discoverer_8h" local="no">vlc/libvlc_renderer_discoverer.h</includes>
-    <includes refid="libvlc__media_8h" local="no">vlc/libvlc_media.h</includes>
-    <includes refid="libvlc__media__player_8h" local="no">vlc/libvlc_media_player.h</includes>
-    <includes refid="libvlc__media__list_8h" local="no">vlc/libvlc_media_list.h</includes>
-    <includes refid="libvlc__media__list__player_8h" local="no">vlc/libvlc_media_list_player.h</includes>
-    <includes refid="libvlc__media__library_8h" local="no">vlc/libvlc_media_library.h</includes>
-    <includes refid="libvlc__media__discoverer_8h" local="no">vlc/libvlc_media_discoverer.h</includes>
-    <includes refid="libvlc__events_8h" local="no">vlc/libvlc_events.h</includes>
-    <includes refid="libvlc__dialog_8h" local="no">vlc/libvlc_dialog.h</includes>
-    <includes refid="libvlc__vlm_8h" local="no">vlc/libvlc_vlm.h</includes>
-    <includes refid="deprecated_8h" local="no">vlc/deprecated.h</includes>
-    <incdepgraph>
-      <node id="17">
-        <label>vlc/deprecated.h</label>
-        <link refid="deprecated_8h"/>
-      </node>
-      <node id="2">
-        <label>vlc/libvlc.h</label>
-        <link refid="libvlc_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>vlc/libvlc_dialog.h</label>
-        <link refid="libvlc__dialog_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>vlc/libvlc_events.h</label>
-        <link refid="libvlc__events_8h"/>
-      </node>
-      <node id="7">
-        <label>vlc/libvlc_media.h</label>
-        <link refid="libvlc__media_8h"/>
-      </node>
-      <node id="13">
-        <label>vlc/libvlc_media_discoverer.h</label>
-        <link refid="libvlc__media__discoverer_8h"/>
-      </node>
-      <node id="12">
-        <label>vlc/libvlc_media_library.h</label>
-        <link refid="libvlc__media__library_8h"/>
-      </node>
-      <node id="10">
-        <label>vlc/libvlc_media_list.h</label>
-        <link refid="libvlc__media__list_8h"/>
-      </node>
-      <node id="11">
-        <label>vlc/libvlc_media_list_player.h</label>
-        <link refid="libvlc__media__list__player_8h"/>
-      </node>
-      <node id="8">
-        <label>vlc/libvlc_media_player.h</label>
-        <link refid="libvlc__media__player_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>vlc/libvlc_renderer_discoverer.h</label>
-        <link refid="libvlc__renderer__discoverer_8h"/>
-      </node>
-      <node id="16">
-        <label>vlc/libvlc_vlm.h</label>
-        <link refid="libvlc__vlm_8h"/>
-      </node>
-      <node id="1">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h</label>
-        <link refid="vlc_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>stdarg.h</label>
-      </node>
-      <node id="9">
-        <label>stdbool.h</label>
-      </node>
-      <node id="5">
-        <label>stdint.h</label>
-      </node>
-      <node id="3">
-        <label>stdio.h</label>
-      </node>
-    </incdepgraph>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>This file defines libvlc new external API </para>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc.h:<sp/>global<sp/>header<sp/>for<sp/>libvlc</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998-2008<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Vincent<sp/>Seguin<sp/>&lt;seguin@via.ecp.fr&gt;</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Samuel<sp/>Hocevar<sp/>&lt;sam@zoy.org&gt;</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gildas<sp/>Bazin<sp/>&lt;gbazin@netcourrier.com&gt;</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Derk-Jan<sp/>Hartman<sp/>&lt;hartman<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pierre<sp/>d&apos;Herbemont<sp/>&lt;pdherbemont@videolan.org&gt;</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
-<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
-<codeline lineno="26"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_VLC_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_VLC_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc_8h" kindref="compound">vlc/libvlc.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__renderer__discoverer_8h" kindref="compound">vlc/libvlc_renderer_discoverer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media_8h" kindref="compound">vlc/libvlc_media.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__player_8h" kindref="compound">vlc/libvlc_media_player.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__list_8h" kindref="compound">vlc/libvlc_media_list.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__list__player_8h" kindref="compound">vlc/libvlc_media_list_player.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__library_8h" kindref="compound">vlc/libvlc_media_library.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__discoverer_8h" kindref="compound">vlc/libvlc_media_discoverer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__events_8h" kindref="compound">vlc/libvlc_events.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__dialog_8h" kindref="compound">vlc/libvlc_dialog.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__vlm_8h" kindref="compound">vlc/libvlc_vlm.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="deprecated_8h" kindref="compound">vlc/deprecated.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_VLC_VLC_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
-    </programlisting>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h"/>
-  </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="vlc_8h" kind="file" language="C++">
+        <compoundname>vlc.h</compoundname>
+        <includes refid="libvlc_8h" local="no">vlc/libvlc.h</includes>
+        <includes refid="libvlc__renderer__discoverer_8h" local="no">vlc/libvlc_renderer_discoverer.h</includes>
+        <includes refid="libvlc__media_8h" local="no">vlc/libvlc_media.h</includes>
+        <includes refid="libvlc__media__player_8h" local="no">vlc/libvlc_media_player.h</includes>
+        <includes refid="libvlc__media__list_8h" local="no">vlc/libvlc_media_list.h</includes>
+        <includes refid="libvlc__media__list__player_8h" local="no">vlc/libvlc_media_list_player.h</includes>
+        <includes refid="libvlc__media__library_8h" local="no">vlc/libvlc_media_library.h</includes>
+        <includes refid="libvlc__media__discoverer_8h" local="no">vlc/libvlc_media_discoverer.h</includes>
+        <includes refid="libvlc__events_8h" local="no">vlc/libvlc_events.h</includes>
+        <includes refid="libvlc__dialog_8h" local="no">vlc/libvlc_dialog.h</includes>
+        <includes refid="libvlc__vlm_8h" local="no">vlc/libvlc_vlm.h</includes>
+        <includes refid="deprecated_8h" local="no">vlc/deprecated.h</includes>
+        <incdepgraph>
+            <node id="17">
+                <label>vlc/deprecated.h</label>
+                <link refid="deprecated_8h"/>
+            </node>
+            <node id="2">
+                <label>vlc/libvlc.h</label>
+                <link refid="libvlc_8h"/>
+                <childnode refid="3" relation="include">
+                </childnode>
+                <childnode refid="4" relation="include">
+                </childnode>
+                <childnode refid="5" relation="include">
+                </childnode>
+            </node>
+            <node id="15">
+                <label>vlc/libvlc_dialog.h</label>
+                <link refid="libvlc__dialog_8h"/>
+                <childnode refid="9" relation="include">
+                </childnode>
+            </node>
+            <node id="14">
+                <label>vlc/libvlc_events.h</label>
+                <link refid="libvlc__events_8h"/>
+            </node>
+            <node id="7">
+                <label>vlc/libvlc_media.h</label>
+                <link refid="libvlc__media_8h"/>
+            </node>
+            <node id="13">
+                <label>vlc/libvlc_media_discoverer.h</label>
+                <link refid="libvlc__media__discoverer_8h"/>
+            </node>
+            <node id="12">
+                <label>vlc/libvlc_media_library.h</label>
+                <link refid="libvlc__media__library_8h"/>
+            </node>
+            <node id="10">
+                <label>vlc/libvlc_media_list.h</label>
+                <link refid="libvlc__media__list_8h"/>
+            </node>
+            <node id="11">
+                <label>vlc/libvlc_media_list_player.h</label>
+                <link refid="libvlc__media__list__player_8h"/>
+            </node>
+            <node id="8">
+                <label>vlc/libvlc_media_player.h</label>
+                <link refid="libvlc__media__player_8h"/>
+                <childnode refid="9" relation="include">
+                </childnode>
+            </node>
+            <node id="6">
+                <label>vlc/libvlc_renderer_discoverer.h</label>
+                <link refid="libvlc__renderer__discoverer_8h"/>
+            </node>
+            <node id="16">
+                <label>vlc/libvlc_vlm.h</label>
+                <link refid="libvlc__vlm_8h"/>
+            </node>
+            <node id="1">
+                <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h
+                </label>
+                <link refid="vlc_8h"/>
+                <childnode refid="2" relation="include">
+                </childnode>
+                <childnode refid="6" relation="include">
+                </childnode>
+                <childnode refid="7" relation="include">
+                </childnode>
+                <childnode refid="8" relation="include">
+                </childnode>
+                <childnode refid="10" relation="include">
+                </childnode>
+                <childnode refid="11" relation="include">
+                </childnode>
+                <childnode refid="12" relation="include">
+                </childnode>
+                <childnode refid="13" relation="include">
+                </childnode>
+                <childnode refid="14" relation="include">
+                </childnode>
+                <childnode refid="15" relation="include">
+                </childnode>
+                <childnode refid="16" relation="include">
+                </childnode>
+                <childnode refid="17" relation="include">
+                </childnode>
+            </node>
+            <node id="4">
+                <label>stdarg.h</label>
+            </node>
+            <node id="9">
+                <label>stdbool.h</label>
+            </node>
+            <node id="5">
+                <label>stdint.h</label>
+            </node>
+            <node id="3">
+                <label>stdio.h</label>
+            </node>
+        </incdepgraph>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+            <para>This file defines libvlc new external API</para>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">
+                    /*****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>vlc.h:<sp/>global<sp/>header<sp/>for<sp/>libvlc
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998-2008<sp/>VLC<sp/>authors<sp/>and<sp/>
+                    VideoLAN
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*<sp/>$Id$
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*<sp/>Authors:<sp/>Vincent<sp/>Seguin<sp/>&lt;seguin@via.ecp.fr&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>Samuel<sp/>Hocevar<sp/>&lt;sam@zoy.org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>Gildas<sp/>Bazin<sp/>&lt;gbazin@netcourrier.com&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>Derk-Jan<sp/>Hartman<sp/>&lt;hartman<sp/>at<sp/>videolan<sp/>dot<sp/>org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>Pierre<sp/>d&apos;Herbemont<sp/>&lt;pdherbemont@videolan.org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can
+                    <sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>
+                    General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version
+                    <sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope
+                    <sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.<sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more
+                    <sp/>details.
+                </highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write
+                    <sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,
+                </highlight>
+            </codeline>
+            <codeline lineno="25">
+                <highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>
+                    Boston<sp/>MA<sp/>02110-1301,<sp/>USA.
+                </highlight>
+            </codeline>
+            <codeline lineno="26">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="27">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="28">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>VLC_VLC_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="29">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>VLC_VLC_H<sp/>1
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="30">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="35">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="36">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="37">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">extern</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="stringliteral">&quot;C&quot;</highlight>
+                <highlight class="normal"><sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="38">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>endif
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc_8h" kindref="compound">
+                    vlc/libvlc.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="41">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__renderer__discoverer_8h"
+                                                                      kindref="compound">
+                    vlc/libvlc_renderer_discoverer.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="42">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media_8h" kindref="compound">
+                    vlc/libvlc_media.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="43">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__player_8h"
+                                                                      kindref="compound">vlc/libvlc_media_player.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="44">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__list_8h" kindref="compound">
+                    vlc/libvlc_media_list.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="45">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__list__player_8h"
+                                                                      kindref="compound">
+                    vlc/libvlc_media_list_player.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="46">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__library_8h"
+                                                                      kindref="compound">
+                    vlc/libvlc_media_library.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="47">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__media__discoverer_8h"
+                                                                      kindref="compound">
+                    vlc/libvlc_media_discoverer.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="48">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__events_8h" kindref="compound">
+                    vlc/libvlc_events.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="49">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__dialog_8h" kindref="compound">
+                    vlc/libvlc_dialog.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="libvlc__vlm_8h" kindref="compound">
+                    vlc/libvlc_vlm.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="51">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;<ref refid="deprecated_8h" kindref="compound">
+                    vlc/deprecated.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="52">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="53">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="54">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="55">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>endif
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="56">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="57">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>_VLC_VLC_H<sp/>*/
+                </highlight>
+                <highlight class="preprocessor"></highlight>
+            </codeline>
+        </programlisting>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h"/>
+    </compounddef>
 </doxygen>

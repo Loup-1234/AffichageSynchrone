@@ -19,13 +19,19 @@ extensions = [
     'breathe',
 ]
 
-# --- Configuration Breathe ---
+# --- Configuration Breathe --------------------------------------------------
 breathe_projects = {
-    "AffichageSynchrone": "../xml"  # Chemin vers le XML généré par Doxygen
+    "AffichageSynchrone": "../xml"
 }
 breathe_default_project = "AffichageSynchrone"
 
+# --- Configuration C++ et Mise en forme -------------------------------------
+primary_domain = 'cpp'
+highlight_language = 'cpp'
+pygments_style = 'sphinx'
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-html_theme = 'sphinx_rtd_theme'
+
+html_theme = 'sphinx_rtd_theme'   # Utilisation du thème Read the Docs
 html_static_path = ['_static']

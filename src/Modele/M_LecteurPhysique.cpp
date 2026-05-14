@@ -1,8 +1,8 @@
 #include "Modele/M_LecteurPhysique.h"
-
 #include <filesystem>
 #include <thread>
 #include <chrono>
+#include <cstring>
 
 using namespace std;
 
@@ -12,6 +12,7 @@ M_LecteurPhysique::M_LecteurPhysique() {
 }
 
 M_LecteurPhysique::~M_LecteurPhysique() {
+    // Ordre de libération important pour éviter les accès mémoire invalides
     if (lecteurVLC) { libvlc_media_player_release(lecteurVLC); }
     if (instanceVLC) { libvlc_release(instanceVLC); }
 }
@@ -25,9 +26,11 @@ void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
     libvlc_media_player_set_media(lecteurVLC, media);
     libvlc_media_release(media);
 
+    // Enregistrement des callbacks pour récupérer le flux vidéo brut
     libvlc_video_set_callbacks(lecteurVLC, cb_verrouiller, cb_deverrouiller, nullptr, this);
     libvlc_video_set_format_callbacks(lecteurVLC, libvlc_video_format_cb(cb_configurerVideo), nullptr);
 
+    // Initialisation forcée pour récupérer les métadonnées (durée)
     demarrer();
     this_thread::sleep_for(chrono::milliseconds(200));
     pause();
@@ -36,7 +39,9 @@ void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
     dureeTotale = (len != -1) ? static_cast<float>(len) / 1000.0f : 0.0f;
 }
 
-bool M_LecteurPhysique::recupererFrameVideo(void*& outPixels, unsigned int& outLargeur, unsigned int& outHauteur, bool& outRedimensionnement) {
+bool M_LecteurPhysique::recupererFrameVideo(void *&outPixels, unsigned int &outLargeur, unsigned int &outHauteur,
+                                            bool &outRedimensionnement) {
+    // Protection de l'accès au buffer partagé avec le thread VLC
     lock_guard lock(mutexImage);
 
     if (textureDoitEtreRedimensionnee || framePrete) {
@@ -45,6 +50,7 @@ bool M_LecteurPhysique::recupererFrameVideo(void*& outPixels, unsigned int& outL
         outHauteur = hauteurVideo;
         outRedimensionnement = textureDoitEtreRedimensionnee;
 
+        // Réinitialisation des états après lecture
         textureDoitEtreRedimensionnee = false;
         framePrete = false;
 
@@ -54,9 +60,11 @@ bool M_LecteurPhysique::recupererFrameVideo(void*& outPixels, unsigned int& outL
     return false;
 }
 
-// --- CALLBACKS VLC ---
+// --- CALLBACKS VLC (Appelés par les threads internes de VLC) ---
+
 void *M_LecteurPhysique::cb_verrouiller(void *opaque, void **plans) {
     auto *mod = static_cast<M_LecteurPhysique *>(opaque);
+    // On bloque l'accès pour que l'UI ne lise pas pendant que VLC écrit
     mod->mutexImage.lock();
     *plans = mod->pixelsVideo.data();
     return nullptr;
@@ -75,12 +83,16 @@ unsigned M_LecteurPhysique::cb_configurerVideo(void **opaque, char *chrominance,
 
     mod->largeurVideo = *largeur;
     mod->hauteurVideo = *hauteur;
+
+    // On prépare le buffer : largeur * hauteur * 4 octets (RGBA)
     mod->pixelsVideo.resize(*largeur * *hauteur * 4);
 
+    // Force VLC à sortir du RGBA
     memcpy(chrominance, "RGBA", 4);
     *pas = *largeur * 4;
     *lignes = *hauteur;
+
     mod->textureDoitEtreRedimensionnee = true;
 
-    return 1;
+    return 1; // Succès
 }
