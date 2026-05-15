@@ -10,6 +10,8 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc")
 if(WIN32)
     message(STATUS "Configuration pour Windows détectée")
 
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+
     # 1. Téléchargement de Raylib (Windows n'a pas de gestionnaire de paquets natif)
     include(FetchContent)
     FetchContent_Declare(
