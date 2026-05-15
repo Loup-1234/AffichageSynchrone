@@ -6,12 +6,21 @@
     <member refid="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" kind="variable"><name>udp</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" kind="variable"><name>session</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" kind="variable"><name>configLecteurs</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1ab541a35381376443cc1fb9b846998541" kind="variable"><name>m_adresseMulticast</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1a2eac0fa53eacafcfcd3ece2feab5eb33" kind="variable"><name>m_portDecouverte</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1ab4aeb07e9f65d3eb0da033ed4913e68b" kind="variable"><name>m_portReponse</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" kind="variable"><name>videoGeneree</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" kind="variable"><name>generationEnCours</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" kind="variable"><name>transfertEnCours</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" kind="variable"><name>threadGeneration</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1a3bb9a0bb89207280fb378f58c3079228" kind="variable"><name>rechercheEnCours</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1afe894bf45e839fd35ce75e3fa9fe5013" kind="variable"><name>resultatsRecherchePrets</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1acaffe7d759880423efc91ed91f9fcdc0" kind="variable"><name>threadRecherche</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1a666a8475343075f66b2513da7c6e8262" kind="variable"><name>cacheLecteurs</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1ae327ef2f84cbbe3aa08144b69f2df23e" kind="variable"><name>ecouteMulticastActive</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1a6a07f99f08f17d5263f7011330db8dff" kind="variable"><name>threadEcouteMulticast</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1acce84ebf8385199b9c550308a237fbc9" kind="variable"><name>CHEMIN_VIDEO</name></member>
-    <member refid="classC__LecteurPhysiqueLocal_1a4c38ef4415c10725fddc697447048a2e" kind="function"><name>C_LecteurPhysiqueLocal</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1abdef836db0846de4b00d6a5ccd8476aa" kind="function"><name>C_LecteurPhysiqueLocal</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a6b644cc18b28d56441245e9bcd2507c6" kind="function"><name>~C_LecteurPhysiqueLocal</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a5f054c55fc130e4c913d7eaea8ff2a3d" kind="function"><name>initialiserSession</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a3d7063264ecdb418926e864d3bc3d1f0" kind="function"><name>basculerPlayPause</name></member>
@@ -20,6 +29,11 @@
     <member refid="classC__LecteurPhysiqueLocal_1a299a159c14b6a04f19effa13a97c5bc3" kind="function"><name>modifierVitesse</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1af5202cf4c5232ddbc7ad8436bd676710" kind="function"><name>mettreAJour</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a06899e29efbc7533a2228c317dbf0162" kind="function"><name>stopper</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1ab6360549763eb1f2e2c778f483f13e6a" kind="function"><name>lancerRechercheLecteurs</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1a199d177f772824a0b02c1b7f27d8dfbe" kind="function"><name>arreterEcouteMulticast</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1acca519b37648f65ccb3d030d9fb4e3ad" kind="function"><name>estRechercheEnCours</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1ad2d0e99dd15578bd8c42e36141163679" kind="function"><name>resultatsRechercheDisponibles</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1a6100d16ab9af34e91aa33b3f8a872d05" kind="function"><name>getDerniersLecteursTrouves</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" kind="function"><name>recupererFrameVideo</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" kind="function"><name>getDureeTotale</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" kind="function"><name>getProgressionActuelle</name></member>
@@ -27,11 +41,40 @@
     <member refid="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" kind="function"><name>estTermine</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" kind="function"><name>estGenerationEnCours</name></member>
     <member refid="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" kind="function"><name>estTransfertEnCours</name></member>
+    <member refid="classC__LecteurPhysiqueLocal_1ad4c49869575ebed24eb1b92f59a554f6" kind="function"><name>demarrerEcouteMulticast</name></member>
   </compound>
   <compound refid="structLecteurSpec" kind="struct"><name>LecteurSpec</name>
     <member refid="structLecteurSpec_1aca4f1c76fccb7dd6c9340c17e98fef2d" kind="variable"><name>id</name></member>
     <member refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" kind="variable"><name>ip</name></member>
     <member refid="structLecteurSpec_1a067e5e73e0146ea58957f86ccda17f19" kind="variable"><name>nbVideos</name></member>
+  </compound>
+  <compound refid="classM__ConfigReseau" kind="class"><name>M_ConfigReseau</name>
+    <member refid="classM__ConfigReseau_1a0aa4e4c78acd90af72b045b6368dc59d" kind="variable"><name>m_nom</name></member>
+    <member refid="classM__ConfigReseau_1ae97fce12207653139d1874685a11178e" kind="variable"><name>m_adresseMulticast</name></member>
+    <member refid="classM__ConfigReseau_1a905e913b8f3d71706a2efa7910f54a28" kind="variable"><name>m_portMulticast</name></member>
+    <member refid="classM__ConfigReseau_1a3d3c0a93a5fff0d9e0ebd3180fee3713" kind="variable"><name>m_portReponse</name></member>
+    <member refid="classM__ConfigReseau_1a698e1142d6ca56d4264ea45b383bd171" kind="function"><name>M_ConfigReseau</name></member>
+    <member refid="classM__ConfigReseau_1af9bde0437fb498dc371cbf20a8053107" kind="function"><name>M_ConfigReseau</name></member>
+    <member refid="classM__ConfigReseau_1a08b6a827c85df9a09b3fcdcfeee3d06a" kind="function"><name>getNom</name></member>
+    <member refid="classM__ConfigReseau_1aca43186da679bc6b05f9c3345f7e54dc" kind="function"><name>getAdresseMulticast</name></member>
+    <member refid="classM__ConfigReseau_1a6b49c3e988846a13afb8adae75140aee" kind="function"><name>getPortMulticast</name></member>
+    <member refid="classM__ConfigReseau_1ac7416d609bcdf934b37dbe8f833931a4" kind="function"><name>getPortReponse</name></member>
+    <member refid="classM__ConfigReseau_1aab695a15c58d25fe7a64b0ac794e3f37" kind="function"><name>setNom</name></member>
+    <member refid="classM__ConfigReseau_1a46e8a7ba6c251d199cfb9a47bc9c7f96" kind="function"><name>setAdresseMulticast</name></member>
+    <member refid="classM__ConfigReseau_1ae8c1ed98c5edefdba9b5d286945241e7" kind="function"><name>setPortMulticast</name></member>
+    <member refid="classM__ConfigReseau_1a82ee0cb837aab370ad3f56bd4e582cbc" kind="function"><name>setPortReponse</name></member>
+  </compound>
+  <compound refid="classM__DecouverteReseau" kind="class"><name>M_DecouverteReseau</name>
+    <member refid="classM__DecouverteReseau_1a186bc7b736a8566a7b683f1cecd8d045" kind="variable"><name>m_config</name></member>
+    <member refid="classM__DecouverteReseau_1a9142a72e05f822137f83dafd4ad49bbf" kind="variable"><name>m_expediteur</name></member>
+    <member refid="classM__DecouverteReseau_1ac4caa69d3673f5c1e36c58b8c86e57ba" kind="variable"><name>m_reponses</name></member>
+    <member refid="classM__DecouverteReseau_1a530f17c217e59f9755b05a72f2cad07a" kind="variable"><name>m_socketReception</name></member>
+    <member refid="classM__DecouverteReseau_1a2294b30e24a93066139940d5e806be24" kind="function"><name>M_DecouverteReseau</name></member>
+    <member refid="classM__DecouverteReseau_1ac041e116afabe8bb6165285a2662b935" kind="function"><name>~M_DecouverteReseau</name></member>
+    <member refid="classM__DecouverteReseau_1a4e6cfe3e5c670c7c3b49f5fee164d2f7" kind="function"><name>lancerDecouverte</name></member>
+    <member refid="classM__DecouverteReseau_1a868fb7ba73f72e7874122235f5e85c1e" kind="function"><name>getReponsesBrutes</name></member>
+    <member refid="classM__DecouverteReseau_1a91ae65f6bf94131e7c1329f8af9d0921" kind="function"><name>afficherResultats</name></member>
+    <member refid="classM__DecouverteReseau_1a5787bb27e75d79df3c2213c5f7fc813a" kind="function"><name>attendreReponses</name></member>
   </compound>
   <compound refid="classM__ExpediteurUDP" kind="class"><name>M_ExpediteurUDP</name>
     <member refid="classM__ExpediteurUDP_1a12e40677ecc2bdaae88413a530ba9f88" kind="variable"><name>descripteurSocket</name></member>
@@ -40,6 +83,14 @@
     <member refid="classM__ExpediteurUDP_1a1b3d2c5ed35d4f2011bcd53e467e5fd4" kind="function"><name>~M_ExpediteurUDP</name></member>
     <member refid="classM__ExpediteurUDP_1a7f44e84bd98f7862ba2f6d283f65b0e8" kind="function"><name>envoyer</name></member>
     <member refid="classM__ExpediteurUDP_1afa992a2524e8263e0253de300dcaf5f6" kind="function"><name>transmettreCommande</name></member>
+  </compound>
+  <compound refid="classM__JsonUtil" kind="class"><name>M_JsonUtil</name>
+    <member refid="classM__JsonUtil_1a38371e8d314c6baa66f04b3f9c75c690" kind="function"><name>construire</name></member>
+    <member refid="classM__JsonUtil_1a95258326cbaae2dcb942b7e38f76277c" kind="function"><name>parser</name></member>
+    <member refid="classM__JsonUtil_1a6ef6ba80ad547409d434017758210955" kind="function"><name>echapperChaine</name></member>
+    <member refid="classM__JsonUtil_1a1be8624a9c72c95c5a1cb5d0659b98d6" kind="function"><name>lireChaine</name></member>
+    <member refid="classM__JsonUtil_1aa71a3bcfef8311219e67bbf3cb650f0e" kind="function"><name>lireValeurBrute</name></member>
+    <member refid="classM__JsonUtil_1a04d1b1de6732128dcb5384ff5567acb9" kind="function"><name>sauterEspaces</name></member>
   </compound>
   <compound refid="classM__LecteurPhysique" kind="class"><name>M_LecteurPhysique</name>
     <member refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kind="variable"><name>instanceVLC</name></member>
@@ -51,6 +102,18 @@
     <member refid="classM__LecteurPhysique_1a4dbde79312244618e967110024988c0c" kind="variable"><name>dureeTotale</name></member>
     <member refid="classM__LecteurPhysique_1a75ae1ed1e5cc54dfe6585e7f27742e7b" kind="variable"><name>framePrete</name></member>
     <member refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kind="variable"><name>textureDoitEtreRedimensionnee</name></member>
+    <member refid="classM__LecteurPhysique_1a70d9f80b92577975a59bad6f07aa85ea" kind="variable"><name>m_nom</name></member>
+    <member refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kind="variable"><name>m_ip</name></member>
+    <member refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kind="variable"><name>m_mac</name></member>
+    <member refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kind="variable"><name>m_os</name></member>
+    <member refid="classM__LecteurPhysique_1a109fb2d87880dee7b4574714cf9082b0" kind="variable"><name>m_typeMachine</name></member>
+    <member refid="classM__LecteurPhysique_1a8491214c37c0d8322fc1017e8c32332e" kind="variable"><name>m_resolution</name></member>
+    <member refid="classM__LecteurPhysique_1afdbd617fddddfca065ef692818205d2f" kind="variable"><name>m_tailleEcranPouces</name></member>
+    <member refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kind="variable"><name>m_processeur</name></member>
+    <member refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kind="variable"><name>m_memoireMo</name></member>
+    <member refid="classM__LecteurPhysique_1a4569455fe8a6b799692cdc71c5a4ef9d" kind="variable"><name>m_lecteurVideo</name></member>
+    <member refid="classM__LecteurPhysique_1ac40113a9621be8c5f27cdd57699e934c" kind="variable"><name>m_layoutAffichage</name></member>
+    <member refid="classM__LecteurPhysique_1a6570c85f7970028c1a1c8383967d30c4" kind="variable"><name>m_nbMaxVideos</name></member>
     <member refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kind="function"><name>M_LecteurPhysique</name></member>
     <member refid="classM__LecteurPhysique_1aa576e14b299ea3e1c176b093e03ea6a3" kind="function"><name>~M_LecteurPhysique</name></member>
     <member refid="classM__LecteurPhysique_1a20ce647b80d9e95233f41f7f1d4f7754" kind="function"><name>lireVideo</name></member>
@@ -66,9 +129,40 @@
     <member refid="classM__LecteurPhysique_1aa9906082c32e3bd3f8ec2c2ee5cba05e" kind="function"><name>estTermine</name></member>
     <member refid="classM__LecteurPhysique_1a7c65ccdf3fe5495702dfc71e73dce36f" kind="function"><name>getDureeTotale</name></member>
     <member refid="classM__LecteurPhysique_1ab18421fa7bd3af78d82536350103823f" kind="function"><name>getProgressionActuelle</name></member>
+    <member refid="classM__LecteurPhysique_1ac27b1846e6293318e0066aca679bb046" kind="function"><name>collecterInfosLocales</name></member>
+    <member refid="classM__LecteurPhysique_1a6b667afd6b3442f0be64c3dda6ff9a1d" kind="function"><name>versJson</name></member>
+    <member refid="classM__LecteurPhysique_1a6830271da5f5f6ed0402a1142b6f1ab2" kind="function"><name>getNom</name></member>
+    <member refid="classM__LecteurPhysique_1a1986466ef73f2d711feb5e73d47a164c" kind="function"><name>getIp</name></member>
+    <member refid="classM__LecteurPhysique_1a3de24e388072be02fed7370654efbfea" kind="function"><name>getMac</name></member>
+    <member refid="classM__LecteurPhysique_1adf3f75ea5b9d5c5535547d0febd62968" kind="function"><name>getOs</name></member>
+    <member refid="classM__LecteurPhysique_1ac8b2c8580aeecc07dd13890a8dc26c9e" kind="function"><name>getTypeMachine</name></member>
+    <member refid="classM__LecteurPhysique_1a367c24dad3ca7c2ba77907682c576c00" kind="function"><name>getResolution</name></member>
+    <member refid="classM__LecteurPhysique_1a4989a65533763ea82576c2625c7be662" kind="function"><name>getTailleEcranPouces</name></member>
+    <member refid="classM__LecteurPhysique_1af69af55a73fe7d800a2ad8f82c7d689c" kind="function"><name>getProcesseur</name></member>
+    <member refid="classM__LecteurPhysique_1a9a61a869b2158e985d5f873ad2df4f15" kind="function"><name>getMemoireMo</name></member>
+    <member refid="classM__LecteurPhysique_1ae39797a26bc322a44ae0dce2a4563888" kind="function"><name>getLecteurVideo</name></member>
+    <member refid="classM__LecteurPhysique_1a5a62671bf8b34981827cd3a48b5027b3" kind="function"><name>getLayoutAffichage</name></member>
+    <member refid="classM__LecteurPhysique_1acea93834903343315856cc2cf496972f" kind="function"><name>getNbMaxVideos</name></member>
+    <member refid="classM__LecteurPhysique_1a497c25e1406f8c5f3040a2115d987780" kind="function"><name>setNom</name></member>
+    <member refid="classM__LecteurPhysique_1a1098d525bd902d0764d0e51fda994de3" kind="function"><name>setIp</name></member>
+    <member refid="classM__LecteurPhysique_1a8646b70fe50961cdac007304ce1f9b30" kind="function"><name>setMac</name></member>
+    <member refid="classM__LecteurPhysique_1a48cf0b8f52e2d796720bab9035677ae4" kind="function"><name>setOs</name></member>
+    <member refid="classM__LecteurPhysique_1a8f9d3690c15c754d6da479dbb79af397" kind="function"><name>setTypeMachine</name></member>
+    <member refid="classM__LecteurPhysique_1a07c26d8c12b01bc25a23abd35b4ec68d" kind="function"><name>setResolution</name></member>
+    <member refid="classM__LecteurPhysique_1aff4a262aaaf9b6ef54e4347e41129e06" kind="function"><name>setTailleEcranPouces</name></member>
+    <member refid="classM__LecteurPhysique_1a77f70c00b92cc8a7259ababe2bd9b00e" kind="function"><name>setProcesseur</name></member>
+    <member refid="classM__LecteurPhysique_1a8f3d526a7a3f5da48a48bf289e151d2d" kind="function"><name>setMemoireMo</name></member>
+    <member refid="classM__LecteurPhysique_1ab144745f6158d7415746e29fe93b9d48" kind="function"><name>setLecteurVideo</name></member>
+    <member refid="classM__LecteurPhysique_1a804ede8b682ee3121126d6686769f7e3" kind="function"><name>setLayoutAffichage</name></member>
+    <member refid="classM__LecteurPhysique_1a112021e2f8a41a7118d0102714bb8db0" kind="function"><name>setNbMaxVideos</name></member>
     <member refid="classM__LecteurPhysique_1af943b235c86b492ce0a92c66bd8480c8" kind="function"><name>cb_verrouiller</name></member>
     <member refid="classM__LecteurPhysique_1a7ca110dcf985a027ecc7f38bf469050d" kind="function"><name>cb_deverrouiller</name></member>
     <member refid="classM__LecteurPhysique_1af3c2bb1bd28156374ed1eefb0c1b1f5e" kind="function"><name>cb_configurerVideo</name></member>
+    <member refid="classM__LecteurPhysique_1ac43629cbe7d503fe27794e566c9bc4ae" kind="function"><name>collecterNom</name></member>
+    <member refid="classM__LecteurPhysique_1a075cca6070729370bb82fc90a0b45f96" kind="function"><name>collecterIpEtMac</name></member>
+    <member refid="classM__LecteurPhysique_1a0253d92c5bd8b67a1de4b2c1ecb0c083" kind="function"><name>collecterOs</name></member>
+    <member refid="classM__LecteurPhysique_1afdbda4238dc576e0c5c2ca4e566772cf" kind="function"><name>collecterCpu</name></member>
+    <member refid="classM__LecteurPhysique_1ae00d8bb4749399d0ce6a2afbc04ad873" kind="function"><name>collecterMemoire</name></member>
   </compound>
   <compound refid="classM__ServeurTFTP" kind="class"><name>M_ServeurTFTP</name>
     <member refid="classM__ServeurTFTP_1af884aa6d6c19866574bee6ac37d9cc9f" kind="variable"><name>documentRoot</name></member>
@@ -81,6 +175,7 @@
   </compound>
   <compound refid="classM__SessionLecture" kind="class"><name>M_SessionLecture</name>
     <member refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" kind="variable"><name>instanceVideoComplexe</name></member>
+    <member refid="classM__SessionLecture_1adce7228a71d6e462d89e1cb7d29be10b" kind="variable"><name>config</name></member>
     <member refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kind="variable"><name>idLecteurs</name></member>
     <member refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kind="variable"><name>ipLecteurs</name></member>
     <member refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kind="variable"><name>nbVideos</name></member>
@@ -89,7 +184,8 @@
     <member refid="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" kind="function"><name>~M_SessionLecture</name></member>
     <member refid="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" kind="function"><name>preparerSessionLecture</name></member>
     <member refid="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" kind="function"><name>genererVideoComplexe</name></member>
-    <member refid="classM__SessionLecture_1a4a47020ae51713573ce1a43baebddf9c" kind="function"><name>uploaderVideoComplexe</name></member>
+    <member refid="classM__SessionLecture_1a574e163482c28cd67df399257c13c5c7" kind="function"><name>uploaderVideoComplexe</name></member>
+    <member refid="classM__SessionLecture_1af033912b39ff6934607f1c551f90e908" kind="function"><name>rechercherLecteursComplets</name></member>
   </compound>
   <compound refid="classM__VideoComplexe" kind="class"><name>M_VideoComplexe</name>
     <member refid="classM__VideoComplexe_1a29b35aeed832e4fc28440e9420d1532b" kind="function"><name>genererVideoComplexe</name></member>
@@ -112,7 +208,7 @@
   <compound refid="classV__Master" kind="class"><name>V_Master</name>
     <member refid="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" kind="variable"><name>controleur</name></member>
     <member refid="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" kind="variable"><name>textureVideo</name></member>
-    <member refid="classV__Master_1afe0669f96767b79acd6a7d51a30a3754" kind="variable"><name>zones</name></member>
+    <member refid="classV__Master_1a91d4f39a63f147f149b785d4b0cd377d" kind="variable"><name>zones</name></member>
     <member refid="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" kind="variable"><name>rotationChargement</name></member>
     <member refid="classV__Master_1a384165f4e3d38eebfead142155b16a7f" kind="variable"><name>largeurVideoCache</name></member>
     <member refid="classV__Master_1a59b2af1f62769b342b116ca467f1186e" kind="variable"><name>hauteurVideoCache</name></member>
@@ -128,16 +224,23 @@
     <member refid="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" kind="variable"><name>videosCochees</name></member>
     <member refid="classV__Master_1a509185fdc5714eb025782889ecf820be" kind="variable"><name>ordreSelection</name></member>
     <member refid="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" kind="variable"><name>positionDefilement</name></member>
-    <member refid="classV__Master_1abc0cd4b8ebf3cb13b66381716dc982fd" kind="function"><name>V_Master</name></member>
+    <member refid="classV__Master_1a7a9713b4c0baed7b993c6aa7f097e24e" kind="variable"><name>lecteursIPs</name></member>
+    <member refid="classV__Master_1a1601cbd33cde330ed247d34857e6c729" kind="variable"><name>lecteursCoches</name></member>
+    <member refid="classV__Master_1ae6c1a91bb773630641f7b92715cff8ec" kind="variable"><name>ordreSelectionLecteurs</name></member>
+    <member refid="classV__Master_1a53e9b09eff892d42d0d5f2d6ddaa15f8" kind="variable"><name>positionDefilementLecteurs</name></member>
+    <member refid="classV__Master_1a985f86392ace746b850b593d34e64376" kind="function"><name>V_Master</name></member>
     <member refid="classV__Master_1a535f43888fb4360425a2999e19c31ef4" kind="function"><name>~V_Master</name></member>
     <member refid="classV__Master_1adf0913106fb6a88b07f046ae3e83a538" kind="function"><name>executer</name></member>
     <member refid="classV__Master_1afff0d53fd6ccad1a8d9575120ad3cbd8" kind="function"><name>miseAJourDisposition</name></member>
     <member refid="classV__Master_1ad10097c3907bc86ed82ebbb241cb2f31" kind="function"><name>chargerListeVideos</name></member>
+    <member refid="classV__Master_1a048195b2cbaa0d0371211953da154cd2" kind="function"><name>chargerListeLecteurs</name></member>
     <member refid="classV__Master_1a97bdceaf8ab5c380948e4eaea08ed164" kind="function"><name>getVideosSelectionnees</name></member>
+    <member refid="classV__Master_1a3dc2a9df4b8d75cea39886610f2c7910" kind="function"><name>getLecteursSelectionnes</name></member>
     <member refid="classV__Master_1ae5a6f5bd54c531fe0d0e4a8e948c16b7" kind="function"><name>gererLogique</name></member>
     <member refid="classV__Master_1ae1c9d9d181d76804b218a253c0e59a01" kind="function"><name>dessinerInterface</name></member>
     <member refid="classV__Master_1a14b55f4f94514e9d6c1d34d5612fe092" kind="function"><name>dessinerZoneVideo</name></member>
     <member refid="classV__Master_1a124fb71b5c7edf6c25cdc46a61b9b472" kind="function"><name>dessinerListeFichiers</name></member>
+    <member refid="classV__Master_1ac0582a52c1e472fb2b683fae06476e9a" kind="function"><name>dessinerListeLecteurs</name></member>
     <member refid="classV__Master_1a54279d74979778dcce8397d134b74410" kind="function"><name>dessinerPanneauControle</name></member>
     <member refid="classV__Master_1a9a449789d48edde357a604dd93144cc9" kind="function"><name>gererBarreProgression</name></member>
     <member refid="classV__Master_1a64f0592d7a5d5fc106a2e72ad0dde1f8" kind="function"><name>gererControlesVolume</name></member>
@@ -149,6 +252,12 @@
   </compound>
   <compound refid="C__LecteurPhysiqueLocal_8h" kind="file"><name>C_LecteurPhysiqueLocal.h</name>
   </compound>
+  <compound refid="M__ConfigReseau_8h" kind="file"><name>M_ConfigReseau.h</name>
+  </compound>
+  <compound refid="M__DecouverteReseau_8h" kind="file"><name>M_DecouverteReseau.h</name>
+    <member refid="M__DecouverteReseau_8h_1a26769957ec1a2beaf223f33b66ee64ab" kind="define"><name>INVALID_SOCKET</name></member>
+    <member refid="M__DecouverteReseau_8h_1a633b0396ff93d336a088412a190a5072" kind="define"><name>SOCKET_ERROR</name></member>
+  </compound>
   <compound refid="M__ExpediteurUDP_8h" kind="file"><name>M_ExpediteurUDP.h</name>
     <member refid="M__ExpediteurUDP_8h_1a26769957ec1a2beaf223f33b66ee64ab" kind="define"><name>INVALID_SOCKET</name></member>
     <member refid="M__ExpediteurUDP_8h_1a633b0396ff93d336a088412a190a5072" kind="define"><name>SOCKET_ERROR</name></member>
@@ -158,6 +267,7 @@
     <member refid="M__ExpediteurUDP_8h_1a2b8d26240dc09d0051300bf8cf445ec1" kind="enum"><name>TypeCommande</name></member>
     <member refid="M__ExpediteurUDP_8h_1a2b8d26240dc09d0051300bf8cf445ec1a7269bfdad49082ebd48c6f77641a90d9" kind="enumvalue"><name>ORDRE</name></member>
     <member refid="M__ExpediteurUDP_8h_1a2b8d26240dc09d0051300bf8cf445ec1af877da16e0c12743466e4059018d0d98" kind="enumvalue"><name>CONNECTION</name></member>
+    <member refid="M__ExpediteurUDP_8h_1a2b8d26240dc09d0051300bf8cf445ec1a1d7bc1ed0f68552fb02b6102062f4ff1" kind="enumvalue"><name>DECOUVERTE</name></member>
     <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92" kind="enum"><name>Action</name></member>
     <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92a6a216efc529825c60a4a4c0bc99ad77f" kind="enumvalue"><name>PLAY</name></member>
     <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92a291554596c183e837f0a6bec3767c891" kind="enumvalue"><name>PAUSE</name></member>
@@ -165,7 +275,9 @@
     <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92a730956af87021c351084317bbc63eea6" kind="enumvalue"><name>VOLUME</name></member>
     <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92a976644b70d65e6ed774c2c8f39c6827d" kind="enumvalue"><name>PROGRESSION</name></member>
     <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92a5aff33cf405abb04295e40e3f7510a75" kind="enumvalue"><name>VITESSE</name></member>
-    <member refid="M__ExpediteurUDP_8h_1a1fee235b6d0a10c6ee28554a4f371733" kind="typedef"><name>SocketType</name></member>
+    <member refid="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92aea4d8e40d19124f7e998c5a196485e1e" kind="enumvalue"><name>RECHERCHE</name></member>
+  </compound>
+  <compound refid="M__JsonUtil_8h" kind="file"><name>M_JsonUtil.h</name>
   </compound>
   <compound refid="M__LecteurPhysique_8h" kind="file"><name>M_LecteurPhysique.h</name>
   </compound>
@@ -194,11 +306,20 @@
   <compound refid="V__Master_8h" kind="file"><name>V_Master.h</name>
   </compound>
   <compound refid="C__LecteurPhysiqueLocal_8cpp" kind="file"><name>C_LecteurPhysiqueLocal.cpp</name>
+    <member refid="C__LecteurPhysiqueLocal_8cpp_1a26769957ec1a2beaf223f33b66ee64ab" kind="define"><name>INVALID_SOCKET</name></member>
+    <member refid="C__LecteurPhysiqueLocal_8cpp_1a633b0396ff93d336a088412a190a5072" kind="define"><name>SOCKET_ERROR</name></member>
+    <member refid="C__LecteurPhysiqueLocal_8cpp_1a1fee235b6d0a10c6ee28554a4f371733" kind="typedef"><name>SocketType</name></member>
   </compound>
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
     <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="M__ConfigReseau_8cpp" kind="file"><name>M_ConfigReseau.cpp</name>
+  </compound>
+  <compound refid="M__DecouverteReseau_8cpp" kind="file"><name>M_DecouverteReseau.cpp</name>
+  </compound>
   <compound refid="M__ExpediteurUDP_8cpp" kind="file"><name>M_ExpediteurUDP.cpp</name>
+  </compound>
+  <compound refid="M__JsonUtil_8cpp" kind="file"><name>M_JsonUtil.cpp</name>
   </compound>
   <compound refid="M__LecteurPhysique_8cpp" kind="file"><name>M_LecteurPhysique.cpp</name>
   </compound>

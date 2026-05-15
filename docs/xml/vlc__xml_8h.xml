@@ -1,423 +1,1389 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="vlc__xml_8h" kind="file" language="C++">
-    <compoundname>vlc_xml.h</compoundname>
-    <innerclass refid="structxml__t" prot="public">xml_t</innerclass>
-    <innerclass refid="structxml__reader__t" prot="public">xml_reader_t</innerclass>
-    <sectiondef kind="define">
-      <memberdef kind="define" id="vlc__xml_8h_1a784410c323fd7640a75add058789ef8c" prot="public" static="no">
-        <name>xml_Create</name>
-        <param><defname>a</defname></param>
-        <initializer>xml_Create( <ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a) )</initializer>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="vlc__xml_8h" kind="file" language="C++">
+        <compoundname>vlc_xml.h</compoundname>
+        <innerclass refid="structxml__t" prot="public">xml_t</innerclass>
+        <innerclass refid="structxml__reader__t" prot="public">xml_reader_t</innerclass>
+        <sectiondef kind="define">
+            <memberdef kind="define" id="vlc__xml_8h_1a784410c323fd7640a75add058789ef8c" prot="public" static="no">
+                <name>xml_Create</name>
+                <param>
+                    <defname>a</defname>
+                </param>
+                <initializer>xml_Create( <ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd"
+                                              kindref="member">VLC_OBJECT</ref>(a) )
+                </initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="50" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="50" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="vlc__xml_8h_1af9a76e5b2410f245b7faf9fd993f9a51" prot="public" static="no">
+                <name>xml_ReaderCreate</name>
+                <param>
+                    <defname>a</defname>
+                </param>
+                <param>
+                    <defname>s</defname>
+                </param>
+                <initializer>xml_ReaderCreate(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd"
+                                                   kindref="member">VLC_OBJECT</ref>(a), s)
+                </initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="81" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="81" bodyend="-1"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="enum">
+            <memberdef kind="enum" id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221" prot="public" static="no"
+                       strong="no">
+                <type></type>
+                <name></name>
+                <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221aa84cb4165ddd94fc932bbb6056f98d6c"
+                           prot="public">
+                    <name>XML_READER_ERROR</name>
+                    <initializer>=-1</initializer>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221a626d089834960da6292123f1cf18f3aa"
+                           prot="public">
+                    <name>XML_READER_NONE</name>
+                    <initializer>=0</initializer>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221a325eb379438dccbd1abf45e7772070f7"
+                           prot="public">
+                    <name>XML_READER_STARTELEM</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221afa619ce92ad8e2d2530fe0ca50ed917f"
+                           prot="public">
+                    <name>XML_READER_ENDELEM</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221a7ff7203403d754b387b56ea54d8b65a5"
+                           prot="public">
+                    <name>XML_READER_TEXT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="109" column="1"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="109" bodyend="115"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="vlc__xml_8h_1af7f19fb23e0707a075e1d20eb9657a22" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structxml__t" kindref="compound">xml_t</ref> *
+                </type>
+                <definition>VLC_API xml_t * xml_Create</definition>
+                <argsstring>(vlc_object_t *) VLC_USED</argsstring>
+                <name>xml_Create</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="49" column="16"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        declline="49" declcolumn="16"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a49489fdb680068f04d71b2d560b9e906" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void xml_Delete</definition>
+                <argsstring>(xml_t *)</argsstring>
+                <name>xml_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="51" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        declline="51" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1aa71d3aea83301b1ae72637fbbf41d691" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void xml_CatalogLoad</definition>
+                <argsstring>(xml_t *xml, const char *catalog)</argsstring>
+                <name>xml_CatalogLoad</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                        *
+                    </type>
+                    <declname>xml</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>catalog</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="53" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="53" bodyend="56"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1ada0381e73eb7454bc0c9fec75133d37d" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void xml_CatalogAdd</definition>
+                <argsstring>(xml_t *xml, const char *type, const char *orig, const char *value)</argsstring>
+                <name>xml_CatalogAdd</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                        *
+                    </type>
+                    <declname>xml</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>type</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>orig</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>value</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="58" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="58" bodyend="62"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a76d310cba68ce7270783db52b0472320" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *
+                </type>
+                <definition>VLC_API xml_reader_t * xml_ReaderCreate</definition>
+                <argsstring>(vlc_object_t *, stream_t *) VLC_USED</argsstring>
+                <name>xml_ReaderCreate</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="structstream__t" kindref="compound">stream_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="80" column="23"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        declline="80" declcolumn="23"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a544d0f73a9f6a8efc23a2853eb6f48c6" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void xml_ReaderDelete</definition>
+                <argsstring>(xml_reader_t *)</argsstring>
+                <name>xml_ReaderDelete</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="82" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        declline="82" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a6b536569569453fea202a7da947359bd" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *
+                </type>
+                <definition>VLC_API xml_reader_t * xml_ReaderReset</definition>
+                <argsstring>(xml_reader_t *, stream_t *) VLC_USED</argsstring>
+                <name>xml_ReaderReset</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="structstream__t" kindref="compound">stream_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="83" column="23"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        declline="83" declcolumn="23"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a38504889f03e4bceb685e0e777525d21" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>int</type>
+                <definition>static int xml_ReaderNextNode</definition>
+                <argsstring>(xml_reader_t *reader, const char **pval)</argsstring>
+                <name>xml_ReaderNextNode</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                        *
+                    </type>
+                    <declname>reader</declname>
+                </param>
+                <param>
+                    <type>const char **</type>
+                    <declname>pval</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="85" column="19"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="85" bodyend="88"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1aa962f46f2aa1bd2c6b3b4433eab8939d" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>const char *</type>
+                <definition>static const char * xml_ReaderNextAttr</definition>
+                <argsstring>(xml_reader_t *reader, const char **pval)</argsstring>
+                <name>xml_ReaderNextAttr</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                        *
+                    </type>
+                    <declname>reader</declname>
+                </param>
+                <param>
+                    <type>const char **</type>
+                    <declname>pval</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="90" column="26"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="90" bodyend="94"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a847eb4d5a4c3c32966fe31be6996089f" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>int</type>
+                <definition>static int xml_ReaderUseDTD</definition>
+                <argsstring>(xml_reader_t *reader)</argsstring>
+                <name>xml_ReaderUseDTD</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                        *
+                    </type>
+                    <declname>reader</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="96" column="19"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="96" bodyend="99"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__xml_8h_1a5d1b7eecd5eba27861c94f1c1b45c8ff" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>int</type>
+                <definition>static int xml_ReaderIsEmptyElement</definition>
+                <argsstring>(xml_reader_t *reader)</argsstring>
+                <name>xml_ReaderIsEmptyElement</name>
+                <param>
+                    <type>
+                        <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                        *
+                    </type>
+                    <declname>reader</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        line="101" column="19"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"
+                        bodystart="101" bodyend="107"/>
+            </memberdef>
+        </sectiondef>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+            <para>This file defines functions and structures to handle xml tags in vlc</para>
         </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="50" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="50" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="vlc__xml_8h_1af9a76e5b2410f245b7faf9fd993f9a51" prot="public" static="no">
-        <name>xml_ReaderCreate</name>
-        <param><defname>a</defname></param>
-        <param><defname>s</defname></param>
-        <initializer>xml_ReaderCreate(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a), s)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="81" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="81" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="enum">
-      <memberdef kind="enum" id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221" prot="public" static="no" strong="no">
-        <type></type>
-        <name></name>
-        <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221aa84cb4165ddd94fc932bbb6056f98d6c" prot="public">
-          <name>XML_READER_ERROR</name>
-          <initializer>=-1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221a626d089834960da6292123f1cf18f3aa" prot="public">
-          <name>XML_READER_NONE</name>
-          <initializer>=0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221a325eb379438dccbd1abf45e7772070f7" prot="public">
-          <name>XML_READER_STARTELEM</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221afa619ce92ad8e2d2530fe0ca50ed917f" prot="public">
-          <name>XML_READER_ENDELEM</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="vlc__xml_8h_1a0f3edc50c3c2fc40343694a500202221a7ff7203403d754b387b56ea54d8b65a5" prot="public">
-          <name>XML_READER_TEXT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="109" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="109" bodyend="115"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="vlc__xml_8h_1af7f19fb23e0707a075e1d20eb9657a22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structxml__t" kindref="compound">xml_t</ref> *</type>
-        <definition>VLC_API xml_t * xml_Create</definition>
-        <argsstring>(vlc_object_t *) VLC_USED</argsstring>
-        <name>xml_Create</name>
-        <param>
-          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="49" column="16" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" declline="49" declcolumn="16"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a49489fdb680068f04d71b2d560b9e906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void xml_Delete</definition>
-        <argsstring>(xml_t *)</argsstring>
-        <name>xml_Delete</name>
-        <param>
-          <type><ref refid="structxml__t" kindref="compound">xml_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="51" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" declline="51" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1aa71d3aea83301b1ae72637fbbf41d691" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void xml_CatalogLoad</definition>
-        <argsstring>(xml_t *xml, const char *catalog)</argsstring>
-        <name>xml_CatalogLoad</name>
-        <param>
-          <type><ref refid="structxml__t" kindref="compound">xml_t</ref> *</type>
-          <declname>xml</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>catalog</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="53" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="53" bodyend="56"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1ada0381e73eb7454bc0c9fec75133d37d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void xml_CatalogAdd</definition>
-        <argsstring>(xml_t *xml, const char *type, const char *orig, const char *value)</argsstring>
-        <name>xml_CatalogAdd</name>
-        <param>
-          <type><ref refid="structxml__t" kindref="compound">xml_t</ref> *</type>
-          <declname>xml</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>type</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>orig</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="58" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="58" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a76d310cba68ce7270783db52b0472320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-        <definition>VLC_API xml_reader_t * xml_ReaderCreate</definition>
-        <argsstring>(vlc_object_t *, stream_t *) VLC_USED</argsstring>
-        <name>xml_ReaderCreate</name>
-        <param>
-          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
-        </param>
-        <param>
-          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="80" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" declline="80" declcolumn="23"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a544d0f73a9f6a8efc23a2853eb6f48c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void xml_ReaderDelete</definition>
-        <argsstring>(xml_reader_t *)</argsstring>
-        <name>xml_ReaderDelete</name>
-        <param>
-          <type><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="82" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" declline="82" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a6b536569569453fea202a7da947359bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-        <definition>VLC_API xml_reader_t * xml_ReaderReset</definition>
-        <argsstring>(xml_reader_t *, stream_t *) VLC_USED</argsstring>
-        <name>xml_ReaderReset</name>
-        <param>
-          <type><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-        </param>
-        <param>
-          <type><ref refid="structstream__t" kindref="compound">stream_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="83" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" declline="83" declcolumn="23"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a38504889f03e4bceb685e0e777525d21" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>static int xml_ReaderNextNode</definition>
-        <argsstring>(xml_reader_t *reader, const char **pval)</argsstring>
-        <name>xml_ReaderNextNode</name>
-        <param>
-          <type><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-          <declname>reader</declname>
-        </param>
-        <param>
-          <type>const char **</type>
-          <declname>pval</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="85" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="85" bodyend="88"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1aa962f46f2aa1bd2c6b3b4433eab8939d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>const char *</type>
-        <definition>static const char * xml_ReaderNextAttr</definition>
-        <argsstring>(xml_reader_t *reader, const char **pval)</argsstring>
-        <name>xml_ReaderNextAttr</name>
-        <param>
-          <type><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-          <declname>reader</declname>
-        </param>
-        <param>
-          <type>const char **</type>
-          <declname>pval</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="90" column="26" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="90" bodyend="94"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a847eb4d5a4c3c32966fe31be6996089f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>static int xml_ReaderUseDTD</definition>
-        <argsstring>(xml_reader_t *reader)</argsstring>
-        <name>xml_ReaderUseDTD</name>
-        <param>
-          <type><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-          <declname>reader</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="96" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="96" bodyend="99"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__xml_8h_1a5d1b7eecd5eba27861c94f1c1b45c8ff" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>static int xml_ReaderIsEmptyElement</definition>
-        <argsstring>(xml_reader_t *reader)</argsstring>
-        <name>xml_ReaderIsEmptyElement</name>
-        <param>
-          <type><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref> *</type>
-          <declname>reader</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" line="101" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h" bodystart="101" bodyend="107"/>
-      </memberdef>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>This file defines functions and structures to handle xml tags in vlc </para>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_xml.h:<sp/>XML<sp/>abstraction<sp/>layer</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2004-2010<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Author:<sp/>Gildas<sp/>Bazin<sp/>&lt;gbazin@videolan.org&gt;</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
-<codeline lineno="21"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_XML_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_XML_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="structxml__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structxml__t" kindref="compound">xml_t</ref></highlight></codeline>
-<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Module<sp/>properties<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>module_t<sp/><sp/>*p_module;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>xml_sys_t<sp/>*p_sys;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*pf_catalog_load)<sp/>(<sp/><ref refid="structxml__t" kindref="compound">xml_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*pf_catalog_add)<sp/>(<sp/><ref refid="structxml__t" kindref="compound">xml_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal">VLC_API<sp/><ref refid="structxml__t" kindref="compound">xml_t</ref><sp/>*<sp/>xml_Create(<sp/><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*<sp/>)<sp/>VLC_USED;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>xml_Create(<sp/>a<sp/>)<sp/>xml_Create(<sp/>VLC_OBJECT(a)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>xml_Delete(<sp/><ref refid="structxml__t" kindref="compound">xml_t</ref><sp/>*<sp/>);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>xml_CatalogLoad(<sp/><ref refid="structxml__t" kindref="compound">xml_t</ref><sp/>*xml,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*catalog<sp/>)</highlight></codeline>
-<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>xml-&gt;pf_catalog_load(<sp/>xml,<sp/>catalog<sp/>);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>xml_CatalogAdd(<sp/><ref refid="structxml__t" kindref="compound">xml_t</ref><sp/>*xml,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*type,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*orig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value<sp/>)</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>xml-&gt;pf_catalog_add(<sp/>xml,<sp/>type,<sp/>orig,<sp/>value<sp/>);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="structxml__reader__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref></highlight></codeline>
-<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>xml_reader_sys_t<sp/>*p_sys;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*p_stream;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>module_t<sp/>*p_module;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*pf_next_node)<sp/>(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>);</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*(*pf_next_attr)<sp/>(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*pf_use_dtd)<sp/>(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*<sp/>);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*pf_is_empty)<sp/>(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*<sp/>);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal">VLC_API<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*<sp/>xml_ReaderCreate(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*)<sp/>VLC_USED;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>xml_ReaderCreate(<sp/>a,<sp/>s<sp/>)<sp/>xml_ReaderCreate(VLC_OBJECT(a),<sp/>s)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>xml_ReaderDelete(<ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">VLC_API<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*<sp/>xml_ReaderReset(<ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*,<sp/><ref refid="structstream__t" kindref="compound">stream_t</ref><sp/>*)<sp/>VLC_USED;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xml_ReaderNextNode(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*reader,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**pval<sp/>)</highlight></codeline>
-<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>reader-&gt;pf_next_node(<sp/>reader,<sp/>pval<sp/>);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xml_ReaderNextAttr(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*reader,</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**pval<sp/>)</highlight></codeline>
-<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>reader-&gt;pf_next_attr(<sp/>reader,<sp/>pval<sp/>);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xml_ReaderUseDTD(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*reader<sp/>)</highlight></codeline>
-<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>reader-&gt;pf_use_dtd(<sp/>reader<sp/>);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xml_ReaderIsEmptyElement(<sp/><ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref><sp/>*reader<sp/>)</highlight></codeline>
-<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(reader-&gt;pf_is_empty<sp/>==<sp/>NULL)</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>reader-&gt;pf_is_empty(<sp/>reader<sp/>);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>XML_READER_ERROR=-1,</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>XML_READER_NONE=0,</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>XML_READER_STARTELEM,</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>XML_READER_ENDELEM,</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>XML_READER_TEXT,</highlight></codeline>
-<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
-    </programlisting>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"/>
-  </compounddef>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">
+                    /*****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>vlc_xml.h:<sp/>XML<sp/>abstraction<sp/>layer
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2004-2010<sp/>VLC<sp/>authors<sp/>and<sp/>
+                    VideoLAN
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*<sp/>Author:<sp/>Gildas<sp/>Bazin<sp/>&lt;gbazin@videolan.org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can
+                    <sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>
+                    General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version
+                    <sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope
+                    <sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.<sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more
+                    <sp/>details.
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write
+                    <sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,
+                </highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>
+                    Boston<sp/>MA<sp/>02110-1301,<sp/>USA.
+                </highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>VLC_XML_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>VLC_XML_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="25">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="31">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="32">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="33">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">extern</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="stringliteral">&quot;C&quot;</highlight>
+                <highlight class="normal"><sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="34">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>endif
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="35">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="36" refid="structxml__t" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="37">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="38">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS
+                    </ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Module<sp/>properties<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="41">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>module_t
+                    <sp/>
+                    <sp/>*p_module;
+                </highlight>
+            </codeline>
+            <codeline lineno="42">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>xml_sys_t<sp/>*p_sys;
+                </highlight>
+            </codeline>
+            <codeline lineno="43">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="44">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>void<sp/>(*pf_catalog_load)<sp/>(
+                    <sp/>
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="45">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>void<sp/>(*pf_catalog_add)<sp/>(
+                    <sp/>
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*,
+                </highlight>
+            </codeline>
+            <codeline lineno="46">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="47">
+                <highlight class="normal">};</highlight>
+            </codeline>
+            <codeline lineno="48">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="49">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                    <sp/>*<sp/>xml_Create(
+                    <sp/>
+                    <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                    <sp/>*<sp/>)<sp/>VLC_USED;
+                </highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>xml_Create(<sp/>a<sp/>)<sp/>xml_Create(<sp/>VLC_OBJECT(a)
+                    <sp/>)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="51">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>xml_Delete(
+                    <sp/>
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                    <sp/>*<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="52">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="53">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>xml_CatalogLoad(
+                    <sp/>
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                    <sp/>*xml,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*catalog<sp/>)
+                </highlight>
+            </codeline>
+            <codeline lineno="54">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="55">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>xml-&gt;pf_catalog_load(<sp/>xml,<sp/>catalog<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="56">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="57">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="58">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>xml_CatalogAdd(
+                    <sp/>
+                    <ref refid="structxml__t" kindref="compound">xml_t</ref>
+                    <sp/>*xml,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*type,
+                </highlight>
+            </codeline>
+            <codeline lineno="59">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*orig,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*value<sp/>)
+                </highlight>
+            </codeline>
+            <codeline lineno="60">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="61">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>xml-&gt;pf_catalog_add(<sp/>xml,<sp/>type,<sp/>orig,<sp/>value<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="62">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="63">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="64">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="65" refid="structxml__reader__t" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="66">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="67">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS
+                    </ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="68">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="69">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>xml_reader_sys_t<sp/>*p_sys;
+                </highlight>
+            </codeline>
+            <codeline lineno="70">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="structstream__t" kindref="compound">stream_t</ref>
+                    <sp/>*p_stream;
+                </highlight>
+            </codeline>
+            <codeline lineno="71">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>module_t<sp/>*p_module;
+                </highlight>
+            </codeline>
+            <codeline lineno="72">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="73">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int<sp/>(*pf_next_node)<sp/>(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="74">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*(*pf_next_attr)<sp/>(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="75">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="76">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int<sp/>(*pf_use_dtd)<sp/>(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="77">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int<sp/>(*pf_is_empty)<sp/>(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="78">
+                <highlight class="normal">};</highlight>
+            </codeline>
+            <codeline lineno="79">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="80">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*<sp/>xml_ReaderCreate(
+                    <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                    <sp/>*,
+                    <sp/>
+                    <ref refid="structstream__t" kindref="compound">stream_t</ref>
+                    <sp/>*)<sp/>VLC_USED;
+                </highlight>
+            </codeline>
+            <codeline lineno="81">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>xml_ReaderCreate(<sp/>a,<sp/>s<sp/>)<sp/>
+                    xml_ReaderCreate(VLC_OBJECT(a),<sp/>s)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="82">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>xml_ReaderDelete(
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="83">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*<sp/>xml_ReaderReset(
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*,
+                    <sp/>
+                    <ref refid="structstream__t" kindref="compound">stream_t</ref>
+                    <sp/>*)<sp/>VLC_USED;
+                </highlight>
+            </codeline>
+            <codeline lineno="84">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="85">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>xml_ReaderNextNode(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*reader,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**pval<sp/>)
+                </highlight>
+            </codeline>
+            <codeline lineno="86">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="87">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>reader-&gt;pf_next_node(<sp/>reader,<sp/>pval<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="88">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="89">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="90">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*xml_ReaderNextAttr(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*reader,
+                </highlight>
+            </codeline>
+            <codeline lineno="91">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**pval<sp/>)
+                </highlight>
+            </codeline>
+            <codeline lineno="92">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="93">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>reader-&gt;pf_next_attr(<sp/>reader,<sp/>pval<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="94">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="95">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="96">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>xml_ReaderUseDTD(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*reader<sp/>)
+                </highlight>
+            </codeline>
+            <codeline lineno="97">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="98">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>reader-&gt;pf_use_dtd(<sp/>reader<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="99">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="100">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="101">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>xml_ReaderIsEmptyElement(
+                    <sp/>
+                    <ref refid="structxml__reader__t" kindref="compound">xml_reader_t</ref>
+                    <sp/>*reader<sp/>)
+                </highlight>
+            </codeline>
+            <codeline lineno="102">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="103">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">if</highlight>
+                <highlight class="normal">(reader-&gt;pf_is_empty<sp/>==<sp/>NULL)
+                </highlight>
+            </codeline>
+            <codeline lineno="104">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>-2;
+                </highlight>
+            </codeline>
+            <codeline lineno="105">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="106">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>reader-&gt;pf_is_empty(<sp/>reader<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="107">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="108">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="109">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">enum</highlight>
+                <highlight class="normal"><sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="110">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>XML_READER_ERROR=-1,
+                </highlight>
+            </codeline>
+            <codeline lineno="111">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>XML_READER_NONE=0,
+                </highlight>
+            </codeline>
+            <codeline lineno="112">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>XML_READER_STARTELEM,
+                </highlight>
+            </codeline>
+            <codeline lineno="113">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>XML_READER_ENDELEM,
+                </highlight>
+            </codeline>
+            <codeline lineno="114">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>XML_READER_TEXT,
+                </highlight>
+            </codeline>
+            <codeline lineno="115">
+                <highlight class="normal">};</highlight>
+            </codeline>
+            <codeline lineno="116">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="117">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="118">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="119">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>endif
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="120">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="121">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif</highlight>
+            </codeline>
+        </programlisting>
+        <location
+                file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_xml.h"/>
+    </compounddef>
 </doxygen>

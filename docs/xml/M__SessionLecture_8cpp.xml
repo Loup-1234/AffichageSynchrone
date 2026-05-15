@@ -3,12 +3,68 @@
   <compounddef id="M__SessionLecture_8cpp" kind="file" language="C++">
     <compoundname>M_SessionLecture.cpp</compoundname>
     <includes refid="M__SessionLecture_8h" local="yes">../../include/Modele/M_SessionLecture.h</includes>
+    <includes refid="M__ServeurTFTP_8h" local="yes">../../include/Modele/M_ServeurTFTP.h</includes>
+    <includes refid="M__JsonUtil_8h" local="yes">../../include/Modele/M_JsonUtil.h</includes>
+    <includes refid="M__DecouverteReseau_8h" local="yes">../../include/Modele/M_DecouverteReseau.h</includes>
     <includes local="no">fstream</includes>
     <includes local="no">iostream</includes>
     <includes local="no">vector</includes>
     <includes local="no">string</includes>
-    <includes refid="M__ServeurTFTP_8h" local="yes">../../include/Modele/M_ServeurTFTP.h</includes>
     <incdepgraph>
+      <node id="10">
+        <label>M_ConfigReseau.h</label>
+        <link refid="M__ConfigReseau_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../../include/Modele/M_DecouverteReseau.h</label>
+        <link refid="M__DecouverteReseau_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>M_ExpediteurUDP.h</label>
+        <link refid="M__ExpediteurUDP_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../../include/Modele/M_JsonUtil.h</label>
+        <link refid="M__JsonUtil_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
       <node id="5">
         <label>M_ServeurTFTP.h</label>
         <link refid="M__ServeurTFTP_8h_source"/>
@@ -30,7 +86,13 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -44,28 +106,50 @@
         <link refid="M__SessionLecture_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
       </node>
       <node id="8">
         <label>arpa/inet.h</label>
       </node>
-      <node id="10">
+      <node id="16">
+        <label>cstdint</label>
+      </node>
+      <node id="17">
+        <label>cstring</label>
+      </node>
+      <node id="20">
         <label>fstream</label>
       </node>
-      <node id="11">
+      <node id="21">
         <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="18">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="13">
+        <label>stdexcept</label>
       </node>
       <node id="4">
         <label>string</label>
+      </node>
+      <node id="19">
+        <label>sys/select.h</label>
       </node>
       <node id="7">
         <label>sys/socket.h</label>
@@ -83,145 +167,182 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../../include/Modele/M_SessionLecture.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../include/Modele/M_ServeurTFTP.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><ref refid="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" kindref="member">M_SessionLecture::~M_SessionLecture</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Libération<sp/>de<sp/>la<sp/>mémoire<sp/>allouée<sp/>dynamiquement<sp/>dans<sp/>preparerSessionLecture</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>;</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>;</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" kindref="member">M_SessionLecture::preparerSessionLecture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref><sp/>*specLecteurs,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbLecteurs)<sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Nettoyage<sp/>d&apos;une<sp/>éventuelle<sp/>session<sp/>précédente</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref><sp/>=<sp/>nbLecteurs;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../include/Modele/M_ServeurTFTP.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../include/Modele/M_JsonUtil.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../include/Modele/M_DecouverteReseau.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" kindref="member">M_SessionLecture::~M_SessionLecture</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Libération<sp/>de<sp/>la<sp/>mémoire<sp/>allouée<sp/>dynamiquement<sp/>dans<sp/>preparerSessionLecture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" kindref="member">M_SessionLecture::preparerSessionLecture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref><sp/>*specLecteurs,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbLecteurs)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Nettoyage<sp/>d&apos;une<sp/>éventuelle<sp/>session<sp/>précédente</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Conversion<sp/>des<sp/>chaînes<sp/>de<sp/>caractères<sp/>en<sp/>types<sp/>numériques<sp/>exploitables</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>[i]<sp/>=<sp/>stoi(specLecteurs[i].</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>[i]<sp/>=<sp/>specLecteurs[i].<ref refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" kindref="member">ip</ref>;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>=<sp/>stoi(specLecteurs[i].<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" kindref="member">M_SessionLecture::genererVideoComplexe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>*listeFichiersEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbFichiers)<sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbFichiers<sp/>==<sp/>0<sp/>||<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allocation<sp/>d&apos;un<sp/>tableau<sp/>de<sp/>tableaux<sp/>pour<sp/>stocker<sp/>les<sp/>listes<sp/>de<sp/>fichiers<sp/>par<sp/>lecteur</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>**videosParLecteur<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>*[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nbVideosAffectees<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>]();</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>placesDisponibles<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>videosParLecteur[i]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]];</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Chaque<sp/>lecteur<sp/>reçoit<sp/>par<sp/>défaut<sp/>la<sp/>première<sp/>vidéo<sp/>(souvent<sp/>un<sp/>fond<sp/>ou<sp/>une<sp/>vidéo<sp/>maître)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>videosParLecteur[i][0]<sp/>=<sp/>listeFichiersEntree[0];</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbVideosAffectees[i]<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>placesDisponibles<sp/>+=<sp/>(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>-<sp/>nbVideosAffectees[i]);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Algorithme<sp/>de<sp/>répartition<sp/>:<sp/>on<sp/>distribue<sp/>les<sp/>vidéos<sp/>restantes<sp/>une<sp/>par<sp/>une<sp/>aux<sp/>lecteurs</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>indexVideo<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>lecteurActuel<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(indexVideo<sp/>&lt;<sp/>nbFichiers<sp/>&amp;&amp;<sp/>placesDisponibles<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbVideosAffectees[lecteurActuel]<sp/>&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[lecteurActuel]))<sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>videosParLecteur[lecteurActuel][nbVideosAffectees[lecteurActuel]]<sp/>=<sp/>listeFichiersEntree[indexVideo];</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbVideosAffectees[lecteurActuel]++;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indexVideo++;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>placesDisponibles--;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lecteurActuel++;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lecteurActuel<sp/>&gt;=<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lecteurActuel<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>Retour<sp/>au<sp/>premier<sp/>lecteur<sp/>(Round-Robin)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lancement<sp/>effectif<sp/>de<sp/>la<sp/>génération<sp/>FFmpeg<sp/>pour<sp/>chaque<sp/>lecteur</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbVideosAffectees[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>nomFichierSortie<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;videosComplexes/VideoComplexe_&quot;</highlight><highlight class="normal"><sp/>+<sp/>to_string(<ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>[i])<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.mp4&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" kindref="member">instanceVideoComplexe</ref>.genererVideoComplexe(videosParLecteur[i],<sp/>nbVideosAffectees[i],<sp/>nomFichierSortie);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Nettoyage<sp/>de<sp/>la<sp/>mémoire<sp/>temporaire<sp/>de<sp/>répartition</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>videosParLecteur[i];</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>videosParLecteur;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>nbVideosAffectees;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1a4a47020ae51713573ce1a43baebddf9c" kindref="member">M_SessionLecture::uploaderVideoComplexe</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dossierSource<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;videosComplexes&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>Conversion<sp/>des<sp/>données<sp/>internes<sp/>en<sp/>format<sp/>&quot;TransferInfo&quot;<sp/>pour<sp/>le<sp/>module<sp/>TFTP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;TransferInfo&gt;<sp/>listeTransferts;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>:<sp/>On<sp/>commence<sp/>à<sp/>i=1<sp/>pour<sp/>ne<sp/>pas<sp/>s&apos;envoyer<sp/>la<sp/>vidéo<sp/>à<sp/>soi-même<sp/>(si<sp/>i=0<sp/>est<sp/>le<sp/>Master<sp/>local)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TransferInfo<sp/>info;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info.<ref refid="structTransferInfo_1afebab064ac47052cfae4f5f6319f1c16" kindref="member">ip</ref><sp/>=<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>[i];</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info.<ref refid="structTransferInfo_1ac984385168ca6b3758df46cba55ca9b0" kindref="member">path</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;VideoComplexe_&quot;</highlight><highlight class="normal"><sp/>+<sp/>to_string(<ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>[i])<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.mp4&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>listeTransferts.push_back(info);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listeTransferts.empty())<sp/>{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[SESSION]<sp/>Aucun<sp/>fichier<sp/>à<sp/>uploader.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>Génération<sp/>d&apos;un<sp/>fichier<sp/>de<sp/>log<sp/>JSON<sp/>pour<sp/>débogage<sp/>ou<sp/>archive</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>ofstream<sp/>fichierJson(</highlight><highlight class="stringliteral">&quot;listeLecteurs.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fichierJson.is_open())<sp/>{</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>listeTransferts.size();<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>{\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>\&quot;ip\&quot;:<sp/>\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>listeTransferts[i].ip<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&quot;,\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>\&quot;path\&quot;:<sp/>\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>listeTransferts[i].path<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>}&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(i<sp/>==<sp/>listeTransferts.size()<sp/>-<sp/>1<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson.close();</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref><sp/>=<sp/>nbLecteurs;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Conversion<sp/>des<sp/>chaînes<sp/>de<sp/>caractères<sp/>en<sp/>types<sp/>numériques<sp/>exploitables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>[i]<sp/>=<sp/>stoi(specLecteurs[i].</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>[i]<sp/>=<sp/>specLecteurs[i].<ref refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" kindref="member">ip</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>=<sp/>stoi(specLecteurs[i].<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" kindref="member">M_SessionLecture::genererVideoComplexe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>*listeFichiersEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbFichiers)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbFichiers<sp/>==<sp/>0<sp/>||<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allocation<sp/>d&apos;un<sp/>tableau<sp/>de<sp/>tableaux<sp/>pour<sp/>stocker<sp/>les<sp/>listes<sp/>de<sp/>fichiers<sp/>par<sp/>lecteur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>**videosParLecteur<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>*[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>];</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nbVideosAffectees<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>]();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>placesDisponibles<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>videosParLecteur[i]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Chaque<sp/>lecteur<sp/>reçoit<sp/>par<sp/>défaut<sp/>la<sp/>première<sp/>vidéo<sp/>(souvent<sp/>un<sp/>fond<sp/>ou<sp/>une<sp/>vidéo<sp/>maître)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>videosParLecteur[i][0]<sp/>=<sp/>listeFichiersEntree[0];</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbVideosAffectees[i]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>placesDisponibles<sp/>+=<sp/>(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>-<sp/>nbVideosAffectees[i]);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Algorithme<sp/>de<sp/>répartition<sp/>:<sp/>on<sp/>distribue<sp/>les<sp/>vidéos<sp/>restantes<sp/>une<sp/>par<sp/>une<sp/>aux<sp/>lecteurs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>indexVideo<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>lecteurActuel<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(indexVideo<sp/>&lt;<sp/>nbFichiers<sp/>&amp;&amp;<sp/>placesDisponibles<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbVideosAffectees[lecteurActuel]<sp/>&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[lecteurActuel]))<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>videosParLecteur[lecteurActuel][nbVideosAffectees[lecteurActuel]]<sp/>=<sp/>listeFichiersEntree[indexVideo];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbVideosAffectees[lecteurActuel]++;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indexVideo++;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>placesDisponibles--;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lecteurActuel++;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lecteurActuel<sp/>&gt;=<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lecteurActuel<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>Retour<sp/>au<sp/>premier<sp/>lecteur<sp/>(Round-Robin)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lancement<sp/>effectif<sp/>de<sp/>la<sp/>génération<sp/>FFmpeg<sp/>pour<sp/>chaque<sp/>lecteur</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbVideosAffectees[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>nomFichierSortie<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;videosComplexes/VideoComplexe_&quot;</highlight><highlight class="normal"><sp/>+<sp/>to_string(<ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>[i])<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.mp4&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" kindref="member">instanceVideoComplexe</ref>.genererVideoComplexe(videosParLecteur[i],<sp/>nbVideosAffectees[i],<sp/>nomFichierSortie);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Nettoyage<sp/>de<sp/>la<sp/>mémoire<sp/>temporaire<sp/>de<sp/>répartition</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>videosParLecteur[i];</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>videosParLecteur;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>nbVideosAffectees;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1a574e163482c28cd67df399257c13c5c7" kindref="member">M_SessionLecture::uploaderVideoComplexe</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dossierSource<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;videosComplexes&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>Conversion<sp/>des<sp/>données<sp/>internes<sp/>en<sp/>format<sp/>&quot;TransferInfo&quot;<sp/>pour<sp/>le<sp/>module<sp/>TFTP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;TransferInfo&gt;<sp/>listeTransferts;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>:<sp/>On<sp/>commence<sp/>à<sp/>i=1<sp/>pour<sp/>ne<sp/>pas<sp/>s&apos;envoyer<sp/>la<sp/>vidéo<sp/>à<sp/>soi-même</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref>[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TransferInfo<sp/>info;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info.<ref refid="structTransferInfo_1afebab064ac47052cfae4f5f6319f1c16" kindref="member">ip</ref><sp/>=<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref>[i];</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info.<ref refid="structTransferInfo_1ac984385168ca6b3758df46cba55ca9b0" kindref="member">path</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;VideoComplexe_&quot;</highlight><highlight class="normal"><sp/>+<sp/>to_string(<ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref>[i])<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.mp4&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>listeTransferts.push_back(info);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listeTransferts.empty())<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[SESSION]<sp/>Aucun<sp/>fichier<sp/>à<sp/>uploader.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>Génération<sp/>d&apos;un<sp/>fichier<sp/>de<sp/>log<sp/>JSON<sp/>en<sp/>utilisant<sp/>M_JsonUtil</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>ofstream<sp/>fichierJson(</highlight><highlight class="stringliteral">&quot;listeLecteurs.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fichierJson.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>listeTransferts.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Création<sp/>de<sp/>la<sp/>map<sp/>pour<sp/>l&apos;objet<sp/>plat<sp/>(Exigence<sp/>RFC<sp/>8259<sp/>via<sp/>JsonUtil)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>string&gt;<sp/>champs;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>champs[</highlight><highlight class="stringliteral">&quot;ip&quot;</highlight><highlight class="normal">]<sp/>=<sp/>listeTransferts[i].ip;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>champs[</highlight><highlight class="stringliteral">&quot;path&quot;</highlight><highlight class="normal">]<sp/>=<sp/>listeTransferts[i].path;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>M_JsonUtil::construire<sp/>génère<sp/>la<sp/>chaîne<sp/>&apos;{&quot;ip&quot;:&quot;...&quot;,&quot;path&quot;:&quot;...&quot;}&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>M_JsonUtil::construire(champs);</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>Exécution<sp/>des<sp/>transferts<sp/>via<sp/>le<sp/>serveur<sp/>TFTP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[SESSION]<sp/>Initialisation<sp/>du<sp/>serveur<sp/>TFTP<sp/>(Mode<sp/>Fiable<sp/>avec<sp/>ACK)...&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M_ServeurTFTP<sp/>serveurTftp(listeTransferts,<sp/>dossierSource);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cette<sp/>méthode<sp/>est<sp/>bloquante<sp/>jusqu&apos;à<sp/>ce<sp/>que<sp/>tous<sp/>les<sp/>threads<sp/>async<sp/>soient<sp/>terminés</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>serveurTftp.runAllTransfers();</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[SESSION]<sp/>Fin<sp/>de<sp/>la<sp/>session<sp/>d&apos;upload.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>exception<sp/>&amp;e)<sp/>{</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[ERREUR<sp/>CRITIQUE]<sp/>Echec<sp/>durant<sp/>l&apos;upload<sp/>TFTP<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Gestion<sp/>de<sp/>la<sp/>virgule<sp/>entre<sp/>les<sp/>éléments<sp/>du<sp/>tableau</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>listeTransferts.size()<sp/>-<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichierJson.close();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>Exécution<sp/>des<sp/>transferts<sp/>via<sp/>le<sp/>serveur<sp/>TFTP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n[SESSION]<sp/>Initialisation<sp/>du<sp/>serveur<sp/>TFTP<sp/>(Mode<sp/>Fiable<sp/>avec<sp/>ACK)...&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M_ServeurTFTP<sp/>serveurTftp(listeTransferts,<sp/>dossierSource);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>serveurTftp.runAllTransfers();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[SESSION]<sp/>Fin<sp/>de<sp/>la<sp/>session<sp/>d&apos;upload.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>exception<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[ERREUR<sp/>CRITIQUE]<sp/>Echec<sp/>durant<sp/>l&apos;upload<sp/>TFTP<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">vector&lt;map&lt;string,<sp/>string&gt;<sp/>&gt;<sp/><ref refid="classM__SessionLecture_1af033912b39ff6934607f1c551f90e908" kindref="member">M_SessionLecture::rechercherLecteursComplets</ref>(</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;ipMulticast,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portDecouverte,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portReponse)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>Création<sp/>de<sp/>la<sp/>configuration<sp/>avec<sp/>les<sp/>paramètres<sp/>dynamiques</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>M_ConfigReseau<sp/><ref refid="classM__SessionLecture_1adce7228a71d6e462d89e1cb7d29be10b" kindref="member">config</ref>(</highlight><highlight class="stringliteral">&quot;SessionInitiale&quot;</highlight><highlight class="normal">,<sp/>ipMulticast,<sp/>portDecouverte,<sp/>portReponse);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>Initialisation<sp/>du<sp/>moteur<sp/>de<sp/>découverte<sp/>avec<sp/>cette<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>M_DecouverteReseau<sp/>moteurDecouverte(<ref refid="classM__SessionLecture_1adce7228a71d6e462d89e1cb7d29be10b" kindref="member">config</ref>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>Lancement<sp/>de<sp/>la<sp/>recherche<sp/>(Envoi<sp/>du<sp/>paquet<sp/>binaire,<sp/>attente<sp/>2s)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>moteurDecouverte.lancerDecouverte(2000);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;map&lt;string,<sp/>string&gt;<sp/>&gt;<sp/>lecteursDetectes;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;<sp/>&amp;reponsesBrutes<sp/>=<sp/>moteurDecouverte.getReponsesBrutes();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;json:<sp/>reponsesBrutes)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>infos<sp/>=<sp/>M_JsonUtil::parser(json);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!infos.empty())<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lecteursDetectes.push_back(infos);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[SESSION]<sp/>Lecteur<sp/>détecté<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>infos[</highlight><highlight class="stringliteral">&quot;nom&quot;</highlight><highlight class="normal">]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>infos[</highlight><highlight class="stringliteral">&quot;ip&quot;</highlight><highlight class="normal">]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[M_SessionLecture]<sp/>Erreur<sp/>parsing<sp/>JSON<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lecteursDetectes;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp"/>
   </compounddef>

@@ -9,6 +9,7 @@
     <includes local="no">unistd.h</includes>
     <includes local="no">cstring</includes>
     <includedby refid="C__LecteurPhysiqueLocal_8h" local="yes">/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h</includedby>
+    <includedby refid="M__DecouverteReseau_8h" local="yes">/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h</includedby>
     <includedby refid="M__ExpediteurUDP_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ExpediteurUDP.cpp</includedby>
     <incdepgraph>
       <node id="1">
@@ -53,21 +54,21 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h</label>
+        <link refid="M__DecouverteReseau_8h_source"/>
+      </node>
       <node id="1">
         <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h</label>
         <link refid="M__ExpediteurUDP_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</label>
         <link refid="V__Master_8h_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>/home/loup/CLionProjects/AffichageSynchrone/src/main.cpp</label>
-        <link refid="main_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structPaquetControle" prot="public">PaquetControle</innerclass>
@@ -148,6 +149,15 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="M__ExpediteurUDP_8h_1a2b8d26240dc09d0051300bf8cf445ec1a1d7bc1ed0f68552fb02b6102062f4ff1" prot="public">
+          <name>DECOUVERTE</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Message pour la découverte réseau (UC4). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>Définit la nature du message UDP. </para>
         </briefdescription>
@@ -155,7 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="37" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="37" bodyend="40"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="37" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="37" bodyend="41"/>
       </memberdef>
       <memberdef kind="enum" id="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92" prot="public" static="no" strong="yes">
         <type>uint8_t</type>
@@ -208,6 +218,15 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="M__ExpediteurUDP_8h_1a1b0589a8e0b94ef8a83125279b03fd92aea4d8e40d19124f7e998c5a196485e1e" prot="public">
+          <name>RECHERCHE</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>Action demandant aux lecteurs de s&apos;identifier. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>Liste des commandes de contrôle de lecture disponibles. </para>
         </briefdescription>
@@ -215,22 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="46" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="46" bodyend="53"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="M__ExpediteurUDP_8h_1a1fee235b6d0a10c6ee28554a4f371733" prot="public" static="no">
-        <type>int</type>
-        <definition>using SocketType = int</definition>
-        <argsstring></argsstring>
-        <name>SocketType</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="19" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="19" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" line="47" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h" bodystart="47" bodyend="55"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -267,42 +271,42 @@
 <codeline lineno="31"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>TypeCommande<sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>ORDRE<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>CONNECTION<sp/>=<sp/>1<sp/></highlight></codeline>
-<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>Action<sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>PLAY<sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>PAUSE<sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>STOP<sp/>=<sp/>2,</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>VOLUME<sp/>=<sp/>3,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>PROGRESSION<sp/>=<sp/>4,</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>VITESSE<sp/>=<sp/>5</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(push,<sp/>1)</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62" refid="structPaquetControle" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPaquetControle" kindref="compound">PaquetControle</ref><sp/>{</highlight></codeline>
-<codeline lineno="63" refid="structPaquetControle_1a349ff7a04fb95e5f1bb8cdc8bb7db71a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Expediteur<sp/><ref refid="structPaquetControle_1a349ff7a04fb95e5f1bb8cdc8bb7db71a" kindref="member">exp</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="64" refid="structPaquetControle_1a544d42f5c589939f2def3af40ce83a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TypeCommande<sp/><ref refid="structPaquetControle_1a544d42f5c589939f2def3af40ce83a73" kindref="member">type</ref>;<sp/></highlight></codeline>
-<codeline lineno="65" refid="structPaquetControle_1aa6394ee0d146df30f32422df5491df03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Action<sp/><ref refid="structPaquetControle_1aa6394ee0d146df30f32422df5491df03" kindref="member">action</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="66" refid="structPaquetControle_1ad9bb7e13317ef0e952e5f5ebc7423333" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structPaquetControle_1ad9bb7e13317ef0e952e5f5ebc7423333" kindref="member">valeur</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(pop)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="classM__ExpediteurUDP" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classM__ExpediteurUDP_1a3995caf513bcf7f85468094bf36df146" kindref="member">M_ExpediteurUDP</ref><sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ExpediteurUDP_1a3995caf513bcf7f85468094bf36df146" kindref="member">M_ExpediteurUDP</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;ip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ExpediteurUDP_1a1b3d2c5ed35d4f2011bcd53e467e5fd4" kindref="member">~M_ExpediteurUDP</ref>();</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classM__ExpediteurUDP_1a7f44e84bd98f7862ba2f6d283f65b0e8" kindref="member">envoyer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*donnees,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>taille);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ExpediteurUDP_1afa992a2524e8263e0253de300dcaf5f6" kindref="member">transmettreCommande</ref>(Expediteur<sp/>exp,<sp/>TypeCommande<sp/>type,<sp/>Action<sp/>action,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>valeur);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="106" refid="classM__ExpediteurUDP_1a12e40677ecc2bdaae88413a530ba9f88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SocketType<sp/><ref refid="classM__ExpediteurUDP_1a12e40677ecc2bdaae88413a530ba9f88" kindref="member">descripteurSocket</ref><sp/>=<sp/>INVALID_SOCKET;<sp/></highlight></codeline>
-<codeline lineno="107" refid="classM__ExpediteurUDP_1a04046ae611f9c46b94b7c7952629f38a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>sockaddr_in<sp/><ref refid="classM__ExpediteurUDP_1a04046ae611f9c46b94b7c7952629f38a" kindref="member">adresseDest</ref>{};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="108"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>ORDRE<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>CONNECTION<sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>DECOUVERTE<sp/>=<sp/>2<sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>Action<sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>PLAY<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>PAUSE<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>STOP<sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>VOLUME<sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>PROGRESSION<sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>VITESSE<sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>RECHERCHE<sp/>=<sp/>6<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(push,<sp/>1)</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structPaquetControle" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPaquetControle" kindref="compound">PaquetControle</ref><sp/>{</highlight></codeline>
+<codeline lineno="65" refid="structPaquetControle_1a349ff7a04fb95e5f1bb8cdc8bb7db71a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Expediteur<sp/><ref refid="structPaquetControle_1a349ff7a04fb95e5f1bb8cdc8bb7db71a" kindref="member">exp</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66" refid="structPaquetControle_1a544d42f5c589939f2def3af40ce83a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TypeCommande<sp/><ref refid="structPaquetControle_1a544d42f5c589939f2def3af40ce83a73" kindref="member">type</ref>;<sp/></highlight></codeline>
+<codeline lineno="67" refid="structPaquetControle_1aa6394ee0d146df30f32422df5491df03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Action<sp/><ref refid="structPaquetControle_1aa6394ee0d146df30f32422df5491df03" kindref="member">action</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="structPaquetControle_1ad9bb7e13317ef0e952e5f5ebc7423333" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structPaquetControle_1ad9bb7e13317ef0e952e5f5ebc7423333" kindref="member">valeur</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(pop)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classM__ExpediteurUDP" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">M_ExpediteurUDP<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>M_ExpediteurUDP(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;ip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>~M_ExpediteurUDP();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>envoyer(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*donnees,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>taille);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>transmettreCommande(Expediteur<sp/>exp,<sp/>TypeCommande<sp/>type,<sp/>Action<sp/>action,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>valeur);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>SocketType<sp/>descripteurSocket<sp/>=<sp/>INVALID_SOCKET;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>sockaddr_in<sp/>adresseDest{};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ExpediteurUDP.h"/>
   </compounddef>

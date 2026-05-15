@@ -1,708 +1,996 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="group__block" kind="group">
-    <compoundname>block</compoundname>
-    <title>Data blocks</title>
-    <innerfile refid="vlc__block_8h">vlc_block.h</innerfile>
-    <innerclass refid="structblock__t" prot="public">block_t</innerclass>
-    <innergroup refid="group__block__fifo">Block chain</innergroup>
-    <innergroup refid="group__fifo">Block FIFO</innergroup>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__block_1ga69dd963d66d917ee35a5fca88103c916" prot="public" static="no">
-        <type>void(*</type>
-        <definition>typedef void(* block_free_t) (block_t *)</definition>
-        <argsstring>)(block_t *)</argsstring>
-        <name>block_free_t</name>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="group__block" kind="group">
+        <compoundname>block</compoundname>
+        <title>Data blocks</title>
+        <innerfile refid="vlc__block_8h">vlc_block.h</innerfile>
+        <innerclass refid="structblock__t" prot="public">block_t</innerclass>
+        <innergroup refid="group__block__fifo">Block chain</innergroup>
+        <innergroup refid="group__fifo">Block FIFO</innergroup>
+        <sectiondef kind="typedef">
+            <memberdef kind="typedef" id="group__block_1ga69dd963d66d917ee35a5fca88103c916" prot="public" static="no">
+                <type>void(*</type>
+                <definition>typedef void(* block_free_t) (block_t *)</definition>
+                <argsstring>)(block_t *)</argsstring>
+                <name>block_free_t</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="110" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="110" bodyend="-1"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="group__block_1ga7c71d10b0cf007c8670fe7f05d9da2f9" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void block_Init</definition>
+                <argsstring>(block_t *, void *, size_t)</argsstring>
+                <name>block_Init</name>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>void *</type>
+                </param>
+                <param>
+                    <type>size_t</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="132" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="132" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_Alloc</definition>
+                <argsstring>(size_t size) VLC_USED VLC_MALLOC</argsstring>
+                <name>block_Alloc</name>
+                <param>
+                    <type>size_t</type>
+                    <declname>size</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Allocates a block.</para>
+                    <para>Creates a new block with the requested size. The block must be released with
+                        block_Release().
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>size</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>size in bytes (possibly zero)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>the created block, or NULL on memory error.</para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="143" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="143" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1gac60c68a7f77b92298901e7bb5c0923f6" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_TryRealloc</definition>
+                <argsstring>(block_t *, ssize_t pre, size_t body) VLC_USED</argsstring>
+                <name>block_TryRealloc</name>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>ssize_t</type>
+                    <declname>pre</declname>
+                </param>
+                <param>
+                    <type>size_t</type>
+                    <declname>body</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="145" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="145" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga80686ce1b2b3d2563ec3736d14be11cb" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_Realloc</definition>
+                <argsstring>(block_t *, ssize_t pre, size_t body) VLC_USED</argsstring>
+                <name>block_Realloc</name>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>ssize_t</type>
+                    <declname>pre</declname>
+                </param>
+                <param>
+                    <type>size_t</type>
+                    <declname>body</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Reallocates a block.</para>
+                    <para>This function expands, shrinks or moves a data block. In many cases, this function can return
+                        without any memory allocation by reusing spare buffer space. Otherwise, a new block is created
+                        and data is copied.
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>pre</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>count of bytes to prepend if positive, count of leading bytes to discard if
+                                        negative
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>body</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>new bytes size of the block</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>the reallocated block on succes, NULL on error.</para>
+                        </simplesect>
+                        <simplesect kind="note">
+                            <para>Skipping leading bytes can be achieved directly by subtracting from <ref
+                                    refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">
+                                block_t.i_buffer
+                            </ref> and adding <ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12"
+                                                   kindref="member">block_t.p_buffer</ref>.
+                            </para>
+                        </simplesect>
+                        <simplesect kind="note">
+                            <para>Discard trailing bytes can be achieved directly by subtracting from <ref
+                                    refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">
+                                block_t.i_buffer</ref>.
+                            </para>
+                        </simplesect>
+                        <simplesect kind="note">
+                            <para>On error, the block is discarded. To avoid that, use block_TryRealloc() instead.
+                            </para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="168" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="168" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1gaf817d55445f9f41b7cfe494ff2a205c2" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void block_Release</definition>
+                <argsstring>(block_t *block)</argsstring>
+                <name>block_Release</name>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                    <declname>block</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Releases a block.</para>
+                    <para>This function works for any <ref refid="structblock__t" kindref="compound">block_t</ref> block,
+                        regardless of the way it was allocated.
+                    </para>
+                    <para>
+                        <simplesect kind="note">
+                            <para>If the block is in a chain, this function does <bold>not</bold> release any subsequent
+                                block in the chain. Use block_ChainRelease() for that purpose.
+                            </para>
+                        </simplesect>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>block</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>block to release (cannot be NULL)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="182" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="182" bodyend="185"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga86fab3db91dac80ec291af4d4f1f9420" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void block_CopyProperties</definition>
+                <argsstring>(block_t *dst, block_t *src)</argsstring>
+                <name>block_CopyProperties</name>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                    <declname>dst</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                    <declname>src</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="187" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="187" bodyend="194"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1gacf4d50f762cf64e3fa1d11e3fb03405b" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>VLC_USED <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>static VLC_USED block_t * block_Duplicate</definition>
+                <argsstring>(block_t *p_block)</argsstring>
+                <name>block_Duplicate</name>
+                <param>
+                    <type>
+                        <ref refid="structblock__t" kindref="compound">block_t</ref>
+                        *
+                    </type>
+                    <declname>p_block</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Duplicates a block.</para>
+                    <para>Creates a writeable duplicate of a block.</para>
+                    <para>
+                        <simplesect kind="return">
+                            <para>the duplicate on success, NULL on error.</para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="204" column="23"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="204" bodyend="214"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga0437981501ea707c77ecae1e40c6f348" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_heap_Alloc</definition>
+                <argsstring>(void *, size_t) VLC_USED VLC_MALLOC</argsstring>
+                <name>block_heap_Alloc</name>
+                <param>
+                    <type>void *</type>
+                </param>
+                <param>
+                    <type>size_t</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Wraps heap in a block.</para>
+                    <para>Creates a <ref refid="structblock__t" kindref="compound">block_t</ref> out of an existing heap
+                        allocation. This is provided by LibVLC so that manually heap-allocated blocks can safely be
+                        deallocated even after the origin plugin has been unloaded from memory.
+                    </para>
+                    <para>When block_Release() is called, VLC will free() the specified pointer.</para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>addr</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>base address of the heap allocation (will be free()&apos;d)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>length</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>bytes length of the heap allocation</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>NULL in case of error (ptr free()&apos;d in that case), or a valid <ref
+                                    refid="structblock__t" kindref="compound">block_t
+                            </ref> pointer.
+                            </para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="230" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="230" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga84d069d5dd48a5a8895bab4fd1c35396" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_mmap_Alloc</definition>
+                <argsstring>(void *addr, size_t length) VLC_USED VLC_MALLOC</argsstring>
+                <name>block_mmap_Alloc</name>
+                <param>
+                    <type>void *</type>
+                    <declname>addr</declname>
+                </param>
+                <param>
+                    <type>size_t</type>
+                    <declname>length</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Wraps a memory mapping in a block</para>
+                    <para>Creates a <ref refid="structblock__t" kindref="compound">block_t</ref> from a virtual address
+                        memory mapping (mmap). This is provided by LibVLC so that mmap blocks can safely be deallocated
+                        even after the allocating plugin has been unloaded from memory.
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>addr</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>base address of the mapping (as returned by mmap)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>length</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>length (bytes) of the mapping (as passed to mmap)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>NULL if addr is MAP_FAILED, or an error occurred (in the later case, munmap(addr,
+                                length) is invoked before returning).
+                            </para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="244" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="244" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga6860e2453328100456080ae5cf7d135f" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_shm_Alloc</definition>
+                <argsstring>(void *addr, size_t length) VLC_USED VLC_MALLOC</argsstring>
+                <name>block_shm_Alloc</name>
+                <param>
+                    <type>void *</type>
+                    <declname>addr</declname>
+                </param>
+                <param>
+                    <type>size_t</type>
+                    <declname>length</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Wraps a System V memory segment in a block</para>
+                    <para>Creates a <ref refid="structblock__t" kindref="compound">block_t</ref> from a System V shared
+                        memory segment (shmget()). This is provided by LibVLC so that segments can safely be deallocated
+                        even after the allocating plugin has been unloaded from memory.
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>addr</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>base address of the segment (as returned by shmat())</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>length</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>length (bytes) of the segment (as passed to shmget())</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>NULL if an error occurred (in that case, shmdt(addr) is invoked before returning
+                                NULL).
+                            </para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="258" column="18"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="258" declcolumn="18"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1gab1324798becb85cfb2a7354aed41cc5d" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_File</definition>
+                <argsstring>(int fd, bool write) VLC_USED VLC_MALLOC</argsstring>
+                <name>block_File</name>
+                <param>
+                    <type>int</type>
+                    <declname>fd</declname>
+                </param>
+                <param>
+                    <type>bool</type>
+                    <declname>write</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Maps a file handle in memory.</para>
+                    <para>Loads a file into a block of memory through a file descriptor. If possible a private file
+                        mapping is created. Otherwise, the file is read normally. This function is a cancellation point.
+                    </para>
+                    <para>
+                        <simplesect kind="note">
+                            <para>On 32-bits platforms, this function will not work for very large files, due to memory
+                                space constraints.
+                            </para>
+                        </simplesect>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>fd</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>file descriptor to load from</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>write</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>If true, request a read/write private mapping. If false, request a read-only
+                                        potentially shared mapping.
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>a new block with the file content at p_buffer, and file length at i_buffer (release it
+                                with block_Release()), or NULL upon error (see errno).
+                            </para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="278" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="278" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1gaac85f6b63dacc6d3b982942b728c898c" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *
+                </type>
+                <definition>VLC_API block_t * block_FilePath</definition>
+                <argsstring>(const char *, bool write) VLC_USED VLC_MALLOC</argsstring>
+                <name>block_FilePath</name>
+                <param>
+                    <type>const char *</type>
+                </param>
+                <param>
+                    <type>bool</type>
+                    <declname>write</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Maps a file in memory.</para>
+                    <para>Loads a file into a block of memory from a path to the file. See also <ref
+                            refid="group__block_1gab1324798becb85cfb2a7354aed41cc5d" kindref="member">block_File()</ref>.
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>write</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>If true, request a read/write private mapping. If false, request a read-only
+                                        potentially shared mapping.
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="289" column="17"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        declline="289" declcolumn="17"/>
+            </memberdef>
+            <memberdef kind="function" id="group__block_1ga72f80606f95e6fbfef8ab72d06fb9573" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void block_Cleanup</definition>
+                <argsstring>(void *block)</argsstring>
+                <name>block_Cleanup</name>
+                <param>
+                    <type>void *</type>
+                    <declname>block</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="291" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="291" bodyend="294"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="define">
+            <memberdef kind="define" id="group__block_1ga82f33d56fbf301c610c2fe3a71f056cc" prot="public" static="no">
+                <name>BLOCK_FLAG_DISCONTINUITY</name>
+                <initializer>0x0001</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>The content doesn&apos;t follow the last block, possible some blocks in between have been
+                        lost
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="67" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="67" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga4ea1da5028885e857f9306a1657e721b" prot="public" static="no">
+                <name>BLOCK_FLAG_TYPE_I</name>
+                <initializer>0x0002</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Intra frame</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="69" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="69" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga27656a9cd59fa5d82a99fb5a4273bd7d" prot="public" static="no">
+                <name>BLOCK_FLAG_TYPE_P</name>
+                <initializer>0x0004</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Inter frame with backward reference only</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="71" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="71" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga55ed275938900370c869c1cebc19563a" prot="public" static="no">
+                <name>BLOCK_FLAG_TYPE_B</name>
+                <initializer>0x0008</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Inter frame with backward and forward reference</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="73" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="73" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gaa489eb15f0fc9d679f5a9a7baa4d8b32" prot="public" static="no">
+                <name>BLOCK_FLAG_TYPE_PB</name>
+                <initializer>0x0010</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>For inter frame when you don&apos;t know the real type</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="75" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="75" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga6b2f61be0305855aec568755ae821e54" prot="public" static="no">
+                <name>BLOCK_FLAG_HEADER</name>
+                <initializer>0x0020</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Warn that this block is a header one</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="77" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="77" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga472702509d67343c9d3f0f60cb5a1fc3" prot="public" static="no">
+                <name>BLOCK_FLAG_END_OF_SEQUENCE</name>
+                <initializer>0x0040</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block contains the last part of a sequence</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="79" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="79" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gadab445e19c449c99c3f581085a121321" prot="public" static="no">
+                <name>BLOCK_FLAG_CLOCK</name>
+                <initializer>0x0080</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block contains a clock reference</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="81" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="81" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga9cfec273cb4b3a450691a9b15a62aa1b" prot="public" static="no">
+                <name>BLOCK_FLAG_SCRAMBLED</name>
+                <initializer>0x0100</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block is scrambled</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="83" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="83" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gaa97962b8c5929d56e12440f08f61bfc4" prot="public" static="no">
+                <name>BLOCK_FLAG_PREROLL</name>
+                <initializer>0x0200</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block has to be decoded but not be displayed</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="85" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="85" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gaff637953fe9791ceb50500735ef26413" prot="public" static="no">
+                <name>BLOCK_FLAG_CORRUPTED</name>
+                <initializer>0x0400</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block is corrupted and/or there is data loss</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="87" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="87" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gafd724a2d943b3971bfaa7f030810200c" prot="public" static="no">
+                <name>BLOCK_FLAG_TOP_FIELD_FIRST</name>
+                <initializer>0x0800</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block contains an interlaced picture with top field stored first</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="89" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="89" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga42dc4d050d33648a95b2690fe1d6fddb" prot="public" static="no">
+                <name>BLOCK_FLAG_BOTTOM_FIELD_FIRST</name>
+                <initializer>0x1000</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block contains an interlaced picture with bottom field stored first</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="91" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="91" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga75d80005e0e48330fc828ea17e34ef65" prot="public" static="no">
+                <name>BLOCK_FLAG_SINGLE_FIELD</name>
+                <initializer>0x2000</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block contains a single field from interlaced picture.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="93" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="93" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gabe2b48876bd1c91380e655cff287e2a5" prot="public" static="no">
+                <name>BLOCK_FLAG_INTERLACED_MASK</name>
+                <initializer>(<ref refid="group__block_1gafd724a2d943b3971bfaa7f030810200c" kindref="member">
+                    BLOCK_FLAG_TOP_FIELD_FIRST</ref>|<ref refid="group__block_1ga42dc4d050d33648a95b2690fe1d6fddb"
+                                                          kindref="member">BLOCK_FLAG_BOTTOM_FIELD_FIRST</ref>|<ref
+                        refid="group__block_1ga75d80005e0e48330fc828ea17e34ef65" kindref="member">
+                    BLOCK_FLAG_SINGLE_FIELD</ref>)
+                </initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This block contains an interlaced picture</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="96" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="96" bodyend="97"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga9e399c8404d43b40b2803ffe43b2c762" prot="public" static="no">
+                <name>BLOCK_FLAG_TYPE_MASK</name>
+                <initializer>(<ref refid="group__block_1ga4ea1da5028885e857f9306a1657e721b" kindref="member">
+                    BLOCK_FLAG_TYPE_I</ref>|<ref refid="group__block_1ga27656a9cd59fa5d82a99fb5a4273bd7d"
+                                                 kindref="member">BLOCK_FLAG_TYPE_P</ref>|<ref
+                        refid="group__block_1ga55ed275938900370c869c1cebc19563a" kindref="member">
+                    BLOCK_FLAG_TYPE_B</ref>|<ref refid="group__block_1gaa489eb15f0fc9d679f5a9a7baa4d8b32"
+                                                 kindref="member">BLOCK_FLAG_TYPE_PB</ref>)
+                </initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="99" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="99" bodyend="100"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gad281e990d118543f1668384b1d68a7b8" prot="public" static="no">
+                <name>BLOCK_FLAG_CORE_PRIVATE_MASK</name>
+                <initializer>0x00ff0000</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="103" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="103" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga5d18e7b2535494f31edc278ab88e9d69" prot="public" static="no">
+                <name>BLOCK_FLAG_CORE_PRIVATE_SHIFT</name>
+                <initializer>16</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="104" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="104" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gaf9ffc0d6f085537c9e0c74d7e26308d0" prot="public" static="no">
+                <name>BLOCK_FLAG_PRIVATE_MASK</name>
+                <initializer>0xff000000</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="107" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="107" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1gac94ec086c9e47851b0b4b091aacf4209" prot="public" static="no">
+                <name>BLOCK_FLAG_PRIVATE_SHIFT</name>
+                <initializer>24</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="108" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="108" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__block_1ga9e55c76273c5b59ddaf1419f706e3e8c" prot="public" static="no">
+                <name>block_cleanup_push</name>
+                <param>
+                    <defname>block</defname>
+                </param>
+                <initializer>
+                    <ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push
+                    </ref>
+                    (block_Cleanup, block)
+                </initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        line="295" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h"
+                        bodystart="295" bodyend="-1"/>
+            </memberdef>
+        </sectiondef>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+            <para>Blocks of binary data.</para>
+            <para>
+                <ref refid="structblock__t" kindref="compound">block_t</ref>
+                is a generic structure to represent a binary blob within VLC. The primary goal of the structure is to
+                avoid memory copying as data is passed around. It is notably used between the <ref refid="group__demux"
+                                                                                                   kindref="compound">
+                Demultiplexer</ref>, the packetizer (if present) and the <ref refid="group__decoder" kindref="compound">
+                Decoder</ref>, and for audio, between the <ref refid="group__decoder" kindref="compound">Decoder</ref>,
+                the audio filters, and the <ref refid="group__audio__output" kindref="compound">Audio output</ref>.
+            </para>
         </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="110" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="110" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="group__block_1ga7c71d10b0cf007c8670fe7f05d9da2f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void block_Init</definition>
-        <argsstring>(block_t *, void *, size_t)</argsstring>
-        <name>block_Init</name>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        </param>
-        <param>
-          <type>void *</type>
-        </param>
-        <param>
-          <type>size_t</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="132" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="132" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga5c40e48e8163f5a37cce73ea6945c70e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_Alloc</definition>
-        <argsstring>(size_t size) VLC_USED VLC_MALLOC</argsstring>
-        <name>block_Alloc</name>
-        <param>
-          <type>size_t</type>
-          <declname>size</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Allocates a block.</para>
-<para>Creates a new block with the requested size. The block must be released with block_Release().</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>size</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>size in bytes (possibly zero) </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>the created block, or NULL on memory error. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="143" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="143" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1gac60c68a7f77b92298901e7bb5c0923f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_TryRealloc</definition>
-        <argsstring>(block_t *, ssize_t pre, size_t body) VLC_USED</argsstring>
-        <name>block_TryRealloc</name>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        </param>
-        <param>
-          <type>ssize_t</type>
-          <declname>pre</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>body</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="145" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="145" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga80686ce1b2b3d2563ec3736d14be11cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_Realloc</definition>
-        <argsstring>(block_t *, ssize_t pre, size_t body) VLC_USED</argsstring>
-        <name>block_Realloc</name>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        </param>
-        <param>
-          <type>ssize_t</type>
-          <declname>pre</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>body</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Reallocates a block.</para>
-<para>This function expands, shrinks or moves a data block. In many cases, this function can return without any memory allocation by reusing spare buffer space. Otherwise, a new block is created and data is copied.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>pre</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>count of bytes to prepend if positive, count of leading bytes to discard if negative </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>body</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>new bytes size of the block</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>the reallocated block on succes, NULL on error.</para>
-</simplesect>
-<simplesect kind="note"><para>Skipping leading bytes can be achieved directly by subtracting from <ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">block_t.i_buffer</ref> and adding <ref refid="structblock__t_1ac54799e03db8e744279d7be3b52eeb12" kindref="member">block_t.p_buffer</ref>. </para>
-</simplesect>
-<simplesect kind="note"><para>Discard trailing bytes can be achieved directly by subtracting from <ref refid="structblock__t_1add984fa2e612a2a1d53795221342b7b6" kindref="member">block_t.i_buffer</ref>. </para>
-</simplesect>
-<simplesect kind="note"><para>On error, the block is discarded. To avoid that, use block_TryRealloc() instead. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="168" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="168" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1gaf817d55445f9f41b7cfe494ff2a205c2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void block_Release</definition>
-        <argsstring>(block_t *block)</argsstring>
-        <name>block_Release</name>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-          <declname>block</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Releases a block.</para>
-<para>This function works for any <ref refid="structblock__t" kindref="compound">block_t</ref> block, regardless of the way it was allocated.</para>
-<para><simplesect kind="note"><para>If the block is in a chain, this function does <bold>not</bold> release any subsequent block in the chain. Use block_ChainRelease() for that purpose.</para>
-</simplesect>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>block</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>block to release (cannot be NULL) </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="182" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="182" bodyend="185"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga86fab3db91dac80ec291af4d4f1f9420" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void block_CopyProperties</definition>
-        <argsstring>(block_t *dst, block_t *src)</argsstring>
-        <name>block_CopyProperties</name>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-          <declname>dst</declname>
-        </param>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-          <declname>src</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="187" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="187" bodyend="194"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1gacf4d50f762cf64e3fa1d11e3fb03405b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>VLC_USED <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>static VLC_USED block_t * block_Duplicate</definition>
-        <argsstring>(block_t *p_block)</argsstring>
-        <name>block_Duplicate</name>
-        <param>
-          <type><ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-          <declname>p_block</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Duplicates a block.</para>
-<para>Creates a writeable duplicate of a block.</para>
-<para><simplesect kind="return"><para>the duplicate on success, NULL on error. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="204" column="23" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="204" bodyend="214"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga0437981501ea707c77ecae1e40c6f348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_heap_Alloc</definition>
-        <argsstring>(void *, size_t) VLC_USED VLC_MALLOC</argsstring>
-        <name>block_heap_Alloc</name>
-        <param>
-          <type>void *</type>
-        </param>
-        <param>
-          <type>size_t</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Wraps heap in a block.</para>
-<para>Creates a <ref refid="structblock__t" kindref="compound">block_t</ref> out of an existing heap allocation. This is provided by LibVLC so that manually heap-allocated blocks can safely be deallocated even after the origin plugin has been unloaded from memory.</para>
-<para>When block_Release() is called, VLC will free() the specified pointer.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>addr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>base address of the heap allocation (will be free()&apos;d) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>length</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>bytes length of the heap allocation </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>NULL in case of error (ptr free()&apos;d in that case), or a valid <ref refid="structblock__t" kindref="compound">block_t</ref> pointer. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="230" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="230" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga84d069d5dd48a5a8895bab4fd1c35396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_mmap_Alloc</definition>
-        <argsstring>(void *addr, size_t length) VLC_USED VLC_MALLOC</argsstring>
-        <name>block_mmap_Alloc</name>
-        <param>
-          <type>void *</type>
-          <declname>addr</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>length</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Wraps a memory mapping in a block</para>
-<para>Creates a <ref refid="structblock__t" kindref="compound">block_t</ref> from a virtual address memory mapping (mmap). This is provided by LibVLC so that mmap blocks can safely be deallocated even after the allocating plugin has been unloaded from memory.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>addr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>base address of the mapping (as returned by mmap) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>length</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>length (bytes) of the mapping (as passed to mmap) </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>NULL if addr is MAP_FAILED, or an error occurred (in the later case, munmap(addr, length) is invoked before returning). </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="244" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="244" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga6860e2453328100456080ae5cf7d135f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_shm_Alloc</definition>
-        <argsstring>(void *addr, size_t length) VLC_USED VLC_MALLOC</argsstring>
-        <name>block_shm_Alloc</name>
-        <param>
-          <type>void *</type>
-          <declname>addr</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>length</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Wraps a System V memory segment in a block</para>
-<para>Creates a <ref refid="structblock__t" kindref="compound">block_t</ref> from a System V shared memory segment (shmget()). This is provided by LibVLC so that segments can safely be deallocated even after the allocating plugin has been unloaded from memory.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>addr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>base address of the segment (as returned by shmat()) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>length</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>length (bytes) of the segment (as passed to shmget()) </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>NULL if an error occurred (in that case, shmdt(addr) is invoked before returning NULL). </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="258" column="18" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="258" declcolumn="18"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1gab1324798becb85cfb2a7354aed41cc5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_File</definition>
-        <argsstring>(int fd, bool write) VLC_USED VLC_MALLOC</argsstring>
-        <name>block_File</name>
-        <param>
-          <type>int</type>
-          <declname>fd</declname>
-        </param>
-        <param>
-          <type>bool</type>
-          <declname>write</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Maps a file handle in memory.</para>
-<para>Loads a file into a block of memory through a file descriptor. If possible a private file mapping is created. Otherwise, the file is read normally. This function is a cancellation point.</para>
-<para><simplesect kind="note"><para>On 32-bits platforms, this function will not work for very large files, due to memory space constraints.</para>
-</simplesect>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fd</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>file descriptor to load from </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>write</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If true, request a read/write private mapping. If false, request a read-only potentially shared mapping.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>a new block with the file content at p_buffer, and file length at i_buffer (release it with block_Release()), or NULL upon error (see errno). </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="278" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="278" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1gaac85f6b63dacc6d3b982942b728c898c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structblock__t" kindref="compound">block_t</ref> *</type>
-        <definition>VLC_API block_t * block_FilePath</definition>
-        <argsstring>(const char *, bool write) VLC_USED VLC_MALLOC</argsstring>
-        <name>block_FilePath</name>
-        <param>
-          <type>const char *</type>
-        </param>
-        <param>
-          <type>bool</type>
-          <declname>write</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Maps a file in memory.</para>
-<para>Loads a file into a block of memory from a path to the file. See also <ref refid="group__block_1gab1324798becb85cfb2a7354aed41cc5d" kindref="member">block_File()</ref>.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>write</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If true, request a read/write private mapping. If false, request a read-only potentially shared mapping. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="289" column="17" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" declline="289" declcolumn="17"/>
-      </memberdef>
-      <memberdef kind="function" id="group__block_1ga72f80606f95e6fbfef8ab72d06fb9573" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void block_Cleanup</definition>
-        <argsstring>(void *block)</argsstring>
-        <name>block_Cleanup</name>
-        <param>
-          <type>void *</type>
-          <declname>block</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="291" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="291" bodyend="294"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="define">
-      <memberdef kind="define" id="group__block_1ga82f33d56fbf301c610c2fe3a71f056cc" prot="public" static="no">
-        <name>BLOCK_FLAG_DISCONTINUITY</name>
-        <initializer>0x0001</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>The content doesn&apos;t follow the last block, possible some blocks in between have been lost </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="67" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="67" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga4ea1da5028885e857f9306a1657e721b" prot="public" static="no">
-        <name>BLOCK_FLAG_TYPE_I</name>
-        <initializer>0x0002</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Intra frame </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="69" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="69" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga27656a9cd59fa5d82a99fb5a4273bd7d" prot="public" static="no">
-        <name>BLOCK_FLAG_TYPE_P</name>
-        <initializer>0x0004</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Inter frame with backward reference only </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="71" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="71" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga55ed275938900370c869c1cebc19563a" prot="public" static="no">
-        <name>BLOCK_FLAG_TYPE_B</name>
-        <initializer>0x0008</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Inter frame with backward and forward reference </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="73" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="73" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gaa489eb15f0fc9d679f5a9a7baa4d8b32" prot="public" static="no">
-        <name>BLOCK_FLAG_TYPE_PB</name>
-        <initializer>0x0010</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>For inter frame when you don&apos;t know the real type </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="75" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="75" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga6b2f61be0305855aec568755ae821e54" prot="public" static="no">
-        <name>BLOCK_FLAG_HEADER</name>
-        <initializer>0x0020</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Warn that this block is a header one </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="77" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="77" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga472702509d67343c9d3f0f60cb5a1fc3" prot="public" static="no">
-        <name>BLOCK_FLAG_END_OF_SEQUENCE</name>
-        <initializer>0x0040</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block contains the last part of a sequence </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="79" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="79" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gadab445e19c449c99c3f581085a121321" prot="public" static="no">
-        <name>BLOCK_FLAG_CLOCK</name>
-        <initializer>0x0080</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block contains a clock reference </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="81" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="81" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga9cfec273cb4b3a450691a9b15a62aa1b" prot="public" static="no">
-        <name>BLOCK_FLAG_SCRAMBLED</name>
-        <initializer>0x0100</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block is scrambled </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="83" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="83" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gaa97962b8c5929d56e12440f08f61bfc4" prot="public" static="no">
-        <name>BLOCK_FLAG_PREROLL</name>
-        <initializer>0x0200</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block has to be decoded but not be displayed </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="85" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="85" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gaff637953fe9791ceb50500735ef26413" prot="public" static="no">
-        <name>BLOCK_FLAG_CORRUPTED</name>
-        <initializer>0x0400</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block is corrupted and/or there is data loss </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="87" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="87" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gafd724a2d943b3971bfaa7f030810200c" prot="public" static="no">
-        <name>BLOCK_FLAG_TOP_FIELD_FIRST</name>
-        <initializer>0x0800</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block contains an interlaced picture with top field stored first </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="89" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="89" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga42dc4d050d33648a95b2690fe1d6fddb" prot="public" static="no">
-        <name>BLOCK_FLAG_BOTTOM_FIELD_FIRST</name>
-        <initializer>0x1000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block contains an interlaced picture with bottom field stored first </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="91" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="91" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga75d80005e0e48330fc828ea17e34ef65" prot="public" static="no">
-        <name>BLOCK_FLAG_SINGLE_FIELD</name>
-        <initializer>0x2000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block contains a single field from interlaced picture. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="93" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="93" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gabe2b48876bd1c91380e655cff287e2a5" prot="public" static="no">
-        <name>BLOCK_FLAG_INTERLACED_MASK</name>
-        <initializer>    (<ref refid="group__block_1gafd724a2d943b3971bfaa7f030810200c" kindref="member">BLOCK_FLAG_TOP_FIELD_FIRST</ref>|<ref refid="group__block_1ga42dc4d050d33648a95b2690fe1d6fddb" kindref="member">BLOCK_FLAG_BOTTOM_FIELD_FIRST</ref>|<ref refid="group__block_1ga75d80005e0e48330fc828ea17e34ef65" kindref="member">BLOCK_FLAG_SINGLE_FIELD</ref>)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This block contains an interlaced picture </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="96" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="96" bodyend="97"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga9e399c8404d43b40b2803ffe43b2c762" prot="public" static="no">
-        <name>BLOCK_FLAG_TYPE_MASK</name>
-        <initializer>    (<ref refid="group__block_1ga4ea1da5028885e857f9306a1657e721b" kindref="member">BLOCK_FLAG_TYPE_I</ref>|<ref refid="group__block_1ga27656a9cd59fa5d82a99fb5a4273bd7d" kindref="member">BLOCK_FLAG_TYPE_P</ref>|<ref refid="group__block_1ga55ed275938900370c869c1cebc19563a" kindref="member">BLOCK_FLAG_TYPE_B</ref>|<ref refid="group__block_1gaa489eb15f0fc9d679f5a9a7baa4d8b32" kindref="member">BLOCK_FLAG_TYPE_PB</ref>)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="99" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="99" bodyend="100"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gad281e990d118543f1668384b1d68a7b8" prot="public" static="no">
-        <name>BLOCK_FLAG_CORE_PRIVATE_MASK</name>
-        <initializer>0x00ff0000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="103" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="103" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga5d18e7b2535494f31edc278ab88e9d69" prot="public" static="no">
-        <name>BLOCK_FLAG_CORE_PRIVATE_SHIFT</name>
-        <initializer>16</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="104" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="104" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gaf9ffc0d6f085537c9e0c74d7e26308d0" prot="public" static="no">
-        <name>BLOCK_FLAG_PRIVATE_MASK</name>
-        <initializer>0xff000000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="107" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="107" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1gac94ec086c9e47851b0b4b091aacf4209" prot="public" static="no">
-        <name>BLOCK_FLAG_PRIVATE_SHIFT</name>
-        <initializer>24</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="108" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="108" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__block_1ga9e55c76273c5b59ddaf1419f706e3e8c" prot="public" static="no">
-        <name>block_cleanup_push</name>
-        <param><defname>block</defname></param>
-        <initializer><ref refid="group__thread_1gaccd7ab1b9dbb86fe73ab02e2a0deccf4" kindref="member">vlc_cleanup_push</ref> (block_Cleanup, block)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" line="295" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_block.h" bodystart="295" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>Blocks of binary data.</para>
-<para><ref refid="structblock__t" kindref="compound">block_t</ref> is a generic structure to represent a binary blob within VLC. The primary goal of the structure is to avoid memory copying as data is passed around. It is notably used between the <ref refid="group__demux" kindref="compound">Demultiplexer</ref>, the packetizer (if present) and the <ref refid="group__decoder" kindref="compound">Decoder</ref>, and for audio, between the <ref refid="group__decoder" kindref="compound">Decoder</ref>, the audio filters, and the <ref refid="group__audio__output" kindref="compound">Audio output</ref>. </para>
-    </detaileddescription>
-  </compounddef>
+    </compounddef>
 </doxygen>

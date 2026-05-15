@@ -2,8 +2,11 @@
 
 #include "M_VideoComplexe.h"
 #include "M_ServeurTFTP.h"
+#include "M_ConfigReseau.h"
 
 #include <string>
+#include <vector>
+#include <map>
 
 using namespace std;
 
@@ -24,6 +27,7 @@ struct LecteurSpec {
 class M_SessionLecture {
 
     M_VideoComplexe instanceVideoComplexe; ///< Module de synthèse vidéo (FFmpeg).
+    M_ConfigReseau config; ///< Configuration réseau (ports, adresses, etc.).
 
     int* idLecteurs = nullptr;    ///< Tableau dynamique des identifiants (convertis).
     string* ipLecteurs = nullptr; ///< Tableau dynamique des adresses IP.
@@ -58,5 +62,14 @@ public:
     /**
      * @brief Prépare les tâches de transfert et lance le serveur TFTP pour l'envoi aux clients.
      */
-    void uploaderVideoComplexe();
+    void uploaderVideoComplexe() const;
+
+    /**
+         * @brief [UC4/UC3] Recherche les lecteurs sur le réseau avec une configuration spécifique.
+         * @param ipMulticast Adresse IP Multicast de découverte.
+         * @param portDecouverte Port d'envoi UDP pour la requête de recherche.
+         * @param portReponse Port de réception UDP local pour les réponses JSON.
+         * @return Un vecteur de dictionnaires (Clé -> Valeur) représentant chaque lecteur détecté.
+         */
+    vector<map<string, string>> rechercherLecteursComplets(const string& ipMulticast, int portDecouverte, int portReponse);
 };

@@ -4,10 +4,19 @@
     <compoundname>M_SessionLecture.h</compoundname>
     <includes refid="M__VideoComplexe_8h" local="yes">M_VideoComplexe.h</includes>
     <includes refid="M__ServeurTFTP_8h" local="yes">M_ServeurTFTP.h</includes>
+    <includes refid="M__ConfigReseau_8h" local="yes">M_ConfigReseau.h</includes>
     <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
     <includedby refid="C__LecteurPhysiqueLocal_8h" local="yes">/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h</includedby>
     <includedby refid="M__SessionLecture_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp</includedby>
     <incdepgraph>
+      <node id="9">
+        <label>M_ConfigReseau.h</label>
+        <link refid="M__ConfigReseau_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="4">
         <label>M_ServeurTFTP.h</label>
         <link refid="M__ServeurTFTP_8h_source"/>
@@ -29,7 +38,13 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -40,6 +55,9 @@
       </node>
       <node id="7">
         <label>arpa/inet.h</label>
+      </node>
+      <node id="10">
+        <label>map</label>
       </node>
       <node id="3">
         <label>string</label>
@@ -70,12 +88,6 @@
       <node id="3">
         <label>/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</label>
         <link refid="V__Master_8h_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>/home/loup/CLionProjects/AffichageSynchrone/src/main.cpp</label>
-        <link refid="main_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structLecteurSpec" prot="public">LecteurSpec</innerclass>
@@ -89,37 +101,43 @@
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;M_VideoComplexe.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;M_ServeurTFTP.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14" refid="structLecteurSpec" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref><sp/>{</highlight></codeline>
-<codeline lineno="15" refid="structLecteurSpec_1aca4f1c76fccb7dd6c9340c17e98fef2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec_1aca4f1c76fccb7dd6c9340c17e98fef2d" kindref="member">id</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="16" refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" kindref="member">ip</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="17" refid="structLecteurSpec_1a067e5e73e0146ea58957f86ccda17f19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec_1a067e5e73e0146ea58957f86ccda17f19" kindref="member">nbVideos</ref>;<sp/></highlight></codeline>
-<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="classM__SessionLecture" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" kindref="member">M_SessionLecture</ref><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__VideoComplexe" kindref="compound">M_VideoComplexe</ref><sp/><ref refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" kindref="member">instanceVideoComplexe</ref>;<sp/></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="29" refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight></codeline>
-<codeline lineno="30" refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="31" refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="37" refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" kindref="member">M_SessionLecture</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" kindref="member">~M_SessionLecture</ref>();</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" kindref="member">preparerSessionLecture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref>*<sp/>specLecteurs,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbLecteurs);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" kindref="member">genererVideoComplexe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>listeFichiersEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbFichiers);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1a4a47020ae51713573ce1a43baebddf9c" kindref="member">uploaderVideoComplexe</ref>();</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;M_ConfigReseau.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structLecteurSpec" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref><sp/>{</highlight></codeline>
+<codeline lineno="18" refid="structLecteurSpec_1aca4f1c76fccb7dd6c9340c17e98fef2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec_1aca4f1c76fccb7dd6c9340c17e98fef2d" kindref="member">id</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19" refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec_1a81c6ed59ffe28f51f95c686998a161a5" kindref="member">ip</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20" refid="structLecteurSpec_1a067e5e73e0146ea58957f86ccda17f19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec_1a067e5e73e0146ea58957f86ccda17f19" kindref="member">nbVideos</ref>;<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classM__SessionLecture" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" kindref="member">M_SessionLecture</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__VideoComplexe" kindref="compound">M_VideoComplexe</ref><sp/><ref refid="classM__SessionLecture_1a36fb18de0eacadf75e77e4720eb506f6" kindref="member">instanceVideoComplexe</ref>;<sp/></highlight></codeline>
+<codeline lineno="30" refid="classM__SessionLecture_1adce7228a71d6e462d89e1cb7d29be10b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ConfigReseau" kindref="compound">M_ConfigReseau</ref><sp/><ref refid="classM__SessionLecture_1adce7228a71d6e462d89e1cb7d29be10b" kindref="member">config</ref>;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="classM__SessionLecture_1a2c27be30cb633a6666c417a3c921a30a" kindref="member">idLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/><ref refid="classM__SessionLecture_1a26ae08ecff2763e94c7d18c9e583db39" kindref="member">ipLecteurs</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="34" refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="classM__SessionLecture_1a0a69c48875ffdadb2e9b70198b7bfd6a" kindref="member">nbVideos</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1afe8e2b1985e1386db4d4923546c44409" kindref="member">nbLecteursTotal</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41" refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1aab68e37de3f31f4e4702a58f78bf087c" kindref="member">M_SessionLecture</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture_1a33fc0bcbe1fc9c0c9794c7063f23727a" kindref="member">~M_SessionLecture</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1aeee9f48a70425da4647aa81969067300" kindref="member">preparerSessionLecture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structLecteurSpec" kindref="compound">LecteurSpec</ref>*<sp/>specLecteurs,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbLecteurs);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1ab294a73ec72bbdfcdf2eb410cf5476a6" kindref="member">genererVideoComplexe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">*<sp/>listeFichiersEntree,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbFichiers);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__SessionLecture_1a574e163482c28cd67df399257c13c5c7" kindref="member">uploaderVideoComplexe</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;map&lt;string,<sp/>string&gt;&gt;<sp/><ref refid="classM__SessionLecture_1af033912b39ff6934607f1c551f90e908" kindref="member">rechercherLecteursComplets</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>ipMulticast,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portDecouverte,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portReponse);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_SessionLecture.h"/>
   </compounddef>

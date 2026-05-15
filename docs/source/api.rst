@@ -29,8 +29,18 @@ Gestion de Session et Vidéo
     :protected-members:
     :private-members:
 
+.. doxygenclass:: M_ConfigReseau
+    :members:
+    :protected-members:
+    :private-members:
+
 Communication Réseau
 --------------------
+.. doxygenclass:: M_DecouverteReseau
+    :members:
+    :protected-members:
+    :private-members:
+
 .. doxygenclass:: M_ExpediteurUDP
     :members:
     :protected-members:
@@ -44,6 +54,13 @@ Communication Réseau
 Moteur de Lecture
 -----------------
 .. doxygenclass:: M_LecteurPhysique
+    :members:
+    :protected-members:
+    :private-members:
+
+Utilitaires
+-----------
+.. doxygenclass:: M_JsonUtil
     :members:
     :protected-members:
     :private-members:

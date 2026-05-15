@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="M__JsonUtil_8h" kind="file" language="C++">
+    <compoundname>M_JsonUtil.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">stdexcept</includes>
+    <includedby refid="M__JsonUtil_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_JsonUtil.cpp</includedby>
+    <includedby refid="M__LecteurPhysique_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_LecteurPhysique.cpp</includedby>
+    <includedby refid="M__SessionLecture_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_JsonUtil.h</label>
+        <link refid="M__JsonUtil_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classM__JsonUtil" prot="public">M_JsonUtil</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>==============================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>JsonUtil<sp/>V1<sp/>—<sp/>Serialiseur/parseur<sp/>JSON<sp/>RFC<sp/>8259<sp/>pour<sp/>objets<sp/>plats.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Gere<sp/>:<sp/>toutes<sp/>les<sp/>sequences<sp/>d&apos;echappement,<sp/>les<sp/>valeurs<sp/>numeriques</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>et<sp/>booleennes<sp/>(converties<sp/>en<sp/>string),<sp/>les<sp/>espaces<sp/>ignores.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>API<sp/>identique<sp/>a<sp/>V0<sp/>:<sp/>aucun<sp/>changement<sp/>cote<sp/>appelant.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Pour<sp/>une<sp/>utilisation<sp/>avancee<sp/>(imbrication,<sp/>tableaux),<sp/>integrer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>nlohmann/json<sp/>(single_include/nlohmann/json.hpp)<sp/>et<sp/>rediriger<sp/>ici.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>==============================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classM__JsonUtil" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classM__JsonUtil" kindref="compound">M_JsonUtil</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>construire(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>champs);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>parser(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>json);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>echapperChaine(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>s);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>lireChaine(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>json,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>pos);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>lireValeurBrute(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>json,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>pos);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sauterEspaces(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>json,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>pos);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_JsonUtil.h"/>
+  </compounddef>
+</doxygen>

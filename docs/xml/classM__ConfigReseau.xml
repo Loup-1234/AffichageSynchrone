@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="classM__ConfigReseau" kind="class" language="C++" prot="public">
+    <compoundname>M_ConfigReseau</compoundname>
+    <includes refid="M__ConfigReseau_8h" local="no">M_ConfigReseau.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classM__ConfigReseau_1a0aa4e4c78acd90af72b045b6368dc59d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string M_ConfigReseau::m_nom</definition>
+        <argsstring></argsstring>
+        <name>m_nom</name>
+        <qualifiedname>M_ConfigReseau::m_nom</qualifiedname>
+        <briefdescription>
+<para>Nom identifiant la configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="59" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__ConfigReseau_1ae97fce12207653139d1874685a11178e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string M_ConfigReseau::m_adresseMulticast</definition>
+        <argsstring></argsstring>
+        <name>m_adresseMulticast</name>
+        <qualifiedname>M_ConfigReseau::m_adresseMulticast</qualifiedname>
+        <briefdescription>
+<para>Adresse IP Multicast (ex: 239.0.0.1). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="60" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__ConfigReseau_1a905e913b8f3d71706a2efa7910f54a28" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int M_ConfigReseau::m_portMulticast</definition>
+        <argsstring></argsstring>
+        <name>m_portMulticast</name>
+        <qualifiedname>M_ConfigReseau::m_portMulticast</qualifiedname>
+        <briefdescription>
+<para>Port de destination pour le Multicast. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="61" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classM__ConfigReseau_1a3d3c0a93a5fff0d9e0ebd3180fee3713" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int M_ConfigReseau::m_portReponse</definition>
+        <argsstring></argsstring>
+        <name>m_portReponse</name>
+        <qualifiedname>M_ConfigReseau::m_portReponse</qualifiedname>
+        <briefdescription>
+<para>Port d&apos;écoute local pour l&apos;Unicast entrant. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="62" column="17" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classM__ConfigReseau_1a698e1142d6ca56d4264ea45b383bd171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_ConfigReseau::M_ConfigReseau</definition>
+        <argsstring>()</argsstring>
+        <name>M_ConfigReseau</name>
+        <qualifiedname>M_ConfigReseau::M_ConfigReseau</qualifiedname>
+        <briefdescription>
+<para>Constructeur par défaut (Valeurs de secours). Utilise les valeurs : &quot;ConfigDefaut&quot;, IP &quot;239.0.0.1&quot;, Port Multicast 5000, Port Réponse 5001. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>À n&apos;utiliser que si l&apos;injection depuis le main() échoue ou pour les tests. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="18" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="4" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1af9bde0437fb498dc371cbf20a8053107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>M_ConfigReseau::M_ConfigReseau</definition>
+        <argsstring>(const std::string &amp;nom, const std::string &amp;adresseMulticast, int portMulticast, int portReponse)</argsstring>
+        <name>M_ConfigReseau</name>
+        <qualifiedname>M_ConfigReseau::M_ConfigReseau</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nom</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>adresseMulticast</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portMulticast</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portReponse</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur complet (Recommandé pour l&apos;injection de dépendances). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nom identifiant cette configuration (ex: &quot;SessionActuelle&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>adresseMulticast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adresse IP de multidiffusion cible (ex: &quot;239.0.0.1&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portMulticast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port d&apos;envoi pour la requête de découverte (ex: 5000). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portReponse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port d&apos;écoute pour les réponses des lecteurs distants (ex: 5001). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="27" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="12" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1a08b6a827c85df9a09b3fcdcfeee3d06a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; M_ConfigReseau::getNom</definition>
+        <argsstring>() const</argsstring>
+        <name>getNom</name>
+        <qualifiedname>M_ConfigReseau::getNom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Le nom de la configuration. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="37" column="23" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1aca43186da679bc6b05f9c3345f7e54dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; M_ConfigReseau::getAdresseMulticast</definition>
+        <argsstring>() const</argsstring>
+        <name>getAdresseMulticast</name>
+        <qualifiedname>M_ConfigReseau::getAdresseMulticast</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>L&apos;adresse IP Multicast configurée. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="39" column="23" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1a6b49c3e988846a13afb8adae75140aee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int M_ConfigReseau::getPortMulticast</definition>
+        <argsstring>() const</argsstring>
+        <name>getPortMulticast</name>
+        <qualifiedname>M_ConfigReseau::getPortMulticast</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Le port utilisé pour envoyer la découverte. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="41" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1ac7416d609bcdf934b37dbe8f833931a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int M_ConfigReseau::getPortReponse</definition>
+        <argsstring>() const</argsstring>
+        <name>getPortReponse</name>
+        <qualifiedname>M_ConfigReseau::getPortReponse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Le port utilisé pour écouter les réponses JSON. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="43" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1aab695a15c58d25fe7a64b0ac794e3f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ConfigReseau::setNom</definition>
+        <argsstring>(const std::string &amp;nom)</argsstring>
+        <name>setNom</name>
+        <qualifiedname>M_ConfigReseau::setNom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nouveau nom de configuration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="50" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1a46e8a7ba6c251d199cfb9a47bc9c7f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ConfigReseau::setAdresseMulticast</definition>
+        <argsstring>(const std::string &amp;adresseMulticast)</argsstring>
+        <name>setAdresseMulticast</name>
+        <qualifiedname>M_ConfigReseau::setAdresseMulticast</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>adresseMulticast</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>adresseMulticast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La nouvelle adresse IP Multicast. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="52" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1ae8c1ed98c5edefdba9b5d286945241e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ConfigReseau::setPortMulticast</definition>
+        <argsstring>(int portMulticast)</argsstring>
+        <name>setPortMulticast</name>
+        <qualifiedname>M_ConfigReseau::setPortMulticast</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>portMulticast</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>portMulticast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nouveau port d&apos;envoi. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="54" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classM__ConfigReseau_1a82ee0cb837aab370ad3f56bd4e582cbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void M_ConfigReseau::setPortReponse</definition>
+        <argsstring>(int portReponse)</argsstring>
+        <name>setPortReponse</name>
+        <qualifiedname>M_ConfigReseau::setPortReponse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>portReponse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>portReponse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Le nouveau port de réception. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="56" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Représente une configuration réseau du système SG01.2. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Contient les paramètres nécessaires à la découverte multicast et à l&apos;écoute des réponses.</para>
+</listitem><listitem><para>Conçue pour être instanciée dynamiquement via les paramètres du main() ou relue depuis la BDD (UC5). </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>M_ConfigReseau</label>
+        <link refid="classM__ConfigReseau"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" line="11" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_ConfigReseau.h" bodystart="11" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classM__ConfigReseau_1aca43186da679bc6b05f9c3345f7e54dc" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>getAdresseMulticast</name></member>
+      <member refid="classM__ConfigReseau_1a08b6a827c85df9a09b3fcdcfeee3d06a" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>getNom</name></member>
+      <member refid="classM__ConfigReseau_1a6b49c3e988846a13afb8adae75140aee" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>getPortMulticast</name></member>
+      <member refid="classM__ConfigReseau_1ac7416d609bcdf934b37dbe8f833931a4" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>getPortReponse</name></member>
+      <member refid="classM__ConfigReseau_1ae97fce12207653139d1874685a11178e" prot="private" virt="non-virtual"><scope>M_ConfigReseau</scope><name>m_adresseMulticast</name></member>
+      <member refid="classM__ConfigReseau_1a698e1142d6ca56d4264ea45b383bd171" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>M_ConfigReseau</name></member>
+      <member refid="classM__ConfigReseau_1af9bde0437fb498dc371cbf20a8053107" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>M_ConfigReseau</name></member>
+      <member refid="classM__ConfigReseau_1a0aa4e4c78acd90af72b045b6368dc59d" prot="private" virt="non-virtual"><scope>M_ConfigReseau</scope><name>m_nom</name></member>
+      <member refid="classM__ConfigReseau_1a905e913b8f3d71706a2efa7910f54a28" prot="private" virt="non-virtual"><scope>M_ConfigReseau</scope><name>m_portMulticast</name></member>
+      <member refid="classM__ConfigReseau_1a3d3c0a93a5fff0d9e0ebd3180fee3713" prot="private" virt="non-virtual"><scope>M_ConfigReseau</scope><name>m_portReponse</name></member>
+      <member refid="classM__ConfigReseau_1a46e8a7ba6c251d199cfb9a47bc9c7f96" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>setAdresseMulticast</name></member>
+      <member refid="classM__ConfigReseau_1aab695a15c58d25fe7a64b0ac794e3f37" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>setNom</name></member>
+      <member refid="classM__ConfigReseau_1ae8c1ed98c5edefdba9b5d286945241e7" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>setPortMulticast</name></member>
+      <member refid="classM__ConfigReseau_1a82ee0cb837aab370ad3f56bd4e582cbc" prot="public" virt="non-virtual"><scope>M_ConfigReseau</scope><name>setPortReponse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

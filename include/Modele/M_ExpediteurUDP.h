@@ -35,8 +35,9 @@ enum class Expediteur : uint8_t {
  * @brief Définit la nature du message UDP.
  */
 enum class TypeCommande : uint8_t {
-    ORDRE = 0,     ///< Commande d'action immédiate.
-    CONNECTION = 1 ///< Message lié à l'établissement de la connexion.
+    ORDRE = 0,      ///< Commande d'action immédiate.
+    CONNECTION = 1, ///< Message lié à l'établissement de la connexion.
+    DECOUVERTE = 2  ///< Message pour la découverte réseau (UC4).
 };
 
 /**
@@ -49,15 +50,16 @@ enum class Action : uint8_t {
     STOP = 2,
     VOLUME = 3,
     PROGRESSION = 4,
-    VITESSE = 5
+    VITESSE = 5,
+    RECHERCHE = 6   ///< Action demandant aux lecteurs de s'identifier.
 };
 
 #pragma pack(push, 1)
 /**
  * @struct PaquetControle
  * @brief Structure de données compacte envoyée sur le réseau.
- * * L'alignement est forcé à 1 octet pour garantir que la structure
- * a la même taille sur toutes les plateformes.
+ * L'alignement est forcé à 1 octet pour garantir que la structure
+ * a la même taille sur toutes les plateformes (7 octets au total).
  */
 struct PaquetControle {
     Expediteur exp;    ///< Qui envoie la commande.
@@ -73,36 +75,13 @@ struct PaquetControle {
  */
 class M_ExpediteurUDP {
 public:
-    /**
-     * @brief Initialise le socket et prépare l'adresse de destination.
-     * @param ip Adresse IP de destination (souvent une adresse de Multicast ou Broadcast).
-     * @param port Port de destination.
-     */
     M_ExpediteurUDP(const std::string &ip, int port);
-
-    /**
-     * @brief Ferme le socket et nettoie les ressources réseau.
-     */
     ~M_ExpediteurUDP();
 
-    /**
-     * @brief Envoie des données brutes via le socket UDP.
-     * @param donnees Pointeur vers les données à envoyer.
-     * @param taille Taille des données en octets.
-     * @return true si l'envoi a réussi, false sinon.
-     */
     bool envoyer(const void *donnees, int taille);
-
-    /**
-     * @brief Encapsule et transmet une commande de contrôle.
-     * @param exp Origine de la commande.
-     * @param type Nature du message.
-     * @param action Commande à exécuter.
-     * @param valeur Donnée numérique associée à l'action.
-     */
     void transmettreCommande(Expediteur exp, TypeCommande type, Action action, float valeur);
 
 private:
-    SocketType descripteurSocket = INVALID_SOCKET; ///< Identifiant système du socket.
-    sockaddr_in adresseDest{};                     ///< Structure d'adresse réseau de destination.
+    SocketType descripteurSocket = INVALID_SOCKET;
+    sockaddr_in adresseDest{};
 };

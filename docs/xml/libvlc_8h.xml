@@ -1,284 +1,2053 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="libvlc_8h" kind="file" language="C++">
-    <compoundname>libvlc.h</compoundname>
-    <includes local="no">stdio.h</includes>
-    <includes local="no">stdarg.h</includes>
-    <includes local="no">stdint.h</includes>
-    <includedby refid="vlc_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h</includedby>
-    <incdepgraph>
-      <node id="1">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/libvlc.h</label>
-        <link refid="libvlc_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>stdarg.h</label>
-      </node>
-      <node id="4">
-        <label>stdint.h</label>
-      </node>
-      <node id="2">
-        <label>stdio.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="1">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/libvlc.h</label>
-        <link refid="libvlc_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h</label>
-        <link refid="vlc_8h"/>
-      </node>
-    </invincdepgraph>
-    <innerclass refid="structlibvlc__module__description__t" prot="public">libvlc_module_description_t</innerclass>
-    <sectiondef kind="define">
-      <member refid="group__libvlc_1gaee48476813eb6eaa37b22df85099d76e" kind="define"><name>LIBVLC_API</name></member>
-      <member refid="group__libvlc_1gae6cf14d4b7321958724ff194ec84884f" kind="define"><name>LIBVLC_DEPRECATED</name></member>
-    </sectiondef>
-    <sectiondef kind="enum">
-      <member refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" kind="enum"><name>libvlc_log_level</name></member>
-    </sectiondef>
-    <sectiondef kind="typedef">
-      <member refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kind="typedef"><name>libvlc_instance_t</name></member>
-      <member refid="group__libvlc__core_1gac790344dd4f83d3c81562e0251169890" kind="typedef"><name>libvlc_time_t</name></member>
-      <member refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kind="typedef"><name>libvlc_event_manager_t</name></member>
-      <member refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kind="typedef"><name>libvlc_event_type_t</name></member>
-      <member refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kind="typedef"><name>libvlc_callback_t</name></member>
-      <member refid="group__libvlc__log_1ga19466271b245f5b8ebfaf8b35e7ed11c" kind="typedef"><name>libvlc_log_t</name></member>
-      <member refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kind="typedef"><name>libvlc_log_cb</name></member>
-      <member refid="group__libvlc__core_1ga301b5d0f5c23a39df6f6cfbd4dc9e32d" kind="typedef"><name>libvlc_module_description_t</name></member>
-    </sectiondef>
-    <sectiondef kind="func">
-      <member refid="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" kind="function"><name>libvlc_errmsg</name></member>
-      <member refid="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" kind="function"><name>libvlc_clearerr</name></member>
-      <member refid="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" kind="function"><name>libvlc_vprinterr</name></member>
-      <member refid="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" kind="function"><name>libvlc_printerr</name></member>
-      <member refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kind="function"><name>libvlc_new</name></member>
-      <member refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" kind="function"><name>libvlc_release</name></member>
-      <member refid="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" kind="function"><name>libvlc_retain</name></member>
-      <member refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" kind="function"><name>libvlc_add_intf</name></member>
-      <member refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" kind="function"><name>libvlc_set_exit_handler</name></member>
-      <member refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" kind="function"><name>libvlc_set_user_agent</name></member>
-      <member refid="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" kind="function"><name>libvlc_set_app_id</name></member>
-      <member refid="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" kind="function"><name>libvlc_get_version</name></member>
-      <member refid="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" kind="function"><name>libvlc_get_compiler</name></member>
-      <member refid="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" kind="function"><name>libvlc_get_changeset</name></member>
-      <member refid="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" kind="function"><name>libvlc_free</name></member>
-      <member refid="group__libvlc__event_1gaed9956a22efad4f466ffd4ec8ab45926" kind="function"><name>libvlc_event_attach</name></member>
-      <member refid="group__libvlc__event_1ga25b19849dc46d9a57be6815920a17e16" kind="function"><name>libvlc_event_detach</name></member>
-      <member refid="group__libvlc__event_1ga6797e9605ebdb89452ff744a022e5755" kind="function"><name>libvlc_event_type_name</name></member>
-      <member refid="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" kind="function"><name>libvlc_log_get_context</name></member>
-      <member refid="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" kind="function"><name>libvlc_log_get_object</name></member>
-      <member refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" kind="function"><name>libvlc_log_unset</name></member>
-      <member refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" kind="function"><name>libvlc_log_set</name></member>
-      <member refid="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" kind="function"><name>libvlc_log_set_file</name></member>
-      <member refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kind="function"><name>libvlc_module_description_list_release</name></member>
-      <member refid="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" kind="function"><name>libvlc_audio_filter_list_get</name></member>
-      <member refid="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" kind="function"><name>libvlc_video_filter_list_get</name></member>
-      <member refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" kind="function"><name>libvlc_clock</name></member>
-      <member refid="group__libvlc__clock_1gaf7fb616bf05e66c6ba879f5664d9deb7" kind="function"><name>libvlc_delay</name></member>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>LibVLC core external API </para>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>libvlc.h:<sp/><sp/>libvlc<sp/>external<sp/>API</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998-2009<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Clément<sp/>Stenac<sp/>&lt;zorglub@videolan.org&gt;</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Jean-Paul<sp/>Saman<sp/>&lt;jpsaman@videolan.org&gt;</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pierre<sp/>d&apos;Herbemont<sp/>&lt;pdherbemont@videolan.org&gt;</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
-<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
-<codeline lineno="24"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_LIBVLC_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_LIBVLC_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(_WIN32)<sp/>&amp;&amp;<sp/>defined<sp/>(DLL_EXPORT)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_API<sp/>__declspec(dllexport)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined<sp/>(__GNUC__)<sp/>&amp;&amp;<sp/>(__GNUC__<sp/>&gt;=<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_API<sp/>__attribute__((visibility(&quot;default&quot;)))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_API</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__LIBVLC__</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Avoid<sp/>unhelpful<sp/>warnings<sp/>from<sp/>libvlc<sp/>with<sp/>our<sp/>deprecated<sp/>APIs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>LIBVLC_DEPRECATED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>\</highlight></codeline>
-<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(__GNUC__<sp/>&gt;<sp/>3<sp/>||<sp/>__GNUC__<sp/>==<sp/>3<sp/>&amp;&amp;<sp/>__GNUC_MINOR__<sp/>&gt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_DEPRECATED<sp/>__attribute__((deprecated))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_DEPRECATED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref>;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int64_t<sp/>libvlc_time_t;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93" refid="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" kindref="member">libvlc_errmsg</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100" refid="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" kindref="member">libvlc_clearerr</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109" refid="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" kindref="member">libvlc_vprinterr</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>ap);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118" refid="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" kindref="member">libvlc_printerr</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal">LIBVLC_API<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*</highlight></codeline>
-<codeline lineno="184" refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" refkind="member"><highlight class="normal"><ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kindref="member">libvlc_new</ref>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc<sp/>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*argv<sp/>);</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192" refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" kindref="member">libvlc_release</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance<sp/>);</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight></codeline>
-<codeline lineno="200" refid="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" kindref="member">libvlc_retain</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance<sp/>);</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="210" refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" kindref="member">libvlc_add_intf</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"></highlight></codeline>
-<codeline lineno="229"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="230" refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" kindref="member">libvlc_set_exit_handler</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance,</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*cb)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*opaque<sp/>);</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"></highlight></codeline>
-<codeline lineno="242"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="243" refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" kindref="member">libvlc_set_user_agent</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance,</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*http<sp/>);</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"></highlight></codeline>
-<codeline lineno="256"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="257" refid="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" kindref="member">libvlc_set_app_id</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*version,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*icon<sp/>);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"></highlight></codeline>
-<codeline lineno="267" refid="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" kindref="member">libvlc_get_version</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"></highlight></codeline>
-<codeline lineno="276" refid="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" kindref="member">libvlc_get_compiler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"></highlight></codeline>
-<codeline lineno="285" refid="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" kindref="member">libvlc_get_changeset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"></highlight></codeline>
-<codeline lineno="294" refid="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" kindref="member">libvlc_free</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ptr<sp/>);</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"></highlight></codeline>
-<codeline lineno="306"><highlight class="normal"></highlight></codeline>
-<codeline lineno="311" refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref><sp/><ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref>;</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"></highlight></codeline>
-<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibvlc__event__t" kindref="compound">libvlc_event_t</ref>;</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"></highlight></codeline>
-<codeline lineno="318" refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">libvlc_event_type_t</ref>;</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"></highlight></codeline>
-<codeline lineno="324" refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(<sp/>*<ref refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kindref="member">libvlc_callback_t</ref><sp/>)(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibvlc__event__t" kindref="compound">libvlc_event_t</ref><sp/>*p_event,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_data<sp/>);</highlight></codeline>
-<codeline lineno="325"><highlight class="normal"></highlight></codeline>
-<codeline lineno="337" refid="group__libvlc__event_1gaed9956a22efad4f466ffd4ec8ab45926" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__event_1gaed9956a22efad4f466ffd4ec8ab45926" kindref="member">libvlc_event_attach</ref>(<sp/><ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref><sp/>*p_event_manager,</highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">libvlc_event_type_t</ref><sp/>i_event_type,</highlight></codeline>
-<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kindref="member">libvlc_callback_t</ref><sp/>f_callback,</highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*user_data<sp/>);</highlight></codeline>
-<codeline lineno="341"><highlight class="normal"></highlight></codeline>
-<codeline lineno="350" refid="group__libvlc__event_1ga25b19849dc46d9a57be6815920a17e16" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__event_1ga25b19849dc46d9a57be6815920a17e16" kindref="member">libvlc_event_detach</ref>(<sp/><ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">libvlc_event_manager_t</ref><sp/>*p_event_manager,</highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">libvlc_event_type_t</ref><sp/>i_event_type,</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kindref="member">libvlc_callback_t</ref><sp/>f_callback,</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_user_data<sp/>);</highlight></codeline>
-<codeline lineno="354"><highlight class="normal"></highlight></codeline>
-<codeline lineno="360" refid="group__libvlc__event_1ga6797e9605ebdb89452ff744a022e5755" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__libvlc__event_1ga6797e9605ebdb89452ff744a022e5755" kindref="member">libvlc_event_type_name</ref>(<sp/><ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">libvlc_event_type_t</ref><sp/>event_type<sp/>);</highlight></codeline>
-<codeline lineno="361"><highlight class="normal"></highlight></codeline>
-<codeline lineno="363"><highlight class="normal"></highlight></codeline>
-<codeline lineno="369"><highlight class="normal"></highlight></codeline>
-<codeline lineno="374" refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" kindref="member">libvlc_log_level</ref></highlight></codeline>
-<codeline lineno="375"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="376" refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaf9c82a86ac07470ff2bce574a37c7fd8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaf9c82a86ac07470ff2bce574a37c7fd8" kindref="member">LIBVLC_DEBUG</ref>=0,<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="377" refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaadba41359b9572613c9aad1f8d7dcadf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaadba41359b9572613c9aad1f8d7dcadf" kindref="member">LIBVLC_NOTICE</ref>=2,<sp/><sp/></highlight></codeline>
-<codeline lineno="378" refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda808a15b1ed05efe7fe021c84f4d01d08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda808a15b1ed05efe7fe021c84f4d01d08" kindref="member">LIBVLC_WARNING</ref>=3,<sp/></highlight></codeline>
-<codeline lineno="379" refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda53be6dc6f7aa8d745361db18f1075d6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda53be6dc6f7aa8d745361db18f1075d6f" kindref="member">LIBVLC_ERROR</ref>=4<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="380"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="381"><highlight class="normal"></highlight></codeline>
-<codeline lineno="382"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__log__t" kindref="compound">vlc_log_t</ref><sp/>libvlc_log_t;</highlight></codeline>
-<codeline lineno="383"><highlight class="normal"></highlight></codeline>
-<codeline lineno="404" refid="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" kindref="member">libvlc_log_get_context</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>libvlc_log_t<sp/>*ctx,</highlight></codeline>
-<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**module,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<ref refid="structvlc__log__t_1acffced16e38badb0e5655337f189602a" kindref="member">file</ref>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*<ref refid="structvlc__log__t_1a040da9015ea3554dd2d3e02419f0f2ac" kindref="member">line</ref>);</highlight></codeline>
-<codeline lineno="406"><highlight class="normal"></highlight></codeline>
-<codeline lineno="432" refid="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" kindref="member">libvlc_log_get_object</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>libvlc_log_t<sp/>*ctx,</highlight></codeline>
-<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**header,<sp/>uintptr_t<sp/>*</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="434"><highlight class="normal"></highlight></codeline>
-<codeline lineno="447" refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">libvlc_log_cb</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>libvlc_log_t<sp/>*ctx,</highlight></codeline>
-<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>args);</highlight></codeline>
-<codeline lineno="449"><highlight class="normal"></highlight></codeline>
-<codeline lineno="463" refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" kindref="member">libvlc_log_unset</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance<sp/>);</highlight></codeline>
-<codeline lineno="464"><highlight class="normal"></highlight></codeline>
-<codeline lineno="482" refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" kindref="member">libvlc_log_set</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance,</highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">libvlc_log_cb</ref><sp/>cb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data<sp/>);</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"></highlight></codeline>
-<codeline lineno="485"><highlight class="normal"></highlight></codeline>
-<codeline lineno="493" refid="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" refkind="member"><highlight class="normal">LIBVLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" kindref="member">libvlc_log_set_file</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance,<sp/>FILE<sp/>*stream<sp/>);</highlight></codeline>
-<codeline lineno="494"><highlight class="normal"></highlight></codeline>
-<codeline lineno="496"><highlight class="normal"></highlight></codeline>
-<codeline lineno="500" refid="structlibvlc__module__description__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref></highlight></codeline>
-<codeline lineno="501"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_name;</highlight></codeline>
-<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_shortname;</highlight></codeline>
-<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_longname;</highlight></codeline>
-<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_help;</highlight></codeline>
-<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref><sp/>*p_next;</highlight></codeline>
-<codeline lineno="507" refid="group__libvlc__core_1ga301b5d0f5c23a39df6f6cfbd4dc9e32d" refkind="member"><highlight class="normal">}<sp/><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref>;</highlight></codeline>
-<codeline lineno="508"><highlight class="normal"></highlight></codeline>
-<codeline lineno="514"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="515" refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kindref="member">libvlc_module_description_list_release</ref>(<sp/><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref><sp/>*p_list<sp/>);</highlight></codeline>
-<codeline lineno="516"><highlight class="normal"></highlight></codeline>
-<codeline lineno="528"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="529" refid="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" refkind="member"><highlight class="normal"><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref><sp/>*<ref refid="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" kindref="member">libvlc_audio_filter_list_get</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance<sp/>);</highlight></codeline>
-<codeline lineno="530"><highlight class="normal"></highlight></codeline>
-<codeline lineno="542"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="543" refid="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" refkind="member"><highlight class="normal"><ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t</ref><sp/>*<ref refid="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" kindref="member">libvlc_video_filter_list_get</ref>(<sp/><ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">libvlc_instance_t</ref><sp/>*p_instance<sp/>);</highlight></codeline>
-<codeline lineno="544"><highlight class="normal"></highlight></codeline>
-<codeline lineno="546"><highlight class="normal"></highlight></codeline>
-<codeline lineno="551"><highlight class="normal"></highlight></codeline>
-<codeline lineno="560"><highlight class="normal">LIBVLC_API</highlight></codeline>
-<codeline lineno="561" refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" refkind="member"><highlight class="normal">int64_t<sp/><ref refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" kindref="member">libvlc_clock</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="562"><highlight class="normal"></highlight></codeline>
-<codeline lineno="569"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>int64_t<sp/>libvlc_delay(int64_t<sp/>pts)</highlight></codeline>
-<codeline lineno="570"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pts<sp/>-<sp/><ref refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" kindref="member">libvlc_clock</ref>();</highlight></codeline>
-<codeline lineno="572"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="573"><highlight class="normal"></highlight></codeline>
-<codeline lineno="575"><highlight class="normal"></highlight></codeline>
-<codeline lineno="576"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="577"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="578"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="579"><highlight class="normal"></highlight></codeline>
-<codeline lineno="580"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="preprocessor"></highlight></codeline>
-    </programlisting>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/libvlc.h"/>
-  </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="libvlc_8h" kind="file" language="C++">
+        <compoundname>libvlc.h</compoundname>
+        <includes local="no">stdio.h</includes>
+        <includes local="no">stdarg.h</includes>
+        <includes local="no">stdint.h</includes>
+        <includedby refid="vlc_8h" local="no">
+            C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h
+        </includedby>
+        <incdepgraph>
+            <node id="1">
+                <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/libvlc.h
+                </label>
+                <link refid="libvlc_8h"/>
+                <childnode refid="2" relation="include">
+                </childnode>
+                <childnode refid="3" relation="include">
+                </childnode>
+                <childnode refid="4" relation="include">
+                </childnode>
+            </node>
+            <node id="3">
+                <label>stdarg.h</label>
+            </node>
+            <node id="4">
+                <label>stdint.h</label>
+            </node>
+            <node id="2">
+                <label>stdio.h</label>
+            </node>
+        </incdepgraph>
+        <invincdepgraph>
+            <node id="1">
+                <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/libvlc.h
+                </label>
+                <link refid="libvlc_8h"/>
+                <childnode refid="2" relation="include">
+                </childnode>
+            </node>
+            <node id="2">
+                <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/vlc.h
+                </label>
+                <link refid="vlc_8h"/>
+            </node>
+        </invincdepgraph>
+        <innerclass refid="structlibvlc__module__description__t" prot="public">libvlc_module_description_t</innerclass>
+        <sectiondef kind="define">
+            <member refid="group__libvlc_1gaee48476813eb6eaa37b22df85099d76e" kind="define">
+                <name>LIBVLC_API</name>
+            </member>
+            <member refid="group__libvlc_1gae6cf14d4b7321958724ff194ec84884f" kind="define">
+                <name>LIBVLC_DEPRECATED</name>
+            </member>
+        </sectiondef>
+        <sectiondef kind="enum">
+            <member refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" kind="enum">
+                <name>libvlc_log_level</name>
+            </member>
+        </sectiondef>
+        <sectiondef kind="typedef">
+            <member refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kind="typedef">
+                <name>libvlc_instance_t</name>
+            </member>
+            <member refid="group__libvlc__core_1gac790344dd4f83d3c81562e0251169890" kind="typedef">
+                <name>libvlc_time_t</name>
+            </member>
+            <member refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kind="typedef">
+                <name>libvlc_event_manager_t</name>
+            </member>
+            <member refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kind="typedef">
+                <name>libvlc_event_type_t</name>
+            </member>
+            <member refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kind="typedef">
+                <name>libvlc_callback_t</name>
+            </member>
+            <member refid="group__libvlc__log_1ga19466271b245f5b8ebfaf8b35e7ed11c" kind="typedef">
+                <name>libvlc_log_t</name>
+            </member>
+            <member refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kind="typedef">
+                <name>libvlc_log_cb</name>
+            </member>
+            <member refid="group__libvlc__core_1ga301b5d0f5c23a39df6f6cfbd4dc9e32d" kind="typedef">
+                <name>libvlc_module_description_t</name>
+            </member>
+        </sectiondef>
+        <sectiondef kind="func">
+            <member refid="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" kind="function">
+                <name>libvlc_errmsg</name>
+            </member>
+            <member refid="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" kind="function">
+                <name>libvlc_clearerr</name>
+            </member>
+            <member refid="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" kind="function">
+                <name>libvlc_vprinterr</name>
+            </member>
+            <member refid="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" kind="function">
+                <name>libvlc_printerr</name>
+            </member>
+            <member refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" kind="function">
+                <name>libvlc_new</name>
+            </member>
+            <member refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" kind="function">
+                <name>libvlc_release</name>
+            </member>
+            <member refid="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" kind="function">
+                <name>libvlc_retain</name>
+            </member>
+            <member refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" kind="function">
+                <name>libvlc_add_intf</name>
+            </member>
+            <member refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" kind="function">
+                <name>libvlc_set_exit_handler</name>
+            </member>
+            <member refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" kind="function">
+                <name>libvlc_set_user_agent</name>
+            </member>
+            <member refid="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" kind="function">
+                <name>libvlc_set_app_id</name>
+            </member>
+            <member refid="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" kind="function">
+                <name>libvlc_get_version</name>
+            </member>
+            <member refid="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" kind="function">
+                <name>libvlc_get_compiler</name>
+            </member>
+            <member refid="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" kind="function">
+                <name>libvlc_get_changeset</name>
+            </member>
+            <member refid="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" kind="function">
+                <name>libvlc_free</name>
+            </member>
+            <member refid="group__libvlc__event_1gaed9956a22efad4f466ffd4ec8ab45926" kind="function">
+                <name>libvlc_event_attach</name>
+            </member>
+            <member refid="group__libvlc__event_1ga25b19849dc46d9a57be6815920a17e16" kind="function">
+                <name>libvlc_event_detach</name>
+            </member>
+            <member refid="group__libvlc__event_1ga6797e9605ebdb89452ff744a022e5755" kind="function">
+                <name>libvlc_event_type_name</name>
+            </member>
+            <member refid="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" kind="function">
+                <name>libvlc_log_get_context</name>
+            </member>
+            <member refid="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" kind="function">
+                <name>libvlc_log_get_object</name>
+            </member>
+            <member refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" kind="function">
+                <name>libvlc_log_unset</name>
+            </member>
+            <member refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" kind="function">
+                <name>libvlc_log_set</name>
+            </member>
+            <member refid="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" kind="function">
+                <name>libvlc_log_set_file</name>
+            </member>
+            <member refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kind="function">
+                <name>libvlc_module_description_list_release</name>
+            </member>
+            <member refid="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" kind="function">
+                <name>libvlc_audio_filter_list_get</name>
+            </member>
+            <member refid="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" kind="function">
+                <name>libvlc_video_filter_list_get</name>
+            </member>
+            <member refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" kind="function">
+                <name>libvlc_clock</name>
+            </member>
+            <member refid="group__libvlc__clock_1gaf7fb616bf05e66c6ba879f5664d9deb7" kind="function">
+                <name>libvlc_delay</name>
+            </member>
+        </sectiondef>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+            <para>LibVLC core external API</para>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">
+                    /*****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>libvlc.h:
+                    <sp/>
+                    <sp/>libvlc<sp/>external<sp/>API
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998-2009<sp/>VLC<sp/>authors<sp/>and<sp/>
+                    VideoLAN
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*<sp/>$Id$
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*<sp/>Authors:<sp/>Clément<sp/>Stenac<sp/>&lt;zorglub@videolan.org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>Jean-Paul<sp/>Saman<sp/>&lt;jpsaman@videolan.org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>Pierre<sp/>d&apos;Herbemont<sp/>&lt;pdherbemont@videolan.org&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can
+                    <sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>
+                    General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version
+                    <sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope
+                    <sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.<sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more
+                    <sp/>details.
+                </highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write
+                    <sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,
+                </highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>
+                    Boston<sp/>MA<sp/>02110-1301,<sp/>USA.
+                </highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="25">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="34">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="35">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>VLC_LIBVLC_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="36">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>VLC_LIBVLC_H<sp/>1
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="37">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="38">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#if<sp/>defined<sp/>(_WIN32)<sp/>&amp;&amp;<sp/>defined<sp/>(DLL_EXPORT)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_API<sp/>__declspec(dllexport)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#elif<sp/>defined<sp/>(__GNUC__)<sp/>&amp;&amp;<sp/>(__GNUC__<sp/>&gt;=
+                    <sp/>4)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="41">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_API<sp/>__attribute__((visibility(&quot;default&quot;)))
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="42">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#else</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="43">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_API
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="44">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="45">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="46">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifdef<sp/>__LIBVLC__
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="47">
+                <highlight class="normal"></highlight>
+                <highlight class="comment">/*<sp/>Avoid<sp/>unhelpful<sp/>warnings<sp/>from<sp/>libvlc<sp/>with<sp/>our
+                    <sp/>deprecated<sp/>APIs<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="48">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#
+                    <sp/>
+                    <sp/>
+                    <sp/>define<sp/>LIBVLC_DEPRECATED
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="49">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#elif<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>\
+                </highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="preprocessor">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>(__GNUC__<sp/>&gt;<sp/>3<sp/>||<sp/>__GNUC__<sp/>==<sp/>3<sp/>&amp;&amp;<sp/>__GNUC_MINOR__
+                    <sp/>&gt;<sp/>0)
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="51">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_DEPRECATED<sp/>__attribute__((deprecated))
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="52">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#else</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="53">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>define<sp/>LIBVLC_DEPRECATED
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="54">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="55">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="56">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="57">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="58">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="59">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="60">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="61">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">extern</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="stringliteral">&quot;C&quot;</highlight>
+                <highlight class="normal"><sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="62">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>endif
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="63">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="75">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="77" refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="78">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="79">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal"><sp/>int64_t<sp/>libvlc_time_t;
+                </highlight>
+            </codeline>
+            <codeline lineno="80">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="84">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="93" refid="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <ref refid="group__libvlc__error_1gae58ce7a089f7f1022e19e5fc4d7d5d3e" kindref="member">
+                        libvlc_errmsg
+                    </ref>
+                    <sp/>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="94">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="100" refid="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__error_1ga8b96349dae8fbb24049edee86a8d3517" kindref="member">
+                        libvlc_clearerr
+                    </ref>
+                    <sp/>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="101">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="109" refid="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <ref refid="group__libvlc__error_1gaa0fd1859051c6fe4eb384511294007b5" kindref="member">
+                        libvlc_vprinterr
+                    </ref>
+                    <sp/>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>ap);
+                </highlight>
+            </codeline>
+            <codeline lineno="110">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="118" refid="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <ref refid="group__libvlc__error_1ga0718676675d559126244e5a5c6789680" kindref="member">
+                        libvlc_printerr
+                    </ref>
+                    <sp/>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*fmt,<sp/>...);
+                </highlight>
+            </codeline>
+            <codeline lineno="119">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="121">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="183">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="184" refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1" refkind="member">
+                <highlight class="normal"><ref refid="group__libvlc__core_1ga7f1ea72f2cc4a7459ac59997599e14d1"
+                                               kindref="member">libvlc_new</ref>(
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>argc<sp/>,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>*argv<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="185">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="192" refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga42f80821f3b5e2e9a1fe38c96d40ee71" kindref="member">
+                        libvlc_release</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="193">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="200" refid="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga7a09a1aa563f098a11c0b34682a790ca" kindref="member">
+                        libvlc_retain</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="201">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="209">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="210" refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1gaee76d8daf854191af20a93eecea1dc6e" kindref="member">
+                        libvlc_add_intf</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*name<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="211">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="229">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="230" refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga9fb333dac01fe3e28bbf4256be87f006" kindref="member">
+                        libvlc_set_exit_handler</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance,
+                </highlight>
+            </codeline>
+            <codeline lineno="231">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>(*cb)<sp/>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*),
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*opaque<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="232">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="242">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="243" refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga78044d14fe2a8ea0f2a216f5ad084ec6" kindref="member">
+                        libvlc_set_user_agent</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance,
+                </highlight>
+            </codeline>
+            <codeline lineno="244">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*name,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*http<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="245">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="256">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="257" refid="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga2b5434e2f27d19df8646b8240ed719f8" kindref="member">
+                        libvlc_set_app_id</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keywordtype">id</highlight>
+                <highlight class="normal">,</highlight>
+            </codeline>
+            <codeline lineno="258">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*version,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*icon<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="259">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="267" refid="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga130ea683276a8504d445d18d804720e5" kindref="member">
+                        libvlc_get_version</ref>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="268">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="276" refid="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <sp/>
+                    <ref refid="group__libvlc__core_1gacdbaa879914b9c2fdf23746ed432eab9" kindref="member">
+                        libvlc_get_compiler</ref>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="277">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="285" refid="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <sp/>
+                    <ref refid="group__libvlc__core_1gab228c1f4239d53b4db2dd8ff5dc8e38e" kindref="member">
+                        libvlc_get_changeset</ref>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="286">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="294" refid="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1gab42b9c99de37cddea9b4e817cf14524f" kindref="member">
+                        libvlc_free</ref>(
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*ptr<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="295">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="306">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="311" refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">
+                        libvlc_event_manager_t
+                    </ref>
+                    <sp/>
+                    <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">
+                        libvlc_event_manager_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="312">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="313">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal"><ref refid="structlibvlc__event__t" kindref="compound">libvlc_event_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="314">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="318" refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">
+                        libvlc_event_type_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="319">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="324" refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal"><sp/>void<sp/>(<sp/>*
+                    <ref refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kindref="member">
+                        libvlc_callback_t
+                    </ref>
+                    <sp/>)(
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structlibvlc__event__t" kindref="compound">libvlc_event_t</ref>
+                    <sp/>*p_event,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*p_data<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="325">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="337" refid="group__libvlc__event_1gaed9956a22efad4f466ffd4ec8ab45926" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__event_1gaed9956a22efad4f466ffd4ec8ab45926" kindref="member">
+                        libvlc_event_attach</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">
+                        libvlc_event_manager_t
+                    </ref>
+                    <sp/>*p_event_manager,
+                </highlight>
+            </codeline>
+            <codeline lineno="338">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">
+                        libvlc_event_type_t
+                    </ref>
+                    <sp/>i_event_type,
+                </highlight>
+            </codeline>
+            <codeline lineno="339">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kindref="member">
+                        libvlc_callback_t
+                    </ref>
+                    <sp/>f_callback,
+                </highlight>
+            </codeline>
+            <codeline lineno="340">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*user_data<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="341">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="350" refid="group__libvlc__event_1ga25b19849dc46d9a57be6815920a17e16" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__event_1ga25b19849dc46d9a57be6815920a17e16" kindref="member">
+                        libvlc_event_detach</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__event_1gaa82f247503d3558b9117550e8d3c9259" kindref="member">
+                        libvlc_event_manager_t
+                    </ref>
+                    <sp/>*p_event_manager,
+                </highlight>
+            </codeline>
+            <codeline lineno="351">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">
+                        libvlc_event_type_t
+                    </ref>
+                    <sp/>i_event_type,
+                </highlight>
+            </codeline>
+            <codeline lineno="352">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__event_1gaee23eb74665c003805acfc9411e1ce29" kindref="member">
+                        libvlc_callback_t
+                    </ref>
+                    <sp/>f_callback,
+                </highlight>
+            </codeline>
+            <codeline lineno="353">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*p_user_data<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="354">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="360" refid="group__libvlc__event_1ga6797e9605ebdb89452ff744a022e5755" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                    <sp/>
+                    <ref refid="group__libvlc__event_1ga6797e9605ebdb89452ff744a022e5755" kindref="member">
+                        libvlc_event_type_name</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__event_1ga88990ac48895aa07caece9eb75c2f2da" kindref="member">
+                        libvlc_event_type_t
+                    </ref>
+                    <sp/>event_type<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="361">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="363">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="369">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="374" refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">enum</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__log_1gafbd0cda573ef789842e1cd36a27a61bd" kindref="member">
+                        libvlc_log_level
+                    </ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="375">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="376"
+                      refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaf9c82a86ac07470ff2bce574a37c7fd8"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaf9c82a86ac07470ff2bce574a37c7fd8"
+                         kindref="member">LIBVLC_DEBUG</ref>=0,
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+            </codeline>
+            <codeline lineno="377"
+                      refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaadba41359b9572613c9aad1f8d7dcadf"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bdaadba41359b9572613c9aad1f8d7dcadf"
+                         kindref="member">LIBVLC_NOTICE</ref>=2,
+                    <sp/>
+                    <sp/>
+                </highlight>
+            </codeline>
+            <codeline lineno="378"
+                      refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda808a15b1ed05efe7fe021c84f4d01d08"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda808a15b1ed05efe7fe021c84f4d01d08"
+                         kindref="member">LIBVLC_WARNING</ref>=3,
+                    <sp/>
+                </highlight>
+            </codeline>
+            <codeline lineno="379"
+                      refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda53be6dc6f7aa8d745361db18f1075d6f"
+                      refkind="member">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ggafbd0cda573ef789842e1cd36a27a61bda53be6dc6f7aa8d745361db18f1075d6f"
+                         kindref="member">LIBVLC_ERROR</ref>=4
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+            </codeline>
+            <codeline lineno="380">
+                <highlight class="normal">};</highlight>
+            </codeline>
+            <codeline lineno="381">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="382">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__log__t" kindref="compound">vlc_log_t</ref>
+                    <sp/>libvlc_log_t;
+                </highlight>
+            </codeline>
+            <codeline lineno="383">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="404" refid="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ga9a01433d5badf4a4e8ba3fe1604da242" kindref="member">
+                        libvlc_log_get_context</ref>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>libvlc_log_t<sp/>*ctx,
+                </highlight>
+            </codeline>
+            <codeline lineno="405">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**module,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**<ref refid="structvlc__log__t_1acffced16e38badb0e5655337f189602a"
+                                                      kindref="member">file</ref>,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">unsigned</highlight>
+                <highlight class="normal"><sp/>*<ref refid="structvlc__log__t_1a040da9015ea3554dd2d3e02419f0f2ac"
+                                                     kindref="member">line</ref>);
+                </highlight>
+            </codeline>
+            <codeline lineno="406">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="432" refid="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ga99ea1a066d2c682cbf0b161f59ea81b5" kindref="member">
+                        libvlc_log_get_object</ref>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>libvlc_log_t<sp/>*ctx,
+                </highlight>
+            </codeline>
+            <codeline lineno="433">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**name,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**header,<sp/>uintptr_t<sp/>*
+                </highlight>
+                <highlight class="keywordtype">id</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="434">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="447" refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal"><sp/>void<sp/>(*<ref
+                        refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">
+                    libvlc_log_cb</ref>)(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*data,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>level,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>libvlc_log_t<sp/>*ctx,
+                </highlight>
+            </codeline>
+            <codeline lineno="448">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>args);
+                </highlight>
+            </codeline>
+            <codeline lineno="449">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="463" refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ga6b95ea7c2e62c7b69a9bc79aafd8c6bc" kindref="member">
+                        libvlc_log_unset</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="464">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="482" refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__log_1gab2eac487eb4a7bfbbf286c45694e6120" kindref="member">
+                        libvlc_log_set</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance,
+                </highlight>
+            </codeline>
+            <codeline lineno="483">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__libvlc__log_1ga2bc7c11ca559e643b90fc4d55f0c131c" kindref="member">libvlc_log_cb
+                    </ref>
+                    <sp/>cb,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*data<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="484">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="485">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="493" refid="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" refkind="member">
+                <highlight class="normal">LIBVLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__log_1gafcf8eeaa33568adee0a53fd16498e0d3" kindref="member">
+                        libvlc_log_set_file</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance,<sp/>FILE<sp/>*stream<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="494">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="496">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="500" refid="structlibvlc__module__description__t" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t
+                    </ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="501">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="502">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*psz_name;
+                </highlight>
+            </codeline>
+            <codeline lineno="503">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*psz_shortname;
+                </highlight>
+            </codeline>
+            <codeline lineno="504">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*psz_longname;
+                </highlight>
+            </codeline>
+            <codeline lineno="505">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*psz_help;
+                </highlight>
+            </codeline>
+            <codeline lineno="506">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t
+                    </ref>
+                    <sp/>*p_next;
+                </highlight>
+            </codeline>
+            <codeline lineno="507" refid="group__libvlc__core_1ga301b5d0f5c23a39df6f6cfbd4dc9e32d" refkind="member">
+                <highlight class="normal">}
+                    <sp/>
+                    <ref refid="structlibvlc__module__description__t" kindref="compound">
+                        libvlc_module_description_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="508">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="514">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="515" refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" refkind="member">
+                <highlight class="normal"></highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga6f077c04819910cf821e107be8b258a9" kindref="member">
+                        libvlc_module_description_list_release</ref>(
+                    <sp/>
+                    <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t
+                    </ref>
+                    <sp/>*p_list<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="516">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="528">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="529" refid="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" refkind="member">
+                <highlight class="normal">
+                    <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t
+                    </ref>
+                    <sp/>*<ref refid="group__libvlc__core_1gadd3b88f06bf46eff95e3f0d4e431add0" kindref="member">
+                    libvlc_audio_filter_list_get</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="530">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="542">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="543" refid="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" refkind="member">
+                <highlight class="normal">
+                    <ref refid="structlibvlc__module__description__t" kindref="compound">libvlc_module_description_t
+                    </ref>
+                    <sp/>*<ref refid="group__libvlc__core_1ga1fdbf6f5debfb7f22c450eb6d436a740" kindref="member">
+                    libvlc_video_filter_list_get</ref>(
+                    <sp/>
+                    <ref refid="group__libvlc__core_1ga316d739a80da4678206c79f4d6c2e284" kindref="member">
+                        libvlc_instance_t
+                    </ref>
+                    <sp/>*p_instance<sp/>);
+                </highlight>
+            </codeline>
+            <codeline lineno="544">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="546">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="551">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="560">
+                <highlight class="normal">LIBVLC_API</highlight>
+            </codeline>
+            <codeline lineno="561" refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" refkind="member">
+                <highlight class="normal">int64_t
+                    <sp/>
+                    <ref refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" kindref="member">
+                        libvlc_clock</ref>(
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">);</highlight>
+            </codeline>
+            <codeline lineno="562">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="569">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal"><sp/>int64_t<sp/>libvlc_delay(int64_t<sp/>pts)
+                </highlight>
+            </codeline>
+            <codeline lineno="570">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="571">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>pts<sp/>-
+                    <sp/>
+                    <ref refid="group__libvlc__clock_1ga38fa16aeec0d1e6a7d872526200f1957" kindref="member">
+                        libvlc_clock</ref>();
+                </highlight>
+            </codeline>
+            <codeline lineno="572">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="573">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="575">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="576">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>ifdef<sp/>__cplusplus
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="577">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="578">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>endif
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="579">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="580">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif
+                    <sp/>
+                </highlight>
+                <highlight class="preprocessor"></highlight>
+            </codeline>
+        </programlisting>
+        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/libvlc.h"/>
+    </compounddef>
 </doxygen>

@@ -16,21 +16,31 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="16">
+        <label>M_ConfigReseau.h</label>
+        <link refid="M__ConfigReseau_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
         <label>Modele/M_ExpediteurUDP.h</label>
         <link refid="M__ExpediteurUDP_8h_source"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
@@ -38,7 +48,7 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -76,7 +86,13 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="11">
@@ -103,11 +119,14 @@
       <node id="8">
         <label>atomic</label>
       </node>
-      <node id="17">
+      <node id="19">
         <label>cstdint</label>
       </node>
-      <node id="18">
+      <node id="20">
         <label>cstring</label>
+      </node>
+      <node id="17">
+        <label>map</label>
       </node>
       <node id="9">
         <label>mutex</label>
@@ -121,7 +140,7 @@
       <node id="13">
         <label>sys/socket.h</label>
       </node>
-      <node id="19">
+      <node id="21">
         <label>thread</label>
       </node>
       <node id="15">
@@ -134,18 +153,6 @@
         <label>vlc/vlc.h</label>
       </node>
     </incdepgraph>
-    <invincdepgraph>
-      <node id="1">
-        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</label>
-        <link refid="V__Master_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>/home/loup/CLionProjects/AffichageSynchrone/src/main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-    </invincdepgraph>
     <innerclass refid="classV__Master" prot="public">V_Master</innerclass>
     <briefdescription>
     </briefdescription>
@@ -161,65 +168,78 @@
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="classV__Master" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classV__Master_1abc0cd4b8ebf3cb13b66381716dc982fd" kindref="member">V_Master</ref><sp/>{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classV__Master_1abc0cd4b8ebf3cb13b66381716dc982fd" kindref="member">V_Master</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;ipMulticast,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;vector&lt;string&gt;<sp/>&gt;<sp/>&amp;specLecteurs);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classV__Master_1a535f43888fb4360425a2999e19c31ef4" kindref="member">~V_Master</ref>();</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1adf0913106fb6a88b07f046ae3e83a538" kindref="member">executer</ref>();</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="36" refid="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classC__LecteurPhysiqueLocal" kindref="compound">C_LecteurPhysiqueLocal</ref><sp/><ref refid="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" kindref="member">controleur</ref>;<sp/></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Texture2D<sp/><ref refid="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" kindref="member">textureVideo</ref>{};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="39" refid="classV__Master_1afe0669f96767b79acd6a7d51a30a3754" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Rectangle<sp/><ref refid="classV__Master_1afe0669f96767b79acd6a7d51a30a3754" kindref="member">zones</ref>[12]{};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" kindref="member">rotationChargement</ref><sp/>=<sp/>0.0f;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="classV__Master_1a384165f4e3d38eebfead142155b16a7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a384165f4e3d38eebfead142155b16a7f" kindref="member">largeurVideoCache</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
-<codeline lineno="44" refid="classV__Master_1a59b2af1f62769b342b116ca467f1186e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a59b2af1f62769b342b116ca467f1186e" kindref="member">hauteurVideoCache</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46" refid="classV__Master_1a7fd7f67ddefb1961e260c6a71fc0f16f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a7fd7f67ddefb1961e260c6a71fc0f16f" kindref="member">valeurProgression</ref><sp/>=<sp/>0.0f;<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="47" refid="classV__Master_1ab86407a54b643f032b3ddbc8fd198326" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ab86407a54b643f032b3ddbc8fd198326" kindref="member">valeurVolume</ref><sp/>=<sp/>100.0f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="48" refid="classV__Master_1a7476ab17bd5be04b031320ce2cd80b7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a7476ab17bd5be04b031320ce2cd80b7f" kindref="member">estMuet</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="49" refid="classV__Master_1a691efa36e61a5d1d2d732f3a7c34c355" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a691efa36e61a5d1d2d732f3a7c34c355" kindref="member">enGlissement</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="50" refid="classV__Master_1ad6a2c688b446c11477cebee1350bfe9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ad6a2c688b446c11477cebee1350bfe9e" kindref="member">delaiRecherche</ref><sp/>=<sp/>0.0f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="51" refid="classV__Master_1a338b939350aab76d0d5d8d481fd3216e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a338b939350aab76d0d5d8d481fd3216e" kindref="member">etaitEnLectureAvantGlissement</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight></codeline>
-<codeline lineno="52" refid="classV__Master_1a140e01258979429d8f18b910edeb4569" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a140e01258979429d8f18b910edeb4569" kindref="member">indexVitesse</ref><sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="53" refid="classV__Master_1a4d110be51ef0c72612d4adde9dab3568" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a4d110be51ef0c72612d4adde9dab3568" kindref="member">menuVitesseActif</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55" refid="classV__Master_1a2e132439931f5e5dd07714cf46af7ae6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classV__Master_1a2e132439931f5e5dd07714cf46af7ae6" kindref="member">fichiersVideo</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="56" refid="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;bool&gt;<sp/><ref refid="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" kindref="member">videosCochees</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="57" refid="classV__Master_1a509185fdc5714eb025782889ecf820be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;int&gt;<sp/><ref refid="classV__Master_1a509185fdc5714eb025782889ecf820be" kindref="member">ordreSelection</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="58" refid="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector2<sp/><ref refid="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" kindref="member">positionDefilement</ref><sp/>=<sp/>{0,<sp/>0};<sp/></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1afff0d53fd6ccad1a8d9575120ad3cbd8" kindref="member">miseAJourDisposition</ref>();</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ad10097c3907bc86ed82ebbb241cb2f31" kindref="member">chargerListeVideos</ref>();</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classV__Master_1a97bdceaf8ab5c380948e4eaea08ed164" kindref="member">getVideosSelectionnees</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a79d1e228a1b4cfefbec3006dafcb37be" kindref="member">ouvrirDossierVideos</ref>();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ae5a6f5bd54c531fe0d0e4a8e948c16b7" kindref="member">gererLogique</ref>();</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ae1c9d9d181d76804b218a253c0e59a01" kindref="member">dessinerInterface</ref>();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a14b55f4f94514e9d6c1d34d5612fe092" kindref="member">dessinerZoneVideo</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a124fb71b5c7edf6c25cdc46a61b9b472" kindref="member">dessinerListeFichiers</ref>();</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a54279d74979778dcce8397d134b74410" kindref="member">dessinerPanneauControle</ref>();</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a9a449789d48edde357a604dd93144cc9" kindref="member">gererBarreProgression</ref>();</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a64f0592d7a5d5fc106a2e72ad0dde1f8" kindref="member">gererControlesVolume</ref>();</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1af89e643656d832c1f0f54317b5a57940" kindref="member">gererVitesse</ref>();</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ab6b839f9bdd8ebf758add384ff60e2f1" kindref="member">dessinerOverlayChargement</ref>();</highlight></codeline>
-<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17" refid="classV__Master" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classV__Master_1a985f86392ace746b850b593d34e64376" kindref="member">V_Master</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classV__Master_1a985f86392ace746b850b593d34e64376" kindref="member">V_Master</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;ipMulticast,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portCommandes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portDecouverte,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portReponse,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;vector&lt;string&gt;&gt;<sp/>&amp;specLecteurs);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classV__Master_1a535f43888fb4360425a2999e19c31ef4" kindref="member">~V_Master</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1adf0913106fb6a88b07f046ae3e83a538" kindref="member">executer</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classC__LecteurPhysiqueLocal" kindref="compound">C_LecteurPhysiqueLocal</ref><sp/><ref refid="classV__Master_1a4e789de3bca14f55f1c225b5ace10124" kindref="member">controleur</ref>;<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Texture2D<sp/><ref refid="classV__Master_1a6bc83a2aa38f557072ed0e52940c9492" kindref="member">textureVideo</ref>{};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46" refid="classV__Master_1a91d4f39a63f147f149b785d4b0cd377d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Rectangle<sp/><ref refid="classV__Master_1a91d4f39a63f147f149b785d4b0cd377d" kindref="member">zones</ref>[14]{};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a6b1982ebeb4bd172ef2b48244b165f80" kindref="member">rotationChargement</ref><sp/>=<sp/>0.0f;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classV__Master_1a384165f4e3d38eebfead142155b16a7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a384165f4e3d38eebfead142155b16a7f" kindref="member">largeurVideoCache</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="51" refid="classV__Master_1a59b2af1f62769b342b116ca467f1186e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a59b2af1f62769b342b116ca467f1186e" kindref="member">hauteurVideoCache</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classV__Master_1a7fd7f67ddefb1961e260c6a71fc0f16f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a7fd7f67ddefb1961e260c6a71fc0f16f" kindref="member">valeurProgression</ref><sp/>=<sp/>0.0f;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54" refid="classV__Master_1ab86407a54b643f032b3ddbc8fd198326" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ab86407a54b643f032b3ddbc8fd198326" kindref="member">valeurVolume</ref><sp/>=<sp/>100.0f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55" refid="classV__Master_1a7476ab17bd5be04b031320ce2cd80b7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a7476ab17bd5be04b031320ce2cd80b7f" kindref="member">estMuet</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56" refid="classV__Master_1a691efa36e61a5d1d2d732f3a7c34c355" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a691efa36e61a5d1d2d732f3a7c34c355" kindref="member">enGlissement</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57" refid="classV__Master_1ad6a2c688b446c11477cebee1350bfe9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ad6a2c688b446c11477cebee1350bfe9e" kindref="member">delaiRecherche</ref><sp/>=<sp/>0.0f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58" refid="classV__Master_1a338b939350aab76d0d5d8d481fd3216e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a338b939350aab76d0d5d8d481fd3216e" kindref="member">etaitEnLectureAvantGlissement</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="59" refid="classV__Master_1a140e01258979429d8f18b910edeb4569" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a140e01258979429d8f18b910edeb4569" kindref="member">indexVitesse</ref><sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60" refid="classV__Master_1a4d110be51ef0c72612d4adde9dab3568" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a4d110be51ef0c72612d4adde9dab3568" kindref="member">menuVitesseActif</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Gestion<sp/>de<sp/>la<sp/>liste<sp/>des<sp/>vidéos<sp/>(Panneau<sp/>Gauche)<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classV__Master_1a2e132439931f5e5dd07714cf46af7ae6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classV__Master_1a2e132439931f5e5dd07714cf46af7ae6" kindref="member">fichiersVideo</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64" refid="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;bool&gt;<sp/><ref refid="classV__Master_1a2f2ce5d836fad784863ebf9427e35468" kindref="member">videosCochees</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="classV__Master_1a509185fdc5714eb025782889ecf820be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;int&gt;<sp/><ref refid="classV__Master_1a509185fdc5714eb025782889ecf820be" kindref="member">ordreSelection</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66" refid="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector2<sp/><ref refid="classV__Master_1aebc5f6d435cad84a572cc64f027c3992" kindref="member">positionDefilement</ref><sp/>=<sp/>{0,<sp/>0};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Gestion<sp/>de<sp/>la<sp/>liste<sp/>des<sp/>Lecteurs/IPs<sp/>(Panneau<sp/>Droit)<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classV__Master_1a7a9713b4c0baed7b993c6aa7f097e24e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classV__Master_1a7a9713b4c0baed7b993c6aa7f097e24e" kindref="member">lecteursIPs</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="classV__Master_1a1601cbd33cde330ed247d34857e6c729" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;bool&gt;<sp/><ref refid="classV__Master_1a1601cbd33cde330ed247d34857e6c729" kindref="member">lecteursCoches</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71" refid="classV__Master_1ae6c1a91bb773630641f7b92715cff8ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;int&gt;<sp/><ref refid="classV__Master_1ae6c1a91bb773630641f7b92715cff8ec" kindref="member">ordreSelectionLecteurs</ref>;<sp/></highlight></codeline>
+<codeline lineno="72" refid="classV__Master_1a53e9b09eff892d42d0d5f2d6ddaa15f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector2<sp/><ref refid="classV__Master_1a53e9b09eff892d42d0d5f2d6ddaa15f8" kindref="member">positionDefilementLecteurs</ref><sp/>=<sp/>{0,<sp/>0};<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1afff0d53fd6ccad1a8d9575120ad3cbd8" kindref="member">miseAJourDisposition</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ad10097c3907bc86ed82ebbb241cb2f31" kindref="member">chargerListeVideos</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a048195b2cbaa0d0371211953da154cd2" kindref="member">chargerListeLecteurs</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classV__Master_1a97bdceaf8ab5c380948e4eaea08ed164" kindref="member">getVideosSelectionnees</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classV__Master_1a3dc2a9df4b8d75cea39886610f2c7910" kindref="member">getLecteursSelectionnes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a79d1e228a1b4cfefbec3006dafcb37be" kindref="member">ouvrirDossierVideos</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ae5a6f5bd54c531fe0d0e4a8e948c16b7" kindref="member">gererLogique</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ae1c9d9d181d76804b218a253c0e59a01" kindref="member">dessinerInterface</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a14b55f4f94514e9d6c1d34d5612fe092" kindref="member">dessinerZoneVideo</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a124fb71b5c7edf6c25cdc46a61b9b472" kindref="member">dessinerListeFichiers</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ac0582a52c1e472fb2b683fae06476e9a" kindref="member">dessinerListeLecteurs</ref>();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a54279d74979778dcce8397d134b74410" kindref="member">dessinerPanneauControle</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a9a449789d48edde357a604dd93144cc9" kindref="member">gererBarreProgression</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1a64f0592d7a5d5fc106a2e72ad0dde1f8" kindref="member">gererControlesVolume</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1af89e643656d832c1f0f54317b5a57940" kindref="member">gererVitesse</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classV__Master_1ab6b839f9bdd8ebf758add384ff60e2f1" kindref="member">dessinerOverlayChargement</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h"/>
   </compounddef>

@@ -1,10 +1,12 @@
 #include "../../include/Modele/M_SessionLecture.h"
+#include "../../include/Modele/M_ServeurTFTP.h"
+#include "../../include/Modele/M_JsonUtil.h"
+#include "../../include/Modele/M_DecouverteReseau.h"
+
 #include <fstream>
 #include <iostream>
 #include <vector>
 #include <string>
-
-#include "../../include/Modele/M_ServeurTFTP.h"
 
 M_SessionLecture::~M_SessionLecture() {
     // Libération de la mémoire allouée dynamiquement dans preparerSessionLecture
@@ -89,13 +91,13 @@ void M_SessionLecture::genererVideoComplexe(const string *listeFichiersEntree, s
     delete[] nbVideosAffectees;
 }
 
-void M_SessionLecture::uploaderVideoComplexe() {
+void M_SessionLecture::uploaderVideoComplexe() const {
     const string dossierSource = "videosComplexes";
 
     // 1. Conversion des données internes en format "TransferInfo" pour le module TFTP
     vector<TransferInfo> listeTransferts;
 
-    // Note : On commence à i=1 pour ne pas s'envoyer la vidéo à soi-même (si i=0 est le Master local)
+    // Note : On commence à i=1 pour ne pas s'envoyer la vidéo à soi-même
     for (size_t i = 1; i < nbLecteursTotal; i++) {
         if (nbVideos[i] > 0) {
             TransferInfo info;
@@ -110,16 +112,25 @@ void M_SessionLecture::uploaderVideoComplexe() {
         return;
     }
 
-    // 2. Génération d'un fichier de log JSON pour débogage ou archive
+    // 2. Génération d'un fichier de log JSON en utilisant M_JsonUtil
     ofstream fichierJson("listeLecteurs.json");
     if (fichierJson.is_open()) {
         fichierJson << "[\n";
         for (size_t i = 0; i < listeTransferts.size(); i++) {
-            fichierJson << "  {\n";
-            fichierJson << "    \"ip\": \"" << listeTransferts[i].ip << "\",\n";
-            fichierJson << "    \"path\": \"" << listeTransferts[i].path << "\"\n";
-            fichierJson << "  }" << (i == listeTransferts.size() - 1 ? "" : ",");
-            fichierJson << "\n";
+            // Création de la map pour l'objet plat (Exigence RFC 8259 via JsonUtil)
+            map<string, string> champs;
+            champs["ip"] = listeTransferts[i].ip;
+            champs["path"] = listeTransferts[i].path;
+
+            // M_JsonUtil::construire génère la chaîne '{"ip":"...","path":"..."}'
+            fichierJson << "  " << M_JsonUtil::construire(champs);
+
+            // Gestion de la virgule entre les éléments du tableau
+            if (i < listeTransferts.size() - 1) {
+                fichierJson << ",\n";
+            } else {
+                fichierJson << "\n";
+            }
         }
         fichierJson << "]\n";
         fichierJson.close();
@@ -130,11 +141,37 @@ void M_SessionLecture::uploaderVideoComplexe() {
 
     try {
         M_ServeurTFTP serveurTftp(listeTransferts, dossierSource);
-        // Cette méthode est bloquante jusqu'à ce que tous les threads async soient terminés
         serveurTftp.runAllTransfers();
-
         cout << "[SESSION] Fin de la session d'upload." << endl;
     } catch (const exception &e) {
         cerr << "[ERREUR CRITIQUE] Echec durant l'upload TFTP : " << e.what() << endl;
     }
+}
+
+vector<map<string, string> > M_SessionLecture::rechercherLecteursComplets(
+    const string &ipMulticast, int portDecouverte, int portReponse) {
+    // 1. Création de la configuration avec les paramètres dynamiques
+    M_ConfigReseau config("SessionInitiale", ipMulticast, portDecouverte, portReponse);
+
+    // 2. Initialisation du moteur de découverte avec cette configuration
+    M_DecouverteReseau moteurDecouverte(config);
+
+    // 3. Lancement de la recherche (Envoi du paquet binaire, attente 2s)
+    moteurDecouverte.lancerDecouverte(2000);
+
+    vector<map<string, string> > lecteursDetectes;
+    const vector<string> &reponsesBrutes = moteurDecouverte.getReponsesBrutes();
+
+    for (const string &json: reponsesBrutes) {
+        try {
+            auto infos = M_JsonUtil::parser(json);
+            if (!infos.empty()) {
+                lecteursDetectes.push_back(infos);
+                cout << "[SESSION] Lecteur détecté : " << infos["nom"] << " (" << infos["ip"] << ")" << endl;
+            }
+        } catch (const std::exception &e) {
+            std::cerr << "[M_SessionLecture] Erreur parsing JSON : " << e.what() << std::endl;
+        }
+    }
+    return lecteursDetectes;
 }

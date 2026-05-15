@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="M__ConfigReseau_8cpp" kind="file" language="C++">
+    <compoundname>M_ConfigReseau.cpp</compoundname>
+    <includes refid="M__ConfigReseau_8h" local="yes">../../include/Modele/M_ConfigReseau.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>../../include/Modele/M_ConfigReseau.h</label>
+        <link refid="M__ConfigReseau_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp</label>
+        <link refid="M__ConfigReseau_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../../include/Modele/M_ConfigReseau.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constructeur<sp/>de<sp/>secours<sp/>(Fallback)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="classM__ConfigReseau_1a698e1142d6ca56d4264ea45b383bd171" kindref="member">M_ConfigReseau::M_ConfigReseau</ref>()</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_nom(</highlight><highlight class="stringliteral">&quot;ConfigDefaut&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_adresseMulticast(</highlight><highlight class="stringliteral">&quot;239.0.0.1&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_portMulticast(5000),</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_portReponse(5001)<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constructeur<sp/>principal<sp/>pour<sp/>l&apos;injection<sp/>depuis<sp/>le<sp/>main()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="classM__ConfigReseau_1a698e1142d6ca56d4264ea45b383bd171" kindref="member">M_ConfigReseau::M_ConfigReseau</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;nom,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;adresseMulticast,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portMulticast,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portReponse)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_nom(nom),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_adresseMulticast(adresseMulticast),</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_portMulticast(portMulticast),</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_portReponse(portReponse)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>Getters<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="classM__ConfigReseau_1a08b6a827c85df9a09b3fcdcfeee3d06a" kindref="member">M_ConfigReseau::getNom</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1a0aa4e4c78acd90af72b045b6368dc59d" kindref="member">m_nom</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="classM__ConfigReseau_1aca43186da679bc6b05f9c3345f7e54dc" kindref="member">M_ConfigReseau::getAdresseMulticast</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1ae97fce12207653139d1874685a11178e" kindref="member">m_adresseMulticast</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1a6b49c3e988846a13afb8adae75140aee" kindref="member">M_ConfigReseau::getPortMulticast</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1a905e913b8f3d71706a2efa7910f54a28" kindref="member">m_portMulticast</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1ac7416d609bcdf934b37dbe8f833931a4" kindref="member">M_ConfigReseau::getPortReponse</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1a3d3c0a93a5fff0d9e0ebd3180fee3713" kindref="member">m_portReponse</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>Setters<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1aab695a15c58d25fe7a64b0ac794e3f37" kindref="member">M_ConfigReseau::setNom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;nom)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ConfigReseau_1a0aa4e4c78acd90af72b045b6368dc59d" kindref="member">m_nom</ref><sp/>=<sp/>nom;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1a46e8a7ba6c251d199cfb9a47bc9c7f96" kindref="member">M_ConfigReseau::setAdresseMulticast</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;adresseMulticast)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ConfigReseau_1ae97fce12207653139d1874685a11178e" kindref="member">m_adresseMulticast</ref><sp/>=<sp/>adresseMulticast;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1ae8c1ed98c5edefdba9b5d286945241e7" kindref="member">M_ConfigReseau::setPortMulticast</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portMulticast)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ConfigReseau_1a905e913b8f3d71706a2efa7910f54a28" kindref="member">m_portMulticast</ref><sp/>=<sp/>portMulticast;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau_1a82ee0cb837aab370ad3f56bd4e582cbc" kindref="member">M_ConfigReseau::setPortReponse</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portReponse)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ConfigReseau_1a3d3c0a93a5fff0d9e0ebd3180fee3713" kindref="member">m_portReponse</ref><sp/>=<sp/>portReponse;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_ConfigReseau.cpp"/>
+  </compounddef>
+</doxygen>

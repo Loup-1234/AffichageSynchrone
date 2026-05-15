@@ -1,221 +1,2054 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="vlc__tls_8h" kind="file" language="C++">
-    <compoundname>vlc_tls.h</compoundname>
-    <includes refid="vlc__network_8h" local="no">vlc_network.h</includes>
-    <incdepgraph>
-      <node id="2">
-        <label>vlc_network.h</label>
-        <link refid="vlc__network_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h</label>
-        <link refid="vlc__tls_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>netdb.h</label>
-      </node>
-      <node id="6">
-        <label>netinet/in.h</label>
-      </node>
-      <node id="5">
-        <label>sys/socket.h</label>
-      </node>
-      <node id="3">
-        <label>sys/types.h</label>
-      </node>
-      <node id="4">
-        <label>unistd.h</label>
-      </node>
-    </incdepgraph>
-    <innerclass refid="structvlc__tls" prot="public">vlc_tls</innerclass>
-    <innerclass refid="structvlc__tls__creds" prot="public">vlc_tls_creds</innerclass>
-    <sectiondef kind="typedef">
-      <member refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kind="typedef"><name>vlc_tls_t</name></member>
-      <member refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kind="typedef"><name>vlc_tls_creds_t</name></member>
-    </sectiondef>
-    <sectiondef kind="func">
-      <member refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" kind="function"><name>vlc_tls_ClientCreate</name></member>
-      <member refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kind="function"><name>vlc_tls_ServerCreate</name></member>
-      <member refid="group__tls_1ga4e6145cc2a498a37265e35da5258a0ac" kind="function"><name>vlc_tls_SessionHandshake</name></member>
-      <member refid="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" kind="function"><name>vlc_tls_Delete</name></member>
-      <member refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kind="function"><name>vlc_tls_ClientSessionCreate</name></member>
-      <member refid="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" kind="function"><name>vlc_tls_ServerSessionCreate</name></member>
-      <member refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kind="function"><name>vlc_tls_SessionDelete</name></member>
-      <member refid="group__transport_1gaa06096ccbd7011d3b467475e53e464d5" kind="function"><name>vlc_tls_GetFD</name></member>
-      <member refid="group__transport_1ga57a42167210dfccd0d766cca4dac899e" kind="function"><name>vlc_tls_Read</name></member>
-      <member refid="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc" kind="function"><name>vlc_tls_GetLine</name></member>
-      <member refid="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" kind="function"><name>vlc_tls_Write</name></member>
-      <member refid="group__transport_1gafe1537809c27013cf3203c451e77f7c2" kind="function"><name>vlc_tls_Shutdown</name></member>
-      <member refid="group__transport_1gabd95c7171fc6bdc0b0a4bc3eebd53fef" kind="function"><name>vlc_tls_Close</name></member>
-      <member refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" kind="function"><name>vlc_tls_SocketOpen</name></member>
-      <member refid="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" kind="function"><name>vlc_tls_SocketPair</name></member>
-      <member refid="group__transport_1ga0045694f60f5f64365860867e9322d50" kind="function"><name>vlc_tls_SocketOpenAddrInfo</name></member>
-      <member refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" kind="function"><name>vlc_tls_SocketOpenTCP</name></member>
-      <member refid="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" kind="function"><name>vlc_tls_SocketOpenTLS</name></member>
-      <member refid="group__transport_1ga4ecfe9a98f85b48bd42b70229f9c6204" kind="function"><name>vlc_tls_ClientSessionCreateFD</name></member>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>Transport layer functions </para>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_tls.h:</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2004-2016<sp/>Rémi<sp/>Denis-Courmont</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005-2006<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_TLS_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>VLC_TLS_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;<ref refid="vlc__network_8h" kindref="compound">vlc_network.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="structvlc__tls" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref></highlight></codeline>
-<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*get_fd)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref><sp/>*);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/>(*readv)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref><sp/>*,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">iovec<sp/>*,<sp/>unsigned);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>ssize_t<sp/>(*writev)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">iovec<sp/>*,<sp/>unsigned);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*shutdown)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>duplex);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*close)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref><sp/>*);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls" kindref="compound">vlc_tls</ref><sp/>*p;</highlight></codeline>
-<codeline lineno="52" refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" refkind="member"><highlight class="normal">}<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="structvlc__tls__creds" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref></highlight></codeline>
-<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS</ref></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>module_t<sp/>*module;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*sys;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*(*open)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref><sp/>*,<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*sock,</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*alpn);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/>(*handshake)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref><sp/>*,<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*session,</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*service,</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/></highlight><highlight class="comment">/*restrict*/</highlight><highlight class="normal"><sp/>alp);</highlight></codeline>
-<codeline lineno="79" refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" refkind="member"><highlight class="normal">}<sp/><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87" refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*<ref refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" kindref="member">vlc_tls_ClientCreate</ref>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98" refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*<ref refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kindref="member">vlc_tls_ServerCreate</ref>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cert,</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_tls_SessionHandshake<sp/>(<ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*crd,</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*tls)</highlight></codeline>
-<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>crd-&gt;handshake(crd,<sp/>tls,<sp/>NULL,<sp/>NULL,<sp/>NULL);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115" refid="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" kindref="member">vlc_tls_Delete</ref>(<ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141" refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*<ref refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kindref="member">vlc_tls_ClientSessionCreate</ref>(<ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*creds,</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*sock,</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*service,</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*alpn,</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**alp);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167" refid="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*<ref refid="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" kindref="member">vlc_tls_ServerSessionCreate</ref>(<ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*creds,</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*sock,</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*alpn);</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="185" refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kindref="member">vlc_tls_SessionDelete</ref><sp/>(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*);</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_tls_GetFD(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*tls)</highlight></codeline>
-<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tls-&gt;get_fd(tls);</highlight></codeline>
-<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207" refid="group__transport_1ga57a42167210dfccd0d766cca4dac899e" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__transport_1ga57a42167210dfccd0d766cca4dac899e" kindref="member">vlc_tls_Read</ref>(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>waitall);</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="215" refid="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc" kindref="member">vlc_tls_GetLine</ref>(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*);</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220" refid="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" refkind="member"><highlight class="normal">VLC_API<sp/>ssize_t<sp/><ref refid="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" kindref="member">vlc_tls_Write</ref>(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vlc_tls_Shutdown(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*tls,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>duplex)</highlight></codeline>
-<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tls-&gt;shutdown(tls,<sp/>duplex);</highlight></codeline>
-<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"></highlight></codeline>
-<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vlc_tls_Close(<ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*session)</highlight></codeline>
-<codeline lineno="258"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*p<sp/>=<sp/>session-&gt;p;</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kindref="member">vlc_tls_SessionDelete</ref>(session);</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session<sp/>=<sp/>p;</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(session<sp/>!=<sp/>NULL);</highlight></codeline>
-<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"></highlight></codeline>
-<codeline lineno="281" refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*<ref refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" kindref="member">vlc_tls_SocketOpen</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"></highlight></codeline>
-<codeline lineno="286" refid="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" kindref="member">vlc_tls_SocketPair</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>family,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>protocol,<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*[2]);</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight></codeline>
-<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addrinfo;</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"></highlight></codeline>
-<codeline lineno="304" refid="group__transport_1ga0045694f60f5f64365860867e9322d50" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*<ref refid="group__transport_1ga0045694f60f5f64365860867e9322d50" kindref="member">vlc_tls_SocketOpenAddrInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>addrinfo<sp/>*ai,</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>defer_connect);</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"></highlight></codeline>
-<codeline lineno="318" refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*<ref refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" kindref="member">vlc_tls_SocketOpenTCP</ref>(<ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref><sp/>*obj,</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
-<codeline lineno="320"><highlight class="normal"></highlight></codeline>
-<codeline lineno="330" refid="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*<ref refid="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" kindref="member">vlc_tls_SocketOpenTLS</ref>(<ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*crd,</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*hostname,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>port,</highlight></codeline>
-<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*service,</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*alpn,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**alp);</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"></highlight></codeline>
-<codeline lineno="335"><highlight class="normal">VLC_DEPRECATED</highlight></codeline>
-<codeline lineno="336"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*</highlight></codeline>
-<codeline lineno="337"><highlight class="normal">vlc_tls_ClientSessionCreateFD(<ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref><sp/>*crd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,</highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*srv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*lp,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**p)</highlight></codeline>
-<codeline lineno="339"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*sock<sp/>=<sp/><ref refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" kindref="member">vlc_tls_SocketOpen</ref>(fd);</highlight></codeline>
-<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(unlikely(sock<sp/>==<sp/>NULL))</highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="343"><highlight class="normal"></highlight></codeline>
-<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref><sp/>*tls<sp/>=<sp/><ref refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kindref="member">vlc_tls_ClientSessionCreate</ref>(crd,<sp/>sock,<sp/>host,<sp/>srv,<sp/>lp,<sp/>p);</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(unlikely(tls<sp/>==<sp/>NULL))</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(sock);</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tls;</highlight></codeline>
-<codeline lineno="348"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="349"><highlight class="normal"></highlight></codeline>
-<codeline lineno="351"><highlight class="normal"></highlight></codeline>
-<codeline lineno="352"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
-    </programlisting>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"/>
-  </compounddef>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="vlc__tls_8h" kind="file" language="C++">
+        <compoundname>vlc_tls.h</compoundname>
+        <includes refid="vlc__network_8h" local="no">vlc_network.h</includes>
+        <incdepgraph>
+            <node id="2">
+                <label>vlc_network.h</label>
+                <link refid="vlc__network_8h"/>
+                <childnode refid="3" relation="include">
+                </childnode>
+                <childnode refid="4" relation="include">
+                </childnode>
+                <childnode refid="5" relation="include">
+                </childnode>
+                <childnode refid="6" relation="include">
+                </childnode>
+                <childnode refid="7" relation="include">
+                </childnode>
+            </node>
+            <node id="1">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h
+                </label>
+                <link refid="vlc__tls_8h"/>
+                <childnode refid="2" relation="include">
+                </childnode>
+            </node>
+            <node id="7">
+                <label>netdb.h</label>
+            </node>
+            <node id="6">
+                <label>netinet/in.h</label>
+            </node>
+            <node id="5">
+                <label>sys/socket.h</label>
+            </node>
+            <node id="3">
+                <label>sys/types.h</label>
+            </node>
+            <node id="4">
+                <label>unistd.h</label>
+            </node>
+        </incdepgraph>
+        <innerclass refid="structvlc__tls" prot="public">vlc_tls</innerclass>
+        <innerclass refid="structvlc__tls__creds" prot="public">vlc_tls_creds</innerclass>
+        <sectiondef kind="typedef">
+            <member refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kind="typedef">
+                <name>vlc_tls_t</name>
+            </member>
+            <member refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kind="typedef">
+                <name>vlc_tls_creds_t</name>
+            </member>
+        </sectiondef>
+        <sectiondef kind="func">
+            <member refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" kind="function">
+                <name>vlc_tls_ClientCreate</name>
+            </member>
+            <member refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kind="function">
+                <name>vlc_tls_ServerCreate</name>
+            </member>
+            <member refid="group__tls_1ga4e6145cc2a498a37265e35da5258a0ac" kind="function">
+                <name>vlc_tls_SessionHandshake</name>
+            </member>
+            <member refid="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" kind="function">
+                <name>vlc_tls_Delete</name>
+            </member>
+            <member refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kind="function">
+                <name>vlc_tls_ClientSessionCreate</name>
+            </member>
+            <member refid="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" kind="function">
+                <name>vlc_tls_ServerSessionCreate</name>
+            </member>
+            <member refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kind="function">
+                <name>vlc_tls_SessionDelete</name>
+            </member>
+            <member refid="group__transport_1gaa06096ccbd7011d3b467475e53e464d5" kind="function">
+                <name>vlc_tls_GetFD</name>
+            </member>
+            <member refid="group__transport_1ga57a42167210dfccd0d766cca4dac899e" kind="function">
+                <name>vlc_tls_Read</name>
+            </member>
+            <member refid="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc" kind="function">
+                <name>vlc_tls_GetLine</name>
+            </member>
+            <member refid="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" kind="function">
+                <name>vlc_tls_Write</name>
+            </member>
+            <member refid="group__transport_1gafe1537809c27013cf3203c451e77f7c2" kind="function">
+                <name>vlc_tls_Shutdown</name>
+            </member>
+            <member refid="group__transport_1gabd95c7171fc6bdc0b0a4bc3eebd53fef" kind="function">
+                <name>vlc_tls_Close</name>
+            </member>
+            <member refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" kind="function">
+                <name>vlc_tls_SocketOpen</name>
+            </member>
+            <member refid="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" kind="function">
+                <name>vlc_tls_SocketPair</name>
+            </member>
+            <member refid="group__transport_1ga0045694f60f5f64365860867e9322d50" kind="function">
+                <name>vlc_tls_SocketOpenAddrInfo</name>
+            </member>
+            <member refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" kind="function">
+                <name>vlc_tls_SocketOpenTCP</name>
+            </member>
+            <member refid="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" kind="function">
+                <name>vlc_tls_SocketOpenTLS</name>
+            </member>
+            <member refid="group__transport_1ga4ecfe9a98f85b48bd42b70229f9c6204" kind="function">
+                <name>vlc_tls_ClientSessionCreateFD</name>
+            </member>
+        </sectiondef>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+            <para>Transport layer functions</para>
+        </detaileddescription>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">
+                    /*****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>vlc_tls.h:
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2004-2016<sp/>Rémi<sp/>Denis-Courmont
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005-2006<sp/>VLC<sp/>authors<sp/>and<sp/>
+                    VideoLAN
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can
+                    <sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>
+                    General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version
+                    <sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope
+                    <sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.<sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more
+                    <sp/>details.
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write
+                    <sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>
+                    Boston<sp/>MA<sp/>02110-1301,<sp/>USA.
+                </highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>VLC_TLS_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>define<sp/>VLC_TLS_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#<sp/>include<sp/>&lt;<ref refid="vlc__network_8h" kindref="compound">
+                    vlc_network.h</ref>&gt;
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="41">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="43" refid="structvlc__tls" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="44">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="45">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int<sp/>(*get_fd)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="46">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>ssize_t<sp/>(*readv)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">iovec<sp/>*,<sp/>unsigned);
+                </highlight>
+            </codeline>
+            <codeline lineno="47">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>ssize_t<sp/>(*writev)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">iovec<sp/>*,<sp/>unsigned);
+                </highlight>
+            </codeline>
+            <codeline lineno="48">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int<sp/>(*shutdown)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal"><sp/>duplex);
+                </highlight>
+            </codeline>
+            <codeline lineno="49">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>void<sp/>(*close)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="51">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls" kindref="compound">vlc_tls</ref>
+                    <sp/>*p;
+                </highlight>
+            </codeline>
+            <codeline lineno="52" refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" refkind="member">
+                <highlight class="normal">}
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="53">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="58">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="67" refid="structvlc__tls__creds" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="68">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="69">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="vlc__common_8h_1ade51bfbb83f3125334db7a30a87e2be9" kindref="member">VLC_COMMON_MEMBERS
+                    </ref>
+                </highlight>
+            </codeline>
+            <codeline lineno="70">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="71">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>module_t<sp/>*module;
+                </highlight>
+            </codeline>
+            <codeline lineno="72">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*sys;
+                </highlight>
+            </codeline>
+            <codeline lineno="73">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="74">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*(*open)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref>
+                    <sp/>*,
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*sock,
+                </highlight>
+            </codeline>
+            <codeline lineno="75">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*host,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>*alpn);
+                </highlight>
+            </codeline>
+            <codeline lineno="76">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int
+                    <sp/>
+                    <sp/>(*handshake)(
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">
+                    <ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref>
+                    <sp/>*,
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*session,
+                </highlight>
+            </codeline>
+            <codeline lineno="77">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*hostname,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*service,
+                </highlight>
+            </codeline>
+            <codeline lineno="78">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*restrict*/</highlight>
+                <highlight class="normal"><sp/>alp);
+                </highlight>
+            </codeline>
+            <codeline lineno="79" refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" refkind="member">
+                <highlight class="normal">}
+                    <sp/>
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="80">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="87" refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*<ref refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" kindref="member">
+                        vlc_tls_ClientCreate</ref>(
+                    <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="88">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="98" refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*<ref refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kindref="member">
+                        vlc_tls_ServerCreate</ref>(
+                    <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*cert,
+                </highlight>
+            </codeline>
+            <codeline lineno="99">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*key);
+                </highlight>
+            </codeline>
+            <codeline lineno="100">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="101">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>vlc_tls_SessionHandshake<sp/>(
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*crd,
+                </highlight>
+            </codeline>
+            <codeline lineno="102">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*tls)
+                </highlight>
+            </codeline>
+            <codeline lineno="103">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="104">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>crd-&gt;handshake(crd,<sp/>tls,<sp/>NULL,<sp/>NULL,<sp/>NULL);
+                </highlight>
+            </codeline>
+            <codeline lineno="105">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="106">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="115" refid="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" kindref="member">vlc_tls_Delete</ref>(
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="116">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="141" refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*<ref refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kindref="member">
+                        vlc_tls_ClientSessionCreate</ref>(
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*creds,
+                </highlight>
+            </codeline>
+            <codeline lineno="142">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*sock,
+                </highlight>
+            </codeline>
+            <codeline lineno="143">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*host,
+                </highlight>
+            </codeline>
+            <codeline lineno="144">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*service,
+                </highlight>
+            </codeline>
+            <codeline lineno="145">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>*alpn,
+                </highlight>
+            </codeline>
+            <codeline lineno="146">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**alp);
+                </highlight>
+            </codeline>
+            <codeline lineno="147">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="167" refid="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*<ref refid="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" kindref="member">
+                        vlc_tls_ServerSessionCreate</ref>(
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*creds,
+                </highlight>
+            </codeline>
+            <codeline lineno="168">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*sock,
+                </highlight>
+            </codeline>
+            <codeline lineno="169">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>*alpn);
+                </highlight>
+            </codeline>
+            <codeline lineno="170">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="172">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="185" refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kindref="member">
+                        vlc_tls_SessionDelete
+                    </ref>
+                    <sp/>(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="186">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="187">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>vlc_tls_GetFD(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*tls)
+                </highlight>
+            </codeline>
+            <codeline lineno="188">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="189">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>tls-&gt;get_fd(tls);
+                </highlight>
+            </codeline>
+            <codeline lineno="190">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="191">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="207" refid="group__transport_1ga57a42167210dfccd0d766cca4dac899e" refkind="member">
+                <highlight class="normal">VLC_API<sp/>ssize_t
+                    <sp/>
+                    <ref refid="group__transport_1ga57a42167210dfccd0d766cca4dac899e" kindref="member">
+                        vlc_tls_Read</ref>(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*buf,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">size_t</highlight>
+                <highlight class="normal"><sp/>len,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal"><sp/>waitall);
+                </highlight>
+            </codeline>
+            <codeline lineno="208">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="215" refid="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*<ref refid="group__transport_1ga2aae3cd17462d64e0daf51d83756b5dc"
+                                                     kindref="member">vlc_tls_GetLine</ref>(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*);
+                </highlight>
+            </codeline>
+            <codeline lineno="216">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="220" refid="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" refkind="member">
+                <highlight class="normal">VLC_API<sp/>ssize_t
+                    <sp/>
+                    <ref refid="group__transport_1ga003cada991c5389e87e21e9ff62e1edf" kindref="member">
+                        vlc_tls_Write</ref>(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>*buf,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">size_t</highlight>
+                <highlight class="normal"><sp/>len);
+                </highlight>
+            </codeline>
+            <codeline lineno="221">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="241">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>vlc_tls_Shutdown(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*tls,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal"><sp/>duplex)
+                </highlight>
+            </codeline>
+            <codeline lineno="242">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="243">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>tls-&gt;shutdown(tls,<sp/>duplex);
+                </highlight>
+            </codeline>
+            <codeline lineno="244">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="245">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="257">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal"><sp/>vlc_tls_Close(
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*session)
+                </highlight>
+            </codeline>
+            <codeline lineno="258">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="259">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">do</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="260">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="261">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*p<sp/>=<sp/>session-&gt;p;
+                </highlight>
+            </codeline>
+            <codeline lineno="262">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="263">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1ga1fdffc6559c7a303cf202406d4eb4f8c" kindref="member">
+                        vlc_tls_SessionDelete</ref>(session);
+                </highlight>
+            </codeline>
+            <codeline lineno="264">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>session<sp/>=<sp/>p;
+                </highlight>
+            </codeline>
+            <codeline lineno="265">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}
+                </highlight>
+            </codeline>
+            <codeline lineno="266">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">while</highlight>
+                <highlight class="normal"><sp/>(session<sp/>!=<sp/>NULL);
+                </highlight>
+            </codeline>
+            <codeline lineno="267">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="268">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="281" refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*<ref refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" kindref="member">
+                        vlc_tls_SocketOpen</ref>(
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>fd);
+                </highlight>
+            </codeline>
+            <codeline lineno="282">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="286" refid="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__transport_1ga1697cd8c7a7c31e38120005a96b290af" kindref="member">
+                        vlc_tls_SocketPair</ref>(
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>family,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>protocol,
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*[2]);
+                </highlight>
+            </codeline>
+            <codeline lineno="287">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="288">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                </highlight>
+                <highlight class="normal">addrinfo;</highlight>
+            </codeline>
+            <codeline lineno="289">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="304" refid="group__transport_1ga0045694f60f5f64365860867e9322d50" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*<ref refid="group__transport_1ga0045694f60f5f64365860867e9322d50" kindref="member">
+                        vlc_tls_SocketOpenAddrInfo</ref>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct</highlight>
+                <highlight class="normal"><sp/>addrinfo<sp/>*ai,
+                </highlight>
+            </codeline>
+            <codeline lineno="305">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal"><sp/>defer_connect);
+                </highlight>
+            </codeline>
+            <codeline lineno="306">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="318" refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*<ref refid="group__transport_1gadbd3da5e91647f6e1523236c91d76f85" kindref="member">
+                        vlc_tls_SocketOpenTCP</ref>(
+                    <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                    <sp/>*obj,
+                </highlight>
+            </codeline>
+            <codeline lineno="319">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*hostname,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">unsigned</highlight>
+                <highlight class="normal"><sp/>port);
+                </highlight>
+            </codeline>
+            <codeline lineno="320">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="330" refid="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*<ref refid="group__transport_1ga249b04df315ca6cd1f5cbb75ab011616" kindref="member">
+                        vlc_tls_SocketOpenTLS</ref>(
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*crd,
+                </highlight>
+            </codeline>
+            <codeline lineno="331">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*hostname,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">unsigned</highlight>
+                <highlight class="normal"><sp/>port,
+                </highlight>
+            </codeline>
+            <codeline lineno="332">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*service,
+                </highlight>
+            </codeline>
+            <codeline lineno="333">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>*alpn,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**alp);
+                </highlight>
+            </codeline>
+            <codeline lineno="334">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="335">
+                <highlight class="normal">VLC_DEPRECATED</highlight>
+            </codeline>
+            <codeline lineno="336">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">static</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">inline</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="337">
+                <highlight class="normal">vlc_tls_ClientSessionCreateFD(
+                    <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref>
+                    <sp/>*crd,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>fd,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*host,
+                </highlight>
+            </codeline>
+            <codeline lineno="338">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*srv,
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal"><sp/>*lp,
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>**p)
+                </highlight>
+            </codeline>
+            <codeline lineno="339">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="340">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*sock<sp/>=
+                    <sp/>
+                    <ref refid="group__transport_1ga9af3f3f7c70c35b701425a03da101fbf" kindref="member">
+                        vlc_tls_SocketOpen</ref>(fd);
+                </highlight>
+            </codeline>
+            <codeline lineno="341">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">if</highlight>
+                <highlight class="normal"><sp/>(unlikely(sock<sp/>==<sp/>NULL))
+                </highlight>
+            </codeline>
+            <codeline lineno="342">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>NULL;
+                </highlight>
+            </codeline>
+            <codeline lineno="343">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="344">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref>
+                    <sp/>*tls<sp/>=
+                    <sp/>
+                    <ref refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kindref="member">
+                        vlc_tls_ClientSessionCreate</ref>(crd,<sp/>sock,<sp/>host,<sp/>srv,<sp/>lp,<sp/>p);
+                </highlight>
+            </codeline>
+            <codeline lineno="345">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">if</highlight>
+                <highlight class="normal"><sp/>(unlikely(tls<sp/>==<sp/>NULL))
+                </highlight>
+            </codeline>
+            <codeline lineno="346">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>free(sock);
+                </highlight>
+            </codeline>
+            <codeline lineno="347">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordflow">return</highlight>
+                <highlight class="normal"><sp/>tls;
+                </highlight>
+            </codeline>
+            <codeline lineno="348">
+                <highlight class="normal">}</highlight>
+            </codeline>
+            <codeline lineno="349">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="351">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="352">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif</highlight>
+            </codeline>
+        </programlisting>
+        <location
+                file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"/>
+    </compounddef>
 </doxygen>

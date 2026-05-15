@@ -1,246 +1,359 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="group__spu" kind="group">
-    <compoundname>spu</compoundname>
-    <title>Sub-picture channels</title>
-    <innerfile refid="vlc__spu_8h">vlc_spu.h</innerfile>
-    <innerclass refid="structspu__t" prot="public">spu_t</innerclass>
-    <innergroup refid="group__osd">On-screen display</innergroup>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__spu_1gabdccd500883ce39c8da69a8f3e5f4257" prot="public" static="no">
-        <type>struct spu_private_t</type>
-        <definition>typedef struct spu_private_t spu_private_t</definition>
-        <argsstring></argsstring>
-        <name>spu_private_t</name>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="group__spu" kind="group">
+        <compoundname>spu</compoundname>
+        <title>Sub-picture channels</title>
+        <innerfile refid="vlc__spu_8h">vlc_spu.h</innerfile>
+        <innerclass refid="structspu__t" prot="public">spu_t</innerclass>
+        <innergroup refid="group__osd">On-screen display</innergroup>
+        <sectiondef kind="typedef">
+            <memberdef kind="typedef" id="group__spu_1gabdccd500883ce39c8da69a8f3e5f4257" prot="public" static="no">
+                <type>struct spu_private_t</type>
+                <definition>typedef struct spu_private_t spu_private_t</definition>
+                <argsstring></argsstring>
+                <name>spu_private_t</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="42" column="28"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        bodystart="42" bodyend="-1"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="group__spu_1ga04e3bd837f0f3fd36a7921bf4e3a2aa2" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structspu__t" kindref="compound">spu_t</ref> *
+                </type>
+                <definition>VLC_API spu_t * spu_Create</definition>
+                <argsstring>(vlc_object_t *, vout_thread_t *)</argsstring>
+                <name>spu_Create</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="54" column="20"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="54" declcolumn="20"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1ga0cc79e6d5719280bc6ad6a784b9ec94f" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void spu_Destroy</definition>
+                <argsstring>(spu_t *)</argsstring>
+                <name>spu_Destroy</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="56" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="56" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1gad59fdd18b195cf3f1009ae648462570a" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void spu_PutSubpicture</definition>
+                <argsstring>(spu_t *, subpicture_t *)</argsstring>
+                <name>spu_PutSubpicture</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This function sends a subpicture to the <ref refid="structspu__t" kindref="compound">spu_t
+                    </ref> core.
+                    </para>
+                    <para>You cannot use the provided subpicture anymore. The <ref refid="structspu__t"
+                                                                                   kindref="compound">spu_t
+                    </ref> core will destroy it at its convenience.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="64" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="64" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1ga4f3e319628827793de148cb96d0973e5" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *
+                </type>
+                <definition>VLC_API subpicture_t * spu_Render</definition>
+                <argsstring>(spu_t *, const vlc_fourcc_t *p_chroma_list, const video_format_t *p_fmt_dst, const
+                    video_format_t *p_fmt_src, vlc_tick_t render_subtitle_date, vlc_tick_t render_osd_date, bool
+                    ignore_osd)
+                </argsstring>
+                <name>spu_Render</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>const <ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">
+                        vlc_fourcc_t
+                    </ref> *
+                    </type>
+                    <declname>p_chroma_list</declname>
+                </param>
+                <param>
+                    <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *
+                    </type>
+                    <declname>p_fmt_dst</declname>
+                </param>
+                <param>
+                    <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *
+                    </type>
+                    <declname>p_fmt_src</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref>
+                    </type>
+                    <declname>render_subtitle_date</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref>
+                    </type>
+                    <declname>render_osd_date</declname>
+                </param>
+                <param>
+                    <type>bool</type>
+                    <declname>ignore_osd</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This function will return an unique subpicture containing the OSD and subtitles visibles at
+                        the requested date.
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>p_chroma_list</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>is a list of supported chroma for the output (can be NULL)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>p_fmt_dst</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>is the format of the picture on which the return subpicture will be
+                                        rendered.
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>p_fmt_src</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>is the format of the original(source) video.</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        The returned value if non NULL must be released by <ref
+                            refid="group__subpicture_1ga86b24b8b7a37505a97ce99e34b8fa83e" kindref="member">
+                        subpicture_Delete()</ref>.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="76" column="23"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="76" declcolumn="23"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1gaf4b3f9a5ac28cd9ead38e2f9fd9aeff0" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API int</type>
+                <definition>VLC_API int spu_RegisterChannel</definition>
+                <argsstring>(spu_t *)</argsstring>
+                <name>spu_RegisterChannel</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It registers a new SPU channel.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="81" column="13"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="81" declcolumn="13"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1ga01ff3c370e1b70cb0f0d560a59334e37" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void spu_ClearChannel</definition>
+                <argsstring>(spu_t *, int)</argsstring>
+                <name>spu_ClearChannel</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>int</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It clears all subpictures associated to a SPU channel.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="86" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="86" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1ga231064c2e066598ebcab3f97486c98f7" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void spu_ChangeSources</definition>
+                <argsstring>(spu_t *, const char *)</argsstring>
+                <name>spu_ChangeSources</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>const char *</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It changes the sub sources list</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="91" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="91" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="group__spu_1gae8503a836229a6afba988668e9cbbcff" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void spu_ChangeFilters</definition>
+                <argsstring>(spu_t *, const char *)</argsstring>
+                <name>spu_ChangeFilters</name>
+                <param>
+                    <type>
+                        <ref refid="structspu__t" kindref="compound">spu_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>const char *</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It changes the sub filters list</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="96" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        declline="96" declcolumn="14"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="define">
+            <memberdef kind="define" id="group__spu_1ga7c8ac260deeb57268ca856760f7801ed" prot="public" static="no">
+                <name>spu_Create</name>
+                <param>
+                    <defname>a</defname>
+                </param>
+                <param>
+                    <defname>b</defname>
+                </param>
+                <initializer>spu_Create(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">
+                    VLC_OBJECT</ref>(a),b)
+                </initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        line="55" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h"
+                        bodystart="55" bodyend="-1"/>
+            </memberdef>
+        </sectiondef>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="42" column="28" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" bodystart="42" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="group__spu_1ga04e3bd837f0f3fd36a7921bf4e3a2aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        <definition>VLC_API spu_t * spu_Create</definition>
-        <argsstring>(vlc_object_t *, vout_thread_t *)</argsstring>
-        <name>spu_Create</name>
-        <param>
-          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
-        </param>
-        <param>
-          <type><ref refid="structvout__thread__t" kindref="compound">vout_thread_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="54" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="54" declcolumn="20"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1ga0cc79e6d5719280bc6ad6a784b9ec94f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void spu_Destroy</definition>
-        <argsstring>(spu_t *)</argsstring>
-        <name>spu_Destroy</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="56" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="56" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1gad59fdd18b195cf3f1009ae648462570a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void spu_PutSubpicture</definition>
-        <argsstring>(spu_t *, subpicture_t *)</argsstring>
-        <name>spu_PutSubpicture</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <param>
-          <type><ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This function sends a subpicture to the <ref refid="structspu__t" kindref="compound">spu_t</ref> core.</para>
-<para>You cannot use the provided subpicture anymore. The <ref refid="structspu__t" kindref="compound">spu_t</ref> core will destroy it at its convenience. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="64" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="64" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1ga4f3e319628827793de148cb96d0973e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structsubpicture__t" kindref="compound">subpicture_t</ref> *</type>
-        <definition>VLC_API subpicture_t * spu_Render</definition>
-        <argsstring>(spu_t *, const vlc_fourcc_t *p_chroma_list, const video_format_t *p_fmt_dst, const video_format_t *p_fmt_src, vlc_tick_t render_subtitle_date, vlc_tick_t render_osd_date, bool ignore_osd)</argsstring>
-        <name>spu_Render</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <param>
-          <type>const <ref refid="vlc__common_8h_1af49f89d0f752bc9cff142e43b1bd634d" kindref="member">vlc_fourcc_t</ref> *</type>
-          <declname>p_chroma_list</declname>
-        </param>
-        <param>
-          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
-          <declname>p_fmt_dst</declname>
-        </param>
-        <param>
-          <type>const <ref refid="structvideo__format__t" kindref="compound">video_format_t</ref> *</type>
-          <declname>p_fmt_src</declname>
-        </param>
-        <param>
-          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
-          <declname>render_subtitle_date</declname>
-        </param>
-        <param>
-          <type><ref refid="vlc__common_8h_1a4185ff2b4df43e2bfd7ae9736b235d35" kindref="member">vlc_tick_t</ref></type>
-          <declname>render_osd_date</declname>
-        </param>
-        <param>
-          <type>bool</type>
-          <declname>ignore_osd</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This function will return an unique subpicture containing the OSD and subtitles visibles at the requested date.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>p_chroma_list</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>is a list of supported chroma for the output (can be NULL) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_fmt_dst</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>is the format of the picture on which the return subpicture will be rendered. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_fmt_src</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>is the format of the original(source) video.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The returned value if non NULL must be released by <ref refid="group__subpicture_1ga86b24b8b7a37505a97ce99e34b8fa83e" kindref="member">subpicture_Delete()</ref>. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="76" column="23" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="76" declcolumn="23"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1gaf4b3f9a5ac28cd9ead38e2f9fd9aeff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API int</type>
-        <definition>VLC_API int spu_RegisterChannel</definition>
-        <argsstring>(spu_t *)</argsstring>
-        <name>spu_RegisterChannel</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It registers a new SPU channel. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="81" column="13" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="81" declcolumn="13"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1ga01ff3c370e1b70cb0f0d560a59334e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void spu_ClearChannel</definition>
-        <argsstring>(spu_t *, int)</argsstring>
-        <name>spu_ClearChannel</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <param>
-          <type>int</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It clears all subpictures associated to a SPU channel. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="86" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="86" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1ga231064c2e066598ebcab3f97486c98f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void spu_ChangeSources</definition>
-        <argsstring>(spu_t *, const char *)</argsstring>
-        <name>spu_ChangeSources</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <param>
-          <type>const char *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It changes the sub sources list </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="91" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="91" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="group__spu_1gae8503a836229a6afba988668e9cbbcff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void spu_ChangeFilters</definition>
-        <argsstring>(spu_t *, const char *)</argsstring>
-        <name>spu_ChangeFilters</name>
-        <param>
-          <type><ref refid="structspu__t" kindref="compound">spu_t</ref> *</type>
-        </param>
-        <param>
-          <type>const char *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It changes the sub filters list </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="96" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" declline="96" declcolumn="14"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="define">
-      <memberdef kind="define" id="group__spu_1ga7c8ac260deeb57268ca856760f7801ed" prot="public" static="no">
-        <name>spu_Create</name>
-        <param><defname>a</defname></param>
-        <param><defname>b</defname></param>
-        <initializer>spu_Create(<ref refid="vlc__common_8h_1a0bb384dcbe940a1de9daf45b12db24dd" kindref="member">VLC_OBJECT</ref>(a),b)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" line="55" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_spu.h" bodystart="55" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-    </detaileddescription>
-  </compounddef>
+    </compounddef>
 </doxygen>

@@ -3,11 +3,31 @@
   <compounddef id="M__LecteurPhysique_8cpp" kind="file" language="C++">
     <compoundname>M_LecteurPhysique.cpp</compoundname>
     <includes refid="M__LecteurPhysique_8h" local="yes">Modele/M_LecteurPhysique.h</includes>
+    <includes refid="M__JsonUtil_8h" local="yes">Modele/M_JsonUtil.h</includes>
     <includes local="no">filesystem</includes>
     <includes local="no">thread</includes>
     <includes local="no">chrono</includes>
     <includes local="no">cstring</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">ifaddrs.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">unistd.h</includes>
     <incdepgraph>
+      <node id="8">
+        <label>Modele/M_JsonUtil.h</label>
+        <link refid="M__JsonUtil_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>Modele/M_LecteurPhysique.h</label>
         <link refid="M__LecteurPhysique_8h_source"/>
@@ -29,33 +49,83 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>algorithm</label>
+      </node>
+      <node id="21">
+        <label>arpa/inet.h</label>
       </node>
       <node id="6">
         <label>atomic</label>
       </node>
-      <node id="10">
+      <node id="13">
         <label>chrono</label>
       </node>
-      <node id="11">
+      <node id="14">
         <label>cstring</label>
       </node>
-      <node id="8">
+      <node id="11">
         <label>filesystem</label>
+      </node>
+      <node id="15">
+        <label>fstream</label>
+      </node>
+      <node id="19">
+        <label>ifaddrs.h</label>
+      </node>
+      <node id="17">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>map</label>
       </node>
       <node id="7">
         <label>mutex</label>
       </node>
+      <node id="20">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="16">
+        <label>sstream</label>
+      </node>
+      <node id="10">
+        <label>stdexcept</label>
+      </node>
       <node id="4">
         <label>string</label>
       </node>
-      <node id="9">
+      <node id="12">
         <label>thread</label>
+      </node>
+      <node id="22">
+        <label>unistd.h</label>
       </node>
       <node id="5">
         <label>vector</label>
@@ -70,103 +140,265 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Modele/M_LecteurPhysique.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique::M_LecteurPhysique</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref><sp/>=<sp/>libvlc_new(0,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref><sp/>=<sp/>libvlc_media_player_new(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Modele/M_JsonUtil.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><ref refid="classM__LecteurPhysique_1aa576e14b299ea3e1c176b093e03ea6a3" kindref="member">M_LecteurPhysique::~M_LecteurPhysique</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ordre<sp/>de<sp/>libération<sp/>important<sp/>pour<sp/>éviter<sp/>les<sp/>accès<sp/>mémoire<sp/>invalides</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>)<sp/>{<sp/>libvlc_media_player_release(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>);<sp/>}</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>)<sp/>{<sp/>libvlc_release(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>);<sp/>}</highlight></codeline>
-<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a20ce647b80d9e95233f41f7f1d4f7754" kindref="member">M_LecteurPhysique::lireVideo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;cheminVideo)<sp/>{</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!filesystem::exists(cheminVideo))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ifaddrs.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_media_t<sp/>*media<sp/>=<sp/>libvlc_media_new_path(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>,<sp/>cheminVideo.c_str());</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!media)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_media_player_set_media(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>,<sp/>media);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_media_release(media);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enregistrement<sp/>des<sp/>callbacks<sp/>pour<sp/>récupérer<sp/>le<sp/>flux<sp/>vidéo<sp/>brut</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_video_set_callbacks(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>,<sp/><ref refid="classM__LecteurPhysique_1af943b235c86b492ce0a92c66bd8480c8" kindref="member">cb_verrouiller</ref>,<sp/><ref refid="classM__LecteurPhysique_1a7ca110dcf985a027ecc7f38bf469050d" kindref="member">cb_deverrouiller</ref>,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_video_set_format_callbacks(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>,<sp/>libvlc_video_format_cb(<ref refid="classM__LecteurPhysique_1af3c2bb1bd28156374ed1eefb0c1b1f5e" kindref="member">cb_configurerVideo</ref>),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialisation<sp/>forcée<sp/>pour<sp/>récupérer<sp/>les<sp/>métadonnées<sp/>(durée)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a69104ad0ae40c3c4122f8beaa3e25ada" kindref="member">demarrer</ref>();</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>this_thread::sleep_for(chrono::milliseconds(200));</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a190e4ecec014c17665cd519107f7036f" kindref="member">pause</ref>();</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>libvlc_time_t<sp/>len<sp/>=<sp/>libvlc_media_player_get_length(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a4dbde79312244618e967110024988c0c" kindref="member">dureeTotale</ref><sp/>=<sp/>(len<sp/>!=<sp/>-1)<sp/>?<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(len)<sp/>/<sp/>1000.0f<sp/>:<sp/>0.0f;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1ab8954b25b9ca42be9f51f081f5104fec" kindref="member">M_LecteurPhysique::recupererFrameVideo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*&amp;outPixels,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;outLargeur,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;outHauteur,</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;outRedimensionnement)<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Protection<sp/>de<sp/>l&apos;accès<sp/>au<sp/>buffer<sp/>partagé<sp/>avec<sp/>le<sp/>thread<sp/>VLC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>lock_guard<sp/>lock(<ref refid="classM__LecteurPhysique_1a62ac5a617907df79fef901b2b50ff83d" kindref="member">mutexImage</ref>);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kindref="member">textureDoitEtreRedimensionnee</ref><sp/>||<sp/><ref refid="classM__LecteurPhysique_1a75ae1ed1e5cc54dfe6585e7f27742e7b" kindref="member">framePrete</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outPixels<sp/>=<sp/><ref refid="classM__LecteurPhysique_1a763a0e6851268f3bc119e22392c8596c" kindref="member">pixelsVideo</ref>.data();</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outLargeur<sp/>=<sp/><ref refid="classM__LecteurPhysique_1afae64cdb8e1532309d47bfdb8f8d9660" kindref="member">largeurVideo</ref>;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outHauteur<sp/>=<sp/><ref refid="classM__LecteurPhysique_1a94f4a8c40caebd6474a2573bb8a6569a" kindref="member">hauteurVideo</ref>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outRedimensionnement<sp/>=<sp/><ref refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kindref="member">textureDoitEtreRedimensionnee</ref>;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Réinitialisation<sp/>des<sp/>états<sp/>après<sp/>lecture</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kindref="member">textureDoitEtreRedimensionnee</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a75ae1ed1e5cc54dfe6585e7f27742e7b" kindref="member">framePrete</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>CALLBACKS<sp/>VLC<sp/>(Appelés<sp/>par<sp/>les<sp/>threads<sp/>internes<sp/>de<sp/>VLC)<sp/>---</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="classM__LecteurPhysique_1af943b235c86b492ce0a92c66bd8480c8" kindref="member">M_LecteurPhysique::cb_verrouiller</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*opaque,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**plans)<sp/>{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*mod<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(opaque);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>bloque<sp/>l&apos;accès<sp/>pour<sp/>que<sp/>l&apos;UI<sp/>ne<sp/>lise<sp/>pas<sp/>pendant<sp/>que<sp/>VLC<sp/>écrit</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;mutexImage.lock();</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>*plans<sp/>=<sp/>mod-&gt;pixelsVideo.data();</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a7ca110dcf985a027ecc7f38bf469050d" kindref="member">M_LecteurPhysique::cb_deverrouiller</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*opaque,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal">*)<sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*mod<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(opaque);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;framePrete<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;mutexImage.unlock();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1af3c2bb1bd28156374ed1eefb0c1b1f5e" kindref="member">M_LecteurPhysique::cb_configurerVideo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**opaque,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*chrominance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*largeur,</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*hauteur,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*pas,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*lignes)<sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*mod<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*opaque);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>lock_guard<sp/>lock(mod-&gt;mutexImage);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;largeurVideo<sp/>=<sp/>*largeur;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;hauteurVideo<sp/>=<sp/>*hauteur;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>prépare<sp/>le<sp/>buffer<sp/>:<sp/>largeur<sp/>*<sp/>hauteur<sp/>*<sp/>4<sp/>octets<sp/>(RGBA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;pixelsVideo.resize(*largeur<sp/>*<sp/>*hauteur<sp/>*<sp/>4);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Force<sp/>VLC<sp/>à<sp/>sortir<sp/>du<sp/>RGBA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(chrominance,<sp/></highlight><highlight class="stringliteral">&quot;RGBA&quot;</highlight><highlight class="normal">,<sp/>4);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>*pas<sp/>=<sp/>*largeur<sp/>*<sp/>4;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>*lignes<sp/>=<sp/>*hauteur;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;textureDoitEtreRedimensionnee<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Succès</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique::M_LecteurPhysique</ref>()</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_tailleEcranPouces(0),<sp/>m_memoireMo(0),<sp/>m_nbMaxVideos(1)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>m_layoutAffichage<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;plein_ecran&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lecteurVideo<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;VLC&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>m_resolution<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;1920x1080&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>instanceVLC<sp/>=<sp/>libvlc_new(0,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>lecteurVLC<sp/>=<sp/>libvlc_media_player_new(instanceVLC);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="classM__LecteurPhysique_1aa576e14b299ea3e1c176b093e03ea6a3" kindref="member">M_LecteurPhysique::~M_LecteurPhysique</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>)<sp/>{<sp/>libvlc_media_player_release(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>)<sp/>{<sp/>libvlc_release(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1ab18421fa7bd3af78d82536350103823f" kindref="member">M_LecteurPhysique::getProgressionActuelle</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_time_t<sp/>t<sp/>=<sp/>libvlc_media_player_get_time(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(t<sp/>!=<sp/>-1)<sp/>?<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(t)<sp/>/<sp/>1000.0f<sp/>:<sp/>0.0f;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>PARTIE<sp/>VLC<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a20ce647b80d9e95233f41f7f1d4f7754" kindref="member">M_LecteurPhysique::lireVideo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;cheminVideo)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!filesystem::exists(cheminVideo))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_media_t<sp/>*media<sp/>=<sp/>libvlc_media_new_path(<ref refid="classM__LecteurPhysique_1a7c4c5b212a77cfddf9f2ee89a7017152" kindref="member">instanceVLC</ref>,<sp/>cheminVideo.c_str());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!media)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_media_player_set_media(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>,<sp/>media);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_media_release(media);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_video_set_callbacks(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>,<sp/><ref refid="classM__LecteurPhysique_1af943b235c86b492ce0a92c66bd8480c8" kindref="member">cb_verrouiller</ref>,<sp/><ref refid="classM__LecteurPhysique_1a7ca110dcf985a027ecc7f38bf469050d" kindref="member">cb_deverrouiller</ref>,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>libvlc_video_set_format_callbacks(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>,<sp/>libvlc_video_format_cb(<ref refid="classM__LecteurPhysique_1af3c2bb1bd28156374ed1eefb0c1b1f5e" kindref="member">cb_configurerVideo</ref>),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a69104ad0ae40c3c4122f8beaa3e25ada" kindref="member">demarrer</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>this_thread::sleep_for(chrono::milliseconds(200));</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a190e4ecec014c17665cd519107f7036f" kindref="member">pause</ref>();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>libvlc_time_t<sp/>len<sp/>=<sp/>libvlc_media_player_get_length(<ref refid="classM__LecteurPhysique_1ab611b276217b83e57158f3209babaea7" kindref="member">lecteurVLC</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a4dbde79312244618e967110024988c0c" kindref="member">dureeTotale</ref><sp/>=<sp/>(len<sp/>!=<sp/>-1)<sp/>?<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(len)<sp/>/<sp/>1000.0f<sp/>:<sp/>0.0f;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1ab8954b25b9ca42be9f51f081f5104fec" kindref="member">M_LecteurPhysique::recupererFrameVideo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*&amp;outPixels,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;outLargeur,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;outHauteur,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;outRedimensionnement)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>lock_guard<sp/>lock(<ref refid="classM__LecteurPhysique_1a62ac5a617907df79fef901b2b50ff83d" kindref="member">mutexImage</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kindref="member">textureDoitEtreRedimensionnee</ref><sp/>||<sp/><ref refid="classM__LecteurPhysique_1a75ae1ed1e5cc54dfe6585e7f27742e7b" kindref="member">framePrete</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outPixels<sp/>=<sp/><ref refid="classM__LecteurPhysique_1a763a0e6851268f3bc119e22392c8596c" kindref="member">pixelsVideo</ref>.data();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outLargeur<sp/>=<sp/><ref refid="classM__LecteurPhysique_1afae64cdb8e1532309d47bfdb8f8d9660" kindref="member">largeurVideo</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outHauteur<sp/>=<sp/><ref refid="classM__LecteurPhysique_1a94f4a8c40caebd6474a2573bb8a6569a" kindref="member">hauteurVideo</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outRedimensionnement<sp/>=<sp/><ref refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kindref="member">textureDoitEtreRedimensionnee</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a106d87801451fbc82750c37d7538d507" kindref="member">textureDoitEtreRedimensionnee</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a75ae1ed1e5cc54dfe6585e7f27742e7b" kindref="member">framePrete</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="classM__LecteurPhysique_1af943b235c86b492ce0a92c66bd8480c8" kindref="member">M_LecteurPhysique::cb_verrouiller</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*opaque,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**plans)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*mod<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(opaque);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;mutexImage.lock();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>*plans<sp/>=<sp/>mod-&gt;pixelsVideo.data();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a7ca110dcf985a027ecc7f38bf469050d" kindref="member">M_LecteurPhysique::cb_deverrouiller</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*opaque,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal">*)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*mod<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(opaque);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;framePrete<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;mutexImage.unlock();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1af3c2bb1bd28156374ed1eefb0c1b1f5e" kindref="member">M_LecteurPhysique::cb_configurerVideo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**opaque,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*chrominance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*largeur,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*hauteur,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*pas,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>*lignes)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*mod<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classM__LecteurPhysique_1ad755ed8297531c85ab6404a58f0bffc5" kindref="member">M_LecteurPhysique</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*opaque);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>lock_guard<sp/>lock(mod-&gt;mutexImage);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;largeurVideo<sp/>=<sp/>*largeur;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;hauteurVideo<sp/>=<sp/>*hauteur;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;pixelsVideo.resize(*largeur<sp/>*<sp/>*hauteur<sp/>*<sp/>4);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(chrominance,<sp/></highlight><highlight class="stringliteral">&quot;RGBA&quot;</highlight><highlight class="normal">,<sp/>4);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>*pas<sp/>=<sp/>*largeur<sp/>*<sp/>4;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>*lignes<sp/>=<sp/>*hauteur;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>mod-&gt;textureDoitEtreRedimensionnee<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>PARTIE<sp/>MATÉRIELLE<sp/>COMPATIBLE<sp/>LINUX/WINDOWS<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1ac27b1846e6293318e0066aca679bb046" kindref="member">M_LecteurPhysique::collecterInfosLocales</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1ac43629cbe7d503fe27794e566c9bc4ae" kindref="member">collecterNom</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a075cca6070729370bb82fc90a0b45f96" kindref="member">collecterIpEtMac</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a0253d92c5bd8b67a1de4b2c1ecb0c083" kindref="member">collecterOs</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1afdbda4238dc576e0c5c2ca4e566772cf" kindref="member">collecterCpu</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1ae00d8bb4749399d0ce6a2afbc04ad873" kindref="member">collecterMemoire</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a109fb2d87880dee7b4574714cf9082b0" kindref="member">m_typeMachine</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PC-Windows&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a109fb2d87880dee7b4574714cf9082b0" kindref="member">m_typeMachine</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PC-Linux&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1ac43629cbe7d503fe27794e566c9bc4ae" kindref="member">M_LecteurPhysique::collecterNom</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>hostname[256];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gethostname(hostname,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(hostname))<sp/>==<sp/>0)<sp/><ref refid="classM__LecteurPhysique_1a70d9f80b92577975a59bad6f07aa85ea" kindref="member">m_nom</ref><sp/>=<sp/>string(hostname);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a70d9f80b92577975a59bad6f07aa85ea" kindref="member">m_nom</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;LecteurWin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gethostname(hostname,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(hostname))<sp/>==<sp/>0)<sp/><ref refid="classM__LecteurPhysique_1a70d9f80b92577975a59bad6f07aa85ea" kindref="member">m_nom</ref><sp/>=<sp/>string(hostname);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a70d9f80b92577975a59bad6f07aa85ea" kindref="member">m_nom</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;LecteurLinux&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a075cca6070729370bb82fc90a0b45f96" kindref="member">M_LecteurPhysique::collecterIpEtMac</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;127.0.0.1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;00:00:00:00:00:00&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>ifaddrs<sp/>*interfaces<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getifaddrs(&amp;interfaces)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;00:00:00:00:00:00&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>ifaceRetenue;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(ifaddrs<sp/>*it<sp/>=<sp/>interfaces;<sp/>it<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/>it<sp/>=<sp/>it-&gt;ifa_next)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;ifa_addr<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>nomIface(it-&gt;ifa_name);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nomIface<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;lo&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;ifa_addr-&gt;sa_family<sp/>==<sp/>AF_INET<sp/>&amp;&amp;<sp/><ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ipStr[INET_ADDRSTRLEN];</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*addr<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">sockaddr_in<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(it-&gt;ifa_addr);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inet_ntop(AF_INET,<sp/>&amp;addr-&gt;sin_addr,<sp/>ipStr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ipStr));</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref><sp/>=<sp/>string(ipStr);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifaceRetenue<sp/>=<sp/>nomIface;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>freeifaddrs(interfaces);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lireMac<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;iface)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifstream<sp/>f(</highlight><highlight class="stringliteral">&quot;/sys/class/net/&quot;</highlight><highlight class="normal"><sp/>+<sp/>iface<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/address&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>mac;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(f.is_open())<sp/>getline(f,<sp/>mac);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mac;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ifaceRetenue.empty())<sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref><sp/>=<sp/>lireMac(ifaceRetenue);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref>.empty())<sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref><sp/>=<sp/>lireMac(</highlight><highlight class="stringliteral">&quot;eth0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref>.empty())<sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref><sp/>=<sp/>lireMac(</highlight><highlight class="stringliteral">&quot;wlan0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref>.empty())<sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;00:00:00:00:00:00&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref>.empty())<sp/><ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a0253d92c5bd8b67a1de4b2c1ecb0c083" kindref="member">M_LecteurPhysique::collecterOs</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Windows&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>f(</highlight><highlight class="stringliteral">&quot;/etc/os-release&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!f.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Linux&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>ligne;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(f,<sp/>ligne))<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ligne.rfind(</highlight><highlight class="stringliteral">&quot;PRETTY_NAME=&quot;</highlight><highlight class="normal">,<sp/>0)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref><sp/>=<sp/>ligne.substr(12);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref>.erase(remove(<ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref>.begin(),<sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref>.end(),<sp/></highlight><highlight class="charliteral">&apos;&quot;&apos;</highlight><highlight class="normal">),<sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref>.end());</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Linux&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1afdbda4238dc576e0c5c2ca4e566772cf" kindref="member">M_LecteurPhysique::collecterCpu</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;CPU<sp/>Windows&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>f(</highlight><highlight class="stringliteral">&quot;/proc/cpuinfo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!f.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Inconnu&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>ligne;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(f,<sp/>ligne))<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ligne.rfind(</highlight><highlight class="stringliteral">&quot;model<sp/>name&quot;</highlight><highlight class="normal">,<sp/>0)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>ligne.find(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pos<sp/>!=<sp/>string::npos)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref><sp/>=<sp/>ligne.substr(pos<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ligne.rfind(</highlight><highlight class="stringliteral">&quot;Hardware&quot;</highlight><highlight class="normal">,<sp/>0)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>ligne.find(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pos<sp/>!=<sp/>string::npos)<sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref><sp/>=<sp/>ligne.substr(pos<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref>.empty())<sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Inconnu&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1ae00d8bb4749399d0ce6a2afbc04ad873" kindref="member">M_LecteurPhysique::collecterMemoire</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>MEMORYSTATUSEX<sp/>statex;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>statex.dwLength<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(statex);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(GlobalMemoryStatusEx(&amp;statex))<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kindref="member">m_memoireMo</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(statex.ullTotalPhys<sp/>/<sp/>(1024<sp/>*<sp/>1024));</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kindref="member">m_memoireMo</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>f(</highlight><highlight class="stringliteral">&quot;/proc/meminfo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!f.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kindref="member">m_memoireMo</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>ligne;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(f,<sp/>ligne))<sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ligne.rfind(</highlight><highlight class="stringliteral">&quot;MemTotal:&quot;</highlight><highlight class="normal">,<sp/>0)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>istringstream<sp/>iss(ligne);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>label,<sp/>unite;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>kB<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iss<sp/>&gt;&gt;<sp/>label<sp/>&gt;&gt;<sp/>kB<sp/>&gt;&gt;<sp/>unite;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kindref="member">m_memoireMo</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(kB<sp/>/<sp/>1024);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kindref="member">m_memoireMo</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classM__LecteurPhysique_1a6b667afd6b3442f0be64c3dda6ff9a1d" kindref="member">M_LecteurPhysique::versJson</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>string&gt;<sp/>champs<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;nom&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1a70d9f80b92577975a59bad6f07aa85ea" kindref="member">m_nom</ref>},<sp/>{</highlight><highlight class="stringliteral">&quot;ip&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1ac3acb1851e624ba897255be691fbb096" kindref="member">m_ip</ref>},<sp/>{</highlight><highlight class="stringliteral">&quot;mac&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1af43770419c823c90f7459d42cc32efe8" kindref="member">m_mac</ref>},<sp/>{</highlight><highlight class="stringliteral">&quot;os&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1a163b4afc39541d35f836e434fc622578" kindref="member">m_os</ref>},</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;typeMachine&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1a109fb2d87880dee7b4574714cf9082b0" kindref="member">m_typeMachine</ref>},<sp/>{</highlight><highlight class="stringliteral">&quot;resolution&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1a8491214c37c0d8322fc1017e8c32332e" kindref="member">m_resolution</ref>},</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;tailleEcran&quot;</highlight><highlight class="normal">,<sp/>to_string(<ref refid="classM__LecteurPhysique_1afdbd617fddddfca065ef692818205d2f" kindref="member">m_tailleEcranPouces</ref>)},<sp/>{</highlight><highlight class="stringliteral">&quot;processeur&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1a76c932b65c4f595b13b03902db541cda" kindref="member">m_processeur</ref>},</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;memoire&quot;</highlight><highlight class="normal">,<sp/>to_string(<ref refid="classM__LecteurPhysique_1a55c8bb2e354e63421091a76cfa000c87" kindref="member">m_memoireMo</ref>)},<sp/>{</highlight><highlight class="stringliteral">&quot;lecteurVideo&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1a4569455fe8a6b799692cdc71c5a4ef9d" kindref="member">m_lecteurVideo</ref>},</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;layoutAffichage&quot;</highlight><highlight class="normal">,<sp/><ref refid="classM__LecteurPhysique_1ac40113a9621be8c5f27cdd57699e934c" kindref="member">m_layoutAffichage</ref>},<sp/>{</highlight><highlight class="stringliteral">&quot;nbMaxVideos&quot;</highlight><highlight class="normal">,<sp/>to_string(<ref refid="classM__LecteurPhysique_1a6570c85f7970028c1a1c8383967d30c4" kindref="member">m_nbMaxVideos</ref>)}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>M_JsonUtil::construire(champs);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_LecteurPhysique.cpp"/>
   </compounddef>

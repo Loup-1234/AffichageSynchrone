@@ -1,288 +1,418 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="group__tls" kind="group">
-    <compoundname>tls</compoundname>
-    <title>Transport Layer Security</title>
-    <innerclass refid="structvlc__tls__creds" prot="public">vlc_tls_creds</innerclass>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" prot="public" static="no">
-        <type>struct <ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref></type>
-        <definition>typedef struct vlc_tls_creds vlc_tls_creds_t</definition>
-        <argsstring></argsstring>
-        <name>vlc_tls_creds_t</name>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="group__tls" kind="group">
+        <compoundname>tls</compoundname>
+        <title>Transport Layer Security</title>
+        <innerclass refid="structvlc__tls__creds" prot="public">vlc_tls_creds</innerclass>
+        <sectiondef kind="typedef">
+            <memberdef kind="typedef" id="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" prot="public" static="no">
+                <type>struct
+                    <ref refid="structvlc__tls__creds" kindref="compound">vlc_tls_creds</ref>
+                </type>
+                <definition>typedef struct vlc_tls_creds vlc_tls_creds_t</definition>
+                <argsstring></argsstring>
+                <name>vlc_tls_creds_t</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>TLS credentials</para>
+                    <para>This structure contains the credentials for establishing TLS sessions. This includes root
+                        Certificate Authorities (on client side), trust and cryptographic parameters, public
+                        certificates and private keys.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="79" column="17"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">
+                    vlc_tls_creds_t
+                </ref> *
+                </type>
+                <definition>VLC_API vlc_tls_creds_t * vlc_tls_ClientCreate</definition>
+                <argsstring>(vlc_object_t *)</argsstring>
+                <name>vlc_tls_ClientCreate</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Allocates TLS credentials for a client. Credentials can be cached and reused across multiple
+                        TLS sessions.
+                    </para>
+                    <para>
+                        <simplesect kind="return">
+                            <para>TLS credentials object, or NULL on error.</para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="87" column="25"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        declline="87" declcolumn="25"/>
+            </memberdef>
+            <memberdef kind="function" id="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">
+                    vlc_tls_creds_t
+                </ref> *
+                </type>
+                <definition>VLC_API vlc_tls_creds_t * vlc_tls_ServerCreate</definition>
+                <argsstring>(vlc_object_t *, const char *cert, const char *key)</argsstring>
+                <name>vlc_tls_ServerCreate</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref>
+                        *
+                    </type>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>cert</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>key</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Allocates server TLS credentials.</para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>cert</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>path to an x509 certificate (required)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>key</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>path to the PKCS private key for the certificate, or NULL to use cert path
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>TLS credentials object, or NULL on error.</para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="98" column="25"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        declline="98" declcolumn="25"/>
+            </memberdef>
+            <memberdef kind="function" id="group__tls_1ga4e6145cc2a498a37265e35da5258a0ac" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>int</type>
+                <definition>static int vlc_tls_SessionHandshake</definition>
+                <argsstring>(vlc_tls_creds_t *crd, vlc_tls_t *tls)</argsstring>
+                <name>vlc_tls_SessionHandshake</name>
+                <param>
+                    <type>
+                        <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t
+                        </ref>
+                        *
+                    </type>
+                    <declname>crd</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t
+                        </ref>
+                        *
+                    </type>
+                    <declname>tls</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="101" column="19"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        bodystart="101" bodyend="105"/>
+            </memberdef>
+            <memberdef kind="function" id="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void vlc_tls_Delete</definition>
+                <argsstring>(vlc_tls_creds_t *)</argsstring>
+                <name>vlc_tls_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t
+                        </ref>
+                        *
+                    </type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Releases TLS credentials.</para>
+                    <para>Releases data allocated with <ref refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a"
+                                                            kindref="member">vlc_tls_ClientCreate()
+                    </ref> or <ref refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kindref="member">
+                        vlc_tls_ServerCreate()</ref>.
+                    </para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>srv</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>object to be destroyed (or NULL)</para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="115" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        declline="115" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="group__tls_1gab54018de3e8a7798c811af702ccbb71c" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">
+                    vlc_tls_t
+                </ref> *
+                </type>
+                <definition>VLC_API vlc_tls_t * vlc_tls_ClientSessionCreate</definition>
+                <argsstring>(vlc_tls_creds_t *creds, vlc_tls_t *sock, const char *host, const char *service, const char
+                    *const *alpn, char **alp)
+                </argsstring>
+                <name>vlc_tls_ClientSessionCreate</name>
+                <param>
+                    <type>
+                        <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t
+                        </ref>
+                        *
+                    </type>
+                    <declname>creds</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t
+                        </ref>
+                        *
+                    </type>
+                    <declname>sock</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>host</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>service</declname>
+                </param>
+                <param>
+                    <type>const char *const *</type>
+                    <declname>alpn</declname>
+                </param>
+                <param>
+                    <type>char **</type>
+                    <declname>alp</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Initiates a client TLS session.</para>
+                    <para>Initiates a Transport Layer Security (TLS) session as the client side, using trusted root CAs
+                        previously loaded with <ref refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a"
+                                                    kindref="member">vlc_tls_ClientCreate()</ref>.
+                    </para>
+                    <para>This is a blocking network operation and may be a thread cancellation point.</para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>creds</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>X.509 credentials, i.e. set of root certificates of trusted certificate
+                                        authorities
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>sock</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>socket through which to establish the secure channel</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>hostname</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>expected server name, used both as Server Name Indication and as expected
+                                        Common Name of the peer certificate [IN]
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>service</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>unique identifier for the service to connect to (only used locally for
+                                        certificates database) [IN]
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>alpn</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>NULL-terminated list of Application Layer Protocols to negotiate, or NULL to
+                                        not negotiate protocols [IN]
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>alp</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>storage space for the negotiated Application Layer Protocol or NULL if
+                                        negotiation was not performed [OUT]
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="note">
+                            <para>The credentials must remain valid until the session is finished.</para>
+                        </simplesect>
+                        <simplesect kind="return">
+                            <para>TLS session, or NULL on error.</para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="141" column="19"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        declline="141" declcolumn="19"/>
+            </memberdef>
+            <memberdef kind="function" id="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">
+                    vlc_tls_t
+                </ref> *
+                </type>
+                <definition>VLC_API vlc_tls_t * vlc_tls_ServerSessionCreate</definition>
+                <argsstring>(vlc_tls_creds_t *creds, vlc_tls_t *sock, const char *const *alpn)</argsstring>
+                <name>vlc_tls_ServerSessionCreate</name>
+                <param>
+                    <type>
+                        <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t
+                        </ref>
+                        *
+                    </type>
+                    <declname>creds</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t
+                        </ref>
+                        *
+                    </type>
+                    <declname>sock</declname>
+                </param>
+                <param>
+                    <type>const char *const *</type>
+                    <declname>alpn</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Creates a TLS server session.</para>
+                    <para>Allocates a Transport Layer Security (TLS) session as the server side, using cryptographic
+                        keys pair and X.509 certificates chain already loaded with <ref
+                                refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kindref="member">
+                            vlc_tls_ServerCreate()</ref>.
+                    </para>
+                    <para>Unlike <ref refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kindref="member">
+                        vlc_tls_ClientSessionCreate()</ref>, this function does not perform any actual network I/O.
+                        vlc_tls_SessionHandshake() must be used to perform the TLS handshake before sending and
+                        receiving data through the TLS session.
+                    </para>
+                    <para>This function is non-blocking and is not a cancellation point.</para>
+                    <para>
+                        <parameterlist kind="param">
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>creds</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>server credentials, i.e. keys pair and X.509 certificates chain</para>
+                                </parameterdescription>
+                            </parameteritem>
+                            <parameteritem>
+                                <parameternamelist>
+                                    <parametername>alpn</parametername>
+                                </parameternamelist>
+                                <parameterdescription>
+                                    <para>NULL-terminated list of Application Layer Protocols to negotiate, or NULL to
+                                        not negotiate protocols
+                                    </para>
+                                </parameterdescription>
+                            </parameteritem>
+                        </parameterlist>
+                        <simplesect kind="return">
+                            <para>TLS session, or NULL on error.</para>
+                        </simplesect>
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        line="167" column="19"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h"
+                        declline="167" declcolumn="19"/>
+            </memberdef>
+        </sectiondef>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>TLS credentials</para>
-<para>This structure contains the credentials for establishing TLS sessions. This includes root Certificate Authorities (on client side), trust and cryptographic parameters, public certificates and private keys. </para>
         </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="79" column="17"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
-        <definition>VLC_API vlc_tls_creds_t * vlc_tls_ClientCreate</definition>
-        <argsstring>(vlc_object_t *)</argsstring>
-        <name>vlc_tls_ClientCreate</name>
-        <param>
-          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Allocates TLS credentials for a client. Credentials can be cached and reused across multiple TLS sessions.</para>
-<para><simplesect kind="return"><para>TLS credentials object, or NULL on error. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="87" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="87" declcolumn="25"/>
-      </memberdef>
-      <memberdef kind="function" id="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
-        <definition>VLC_API vlc_tls_creds_t * vlc_tls_ServerCreate</definition>
-        <argsstring>(vlc_object_t *, const char *cert, const char *key)</argsstring>
-        <name>vlc_tls_ServerCreate</name>
-        <param>
-          <type><ref refid="structvlc__object__t" kindref="compound">vlc_object_t</ref> *</type>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>cert</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>key</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Allocates server TLS credentials.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>cert</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>path to an x509 certificate (required) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>key</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>path to the PKCS private key for the certificate, or NULL to use cert path</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>TLS credentials object, or NULL on error. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="98" column="25" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="98" declcolumn="25"/>
-      </memberdef>
-      <memberdef kind="function" id="group__tls_1ga4e6145cc2a498a37265e35da5258a0ac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>static int vlc_tls_SessionHandshake</definition>
-        <argsstring>(vlc_tls_creds_t *crd, vlc_tls_t *tls)</argsstring>
-        <name>vlc_tls_SessionHandshake</name>
-        <param>
-          <type><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
-          <declname>crd</declname>
-        </param>
-        <param>
-          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
-          <declname>tls</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="101" column="19" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" bodystart="101" bodyend="105"/>
-      </memberdef>
-      <memberdef kind="function" id="group__tls_1ga6bcdf94b07e4ad712d456db2bfea1a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void vlc_tls_Delete</definition>
-        <argsstring>(vlc_tls_creds_t *)</argsstring>
-        <name>vlc_tls_Delete</name>
-        <param>
-          <type><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Releases TLS credentials.</para>
-<para>Releases data allocated with <ref refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" kindref="member">vlc_tls_ClientCreate()</ref> or <ref refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kindref="member">vlc_tls_ServerCreate()</ref>.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>srv</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>object to be destroyed (or NULL) </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="115" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="115" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="group__tls_1gab54018de3e8a7798c811af702ccbb71c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
-        <definition>VLC_API vlc_tls_t * vlc_tls_ClientSessionCreate</definition>
-        <argsstring>(vlc_tls_creds_t *creds, vlc_tls_t *sock, const char *host, const char *service, const char *const *alpn, char **alp)</argsstring>
-        <name>vlc_tls_ClientSessionCreate</name>
-        <param>
-          <type><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
-          <declname>creds</declname>
-        </param>
-        <param>
-          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
-          <declname>sock</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>host</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>service</declname>
-        </param>
-        <param>
-          <type>const char *const *</type>
-          <declname>alpn</declname>
-        </param>
-        <param>
-          <type>char **</type>
-          <declname>alp</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Initiates a client TLS session.</para>
-<para>Initiates a Transport Layer Security (TLS) session as the client side, using trusted root CAs previously loaded with <ref refid="group__tls_1ga0b6d10d6fa8b0a414a2fdb88dc817c1a" kindref="member">vlc_tls_ClientCreate()</ref>.</para>
-<para>This is a blocking network operation and may be a thread cancellation point.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>creds</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>X.509 credentials, i.e. set of root certificates of trusted certificate authorities </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>sock</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>socket through which to establish the secure channel </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>hostname</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>expected server name, used both as Server Name Indication and as expected Common Name of the peer certificate [IN] </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>service</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>unique identifier for the service to connect to (only used locally for certificates database) [IN] </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>alpn</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>NULL-terminated list of Application Layer Protocols to negotiate, or NULL to not negotiate protocols [IN] </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>alp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>storage space for the negotiated Application Layer Protocol or NULL if negotiation was not performed [OUT]</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="note"><para>The credentials must remain valid until the session is finished.</para>
-</simplesect>
-<simplesect kind="return"><para>TLS session, or NULL on error. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="141" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="141" declcolumn="19"/>
-      </memberdef>
-      <memberdef kind="function" id="group__tls_1ga85a9ba0c8f0a717aaa9f22e402e8384d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
-        <definition>VLC_API vlc_tls_t * vlc_tls_ServerSessionCreate</definition>
-        <argsstring>(vlc_tls_creds_t *creds, vlc_tls_t *sock, const char *const *alpn)</argsstring>
-        <name>vlc_tls_ServerSessionCreate</name>
-        <param>
-          <type><ref refid="group__tls_1gab23c9e9406c2bdfabd34763e06bdf155" kindref="member">vlc_tls_creds_t</ref> *</type>
-          <declname>creds</declname>
-        </param>
-        <param>
-          <type><ref refid="group__transport_1gad9e89acad0e40f270f6e07cacba4be19" kindref="member">vlc_tls_t</ref> *</type>
-          <declname>sock</declname>
-        </param>
-        <param>
-          <type>const char *const *</type>
-          <declname>alpn</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Creates a TLS server session.</para>
-<para>Allocates a Transport Layer Security (TLS) session as the server side, using cryptographic keys pair and X.509 certificates chain already loaded with <ref refid="group__tls_1ga9c0fcaf5d6daa1a7a64032872699150b" kindref="member">vlc_tls_ServerCreate()</ref>.</para>
-<para>Unlike <ref refid="group__tls_1gab54018de3e8a7798c811af702ccbb71c" kindref="member">vlc_tls_ClientSessionCreate()</ref>, this function does not perform any actual network I/O. vlc_tls_SessionHandshake() must be used to perform the TLS handshake before sending and receiving data through the TLS session.</para>
-<para>This function is non-blocking and is not a cancellation point.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>creds</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>server credentials, i.e. keys pair and X.509 certificates chain </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>alpn</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>NULL-terminated list of Application Layer Protocols to negotiate, or NULL to not negotiate protocols</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>TLS session, or NULL on error. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" line="167" column="19" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_tls.h" declline="167" declcolumn="19"/>
-      </memberdef>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-    </detaileddescription>
-  </compounddef>
+    </compounddef>
 </doxygen>

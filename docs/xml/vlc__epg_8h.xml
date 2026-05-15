@@ -1,309 +1,1039 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="vlc__epg_8h" kind="file" language="C++">
-    <compoundname>vlc_epg.h</compoundname>
-    <includedby refid="vlc__input_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h</includedby>
-    <includedby refid="vlc__input__item_8h" local="no">C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h</includedby>
-    <invincdepgraph>
-      <node id="1">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h</label>
-        <link refid="vlc__epg_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fingerprinter.h</label>
-        <link refid="vlc__fingerprinter_8h_source"/>
-      </node>
-      <node id="2">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h</label>
-        <link refid="vlc__input_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h</label>
-        <link refid="vlc__input__item_8h"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h</label>
-        <link refid="vlc__renderer__discovery_8h"/>
-      </node>
-      <node id="4">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_services_discovery.h</label>
-        <link refid="vlc__services__discovery_8h"/>
-      </node>
-      <node id="5">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h</label>
-        <link refid="vlc__vlm_8h"/>
-      </node>
-    </invincdepgraph>
-    <innerclass refid="structvlc__epg__event__t" prot="public">vlc_epg_event_t</innerclass>
-    <innerclass refid="structvlc__epg__t" prot="public">vlc_epg_t</innerclass>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="vlc__epg_8h_1ac26b2510d00117276cf158859f926189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *</type>
-        <definition>VLC_API vlc_epg_event_t * vlc_epg_event_New</definition>
-        <argsstring>(uint16_t i_id, int64_t i_start, uint32_t i_duration)</argsstring>
-        <name>vlc_epg_event_New</name>
-        <param>
-          <type>uint16_t</type>
-          <declname>i_id</declname>
-        </param>
-        <param>
-          <type>int64_t</type>
-          <declname>i_start</declname>
-        </param>
-        <param>
-          <type>uint32_t</type>
-          <declname>i_duration</declname>
-        </param>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="vlc__epg_8h" kind="file" language="C++">
+        <compoundname>vlc_epg.h</compoundname>
+        <includedby refid="vlc__input_8h" local="no">
+            C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h
+        </includedby>
+        <includedby refid="vlc__input__item_8h" local="no">
+            C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h
+        </includedby>
+        <invincdepgraph>
+            <node id="1">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h
+                </label>
+                <link refid="vlc__epg_8h"/>
+                <childnode refid="2" relation="include">
+                </childnode>
+                <childnode refid="6" relation="include">
+                </childnode>
+            </node>
+            <node id="7">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_fingerprinter.h
+                </label>
+                <link refid="vlc__fingerprinter_8h_source"/>
+            </node>
+            <node id="2">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h
+                </label>
+                <link refid="vlc__input_8h"/>
+                <childnode refid="3" relation="include">
+                </childnode>
+                <childnode refid="4" relation="include">
+                </childnode>
+                <childnode refid="5" relation="include">
+                </childnode>
+            </node>
+            <node id="6">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input_item.h
+                </label>
+                <link refid="vlc__input__item_8h"/>
+                <childnode refid="7" relation="include">
+                </childnode>
+                <childnode refid="2" relation="include">
+                </childnode>
+            </node>
+            <node id="3">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_renderer_discovery.h
+                </label>
+                <link refid="vlc__renderer__discovery_8h"/>
+            </node>
+            <node id="4">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_services_discovery.h
+                </label>
+                <link refid="vlc__services__discovery_8h"/>
+            </node>
+            <node id="5">
+                <label>
+                    C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_vlm.h
+                </label>
+                <link refid="vlc__vlm_8h"/>
+            </node>
+        </invincdepgraph>
+        <innerclass refid="structvlc__epg__event__t" prot="public">vlc_epg_event_t</innerclass>
+        <innerclass refid="structvlc__epg__t" prot="public">vlc_epg_t</innerclass>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="vlc__epg_8h_1ac26b2510d00117276cf158859f926189" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *
+                </type>
+                <definition>VLC_API vlc_epg_event_t * vlc_epg_event_New</definition>
+                <argsstring>(uint16_t i_id, int64_t i_start, uint32_t i_duration)</argsstring>
+                <name>vlc_epg_event_New</name>
+                <param>
+                    <type>uint16_t</type>
+                    <declname>i_id</declname>
+                </param>
+                <param>
+                    <type>int64_t</type>
+                    <declname>i_start</declname>
+                </param>
+                <param>
+                    <type>uint32_t</type>
+                    <declname>i_duration</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Creates a new vlc_epg_event_t*</para>
+                    <para>You must call vlc_epg_event_Delete to release the associated resources.</para>
+                    <para>
+                        <computeroutput>i_id</computeroutput>
+                        is the event unique id <computeroutput>i_start</computeroutput> start in epoch time <computeroutput>
+                        i_duration
+                    </computeroutput> event duration in seconds
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="71" column="26"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="71" declcolumn="26"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1a96d4acdfe69e6eb232df4fdc7634a732" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void vlc_epg_event_Delete</definition>
+                <argsstring>(vlc_epg_event_t *p_event)</argsstring>
+                <name>vlc_epg_event_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                        *
+                    </type>
+                    <declname>p_event</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Releases a vlc_epg_event_t*.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="77" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="77" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1adf18ad8916dc1624216288ef56d32b29" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *
+                </type>
+                <definition>VLC_API vlc_epg_event_t * vlc_epg_event_Duplicate</definition>
+                <argsstring>(const vlc_epg_event_t *p_src)</argsstring>
+                <name>vlc_epg_event_Duplicate</name>
+                <param>
+                    <type>const <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *
+                    </type>
+                    <declname>p_src</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Returns a <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *
+                        duplicated from <computeroutput>p_src</computeroutput>.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="83" column="26"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="83" declcolumn="26"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1a451211a15826eb483cf74b41ec8472a2" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *
+                </type>
+                <definition>VLC_API vlc_epg_t * vlc_epg_New</definition>
+                <argsstring>(uint32_t i_id, uint16_t i_source_id)</argsstring>
+                <name>vlc_epg_New</name>
+                <param>
+                    <type>uint32_t</type>
+                    <declname>i_id</declname>
+                </param>
+                <param>
+                    <type>uint16_t</type>
+                    <declname>i_source_id</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It creates a new vlc_epg_t*</para>
+                    <para>You must call vlc_epg_Delete to release the associated resource.</para>
+                    <para>
+                        <computeroutput>i_id</computeroutput>
+                        is computed unique id depending on standard (table id, eit number) <computeroutput>i_source_id
+                    </computeroutput> is the associated program number
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="93" column="20"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="93" declcolumn="20"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1a6050c74b041c83a7a247dafa93303e62" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void vlc_epg_Delete</definition>
+                <argsstring>(vlc_epg_t *p_epg)</argsstring>
+                <name>vlc_epg_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                        *
+                    </type>
+                    <declname>p_epg</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It releases a vlc_epg_t*.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="98" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="98" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1adf2192181bfd0edcab69e4779600bba7" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API bool</type>
+                <definition>VLC_API bool vlc_epg_AddEvent</definition>
+                <argsstring>(vlc_epg_t *p_epg, vlc_epg_event_t *p_evt)</argsstring>
+                <name>vlc_epg_AddEvent</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                        *
+                    </type>
+                    <declname>p_epg</declname>
+                </param>
+                <param>
+                    <type>
+                        <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                        *
+                    </type>
+                    <declname>p_evt</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It appends a new <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t
+                    </ref> to a <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>. Takes ownership of <computeroutput>
+                        p_evt
+                    </computeroutput> or returns false
+                    </para>
+                    <para>
+                        <computeroutput>p_evt</computeroutput>
+                        a <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> * created with
+                        vlc_epg_event_New.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="106" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="106" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1a14227d24f7199ed75671886822c95561" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API void</type>
+                <definition>VLC_API void vlc_epg_SetCurrent</definition>
+                <argsstring>(vlc_epg_t *p_epg, int64_t i_start)</argsstring>
+                <name>vlc_epg_SetCurrent</name>
+                <param>
+                    <type>
+                        <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                        *
+                    </type>
+                    <declname>p_epg</declname>
+                </param>
+                <param>
+                    <type>int64_t</type>
+                    <declname>i_start</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>It set the current event of a <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t
+                    </ref> given a start time
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="111" column="14"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="111" declcolumn="14"/>
+            </memberdef>
+            <memberdef kind="function" id="vlc__epg_8h_1aeafd54fc5d231da94474e617f1328c77" prot="public" static="no"
+                       const="no" explicit="no" inline="no" virt="non-virtual">
+                <type>VLC_API <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *
+                </type>
+                <definition>VLC_API vlc_epg_t * vlc_epg_Duplicate</definition>
+                <argsstring>(const vlc_epg_t *p_src)</argsstring>
+                <name>vlc_epg_Duplicate</name>
+                <param>
+                    <type>const <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *
+                    </type>
+                    <declname>p_src</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Returns a duplicated <computeroutput>p_src</computeroutput> and its associated events.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        line="117" column="20"
+                        declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"
+                        declline="117" declcolumn="20"/>
+            </memberdef>
+        </sectiondef>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Creates a new vlc_epg_event_t*</para>
-<para>You must call vlc_epg_event_Delete to release the associated resources.</para>
-<para><computeroutput>i_id</computeroutput> is the event unique id <computeroutput>i_start</computeroutput> start in epoch time <computeroutput>i_duration</computeroutput> event duration in seconds </para>
+            <para>This file defines functions and structures for storing dvb epg information</para>
         </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="71" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="71" declcolumn="26"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1a96d4acdfe69e6eb232df4fdc7634a732" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void vlc_epg_event_Delete</definition>
-        <argsstring>(vlc_epg_event_t *p_event)</argsstring>
-        <name>vlc_epg_event_Delete</name>
-        <param>
-          <type><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *</type>
-          <declname>p_event</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Releases a vlc_epg_event_t*. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="77" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="77" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1adf18ad8916dc1624216288ef56d32b29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *</type>
-        <definition>VLC_API vlc_epg_event_t * vlc_epg_event_Duplicate</definition>
-        <argsstring>(const vlc_epg_event_t *p_src)</argsstring>
-        <name>vlc_epg_event_Duplicate</name>
-        <param>
-          <type>const <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *</type>
-          <declname>p_src</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Returns a <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> * duplicated from <computeroutput>p_src</computeroutput>. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="83" column="26" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="83" declcolumn="26"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1a451211a15826eb483cf74b41ec8472a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *</type>
-        <definition>VLC_API vlc_epg_t * vlc_epg_New</definition>
-        <argsstring>(uint32_t i_id, uint16_t i_source_id)</argsstring>
-        <name>vlc_epg_New</name>
-        <param>
-          <type>uint32_t</type>
-          <declname>i_id</declname>
-        </param>
-        <param>
-          <type>uint16_t</type>
-          <declname>i_source_id</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It creates a new vlc_epg_t*</para>
-<para>You must call vlc_epg_Delete to release the associated resource.</para>
-<para><computeroutput>i_id</computeroutput> is computed unique id depending on standard (table id, eit number) <computeroutput>i_source_id</computeroutput> is the associated program number </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="93" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="93" declcolumn="20"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1a6050c74b041c83a7a247dafa93303e62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void vlc_epg_Delete</definition>
-        <argsstring>(vlc_epg_t *p_epg)</argsstring>
-        <name>vlc_epg_Delete</name>
-        <param>
-          <type><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *</type>
-          <declname>p_epg</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It releases a vlc_epg_t*. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="98" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="98" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1adf2192181bfd0edcab69e4779600bba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API bool</type>
-        <definition>VLC_API bool vlc_epg_AddEvent</definition>
-        <argsstring>(vlc_epg_t *p_epg, vlc_epg_event_t *p_evt)</argsstring>
-        <name>vlc_epg_AddEvent</name>
-        <param>
-          <type><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *</type>
-          <declname>p_epg</declname>
-        </param>
-        <param>
-          <type><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> *</type>
-          <declname>p_evt</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It appends a new <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> to a <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>. Takes ownership of <computeroutput>p_evt</computeroutput> or returns false</para>
-<para><computeroutput>p_evt</computeroutput> a <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref> * created with vlc_epg_event_New. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="106" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="106" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1a14227d24f7199ed75671886822c95561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API void</type>
-        <definition>VLC_API void vlc_epg_SetCurrent</definition>
-        <argsstring>(vlc_epg_t *p_epg, int64_t i_start)</argsstring>
-        <name>vlc_epg_SetCurrent</name>
-        <param>
-          <type><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *</type>
-          <declname>p_epg</declname>
-        </param>
-        <param>
-          <type>int64_t</type>
-          <declname>i_start</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>It set the current event of a <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> given a start time </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="111" column="14" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="111" declcolumn="14"/>
-      </memberdef>
-      <memberdef kind="function" id="vlc__epg_8h_1aeafd54fc5d231da94474e617f1328c77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>VLC_API <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *</type>
-        <definition>VLC_API vlc_epg_t * vlc_epg_Duplicate</definition>
-        <argsstring>(const vlc_epg_t *p_src)</argsstring>
-        <name>vlc_epg_Duplicate</name>
-        <param>
-          <type>const <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref> *</type>
-          <declname>p_src</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Returns a duplicated <computeroutput>p_src</computeroutput> and its associated events. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" line="117" column="20" declfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h" declline="117" declcolumn="20"/>
-      </memberdef>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>This file defines functions and structures for storing dvb epg information </para>
-    </detaileddescription>
-    <programlisting>
-<codeline lineno="1"><highlight class="comment">/*****************************************************************************</highlight></codeline>
-<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>vlc_epg.h:<sp/>Electronic<sp/>Program<sp/>Guide</highlight></codeline>
-<codeline lineno="3"><highlight class="comment"><sp/>*****************************************************************************</highlight></codeline>
-<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2007<sp/>VLC<sp/>authors<sp/>and<sp/>VideoLAN</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>$Id$</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,</highlight></codeline>
-<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
-<codeline lineno="22"><highlight class="comment"><sp/>*****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VLC_EPG_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VLC_EPG_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="structvlc__epg__event__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/><sp/>i_start;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Interpreted<sp/>as<sp/>a<sp/>value<sp/>return<sp/>by<sp/>time()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>i_duration;<sp/></highlight><highlight class="comment">/*<sp/>Duration<sp/>of<sp/>the<sp/>event<sp/>in<sp/>second<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>i_id;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Unique<sp/>event<sp/>id<sp/>withing<sp/>the<sp/>event<sp/>set<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*psz_name;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*psz_short_description;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*psz_description;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Description<sp/>items<sp/>in<sp/>tranmission<sp/>order<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_key;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*psz_value;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>*<sp/>description_items;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i_description_items;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>i_rating;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Parental<sp/>control,<sp/>set<sp/>to<sp/>0<sp/>when<sp/>undefined<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal">}<sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51" refid="structvlc__epg__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*psz_name;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_id;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Unique<sp/>identifier<sp/>for<sp/>this<sp/>table<sp/>/<sp/>events<sp/>(partial<sp/>sets)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_source_id;</highlight><highlight class="comment">/*<sp/>Channel<sp/>/<sp/>Program<sp/>reference<sp/>id<sp/>this<sp/>epg<sp/>relates<sp/>to<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_event;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>**pp_event;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b_present;<sp/><sp/></highlight><highlight class="comment">/*<sp/>Contains<sp/>present/following<sp/>or<sp/>similar,<sp/>and<sp/>sets<sp/>below<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>*p_current;<sp/></highlight><highlight class="comment">/*<sp/>NULL,<sp/>or<sp/>equal<sp/>to<sp/>one<sp/>of<sp/>the<sp/>entries<sp/>in<sp/>pp_event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal">}<sp/><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71" refid="vlc__epg_8h_1ac26b2510d00117276cf158859f926189" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>*<sp/><ref refid="vlc__epg_8h_1ac26b2510d00117276cf158859f926189" kindref="member">vlc_epg_event_New</ref>(uint16_t<sp/>i_id,</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int64_t<sp/>i_start,<sp/>uint32_t<sp/>i_duration);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="vlc__epg_8h_1a96d4acdfe69e6eb232df4fdc7634a732" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__epg_8h_1a96d4acdfe69e6eb232df4fdc7634a732" kindref="member">vlc_epg_event_Delete</ref>(<ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>*p_event);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="vlc__epg_8h_1adf18ad8916dc1624216288ef56d32b29" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>*<sp/><ref refid="vlc__epg_8h_1adf18ad8916dc1624216288ef56d32b29" kindref="member">vlc_epg_event_Duplicate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>*p_src);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93" refid="vlc__epg_8h_1a451211a15826eb483cf74b41ec8472a2" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*<sp/><ref refid="vlc__epg_8h_1a451211a15826eb483cf74b41ec8472a2" kindref="member">vlc_epg_New</ref>(uint32_t<sp/>i_id,<sp/>uint16_t<sp/>i_source_id);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98" refid="vlc__epg_8h_1a6050c74b041c83a7a247dafa93303e62" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__epg_8h_1a6050c74b041c83a7a247dafa93303e62" kindref="member">vlc_epg_Delete</ref>(<ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*p_epg);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106" refid="vlc__epg_8h_1adf2192181bfd0edcab69e4779600bba7" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vlc__epg_8h_1adf2192181bfd0edcab69e4779600bba7" kindref="member">vlc_epg_AddEvent</ref>(<ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*p_epg,<sp/><ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref><sp/>*p_evt);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111" refid="vlc__epg_8h_1a14227d24f7199ed75671886822c95561" refkind="member"><highlight class="normal">VLC_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vlc__epg_8h_1a14227d24f7199ed75671886822c95561" kindref="member">vlc_epg_SetCurrent</ref>(<ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*p_epg,<sp/>int64_t<sp/>i_start);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117" refid="vlc__epg_8h_1aeafd54fc5d231da94474e617f1328c77" refkind="member"><highlight class="normal">VLC_API<sp/><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*<sp/><ref refid="vlc__epg_8h_1aeafd54fc5d231da94474e617f1328c77" kindref="member">vlc_epg_Duplicate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref><sp/>*p_src);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-    </programlisting>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"/>
-  </compounddef>
+        <programlisting>
+            <codeline lineno="1">
+                <highlight class="comment">
+                    /*****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="2">
+                <highlight class="comment"><sp/>*<sp/>vlc_epg.h:<sp/>Electronic<sp/>Program<sp/>Guide
+                </highlight>
+            </codeline>
+            <codeline lineno="3">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************
+                </highlight>
+            </codeline>
+            <codeline lineno="4">
+                <highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2007<sp/>VLC<sp/>authors<sp/>and<sp/>
+                    VideoLAN
+                </highlight>
+            </codeline>
+            <codeline lineno="5">
+                <highlight class="comment"><sp/>*<sp/>$Id$
+                </highlight>
+            </codeline>
+            <codeline lineno="6">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="7">
+                <highlight class="comment"><sp/>*<sp/>Authors:<sp/>Laurent<sp/>Aimar<sp/>&lt;fenrir@via.ecp.fr&gt;
+                </highlight>
+            </codeline>
+            <codeline lineno="8">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="9">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can
+                    <sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it
+                </highlight>
+            </codeline>
+            <codeline lineno="10">
+                <highlight class="comment"><sp/>*<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>
+                    General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by
+                </highlight>
+            </codeline>
+            <codeline lineno="11">
+                <highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version
+                    <sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or
+                </highlight>
+            </codeline>
+            <codeline lineno="12">
+                <highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.
+                </highlight>
+            </codeline>
+            <codeline lineno="13">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="14">
+                <highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope
+                    <sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,
+                </highlight>
+            </codeline>
+            <codeline lineno="15">
+                <highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the
+                    <sp/>implied<sp/>warranty<sp/>of
+                </highlight>
+            </codeline>
+            <codeline lineno="16">
+                <highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR
+                    <sp/>PURPOSE.<sp/>See<sp/>the
+                </highlight>
+            </codeline>
+            <codeline lineno="17">
+                <highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more
+                    <sp/>details.
+                </highlight>
+            </codeline>
+            <codeline lineno="18">
+                <highlight class="comment"><sp/>*
+                </highlight>
+            </codeline>
+            <codeline lineno="19">
+                <highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the
+                    <sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License
+                </highlight>
+            </codeline>
+            <codeline lineno="20">
+                <highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write
+                    <sp/>to<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,
+                </highlight>
+            </codeline>
+            <codeline lineno="21">
+                <highlight class="comment"><sp/>*<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>
+                    Boston<sp/>MA<sp/>02110-1301,<sp/>USA.
+                </highlight>
+            </codeline>
+            <codeline lineno="22">
+                <highlight class="comment"><sp/>
+                    *****************************************************************************/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="23">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="24">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#ifndef<sp/>VLC_EPG_H
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="25">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#define<sp/>VLC_EPG_H<sp/>1
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="26">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="31">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="32" refid="structvlc__epg__event__t" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="33">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="34">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int64_t
+                    <sp/>
+                    <sp/>i_start;
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Interpreted<sp/>as<sp/>a<sp/>value<sp/>return<sp/>by<sp/>time()<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="35">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>uint32_t<sp/>i_duration;
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Duration<sp/>of<sp/>the<sp/>event<sp/>in<sp/>second<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="36">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>uint16_t<sp/>i_id;
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Unique<sp/>event<sp/>id<sp/>withing<sp/>the<sp/>event<sp/>set<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="37">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="38">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>*psz_name;
+                </highlight>
+            </codeline>
+            <codeline lineno="39">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>*psz_short_description;
+                </highlight>
+            </codeline>
+            <codeline lineno="40">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>*psz_description;
+                </highlight>
+            </codeline>
+            <codeline lineno="41">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Description<sp/>items<sp/>in<sp/>tranmission<sp/>order<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="42">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>{
+                </highlight>
+            </codeline>
+            <codeline lineno="43">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*psz_key;
+                </highlight>
+            </codeline>
+            <codeline lineno="44">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal"><sp/>*psz_value;
+                </highlight>
+            </codeline>
+            <codeline lineno="45">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>}<sp/>*<sp/>description_items;
+                </highlight>
+            </codeline>
+            <codeline lineno="46">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">int</highlight>
+                <highlight class="normal"><sp/>i_description_items;
+                </highlight>
+            </codeline>
+            <codeline lineno="47">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="48">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>uint8_t<sp/>i_rating;
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Parental<sp/>control,<sp/>set<sp/>to<sp/>0<sp/>when<sp/>undefined<sp/>
+                    */
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="49">
+                <highlight class="normal">}
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="50">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="51" refid="structvlc__epg__t" refkind="compound">
+                <highlight class="normal"></highlight>
+                <highlight class="keyword">typedef</highlight>
+                <highlight class="normal">
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">struct</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="52">
+                <highlight class="normal">{</highlight>
+            </codeline>
+            <codeline lineno="53">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">char</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>*psz_name;
+                </highlight>
+            </codeline>
+            <codeline lineno="54">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>uint32_t
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>i_id;
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Unique<sp/>identifier<sp/>for<sp/>this<sp/>table<sp/>/<sp/>events<sp/>
+                    (partial<sp/>sets)<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="55">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>uint16_t
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>i_source_id;
+                </highlight>
+                <highlight class="comment">/*<sp/>Channel<sp/>/<sp/>Program<sp/>reference<sp/>id<sp/>this<sp/>epg<sp/>
+                    relates<sp/>to<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="56">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">size_t</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>i_event;
+                </highlight>
+            </codeline>
+            <codeline lineno="57">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>**pp_event;
+                </highlight>
+            </codeline>
+            <codeline lineno="58">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>b_present;
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>Contains<sp/>present/following<sp/>or<sp/>similar,<sp/>and<sp/>sets
+                    <sp/>below<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="59">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>*p_current;
+                    <sp/>
+                </highlight>
+                <highlight class="comment">/*<sp/>NULL,<sp/>or<sp/>equal<sp/>to<sp/>one<sp/>of<sp/>the<sp/>entries<sp/>
+                    in<sp/>pp_event<sp/>*/
+                </highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="60">
+                <highlight class="normal">}
+                    <sp/>
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>;
+                </highlight>
+            </codeline>
+            <codeline lineno="61">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="71" refid="vlc__epg_8h_1ac26b2510d00117276cf158859f926189" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>*
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1ac26b2510d00117276cf158859f926189" kindref="member">vlc_epg_event_New</ref>
+                    (uint16_t<sp/>i_id,
+                </highlight>
+            </codeline>
+            <codeline lineno="72">
+                <highlight class="normal">
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>
+                    <sp/>int64_t<sp/>i_start,<sp/>uint32_t<sp/>i_duration);
+                </highlight>
+            </codeline>
+            <codeline lineno="73">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="77" refid="vlc__epg_8h_1a96d4acdfe69e6eb232df4fdc7634a732" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1a96d4acdfe69e6eb232df4fdc7634a732" kindref="member">
+                        vlc_epg_event_Delete</ref>(
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>*p_event);
+                </highlight>
+            </codeline>
+            <codeline lineno="78">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="83" refid="vlc__epg_8h_1adf18ad8916dc1624216288ef56d32b29" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>*
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1adf18ad8916dc1624216288ef56d32b29" kindref="member">
+                        vlc_epg_event_Duplicate</ref>(
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>*p_src);
+                </highlight>
+            </codeline>
+            <codeline lineno="84">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="93" refid="vlc__epg_8h_1a451211a15826eb483cf74b41ec8472a2" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                    <sp/>*
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1a451211a15826eb483cf74b41ec8472a2" kindref="member">vlc_epg_New</ref>
+                    (uint32_t<sp/>i_id,<sp/>uint16_t<sp/>i_source_id);
+                </highlight>
+            </codeline>
+            <codeline lineno="94">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="98" refid="vlc__epg_8h_1a6050c74b041c83a7a247dafa93303e62" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1a6050c74b041c83a7a247dafa93303e62" kindref="member">vlc_epg_Delete</ref>(
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                    <sp/>*p_epg);
+                </highlight>
+            </codeline>
+            <codeline lineno="99">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="106" refid="vlc__epg_8h_1adf2192181bfd0edcab69e4779600bba7" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">bool</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1adf2192181bfd0edcab69e4779600bba7" kindref="member">vlc_epg_AddEvent</ref>(
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                    <sp/>*p_epg,
+                    <sp/>
+                    <ref refid="structvlc__epg__event__t" kindref="compound">vlc_epg_event_t</ref>
+                    <sp/>*p_evt);
+                </highlight>
+            </codeline>
+            <codeline lineno="107">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="111" refid="vlc__epg_8h_1a14227d24f7199ed75671886822c95561" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                </highlight>
+                <highlight class="keywordtype">void</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1a14227d24f7199ed75671886822c95561" kindref="member">
+                        vlc_epg_SetCurrent</ref>(
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                    <sp/>*p_epg,<sp/>int64_t<sp/>i_start);
+                </highlight>
+            </codeline>
+            <codeline lineno="112">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="117" refid="vlc__epg_8h_1aeafd54fc5d231da94474e617f1328c77" refkind="member">
+                <highlight class="normal">VLC_API
+                    <sp/>
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                    <sp/>*
+                    <sp/>
+                    <ref refid="vlc__epg_8h_1aeafd54fc5d231da94474e617f1328c77" kindref="member">vlc_epg_Duplicate</ref>
+                    (
+                </highlight>
+                <highlight class="keyword">const</highlight>
+                <highlight class="normal">
+                    <sp/>
+                    <ref refid="structvlc__epg__t" kindref="compound">vlc_epg_t</ref>
+                    <sp/>*p_src);
+                </highlight>
+            </codeline>
+            <codeline lineno="118">
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="119">
+                <highlight class="normal"></highlight>
+                <highlight class="preprocessor">#endif</highlight>
+                <highlight class="normal"></highlight>
+            </codeline>
+            <codeline lineno="120">
+                <highlight class="normal"></highlight>
+            </codeline>
+        </programlisting>
+        <location
+                file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_epg.h"/>
+    </compounddef>
 </doxygen>

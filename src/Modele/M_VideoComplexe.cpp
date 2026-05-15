@@ -228,9 +228,12 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     const unique_ptr<double, decltype(destructeurReel)> signalTemporel2(fftw_alloc_real(tailleFFT), destructeurReel);
     const unique_ptr<double, decltype(destructeurReel)> signalResultat(fftw_alloc_real(tailleFFT), destructeurReel);
 
-    const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectre1(fftw_alloc_complex(tailleFrequence), destructeurComplexe);
-    const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectre2(fftw_alloc_complex(tailleFrequence), destructeurComplexe);
-    const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectreCroise(fftw_alloc_complex(tailleFrequence), destructeurComplexe);
+    const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectre1(
+        fftw_alloc_complex(tailleFrequence), destructeurComplexe);
+    const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectre2(
+        fftw_alloc_complex(tailleFrequence), destructeurComplexe);
+    const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectreCroise(
+        fftw_alloc_complex(tailleFrequence), destructeurComplexe);
 
     // Centrage des signaux (soustraction de la moyenne) pour améliorer la précision de corrélation
     const double moyenne1 = accumulate(sig1, sig1 + taille1, 0.0) / static_cast<double>(taille1);
@@ -246,8 +249,10 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     fftw_plan planAller1, planAller2;
     {
         lock_guard verrou(verrouFftw);
-        planAller1 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel1.get(), spectre1.get(), FFTW_ESTIMATE);
-        planAller2 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel2.get(), spectre2.get(), FFTW_ESTIMATE);
+        planAller1 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel1.get(), spectre1.get(),
+                                          FFTW_ESTIMATE);
+        planAller2 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel2.get(), spectre2.get(),
+                                          FFTW_ESTIMATE);
     }
 
     fftw_execute(planAller1);
@@ -267,7 +272,8 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     fftw_plan planRetour;
     {
         lock_guard verrou(verrouFftw);
-        planRetour = fftw_plan_dft_c2r_1d(static_cast<int>(tailleFFT), spectreCroise.get(), signalResultat.get(), FFTW_ESTIMATE);
+        planRetour = fftw_plan_dft_c2r_1d(static_cast<int>(tailleFFT), spectreCroise.get(), signalResultat.get(),
+                                          FFTW_ESTIMATE);
     }
 
     fftw_execute(planRetour);

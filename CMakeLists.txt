@@ -52,6 +52,9 @@ set(SOURCE_FILES
         src/Modele/M_SessionLecture.cpp
         src/Controleur/C_LecteurPhysiqueLocal.cpp
         src/Modele/M_LecteurPhysique.cpp
+        src/Modele/M_DecouverteReseau.cpp
+        src/Modele/M_ConfigReseau.cpp
+        src/Modele/M_JsonUtil.cpp
 )
 
 set(HEADER_FILES
@@ -62,6 +65,9 @@ set(HEADER_FILES
         include/Modele/M_SessionLecture.h
         include/Controleur/C_LecteurPhysiqueLocal.h
         include/Modele/M_LecteurPhysique.h
+        include/Modele/M_DecouverteReseau.h
+        include/Modele/M_ConfigReseau.h
+        include/Modele/M_JsonUtil.h
 )
 
 # Création de l'Exécutable

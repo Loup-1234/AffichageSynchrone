@@ -12,13 +12,13 @@
         <qualifiedname>C_LecteurPhysiqueLocal::volumeCourant</qualifiedname>
         <initializer>= 100.0f</initializer>
         <briefdescription>
-<para>Stocke le volume avant passage en mode muet. </para>
+<para>Stocke le volume en mémoire pour le rétablir après un mute ou un déplacement. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="99" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="99" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="154" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="154" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" prot="private" static="no" mutable="no">
         <type><ref refid="classM__LecteurPhysique" kindref="compound">M_LecteurPhysique</ref></type>
@@ -27,13 +27,13 @@
         <name>modeleLecteur</name>
         <qualifiedname>C_LecteurPhysiqueLocal::modeleLecteur</qualifiedname>
         <briefdescription>
-<para>Instance du moteur de lecture vidéo. </para>
+<para>Instance du moteur de lecture vidéo et des infos matérielles. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="101" column="23" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="101" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="156" column="23" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" prot="private" static="no" mutable="no">
         <type><ref refid="classM__ExpediteurUDP" kindref="compound">M_ExpediteurUDP</ref></type>
@@ -42,13 +42,13 @@
         <name>udp</name>
         <qualifiedname>C_LecteurPhysiqueLocal::udp</qualifiedname>
         <briefdescription>
-<para>Gestionnaire d&apos;envoi des commandes réseau. </para>
+<para>Gestionnaire d&apos;envoi des commandes de synchronisation réseau. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="102" column="21" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="102" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="157" column="21" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="157" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" prot="private" static="no" mutable="no">
         <type><ref refid="classM__SessionLecture" kindref="compound">M_SessionLecture</ref></type>
@@ -57,13 +57,13 @@
         <name>session</name>
         <qualifiedname>C_LecteurPhysiqueLocal::session</qualifiedname>
         <briefdescription>
-<para>Gestionnaire de la logique de session et composition. </para>
+<para>Gestionnaire de la logique de session, de composition et d&apos;upload TFTP. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="103" column="22" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="103" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="158" column="22" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="158" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" prot="private" static="no" mutable="no">
         <type>vector&lt; vector&lt; string &gt; &gt;</type>
@@ -72,13 +72,58 @@
         <name>configLecteurs</name>
         <qualifiedname>C_LecteurPhysiqueLocal::configLecteurs</qualifiedname>
         <briefdescription>
-<para>Configuration réseau des clients. </para>
+<para>Cache de la configuration réseau initiale des clients distants. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="104" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="104" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="159" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1ab541a35381376443cc1fb9b846998541" prot="private" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string C_LecteurPhysiqueLocal::m_adresseMulticast</definition>
+        <argsstring></argsstring>
+        <name>m_adresseMulticast</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::m_adresseMulticast</qualifiedname>
+        <briefdescription>
+<para>Adresse IP Multicast pour la découverte réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="161" column="18" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a2eac0fa53eacafcfcd3ece2feab5eb33" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int C_LecteurPhysiqueLocal::m_portDecouverte</definition>
+        <argsstring></argsstring>
+        <name>m_portDecouverte</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::m_portDecouverte</qualifiedname>
+        <briefdescription>
+<para>Port Multicast pour la découverte réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="162" column="15" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1ab4aeb07e9f65d3eb0da033ed4913e68b" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int C_LecteurPhysiqueLocal::m_portReponse</definition>
+        <argsstring></argsstring>
+        <name>m_portReponse</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::m_portReponse</qualifiedname>
+        <briefdescription>
+<para>Port d&apos;écoute pour les retours JSON des lecteurs distants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="163" column="15" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="163" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" prot="private" static="no" mutable="no">
         <type>atomic&lt; bool &gt;</type>
@@ -88,13 +133,13 @@
         <qualifiedname>C_LecteurPhysiqueLocal::videoGeneree</qualifiedname>
         <initializer>{false}</initializer>
         <briefdescription>
-<para>Flag indiquant qu&apos;une nouvelle vidéo est prête à être chargée. </para>
+<para>Flag indiquant à l&apos;IHM qu&apos;une nouvelle vidéo est prête à être chargée. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="108" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="108" bodyend="108"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="168" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="168" bodyend="168"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" prot="private" static="no" mutable="no">
         <type>atomic&lt; bool &gt;</type>
@@ -104,13 +149,13 @@
         <qualifiedname>C_LecteurPhysiqueLocal::generationEnCours</qualifiedname>
         <initializer>{false}</initializer>
         <briefdescription>
-<para>Verrou pour éviter plusieurs générations simultanées. </para>
+<para>Verrou évitant de lancer plusieurs générations FFmpeg simultanées. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="109" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="109" bodyend="109"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="169" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="169" bodyend="169"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" prot="private" static="no" mutable="no">
         <type>atomic&lt; bool &gt;</type>
@@ -120,13 +165,13 @@
         <qualifiedname>C_LecteurPhysiqueLocal::transfertEnCours</qualifiedname>
         <initializer>{false}</initializer>
         <briefdescription>
-<para>État du transfert réseau. </para>
+<para>Indique l&apos;état actuel du transfert réseau TFTP. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="110" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="110" bodyend="110"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="170" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="170" bodyend="170"/>
       </memberdef>
       <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" prot="private" static="no" mutable="no">
         <type>thread</type>
@@ -135,13 +180,106 @@
         <name>threadGeneration</name>
         <qualifiedname>C_LecteurPhysiqueLocal::threadGeneration</qualifiedname>
         <briefdescription>
-<para>Thread dédié aux traitements lourds (FFmpeg/Upload). </para>
+<para>Thread dédié aux traitements lourds (FFmpeg + Upload). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="111" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="111" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="171" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a3bb9a0bb89207280fb378f58c3079228" prot="private" static="no" mutable="no">
+        <type>atomic&lt; bool &gt;</type>
+        <definition>atomic&lt;bool&gt; C_LecteurPhysiqueLocal::rechercheEnCours</definition>
+        <argsstring></argsstring>
+        <name>rechercheEnCours</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::rechercheEnCours</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Flag verrouillant les requêtes de découvertes successives. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="174" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="174" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1afe894bf45e839fd35ce75e3fa9fe5013" prot="private" static="no" mutable="no">
+        <type>atomic&lt; bool &gt;</type>
+        <definition>atomic&lt;bool&gt; C_LecteurPhysiqueLocal::resultatsRecherchePrets</definition>
+        <argsstring></argsstring>
+        <name>resultatsRecherchePrets</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::resultatsRecherchePrets</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Flag notifiant l&apos;IHM de la fin du scan réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="175" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="175" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1acaffe7d759880423efc91ed91f9fcdc0" prot="private" static="no" mutable="no">
+        <type>thread</type>
+        <definition>thread C_LecteurPhysiqueLocal::threadRecherche</definition>
+        <argsstring></argsstring>
+        <name>threadRecherche</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::threadRecherche</qualifiedname>
+        <briefdescription>
+<para>Thread dédié au scan asynchrone du réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="176" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a666a8475343075f66b2513da7c6e8262" prot="private" static="no" mutable="no">
+        <type>vector&lt; map&lt; string, string &gt; &gt;</type>
+        <definition>vector&lt;map&lt;string, string&gt; &gt; C_LecteurPhysiqueLocal::cacheLecteurs</definition>
+        <argsstring></argsstring>
+        <name>cacheLecteurs</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::cacheLecteurs</qualifiedname>
+        <briefdescription>
+<para>Stockage temporaire des JSON parsés depuis les réponses réseau. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="177" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1ae327ef2f84cbbe3aa08144b69f2df23e" prot="private" static="no" mutable="no">
+        <type>atomic&lt; bool &gt;</type>
+        <definition>atomic&lt;bool&gt; C_LecteurPhysiqueLocal::ecouteMulticastActive</definition>
+        <argsstring></argsstring>
+        <name>ecouteMulticastActive</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::ecouteMulticastActive</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Flag permettant l&apos;arrêt propre de la boucle d&apos;écoute. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="180" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="180" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="variable" id="classC__LecteurPhysiqueLocal_1a6a07f99f08f17d5263f7011330db8dff" prot="private" static="no" mutable="no">
+        <type>thread</type>
+        <definition>thread C_LecteurPhysiqueLocal::threadEcouteMulticast</definition>
+        <argsstring></argsstring>
+        <name>threadEcouteMulticast</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::threadEcouteMulticast</qualifiedname>
+        <briefdescription>
+<para>Thread résident écoutant les requêtes Multicast. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="181" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="181" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-static-attrib">
@@ -153,20 +291,20 @@
         <qualifiedname>C_LecteurPhysiqueLocal::CHEMIN_VIDEO</qualifiedname>
         <initializer>= &quot;videosComplexes/VideoComplexe_0.mp4&quot;</initializer>
         <briefdescription>
-<para>Chemin de la vidéo générée. </para>
+<para>Chemin relatif de la vidéo Master générée. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="106" column="27" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="106" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="165" column="27" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="165" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a4c38ef4415c10725fddc697447048a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1abdef836db0846de4b00d6a5ccd8476aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal</definition>
-        <argsstring>(const string &amp;ipMulticast, int port, const vector&lt; vector&lt; string &gt; &gt; &amp;configLecteurs)</argsstring>
+        <argsstring>(const string &amp;ipMulticast, int portCommandes, int portDecouverte, int portReponse, const vector&lt; vector&lt; string &gt; &gt; &amp;configLecteurs)</argsstring>
         <name>C_LecteurPhysiqueLocal</name>
         <qualifiedname>C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal</qualifiedname>
         <param>
@@ -175,14 +313,22 @@
         </param>
         <param>
           <type>int</type>
-          <declname>port</declname>
+          <declname>portCommandes</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portDecouverte</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portReponse</declname>
         </param>
         <param>
           <type>const vector&lt; vector&lt; string &gt; &gt; &amp;</type>
           <declname>configLecteurs</declname>
         </param>
         <briefdescription>
-<para>Constructeur de la classe. </para>
+<para>Constructeur avec IP fusionnée. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -190,15 +336,31 @@
 <parametername>ipMulticast</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Adresse IP pour la diffusion des commandes UDP. </para>
+<para>IP partagée pour udp (commandes) et m_adresseMulticast (découverte). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>port</parametername>
+<parametername>portCommandes</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Port utilisé pour la communication UDP. </para>
+<para>Port pour l&apos;envoi des ordres de lecture. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portDecouverte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port pour l&apos;envoi de la recherche UC4. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portReponse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port d&apos;écoute pour les retours JSON. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -206,7 +368,7 @@
 <parametername><ref refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" kindref="member">configLecteurs</ref></parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Configuration des lecteurs (ID, IP, nombre de vidéos). </para>
+<para>Liste des spécifications lecteurs. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -214,7 +376,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="24" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="7" bodyend="14"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="32" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="26" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a6b644cc18b28d56441245e9bcd2507c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -223,13 +385,13 @@
         <name>~C_LecteurPhysiqueLocal</name>
         <qualifiedname>C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal</qualifiedname>
         <briefdescription>
-<para>Destructeur assurant la fermeture propre des threads. </para>
+<para>Destructeur de la classe. Assure la fermeture propre et sécurisée de tous les threads d&apos;arrière-plan (Réseau et Génération). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="29" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="16" bodyend="21"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="38" column="5" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="38" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a5f054c55fc130e4c913d7eaea8ff2a3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -242,7 +404,7 @@
           <declname>fichiers</declname>
         </param>
         <briefdescription>
-<para>Initialise une nouvelle session de lecture et génère les fichiers nécessaires. </para>
+<para>[UC2/UC6] Initialise une session de lecture. Répartit les fichiers, génère les mosaïques avec FFmpeg puis les transfère en TFTP. Exécuté de manière asynchrone pour ne pas bloquer l&apos;interface graphique. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -250,7 +412,7 @@
 <parametername>fichiers</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Liste des chemins des fichiers vidéos à traiter. </para>
+<para>Liste des chemins relatifs des fichiers vidéos sélectionnés dans l&apos;IHM. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -258,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="35" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="23" bodyend="71"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="46" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="155" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a3d7063264ecdb418926e864d3bc3d1f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -267,13 +429,13 @@
         <name>basculerPlayPause</name>
         <qualifiedname>C_LecteurPhysiqueLocal::basculerPlayPause</qualifiedname>
         <briefdescription>
-<para>Bascule entre l&apos;état de lecture et de pause. </para>
+<para>[UC1] Bascule l&apos;état de lecture locale (Lecture/Pause) et diffuse la commande sur le réseau. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="40" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="73" bodyend="90"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="51" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="195" bodyend="210"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1ace095a3d427b9a480fde8e0ea92eec4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -290,7 +452,7 @@
           <declname>muet</declname>
         </param>
         <briefdescription>
-<para>Modifie le volume sonore local et distant. </para>
+<para>[UC1] Modifie le volume sonore local et diffuse l&apos;ordre de volume sur le réseau UDP. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -298,7 +460,7 @@
 <parametername>volume</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Valeur du volume (0 à 100). </para>
+<para>Valeur du volume souhaité (0 à 100). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -306,7 +468,7 @@
 <parametername>muet</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Indicateur de mode muet. </para>
+<para>Vrai si le mode muet (mute) est activé par l&apos;utilisateur. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -314,7 +476,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="47" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="92" bodyend="97"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="58" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="212" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a99a6769e6b2ea90266f5fbcdfe765c22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -336,7 +498,7 @@
           <defval>false</defval>
         </param>
         <briefdescription>
-<para>Modifie la position temporelle de la vidéo. </para>
+<para>[UC1] Déplace le curseur de temps dans la vidéo locale et distante. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -344,7 +506,7 @@
 <parametername>progression</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Temps en secondes. </para>
+<para>Position temporelle cible en secondes. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -352,7 +514,7 @@
 <parametername>enGlissement</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Indique si l&apos;utilisateur est en train de déplacer le curseur. </para>
+<para>Vrai si l&apos;utilisateur est en train de glisser la barre (coupe le son temporairement). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -360,7 +522,7 @@
 <parametername>restaurerLecture</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Indique s&apos;il faut reprendre la lecture après modification. </para>
+<para>Vrai s&apos;il faut relancer la lecture (&quot;Play&quot;) une fois le clic relâché. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -368,7 +530,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="55" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="99" bodyend="117"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="66" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="218" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a299a159c14b6a04f19effa13a97c5bc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -381,7 +543,7 @@
           <declname>vitesse</declname>
         </param>
         <briefdescription>
-<para>Modifie la vitesse de lecture. </para>
+<para>[UC1] Modifie la vitesse de lecture globale. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -389,7 +551,7 @@
 <parametername>vitesse</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Facteur de vitesse (ex: 1.0f pour normal). </para>
+<para>Facteur multiplicateur de la vitesse (ex: 1.5 pour accélérer). </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -397,7 +559,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="61" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="119" bodyend="122"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="72" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="233" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1af5202cf4c5232ddbc7ad8436bd676710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -406,13 +568,13 @@
         <name>mettreAJour</name>
         <qualifiedname>C_LecteurPhysiqueLocal::mettreAJour</qualifiedname>
         <briefdescription>
-<para>Met à jour l&apos;état du lecteur, notamment après une génération vidéo. </para>
+<para>Met à jour l&apos;état du contrôleur avec le rendu graphique. Charge notamment la nouvelle vidéo une fois que le thread de génération a terminé son travail. Doit être appelé à chaque frame dans la boucle principale de rendu. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="66" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="124" bodyend="131"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="79" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="238" bodyend="243"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a06899e29efbc7533a2228c317dbf0162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -421,13 +583,97 @@
         <name>stopper</name>
         <qualifiedname>C_LecteurPhysiqueLocal::stopper</qualifiedname>
         <briefdescription>
-<para>Arrête la lecture locale et distante. </para>
+<para>[UC1] Arrête totalement la lecture (Stop) localement et envoie l&apos;ordre au réseau. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="71" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="133" bodyend="136"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="84" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="245" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1ab6360549763eb1f2e2c778f483f13e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void C_LecteurPhysiqueLocal::lancerRechercheLecteurs</definition>
+        <argsstring>()</argsstring>
+        <name>lancerRechercheLecteurs</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::lancerRechercheLecteurs</qualifiedname>
+        <briefdescription>
+<para>[UC4] Lance une recherche active des lecteurs sur le réseau via Multicast. Tourne dans un thread asynchrone pour ne pas figer la Vue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="94" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="130" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a199d177f772824a0b02c1b7f27d8dfbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void C_LecteurPhysiqueLocal::arreterEcouteMulticast</definition>
+        <argsstring>()</argsstring>
+        <name>arreterEcouteMulticast</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::arreterEcouteMulticast</qualifiedname>
+        <briefdescription>
+<para>Demande l&apos;arrêt manuel et propre de la boucle d&apos;écoute Multicast UDP. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="99" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1acca519b37648f65ccb3d030d9fb4e3ad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool C_LecteurPhysiqueLocal::estRechercheEnCours</definition>
+        <argsstring>() const</argsstring>
+        <name>estRechercheEnCours</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::estRechercheEnCours</qualifiedname>
+        <briefdescription>
+<para>Indique si une opération de recherche réseau est en cours de traitement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true si le scan réseau tourne en arrière-plan. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="105" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="105" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1ad2d0e99dd15578bd8c42e36141163679" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool C_LecteurPhysiqueLocal::resultatsRechercheDisponibles</definition>
+        <argsstring>() const</argsstring>
+        <name>resultatsRechercheDisponibles</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::resultatsRechercheDisponibles</qualifiedname>
+        <briefdescription>
+<para>Indique si le thread de recherche a terminé et si des résultats sont disponibles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true si de nouvelles données réseau sont prêtes à être récupérées. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="111" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a6100d16ab9af34e91aa33b3f8a872d05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; map&lt; string, string &gt; &gt;</type>
+        <definition>vector&lt; map&lt; string, string &gt; &gt; C_LecteurPhysiqueLocal::getDerniersLecteursTrouves</definition>
+        <argsstring>()</argsstring>
+        <name>getDerniersLecteursTrouves</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::getDerniersLecteursTrouves</qualifiedname>
+        <briefdescription>
+<para>Récupère les données des lecteurs distants trouvés et remet le flag de disponibilité à zéro. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Un vecteur de dictionnaires (std::map) contenant toutes les caractéristiques de chaque lecteur. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="117" column="12" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="150" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -452,7 +698,7 @@
           <declname>redimensionnement</declname>
         </param>
         <briefdescription>
-<para>Récupère les données de la frame vidéo actuelle pour l&apos;affichage. </para>
+<para>Récupère l&apos;image vidéo générée par le Modèle (VLC) pour l&apos;afficher dans la Vue. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -460,7 +706,7 @@
 <parametername>pixels</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Pointeur vers les données de pixels. </para>
+<para>[out] Pointeur vers le buffer d&apos;image RGBA. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -468,7 +714,7 @@
 <parametername>largeur</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Largeur de l&apos;image retournée. </para>
+<para>[out] Largeur de l&apos;image modifiée. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -476,7 +722,7 @@
 <parametername>hauteur</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Hauteur de l&apos;image retournée. </para>
+<para>[out] Hauteur de l&apos;image modifiée. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -484,17 +730,17 @@
 <parametername>redimensionnement</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Indique si la taille a changé. </para>
+<para>[out] Vrai si la taille de la texture a changé. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>true si une frame a été récupérée, false sinon. </para>
+<simplesect kind="return"><para>Vrai s&apos;il y a une nouvelle image à afficher sur cette frame. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="81" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="81" bodyend="83"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="131" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="131" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -505,13 +751,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>La durée totale de la vidéo en secondes. </para>
+<para><simplesect kind="return"><para>La durée totale du média chargé en secondes. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="86" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="86" bodyend="86"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="136" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="136" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -522,13 +768,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>La progression actuelle en secondes. </para>
+<para><simplesect kind="return"><para>La progression de lecture actuelle en secondes. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="88" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="88" bodyend="88"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="139" column="11" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="139" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -539,13 +785,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>true si la vidéo est en cours de lecture. </para>
+<para><simplesect kind="return"><para>true si le lecteur local est actuellement sur &quot;Play&quot;. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="90" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="90" bodyend="90"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="142" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="142" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -556,13 +802,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>true si la vidéo est arrivée à la fin. </para>
+<para><simplesect kind="return"><para>true si la vidéo locale est arrivée à la fin du flux. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="92" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="92" bodyend="92"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="145" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="145" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -573,13 +819,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>true si une opération de génération est en cours. </para>
+<para><simplesect kind="return"><para>true si le traitement asynchrone FFmpeg tourne actuellement en arrière-plan. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="94" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="94" bodyend="94"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="148" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="148" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -590,19 +836,43 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>true si l&apos;upload vers les clients est en cours. </para>
+<para><simplesect kind="return"><para>true si le serveur TFTP asynchrone est en train d&apos;envoyer les fichiers sur le réseau. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="96" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="96" bodyend="96"/>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="151" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="151" bodyend="151"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classC__LecteurPhysiqueLocal_1ad4c49869575ebed24eb1b92f59a554f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void C_LecteurPhysiqueLocal::demarrerEcouteMulticast</definition>
+        <argsstring>()</argsstring>
+        <name>demarrerEcouteMulticast</name>
+        <qualifiedname>C_LecteurPhysiqueLocal::demarrerEcouteMulticast</qualifiedname>
+        <briefdescription>
+<para>Fonction bloquante exécutée par threadEcouteMulticast. Écoute le port UDP et renvoie le JSON des caractéristiques locales si une requête est reçue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem></listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="186" column="10" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp" bodystart="51" bodyend="128"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Contrôleur gérant la lecture vidéo locale et la synchronisation avec des lecteurs distants via UDP. </para>
+<para>Contrôleur (MVC) orchestrant la lecture locale, la génération vidéo et le réseau Multicast/UDP. </para>
     </briefdescription>
     <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Fait le lien entre la Vue (<ref refid="classV__Master" kindref="compound">V_Master</ref>) et les Modèles. Il gère l&apos;envoi de commandes UDP aux autres lecteurs, le traitement asynchrone des générations vidéos complexes, et la découverte réseau. </para>
+</listitem></itemizedlist>
+</para>
     </detaileddescription>
     <collaborationgraph>
       <node id="1">
@@ -618,6 +888,10 @@
           <edgelabel>-session</edgelabel>
         </childnode>
       </node>
+      <node id="6">
+        <label>M_ConfigReseau</label>
+        <link refid="classM__ConfigReseau"/>
+      </node>
       <node id="3">
         <label>M_ExpediteurUDP</label>
         <link refid="classM__ExpediteurUDP"/>
@@ -632,35 +906,53 @@
         <childnode refid="5" relation="usage">
           <edgelabel>-instanceVideoComplexe</edgelabel>
         </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-config</edgelabel>
+        </childnode>
       </node>
       <node id="5">
         <label>M_VideoComplexe</label>
         <link refid="classM__VideoComplexe"/>
       </node>
     </collaborationgraph>
-    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="16" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="16" bodyend="112"/>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" line="22" column="1" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h" bodystart="22" bodyend="187"/>
     <listofallmembers>
+      <member refid="classC__LecteurPhysiqueLocal_1a199d177f772824a0b02c1b7f27d8dfbe" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>arreterEcouteMulticast</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a3d7063264ecdb418926e864d3bc3d1f0" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>basculerPlayPause</name></member>
-      <member refid="classC__LecteurPhysiqueLocal_1a4c38ef4415c10725fddc697447048a2e" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>C_LecteurPhysiqueLocal</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1abdef836db0846de4b00d6a5ccd8476aa" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>C_LecteurPhysiqueLocal</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1a666a8475343075f66b2513da7c6e8262" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>cacheLecteurs</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1acce84ebf8385199b9c550308a237fbc9" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>CHEMIN_VIDEO</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>configLecteurs</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1ad4c49869575ebed24eb1b92f59a554f6" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>demarrerEcouteMulticast</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1ae327ef2f84cbbe3aa08144b69f2df23e" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>ecouteMulticastActive</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>estEnLecture</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>estGenerationEnCours</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1acca519b37648f65ccb3d030d9fb4e3ad" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>estRechercheEnCours</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>estTermine</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>estTransfertEnCours</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>generationEnCours</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1a6100d16ab9af34e91aa33b3f8a872d05" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>getDerniersLecteursTrouves</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>getDureeTotale</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>getProgressionActuelle</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a5f054c55fc130e4c913d7eaea8ff2a3d" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>initialiserSession</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1ab6360549763eb1f2e2c778f483f13e6a" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>lancerRechercheLecteurs</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1ab541a35381376443cc1fb9b846998541" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>m_adresseMulticast</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1a2eac0fa53eacafcfcd3ece2feab5eb33" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>m_portDecouverte</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1ab4aeb07e9f65d3eb0da033ed4913e68b" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>m_portReponse</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1af5202cf4c5232ddbc7ad8436bd676710" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>mettreAJour</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>modeleLecteur</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a99a6769e6b2ea90266f5fbcdfe765c22" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>modifierProgression</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a299a159c14b6a04f19effa13a97c5bc3" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>modifierVitesse</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1ace095a3d427b9a480fde8e0ea92eec4f" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>modifierVolume</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1a3bb9a0bb89207280fb378f58c3079228" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>rechercheEnCours</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>recupererFrameVideo</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1ad2d0e99dd15578bd8c42e36141163679" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>resultatsRechercheDisponibles</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1afe894bf45e839fd35ce75e3fa9fe5013" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>resultatsRecherchePrets</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>session</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a06899e29efbc7533a2228c317dbf0162" prot="public" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>stopper</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1a6a07f99f08f17d5263f7011330db8dff" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>threadEcouteMulticast</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>threadGeneration</name></member>
+      <member refid="classC__LecteurPhysiqueLocal_1acaffe7d759880423efc91ed91f9fcdc0" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>threadRecherche</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>transfertEnCours</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>udp</name></member>
       <member refid="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" prot="private" virt="non-virtual"><scope>C_LecteurPhysiqueLocal</scope><name>videoGeneree</name></member>

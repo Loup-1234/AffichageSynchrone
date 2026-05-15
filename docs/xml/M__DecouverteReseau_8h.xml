@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
+  <compounddef id="M__DecouverteReseau_8h" kind="file" language="C++">
+    <compoundname>M_DecouverteReseau.h</compoundname>
+    <includes refid="M__ConfigReseau_8h" local="yes">M_ConfigReseau.h</includes>
+    <includes refid="M__ExpediteurUDP_8h" local="yes">M_ExpediteurUDP.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/select.h</includes>
+    <includedby refid="M__DecouverteReseau_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_DecouverteReseau.cpp</includedby>
+    <includedby refid="M__SessionLecture_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Modele/M_SessionLecture.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>M_ConfigReseau.h</label>
+        <link refid="M__ConfigReseau_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h</label>
+        <link refid="M__DecouverteReseau_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>M_ExpediteurUDP.h</label>
+        <link refid="M__ExpediteurUDP_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="5">
+        <label>cstdint</label>
+      </node>
+      <node id="9">
+        <label>cstring</label>
+      </node>
+      <node id="11">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>sys/select.h</label>
+      </node>
+      <node id="6">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classM__DecouverteReseau" prot="public">M_DecouverteReseau</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="M__DecouverteReseau_8h_1a26769957ec1a2beaf223f33b66ee64ab" prot="public" static="no">
+        <name>INVALID_SOCKET</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h" line="22" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="M__DecouverteReseau_8h_1a633b0396ff93d336a088412a190a5072" prot="public" static="no">
+        <name>SOCKET_ERROR</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h" line="23" column="9" bodyfile="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;M_ConfigReseau.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;M_ExpediteurUDP.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifndef<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;ws2tcpip.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">SocketType<sp/>=<sp/>SOCKET;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/select.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">SocketType<sp/>=<sp/>int;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INVALID_SOCKET<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKET_ERROR<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classM__DecouverteReseau" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">M_DecouverteReseau<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>M_DecouverteReseau(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classM__ConfigReseau" kindref="compound">M_ConfigReseau</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>~M_DecouverteReseau();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classM__DecouverteReseau_1a4e6cfe3e5c670c7c3b49f5fee164d2f7" kindref="member">lancerDecouverte</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeoutMs<sp/>=<sp/>2000);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>getReponsesBrutes()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>afficherResultats()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>attendreReponses(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeoutMs);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ConfigReseau" kindref="compound">M_ConfigReseau</ref><sp/>m_config;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ExpediteurUDP" kindref="compound">M_ExpediteurUDP</ref><sp/>m_expediteur;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>m_reponses;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>SocketType<sp/>m_socketReception;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Modele/M_DecouverteReseau.h"/>
+  </compounddef>
+</doxygen>

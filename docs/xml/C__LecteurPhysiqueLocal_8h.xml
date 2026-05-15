@@ -6,8 +6,10 @@
     <includes refid="M__SessionLecture_8h" local="yes">Modele/M_SessionLecture.h</includes>
     <includes refid="M__ExpediteurUDP_8h" local="yes">Modele/M_ExpediteurUDP.h</includes>
     <includes local="no">vector</includes>
+    <includes local="no">map</includes>
     <includes local="no">atomic</includes>
     <includes local="no">thread</includes>
+    <includes local="no">string</includes>
     <includedby refid="V__Master_8h" local="yes">/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</includedby>
     <includedby refid="C__LecteurPhysiqueLocal_8cpp" local="yes">/home/loup/CLionProjects/AffichageSynchrone/src/Controleur/C_LecteurPhysiqueLocal.cpp</includedby>
     <incdepgraph>
@@ -18,21 +20,31 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="14">
+        <label>M_ConfigReseau.h</label>
+        <link refid="M__ConfigReseau_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
         <label>Modele/M_ExpediteurUDP.h</label>
         <link refid="M__ExpediteurUDP_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -40,7 +52,7 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -78,7 +90,13 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="9">
@@ -93,11 +111,14 @@
       <node id="6">
         <label>atomic</label>
       </node>
-      <node id="15">
+      <node id="17">
         <label>cstdint</label>
       </node>
-      <node id="16">
+      <node id="18">
         <label>cstring</label>
+      </node>
+      <node id="15">
+        <label>map</label>
       </node>
       <node id="7">
         <label>mutex</label>
@@ -108,7 +129,7 @@
       <node id="11">
         <label>sys/socket.h</label>
       </node>
-      <node id="17">
+      <node id="19">
         <label>thread</label>
       </node>
       <node id="13">
@@ -131,12 +152,6 @@
       <node id="2">
         <label>/home/loup/CLionProjects/AffichageSynchrone/include/Vue/V_Master.h</label>
         <link refid="V__Master_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>/home/loup/CLionProjects/AffichageSynchrone/src/main.cpp</label>
-        <link refid="main_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classC__LecteurPhysiqueLocal" prot="public">C_LecteurPhysiqueLocal</innerclass>
@@ -150,58 +165,101 @@
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Modele/M_LecteurPhysique.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Modele/M_SessionLecture.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Modele/M_ExpediteurUDP.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="classC__LecteurPhysiqueLocal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classC__LecteurPhysiqueLocal_1a4c38ef4415c10725fddc697447048a2e" kindref="member">C_LecteurPhysiqueLocal</ref><sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classC__LecteurPhysiqueLocal_1a4c38ef4415c10725fddc697447048a2e" kindref="member">C_LecteurPhysiqueLocal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;ipMulticast,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;vector&lt;string&gt;<sp/>&gt;<sp/>&amp;<ref refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" kindref="member">configLecteurs</ref>);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classC__LecteurPhysiqueLocal_1a6b644cc18b28d56441245e9bcd2507c6" kindref="member">~C_LecteurPhysiqueLocal</ref>();</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a5f054c55fc130e4c913d7eaea8ff2a3d" kindref="member">initialiserSession</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;<sp/>&amp;fichiers);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a3d7063264ecdb418926e864d3bc3d1f0" kindref="member">basculerPlayPause</ref>();</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ace095a3d427b9a480fde8e0ea92eec4f" kindref="member">modifierVolume</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>volume,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>muet);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a99a6769e6b2ea90266f5fbcdfe765c22" kindref="member">modifierProgression</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>progression,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enGlissement,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>restaurerLecture<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a299a159c14b6a04f19effa13a97c5bc3" kindref="member">modifierVitesse</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vitesse);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1af5202cf4c5232ddbc7ad8436bd676710" kindref="member">mettreAJour</ref>();</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classC__LecteurPhysiqueLocal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classC__LecteurPhysiqueLocal_1abdef836db0846de4b00d6a5ccd8476aa" kindref="member">C_LecteurPhysiqueLocal</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classC__LecteurPhysiqueLocal_1abdef836db0846de4b00d6a5ccd8476aa" kindref="member">C_LecteurPhysiqueLocal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;ipMulticast,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portCommandes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portDecouverte,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portReponse,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;vector&lt;string&gt;&gt;<sp/>&amp;<ref refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" kindref="member">configLecteurs</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classC__LecteurPhysiqueLocal_1a6b644cc18b28d56441245e9bcd2507c6" kindref="member">~C_LecteurPhysiqueLocal</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a5f054c55fc130e4c913d7eaea8ff2a3d" kindref="member">initialiserSession</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;<sp/>&amp;fichiers);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a3d7063264ecdb418926e864d3bc3d1f0" kindref="member">basculerPlayPause</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ace095a3d427b9a480fde8e0ea92eec4f" kindref="member">modifierVolume</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>volume,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>muet);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a99a6769e6b2ea90266f5fbcdfe765c22" kindref="member">modifierProgression</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>progression,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enGlissement,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>restaurerLecture<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a06899e29efbc7533a2228c317dbf0162" kindref="member">stopper</ref>();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" kindref="member">recupererFrameVideo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*&amp;<sp/>pixels,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>largeur,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>hauteur,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>redimensionnement)<sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.recupererFrameVideo(pixels,<sp/>largeur,<sp/>hauteur,<sp/>redimensionnement);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" kindref="member">getDureeTotale</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.getDureeTotale();<sp/>}</highlight></codeline>
-<codeline lineno="88" refid="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" kindref="member">getProgressionActuelle</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.getProgressionActuelle();<sp/>}</highlight></codeline>
-<codeline lineno="90" refid="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f" kindref="member">estEnLecture</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.estEnLecture();<sp/>}</highlight></codeline>
-<codeline lineno="92" refid="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" kindref="member">estTermine</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.estTermine();<sp/>}</highlight></codeline>
-<codeline lineno="94" refid="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" kindref="member">estGenerationEnCours</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" kindref="member">generationEnCours</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="96" refid="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" kindref="member">estTransfertEnCours</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" kindref="member">transfertEnCours</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="99" refid="classC__LecteurPhysiqueLocal_1af0c302bd6d0963504ec4b247af3d6def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1af0c302bd6d0963504ec4b247af3d6def" kindref="member">volumeCourant</ref><sp/>=<sp/>100.0f;<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a299a159c14b6a04f19effa13a97c5bc3" kindref="member">modifierVitesse</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vitesse);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1af5202cf4c5232ddbc7ad8436bd676710" kindref="member">mettreAJour</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a06899e29efbc7533a2228c317dbf0162" kindref="member">stopper</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>GESTION<sp/>DE<sp/>LA<sp/>DÉCOUVERTE<sp/>RÉSEAU<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ab6360549763eb1f2e2c778f483f13e6a" kindref="member">lancerRechercheLecteurs</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a199d177f772824a0b02c1b7f27d8dfbe" kindref="member">arreterEcouteMulticast</ref>();</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101" refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique" kindref="compound">M_LecteurPhysique</ref><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>;<sp/></highlight></codeline>
-<codeline lineno="102" refid="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ExpediteurUDP" kindref="compound">M_ExpediteurUDP</ref><sp/><ref refid="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" kindref="member">udp</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="103" refid="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture" kindref="compound">M_SessionLecture</ref><sp/><ref refid="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" kindref="member">session</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="104" refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vector&lt;string&gt;<sp/>&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" kindref="member">configLecteurs</ref>;<sp/></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106" refid="classC__LecteurPhysiqueLocal_1acce84ebf8385199b9c550308a237fbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1acce84ebf8385199b9c550308a237fbc9" kindref="member">CHEMIN_VIDEO</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;videosComplexes/VideoComplexe_0.mp4&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108" refid="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" kindref="member">videoGeneree</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="109" refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" kindref="member">generationEnCours</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/></highlight></codeline>
-<codeline lineno="110" refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" kindref="member">transfertEnCours</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/><sp/></highlight></codeline>
-<codeline lineno="111" refid="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>thread<sp/><ref refid="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" kindref="member">threadGeneration</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="112"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="105" refid="classC__LecteurPhysiqueLocal_1acca519b37648f65ccb3d030d9fb4e3ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1acca519b37648f65ccb3d030d9fb4e3ad" kindref="member">estRechercheEnCours</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a3bb9a0bb89207280fb378f58c3079228" kindref="member">rechercheEnCours</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classC__LecteurPhysiqueLocal_1ad2d0e99dd15578bd8c42e36141163679" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ad2d0e99dd15578bd8c42e36141163679" kindref="member">resultatsRechercheDisponibles</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1afe894bf45e839fd35ce75e3fa9fe5013" kindref="member">resultatsRecherchePrets</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;map&lt;string,<sp/>string&gt;&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a6100d16ab9af34e91aa33b3f8a872d05" kindref="member">getDerniersLecteursTrouves</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>RELAIS<sp/>DU<sp/>MODÈLE<sp/>VIDÉO<sp/>(Getters)<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a867da978baf4798b9a0cf06de7a5cb0d" kindref="member">recupererFrameVideo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*&amp;<sp/>pixels,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>largeur,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>hauteur,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&amp;<sp/>redimensionnement)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.recupererFrameVideo(pixels,<sp/>largeur,<sp/>hauteur,<sp/>redimensionnement);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a02980e1b3366da59597ac90b1f1d3958" kindref="member">getDureeTotale</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.getDureeTotale();<sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a604f27a52ca2e86e331cf758990153cd" kindref="member">getProgressionActuelle</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.getProgressionActuelle();<sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a0e55a4ca8b1135c5a6bd87e22684682f" kindref="member">estEnLecture</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.estEnLecture();<sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1aa640be6e5a3616d1e0da290823892a72" kindref="member">estTermine</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>.estTermine();<sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a6929a5200f9897b6f40f20389f61bfba" kindref="member">estGenerationEnCours</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" kindref="member">generationEnCours</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a76a0dfcd288691d04e3417cb6573cf36" kindref="member">estTransfertEnCours</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" kindref="member">transfertEnCours</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="154" refid="classC__LecteurPhysiqueLocal_1af0c302bd6d0963504ec4b247af3d6def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1af0c302bd6d0963504ec4b247af3d6def" kindref="member">volumeCourant</ref><sp/>=<sp/>100.0f;<sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__LecteurPhysique" kindref="compound">M_LecteurPhysique</ref><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2e8423bdfaa7a63ca6a06fc10f46bf84" kindref="member">modeleLecteur</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157" refid="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__ExpediteurUDP" kindref="compound">M_ExpediteurUDP</ref><sp/><ref refid="classC__LecteurPhysiqueLocal_1a30506a53d2fd57d36a63288b13adb57f" kindref="member">udp</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158" refid="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classM__SessionLecture" kindref="compound">M_SessionLecture</ref><sp/><ref refid="classC__LecteurPhysiqueLocal_1ad70f14ec73219413715d2c685d208743" kindref="member">session</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159" refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vector&lt;string&gt;<sp/>&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1ac59f7172b39d5e50e420ccddf0fb7562" kindref="member">configLecteurs</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="classC__LecteurPhysiqueLocal_1ab541a35381376443cc1fb9b846998541" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ab541a35381376443cc1fb9b846998541" kindref="member">m_adresseMulticast</ref>;<sp/></highlight></codeline>
+<codeline lineno="162" refid="classC__LecteurPhysiqueLocal_1a2eac0fa53eacafcfcd3ece2feab5eb33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1a2eac0fa53eacafcfcd3ece2feab5eb33" kindref="member">m_portDecouverte</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163" refid="classC__LecteurPhysiqueLocal_1ab4aeb07e9f65d3eb0da033ed4913e68b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ab4aeb07e9f65d3eb0da033ed4913e68b" kindref="member">m_portReponse</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="classC__LecteurPhysiqueLocal_1acce84ebf8385199b9c550308a237fbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1acce84ebf8385199b9c550308a237fbc9" kindref="member">CHEMIN_VIDEO</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;videosComplexes/VideoComplexe_0.mp4&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Variables<sp/>pour<sp/>la<sp/>synchronisation<sp/>du<sp/>thread<sp/>de<sp/>génération<sp/>et<sp/>lecture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1ab94e0736dde42394f80a2bae08cf0a3d" kindref="member">videoGeneree</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169" refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a8f77cfd94a543524eee6defc2c394b1e" kindref="member">generationEnCours</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/></highlight></codeline>
+<codeline lineno="170" refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a6a14960e1c494b0cd65ee1fe05a1fdc5" kindref="member">transfertEnCours</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/><sp/></highlight></codeline>
+<codeline lineno="171" refid="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>thread<sp/><ref refid="classC__LecteurPhysiqueLocal_1a1e24dee7d0a2b0692cdadb4678466746" kindref="member">threadGeneration</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Variables<sp/>pour<sp/>la<sp/>synchronisation<sp/>du<sp/>thread<sp/>de<sp/>recherche<sp/>des<sp/>autres<sp/>lecteurs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classC__LecteurPhysiqueLocal_1a3bb9a0bb89207280fb378f58c3079228" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a3bb9a0bb89207280fb378f58c3079228" kindref="member">rechercheEnCours</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175" refid="classC__LecteurPhysiqueLocal_1afe894bf45e839fd35ce75e3fa9fe5013" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1afe894bf45e839fd35ce75e3fa9fe5013" kindref="member">resultatsRecherchePrets</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/></highlight></codeline>
+<codeline lineno="176" refid="classC__LecteurPhysiqueLocal_1acaffe7d759880423efc91ed91f9fcdc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>thread<sp/><ref refid="classC__LecteurPhysiqueLocal_1acaffe7d759880423efc91ed91f9fcdc0" kindref="member">threadRecherche</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="177" refid="classC__LecteurPhysiqueLocal_1a666a8475343075f66b2513da7c6e8262" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;map&lt;string,<sp/>string&gt;&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1a666a8475343075f66b2513da7c6e8262" kindref="member">cacheLecteurs</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Variables<sp/>pour<sp/>répondre<sp/>aux<sp/>requêtes<sp/>de<sp/>découverte<sp/>Multicast<sp/>entrantes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="classC__LecteurPhysiqueLocal_1ae327ef2f84cbbe3aa08144b69f2df23e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic&lt;bool&gt;<sp/><ref refid="classC__LecteurPhysiqueLocal_1ae327ef2f84cbbe3aa08144b69f2df23e" kindref="member">ecouteMulticastActive</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/></highlight></codeline>
+<codeline lineno="181" refid="classC__LecteurPhysiqueLocal_1a6a07f99f08f17d5263f7011330db8dff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>thread<sp/><ref refid="classC__LecteurPhysiqueLocal_1a6a07f99f08f17d5263f7011330db8dff" kindref="member">threadEcouteMulticast</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classC__LecteurPhysiqueLocal_1ad4c49869575ebed24eb1b92f59a554f6" kindref="member">demarrerEcouteMulticast</ref>();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="/home/loup/CLionProjects/AffichageSynchrone/include/Controleur/C_LecteurPhysiqueLocal.h"/>
   </compounddef>

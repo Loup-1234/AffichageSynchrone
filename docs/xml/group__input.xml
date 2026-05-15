@@ -1,905 +1,1131 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
-  <compounddef id="group__input" kind="group">
-    <compoundname>input</compoundname>
-    <title>Input</title>
-    <innerfile refid="vlc__input_8h">vlc_input.h</innerfile>
-    <innerclass refid="structseekpoint__t" prot="public">seekpoint_t</innerclass>
-    <innerclass refid="structinput__title__t" prot="public">input_title_t</innerclass>
-    <innerclass refid="structinput__attachment__t" prot="public">input_attachment_t</innerclass>
-    <innerclass refid="structinput__thread__t" prot="public">input_thread_t</innerclass>
-    <innergroup refid="group__block">Data blocks</innergroup>
-    <innergroup refid="group__demux">Demultiplexer</innergroup>
-    <innergroup refid="group__es__out">ES output</innergroup>
-    <innergroup refid="group__inputvariable">Input variables</innergroup>
-    <innergroup refid="group__stream">Stream</innergroup>
-    <innergroup refid="group__stream__extractor">Stream Extractor</innergroup>
-    <sectiondef kind="enum">
-      <memberdef kind="enum" id="group__input_1ga50f8cb1c3cdf6bfc02752c1d41b723b4" prot="public" static="no" strong="no">
-        <type></type>
-        <name>input_state_e</name>
-        <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a9874a72e19b6264b0dcc26121eb81cc5" prot="public">
-          <name>INIT_S</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a81f9415dcb6470582f4c09acadee2206" prot="public">
-          <name>OPENING_S</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a465990a70360062937fbb58b015f6c42" prot="public">
-          <name>PLAYING_S</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a00bf47b8ff3a7ab783280765f5d9236b" prot="public">
-          <name>PAUSE_S</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a7438f510a8c9c702414b7900cc42ceb2" prot="public">
-          <name>END_S</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4aa9301179acd02edf4dc63f2e08055129" prot="public">
-          <name>ERROR_S</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd"
+         version="1.14.0" xml:lang="fr">
+    <compounddef id="group__input" kind="group">
+        <compoundname>input</compoundname>
+        <title>Input</title>
+        <innerfile refid="vlc__input_8h">vlc_input.h</innerfile>
+        <innerclass refid="structseekpoint__t" prot="public">seekpoint_t</innerclass>
+        <innerclass refid="structinput__title__t" prot="public">input_title_t</innerclass>
+        <innerclass refid="structinput__attachment__t" prot="public">input_attachment_t</innerclass>
+        <innerclass refid="structinput__thread__t" prot="public">input_thread_t</innerclass>
+        <innergroup refid="group__block">Data blocks</innergroup>
+        <innergroup refid="group__demux">Demultiplexer</innergroup>
+        <innergroup refid="group__es__out">ES output</innergroup>
+        <innergroup refid="group__inputvariable">Input variables</innergroup>
+        <innergroup refid="group__stream">Stream</innergroup>
+        <innergroup refid="group__stream__extractor">Stream Extractor</innergroup>
+        <sectiondef kind="enum">
+            <memberdef kind="enum" id="group__input_1ga50f8cb1c3cdf6bfc02752c1d41b723b4" prot="public" static="no"
+                       strong="no">
+                <type></type>
+                <name>input_state_e</name>
+                <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a9874a72e19b6264b0dcc26121eb81cc5"
+                           prot="public">
+                    <name>INIT_S</name>
+                    <initializer>= 0</initializer>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a81f9415dcb6470582f4c09acadee2206"
+                           prot="public">
+                    <name>OPENING_S</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a465990a70360062937fbb58b015f6c42"
+                           prot="public">
+                    <name>PLAYING_S</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a00bf47b8ff3a7ab783280765f5d9236b"
+                           prot="public">
+                    <name>PAUSE_S</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4a7438f510a8c9c702414b7900cc42ceb2"
+                           prot="public">
+                    <name>END_S</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga50f8cb1c3cdf6bfc02752c1d41b723b4aa9301179acd02edf4dc63f2e08055129"
+                           prot="public">
+                    <name>ERROR_S</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Input state</para>
+                    <para>This enum is used by the variable &quot;state&quot;</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="285" column="1"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="286" bodyend="293"/>
+            </memberdef>
+            <memberdef kind="enum" id="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" prot="public" static="no"
+                       strong="no">
+                <type></type>
+                <name>input_event_type_e</name>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fabfb302072944454bcc64ad19e28f74cd"
+                           prot="public">
+                    <name>INPUT_EVENT_STATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa6944f7b39267f9701d8e054e8bac68a6"
+                           prot="public">
+                    <name>INPUT_EVENT_DEAD</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa58e9cd3c4e41e82b88cb902aee97259d"
+                           prot="public">
+                    <name>INPUT_EVENT_RATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242faa1b38727cf0cd948d69815401092e058"
+                           prot="public">
+                    <name>INPUT_EVENT_POSITION</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa759985f7d6fc277438e257c7e6158834"
+                           prot="public">
+                    <name>INPUT_EVENT_LENGTH</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa63cb926284082a21ef3f6dc6eb833fa0"
+                           prot="public">
+                    <name>INPUT_EVENT_TITLE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa28cd9bdeb760a928d8645fbfd4096d52"
+                           prot="public">
+                    <name>INPUT_EVENT_CHAPTER</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fab6ece36319c7a6d605f291f0736fe1f4"
+                           prot="public">
+                    <name>INPUT_EVENT_PROGRAM</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa7480ed30aafa20f056f175c91889ee9d"
+                           prot="public">
+                    <name>INPUT_EVENT_ES</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242facf3b30f267bdd8140080cabb6afd3662"
+                           prot="public">
+                    <name>INPUT_EVENT_TELETEXT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa7ec2c03140539a99de030af910ecc0b4"
+                           prot="public">
+                    <name>INPUT_EVENT_RECORD</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa410b6a2bab83d74c26eeaed302deaa6e"
+                           prot="public">
+                    <name>INPUT_EVENT_ITEM_META</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa94f3c1282f9d15d116694e96faeb6ac0"
+                           prot="public">
+                    <name>INPUT_EVENT_ITEM_INFO</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa30d2116b4ae36552cb4ffbc4e9c56d44"
+                           prot="public">
+                    <name>INPUT_EVENT_ITEM_EPG</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa91a8b9aa8698952e9bbda9b7c6548df1"
+                           prot="public">
+                    <name>INPUT_EVENT_STATISTICS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa400cc203bdbe46901766e1be1c9a2f6d"
+                           prot="public">
+                    <name>INPUT_EVENT_SIGNAL</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242faf0c17722ad8efb08f75e8b0b5bdbf0d3"
+                           prot="public">
+                    <name>INPUT_EVENT_AUDIO_DELAY</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa2f440b82959d92625332a10e4a381fa1"
+                           prot="public">
+                    <name>INPUT_EVENT_SUBTITLE_DELAY</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242faafa699842f849a818ca3b8ed0d61e427"
+                           prot="public">
+                    <name>INPUT_EVENT_BOOKMARK</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fae85898f5938a51cc1e6689e5725bef9b"
+                           prot="public">
+                    <name>INPUT_EVENT_CACHE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa0e492817c8da86db0e52824559eace13"
+                           prot="public">
+                    <name>INPUT_EVENT_AOUT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fac2c62076263897bb5d4c4059a2fb7245"
+                           prot="public">
+                    <name>INPUT_EVENT_VOUT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Input events</para>
+                    <para>You can catch input event by adding a callback on the variable &quot;intf-event&quot;. This
+                        variable is an integer that will hold a <ref
+                                refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">
+                            input_event_type_e
+                        </ref> value.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="327" column="1"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="328" bodyend="388"/>
+            </memberdef>
+            <memberdef kind="enum" id="group__input_1ga51e953c6c4b0a10e18282dcc64c9c20c" prot="public" static="no"
+                       strong="no">
+                <type></type>
+                <name>input_query_e</name>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cadd93f36b231ec5ab838479ecdc440dc0"
+                           prot="public">
+                    <name>INPUT_GET_POSITION</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca0b281e96e762bfd276cc20b61a794cc4"
+                           prot="public">
+                    <name>INPUT_SET_POSITION</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca7c952d8b0196c906f96ec2bd2b9ee873"
+                           prot="public">
+                    <name>INPUT_GET_LENGTH</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cab99bbc1b1bed33a195f5e2e0bfb6e12d"
+                           prot="public">
+                    <name>INPUT_GET_TIME</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae8dd6908e78643207952e64f168197d9"
+                           prot="public">
+                    <name>INPUT_SET_TIME</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae2eb2fb4db7e3250efb5073cef316603"
+                           prot="public">
+                    <name>INPUT_GET_RATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20caf2c71ff462f6169322b0cebb6b8e62bf"
+                           prot="public">
+                    <name>INPUT_SET_RATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca4604d1053bcacaf40d337c97f4dc8cbf"
+                           prot="public">
+                    <name>INPUT_GET_STATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca58daee3505e70af2240750047645244f"
+                           prot="public">
+                    <name>INPUT_SET_STATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca8822b388be2f054f6fbb9f6bf425f28d"
+                           prot="public">
+                    <name>INPUT_GET_AUDIO_DELAY</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca7caf9dc504b3ddf291e5492fec6d4cbe"
+                           prot="public">
+                    <name>INPUT_SET_AUDIO_DELAY</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cab4ef7df855888ec7d28ca5c7abaf7eeb"
+                           prot="public">
+                    <name>INPUT_GET_SPU_DELAY</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cafad24f6e2c18aef82d211a6ec4d89f0b"
+                           prot="public">
+                    <name>INPUT_SET_SPU_DELAY</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20caf3e841e1866e84537265309dc2724abe"
+                           prot="public">
+                    <name>INPUT_NAV_ACTIVATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Activate the navigation item selected. res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca3b67423df180591aef3e48ee367ff924"
+                           prot="public">
+                    <name>INPUT_NAV_UP</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Use the up arrow to select a navigation item above. res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae154b683d3008cfe539c53d1d45bc843"
+                           prot="public">
+                    <name>INPUT_NAV_DOWN</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Use the down arrow to select a navigation item under. res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca76393a48071ff3e6528d10559d3b6d52"
+                           prot="public">
+                    <name>INPUT_NAV_LEFT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Use the left arrow to select a navigation item on the left. res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca8d010adb6beea46fc3aec20e12f82e0c"
+                           prot="public">
+                    <name>INPUT_NAV_RIGHT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Use the right arrow to select a navigation item on the right. res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca4ebc0cdf28820f94560a40ceb8897831"
+                           prot="public">
+                    <name>INPUT_NAV_POPUP</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Activate the popup Menu (for BD). res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca5d1dc43d2b742d546ade5175dbd4efab"
+                           prot="public">
+                    <name>INPUT_NAV_MENU</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                        <para>Activate disc Root Menu. res=can fail</para>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca8221eec543156af52caafffdd741642e"
+                           prot="public">
+                    <name>INPUT_ADD_INFO</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cafe55aff20c21c821f0ecadd89dfd8e81"
+                           prot="public">
+                    <name>INPUT_REPLACE_INFOS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cac94ee6716069a8735b662615ab7db51b"
+                           prot="public">
+                    <name>INPUT_MERGE_INFOS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cad15cc0717653c3a0828ce124a647cf73"
+                           prot="public">
+                    <name>INPUT_DEL_INFO</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca2c5bd08368d54f6282be2d5866983f77"
+                           prot="public">
+                    <name>INPUT_GET_BOOKMARK</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca435a75646d5d8272282d79e504ec3db1"
+                           prot="public">
+                    <name>INPUT_GET_BOOKMARKS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca0e68e9c25d0346b565d9db60e5ab671e"
+                           prot="public">
+                    <name>INPUT_CLEAR_BOOKMARKS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca1860b74b90ba8159adbf1ab21d47cd93"
+                           prot="public">
+                    <name>INPUT_ADD_BOOKMARK</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca5fbaf8a7ed615d148068e78fdef8d76c"
+                           prot="public">
+                    <name>INPUT_CHANGE_BOOKMARK</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cad365172b96a651a8b38912b9ccea8aae"
+                           prot="public">
+                    <name>INPUT_DEL_BOOKMARK</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20caf72e6006a37416fc6c4d9a4c44de5bb8"
+                           prot="public">
+                    <name>INPUT_SET_BOOKMARK</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca9ccd7ec57f63582ce81aeece9f953ea8"
+                           prot="public">
+                    <name>INPUT_GET_TITLE_INFO</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca5cc15a9656502c95a18a088901dd67e0"
+                           prot="public">
+                    <name>INPUT_GET_FULL_TITLE_INFO</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca25f14444368f928f3624a7c4c9e3766d"
+                           prot="public">
+                    <name>INPUT_GET_SEEKPOINTS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca72ae6dd7d9ad9d8a4efd0031c6702f86"
+                           prot="public">
+                    <name>INPUT_GET_ATTACHMENTS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca395e8a314d46e232771a84712cf35c28"
+                           prot="public">
+                    <name>INPUT_GET_ATTACHMENT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca07dc7b07eb0c45dd22b9223c7e4acac2"
+                           prot="public">
+                    <name>INPUT_ADD_SLAVE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae8697f347d1e40ad4f52f64a7ee90830"
+                           prot="public">
+                    <name>INPUT_SET_RECORD_STATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca581cd5f4e57c3a57c35d2359575b0d2e"
+                           prot="public">
+                    <name>INPUT_GET_RECORD_STATE</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca9a6af2662750376254ad2e5a2f0a8b06"
+                           prot="public">
+                    <name>INPUT_RESTART_ES</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cafcfeb9288cbf28df6f7e66c0fe173168"
+                           prot="public">
+                    <name>INPUT_UPDATE_VIEWPOINT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca02efd2e0decc5fe5b0cf46c07a5bf82c"
+                           prot="public">
+                    <name>INPUT_SET_INITIAL_VIEWPOINT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca285e596b7e78829dc5ce288d6b9da17d"
+                           prot="public">
+                    <name>INPUT_GET_AOUT</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca3841dcaf73be0ae0d781e2149e9792e2"
+                           prot="public">
+                    <name>INPUT_GET_VOUTS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cadf9fad07f2a71db7a68f92dee618c5f5"
+                           prot="public">
+                    <name>INPUT_GET_ES_OBJECTS</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca98e36db746ae70db5de3f4c5eeadd3c2"
+                           prot="public">
+                    <name>INPUT_SET_RENDERER</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca9f08ba5a4b4f0cee8b243abaee13ba04"
+                           prot="public">
+                    <name>INPUT_GET_PCR_SYSTEM</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca88c1e435d4af917cc31001c52fd2e5bc"
+                           prot="public">
+                    <name>INPUT_MODIFY_PCR_SYSTEM</name>
+                    <briefdescription>
+                    </briefdescription>
+                    <detaileddescription>
+                    </detaileddescription>
+                </enumvalue>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Input queries</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="393" column="1"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="394" bodyend="490"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="typedef">
+            <memberdef kind="typedef" id="group__input_1ga16146678aade5cdbdbbd70d1ebbcf2a9" prot="public" static="no">
+                <type>struct input_title_t</type>
+                <definition>typedef struct input_title_t input_title_t</definition>
+                <argsstring></argsstring>
+                <name>input_title_t</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="102" column="15"/>
+            </memberdef>
+            <memberdef kind="typedef" id="group__input_1gacb60e654936ed16f31c50fbbf57f921f" prot="public" static="no">
+                <type>struct
+                    <ref refid="group__input_1gacb60e654936ed16f31c50fbbf57f921f" kindref="member">input_resource_t
+                    </ref>
+                </type>
+                <definition>typedef struct input_resource_t input_resource_t</definition>
+                <argsstring></argsstring>
+                <name>input_resource_t</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>This defines an opaque input resource handler.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="219" column="31"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="219" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="typedef" id="group__input_1gabc4b6a9b5c827f6a58a10f9fed8b039f" prot="public" static="no">
+                <type>enum
+                    <ref refid="group__input_1ga50f8cb1c3cdf6bfc02752c1d41b723b4" kindref="member">input_state_e</ref>
+                </type>
+                <definition>typedef enum input_state_e input_state_e</definition>
+                <argsstring></argsstring>
+                <name>input_state_e</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Input state</para>
+                    <para>This enum is used by the variable &quot;state&quot;</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="293" column="15"/>
+            </memberdef>
+            <memberdef kind="typedef" id="group__input_1ga9ceb1a52f12718b5b00c42a373e1c5f1" prot="public" static="no">
+                <type>enum
+                    <ref refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">input_event_type_e
+                    </ref>
+                </type>
+                <definition>typedef enum input_event_type_e input_event_type_e</definition>
+                <argsstring></argsstring>
+                <name>input_event_type_e</name>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Input events</para>
+                    <para>You can catch input event by adding a callback on the variable &quot;intf-event&quot;. This
+                        variable is an integer that will hold a <ref
+                                refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">
+                            input_event_type_e
+                        </ref> value.
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="388" column="20"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="func">
+            <memberdef kind="function" id="group__input_1ga9d8e39678ae3fcbcc2161355fa21a3de" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>
+                    <ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref>
+                    *
+                </type>
+                <definition>static seekpoint_t * vlc_seekpoint_New</definition>
+                <argsstring>(void)</argsstring>
+                <name>vlc_seekpoint_New</name>
+                <param>
+                    <type>void</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="55" column="27"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="55" bodyend="63"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1ga5d6fe6cd8233dae7424bb4d1ea65404b" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void vlc_seekpoint_Delete</definition>
+                <argsstring>(seekpoint_t *point)</argsstring>
+                <name>vlc_seekpoint_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref>
+                        *
+                    </type>
+                    <declname>point</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="65" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="65" bodyend="70"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1gac278e2c44ef4465d0cf23b080dad29e2" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>
+                    <ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref>
+                    *
+                </type>
+                <definition>static seekpoint_t * vlc_seekpoint_Duplicate</definition>
+                <argsstring>(const seekpoint_t *src)</argsstring>
+                <name>vlc_seekpoint_Duplicate</name>
+                <param>
+                    <type>const <ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref> *
+                    </type>
+                    <declname>src</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="72" column="27"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="72" bodyend="81"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1gacb5b9a5a50d1acd8239a62aad4e9fa05" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>
+                    <ref refid="structinput__title__t" kindref="compound">input_title_t</ref>
+                    *
+                </type>
+                <definition>static input_title_t * vlc_input_title_New</definition>
+                <argsstring>(void)</argsstring>
+                <name>vlc_input_title_New</name>
+                <param>
+                    <type>void</type>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="104" column="29"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="104" bodyend="117"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1gabeddb2cb0b3f05594e8ba62a7aa5ce5c" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void vlc_input_title_Delete</definition>
+                <argsstring>(input_title_t *t)</argsstring>
+                <name>vlc_input_title_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="structinput__title__t" kindref="compound">input_title_t</ref>
+                        *
+                    </type>
+                    <declname>t</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="119" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="119" bodyend="130"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1ga413420c45e284e1cf847bea65564e752" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>
+                    <ref refid="structinput__title__t" kindref="compound">input_title_t</ref>
+                    *
+                </type>
+                <definition>static input_title_t * vlc_input_title_Duplicate</definition>
+                <argsstring>(const input_title_t *t)</argsstring>
+                <name>vlc_input_title_Duplicate</name>
+                <param>
+                    <type>const <ref refid="structinput__title__t" kindref="compound">input_title_t</ref> *
+                    </type>
+                    <declname>t</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="132" column="29"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="132" bodyend="152"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1gaa77971931e56781f8f205ea1b2bad676" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>void</type>
+                <definition>static void vlc_input_attachment_Delete</definition>
+                <argsstring>(input_attachment_t *a)</argsstring>
+                <name>vlc_input_attachment_Delete</name>
+                <param>
+                    <type>
+                        <ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref>
+                        *
+                    </type>
+                    <declname>a</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="167" column="20"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="167" bodyend="177"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1ga6bcf3f194d14790915dd252ca23c11a7" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>
+                    <ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref>
+                    *
+                </type>
+                <definition>static input_attachment_t * vlc_input_attachment_New</definition>
+                <argsstring>(const char *psz_name, const char *psz_mime, const char *psz_description, const void
+                    *p_data, size_t i_data)
+                </argsstring>
+                <name>vlc_input_attachment_New</name>
+                <param>
+                    <type>const char *</type>
+                    <declname>psz_name</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>psz_mime</declname>
+                </param>
+                <param>
+                    <type>const char *</type>
+                    <declname>psz_description</declname>
+                </param>
+                <param>
+                    <type>const void *</type>
+                    <declname>p_data</declname>
+                </param>
+                <param>
+                    <type>size_t</type>
+                    <declname>i_data</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="179" column="34"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="179" bodyend="204"/>
+            </memberdef>
+            <memberdef kind="function" id="group__input_1ga74b846389e2acaf6efde748112ca0a04" prot="public" static="yes"
+                       const="no" explicit="no" inline="yes" virt="non-virtual">
+                <type>
+                    <ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref>
+                    *
+                </type>
+                <definition>static input_attachment_t * vlc_input_attachment_Duplicate</definition>
+                <argsstring>(const input_attachment_t *a)</argsstring>
+                <name>vlc_input_attachment_Duplicate</name>
+                <param>
+                    <type>const <ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref> *
+                    </type>
+                    <declname>a</declname>
+                </param>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="206" column="34"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="206" bodyend="210"/>
+            </memberdef>
+        </sectiondef>
+        <sectiondef kind="define">
+            <memberdef kind="define" id="group__input_1gaec4e4e364c807281901fe5c224dceb5f" prot="public" static="no">
+                <name>INPUT_TITLE_MENU</name>
+                <initializer>0x01 /* Menu title */</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="88" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="88" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__input_1ga9f4d8ff35b9a65d61cd08acaeadd87f5" prot="public" static="no">
+                <name>INPUT_TITLE_INTERACTIVE</name>
+                <initializer>0x02 /* Interactive title. Playback position has no meaning. */</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="89" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="89" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__input_1ga7a3aa0997c538539af76ed182fdaca98" prot="public" static="no">
+                <name>INPUT_RECORD_PREFIX</name>
+                <initializer>&quot;vlc-record-%Y-%m-%d-%Hh%Mm%Ss-$ N-$ p&quot;</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Record prefix string. TODO make it configurable.</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="234" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="234" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__input_1ga3b545c60e0490722c8a507d5a29cb945" prot="public" static="no">
+                <name>INPUT_RATE_DEFAULT</name>
+                <initializer>1000</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Input rate.</para>
+                    <para>It is an float used by the variable &quot;rate&quot; in the range
+                        [INPUT_RATE_DEFAULT/INPUT_RATE_MAX, INPUT_RATE_DEFAULT/INPUT_RATE_MIN] the default value being
+                        1. It represents the ratio of playback speed to nominal speed (bigger is faster).
+                    </para>
+                    <para>Internally, the rate is stored as a value in the range [INPUT_RATE_MIN, INPUT_RATE_MAX].
+                        internal rate = INPUT_RATE_DEFAULT / rate variable Default rate value
+                    </para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="311" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="311" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__input_1ga7ecfc916204c1fa9686cf9411c5507ff" prot="public" static="no">
+                <name>INPUT_RATE_MIN</name>
+                <initializer>32 /* Up to 32/1 */</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Minimal rate value</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="315" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="315" bodyend="-1"/>
+            </memberdef>
+            <memberdef kind="define" id="group__input_1ga0d13008429b6e80cc5d5a7f6b8ddb337" prot="public" static="no">
+                <name>INPUT_RATE_MAX</name>
+                <initializer>32000 /* Up to 1/32 */</initializer>
+                <briefdescription>
+                </briefdescription>
+                <detaileddescription>
+                    <para>Maximal rate value</para>
+                </detaileddescription>
+                <inbodydescription>
+                </inbodydescription>
+                <location
+                        file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        line="319" column="9"
+                        bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h"
+                        bodystart="319" bodyend="-1"/>
+            </memberdef>
+        </sectiondef>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Input state</para>
-<para>This enum is used by the variable &quot;state&quot; </para>
+            <para>Input thread</para>
         </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="285" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="286" bodyend="293"/>
-      </memberdef>
-      <memberdef kind="enum" id="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" prot="public" static="no" strong="no">
-        <type></type>
-        <name>input_event_type_e</name>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fabfb302072944454bcc64ad19e28f74cd" prot="public">
-          <name>INPUT_EVENT_STATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa6944f7b39267f9701d8e054e8bac68a6" prot="public">
-          <name>INPUT_EVENT_DEAD</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa58e9cd3c4e41e82b88cb902aee97259d" prot="public">
-          <name>INPUT_EVENT_RATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242faa1b38727cf0cd948d69815401092e058" prot="public">
-          <name>INPUT_EVENT_POSITION</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa759985f7d6fc277438e257c7e6158834" prot="public">
-          <name>INPUT_EVENT_LENGTH</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa63cb926284082a21ef3f6dc6eb833fa0" prot="public">
-          <name>INPUT_EVENT_TITLE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa28cd9bdeb760a928d8645fbfd4096d52" prot="public">
-          <name>INPUT_EVENT_CHAPTER</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fab6ece36319c7a6d605f291f0736fe1f4" prot="public">
-          <name>INPUT_EVENT_PROGRAM</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa7480ed30aafa20f056f175c91889ee9d" prot="public">
-          <name>INPUT_EVENT_ES</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242facf3b30f267bdd8140080cabb6afd3662" prot="public">
-          <name>INPUT_EVENT_TELETEXT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa7ec2c03140539a99de030af910ecc0b4" prot="public">
-          <name>INPUT_EVENT_RECORD</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa410b6a2bab83d74c26eeaed302deaa6e" prot="public">
-          <name>INPUT_EVENT_ITEM_META</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa94f3c1282f9d15d116694e96faeb6ac0" prot="public">
-          <name>INPUT_EVENT_ITEM_INFO</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa30d2116b4ae36552cb4ffbc4e9c56d44" prot="public">
-          <name>INPUT_EVENT_ITEM_EPG</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa91a8b9aa8698952e9bbda9b7c6548df1" prot="public">
-          <name>INPUT_EVENT_STATISTICS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa400cc203bdbe46901766e1be1c9a2f6d" prot="public">
-          <name>INPUT_EVENT_SIGNAL</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242faf0c17722ad8efb08f75e8b0b5bdbf0d3" prot="public">
-          <name>INPUT_EVENT_AUDIO_DELAY</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa2f440b82959d92625332a10e4a381fa1" prot="public">
-          <name>INPUT_EVENT_SUBTITLE_DELAY</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242faafa699842f849a818ca3b8ed0d61e427" prot="public">
-          <name>INPUT_EVENT_BOOKMARK</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fae85898f5938a51cc1e6689e5725bef9b" prot="public">
-          <name>INPUT_EVENT_CACHE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fa0e492817c8da86db0e52824559eace13" prot="public">
-          <name>INPUT_EVENT_AOUT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga4a3eb08df7f1209edd1edb4f0ed9242fac2c62076263897bb5d4c4059a2fb7245" prot="public">
-          <name>INPUT_EVENT_VOUT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Input events</para>
-<para>You can catch input event by adding a callback on the variable &quot;intf-event&quot;. This variable is an integer that will hold a <ref refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">input_event_type_e</ref> value. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="327" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="328" bodyend="388"/>
-      </memberdef>
-      <memberdef kind="enum" id="group__input_1ga51e953c6c4b0a10e18282dcc64c9c20c" prot="public" static="no" strong="no">
-        <type></type>
-        <name>input_query_e</name>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cadd93f36b231ec5ab838479ecdc440dc0" prot="public">
-          <name>INPUT_GET_POSITION</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca0b281e96e762bfd276cc20b61a794cc4" prot="public">
-          <name>INPUT_SET_POSITION</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca7c952d8b0196c906f96ec2bd2b9ee873" prot="public">
-          <name>INPUT_GET_LENGTH</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cab99bbc1b1bed33a195f5e2e0bfb6e12d" prot="public">
-          <name>INPUT_GET_TIME</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae8dd6908e78643207952e64f168197d9" prot="public">
-          <name>INPUT_SET_TIME</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae2eb2fb4db7e3250efb5073cef316603" prot="public">
-          <name>INPUT_GET_RATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20caf2c71ff462f6169322b0cebb6b8e62bf" prot="public">
-          <name>INPUT_SET_RATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca4604d1053bcacaf40d337c97f4dc8cbf" prot="public">
-          <name>INPUT_GET_STATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca58daee3505e70af2240750047645244f" prot="public">
-          <name>INPUT_SET_STATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca8822b388be2f054f6fbb9f6bf425f28d" prot="public">
-          <name>INPUT_GET_AUDIO_DELAY</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca7caf9dc504b3ddf291e5492fec6d4cbe" prot="public">
-          <name>INPUT_SET_AUDIO_DELAY</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cab4ef7df855888ec7d28ca5c7abaf7eeb" prot="public">
-          <name>INPUT_GET_SPU_DELAY</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cafad24f6e2c18aef82d211a6ec4d89f0b" prot="public">
-          <name>INPUT_SET_SPU_DELAY</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20caf3e841e1866e84537265309dc2724abe" prot="public">
-          <name>INPUT_NAV_ACTIVATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Activate the navigation item selected. res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca3b67423df180591aef3e48ee367ff924" prot="public">
-          <name>INPUT_NAV_UP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Use the up arrow to select a navigation item above. res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae154b683d3008cfe539c53d1d45bc843" prot="public">
-          <name>INPUT_NAV_DOWN</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Use the down arrow to select a navigation item under. res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca76393a48071ff3e6528d10559d3b6d52" prot="public">
-          <name>INPUT_NAV_LEFT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Use the left arrow to select a navigation item on the left. res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca8d010adb6beea46fc3aec20e12f82e0c" prot="public">
-          <name>INPUT_NAV_RIGHT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Use the right arrow to select a navigation item on the right. res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca4ebc0cdf28820f94560a40ceb8897831" prot="public">
-          <name>INPUT_NAV_POPUP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Activate the popup Menu (for BD). res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca5d1dc43d2b742d546ade5175dbd4efab" prot="public">
-          <name>INPUT_NAV_MENU</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Activate disc Root Menu. res=can fail </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca8221eec543156af52caafffdd741642e" prot="public">
-          <name>INPUT_ADD_INFO</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cafe55aff20c21c821f0ecadd89dfd8e81" prot="public">
-          <name>INPUT_REPLACE_INFOS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cac94ee6716069a8735b662615ab7db51b" prot="public">
-          <name>INPUT_MERGE_INFOS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cad15cc0717653c3a0828ce124a647cf73" prot="public">
-          <name>INPUT_DEL_INFO</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca2c5bd08368d54f6282be2d5866983f77" prot="public">
-          <name>INPUT_GET_BOOKMARK</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca435a75646d5d8272282d79e504ec3db1" prot="public">
-          <name>INPUT_GET_BOOKMARKS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca0e68e9c25d0346b565d9db60e5ab671e" prot="public">
-          <name>INPUT_CLEAR_BOOKMARKS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca1860b74b90ba8159adbf1ab21d47cd93" prot="public">
-          <name>INPUT_ADD_BOOKMARK</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca5fbaf8a7ed615d148068e78fdef8d76c" prot="public">
-          <name>INPUT_CHANGE_BOOKMARK</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cad365172b96a651a8b38912b9ccea8aae" prot="public">
-          <name>INPUT_DEL_BOOKMARK</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20caf72e6006a37416fc6c4d9a4c44de5bb8" prot="public">
-          <name>INPUT_SET_BOOKMARK</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca9ccd7ec57f63582ce81aeece9f953ea8" prot="public">
-          <name>INPUT_GET_TITLE_INFO</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca5cc15a9656502c95a18a088901dd67e0" prot="public">
-          <name>INPUT_GET_FULL_TITLE_INFO</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca25f14444368f928f3624a7c4c9e3766d" prot="public">
-          <name>INPUT_GET_SEEKPOINTS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca72ae6dd7d9ad9d8a4efd0031c6702f86" prot="public">
-          <name>INPUT_GET_ATTACHMENTS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca395e8a314d46e232771a84712cf35c28" prot="public">
-          <name>INPUT_GET_ATTACHMENT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca07dc7b07eb0c45dd22b9223c7e4acac2" prot="public">
-          <name>INPUT_ADD_SLAVE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cae8697f347d1e40ad4f52f64a7ee90830" prot="public">
-          <name>INPUT_SET_RECORD_STATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca581cd5f4e57c3a57c35d2359575b0d2e" prot="public">
-          <name>INPUT_GET_RECORD_STATE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca9a6af2662750376254ad2e5a2f0a8b06" prot="public">
-          <name>INPUT_RESTART_ES</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cafcfeb9288cbf28df6f7e66c0fe173168" prot="public">
-          <name>INPUT_UPDATE_VIEWPOINT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca02efd2e0decc5fe5b0cf46c07a5bf82c" prot="public">
-          <name>INPUT_SET_INITIAL_VIEWPOINT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca285e596b7e78829dc5ce288d6b9da17d" prot="public">
-          <name>INPUT_GET_AOUT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca3841dcaf73be0ae0d781e2149e9792e2" prot="public">
-          <name>INPUT_GET_VOUTS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20cadf9fad07f2a71db7a68f92dee618c5f5" prot="public">
-          <name>INPUT_GET_ES_OBJECTS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca98e36db746ae70db5de3f4c5eeadd3c2" prot="public">
-          <name>INPUT_SET_RENDERER</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca9f08ba5a4b4f0cee8b243abaee13ba04" prot="public">
-          <name>INPUT_GET_PCR_SYSTEM</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__input_1gga51e953c6c4b0a10e18282dcc64c9c20ca88c1e435d4af917cc31001c52fd2e5bc" prot="public">
-          <name>INPUT_MODIFY_PCR_SYSTEM</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Input queries </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="393" column="1" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="394" bodyend="490"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__input_1ga16146678aade5cdbdbbd70d1ebbcf2a9" prot="public" static="no">
-        <type>struct input_title_t</type>
-        <definition>typedef struct input_title_t input_title_t</definition>
-        <argsstring></argsstring>
-        <name>input_title_t</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="102" column="15"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__input_1gacb60e654936ed16f31c50fbbf57f921f" prot="public" static="no">
-        <type>struct <ref refid="group__input_1gacb60e654936ed16f31c50fbbf57f921f" kindref="member">input_resource_t</ref></type>
-        <definition>typedef struct input_resource_t input_resource_t</definition>
-        <argsstring></argsstring>
-        <name>input_resource_t</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>This defines an opaque input resource handler. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="219" column="31" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="219" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__input_1gabc4b6a9b5c827f6a58a10f9fed8b039f" prot="public" static="no">
-        <type>enum <ref refid="group__input_1ga50f8cb1c3cdf6bfc02752c1d41b723b4" kindref="member">input_state_e</ref></type>
-        <definition>typedef enum input_state_e input_state_e</definition>
-        <argsstring></argsstring>
-        <name>input_state_e</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Input state</para>
-<para>This enum is used by the variable &quot;state&quot; </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="293" column="15"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__input_1ga9ceb1a52f12718b5b00c42a373e1c5f1" prot="public" static="no">
-        <type>enum <ref refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">input_event_type_e</ref></type>
-        <definition>typedef enum input_event_type_e input_event_type_e</definition>
-        <argsstring></argsstring>
-        <name>input_event_type_e</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Input events</para>
-<para>You can catch input event by adding a callback on the variable &quot;intf-event&quot;. This variable is an integer that will hold a <ref refid="group__input_1ga4a3eb08df7f1209edd1edb4f0ed9242f" kindref="member">input_event_type_e</ref> value. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="388" column="20"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="group__input_1ga9d8e39678ae3fcbcc2161355fa21a3de" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref> *</type>
-        <definition>static seekpoint_t * vlc_seekpoint_New</definition>
-        <argsstring>(void)</argsstring>
-        <name>vlc_seekpoint_New</name>
-        <param>
-          <type>void</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="55" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="55" bodyend="63"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1ga5d6fe6cd8233dae7424bb4d1ea65404b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void vlc_seekpoint_Delete</definition>
-        <argsstring>(seekpoint_t *point)</argsstring>
-        <name>vlc_seekpoint_Delete</name>
-        <param>
-          <type><ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref> *</type>
-          <declname>point</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="65" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="65" bodyend="70"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1gac278e2c44ef4465d0cf23b080dad29e2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref> *</type>
-        <definition>static seekpoint_t * vlc_seekpoint_Duplicate</definition>
-        <argsstring>(const seekpoint_t *src)</argsstring>
-        <name>vlc_seekpoint_Duplicate</name>
-        <param>
-          <type>const <ref refid="structseekpoint__t" kindref="compound">seekpoint_t</ref> *</type>
-          <declname>src</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="72" column="27" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="72" bodyend="81"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1gacb5b9a5a50d1acd8239a62aad4e9fa05" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structinput__title__t" kindref="compound">input_title_t</ref> *</type>
-        <definition>static input_title_t * vlc_input_title_New</definition>
-        <argsstring>(void)</argsstring>
-        <name>vlc_input_title_New</name>
-        <param>
-          <type>void</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="104" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="104" bodyend="117"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1gabeddb2cb0b3f05594e8ba62a7aa5ce5c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void vlc_input_title_Delete</definition>
-        <argsstring>(input_title_t *t)</argsstring>
-        <name>vlc_input_title_Delete</name>
-        <param>
-          <type><ref refid="structinput__title__t" kindref="compound">input_title_t</ref> *</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="119" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="119" bodyend="130"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1ga413420c45e284e1cf847bea65564e752" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structinput__title__t" kindref="compound">input_title_t</ref> *</type>
-        <definition>static input_title_t * vlc_input_title_Duplicate</definition>
-        <argsstring>(const input_title_t *t)</argsstring>
-        <name>vlc_input_title_Duplicate</name>
-        <param>
-          <type>const <ref refid="structinput__title__t" kindref="compound">input_title_t</ref> *</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="132" column="29" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="132" bodyend="152"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1gaa77971931e56781f8f205ea1b2bad676" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void vlc_input_attachment_Delete</definition>
-        <argsstring>(input_attachment_t *a)</argsstring>
-        <name>vlc_input_attachment_Delete</name>
-        <param>
-          <type><ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref> *</type>
-          <declname>a</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="167" column="20" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="167" bodyend="177"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1ga6bcf3f194d14790915dd252ca23c11a7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref> *</type>
-        <definition>static input_attachment_t * vlc_input_attachment_New</definition>
-        <argsstring>(const char *psz_name, const char *psz_mime, const char *psz_description, const void *p_data, size_t i_data)</argsstring>
-        <name>vlc_input_attachment_New</name>
-        <param>
-          <type>const char *</type>
-          <declname>psz_name</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>psz_mime</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>psz_description</declname>
-        </param>
-        <param>
-          <type>const void *</type>
-          <declname>p_data</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>i_data</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="179" column="34" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="179" bodyend="204"/>
-      </memberdef>
-      <memberdef kind="function" id="group__input_1ga74b846389e2acaf6efde748112ca0a04" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref> *</type>
-        <definition>static input_attachment_t * vlc_input_attachment_Duplicate</definition>
-        <argsstring>(const input_attachment_t *a)</argsstring>
-        <name>vlc_input_attachment_Duplicate</name>
-        <param>
-          <type>const <ref refid="structinput__attachment__t" kindref="compound">input_attachment_t</ref> *</type>
-          <declname>a</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="206" column="34" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="206" bodyend="210"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="define">
-      <memberdef kind="define" id="group__input_1gaec4e4e364c807281901fe5c224dceb5f" prot="public" static="no">
-        <name>INPUT_TITLE_MENU</name>
-        <initializer>0x01   /* Menu title */</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="88" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="88" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__input_1ga9f4d8ff35b9a65d61cd08acaeadd87f5" prot="public" static="no">
-        <name>INPUT_TITLE_INTERACTIVE</name>
-        <initializer>0x02   /* Interactive title. Playback position has no meaning. */</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="89" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="89" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__input_1ga7a3aa0997c538539af76ed182fdaca98" prot="public" static="no">
-        <name>INPUT_RECORD_PREFIX</name>
-        <initializer>&quot;vlc-record-%Y-%m-%d-%Hh%Mm%Ss-$ N-$ p&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Record prefix string. TODO make it configurable. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="234" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="234" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__input_1ga3b545c60e0490722c8a507d5a29cb945" prot="public" static="no">
-        <name>INPUT_RATE_DEFAULT</name>
-        <initializer>1000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Input rate.</para>
-<para>It is an float used by the variable &quot;rate&quot; in the range [INPUT_RATE_DEFAULT/INPUT_RATE_MAX, INPUT_RATE_DEFAULT/INPUT_RATE_MIN] the default value being 1. It represents the ratio of playback speed to nominal speed (bigger is faster).</para>
-<para>Internally, the rate is stored as a value in the range [INPUT_RATE_MIN, INPUT_RATE_MAX]. internal rate = INPUT_RATE_DEFAULT / rate variable Default rate value </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="311" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="311" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__input_1ga7ecfc916204c1fa9686cf9411c5507ff" prot="public" static="no">
-        <name>INPUT_RATE_MIN</name>
-        <initializer>32            /* Up to 32/1 */</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Minimal rate value </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="315" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="315" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="group__input_1ga0d13008429b6e80cc5d5a7f6b8ddb337" prot="public" static="no">
-        <name>INPUT_RATE_MAX</name>
-        <initializer>32000            /* Up to 1/32 */</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Maximal rate value </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" line="319" column="9" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/AffichageSynchrone/include/LibVLC/include/vlc/plugins/vlc_input.h" bodystart="319" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <briefdescription>
-    </briefdescription>
-    <detaileddescription>
-<para>Input thread </para>
-    </detaileddescription>
-  </compounddef>
+    </compounddef>
 </doxygen>
