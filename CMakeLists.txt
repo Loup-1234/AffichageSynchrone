@@ -100,6 +100,7 @@ if(WIN32)
             wsock32
             libvlc
             libvlccore
+            iphlpapi
             "${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll"
     )
 else()

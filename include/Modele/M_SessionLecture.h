@@ -71,5 +71,5 @@ public:
          * @param portReponse Port de réception UDP local pour les réponses JSON.
          * @return Un vecteur de dictionnaires (Clé -> Valeur) représentant chaque lecteur détecté.
          */
-    vector<map<string, string>> rechercherLecteursComplets(const string& ipMulticast, int portDecouverte, int portReponse);
+    vector<map<string, string>> rechercherLecteurs(const string& ipMulticast, int portDecouverte, int portReponse);
 };

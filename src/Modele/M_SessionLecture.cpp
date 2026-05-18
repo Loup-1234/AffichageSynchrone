@@ -148,7 +148,7 @@ void M_SessionLecture::uploaderVideoComplexe() const {
     }
 }
 
-vector<map<string, string> > M_SessionLecture::rechercherLecteursComplets(
+vector<map<string, string> > M_SessionLecture::rechercherLecteurs(
     const string &ipMulticast, int portDecouverte, int portReponse) {
     // 1. Création de la configuration avec les paramètres dynamiques
     M_ConfigReseau config("SessionInitiale", ipMulticast, portDecouverte, portReponse);

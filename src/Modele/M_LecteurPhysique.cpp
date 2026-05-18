@@ -1,3 +1,20 @@
+#ifdef _WIN32
+#undef NOUSER
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#include <winsock2.h>
+#include <windows.h>
+#include <iphlpapi.h>
+#pragma comment(lib, "iphlpapi.lib")
+#pragma comment(lib, "advapi32.lib")
+#else
+#include <ifaddrs.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#endif
+
 #include "Modele/M_LecteurPhysique.h"
 #include "Modele/M_JsonUtil.h"
 
@@ -10,16 +27,6 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
-
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#else
-#include <ifaddrs.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#endif
 
 using namespace std;
 
@@ -123,8 +130,12 @@ void M_LecteurPhysique::collecterInfosLocales() {
 void M_LecteurPhysique::collecterNom() {
     char hostname[256];
 #ifdef _WIN32
-    if (gethostname(hostname, sizeof(hostname)) == 0) m_nom = string(hostname);
-    else m_nom = "LecteurWin";
+    DWORD size = sizeof(hostname);
+    if (GetComputerNameA(hostname, &size)) {
+        m_nom = string(hostname);
+    } else {
+        m_nom = "LecteurWin";
+    }
 #else
     if (gethostname(hostname, sizeof(hostname)) == 0) m_nom = string(hostname);
     else m_nom = "LecteurLinux";
@@ -133,8 +144,34 @@ void M_LecteurPhysique::collecterNom() {
 
 void M_LecteurPhysique::collecterIpEtMac() {
 #ifdef _WIN32
-    m_ip = "127.0.0.1";
-    m_mac = "00:00:00:00:00:00";
+    ULONG bufferSize = 0;
+    // Premier appel pour connaître la taille de la mémoire à allouer
+    if (GetAdaptersInfo(nullptr, &bufferSize) == ERROR_BUFFER_OVERFLOW) {
+        vector<char> buffer(bufferSize);
+        PIP_ADAPTER_INFO adapterInfo = reinterpret_cast<PIP_ADAPTER_INFO>(buffer.data());
+
+        // Second appel pour récupérer les données
+        if (GetAdaptersInfo(adapterInfo, &bufferSize) == NO_ERROR) {
+            while (adapterInfo) {
+                // On ignore les interfaces virtuelles de boucle locale (Loopback)
+                if (adapterInfo->Type != MIB_IF_TYPE_LOOPBACK && string(adapterInfo->IpAddressList.IpAddress.String) != "0.0.0.0") {
+                    m_ip = adapterInfo->IpAddressList.IpAddress.String;
+
+                    // Formatage de l'adresse MAC en XX:XX:XX:XX:XX:XX
+                    char macStr[18];
+                    snprintf(macStr, sizeof(macStr), "%02X:%02X:%02X:%02X:%02X:%02X",
+                             adapterInfo->Address[0], adapterInfo->Address[1], adapterInfo->Address[2],
+                             adapterInfo->Address[3], adapterInfo->Address[4], adapterInfo->Address[5]);
+                    m_mac = macStr;
+                    break; // On s'arrête à la première vraie carte réseau trouvée
+                }
+                adapterInfo = adapterInfo->Next;
+            }
+        }
+    }
+    // Valeurs de secours au cas où aucune carte n'est connectée
+    if (m_ip.empty()) m_ip = "127.0.0.1";
+    if (m_mac.empty()) m_mac = "00:00:00:00:00:00";
 #else
     ifaddrs *interfaces = nullptr;
     if (getifaddrs(&interfaces) != 0) {
@@ -173,7 +210,17 @@ void M_LecteurPhysique::collecterIpEtMac() {
 
 void M_LecteurPhysique::collecterOs() {
 #ifdef _WIN32
-    m_os = "Windows";
+    HKEY hKey;
+    // Ouverture du registre pour lire la version de Windows
+    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", 0, KEY_READ, &hKey) == ERROR_SUCCESS) {
+        char osName[256] = {0};
+        DWORD dataSize = sizeof(osName);
+        if (RegQueryValueExA(hKey, "ProductName", nullptr, nullptr, reinterpret_cast<LPBYTE>(osName), &dataSize) == ERROR_SUCCESS) {
+            m_os = string(osName);
+        }
+        RegCloseKey(hKey);
+    }
+    if (m_os.empty()) m_os = "Windows";
 #else
     ifstream f("/etc/os-release");
     if (!f.is_open()) {
@@ -194,7 +241,17 @@ void M_LecteurPhysique::collecterOs() {
 
 void M_LecteurPhysique::collecterCpu() {
 #ifdef _WIN32
-    m_processeur = "CPU Windows";
+    HKEY hKey;
+    // Ouverture du registre pour lire le nom du processeur physique
+    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0", 0, KEY_READ, &hKey) == ERROR_SUCCESS) {
+        char cpuName[256] = {0};
+        DWORD dataSize = sizeof(cpuName);
+        if (RegQueryValueExA(hKey, "ProcessorNameString", nullptr, nullptr, reinterpret_cast<LPBYTE>(cpuName), &dataSize) == ERROR_SUCCESS) {
+            m_processeur = string(cpuName);
+        }
+        RegCloseKey(hKey);
+    }
+    if (m_processeur.empty()) m_processeur = "Inconnu";
 #else
     ifstream f("/proc/cpuinfo");
     if (!f.is_open()) {

@@ -7,9 +7,10 @@
 using namespace std;
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, const int portCommandes, const int portDecouverte,
-                                               const int portReponse, const vector<vector<string> > &configLecteurs)
+                                               const int portReponse, const vector<vector<string>> &configLecteurs)
     : udp(ipMulticast, portCommandes), configLecteurs(configLecteurs), m_adresseMulticast(ipMulticast),
       m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
+
     modeleLecteur.collecterInfosLocales();
     demarrerEcouteMulticast();
 
@@ -19,14 +20,13 @@ C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, const 
 }
 
 C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
-    arreterEcouteMulticast(); // Coupe le thread réseau proprement
+    arreterEcouteMulticast();
 
     if (threadGeneration.joinable()) threadGeneration.join();
     if (threadRecherche.joinable()) threadRecherche.join();
     if (threadEcouteMulticast.joinable()) threadEcouteMulticast.join();
 }
 
-// Fonction d'origine restaurée
 void C_LecteurPhysiqueLocal::arreterEcouteMulticast() {
     ecouteMulticastActive = false;
 }
@@ -35,21 +35,15 @@ void C_LecteurPhysiqueLocal::demarrerEcouteMulticast() {
     ecouteMulticastActive = true;
 
     threadEcouteMulticast = thread([this]() {
-        // On instancie notre nouveau composant réseau de manière locale au thread
         M_ReceveurUDP receveurMulticast(m_portDecouverte, m_adresseMulticast);
-
         char buffer[512];
         string ipEmetteur;
 
         while (ecouteMulticastActive) {
-            // On attend jusqu'à 500ms. Le thread dort et ne consomme pas de CPU.
             int nbOctets = receveurMulticast.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipEmetteur, 500);
 
             if (nbOctets > 0) {
-                // Si on a reçu quelque chose, on prépare notre réponse JSON
                 string jsonInfos = modeleLecteur.versJson();
-
-                // On utilise la nouvelle méthode pour répondre sans polluer le contrôleur avec des sockets
                 receveurMulticast.envoyerReponse(ipEmetteur, m_portReponse, jsonInfos);
             }
         }
@@ -66,8 +60,7 @@ void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
 
     threadRecherche = thread([this]() {
         try {
-            // CORRECTION : On passe bien les paramètres injectés à la session
-            cacheLecteurs = session.rechercherLecteursComplets(m_adresseMulticast, m_portDecouverte, m_portReponse);
+            cacheLecteurs = session.rechercherLecteurs(m_adresseMulticast, m_portDecouverte, m_portReponse);
             resultatsRecherchePrets = true;
         } catch (const exception &e) {
             cerr << "Erreur Recherche Réseau: " << e.what() << '\n';
@@ -76,7 +69,7 @@ void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
     });
 }
 
-vector<map<string, string> > C_LecteurPhysiqueLocal::getDerniersLecteursTrouves() {
+vector<map<string, string>> C_LecteurPhysiqueLocal::getDerniersLecteursTrouves() {
     resultatsRecherchePrets = false;
     return cacheLecteurs;
 }
@@ -91,10 +84,15 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
 
     threadGeneration = thread([this, fichiers]() {
         try {
-            if (!filesystem::exists("videosComplexes")) filesystem::create_directory("videosComplexes");
+            if (!filesystem::exists("videosComplexes")) {
+                filesystem::create_directory("videosComplexes");
+            }
 
             size_t nbLecteurs = configLecteurs.size();
-            LecteurSpec *specs = new LecteurSpec[nbLecteurs];
+
+            // OPTIMISATION ICI : Utilisation de vector au lieu de pointeurs bruts (new/delete)
+            // Cela garantit qu'il n'y aura aucune fuite de mémoire si une erreur survient.
+            vector<LecteurSpec> specs(nbLecteurs);
 
             for (size_t i = 0; i < nbLecteurs; ++i) {
                 if (configLecteurs[i].size() >= 3) {
@@ -104,9 +102,8 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
                 }
             }
 
-            session.preparerSessionLecture(specs, nbLecteurs);
-            delete[] specs;
-
+            // On utilise .data() pour passer le pointeur brut attendu par ta méthode
+            session.preparerSessionLecture(specs.data(), nbLecteurs);
             session.genererVideoComplexe(fichiers.data(), fichiers.size());
 
             transfertEnCours = true;
@@ -122,8 +119,7 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
 }
 
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
-    const bool enLecture = modeleLecteur.estEnLecture();
-    if (enLecture) {
+    if (modeleLecteur.estEnLecture()) {
         modeleLecteur.pause();
         udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PAUSE, 0.0f);
     } else {
@@ -144,8 +140,7 @@ void C_LecteurPhysiqueLocal::modifierVolume(const float volume, const bool muet)
     udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VOLUME, volumeCourant);
 }
 
-void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement,
-                                                 const bool restaurerLecture) {
+void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement, const bool restaurerLecture) {
     modeleLecteur.setTime(progression);
     udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PROGRESSION, progression);
 
@@ -154,8 +149,11 @@ void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const 
         modeleLecteur.setVolume(0);
     } else {
         modeleLecteur.setVolume(static_cast<int>(volumeCourant));
-        if (restaurerLecture) modeleLecteur.play();
-        else modeleLecteur.pause();
+        if (restaurerLecture) {
+            modeleLecteur.play();
+        } else {
+            modeleLecteur.pause();
+        }
     }
 }
 
