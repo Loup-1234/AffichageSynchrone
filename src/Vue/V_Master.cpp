@@ -36,7 +36,6 @@ V_Master::~V_Master() {
     CloseWindow();
 }
 
-// --- GESTION DE LA DISPOSITION (LAYOUT DYNAMIQUE) ---
 void V_Master::miseAJourDisposition() {
     const auto L = static_cast<float>(GetScreenWidth());
     const auto H = static_cast<float>(GetScreenHeight());
@@ -141,7 +140,7 @@ void V_Master::executer() {
 }
 
 void V_Master::gererLogique() {
-    // --- GESTION DU REDIMENSIONNEMENT FENÊTRE ---
+    // GESTION DU REDIMENSIONNEMENT FENÊTRE
     if (IsWindowResized()) {
         // Sécurité : Empêcher les panneaux d'être plus larges que la moitié de l'écran si on réduit la fenêtre
         float limiteMax = static_cast<float>(GetScreenWidth()) / 2.5f;
@@ -150,7 +149,7 @@ void V_Master::gererLogique() {
         miseAJourDisposition();
     }
 
-    // --- LOGIQUE DE REDIMENSIONNEMENT DES PANNEAUX (SPLITTERS) ---
+    // LOGIQUE DE REDIMENSIONNEMENT DES PANNEAUX
     float mouseX = GetMouseX();
     float mouseY = GetMouseY();
     float L = static_cast<float>(GetScreenWidth());
