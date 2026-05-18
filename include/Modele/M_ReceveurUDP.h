@@ -3,7 +3,6 @@
 #include <string>
 #include "Modele/M_ProtocoleReseau.h"
 
-// Gestion multiplateforme et sécurité pour la macro Windows
 #ifdef _WIN32
     #ifndef WIN32_LEAN_AND_MEAN
         #define WIN32_LEAN_AND_MEAN
@@ -36,5 +35,5 @@ public:
 
 private:
     SocketType descripteurSocket = INVALID_SOCKET;
-    struct ip_mreq groupeMulticast{};
+    ip_mreq groupeMulticast{};
 };
