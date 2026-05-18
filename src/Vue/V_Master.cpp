@@ -20,7 +20,7 @@ V_Master::V_Master(const string &ipMulticast, const int portCommandes, const int
     InitWindow(800, 450, "Master UI - Contrôleur MVC");
     SetWindowMinSize(800, 450);
     InitAudioDevice();
-    SetTargetFPS(30);
+    SetTargetFPS(60);
 
     chargerListeVideos();
     controleur.lancerRechercheLecteurs();
@@ -194,7 +194,6 @@ void V_Master::gererLogique() {
         miseAJourDisposition();
     }
 
-    // --- LOGIQUE STANDARD DE LA VUE ---
     controleur.mettreAJour();
 
     if (controleur.resultatsRechercheDisponibles()) {
@@ -239,10 +238,6 @@ void V_Master::dessinerInterface() {
     dessinerListeLecteurs();
     dessinerPanneauControle();
 
-    // Lignes visuelles optionnelles pour bien marquer la zone de redimensionnement
-    DrawLineV({largeurPanneauGauche, 0}, {largeurPanneauGauche, (float)GetScreenHeight()}, LIGHTGRAY);
-    DrawLineV({(float)GetScreenWidth() - largeurPanneauDroit, 0}, {(float)GetScreenWidth() - largeurPanneauDroit, (float)GetScreenHeight()}, LIGHTGRAY);
-
     gererVitesse();
     dessinerOverlayChargement();
 
@@ -253,8 +248,8 @@ void V_Master::dessinerZoneVideo() const {
     DrawRectangleRec(zones[2], BLACK);
 
     if (largeurVideoCache > 0 && hauteurVideoCache > 0 && textureVideo.id > 0) {
-        float echelleX = zones[2].width / static_cast<float>(largeurVideoCache);
-        float echelleY = zones[2].height / static_cast<float>(hauteurVideoCache);
+        const float echelleX = zones[2].width / static_cast<float>(largeurVideoCache);
+        const float echelleY = zones[2].height / static_cast<float>(hauteurVideoCache);
         const float echelle = min(echelleX, echelleY);
 
         const float destLargeur = static_cast<float>(largeurVideoCache) * echelle;
