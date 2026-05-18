@@ -1,100 +1,60 @@
-#include "../../include/Modele/M_DecouverteReseau.h"
-#include <cstring>
+#include "Modele/M_DecouverteReseau.h"
 #include <iostream>
-#include <stdexcept>
+#include <chrono>
 
 M_DecouverteReseau::M_DecouverteReseau(const M_ConfigReseau &config)
     : m_config(config),
       m_expediteur(config.getAdresseMulticast(), config.getPortMulticast()),
-      m_socketReception(INVALID_SOCKET) {
-#ifdef _WIN32
-    WSADATA wsaData;
-    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
-        throw std::runtime_error("[M_DecouverteReseau] Echec WSAStartup");
-    }
-#endif
-
-    m_socketReception = socket(AF_INET, SOCK_DGRAM, 0);
-    if (m_socketReception == INVALID_SOCKET) {
-        throw std::runtime_error("[M_DecouverteReseau] Erreur création socket réception");
-    }
-
-    int reuse = 1;
-    setsockopt(m_socketReception, SOL_SOCKET, SO_REUSEADDR, (const char *) &reuse, sizeof(reuse));
-
-    sockaddr_in addrReception{};
-    addrReception.sin_family = AF_INET;
-    addrReception.sin_port = htons(m_config.getPortReponse());
-    addrReception.sin_addr.s_addr = INADDR_ANY;
-
-    if (bind(m_socketReception, reinterpret_cast<sockaddr *>(&addrReception), sizeof(addrReception)) == SOCKET_ERROR) {
-#ifdef _WIN32
-        closesocket(m_socketReception);
-#else
-        close(m_socketReception);
-#endif
-        throw std::runtime_error("[M_DecouverteReseau] Impossible de lier le socket de réception");
-    }
+      m_receveur(config.getPortReponse(), config.getAdresseMulticast()) {
 }
 
-M_DecouverteReseau::~M_DecouverteReseau() {
-    if (m_socketReception != INVALID_SOCKET) {
-#ifdef _WIN32
-        closesocket(m_socketReception);
-        WSACleanup();
-#else
-        close(m_socketReception);
-#endif
-    }
-}
+M_DecouverteReseau::~M_DecouverteReseau() = default;
 
 void M_DecouverteReseau::lancerDecouverte(int timeoutMs) {
     m_reponses.clear();
 
-    // Envoi de la requête de découverte avec la structure standardisée
+    // Envoi de la requête de découverte sur le réseau
     m_expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::DECOUVERTE, Action::RECHERCHE, 0.0f);
 
     std::cout << "[M_DecouverteReseau] Paquet de découverte envoyé sur "
-            << m_config.getAdresseMulticast() << ":" << m_config.getPortMulticast() << std::endl;
+              << m_config.getAdresseMulticast() << ":" << m_config.getPortMulticast() << std::endl;
 
     attendreReponses(timeoutMs);
 }
 
 void M_DecouverteReseau::attendreReponses(int timeoutMs) {
     char buffer[4096];
-    sockaddr_in addrEmetteur{};
-    socklen_t tailleAddr = sizeof(addrEmetteur);
-
-    timeval tv{};
-    tv.tv_sec = timeoutMs / 1000;
-    tv.tv_usec = (timeoutMs % 1000) * 1000;
+    std::string ipSrc;
 
     std::cout << "[M_DecouverteReseau] Ecoute des réponses..." << std::endl;
 
+    // On mémorise l'heure de début pour ne pas dépasser le temps alloué
+    auto heureDebut = std::chrono::steady_clock::now();
+
     while (true) {
-        fd_set ensemble;
-        FD_ZERO(&ensemble);
-        FD_SET(m_socketReception, &ensemble);
+        // Calcul du temps restant
+        auto maintenant = std::chrono::steady_clock::now();
+        int tempsEcouleMs = std::chrono::duration_cast<std::chrono::milliseconds>(maintenant - heureDebut).count();
+        int tempsRestantMs = timeoutMs - tempsEcouleMs;
 
-        timeval tvCopie = tv;
-        int pret = select(m_socketReception + 1, &ensemble, nullptr, nullptr, &tvCopie);
-
-        if (pret <= 0) {
-            break; // Timeout ou erreur
+        // Si on a dépassé le délai global de recherche, on arrête d'écouter
+        if (tempsRestantMs <= 0) {
+            break;
         }
 
-        if (FD_ISSET(m_socketReception, &ensemble)) {
-            int nbOctets = recvfrom(m_socketReception, buffer, sizeof(buffer) - 1, 0,
-                                    reinterpret_cast<sockaddr *>(&addrEmetteur), &tailleAddr);
+        // On écoute le réseau uniquement pour le temps qu'il nous reste
+        int nbOctets = m_receveur.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipSrc, tempsRestantMs);
 
-            if (nbOctets > 0) {
-                buffer[nbOctets] = '\0';
-                m_reponses.push_back(std::string(buffer));
-
-                char ipSrc[INET_ADDRSTRLEN];
-                inet_ntop(AF_INET, &addrEmetteur.sin_addr, ipSrc, sizeof(ipSrc));
-                std::cout << "[M_DecouverteReseau] Réponse JSON reçue de " << ipSrc << std::endl;
-            }
+        if (nbOctets > 0) {
+            buffer[nbOctets] = '\0';
+            m_reponses.push_back(std::string(buffer));
+            std::cout << "[M_DecouverteReseau] Réponse JSON reçue de " << ipSrc << std::endl;
+        } else if (nbOctets == 0) {
+            // nbOctets = 0 signifie que le timeout a été atteint sans recevoir de paquet
+            break;
+        } else {
+            // Une erreur réseau s'est produite
+            break;
         }
     }
 }
