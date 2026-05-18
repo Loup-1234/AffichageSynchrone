@@ -57,6 +57,7 @@ set(SOURCE_FILES
         src/Modele/M_DecouverteReseau.cpp
         src/Modele/M_ConfigReseau.cpp
         src/Modele/M_JsonUtil.cpp
+        src/Modele/M_ReceveurUDP.cpp
 )
 
 set(HEADER_FILES
@@ -70,6 +71,8 @@ set(HEADER_FILES
         include/Modele/M_DecouverteReseau.h
         include/Modele/M_ConfigReseau.h
         include/Modele/M_JsonUtil.h
+        include/Modele/M_ReceveurUDP.h
+        include/Modele/M_ProtocoleReseau.h
 )
 
 # Création de l'Exécutable
@@ -84,6 +87,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 if(WIN32)
     target_include_directories(${PROJECT_NAME} PRIVATE
             "libs/LibVLC/include"
+            "libs/LibVLC/include/vlc"
             "libs/FFTW"
     )
     target_link_directories(${PROJECT_NAME} PRIVATE "libs/LibVLC/lib")

@@ -1,32 +1,15 @@
 #include "Controleur/C_LecteurPhysiqueLocal.h"
+#include "Modele/M_ReceveurUDP.h"
 
 #include <filesystem>
 #include <iostream>
 
-#ifdef _WIN32
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <winsock2.h>
-#include <ws2tcpip.h>
-using SocketType = SOCKET;
-#else
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <sys/select.h>
-using SocketType = int;
-#define INVALID_SOCKET -1
-#define SOCKET_ERROR -1
-#endif
-
 using namespace std;
 
-C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte,
-                                               int portReponse, const vector<vector<string> > &configLecteurs)
-    : udp(ipMulticast, portCommandes), m_adresseMulticast(ipMulticast), m_portDecouverte(portDecouverte),
-      m_portReponse(portReponse), configLecteurs(configLecteurs) {
+C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, const int portCommandes, const int portDecouverte,
+                                               const int portReponse, const vector<vector<string> > &configLecteurs)
+    : udp(ipMulticast, portCommandes), configLecteurs(configLecteurs), m_adresseMulticast(ipMulticast),
+      m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
     modeleLecteur.collecterInfosLocales();
     demarrerEcouteMulticast();
 
@@ -52,78 +35,24 @@ void C_LecteurPhysiqueLocal::demarrerEcouteMulticast() {
     ecouteMulticastActive = true;
 
     threadEcouteMulticast = thread([this]() {
-        SocketType socketEcoute = socket(AF_INET, SOCK_DGRAM, 0);
-        if (socketEcoute == INVALID_SOCKET) return;
-
-        int reuse = 1;
-        setsockopt(socketEcoute, SOL_SOCKET, SO_REUSEADDR, (const char *) &reuse, sizeof(reuse));
-
-        sockaddr_in addrBind{};
-        addrBind.sin_family = AF_INET;
-        // CORRECTION : Utilisation de la variable membre m_portMulticast
-        addrBind.sin_port = htons(m_portDecouverte);
-        addrBind.sin_addr.s_addr = INADDR_ANY;
-
-        if (bind(socketEcoute, reinterpret_cast<sockaddr *>(&addrBind), sizeof(addrBind)) == SOCKET_ERROR) {
-#ifdef _WIN32
-            closesocket(socketEcoute);
-#else
-            close(socketEcoute);
-#endif
-            return;
-        }
-
-        ip_mreq mreq{};
-        // CORRECTION : Utilisation de la variable membre m_adresseMulticast (convertie en C-string)
-        inet_pton(AF_INET, m_adresseMulticast.c_str(), &mreq.imr_multiaddr);
-        mreq.imr_interface.s_addr = INADDR_ANY;
-        setsockopt(socketEcoute, IPPROTO_IP, IP_ADD_MEMBERSHIP, (const char *) &mreq, sizeof(mreq));
+        // On instancie notre nouveau composant réseau de manière locale au thread
+        M_ReceveurUDP receveurMulticast(m_portDecouverte, m_adresseMulticast);
 
         char buffer[512];
-        sockaddr_in addrEmetteur{};
-        socklen_t tailleAddr = sizeof(addrEmetteur);
+        string ipEmetteur;
 
         while (ecouteMulticastActive) {
-            fd_set ensemble;
-            FD_ZERO(&ensemble);
-            FD_SET(socketEcoute, &ensemble);
-
-            timeval tv{0, 500000};
-
-            int pret = select(static_cast<int>(socketEcoute) + 1, &ensemble, nullptr, nullptr, &tv);
-            if (pret <= 0) continue;
-
-            int nbOctets = recvfrom(socketEcoute, buffer, sizeof(buffer) - 1, 0,
-                                    reinterpret_cast<sockaddr *>(&addrEmetteur), &tailleAddr);
+            // On attend jusqu'à 500ms. Le thread dort et ne consomme pas de CPU.
+            int nbOctets = receveurMulticast.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipEmetteur, 500);
 
             if (nbOctets > 0) {
+                // Si on a reçu quelque chose, on prépare notre réponse JSON
                 string jsonInfos = modeleLecteur.versJson();
 
-                sockaddr_in addrReponse{};
-                addrReponse.sin_family = AF_INET;
-                // CORRECTION : Utilisation de la variable membre m_portReponse
-                addrReponse.sin_port = htons(m_portReponse);
-                addrReponse.sin_addr = addrEmetteur.sin_addr;
-
-                SocketType socketReponse = socket(AF_INET, SOCK_DGRAM, 0);
-                if (socketReponse != INVALID_SOCKET) {
-                    sendto(socketReponse, jsonInfos.c_str(), static_cast<int>(jsonInfos.size()), 0,
-                           reinterpret_cast<sockaddr *>(&addrReponse), sizeof(addrReponse));
-#ifdef _WIN32
-                    closesocket(socketReponse);
-#else
-                    close(socketReponse);
-#endif
-                }
+                // On utilise la nouvelle méthode pour répondre sans polluer le contrôleur avec des sockets
+                receveurMulticast.envoyerReponse(ipEmetteur, m_portReponse, jsonInfos);
             }
         }
-
-        setsockopt(socketEcoute, IPPROTO_IP, IP_DROP_MEMBERSHIP, (const char *) &mreq, sizeof(mreq));
-#ifdef _WIN32
-        closesocket(socketEcoute);
-#else
-        close(socketEcoute);
-#endif
     });
 }
 

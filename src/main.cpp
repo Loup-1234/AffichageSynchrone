@@ -8,7 +8,7 @@ using namespace std;
 int main() {
     try {
         // Une seule IP pour tous les flux Multicast
-        const string IP_MULTICAST = "239.0.0.1";
+        const string IP_MULTICAST = "239.1.2.3";
 
         // Les ports permettent de différencier les services
         constexpr int PORT_COMMANDES = 54321;
