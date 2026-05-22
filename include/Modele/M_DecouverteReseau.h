@@ -3,6 +3,7 @@
 #include "Modele/M_ConfigReseau.h"
 #include "Modele/M_ExpediteurUDP.h"
 #include "Modele/M_ReceveurUDP.h"
+#include "Modele/M_TFTP_W.h"
 #include <vector>
 #include <string>
 
