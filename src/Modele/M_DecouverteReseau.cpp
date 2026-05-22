@@ -13,49 +13,43 @@ M_DecouverteReseau::~M_DecouverteReseau() = default;
 void M_DecouverteReseau::lancerDecouverte(int timeoutMs) {
     m_reponses.clear();
 
-    // Envoi de la requête de découverte sur le réseau
+    // 1. Envoi du ping Multicast (Port 5000)
     m_expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::DECOUVERTE, Action::RECHERCHE, 0.0f);
 
-    std::cout << "[M_DecouverteReseau] Paquet de découverte envoyé sur "
-              << m_config.getAdresseMulticast() << ":" << m_config.getPortMulticast() << std::endl;
+    std::cout << "[M_DecouverteReseau] Ping Multicast envoyé. Attente de la réponse TFTP..." << std::endl;
 
+    // 2. On bascule sur l'attente TFTP
     attendreReponses(timeoutMs);
 }
 
 void M_DecouverteReseau::attendreReponses(int timeoutMs) {
-    char buffer[4096];
-    std::string ipSrc;
+    // On instancie un récepteur TFTP pour le Master
+    M_TFTP_W serveurTFTPMaster;
+    std::string nomFichierRecu = "config_lecteur_recue.json";
 
-    std::cout << "[M_DecouverteReseau] Ecoute des réponses..." << std::endl;
+    std::cout << "[M_DecouverteReseau] Serveur TFTP du Master ouvert (Port: " << m_config.getPortReponse() << ")..." << std::endl;
 
-    // On mémorise l'heure de début pour ne pas dépasser le temps alloué
-    auto heureDebut = std::chrono::steady_clock::now();
+    // On utilise ta méthode TFTP pour attendre le fichier poussé par le lecteur
+    // Attention : le lecteur doit envoyer sur le port m_config.getPortReponse() !
+    if (serveurTFTPMaster.recevoirFichierPousse(m_config.getPortReponse(), nomFichierRecu)) {
 
-    while (true) {
-        // Calcul du temps restant
-        auto maintenant = std::chrono::steady_clock::now();
-        int tempsEcouleMs = std::chrono::duration_cast<std::chrono::milliseconds>(maintenant - heureDebut).count();
-        int tempsRestantMs = timeoutMs - tempsEcouleMs;
+        std::cout << "[M_DecouverteReseau] Fichier JSON reçu par TFTP avec succès !" << std::endl;
 
-        // Si on a dépassé le délai global de recherche, on arrête d'écouter
-        if (tempsRestantMs <= 0) {
-            break;
-        }
+        // On lit le fichier qui vient d'être téléchargé sur le disque dur
+        std::ifstream fichier(nomFichierRecu);
+        if (fichier) {
+            std::stringstream buffer;
+            buffer << fichier.rdbuf();
 
-        // On écoute le réseau uniquement pour le temps qu'il nous reste
-        int nbOctets = m_receveur.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipSrc, tempsRestantMs);
-
-        if (nbOctets > 0) {
-            buffer[nbOctets] = '\0';
-            m_reponses.push_back(std::string(buffer));
-            std::cout << "[M_DecouverteReseau] Réponse JSON reçue de " << ipSrc << std::endl;
-        } else if (nbOctets == 0) {
-            // nbOctets = 0 signifie que le timeout a été atteint sans recevoir de paquet
-            break;
+            // On ajoute le contenu du JSON dans notre liste de réponses
+            m_reponses.push_back(buffer.str());
+            std::cout << "[M_DecouverteReseau] Configuration JSON extraite et sauvegardée en mémoire." << std::endl;
         } else {
-            // Une erreur réseau s'est produite
-            break;
+            std::cerr << "[Erreur] Impossible de lire le fichier JSON reçu sur le disque." << std::endl;
         }
+
+    } else {
+        std::cout << "[M_DecouverteReseau] Timeout ou erreur lors de la réception TFTP." << std::endl;
     }
 }
 
