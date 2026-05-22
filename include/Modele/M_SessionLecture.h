@@ -1,8 +1,8 @@
 #pragma once
 
 #include "M_VideoComplexe.h"
+#include "M_ServeurTFTP.h"
 #include "M_ConfigReseau.h"
-#include "M_TFTP_W.h"
 
 #include <string>
 #include <vector>
