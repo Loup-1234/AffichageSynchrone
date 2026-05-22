@@ -94,7 +94,7 @@ void M_SessionLecture::genererVideoComplexe(const string *listeFichiersEntree, s
 void M_SessionLecture::uploaderVideoComplexe() const {
     const string dossierSource = "videosComplexes";
 
-    // 1. Conversion des données internes en format "TransferInfo" pour le module TFTP
+    // 1. Préparation de la liste des fichiers à envoyer
     vector<TransferInfo> listeTransferts;
 
     // Note : On commence à i=1 pour ne pas s'envoyer la vidéo à soi-même
@@ -112,20 +112,17 @@ void M_SessionLecture::uploaderVideoComplexe() const {
         return;
     }
 
-    // 2. Génération d'un fichier de log JSON en utilisant M_JsonUtil
+    // 2. Génération du fichier de log JSON (Inchangé)
     ofstream fichierJson("listeLecteurs.json");
     if (fichierJson.is_open()) {
         fichierJson << "[\n";
         for (size_t i = 0; i < listeTransferts.size(); i++) {
-            // Création de la map pour l'objet plat (Exigence RFC 8259 via JsonUtil)
             map<string, string> champs;
             champs["ip"] = listeTransferts[i].ip;
             champs["path"] = listeTransferts[i].path;
 
-            // M_JsonUtil::construire génère la chaîne '{"ip":"...","path":"..."}'
             fichierJson << "  " << M_JsonUtil::construire(champs);
 
-            // Gestion de la virgule entre les éléments du tableau
             if (i < listeTransferts.size() - 1) {
                 fichierJson << ",\n";
             } else {
@@ -136,16 +133,25 @@ void M_SessionLecture::uploaderVideoComplexe() const {
         fichierJson.close();
     }
 
-    // 3. Exécution des transferts via le serveur TFTP
-    cout << "\n[SESSION] Initialisation du serveur TFTP (Mode Fiable avec ACK)..." << endl;
+    // 3. ENVOI VIA M_TFTP_W (Remplplace l'ancien M_ServeurTFTP)
+    cout << "\n[SESSION] Initialisation des envois TFTP via M_TFTP_W..." << endl;
 
-    try {
-        M_ServeurTFTP serveurTftp(listeTransferts, dossierSource);
-        serveurTftp.runAllTransfers();
-        cout << "[SESSION] Fin de la session d'upload." << endl;
-    } catch (const exception &e) {
-        cerr << "[ERREUR CRITIQUE] Echec durant l'upload TFTP : " << e.what() << endl;
+    // Instanciation de ton module unique
+    M_TFTP_W clientTFTPMaster;
+
+    for (const auto& transfert : listeTransferts) {
+        // On reconstruit le chemin local complet (ex: "videosComplexes/VideoComplexe_1.mp4")
+        string cheminLocalComplet = dossierSource + "/" + transfert.path;
+
+        cout << "[SESSION] Envoi de " << transfert.path << " vers " << transfert.ip << "..." << endl;
+
+        // Appel direct de la fonction (elle est de type void)
+        clientTFTPMaster.envoyer(transfert.ip, cheminLocalComplet);
+
+        cout << "[SESSION] Ordre de transfert termine pour " << transfert.ip << endl;
     }
+
+    cout << "[SESSION] Fin de la session d'upload." << endl;
 }
 
 vector<map<string, string> > M_SessionLecture::rechercherLecteurs(
