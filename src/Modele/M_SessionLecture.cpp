@@ -1,7 +1,7 @@
-#include "../../include/Modele/M_SessionLecture.h"
-#include "../../include/Modele/M_ServeurTFTP.h"
-#include "../../include/Modele/M_JsonUtil.h"
-#include "../../include/Modele/M_DecouverteReseau.h"
+#include "Modele/M_SessionLecture.h"
+#include "Modele/M_TFTP_W.h"
+#include "Modele/M_JsonUtil.h"
+#include "Modele/M_DecouverteReseau.h"
 
 #include <fstream>
 #include <iostream>
@@ -94,7 +94,11 @@ void M_SessionLecture::genererVideoComplexe(const string *listeFichiersEntree, s
 void M_SessionLecture::uploaderVideoComplexe() const {
     const string dossierSource = "videosComplexes";
 
-    // 1. Conversion des données internes en format "TransferInfo" pour le module TFTP
+    // 1. Détermination des fichiers à transférer
+    struct TransferInfo {
+        string ip;
+        string path;
+    };
     vector<TransferInfo> listeTransferts;
 
     // Note : On commence à i=1 pour ne pas s'envoyer la vidéo à soi-même
@@ -137,11 +141,14 @@ void M_SessionLecture::uploaderVideoComplexe() const {
     }
 
     // 3. Exécution des transferts via le serveur TFTP
-    cout << "\n[SESSION] Initialisation du serveur TFTP (Mode Fiable avec ACK)..." << endl;
+    cout << "\n[SESSION] Initialisation du client TFTP (M_TFTP_W)..." << endl;
 
     try {
-        M_ServeurTFTP serveurTftp(listeTransferts, dossierSource);
-        serveurTftp.runAllTransfers();
+        M_TFTP_W tftp;
+        for (const auto& transfer : listeTransferts) {
+            string fullPath = dossierSource + "/" + transfer.path;
+            tftp.envoyer(transfer.ip, fullPath);
+        }
         cout << "[SESSION] Fin de la session d'upload." << endl;
     } catch (const exception &e) {
         cerr << "[ERREUR CRITIQUE] Echec durant l'upload TFTP : " << e.what() << endl;
@@ -150,11 +157,9 @@ void M_SessionLecture::uploaderVideoComplexe() const {
 
 vector<map<string, string> > M_SessionLecture::rechercherLecteurs(
     const string &ipMulticast, int portDecouverte, int portReponse) {
-    // 1. Création de la configuration avec les paramètres dynamiques
-    M_ConfigReseau config("SessionInitiale", ipMulticast, portDecouverte, portReponse);
 
     // 2. Initialisation du moteur de découverte avec cette configuration
-    M_DecouverteReseau moteurDecouverte(config);
+    M_DecouverteReseau moteurDecouverte(ipMulticast, portDecouverte, portReponse);
 
     // 3. Lancement de la recherche (Envoi du paquet binaire, attente 2s)
     moteurDecouverte.lancerDecouverte(2000);
@@ -167,7 +172,7 @@ vector<map<string, string> > M_SessionLecture::rechercherLecteurs(
             auto infos = M_JsonUtil::parser(json);
             if (!infos.empty()) {
                 lecteursDetectes.push_back(infos);
-                cout << "[SESSION] Lecteur détecté : " << infos["nom"] << " (" << infos["ip"] << ")" << endl;
+                cout << "[SESSION] Lecteur détecté : " << infos.at("ip") << ")" << endl;
             }
         } catch (const std::exception &e) {
             std::cerr << "[M_SessionLecture] Erreur parsing JSON : " << e.what() << std::endl;

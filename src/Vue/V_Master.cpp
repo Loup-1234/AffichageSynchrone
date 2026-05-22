@@ -95,7 +95,7 @@ void V_Master::chargerListeLecteurs() {
 
     auto lecteurs = controleur.getDerniersLecteursTrouves();
     for (const auto &infos: lecteurs) {
-        string label = infos.at("ip") + " - " + infos.at("nom");
+        string label = infos.at("ip");
         lecteursIPs.push_back(label);
         lecteursCoches.push_back(false);
     }

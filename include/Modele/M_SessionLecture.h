@@ -1,8 +1,6 @@
 #pragma once
 
 #include "M_VideoComplexe.h"
-#include "M_ServeurTFTP.h"
-#include "M_ConfigReseau.h"
 
 #include <string>
 #include <vector>
@@ -27,7 +25,6 @@ struct LecteurSpec {
 class M_SessionLecture {
 
     M_VideoComplexe instanceVideoComplexe; ///< Module de synthèse vidéo (FFmpeg).
-    M_ConfigReseau config; ///< Configuration réseau (ports, adresses, etc.).
 
     int* idLecteurs = nullptr;    ///< Tableau dynamique des identifiants (convertis).
     string* ipLecteurs = nullptr; ///< Tableau dynamique des adresses IP.

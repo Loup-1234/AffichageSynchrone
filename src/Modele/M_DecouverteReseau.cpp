@@ -2,10 +2,9 @@
 #include <iostream>
 #include <chrono>
 
-M_DecouverteReseau::M_DecouverteReseau(const M_ConfigReseau &config)
-    : m_config(config),
-      m_expediteur(config.getAdresseMulticast(), config.getPortMulticast()),
-      m_receveur(config.getPortReponse(), config.getAdresseMulticast()) {
+M_DecouverteReseau::M_DecouverteReseau(const std::string& ipMulticast, int portMulticast, int portReponse)
+    : m_expediteur(ipMulticast, portMulticast),
+      m_receveur(portReponse, ipMulticast) {
 }
 
 M_DecouverteReseau::~M_DecouverteReseau() = default;
@@ -16,8 +15,7 @@ void M_DecouverteReseau::lancerDecouverte(int timeoutMs) {
     // Envoi de la requête de découverte sur le réseau
     m_expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::DECOUVERTE, Action::RECHERCHE, 0.0f);
 
-    std::cout << "[M_DecouverteReseau] Paquet de découverte envoyé sur "
-              << m_config.getAdresseMulticast() << ":" << m_config.getPortMulticast() << std::endl;
+    std::cout << "[M_DecouverteReseau] Paquet de découverte envoyé." << std::endl;
 
     attendreReponses(timeoutMs);
 }

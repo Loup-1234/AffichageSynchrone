@@ -96,7 +96,7 @@ public:
 
     /**
      * @brief Scanne le système hôte (Windows ou Linux) pour remplir automatiquement
-     * les attributs matériels (RAM, OS, CPU, IP, MAC).
+     * les attributs matériels (OS, IP, MAC, Écran).
      */
     void collecterInfosLocales();
 
@@ -107,56 +107,28 @@ public:
     string versJson() const;
 
     // --- Getters Matériels ---
-    /** @return Le nom d'hôte de la machine locale. */
-    const string& getNom() const { return m_nom; }
     /** @return L'adresse IPv4 locale sur le réseau. */
     const string& getIp() const { return m_ip; }
     /** @return L'adresse MAC de l'interface réseau active. */
     const string& getMac() const { return m_mac; }
-    /** @return Le nom du système d'exploitation (ex: "Windows", "Debian 12"). */
+    /** @return Le nom du système d'exploitation (ex: "Windows", "Linux"). */
     const string& getOs() const { return m_os; }
-    /** @return Le type de machine détectée (ex: "PC-Windows", "PC-Linux"). */
-    const string& getTypeMachine() const { return m_typeMachine; }
-    /** @return La résolution de l'écran configurée (ex: "1920x1080"). */
-    const string& getResolution() const { return m_resolution; }
-    /** @return La taille physique de l'écran en pouces (0 si non détectée). */
-    int getTailleEcranPouces() const { return m_tailleEcranPouces; }
-    /** @return Le modèle et la marque du processeur (CPU). */
-    const string& getProcesseur() const { return m_processeur; }
-    /** @return La quantité de mémoire vive totale disponible en Mégaoctets (Mo). */
-    int getMemoireMo() const { return m_memoireMo; }
-    /** @return Le nom du lecteur vidéo interne utilisé (ex: "VLC"). */
-    const string& getLecteurVideo() const { return m_lecteurVideo; }
-    /** @return Le mode de disposition de l'affichage (ex: "plein_ecran"). */
-    const string& getLayoutAffichage() const { return m_layoutAffichage; }
-    /** @return Le nombre maximum de vidéos simultanées supportées par ce matériel. */
-    int getNbMaxVideos() const { return m_nbMaxVideos; }
+    /** @return La largeur de l'écran en pixels. */
+    int getLargeurEcran() const { return m_largeurEcran; }
+    /** @return La hauteur de l'écran en pixels. */
+    int getHauteurEcran() const { return m_hauteurEcran; }
 
     // --- Setters Matériels ---
-    /** @param nom Le nouveau nom d'hôte à assigner. */
-    void setNom(const string& nom) { m_nom = nom; }
     /** @param ip La nouvelle adresse IP à forcer. */
     void setIp(const string& ip) { m_ip = ip; }
     /** @param mac La nouvelle adresse MAC à forcer. */
     void setMac(const string& mac) { m_mac = mac; }
     /** @param os Le nom du système d'exploitation à forcer. */
     void setOs(const string& os) { m_os = os; }
-    /** @param typeMachine Le type de machine à assigner. */
-    void setTypeMachine(const string& typeMachine) { m_typeMachine = typeMachine; }
-    /** @param resolution La résolution d'écran à configurer. */
-    void setResolution(const string& resolution) { m_resolution = resolution; }
-    /** @param taille La taille physique de l'écran en pouces. */
-    void setTailleEcranPouces(int taille) { m_tailleEcranPouces = taille; }
-    /** @param processeur Le nom du modèle de CPU. */
-    void setProcesseur(const string& processeur) { m_processeur = processeur; }
-    /** @param memoireMo La taille de la RAM en Mégaoctets. */
-    void setMemoireMo(int memoireMo) { m_memoireMo = memoireMo; }
-    /** @param lecteur Le nom du moteur vidéo (VLC). */
-    void setLecteurVideo(const string& lecteur) { m_lecteurVideo = lecteur; }
-    /** @param layout La disposition d'affichage à forcer. */
-    void setLayoutAffichage(const string& layout) { m_layoutAffichage = layout; }
-    /** @param nbMax La capacité maximale de lecture simultanée. */
-    void setNbMaxVideos(int nbMax) { m_nbMaxVideos = nbMax; }
+    /** @param largeur La largeur de l'écran en pixels. */
+    void setLargeurEcran(int largeur) { m_largeurEcran = largeur; }
+    /** @param hauteur La hauteur de l'écran en pixels. */
+    void setHauteurEcran(int hauteur) { m_hauteurEcran = hauteur; }
 
 private:
     // --- Attributs VLC ---
@@ -181,27 +153,18 @@ private:
     static unsigned cb_configurerVideo(void **opaque, char *chrominance, const unsigned *largeur, const unsigned *hauteur, unsigned *pas, unsigned *lignes);
 
     // --- Attributs Matériels ---
-    string m_nom;               ///< Nom d'hôte de la machine.
     string m_ip;                ///< Adresse IPv4 sur le réseau local.
     string m_mac;               ///< Adresse physique MAC de la carte réseau.
     string m_os;                ///< Nom et version du système d'exploitation.
-    string m_typeMachine;       ///< Catégorie de l'appareil (ex: PC-Windows).
-    string m_resolution;        ///< Résolution d'affichage cible.
-    int    m_tailleEcranPouces; ///< Taille de la diagonale de l'écran.
-    string m_processeur;        ///< Modèle du CPU.
-    int    m_memoireMo;         ///< Mémoire vive totale de la machine.
-    string m_lecteurVideo;      ///< Moteur de lecture vidéo.
-    string m_layoutAffichage;   ///< Mode d'affichage de la fenêtre.
-    int    m_nbMaxVideos;       ///< Limite matérielle de vidéos simultanées.
+    int    m_largeurEcran = 0;  ///< Largeur de l'écran physique en pixels.
+    int    m_hauteurEcran = 0;  ///< Hauteur de l'écran physique en pixels.
 
-    /** @brief Fonction interne détectant le nom d'hôte de la machine. */
-    void collecterNom();
-    /** @brief Fonction interne détectant l'adresse IP et MAC de l'interface principale. */
-    void collecterIpEtMac();
+    /** @brief Fonction interne détectant l'adresse IP locale. */
+    void collecterIp();
+    /** @brief Fonction interne détectant l'adresse MAC de l'interface principale. */
+    void collecterMac();
     /** @brief Fonction interne identifiant le système d'exploitation. */
     void collecterOs();
-    /** @brief Fonction interne récupérant les spécifications du processeur. */
-    void collecterCpu();
-    /** @brief Fonction interne calculant la mémoire RAM totale disponible. */
-    void collecterMemoire();
+    /** @brief Fonction interne récupérant la largeur et hauteur de l'écran. */
+    void collecterTailleEcran();
 };

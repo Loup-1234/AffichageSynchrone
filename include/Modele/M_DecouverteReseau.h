@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Modele/M_ConfigReseau.h"
 #include "Modele/M_ExpediteurUDP.h"
 #include "Modele/M_ReceveurUDP.h"
 #include <vector>
@@ -18,9 +17,11 @@ class M_DecouverteReseau {
 public:
     /**
      * @brief Constructeur de la classe M_DecouverteReseau.
-     * @param config Objet contenant les paramètres réseau (IP Multicast, ports d'écoute et d'envoi).
+     * @param ipMulticast Adresse IP de multidiffusion cible (ex: "239.0.0.1").
+     * @param portMulticast Port d'envoi pour la requête de découverte (ex: 5000).
+     * @param portReponse Port d'écoute pour les réponses des lecteurs distants (ex: 5001).
      */
-    explicit M_DecouverteReseau(const M_ConfigReseau& config);
+    explicit M_DecouverteReseau(const std::string& ipMulticast, int portMulticast, int portReponse);
 
     /**
      * @brief Destructeur de la classe.
@@ -57,7 +58,6 @@ private:
      */
     void attendreReponses(int timeoutMs);
 
-    M_ConfigReseau m_config;               ///< Configuration réseau utilisée pour les ports et adresses.
     M_ExpediteurUDP m_expediteur;          ///< Composant responsable de l'envoi de la requête de découverte.
     M_ReceveurUDP m_receveur;              ///< Composant responsable de la réception des réponses (avec timeout).
     std::vector<std::string> m_reponses;   ///< Liste stockant les réponses brutes reçues des lecteurs distants.
