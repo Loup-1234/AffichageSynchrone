@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 
 /**
  * @enum Expediteur
@@ -49,3 +50,13 @@ struct PaquetControle {
     float valeur;      ///< Valeur associée (volume, position temporelle, etc.).
 };
 #pragma pack(pop)
+
+/**
+ * @struct LecteurConfig
+ * @brief Configuration propre et typée pour un lecteur cible.
+ */
+struct LecteurConfig {
+    int id;
+    std::string ip;
+    int nbVideosCapacite;
+};

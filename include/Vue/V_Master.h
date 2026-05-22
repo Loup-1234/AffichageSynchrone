@@ -2,24 +2,21 @@
 
 #include "raylib.h"
 #include "Controleur/C_LecteurPhysiqueLocal.h"
+#include "Modele/M_ProtocoleReseau.h" // Pour LecteurConfig
 #include <string>
 #include <vector>
 
-/**
- * @class V_Master
- * @brief Classe gérant l'interface utilisateur principale (Vue) du Master.
- * * Elle s'appuie sur Raylib pour le rendu graphique et Raygui pour les composants de contrôle.
- * * Elle orchestre l'affichage de la vidéo, les listes de fichiers, les lecteurs détectés,
- * et transmet les actions de l'utilisateur au Contrôleur (C_LecteurPhysiqueLocal).
- */
 class V_Master {
 public:
-    V_Master(const std::string &ipMulticast, int portCommandes, int portDecouverte, int portReponse, const std::vector<std::vector<std::string>> &specLecteurs);
+    // Signature synchronisée à 7 arguments avec LecteurConfig
+    V_Master(const std::string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
+             const std::vector<LecteurConfig> &specLecteurs, const std::string &dossierSourceVideos, const std::string &cheminVideoMaster);
     ~V_Master();
     void executer();
 
 private:
     C_LecteurPhysiqueLocal controleur;
+    const std::string m_dossierVideos; // Stockage propre du chemin du dossier
 
     Texture2D textureVideo{};
     Rectangle zones[14]{};
@@ -29,11 +26,10 @@ private:
     unsigned int largeurVideoCache = 0;
     unsigned int hauteurVideoCache = 0;
 
-    // --- VARIABLES DE REDIMENSIONNEMENT DES PANNEAUX ---
-    float largeurPanneauGauche = 150.0f;   ///< Largeur dynamique du panneau des vidéos.
-    float largeurPanneauDroit = 150.0f;    ///< Largeur dynamique du panneau des lecteurs.
-    bool enRedimensionnementGauche = false;///< Vrai si l'utilisateur glisse le bord gauche.
-    bool enRedimensionnementDroit = false; ///< Vrai si l'utilisateur glisse le bord droit.
+    float largeurPanneauGauche = 180.0f;
+    float largeurPanneauDroit = 180.0f;
+    bool enRedimensionnementGauche = false;
+    bool enRedimensionnementDroit = false;
 
     float valeurProgression = 0.0f;
     float valeurVolume = 100.0f;
@@ -44,13 +40,11 @@ private:
     int indexVitesse = 1;
     bool menuVitesseActif = false;
 
-    // --- Gestion de la liste des vidéos (Panneau Gauche) ---
     std::vector<std::string> fichiersVideo;
     std::vector<bool> videosCochees;
     std::vector<int> ordreSelection;
     Vector2 positionDefilement = {0, 0};
 
-    // --- Gestion de la liste des Lecteurs/IPs (Panneau Droit) ---
     std::vector<std::string> lecteursIPs;
     std::vector<bool> lecteursCoches;
     std::vector<int> ordreSelectionLecteurs;
@@ -62,7 +56,7 @@ private:
 
     std::vector<std::string> getVideosSelectionnees() const;
     std::vector<std::string> getLecteursSelectionnes() const;
-    static void ouvrirDossierVideos();
+    void ouvrirDossierVideos();
 
     void gererLogique();
     void dessinerInterface();

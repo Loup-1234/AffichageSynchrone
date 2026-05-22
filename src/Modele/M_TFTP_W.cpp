@@ -1,4 +1,6 @@
-#include "modele/M_TFTP_W.h"
+#ifdef _WIN32
+
+#include "Modele/M_TFTP_W.h\"
 
 M_TFTP_W::M_TFTP_W() {
     WSADATA wsaData;
@@ -9,7 +11,6 @@ M_TFTP_W::~M_TFTP_W() {
     WSACleanup();
 }
 
-// --- Méthode d'envoi (Silencieuse sur les blocs) ---
 void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
@@ -32,92 +33,84 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     for (size_t i = 0; i < strlen(mode); i++) wrq.push_back(mode[i]);
     wrq.push_back(0);
 
-    sendto(sock, wrq.data(), (int)wrq.size(), 0, (sockaddr*)&server, sizeof(server));
-    cout << "WRQ envoyé pour : " << cheminJson << " vers " << ipMaster << endl;
-
-    DWORD tv = 3000;
-    setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
+    sendto(sock, wrq.data(), static_cast<int>(wrq.size()), 0, (sockaddr*)&server, sizeof(server));
 
     char buf[516];
-    sockaddr_in peer{};
-    int peerLen = sizeof(peer);
-    int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&peer, &peerLen);
+    sockaddr_in from{};
+    int fromLen = sizeof(from);
 
-    if (n < 4 || buf[1] != 4 || buf[2] != 0 || buf[3] != 0) {
-        cerr << "Erreur : ACK(0) non reçu" << endl;
-        closesocket(sock);
-        return;
-    }
-    cout << "ACK(0) reçu, début du transfert..." << endl;
-
-    ifstream file(cheminJson, ios::binary);
-    if (!file) {
-        cerr << "Impossible d'ouvrir : " << cheminJson << endl;
+    int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&from, &fromLen);
+    if (n >= 4 && buf[1] == 4) {
+        cout << "[TFTP] WRQ initialisé, envoi du fichier : " << cheminJson << endl;
+    } else {
+        cout << "[TFTP] Échec de l'initialisation WRQ" << endl;
         closesocket(sock);
         return;
     }
 
-    uint16_t block = 1;
+    ifstream fichier(cheminJson, ios::binary);
+    if (!fichier) {
+        cout << "[TFTP] Fichier introuvable localement" << endl;
+        closesocket(sock);
+        return;
+    }
 
-    while (!file.eof()) {
-        file.read(buf + 4, BLOCK_SIZE);
-        int bytesRead = (int)file.gcount();
-        buf[0] = 0; buf[1] = 3;
-        buf[2] = (block >> 8) & 0xFF;
-        buf[3] = block & 0xFF;
+    uint16_t blockNum = 1;
+    while (!fichier.eof()) {
+        char dataBuf[516];
+        dataBuf[0] = 0; dataBuf[1] = 3;
+        dataBuf[2] = (blockNum >> 8) & 0xFF;
+        dataBuf[3] = blockNum & 0xFF;
 
-        int tries = 0;
-        bool acked = false;
+        fichier.read(dataBuf + 4, BLOCK_SIZE);
+        streamsize lus = fichier.gcount();
 
-        while (tries < MAX_RETRIES) {
-            sendto(sock, buf, bytesRead + 4, 0, (sockaddr*)&peer, peerLen);
-            n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&peer, &peerLen);
+        int essai = 0;
+        bool succesAck = false;
+        while (essai < MAX_RETRIES && !succesAck) {
+            sendto(sock, dataBuf, static_cast<int>(lus + 4), 0, (sockaddr*)&from, fromLen);
 
-            if (n >= 4 && buf[1] == 4) {
-                uint16_t ackBlock = ((unsigned char)buf[2] << 8) | (unsigned char)buf[3];
-                if (ackBlock == block) { acked = true; break; }
+            fd_set ensembles;
+            FD_ZERO(&ensembles);
+            FD_SET(sock, &ensembles);
+            timeval tv{2, 0}; // 2 secondes de timeout
+
+            if (select(static_cast<int>(sock) + 1, &ensembles, nullptr, nullptr, &tv) > 0) {
+                int nAck = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&from, &fromLen);
+                if (nAck >= 4 && buf[1] == 4) {
+                    uint16_t ackBlock = ((unsigned char)buf[2] << 8) | (unsigned char)buf[3];
+                    if (ackBlock == blockNum) {
+                        succesAck = true;
+                    }
+                }
             }
-            tries++;
-            cout << "Timeout, tentative " << tries << "..." << endl;
+            if (!succesAck) essai++;
         }
 
-        if (!acked) {
-            cerr << "Échec bloc " << block << endl;
-            file.close();
-            closesocket(sock);
-            return;
+        if (!succesAck) {
+            cout << "[TFTP] Échec de transmission du bloc " << blockNum << endl;
+            break;
         }
-
-        // L'affichage du bloc envoyé a été supprimé d'ici pour nettoyer la console
-        if (bytesRead < BLOCK_SIZE) break;
-        block++;
+        blockNum++;
     }
 
-    file.close();
+    cout << "[TFTP] Transfert réussi de " << cheminJson << endl;
     closesocket(sock);
-    cout << "Transfert terminé !" << endl;
 }
 
-// --- Méthode de Réception (Silencieuse sur les blocs) ---
 bool M_TFTP_W::recevoirFichierPousse(int port, const string& fichierLocal) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
-    if (sock == INVALID_SOCKET) {
-        cerr << "Erreur création socket" << endl;
-        return false;
-    }
+    if (sock == INVALID_SOCKET) return false;
 
     sockaddr_in server{};
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
     server.sin_addr.s_addr = INADDR_ANY;
 
-    if (bind(sock, (sockaddr*)&server, sizeof(server)) < 0) {
-        cerr << "Erreur de bind" << endl;
+    if (bind(sock, (sockaddr*)&server, sizeof(server)) == SOCKET_ERROR) {
         closesocket(sock);
         return false;
     }
-
-    cout << "Serveur TFTP lancé sur le port " << port << "..." << endl;
 
     char buf[516];
     sockaddr_in client{};
@@ -158,15 +151,18 @@ bool M_TFTP_W::recevoirFichierPousse(int port, const string& fichierLocal) {
             ack[3] = buf[3];
             sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
 
-            // L'affichage du bloc reçu a été supprimé d'ici pour garder la console propre
-
-            if (n < 516) break;
             expectedBlock++;
+
+            if (n - 4 < BLOCK_SIZE) {
+                cout << "Fichier reçu avec succès !" << endl;
+                break;
+            }
         }
     }
 
     fichier.close();
     closesocket(sock);
-    cout << "Fichier vidéo reçu avec succès !" << endl;
     return true;
 }
+
+#endif // _WIN32

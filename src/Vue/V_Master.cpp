@@ -12,12 +12,13 @@
 using namespace std;
 namespace fs = filesystem;
 
-V_Master::V_Master(const string &ipMulticast, const int portCommandes, const int portDecouverte, const int portReponse,
-                   const vector<vector<string>> &specLecteurs)
-    : controleur(ipMulticast, portCommandes, portDecouverte, portReponse, specLecteurs) {
+V_Master::V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
+                   const vector<LecteurConfig> &specLecteurs, const string &dossierSourceVideos, const string &cheminVideoMaster)
+    : controleur(ipMulticast, portCommandes, portDecouverte, portReponse, specLecteurs, cheminVideoMaster),
+      m_dossierVideos(dossierSourceVideos) {
 
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
-    InitWindow(800, 450, "Master UI - Contrôleur MVC");
+    InitWindow(800, 450, "Master UI - Contrôleur Multi-Écrans");
     SetWindowMinSize(800, 450);
     InitAudioDevice();
     SetTargetFPS(60);
@@ -40,30 +41,34 @@ void V_Master::miseAJourDisposition() {
     const auto L = static_cast<float>(GetScreenWidth());
     const auto H = static_cast<float>(GetScreenHeight());
 
-    // Panneau gauche : Vidéos
+    // Panneau gauche : Vidéos [0], [1], [10]
     zones[0] = {0, 48, largeurPanneauGauche, H - 96};
     zones[1] = {0, H - 48, largeurPanneauGauche, 48};
     zones[10] = {0, 0, largeurPanneauGauche, 48};
 
-    // Zone centrale : Vidéo
+    // Zone centrale : Affichage de la vidéo [2] et Séparateur [3]
     float largeurCentre = L - largeurPanneauGauche - largeurPanneauDroit;
     zones[2] = {largeurPanneauGauche, 0, largeurCentre, H - 72};
     zones[3] = {largeurPanneauGauche, H - 72, largeurCentre, 2};
 
-    // Barre de contrôle (Bas)
-    zones[4] = {largeurPanneauGauche + 8, H - 40, 32, 32}; // Play/Pause
-    zones[5] = {largeurPanneauGauche + 48, H - 72, 120, 32}; // Texte Temps
+    // Barre de contrôle basse - Alignements & Paddings réparés
+    zones[4] = {largeurPanneauGauche + 8, H - 40, 32, 32};   // Bouton Play/Pause
+    zones[5] = {largeurPanneauGauche + 48, H - 72, 120, 32}; // Texte Horodatage
 
-    // La barre de progression s'étire en fonction de la place restante
-    float largeurTimeline = largeurCentre - 228.0f;
-    if (largeurTimeline < 50.0f) largeurTimeline = 50.0f; // Largeur minimale de sécurité
-    zones[6] = {largeurPanneauGauche + 48, H - 40, largeurTimeline, 32};
+    // FIX DU PADDING : On réduit légèrement la largeur de la timeline pour laisser de la place au bouton Mute
+    // Écart de sécurité : 48px à gauche (Play) + 180px à droite (Mute + Sliders) = 228px originels.
+    // En augmentant l'espace réservé à droite à 248px, on pousse le bouton Mute pour créer le padding.
+    float largeurTimeline = largeurCentre - 248.0f;
+    if (largeurTimeline < 50.0f) largeurTimeline = 50.0f;
 
-    // Contrôles audio et vitesse (Droite du bas)
-    zones[7] = {L - largeurPanneauDroit - 176, H - 40, 32, 32}; // Icône Volume
-    zones[8] = {L - largeurPanneauDroit - 136, H - 72, 128, 32}; // Texte Volume
-    zones[9] = {L - largeurPanneauDroit - 136, H - 40, 128, 32}; // Slider Volume
-    zones[11] = {L - largeurPanneauDroit - 136, 10.0f, 128.0f, 32.0f}; // Menu Vitesse
+    zones[6] = {largeurPanneauGauche + 48, H - 40, largeurTimeline, 32}; // Barre de progression
+
+    // Ajustement des boutons de droite pour suivre le décalage (Padding fluide)
+    zones[7] = {L - largeurPanneauDroit - 190, H - 40, 32, 32};  // Bouton Mute décalé de 14px à gauche (Crée le padding vide !)
+    zones[8] = {L - largeurPanneauDroit - 150, H - 72, 142, 32}; // Texte Volume
+    zones[9] = {L - largeurPanneauDroit - 150, H - 40, 142, 32}; // Slider de Volume
+
+    zones[11] = {L - largeurPanneauDroit - 150, 10.0f, 142.0f, 32.0f}; // Menu Vitesse
 
     // Panneau droit : Lecteurs réseau
     zones[12] = {L - largeurPanneauDroit, 0, largeurPanneauDroit, H - 48};
@@ -75,10 +80,11 @@ void V_Master::chargerListeVideos() {
     videosCochees.clear();
     ordreSelection.clear();
 
-    if (fs::exists("videos") && fs::is_directory("videos")) {
-        for (const auto &entree: fs::directory_iterator("videos")) {
+    if (fs::exists(m_dossierVideos) && fs::is_directory(m_dossierVideos)) {
+        for (const auto &entree: fs::directory_iterator(m_dossierVideos)) {
             if (entree.is_regular_file()) {
                 string ext = entree.path().extension().string();
+                transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
                 if (ext == ".mp4" || ext == ".mp3" || ext == ".avi" || ext == ".wav") {
                     fichiersVideo.push_back(entree.path().filename().string());
                     videosCochees.push_back(false);
@@ -105,7 +111,7 @@ vector<string> V_Master::getVideosSelectionnees() const {
     vector<string> selection;
     for (int index: ordreSelection) {
         if (index >= 0 && index < (int) fichiersVideo.size()) {
-            selection.push_back("videos/" + fichiersVideo[index]);
+            selection.push_back(m_dossierVideos + "/" + fichiersVideo[index]);
         }
     }
     return selection;
@@ -122,13 +128,13 @@ vector<string> V_Master::getLecteursSelectionnes() const {
 }
 
 void V_Master::ouvrirDossierVideos() {
-    if (!fs::exists("videos")) fs::create_directory("videos");
+    if (!fs::exists(m_dossierVideos)) fs::create_directory(m_dossierVideos);
 #ifdef _WIN32
-    system("explorer videos");
+    system(("explorer " + m_dossierVideos).c_str());
 #elif __APPLE__
-    system("open videos");
+    system(("open " + m_dossierVideos).c_str());
 #else
-    system("xdg-open videos");
+    system(("xdg-open " + m_dossierVideos).c_str());
 #endif
 }
 
@@ -140,49 +146,41 @@ void V_Master::executer() {
 }
 
 void V_Master::gererLogique() {
-    // GESTION DU REDIMENSIONNEMENT FENÊTRE
     if (IsWindowResized()) {
-        // Sécurité : Empêcher les panneaux d'être plus larges que la moitié de l'écran si on réduit la fenêtre
         float limiteMax = static_cast<float>(GetScreenWidth()) / 2.5f;
         if (largeurPanneauGauche > limiteMax) largeurPanneauGauche = limiteMax;
         if (largeurPanneauDroit > limiteMax) largeurPanneauDroit = limiteMax;
         miseAJourDisposition();
     }
 
-    // LOGIQUE DE REDIMENSIONNEMENT DES PANNEAUX
     float mouseX = GetMouseX();
     float mouseY = GetMouseY();
     float L = static_cast<float>(GetScreenWidth());
 
-    // Définition des "zones de capture" (8 pixels de large au bord de chaque panneau)
     Rectangle zoneCaptureGauche = {largeurPanneauGauche - 4.0f, 0, 8.0f, static_cast<float>(GetScreenHeight())};
     Rectangle zoneCaptureDroit = {L - largeurPanneauDroit - 4.0f, 0, 8.0f, static_cast<float>(GetScreenHeight())};
 
     bool surGauche = CheckCollisionPointRec({mouseX, mouseY}, zoneCaptureGauche);
     bool surDroit = CheckCollisionPointRec({mouseX, mouseY}, zoneCaptureDroit);
 
-    // Changer le curseur de la souris pour indiquer qu'on peut redimensionner
     if (surGauche || enRedimensionnementGauche || surDroit || enRedimensionnementDroit) {
         SetMouseCursor(MOUSE_CURSOR_RESIZE_EW);
     } else {
         SetMouseCursor(MOUSE_CURSOR_DEFAULT);
     }
 
-    // Détection du clic pour démarrer le glissement
     if (surGauche && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) enRedimensionnementGauche = true;
     if (surDroit && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) enRedimensionnementDroit = true;
 
-    // Arrêt du glissement au relâchement
     if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON)) {
         enRedimensionnementGauche = false;
         enRedimensionnementDroit = false;
     }
 
-    // Mise à jour de la largeur en temps réel
     if (enRedimensionnementGauche) {
         largeurPanneauGauche = mouseX;
-        if (largeurPanneauGauche < 100) largeurPanneauGauche = 100; // Largeur minimale
-        if (largeurPanneauGauche > L / 2.5f) largeurPanneauGauche = L / 2.5f; // Largeur maximale
+        if (largeurPanneauGauche < 100) largeurPanneauGauche = 100;
+        if (largeurPanneauGauche > L / 2.5f) largeurPanneauGauche = L / 2.5f;
         miseAJourDisposition();
     }
 
@@ -203,11 +201,12 @@ void V_Master::gererLogique() {
     unsigned int largeur = 0, hauteur = 0;
     bool redimensionnement = false;
 
-    if (controleur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement)) {
+    C_LecteurPhysiqueLocal& nonConstCtrl = const_cast<C_LecteurPhysiqueLocal&>(controleur);
+    if (nonConstCtrl.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement)) {
         largeurVideoCache = largeur;
         hauteurVideoCache = hauteur;
 
-        if (redimensionnement) {
+        if (redimensionnement || textureVideo.id == 0) {
             if (textureVideo.id > 0) UnloadTexture(textureVideo);
             if (largeur > 0 && hauteur > 0) {
                 const Image img = GenImageColor(largeur, hauteur, BLACK);
@@ -260,6 +259,11 @@ void V_Master::dessinerZoneVideo() const {
                        {0.0f, 0.0f, static_cast<float>(largeurVideoCache), static_cast<float>(hauteurVideoCache)},
                        {destX, destY, destLargeur, destHauteur},
                        {0, 0}, 0.0f, WHITE);
+    } else {
+        int longTexte = MeasureText("Aucun flux vidéo décodé", 16);
+        ::DrawText("Aucun flux vidéo décodé",
+                   static_cast<int>(zones[2].x + (zones[2].width - static_cast<float>(longTexte)) / 2.0f),
+                   static_cast<int>(zones[2].y + zones[2].height / 2.0f - 8.0f), 16, DARKGRAY);
     }
 }
 
@@ -282,8 +286,7 @@ void V_Master::dessinerListeFichiers() {
 
     GuiScrollPanel(zones[0], nullptr, zoneScroll, &positionDefilement, &vue);
 
-    BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width),
-                     static_cast<int>(vue.height));
+    BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width), static_cast<int>(vue.height));
 
     for (size_t i = 0; i < fichiersVideo.size(); ++i) {
         const float posY = zones[0].y + MARGE + static_cast<float>(i) * HAUTEUR_LIGNE + positionDefilement.y;
@@ -312,7 +315,7 @@ void V_Master::dessinerListeFichiers() {
     }
     EndScissorMode();
 
-    if (GuiButton(zones[10], "DOSSIER")) ouvrirDossierVideos();
+    if (GuiButton(zones[10], "#001# DOSSIER")) ouvrirDossierVideos();
     GuiSetState(STATE_NORMAL);
 }
 
@@ -371,7 +374,7 @@ void V_Master::dessinerPanneauControle() {
     bool desactiver = controleur.estGenerationEnCours() || controleur.estRechercheEnCours();
     GuiSetState(desactiver ? STATE_DISABLED : STATE_NORMAL);
 
-    if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) {
+    if (GuiButton(zones[4], controleur.estEnLecture() ? "#131#" : "#132#")) {
         controleur.basculerPlayPause();
     }
 
@@ -415,6 +418,7 @@ void V_Master::gererBarreProgression() {
 }
 
 void V_Master::gererControlesVolume() {
+    // RESTAURATION STRICTE DU COMPORTEMENT D'ORIGINE (#128# pour MUET / #122# pour ACTIF)
     if (GuiButton(zones[7], estMuet ? "#128#" : "#122#")) {
         estMuet = !estMuet;
         controleur.modifierVolume(valeurVolume, estMuet);

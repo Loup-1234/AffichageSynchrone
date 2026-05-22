@@ -1,6 +1,11 @@
 #pragma once
 
+#ifdef _WIN32
 #include <vlc.h>
+#else
+#include <vlc/vlc.h>
+#endif
+
 #include <string>
 #include <vector>
 #include <atomic>

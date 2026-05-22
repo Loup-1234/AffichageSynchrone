@@ -1,27 +1,26 @@
 #include "Controleur/C_LecteurPhysiqueLocal.h"
 #include "Modele/M_ReceveurUDP.h"
-
 #include <filesystem>
 #include <iostream>
 
 using namespace std;
 
-C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, const int portCommandes, const int portDecouverte,
-                                               const int portReponse, const vector<vector<string>> &configLecteurs)
-    : udp(ipMulticast, portCommandes), configLecteurs(configLecteurs), m_adresseMulticast(ipMulticast),
-      m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
+C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte,
+                                               int portReponse, const vector<LecteurConfig> &configLecteurs, const string &cheminVideoMaster)
+    : m_cheminVideoMaster(cheminVideoMaster), udp(ipMulticast, portCommandes), m_configLecteurs(configLecteurs),
+      m_adresseMulticast(ipMulticast), m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
 
+    session.configurerLecteurs(m_configLecteurs);
     modeleLecteur.collecterInfosLocales();
     demarrerEcouteMulticast();
 
-    if (filesystem::exists(CHEMIN_VIDEO)) {
-        modeleLecteur.lireVideo(CHEMIN_VIDEO);
+    if (filesystem::exists(m_cheminVideoMaster)) {
+        modeleLecteur.lireVideo(m_cheminVideoMaster);
     }
 }
 
 C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
     arreterEcouteMulticast();
-
     if (threadGeneration.joinable()) threadGeneration.join();
     if (threadRecherche.joinable()) threadRecherche.join();
     if (threadEcouteMulticast.joinable()) threadEcouteMulticast.join();
@@ -33,7 +32,6 @@ void C_LecteurPhysiqueLocal::arreterEcouteMulticast() {
 
 void C_LecteurPhysiqueLocal::demarrerEcouteMulticast() {
     ecouteMulticastActive = true;
-
     threadEcouteMulticast = thread([this]() {
         M_ReceveurUDP receveurMulticast(m_portDecouverte, m_adresseMulticast);
         char buffer[512];
@@ -41,7 +39,6 @@ void C_LecteurPhysiqueLocal::demarrerEcouteMulticast() {
 
         while (ecouteMulticastActive) {
             int nbOctets = receveurMulticast.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipEmetteur, 500);
-
             if (nbOctets > 0) {
                 string jsonInfos = modeleLecteur.versJson();
                 receveurMulticast.envoyerReponse(ipEmetteur, m_portReponse, jsonInfos);
@@ -52,19 +49,14 @@ void C_LecteurPhysiqueLocal::demarrerEcouteMulticast() {
 
 void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
     if (rechercheEnCours) return;
-
     rechercheEnCours = true;
     resultatsRecherchePrets = false;
 
     if (threadRecherche.joinable()) threadRecherche.join();
 
     threadRecherche = thread([this]() {
-        try {
-            cacheLecteurs = session.rechercherLecteurs(m_adresseMulticast, m_portDecouverte, m_portReponse);
-            resultatsRecherchePrets = true;
-        } catch (const exception &e) {
-            cerr << "Erreur Recherche Réseau: " << e.what() << '\n';
-        }
+        cacheLecteurs = session.rechercherLecteurs(m_adresseMulticast, m_portDecouverte, m_portReponse);
+        resultatsRecherchePrets = true;
         rechercheEnCours = false;
     });
 }
@@ -84,38 +76,29 @@ void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) 
 
     threadGeneration = thread([this, fichiers]() {
         try {
-            if (!filesystem::exists("videosComplexes")) {
-                filesystem::create_directory("videosComplexes");
+            if (!filesystem::exists(m_dossierSortie)) {
+                filesystem::create_directory(m_dossierSortie);
             }
 
-            size_t nbLecteurs = configLecteurs.size();
-
-            // OPTIMISATION ICI : Utilisation de vector au lieu de pointeurs bruts (new/delete)
-            // Cela garantit qu'il n'y aura aucune fuite de mémoire si une erreur survient.
-            vector<LecteurSpec> specs(nbLecteurs);
-
-            for (size_t i = 0; i < nbLecteurs; ++i) {
-                if (configLecteurs[i].size() >= 3) {
-                    specs[i].id = configLecteurs[i][0];
-                    specs[i].ip = configLecteurs[i][1];
-                    specs[i].nbVideos = configLecteurs[i][2];
-                }
-            }
-
-            // On utilise .data() pour passer le pointeur brut attendu par ta méthode
-            session.preparerSessionLecture(specs.data(), nbLecteurs);
-            session.genererVideoComplexe(fichiers.data(), fichiers.size());
+            session.genererVideoComplexe(fichiers, m_dossierSortie);
 
             transfertEnCours = true;
-            session.uploaderVideoComplexe();
+            session.uploaderVideoComplexe(m_dossierSortie);
             transfertEnCours = false;
 
             videoGeneree = true;
         } catch (const exception &e) {
-            cerr << "Erreur Génération: " << e.what() << '\n';
+            cerr << "[CONTROLEUR] Erreur de generation: " << e.what() << '\n';
         }
         generationEnCours = false;
     });
+}
+
+void C_LecteurPhysiqueLocal::mettreAJour() {
+    if (videoGeneree) {
+        modeleLecteur.lireVideo(m_cheminVideoMaster);
+        videoGeneree = false;
+    }
 }
 
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
@@ -134,13 +117,13 @@ void C_LecteurPhysiqueLocal::basculerPlayPause() {
     }
 }
 
-void C_LecteurPhysiqueLocal::modifierVolume(const float volume, const bool muet) {
+void C_LecteurPhysiqueLocal::modifierVolume(float volume, bool muet) {
     volumeCourant = muet ? 0.0f : volume;
     modeleLecteur.setVolume(static_cast<int>(volumeCourant));
     udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VOLUME, volumeCourant);
 }
 
-void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const bool enGlissement, const bool restaurerLecture) {
+void C_LecteurPhysiqueLocal::modifierProgression(float progression, bool enGlissement, bool restaurerLecture) {
     modeleLecteur.setTime(progression);
     udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PROGRESSION, progression);
 
@@ -149,24 +132,14 @@ void C_LecteurPhysiqueLocal::modifierProgression(const float progression, const 
         modeleLecteur.setVolume(0);
     } else {
         modeleLecteur.setVolume(static_cast<int>(volumeCourant));
-        if (restaurerLecture) {
-            modeleLecteur.play();
-        } else {
-            modeleLecteur.pause();
-        }
+        if (restaurerLecture) modeleLecteur.play();
+        else modeleLecteur.pause();
     }
 }
 
-void C_LecteurPhysiqueLocal::modifierVitesse(const float vitesse) {
+void C_LecteurPhysiqueLocal::modifierVitesse(float vitesse) {
     modeleLecteur.setVitesse(vitesse);
     udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VITESSE, vitesse);
-}
-
-void C_LecteurPhysiqueLocal::mettreAJour() {
-    if (videoGeneree) {
-        modeleLecteur.lireVideo(CHEMIN_VIDEO);
-        videoGeneree = false;
-    }
 }
 
 void C_LecteurPhysiqueLocal::stopper() {
