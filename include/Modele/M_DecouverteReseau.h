@@ -61,4 +61,5 @@ private:
     M_ExpediteurUDP m_expediteur;          ///< Composant responsable de l'envoi de la requête de découverte.
     M_ReceveurUDP m_receveur;              ///< Composant responsable de la réception des réponses (avec timeout).
     std::vector<std::string> m_reponses;   ///< Liste stockant les réponses brutes reçues des lecteurs distants.
+    int m_portReponse;                     ///< Port sur lequel les réponses sont attendues.
 };

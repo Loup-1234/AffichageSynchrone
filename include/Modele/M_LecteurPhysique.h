@@ -106,10 +106,10 @@ public:
     void collecterInfosLocales();
 
     /**
-     * @brief Sérialise l'ensemble des caractéristiques matérielles et logicielles en JSON.
-     * @return std::string contenant le JSON formaté pour l'envoi sur le réseau.
+     * @brief Sérialise l'ensemble des caractéristiques matérielles et logicielles en JSON et le sauvegarde dans un fichier.
+     * @param cheminFichier Le chemin du fichier où enregistrer le JSON.
      */
-    string versJson() const;
+    void versJson(const string& cheminFichier) const;
 
     // --- Getters Matériels ---
     /** @return L'adresse IPv4 locale sur le réseau. */

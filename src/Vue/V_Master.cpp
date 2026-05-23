@@ -340,8 +340,8 @@ void V_Master::dessinerListeLecteurs() {
 
     BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width), static_cast<int>(vue.height));
 
-    for (size_t i = 0; i < lecteursIPs.size(); ++i) {
-        const float posY = zones[12].y + MARGE + static_cast<float>(i) * HAUTEUR_LIGNE + positionDefilementLecteurs.y;
+    for (size_t i = 1; i < lecteursIPs.size(); ++i) {
+        const float posY = zones[12].y + MARGE + static_cast<float>(i - 1) * HAUTEUR_LIGNE + positionDefilementLecteurs.y;
         const Rectangle rectItem = {zones[12].x + MARGE + positionDefilementLecteurs.x, posY, TAILLE_CHECKBOX, TAILLE_CHECKBOX};
 
         if (rectItem.y + rectItem.height < vue.y || rectItem.y > vue.y + vue.height) continue;

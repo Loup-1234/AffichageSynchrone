@@ -1,23 +1,21 @@
 #include "Modele/M_DecouverteReseau.h"
+#include "Modele/M_TFTP_W.h"
 #include <iostream>
 #include <chrono>
+#include <filesystem>
 
 M_DecouverteReseau::M_DecouverteReseau(const std::string& ipMulticast, int portMulticast, int portReponse)
     : m_expediteur(ipMulticast, portMulticast),
-      m_receveur(portReponse, ipMulticast) {
+      m_receveur(portReponse, ipMulticast),
+      m_portReponse(portReponse) {
 }
 
 M_DecouverteReseau::~M_DecouverteReseau() = default;
 
 void M_DecouverteReseau::lancerDecouverte(int timeoutMs) {
     m_reponses.clear();
-
-    // Envoi de la requête de découverte sur le réseau
-    // Modifier pour Mathieu
     m_expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::CONNECTION, Action::PLAY, 0.0f);
-
     std::cout << "[M_DecouverteReseau] Paquet de découverte envoyé." << std::endl;
-
     attendreReponses(timeoutMs);
 }
 
@@ -27,32 +25,32 @@ void M_DecouverteReseau::attendreReponses(int timeoutMs) {
 
     std::cout << "[M_DecouverteReseau] Ecoute des réponses..." << std::endl;
 
-    // On mémorise l'heure de début pour ne pas dépasser le temps alloué
     auto heureDebut = std::chrono::steady_clock::now();
 
     while (true) {
-        // Calcul du temps restant
         auto maintenant = std::chrono::steady_clock::now();
         const int tempsEcouleMs = std::chrono::duration_cast<std::chrono::milliseconds>(maintenant - heureDebut).count();
         const int tempsRestantMs = timeoutMs - tempsEcouleMs;
 
-        // Si on a dépassé le délai global de recherche, on arrête d'écouter
         if (tempsRestantMs <= 0) {
             break;
         }
 
-        // On écoute le réseau uniquement pour le temps qu'il nous reste
         int nbOctets = m_receveur.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipSrc, tempsRestantMs);
 
         if (nbOctets > 0) {
             buffer[nbOctets] = '\0';
-            m_reponses.push_back(std::string(buffer));
-            std::cout << "[M_DecouverteReseau] Réponse JSON reçue de " << ipSrc << std::endl;
-        } else if (nbOctets == 0) {
-            // nbOctets = 0 signifie que le timeout a été atteint sans recevoir de paquet
-            break;
+            std::string nomFichierJson = std::string(buffer);
+            std::string cheminFichierJson = "cmake-build-debug/" + nomFichierJson;
+
+            M_TFTP_W tftp;
+            if (tftp.recevoirFichierPousse(m_portReponse, cheminFichierJson)) {
+                m_reponses.push_back(cheminFichierJson);
+                std::cout << "[M_DecouverteReseau] Réponse JSON reçue de " << ipSrc << " et sauvegardée dans " << cheminFichierJson << std::endl;
+            } else {
+                std::cerr << "[M_DecouverteReseau] Erreur de réception TFTP du fichier " << nomFichierJson << " de " << ipSrc << std::endl;
+            }
         } else {
-            // Une erreur réseau s'est produite
             break;
         }
     }

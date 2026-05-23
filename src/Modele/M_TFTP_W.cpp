@@ -1,6 +1,6 @@
 #ifdef _WIN32
 
-#include "Modele/M_TFTP_W.h\"
+#include "modele/M_TFTP_W.h"
 
 M_TFTP_W::M_TFTP_W() {
     WSADATA wsaData;

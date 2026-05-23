@@ -240,7 +240,7 @@ void M_LecteurPhysique::collecterTailleEcran() {
 #endif
 }
 
-string M_LecteurPhysique::versJson() const {
+void M_LecteurPhysique::versJson(const string& cheminFichier) const {
     map<string, string> champs = {
         {"ip", m_ip},
         {"mac", m_mac},
@@ -248,5 +248,11 @@ string M_LecteurPhysique::versJson() const {
         {"largeurEcran", to_string(m_largeurEcran)},
         {"hauteurEcran", to_string(m_hauteurEcran)},
     };
-    return M_JsonUtil::construire(champs);
+    string json = M_JsonUtil::construire(champs);
+
+    ofstream fichier(cheminFichier);
+    if (fichier) {
+        fichier << json;
+        fichier.close();
+    }
 }

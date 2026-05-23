@@ -24,7 +24,6 @@ public:
     void stopper();
 
     void lancerRechercheLecteurs();
-    void arreterEcouteMulticast();
 
     bool estRechercheEnCours() const { return rechercheEnCours; }
     bool resultatsRechercheDisponibles() const { return resultatsRecherchePrets; }
@@ -64,9 +63,4 @@ private:
     std::atomic<bool> resultatsRecherchePrets{false};
     std::thread threadRecherche;
     std::vector<std::map<std::string, std::string>> cacheLecteurs;
-
-    std::atomic<bool> ecouteMulticastActive{false};
-    std::thread threadEcouteMulticast;
-
-    void demarrerEcouteMulticast();
 };

@@ -79,9 +79,15 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs(
     moteurDecouverte.lancerDecouverte(2000);
 
     vector<map<string, string>> lecteursDetectes;
-    for (const string &json : moteurDecouverte.getReponsesBrutes()) {
-        auto infos = M_JsonUtil::parser(json);
-        if (!infos.empty()) lecteursDetectes.push_back(infos);
+    for (const string &cheminFichierJson : moteurDecouverte.getReponsesBrutes()) {
+        ifstream fichier(cheminFichierJson);
+        if (fichier) {
+            string contenuJson((istreambuf_iterator<char>(fichier)), istreambuf_iterator<char>());
+            auto infos = M_JsonUtil::parser(contenuJson);
+            if (!infos.empty()) lecteursDetectes.push_back(infos);
+        } else {
+            cerr << "[M_SessionLecture] Impossible de lire le fichier JSON de réponse: " << cheminFichierJson << endl;
+        }
     }
     return lecteursDetectes;
 }

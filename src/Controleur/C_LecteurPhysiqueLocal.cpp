@@ -1,7 +1,7 @@
 #include "Controleur/C_LecteurPhysiqueLocal.h"
-#include "Modele/M_ReceveurUDP.h"
 #include <filesystem>
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -12,7 +12,6 @@ C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int po
 
     session.configurerLecteurs(m_configLecteurs);
     modeleLecteur.collecterInfosLocales();
-    demarrerEcouteMulticast();
 
     if (filesystem::exists(m_cheminVideoMaster)) {
         modeleLecteur.lireVideo(m_cheminVideoMaster);
@@ -20,31 +19,8 @@ C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int po
 }
 
 C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
-    arreterEcouteMulticast();
     if (threadGeneration.joinable()) threadGeneration.join();
     if (threadRecherche.joinable()) threadRecherche.join();
-    if (threadEcouteMulticast.joinable()) threadEcouteMulticast.join();
-}
-
-void C_LecteurPhysiqueLocal::arreterEcouteMulticast() {
-    ecouteMulticastActive = false;
-}
-
-void C_LecteurPhysiqueLocal::demarrerEcouteMulticast() {
-    ecouteMulticastActive = true;
-    threadEcouteMulticast = thread([this]() {
-        M_ReceveurUDP receveurMulticast(m_portDecouverte, m_adresseMulticast);
-        char buffer[512];
-        string ipEmetteur;
-
-        while (ecouteMulticastActive) {
-            int nbOctets = receveurMulticast.recevoirAvecTimeout(buffer, sizeof(buffer) - 1, ipEmetteur, 500);
-            if (nbOctets > 0) {
-                string jsonInfos = modeleLecteur.versJson();
-                receveurMulticast.envoyerReponse(ipEmetteur, m_portReponse, jsonInfos);
-            }
-        }
-    });
 }
 
 void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
@@ -55,7 +31,22 @@ void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
     if (threadRecherche.joinable()) threadRecherche.join();
 
     threadRecherche = thread([this]() {
-        cacheLecteurs = session.rechercherLecteurs(m_adresseMulticast, m_portDecouverte, m_portReponse);
+        // 1. Ajouter directement les informations du lecteur local
+        map<string, string> localInfos = {
+            {"ip", modeleLecteur.getIp()},
+            {"mac", modeleLecteur.getMac()},
+            {"os", modeleLecteur.getOs()},
+            {"largeurEcran", to_string(modeleLecteur.getLargeurEcran())},
+            {"hauteurEcran", to_string(modeleLecteur.getHauteurEcran())},
+        };
+
+        cacheLecteurs.clear();
+        cacheLecteurs.push_back(localInfos);
+
+        // 2. Lancer la recherche réseau pour les autres lecteurs
+        vector<map<string, string>> lecteursReseau = session.rechercherLecteurs(m_adresseMulticast, m_portDecouverte, m_portReponse);
+        cacheLecteurs.insert(cacheLecteurs.end(), lecteursReseau.begin(), lecteursReseau.end());
+
         resultatsRecherchePrets = true;
         rechercheEnCours = false;
     });
