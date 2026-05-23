@@ -13,7 +13,8 @@ void M_DecouverteReseau::lancerDecouverte(int timeoutMs) {
     m_reponses.clear();
 
     // Envoi de la requête de découverte sur le réseau
-    m_expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::DECOUVERTE, Action::RECHERCHE, 0.0f);
+    // Modifier pour Mathieu
+    m_expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::CONNECTION, Action::PLAY, 0.0f);
 
     std::cout << "[M_DecouverteReseau] Paquet de découverte envoyé." << std::endl;
 
@@ -32,8 +33,8 @@ void M_DecouverteReseau::attendreReponses(int timeoutMs) {
     while (true) {
         // Calcul du temps restant
         auto maintenant = std::chrono::steady_clock::now();
-        int tempsEcouleMs = std::chrono::duration_cast<std::chrono::milliseconds>(maintenant - heureDebut).count();
-        int tempsRestantMs = timeoutMs - tempsEcouleMs;
+        const int tempsEcouleMs = std::chrono::duration_cast<std::chrono::milliseconds>(maintenant - heureDebut).count();
+        const int tempsRestantMs = timeoutMs - tempsEcouleMs;
 
         // Si on a dépassé le délai global de recherche, on arrête d'écouter
         if (tempsRestantMs <= 0) {

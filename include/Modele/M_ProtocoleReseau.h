@@ -19,7 +19,6 @@ enum class Expediteur : uint8_t {
 enum class TypeCommande : uint8_t {
     ORDRE = 0,      ///< Commande d'action immédiate.
     CONNECTION = 1, ///< Message lié à l'établissement de la connexion.
-    DECOUVERTE = 2  ///< Message pour la découverte réseau (UC4).
 };
 
 /**
@@ -33,7 +32,6 @@ enum class Action : uint8_t {
     VOLUME = 3,
     PROGRESSION = 4,
     VITESSE = 5,
-    RECHERCHE = 6   ///< Action demandant aux lecteurs de s'identifier.
 };
 
 #pragma pack(push, 1)
