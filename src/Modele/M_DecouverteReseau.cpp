@@ -1,5 +1,7 @@
 #include "Modele/M_DecouverteReseau.h"
+#ifdef _WIN32
 #include "Modele/M_TFTP_W.h"
+#endif // _WIN32
 #include <iostream>
 #include <chrono>
 #include <filesystem>
@@ -42,7 +44,7 @@ void M_DecouverteReseau::attendreReponses(int timeoutMs) {
             buffer[nbOctets] = '\0';
             std::string nomFichierJson = std::string(buffer);
             std::string cheminFichierJson = "cmake-build-debug/" + nomFichierJson;
-
+            #ifdef _WIN32
             M_TFTP_W tftp;
             if (tftp.recevoirFichierPousse(m_portReponse, cheminFichierJson)) {
                 m_reponses.push_back(cheminFichierJson);
@@ -50,6 +52,7 @@ void M_DecouverteReseau::attendreReponses(int timeoutMs) {
             } else {
                 std::cerr << "[M_DecouverteReseau] Erreur de réception TFTP du fichier " << nomFichierJson << " de " << ipSrc << std::endl;
             }
+            #endif // _WIN32
         } else {
             break;
         }
