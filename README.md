@@ -259,6 +259,7 @@ Développé en **C++23**, le programme utilise des threads et des variables atom
 │   ├── LibVLC
 │   └── raygui
 ├── src/
+│   ├── main.cpp
 │   ├── Controleur/
 │   │   └── C_LecteurPhysiqueLocal.cpp
 │   ├── Modele/
@@ -272,8 +273,8 @@ Développé en **C++23**, le programme utilise des threads et des variables atom
 │   │   └── M_VideoComplexe.cpp
 │   └── Vue/
 │       └── V_Master.cpp
-├── main.cpp
-└── CMakeLists.txt
+├── CMakeLists.txt
+└── README.md
 ```
 
 ## 🚀 Compilation & Installation
