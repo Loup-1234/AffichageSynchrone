@@ -374,7 +374,7 @@ void V_Master::dessinerPanneauControle() {
     bool desactiver = controleur.estGenerationEnCours() || controleur.estRechercheEnCours();
     GuiSetState(desactiver ? STATE_DISABLED : STATE_NORMAL);
 
-    if (GuiButton(zones[4], controleur.estEnLecture() ? "#131#" : "#132#")) {
+    if (GuiButton(zones[4], controleur.estEnLecture() ? "#132#" : "#131#")) {
         controleur.basculerPlayPause();
     }
 
