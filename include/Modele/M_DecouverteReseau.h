@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+using namespace std;
+
 /**
  * @class M_DecouverteReseau
  * @brief Gère la recherche et la découverte des lecteurs sur le réseau local.
@@ -21,7 +23,7 @@ public:
      * @param portMulticast Port d'envoi pour la requête de découverte (ex: 5000).
      * @param portReponse Port d'écoute pour les réponses des lecteurs distants (ex: 5001).
      */
-    explicit M_DecouverteReseau(const std::string& ipMulticast, int portMulticast, int portReponse);
+    explicit M_DecouverteReseau(const string& ipMulticast, int portMulticast, int portReponse);
 
     /**
      * @brief Destructeur de la classe.
@@ -43,7 +45,7 @@ public:
      * @brief Récupère la liste des réponses obtenues lors de la dernière découverte.
      * @return Une référence constante vers un vecteur de chaînes de caractères (généralement du format JSON).
      */
-    const std::vector<std::string>& getReponsesBrutes() const;
+    const vector<string>& getReponsesBrutes() const;
 
     /**
      * @brief Affiche le contenu brut des réponses collectées dans la console standard.
@@ -60,6 +62,6 @@ private:
 
     M_ExpediteurUDP m_expediteur;          ///< Composant responsable de l'envoi de la requête de découverte.
     M_ReceveurUDP m_receveur;              ///< Composant responsable de la réception des réponses (avec timeout).
-    std::vector<std::string> m_reponses;   ///< Liste stockant les réponses brutes reçues des lecteurs distants.
+    vector<string> m_reponses;   ///< Liste stockant les réponses brutes reçues des lecteurs distants.
     int m_portReponse;                     ///< Port sur lequel les réponses sont attendues.
 };

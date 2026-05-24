@@ -1,6 +1,6 @@
 #include "Modele/M_ReceveurUDP.h"
 
-M_ReceveurUDP::M_ReceveurUDP(int port, const std::string& adresseMulticast) {
+M_ReceveurUDP::M_ReceveurUDP(int port, const string& adresseMulticast) {
 #ifdef _WIN32
     WSADATA donneesWsa;
     if (WSAStartup(MAKEWORD(2, 2), &donneesWsa) != 0) return;
@@ -73,7 +73,7 @@ bool M_ReceveurUDP::recevoir(PaquetControle &paquet) const {
     return (resultat == sizeof(PaquetControle));
 }
 
-int M_ReceveurUDP::recevoirAvecTimeout(char* buffer, const int tailleMax, std::string& ipEmetteur, const int timeoutMs) const {
+int M_ReceveurUDP::recevoirAvecTimeout(char* buffer, const int tailleMax, string& ipEmetteur, const int timeoutMs) const {
     if (descripteurSocket == INVALID_SOCKET) return -1;
 
     fd_set ensemble;
@@ -96,13 +96,13 @@ int M_ReceveurUDP::recevoirAvecTimeout(char* buffer, const int tailleMax, std::s
     if (nbOctets > 0) {
         char ipStr[INET_ADDRSTRLEN];
         inet_ntop(AF_INET, &(adresseSource.sin_addr), ipStr, INET_ADDRSTRLEN);
-        ipEmetteur = std::string(ipStr);
+        ipEmetteur = string(ipStr);
     }
 
     return nbOctets;
 }
 
-void M_ReceveurUDP::envoyerReponse(const std::string& ipCible, int portCible, const std::string& message) {
+void M_ReceveurUDP::envoyerReponse(const string& ipCible, int portCible, const string& message) {
     SocketType sockReponse = socket(AF_INET, SOCK_DGRAM, 0);
     if (sockReponse == INVALID_SOCKET) return;
 

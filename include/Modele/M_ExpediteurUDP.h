@@ -22,13 +22,15 @@ using SocketType = int;
 #define SOCKET_ERROR -1
 #endif
 
+using namespace std;
+
 /**
  * @class M_ExpediteurUDP
  * @brief Gère l'envoi de paquets UDP pour la synchronisation multi-écrans.
  */
 class M_ExpediteurUDP {
 public:
-    M_ExpediteurUDP(const std::string &ip, int port);
+    M_ExpediteurUDP(const string &ip, int port);
     ~M_ExpediteurUDP();
 
     bool envoyer(const void *donnees, int taille);

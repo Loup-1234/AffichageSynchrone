@@ -13,18 +13,20 @@
 #include <map>
 #include <stdexcept>
 
+using namespace std;
+
 /**
  * Utilitaire JSON robuste pour objets plats (cle->valeur string).
  * Serialisation et deserialisation conformes RFC 8259.
  */
 class M_JsonUtil {
 public:
-    static std::string construire(const std::map<std::string, std::string>& champs);
-    static std::map<std::string, std::string> parser(const std::string& json);
+    static string construire(const map<string, string>& champs);
+    static map<string, string> parser(const string& json);
 
 private:
-    static std::string echapperChaine(const std::string& s);
-    static std::string lireChaine(const std::string& json, size_t& pos);
-    static std::string lireValeurBrute(const std::string& json, size_t& pos);
-    static void sauterEspaces(const std::string& json, size_t& pos);
+    static string echapperChaine(const string& s);
+    static string lireChaine(const string& json, size_t& pos);
+    static string lireValeurBrute(const string& json, size_t& pos);
+    static void sauterEspaces(const string& json, size_t& pos);
 };

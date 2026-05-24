@@ -6,17 +6,19 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class V_Master {
 public:
     // Signature synchronisée à 7 arguments avec LecteurConfig
-    V_Master(const std::string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-             const std::vector<LecteurConfig> &specLecteurs, const std::string &dossierSourceVideos, const std::string &cheminVideoMaster);
+    V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
+             const vector<LecteurConfig> &specLecteurs, const string &dossierSourceVideos, const string &cheminVideoMaster);
     ~V_Master();
     void executer();
 
 private:
     C_LecteurPhysiqueLocal controleur;
-    const std::string m_dossierVideos; // Stockage propre du chemin du dossier
+    const string m_dossierVideos; // Stockage propre du chemin du dossier
 
     Texture2D textureVideo{};
     Rectangle zones[14]{};
@@ -40,22 +42,22 @@ private:
     int indexVitesse = 1;
     bool menuVitesseActif = false;
 
-    std::vector<std::string> fichiersVideo;
-    std::vector<bool> videosCochees;
-    std::vector<int> ordreSelection;
+    vector<string> fichiersVideo;
+    vector<bool> videosCochees;
+    vector<int> ordreSelection;
     Vector2 positionDefilement = {0, 0};
 
-    std::vector<std::string> lecteursIPs;
-    std::vector<bool> lecteursCoches;
-    std::vector<int> ordreSelectionLecteurs;
+    vector<string> lecteursIPs;
+    vector<bool> lecteursCoches;
+    vector<int> ordreSelectionLecteurs;
     Vector2 positionDefilementLecteurs = {0, 0};
 
     void miseAJourDisposition();
     void chargerListeVideos();
     void chargerListeLecteurs();
 
-    std::vector<std::string> getVideosSelectionnees() const;
-    std::vector<std::string> getLecteursSelectionnes() const;
+    vector<string> getVideosSelectionnees() const;
+    vector<string> getLecteursSelectionnes() const;
     void ouvrirDossierVideos();
 
     void gererLogique();

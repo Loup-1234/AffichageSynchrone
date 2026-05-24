@@ -9,13 +9,15 @@
 #include <atomic>
 #include <thread>
 
+using namespace std;
+
 class C_LecteurPhysiqueLocal {
 public:
-    C_LecteurPhysiqueLocal(const std::string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-                           const std::vector<LecteurConfig> &configLecteurs, const std::string &cheminVideoMaster);
+    C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
+                           const vector<LecteurConfig> &configLecteurs, const string &cheminVideoMaster);
     ~C_LecteurPhysiqueLocal();
 
-    void initialiserSession(const std::vector<std::string> &fichiers);
+    void initialiserSession(const vector<string> &fichiers);
     void basculerPlayPause();
     void modifierVolume(float volume, bool muet);
     void modifierProgression(float progression, bool enGlissement, bool restaurerLecture = false);
@@ -27,7 +29,7 @@ public:
 
     bool estRechercheEnCours() const { return rechercheEnCours; }
     bool resultatsRechercheDisponibles() const { return resultatsRecherchePrets; }
-    std::vector<std::map<std::string, std::string>> getDerniersLecteursTrouves();
+    vector<map<string, string>> getDerniersLecteursTrouves();
 
     bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement) {
         return modeleLecteur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement);
@@ -42,25 +44,25 @@ public:
 
 private:
     float volumeCourant = 100.0f;
-    const std::string m_cheminVideoMaster;
-    const std::string m_dossierSortie = "videosComplexes";
+    const string m_cheminVideoMaster;
+    const string m_dossierSortie = "videosComplexes";
 
     M_LecteurPhysique modeleLecteur;
     M_ExpediteurUDP udp;
     M_SessionLecture session;
-    std::vector<LecteurConfig> m_configLecteurs;
+    vector<LecteurConfig> m_configLecteurs;
 
-    const std::string m_adresseMulticast;
+    const string m_adresseMulticast;
     const int m_portDecouverte;
     const int m_portReponse;
 
-    std::atomic<bool> videoGeneree{false};
-    std::atomic<bool> generationEnCours{false};
-    std::atomic<bool> transfertEnCours{false};
-    std::thread threadGeneration;
+    atomic<bool> videoGeneree{false};
+    atomic<bool> generationEnCours{false};
+    atomic<bool> transfertEnCours{false};
+    thread threadGeneration;
 
-    std::atomic<bool> rechercheEnCours{false};
-    std::atomic<bool> resultatsRecherchePrets{false};
-    std::thread threadRecherche;
-    std::vector<std::map<std::string, std::string>> cacheLecteurs;
+    atomic<bool> rechercheEnCours{false};
+    atomic<bool> resultatsRecherchePrets{false};
+    thread threadRecherche;
+    vector<map<string, string>> cacheLecteurs;
 };

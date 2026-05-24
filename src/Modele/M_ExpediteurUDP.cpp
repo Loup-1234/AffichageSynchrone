@@ -1,6 +1,6 @@
 #include "../../include/Modele/M_ExpediteurUDP.h"
 
-M_ExpediteurUDP::M_ExpediteurUDP(const std::string &ip, const int port) {
+M_ExpediteurUDP::M_ExpediteurUDP(const string &ip, const int port) {
 #ifdef _WIN32
     // Initialisation de la pile réseau Windows (WSA)
     WSADATA donneesWsa;

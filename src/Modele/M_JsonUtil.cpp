@@ -8,7 +8,7 @@
 // M_JsonUtil V1 — implementation RFC 8259 pour objets JSON plats.
 // ================================================================
 
-void M_JsonUtil::sauterEspaces(const std::string &json, size_t &pos) {
+void M_JsonUtil::sauterEspaces(const string &json, size_t &pos) {
     while (pos < json.size() &&
            (json[pos] == ' ' || json[pos] == '\t' ||
             json[pos] == '\r' || json[pos] == '\n')) {
@@ -16,8 +16,8 @@ void M_JsonUtil::sauterEspaces(const std::string &json, size_t &pos) {
     }
 }
 
-std::string M_JsonUtil::echapperChaine(const std::string &s) {
-    std::string out;
+string M_JsonUtil::echapperChaine(const string &s) {
+    string out;
     out.reserve(s.size() + 4);
     for (unsigned char c: s) {
         switch (c) {
@@ -37,9 +37,9 @@ std::string M_JsonUtil::echapperChaine(const std::string &s) {
                 break;
             default:
                 if (c < 0x20) {
-                    std::ostringstream oss;
-                    oss << "\\u" << std::hex << std::setw(4)
-                            << std::setfill('0') << static_cast<int>(c);
+                    ostringstream oss;
+                    oss << "\\u" << hex << setw(4)
+                            << setfill('0') << static_cast<int>(c);
                     out += oss.str();
                 } else {
                     out += static_cast<char>(c);
@@ -49,18 +49,18 @@ std::string M_JsonUtil::echapperChaine(const std::string &s) {
     return out;
 }
 
-std::string M_JsonUtil::lireChaine(const std::string &json, size_t &pos) {
+string M_JsonUtil::lireChaine(const string &json, size_t &pos) {
     if (pos >= json.size() || json[pos] != '"') {
-        throw std::runtime_error("M_JsonUtil::lireChaine : guillemet attendu");
+        throw runtime_error("M_JsonUtil::lireChaine : guillemet attendu");
     }
     pos++;
 
-    std::string resultat;
+    string resultat;
     while (pos < json.size() && json[pos] != '"') {
         if (json[pos] == '\\') {
             pos++;
             if (pos >= json.size()) {
-                throw std::runtime_error("M_JsonUtil::lireChaine : sequence d'echappement tronquee");
+                throw runtime_error("M_JsonUtil::lireChaine : sequence d'echappement tronquee");
             }
             switch (json[pos]) {
                 case '"': resultat += '"';
@@ -81,10 +81,10 @@ std::string M_JsonUtil::lireChaine(const std::string &json, size_t &pos) {
                     break;
                 case 'u': {
                     if (pos + 4 >= json.size()) {
-                        throw std::runtime_error("M_JsonUtil::lireChaine : \\uXXXX tronque");
+                        throw runtime_error("M_JsonUtil::lireChaine : \\uXXXX tronque");
                     }
-                    std::string hex = json.substr(pos + 1, 4);
-                    int cp = std::stoi(hex, nullptr, 16);
+                    string hex = json.substr(pos + 1, 4);
+                    int cp = stoi(hex, nullptr, 16);
                     if (cp < 0x80) {
                         resultat += static_cast<char>(cp);
                     } else if (cp < 0x800) {
@@ -107,14 +107,14 @@ std::string M_JsonUtil::lireChaine(const std::string &json, size_t &pos) {
     }
 
     if (pos >= json.size()) {
-        throw std::runtime_error("M_JsonUtil::lireChaine : guillemet fermant manquant");
+        throw runtime_error("M_JsonUtil::lireChaine : guillemet fermant manquant");
     }
     pos++;
     return resultat;
 }
 
-std::string M_JsonUtil::lireValeurBrute(const std::string &json, size_t &pos) {
-    std::string valeur;
+string M_JsonUtil::lireValeurBrute(const string &json, size_t &pos) {
+    string valeur;
     while (pos < json.size() &&
            json[pos] != ',' && json[pos] != '}' &&
            json[pos] != ' ' && json[pos] != '\t' &&
@@ -124,8 +124,8 @@ std::string M_JsonUtil::lireValeurBrute(const std::string &json, size_t &pos) {
     return valeur;
 }
 
-std::string M_JsonUtil::construire(const std::map<std::string, std::string> &champs) {
-    std::string json = "{";
+string M_JsonUtil::construire(const map<string, string> &champs) {
+    string json = "{";
     bool premier = true;
     for (const auto &[cle, valeur]: champs) {
         if (!premier) json += ',';
@@ -140,8 +140,8 @@ std::string M_JsonUtil::construire(const std::map<std::string, std::string> &cha
     return json;
 }
 
-std::map<std::string, std::string> M_JsonUtil::parser(const std::string &json) {
-    std::map<std::string, std::string> resultat;
+map<string, string> M_JsonUtil::parser(const string &json) {
+    map<string, string> resultat;
 
     if (json.empty()) return resultat;
 
@@ -156,14 +156,14 @@ std::map<std::string, std::string> M_JsonUtil::parser(const std::string &json) {
         if (pos >= json.size() || json[pos] == '}') break;
 
         if (json[pos] != '"') break;
-        std::string cle = lireChaine(json, pos);
+        string cle = lireChaine(json, pos);
 
         sauterEspaces(json, pos);
         if (pos >= json.size() || json[pos] != ':') break;
         pos++;
 
         sauterEspaces(json, pos);
-        std::string valeur;
+        string valeur;
         if (pos < json.size() && json[pos] == '"') {
             valeur = lireChaine(json, pos);
         } else {

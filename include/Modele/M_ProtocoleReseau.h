@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <string>
 
+using namespace std;
+
 /**
  * @enum Expediteur
  * @brief Identifie l'origine de la commande réseau.
@@ -55,6 +57,6 @@ struct PaquetControle {
  */
 struct LecteurConfig {
     int id;
-    std::string ip;
+    string ip;
     int nbVideosCapacite;
 };
