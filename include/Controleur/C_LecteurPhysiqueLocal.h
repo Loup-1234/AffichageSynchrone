@@ -1,68 +1,32 @@
 #pragma once
 
-#include "Modele/M_LecteurPhysique.h"
-#include "Modele/M_SessionLecture.h"
-#include "Modele/M_ExpediteurUDP.h"
-#include "Modele/M_ProtocoleReseau.h"
-#include <vector>
 #include <string>
-#include <atomic>
+#include <vector>
 #include <thread>
+#include "Modele/M_SessionLecture.h"
 
 using namespace std;
 
+/**
+ * @class C_LecteurPhysiqueLocal
+ * @brief Contrôleur d'interface orchestrant les échanges entre la vue graphique et le modèle de session.
+ */
 class C_LecteurPhysiqueLocal {
 public:
-    C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-                           const string &cheminVideoMaster);
-    ~C_LecteurPhysiqueLocal();
+    /**
+     * @brief Constructeur de la classe C_LecteurPhysiqueLocal.
+     * @param ipMulticast Adresse de diffusion IP Multicast pour les trames de synchronisation.
+     * @param portCommandes Port de destination des paquets réseau d'ordres de lecture.
+     * @param portDecouverte Port réseau d'écoute dédié au mécanisme de détection automatique des nœuds.
+     * @param portReponse Port réseau d'émission des réponses de configuration matérielle.
+     * @param cheminVideoMaster Chemin d'accès vers la vidéo finale synthétisée pour l'écran maître.
+     */
+    C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse, const string &cheminVideoMaster);
 
+    /**
+     * @brief Initialise et exécute asynchroniquement au sein d'un thread dédié le processus complet de rendu et d'envoi.
+     * @param fichiers Liste des chemins d'accès des vidéos sélectionnées dans l'IHM.
+     * @param lecteursSelectionnes Liste des adresses IP des écrans clients cochés dans l'IHM.
+     */
     void initialiserSession(const vector<string> &fichiers, const vector<string> &lecteursSelectionnes);
-    void basculerPlayPause();
-    void modifierVolume(float volume, bool muet);
-    void modifierProgression(float progression, bool enGlissement, bool restaurerLecture = false);
-    void modifierVitesse(float vitesse);
-    void mettreAJour();
-    void stopper();
-
-    void lancerRechercheLecteurs();
-
-    bool estRechercheEnCours() const { return rechercheEnCours; }
-    bool resultatsRechercheDisponibles() const { return resultatsRecherchePrets; }
-    vector<map<string, string>> getDerniersLecteursTrouves();
-
-    bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement) {
-        return modeleLecteur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement);
-    }
-
-    float getDureeTotale() const { return modeleLecteur.getDureeTotale(); }
-    float getProgressionActuelle() const { return modeleLecteur.getProgressionActuelle(); }
-    bool estEnLecture() const { return modeleLecteur.estEnLecture(); }
-    bool estTermine() const { return modeleLecteur.estTermine(); }
-    bool estGenerationEnCours() const { return generationEnCours; }
-    bool estTransfertEnCours() const { return transfertEnCours; }
-
-private:
-    float volumeCourant = 100.0f;
-    const string m_cheminVideoMaster;
-    const string m_dossierSortie = "videosComplexes";
-
-    M_LecteurPhysique modeleLecteur;
-    M_ExpediteurUDP udp;
-    M_SessionLecture session;
-    vector<LecteurConfig> m_configLecteurs;
-
-    const string m_adresseMulticast;
-    const int m_portDecouverte;
-    const int m_portReponse;
-
-    atomic<bool> videoGeneree{false};
-    atomic<bool> generationEnCours{false};
-    atomic<bool> transfertEnCours{false};
-    thread threadGeneration;
-
-    atomic<bool> rechercheEnCours{false};
-    atomic<bool> resultatsRecherchePrets{false};
-    thread threadRecherche;
-    vector<map<string, string>> cacheLecteurs;
 };

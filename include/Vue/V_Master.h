@@ -1,72 +1,42 @@
 #pragma once
 
-#include "raylib.h"
-#include "Controleur/C_LecteurPhysiqueLocal.h"
-#include "Modele/M_ProtocoleReseau.h" // Pour LecteurConfig
 #include <string>
 #include <vector>
+#include "Controleur/C_LecteurPhysiqueLocal.h"
 
 using namespace std;
 
+/**
+ * @class V_Master
+ * @brief Composant de l'interface graphique utilisateur (IHM réalisée en Raylib) pilotant la grappe d'écrans.
+ */
 class V_Master {
 public:
-    V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-             const string &dossierSourceVideos, const string &cheminVideoMaster);
-    ~V_Master();
+    /**
+     * @brief Constructeur de la classe V_Master.
+     * @param ipMulticast Adresse IP de groupe Multicast pour le pilotage synchrone.
+     * @param portCommandes Port d'envoi UDP des structures d'ordres de contrôle.
+     * @param portDecouverte Port réseau d'écoute associé au protocole de découverte.
+     * @param portReponse Port réseau de collecte des retours d'identification.
+     * @param dossierSourceVideos Répertoire local contenant les médias indexables dans la liste.
+     * @param cheminVideoMaster Emplacement disque où enregistrer la composition vidéo du Master.
+     */
+    V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse, const string &dossierSourceVideos, const string &cheminVideoMaster);
+
+    /**
+     * @brief Démarre la fenêtre graphique et gère la boucle principale événementielle de rendu à 60 FPS.
+     */
     void executer();
 
-private:
-    C_LecteurPhysiqueLocal controleur;
-    const string m_dossierVideos; // Stockage propre du chemin du dossier
-
-    Texture2D textureVideo{};
-    Rectangle zones[14]{};
-
-    float rotationChargement = 0.0f;
-
-    unsigned int largeurVideoCache = 0;
-    unsigned int hauteurVideoCache = 0;
-
-    float largeurPanneauGauche = 180.0f;
-    float largeurPanneauDroit = 180.0f;
-    bool enRedimensionnementGauche = false;
-    bool enRedimensionnementDroit = false;
-
-    float valeurProgression = 0.0f;
-    float valeurVolume = 100.0f;
-    bool estMuet = false;
-    bool enGlissement = false;
-    float delaiRecherche = 0.0f;
-    bool etaitEnLectureAvantGlissement = false;
-    int indexVitesse = 1;
-    bool menuVitesseActif = false;
-
-    vector<string> fichiersVideo;
-    vector<bool> videosCochees;
-    vector<int> ordreSelection;
-    Vector2 positionDefilement = {0, 0};
-
-    vector<string> lecteursIPs;
-    vector<bool> lecteursCoches;
-    vector<int> ordreSelectionLecteurs;
-    Vector2 positionDefilementLecteurs = {0, 0};
-
-    void miseAJourDisposition();
-    void chargerListeVideos();
-    void chargerListeLecteurs();
-
-    vector<string> getVideosSelectionnees() const;
+    /**
+     * @brief Interroge l'état graphique des cases à cocher pour lister les terminaux validés.
+     * @return Un vecteur de chaînes de caractères listant les adresses IP sélectionnées.
+     */
     vector<string> getLecteursSelectionnes() const;
-    void ouvrirDossierVideos();
 
-    void gererLogique();
-    void dessinerInterface();
-    void dessinerZoneVideo() const;
-    void dessinerListeFichiers();
-    void dessinerListeLecteurs();
-    void dessinerPanneauControle();
-    void gererBarreProgression();
-    void gererControlesVolume();
-    void gererVitesse();
-    void dessinerOverlayChargement();
+    /**
+     * @brief Interroge l'état graphique des éléments de liste pour collecter les médias validés.
+     * @return Un vecteur de chaînes de caractères listant les chemins des vidéos sélectionnées.
+     */
+    vector<string> getVideosSelectionnees() const;
 };
