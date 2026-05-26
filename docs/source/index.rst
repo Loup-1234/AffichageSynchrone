@@ -2,7 +2,7 @@
 Documentation de AffichageSynchrone
 ========================================
 
-.. image:: https://img.shields.io/badge/C%2B%2B-20-blue.svg
+.. image:: https://img.shields.io/badge/C%2B%2B-23-blue.svg
    :target: https://isocpp.org/
 
 Bienvenue sur la documentation technique du projet **AffichageSynchrone**.
