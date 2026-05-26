@@ -1,54 +1,16 @@
 cmake_minimum_required(VERSION 3.20)
 project(AffichageSynchrone CXX C)
 
-# Configuration C++
+# ==========================================
+# CONFIGURATION GLOBALE
+# ==========================================
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc")
 
-# Gestion des Dépendances (Spécifique à l'OS)
-if(WIN32)
-    message(STATUS "Configuration pour Windows détectée")
-
-    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
-
-    # 1. Téléchargement de Raylib (Windows n'a pas de gestionnaire de paquets natif)
-    include(FetchContent)
-    FetchContent_Declare(
-            raylib
-            GIT_REPOSITORY https://github.com/raysan5/raylib.git
-            GIT_TAG 5.0
-    )
-    FetchContent_MakeAvailable(raylib)
-
-    # Définitions spécifiques pour Windows
-    add_definitions(-DWIN32_LEAN_AND_MEAN -DNOMINMAX -DNOGDI -DNOUSER)
-
-elseif(UNIX AND NOT APPLE)
-    message(STATUS "Configuration pour Linux détectée")
-
-    # 1. Utilisation de PkgConfig pour trouver les libs système (pacman/paru)
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(RAYLIB REQUIRED IMPORTED_TARGET raylib)
-    pkg_check_modules(VLC REQUIRED IMPORTED_TARGET libvlc)
-    pkg_check_modules(FFTW REQUIRED IMPORTED_TARGET fftw3)
-endif()
-
-# Raygui (Header-only, commun aux deux)
-set(RAYGUI_HEADER_PATH "${CMAKE_SOURCE_DIR}/libs/raygui/raygui.h")
-if(NOT EXISTS "${RAYGUI_HEADER_PATH}")
-    message(STATUS "Téléchargement de raygui.h...")
-    file(DOWNLOAD
-            "https://raw.githubusercontent.com/raysan5/raygui/4.0/src/raygui.h"
-            "${RAYGUI_HEADER_PATH}"
-    )
-endif()
-
-# SQLite3
-add_library(sqlite_lib OBJECT libs/sqlite3/sqlite3.c)
-target_include_directories(sqlite_lib PUBLIC libs/sqlite3)
-
-# Fichiers du Projet
+# ==========================================
+# SOURCES ET EN-TÊTES
+# ==========================================
 set(SOURCE_FILES
         src/main.cpp
         src/Vue/V_Master.cpp
@@ -79,16 +41,56 @@ set(HEADER_FILES
         include/Modele/M_ConfigReseau.h
 )
 
-# Création de l'Exécutable
+# ==========================================
+# DÉPENDANCES COMMUNES
+# ==========================================
+# SQLite3 (Compilation statique)
+add_library(sqlite_lib OBJECT libs/sqlite3/sqlite3.c)
+target_include_directories(sqlite_lib PUBLIC libs/sqlite3)
+
+# Raygui (Téléchargement dynamique si manquant)
+set(RAYGUI_HEADER_PATH "${CMAKE_SOURCE_DIR}/libs/raygui/raygui.h")
+if(NOT EXISTS "${RAYGUI_HEADER_PATH}")
+    message(STATUS "Téléchargement de raygui.h...")
+    file(DOWNLOAD
+            "https://raw.githubusercontent.com/raysan5/raygui/4.0/src/raygui.h"
+            "${RAYGUI_HEADER_PATH}"
+    )
+endif()
+
+# ==========================================
+# CIBLE PRINCIPALE (EXÉCUTABLE)
+# ==========================================
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
 
-# Inclusions et Liens
+# Inclusions globales du projet
 target_include_directories(${PROJECT_NAME} PRIVATE
         include
         "libs/raygui"
 )
 
+# ==========================================
+# GESTION DES OS & LINKING (Windows / Unix)
+# ==========================================
 if(WIN32)
+    message(STATUS "Configuration pour Windows détectée")
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+
+    # Raylib via FetchContent
+    include(FetchContent)
+    FetchContent_Declare(
+            raylib
+            GIT_REPOSITORY https://github.com/raysan5/raylib.git
+            GIT_TAG 5.0
+    )
+    FetchContent_MakeAvailable(raylib)
+
+    # Remplacement de add_definitions par la méthode moderne liée à la target
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+            WIN32_LEAN_AND_MEAN NOMINMAX NOGDI NOUSER
+    )
+
+    # Inclusions spécifiques Windows
     target_include_directories(${PROJECT_NAME} PRIVATE
             "libs/LibVLC/include"
             "libs/LibVLC/include/vlc"
@@ -96,6 +98,7 @@ if(WIN32)
     )
     target_link_directories(${PROJECT_NAME} PRIVATE "libs/LibVLC/lib")
 
+    # Linking Windows
     target_link_libraries(${PROJECT_NAME} PRIVATE
             raylib
             winmm
@@ -108,11 +111,22 @@ if(WIN32)
             sqlite_lib
             "${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll"
     )
-else()
+
+elseif(UNIX AND NOT APPLE)
+    message(STATUS "Configuration pour Linux détectée")
+
+    # Dépendances système via PkgConfig
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(RAYLIB REQUIRED IMPORTED_TARGET raylib)
+    pkg_check_modules(VLC REQUIRED IMPORTED_TARGET libvlc)
+    pkg_check_modules(FFTW REQUIRED IMPORTED_TARGET fftw3)
+
+    # Linking Linux
     target_link_libraries(${PROJECT_NAME} PRIVATE
             PkgConfig::RAYLIB
             PkgConfig::VLC
             PkgConfig::FFTW
+            sqlite_lib
             m
             pthread
     )
@@ -121,26 +135,24 @@ endif()
 # ==========================================
 # DOCUMENTATION (Doxygen & Sphinx)
 # ==========================================
-
 find_package(Doxygen)
 
-if (DOXYGEN_FOUND)
-    # Commande pour exécuter Doxygen
+if(DOXYGEN_FOUND)
+    # 1. Génération XML (Doxygen)
     add_custom_target(doxygen_generate
             COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_SOURCE_DIR}/docs/Doxyfile
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/docs
             COMMENT "Génération du XML Doxygen..."
     )
 
-    # Commande pour exécuter Sphinx
+    # 2. Génération HTML (Sphinx)
     add_custom_target(sphinx_generate
             COMMAND sphinx-build -b html source build/html
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/docs
             COMMENT "Génération du HTML Sphinx..."
-            DEPENDS doxygen_generate # Sphinx attend que Doxygen ait fini
+            DEPENDS doxygen_generate
     )
 
-    # Grouper dans "Documentation"
+    # Organisation dans l'IDE
     set_target_properties(doxygen_generate sphinx_generate PROPERTIES FOLDER "Documentation")
-
-endif ()
+endif()

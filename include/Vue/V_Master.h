@@ -1,48 +1,93 @@
 #pragma once
 
+#include "raylib.h"
+#include "Controleur/C_LecteurPhysiqueLocal.h"
+#include "Modele/M_ProtocoleReseau.h"
 #include <string>
 #include <vector>
-#include <memory>
-#include "Controleur/C_LecteurPhysiqueLocal.h"
+
+using namespace std;
 
 /**
  * @class V_Master
- * @brief Classe principale gérant l'affichage graphique et les événements de saisie.
+ * @brief Composant d'interface utilisateur principal basé sur Raylib et Raygui.
  */
 class V_Master {
 public:
     /**
-     * @brief Constructeur de l'IHM.
-     * @param ipMulticast Paramètres réseau pour le contrôleur.
-     * @param pCmd Ports de communication.
-     * @param pDec Ports de découverte.
-     * @param pRep Ports de réponse.
-     * @param dossier Dossier contenant les médias.
-     * @param cheminMaster Chemin du Master local.
+     * @brief Initialise les fenêtres d'affichage, le sous-système audio, et charge les listes d'éléments.
+     * @param ipMulticast Adresse IP utilisée pour joindre le groupe de contrôle UDP.
+     * @param portCommandes Canal pour les requêtes d'ordres d'action.
+     * @param portDecouverte Canal d'interrogation réseau.
+     * @param portReponse Canal de traitement de configuration.
+     * @param dossierSourceVideos Chemin d'accès contenant les vidéos d'entrée utilisateur.
+     * @param cheminVideoMaster Fichier d'affichage Master généré attendu.
      */
-    V_Master(const string &ipMulticast, int pCmd, int pDec, int pRep, const string &dossier, const string &cheminMaster);
-    ~V_Master() = default;
+    V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
+             const string &dossierSourceVideos, const string &cheminVideoMaster);
 
-    /** @brief Boucle principale de l'application (Main Loop). */
+    /**
+     * @brief Libère l'ensemble des textures allouées, désactive les composants audio et ferme l'affichage graphique.
+     */
+    ~V_Master();
+
+    /**
+     * @brief Lance la boucle d'exécution principale de rendu de l'IHM.
+     */
     void executer();
 
-    /**
-     * @brief Retourne les adresses IP sélectionnées dans l'interface.
-     * @return Vecteur d'IP.
-     */
-    vector<string> getLecteursSelectionnes() const;
-
-    /**
-     * @brief Retourne les chemins des vidéos sélectionnées.
-     * @return Vecteur de chemins fichiers.
-     */
-    vector<string> getVideosSelectionnees() const;
-
 private:
-    unique_ptr<C_LecteurPhysiqueLocal> m_controleur; ///< Contrôleur géré par pointeur intelligent.
-    string m_dossierVideos;                          ///< Répertoire source.
-    bool m_fenetreOuverte;                           ///< État de la fenêtre.
+    C_LecteurPhysiqueLocal controleur;
+    const string m_dossierVideos;
 
-    void dessinerInterface();                        ///< Rendu graphique des éléments Raylib.
-    void gererEntreesClavier();                      ///< Gestion des raccourcis et entrées utilisateur.
+    Texture2D textureVideo{};
+    Rectangle zones[14]{};
+
+    float rotationChargement = 0.0f;
+
+    unsigned int largeurVideoCache = 0;
+    unsigned int hauteurVideoCache = 0;
+
+    float largeurPanneauGauche = 180.0f;
+    float largeurPanneauDroit = 180.0f;
+    bool enRedimensionnementGauche = false;
+    bool enRedimensionnementDroit = false;
+
+    float valeurProgression = 0.0f;
+    float valeurVolume = 100.0f;
+    bool estMuet = false;
+    bool enGlissement = false;
+    float delaiRecherche = 0.0f;
+    bool etaitEnLectureAvantGlissement = false;
+    int indexVitesse = 1;
+    bool menuVitesseActif = false;
+
+    vector<string> fichiersVideo;
+    vector<bool> videosCochees;
+    vector<int> ordreSelection;
+    Vector2 positionDefilement = {0, 0};
+
+    vector<string> lecteursIPs;
+    vector<bool> lecteursCoches;
+    vector<int> ordreSelectionLecteurs;
+    Vector2 positionDefilementLecteurs = {0, 0};
+
+    void miseAJourDisposition();
+    void chargerListeVideos();
+    void chargerListeLecteurs();
+
+    vector<string> getVideosSelectionnees() const;
+    vector<string> getLecteursSelectionnes() const;
+    void ouvrirDossierVideos();
+
+    void gererLogique();
+    void dessinerInterface();
+    void dessinerZoneVideo() const;
+    void dessinerListeFichiers();
+    void dessinerListeLecteurs();
+    void dessinerPanneauControle();
+    void gererBarreProgression();
+    void gererControlesVolume();
+    void gererVitesse();
+    void dessinerOverlayChargement();
 };

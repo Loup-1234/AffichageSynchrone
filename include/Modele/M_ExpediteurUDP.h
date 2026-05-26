@@ -11,13 +11,13 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
-using SocketType = SOCKET; ///< Définit le type de socket selon l'OS (Windows).
+using SocketType = SOCKET;
 #else
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <cstring>
-using SocketType = int;    ///< Définit le type de socket selon l'OS (Linux/POSIX).
+using SocketType = int;
 #define INVALID_SOCKET -1
 #define SOCKET_ERROR -1
 #endif
@@ -26,42 +26,40 @@ using namespace std;
 
 /**
  * @class M_ExpediteurUDP
- * @brief Gestionnaire de communication réseau pour l'envoi de trames UDP de synchronisation.
- * * Cette classe encapsule la gestion des sockets bas niveau pour permettre la diffusion
- * de commandes de contrôle vers les nœuds distants de la grappe d'écrans.
+ * @brief Gère l'envoi de paquets UDP pour la synchronisation multi-écrans.
  */
 class M_ExpediteurUDP {
 public:
     /**
-     * @brief Constructeur initialisant la socket de communication.
-     * @param ip Adresse IP de destination ou multicast.
-     * @param port Port réseau cible pour l'écoute des commandes.
+     * @brief Constructeur initialisant le socket UDP et configurant les options réseau.
+     * @param ip Adresse IP de destination (Unicast, Broadcast ou Multicast).
+     * @param port Port de destination des paquets.
      */
     M_ExpediteurUDP(const string &ip, int port);
 
     /**
-     * @brief Destructeur garantissant la fermeture propre de la socket.
+     * @brief Destructeur fermant proprement le socket et libérant la pile réseau.
      */
     ~M_ExpediteurUDP();
 
     /**
-     * @brief Envoie un bloc de données brut via le protocole UDP.
-     * @param donnees Pointeur vers le buffer de données à transmettre.
-     * @param taille Taille en octets du bloc de données.
-     * @return True si l'envoi a réussi, False sinon.
+     * @brief Envoie des données brutes via le socket UDP configuré.
+     * @param donnees Pointeur vers le bloc de données à transmettre.
+     * @param taille Taille en octets des données à transmettre.
+     * @return true si l'envoi a réussi, false sinon.
      */
     bool envoyer(const void *donnees, int taille);
 
     /**
-     * @brief Formate et transmet une commande de contrôle structurée.
-     * @param exp Identifiant de l'expéditeur (Master ou autre).
-     * @param type Catégorie de la commande (Ordre ou connexion).
-     * @param action Type d'action multimédia à exécuter (PLAY, PAUSE, etc.).
-     * @param valeur Donnée paramétrique associée à l'action.
+     * @brief Transmet une commande structurée de contrôle à distance.
+     * @param exp Identifiant du type d'expéditeur.
+     * @param type Nature du message UDP.
+     * @param action Commande d'action à réaliser.
+     * @param valeur Valeur numérique optionnelle associée à l'action.
      */
     void transmettreCommande(Expediteur exp, TypeCommande type, Action action, float valeur);
 
 private:
-    SocketType descripteurSocket = INVALID_SOCKET; ///< Identifiant de la socket active.
-    sockaddr_in adresseDest{};                     ///< Structure contenant les paramètres de destination (IP/Port).
+    SocketType descripteurSocket = INVALID_SOCKET; /**< Identifiant ou descripteur système du socket. */
+    sockaddr_in adresseDest{}; /**< Structure d'adresse de destination réseau. */
 };

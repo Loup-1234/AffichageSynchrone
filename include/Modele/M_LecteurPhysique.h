@@ -16,7 +16,8 @@ using namespace std;
 /**
  * @class M_LecteurPhysique
  * @brief Modèle gérant la lecture vidéo (LibVLC) ET les caractéristiques matérielles locales du lecteur.
- * * Cette classe fusionne les responsabilités de lecture multimédia en mémoire (pour Raylib)
+ *
+ * Cette classe fusionne les responsabilités de lecture multimédia en mémoire (pour Raylib)
  * et la collecte des métadonnées du système hôte (OS, RAM, IP) utiles pour la découverte réseau.
  */
 class M_LecteurPhysique {
@@ -32,10 +33,6 @@ public:
      * Libère proprement les ressources allouées par LibVLC.
      */
     ~M_LecteurPhysique();
-
-    // ==========================================
-    // --- PARTIE LECTURE VIDÉO (VLC) ---
-    // ==========================================
 
     /**
      * @brief Charge et prépare une vidéo pour la lecture en mémoire.
@@ -95,10 +92,6 @@ public:
     /** @return La position de lecture actuelle en secondes. */
     float getProgressionActuelle() const;
 
-    // ==========================================
-    // --- PARTIE CARACTÉRISTIQUES MATÉRIELLES ---
-    // ==========================================
-
     /**
      * @brief Scanne le système hôte (Windows ou Linux) pour remplir automatiquement
      * les attributs matériels (OS, IP, MAC, Écran).
@@ -111,7 +104,6 @@ public:
      */
     void versJson(const string& cheminFichier) const;
 
-    // --- Getters Matériels ---
     /** @return L'adresse IPv4 locale sur le réseau. */
     const string& getIp() const { return m_ip; }
     /** @return L'adresse MAC de l'interface réseau active. */
@@ -123,7 +115,6 @@ public:
     /** @return La hauteur de l'écran en pixels. */
     int getHauteurEcran() const { return m_hauteurEcran; }
 
-    // --- Setters Matériels ---
     /** @param ip La nouvelle adresse IP à forcer. */
     void setIp(const string& ip) { m_ip = ip; }
     /** @param mac La nouvelle adresse MAC à forcer. */
@@ -136,7 +127,6 @@ public:
     void setHauteurEcran(int hauteur) { m_hauteurEcran = hauteur; }
 
 private:
-    // --- Attributs VLC ---
     libvlc_instance_t *instanceVLC = nullptr;    ///< Instance principale du moteur VLC.
     libvlc_media_player_t *lecteurVLC = nullptr; ///< Instance spécifique du lecteur de média.
 
@@ -157,7 +147,6 @@ private:
     /** @brief Callback VLC : Appelé à l'initialisation du média pour imposer le format RGBA. */
     static unsigned cb_configurerVideo(void **opaque, char *chrominance, const unsigned *largeur, const unsigned *hauteur, unsigned *pas, unsigned *lignes);
 
-    // --- Attributs Matériels ---
     string m_ip;                ///< Adresse IPv4 sur le réseau local.
     string m_mac;               ///< Adresse physique MAC de la carte réseau.
     string m_os;                ///< Nom et version du système d'exploitation.

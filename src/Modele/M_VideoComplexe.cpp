@@ -16,7 +16,6 @@
 #include <stdexcept>
 #include <string>
 
-// Mutex global pour FFTW car la création de plans n'est pas thread-safe
 mutex verrouFftw;
 
 void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, size_t nbVideos,
@@ -32,15 +31,12 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
 
         taillesAudios = new size_t[nbVideos]();
 
-        // Etape 1 : Extraction parallèle des flux audio vers des fichiers temporaires .bin
         cout << "Etape 1/3 : Extraction des audios (incluant la reference)" << endl;
         audios = extraireEtChargerAudios(listeFichiersEntree, nbVideos, taillesAudios);
 
-        // Etape 2 : Analyse mathématique (X-Corr via FFT) pour trouver les délais de synchronisation
         cout << "Etape 2/3 : Calcul des decalages par rapport a la reference" << endl;
         decalagesEnSecondes = calculerDecalages(audios, taillesAudios, nbVideos, listeFichiersEntree);
 
-        // Etape 3 : Composition finale avec FFmpeg (Mosaïque synchronisée)
         cout << "Etape 3/3 : Construction de la video complexe" << endl;
         const string commande = construireCommandeFFmpeg(listeFichiersEntree, nbVideos, decalagesEnSecondes,
                                                          fichierSortie);
@@ -54,7 +50,6 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
         cerr << "[ERREUR FATALE] : " << e.what() << endl;
     }
 
-    // Nettoyage de la mémoire dynamique
     if (audios != nullptr) {
         for (size_t i = 0; i < nbVideos; ++i) {
             delete[] audios[i];
@@ -74,16 +69,14 @@ double *M_VideoComplexe::calculerDecalages(const float *const*audios, const size
                                            const string *listeFichiers) {
     double *decalages = new double[nbVideos]();
     future<void> *tachesFutures = new future<void>[nbVideos];
-    int indexRef = 0; // La première vidéo sert de base temporelle (T=0)
+    int indexRef = 0;
 
     for (size_t i = 0; i < nbVideos; ++i) {
         if (i == static_cast<size_t>(indexRef)) continue;
 
-        // Calcul des corrélations en parallèle pour gagner du temps sur les gros fichiers
         tachesFutures[i] = async(launch::async, [&, i, indexRef] {
             if (audios[indexRef] != nullptr && taillesAudios[indexRef] > 0 &&
                 audios[i] != nullptr && taillesAudios[i] > 0) {
-                // Le signe négatif permet d'obtenir le décalage relatif correct pour FFmpeg (-ss)
                 const auto resultatXcorr = -static_cast<double>(xcorr(audios[indexRef], taillesAudios[indexRef],
                                                                       audios[i], taillesAudios[i]));
                 decalages[i] = resultatXcorr / FREQUENCE_ECHANTILLONNAGE;
@@ -126,10 +119,8 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
         fluxCommande << "-i \"" << listeFichiersEntree[i] << "\" ";
     }
 
-    // 🎯 LOGIQUE UNIFIÉE : On utilise -filter_complex et [vout] dans TOUS les cas
     if (nbVideosMosaique == 1) {
         const int idxSeul = indexVideos[0];
-        // On isole proprement le flux unique dans [vout] pour calquer la structure multi-écrans
         fluxCommande << "-filter_complex \"[" << idxSeul << ":v]fps=30,scale=640:360,setsar=1,format=yuv420p[vout]\" "
                      << "-map \"[vout]\" -map " << indexRef << ":a ";
     } else {
@@ -179,7 +170,6 @@ float **M_VideoComplexe::extraireEtChargerAudios(const string *listeFichiersEntr
         tachesFutures.push_back(async(launch::async, [i, listeFichiersEntree] {
             string fichierTemporaire = TEMP_AUDIO_PREFIX + to_string(i) + ".bin";
 
-            // Extraction audio en format Raw Float 32-bit Little Endian, Mono
             string commande = "ffmpeg -y -hide_banner -loglevel error -i \"" + listeFichiersEntree[i] +
                               "\" -vn -f f32le -ac 1 -ar " + to_string(FREQUENCE_ECHANTILLONNAGE) +
                               " -t 60 \"" + fichierTemporaire + "\"";
@@ -223,7 +213,6 @@ float **M_VideoComplexe::extraireEtChargerAudios(const string *listeFichiersEntr
 }
 
 int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2, size_t taille2) {
-    // Calcul de la taille de FFT (prochaine puissance de 2 pour la performance)
     const size_t tailleInitiale = taille1 + taille2 - 1;
     const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitiale))));
     const size_t tailleFrequence = tailleFFT / 2 + 1;
@@ -231,7 +220,6 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     auto destructeurReel = [](double *p) { fftw_free(p); };
     auto destructeurComplexe = [](fftw_complex *p) { fftw_free(p); };
 
-    // Allocation via FFTW pour garantir l'alignement mémoire (SIMD)
     const unique_ptr<double, decltype(destructeurReel)> signalTemporel1(fftw_alloc_real(tailleFFT), destructeurReel);
     const unique_ptr<double, decltype(destructeurReel)> signalTemporel2(fftw_alloc_real(tailleFFT), destructeurReel);
     const unique_ptr<double, decltype(destructeurReel)> signalResultat(fftw_alloc_real(tailleFFT), destructeurReel);
@@ -243,14 +231,12 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectreCroise(
         fftw_alloc_complex(tailleFrequence), destructeurComplexe);
 
-    // Centrage des signaux (soustraction de la moyenne) pour améliorer la précision de corrélation
     const double moyenne1 = accumulate(sig1, sig1 + taille1, 0.0) / static_cast<double>(taille1);
     const double moyenne2 = accumulate(sig2, sig2 + taille2, 0.0) / static_cast<double>(taille2);
 
     for (size_t i = 0; i < taille1; ++i) signalTemporel1.get()[i] = sig1[i] - moyenne1;
     for (size_t i = 0; i < taille2; ++i) signalTemporel2.get()[i] = sig2[i] - moyenne2;
 
-    // Zero-padding pour atteindre la taille de FFT
     fill(signalTemporel1.get() + taille1, signalTemporel1.get() + tailleFFT, 0.0);
     fill(signalTemporel2.get() + taille2, signalTemporel2.get() + tailleFFT, 0.0);
 
@@ -266,7 +252,6 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     fftw_execute(planAller1);
     fftw_execute(planAller2);
 
-    // Multiplication dans le domaine fréquentiel (Convolution avec signal 2 conjugué)
     for (size_t i = 0; i < tailleFrequence; ++i) {
         const double reel1 = spectre1.get()[i][0];
         const double imag1 = spectre1.get()[i][1];
@@ -286,7 +271,6 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
 
     fftw_execute(planRetour);
 
-    // Recherche du pic de corrélation
     const auto iterateurMax = max_element(signalResultat.get(), signalResultat.get() + tailleFFT);
     const size_t indexMax = distance(signalResultat.get(), iterateurMax);
 
@@ -297,7 +281,6 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
         fftw_destroy_plan(planRetour);
     }
 
-    // Gestion de la circularité de la FFT pour obtenir un décalage négatif ou positif
     const int indexMaxSigne = static_cast<int>(indexMax);
     const int tailleFFTSigne = static_cast<int>(tailleFFT);
 

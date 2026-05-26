@@ -8,7 +8,6 @@ M_ReceveurUDP::M_ReceveurUDP(int port, const string& adresseMulticast) {
 
     descripteurSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     if (descripteurSocket != INVALID_SOCKET) {
-        // Permettre à d'autres sockets de se lier à ce port
         int opt = 1;
         setsockopt(descripteurSocket, SOL_SOCKET, SO_REUSEADDR, (const char*)&opt, sizeof(opt));
 
@@ -27,10 +26,9 @@ M_ReceveurUDP::M_ReceveurUDP(int port, const string& adresseMulticast) {
             return;
         }
 
-        // Joindre le groupe multicast
         inet_pton(AF_INET, adresseMulticast.c_str(), &groupeMulticast.imr_multiaddr);
         groupeMulticast.imr_interface.s_addr = INADDR_ANY;
-        
+
         if (setsockopt(descripteurSocket, IPPROTO_IP, IP_ADD_MEMBERSHIP, (const char*)&groupeMulticast, sizeof(groupeMulticast)) < 0) {
 #ifdef _WIN32
             closesocket(descripteurSocket);
@@ -41,7 +39,6 @@ M_ReceveurUDP::M_ReceveurUDP(int port, const string& adresseMulticast) {
             return;
         }
 
-        // Mode non-bloquant
 #ifdef _WIN32
         u_long mode = 1;
         ioctlsocket(descripteurSocket, FIONBIO, &mode);
@@ -84,8 +81,9 @@ int M_ReceveurUDP::recevoirAvecTimeout(char* buffer, const int tailleMax, string
     tv.tv_sec = timeoutMs / 1000;
     tv.tv_usec = (timeoutMs % 1000) * 1000;
 
+    // Utilisation de la fonction select pour surveiller le descripteur de socket
     int pret = select(static_cast<int>(descripteurSocket) + 1, &ensemble, nullptr, nullptr, &tv);
-    if (pret <= 0) return pret; // 0 = timeout, -1 = erreur
+    if (pret <= 0) return pret;
 
     sockaddr_in adresseSource{};
     SockLenType tailleSource = sizeof(adresseSource);

@@ -4,11 +4,8 @@
 #include <iomanip>
 #include <stdexcept>
 
-// ================================================================
-// M_JsonUtil V1 — implementation RFC 8259 pour objets JSON plats.
-// ================================================================
-
 void M_JsonUtil::sauterEspaces(const string &json, size_t &pos) {
+    // Avancement de l index tant qu un caractere de controle ou espace est detecte
     while (pos < json.size() &&
            (json[pos] == ' ' || json[pos] == '\t' ||
             json[pos] == '\r' || json[pos] == '\n')) {
@@ -21,20 +18,13 @@ string M_JsonUtil::echapperChaine(const string &s) {
     out.reserve(s.size() + 4);
     for (unsigned char c: s) {
         switch (c) {
-            case '"': out += "\\\"";
-                break;
-            case '\\': out += "\\\\";
-                break;
-            case '\b': out += "\\b";
-                break;
-            case '\f': out += "\\f";
-                break;
-            case '\n': out += "\\n";
-                break;
-            case '\r': out += "\\r";
-                break;
-            case '\t': out += "\\t";
-                break;
+            case '"': out += "\\\""; break;
+            case '\\': out += "\\\\"; break;
+            case '\b': out += "\\b"; break;
+            case '\f': out += "\\f"; break;
+            case '\n': out += "\\n"; break;
+            case '\r': out += "\\r"; break;
+            case '\t': out += "\\t"; break;
             default:
                 if (c < 0x20) {
                     ostringstream oss;
@@ -63,22 +53,14 @@ string M_JsonUtil::lireChaine(const string &json, size_t &pos) {
                 throw runtime_error("M_JsonUtil::lireChaine : sequence d'echappement tronquee");
             }
             switch (json[pos]) {
-                case '"': resultat += '"';
-                    break;
-                case '\\': resultat += '\\';
-                    break;
-                case '/': resultat += '/';
-                    break;
-                case 'b': resultat += '\b';
-                    break;
-                case 'f': resultat += '\f';
-                    break;
-                case 'n': resultat += '\n';
-                    break;
-                case 'r': resultat += '\r';
-                    break;
-                case 't': resultat += '\t';
-                    break;
+                case '"': resultat += '"'; break;
+                case '\\': resultat += '\\'; break;
+                case '/': resultat += '/'; break;
+                case 'b': resultat += '\b'; break;
+                case 'f': resultat += '\f'; break;
+                case 'n': resultat += '\n'; break;
+                case 'r': resultat += '\r'; break;
+                case 't': resultat += '\t'; break;
                 case 'u': {
                     if (pos + 4 >= json.size()) {
                         throw runtime_error("M_JsonUtil::lireChaine : \\uXXXX tronque");
@@ -115,6 +97,7 @@ string M_JsonUtil::lireChaine(const string &json, size_t &pos) {
 
 string M_JsonUtil::lireValeurBrute(const string &json, size_t &pos) {
     string valeur;
+    // Accumulation des caracteres de la valeur jusqu au prochain separateur structurel
     while (pos < json.size() &&
            json[pos] != ',' && json[pos] != '}' &&
            json[pos] != ' ' && json[pos] != '\t' &&
@@ -151,6 +134,7 @@ map<string, string> M_JsonUtil::parser(const string &json) {
     if (pos >= json.size() || json[pos] != '{') return resultat;
     pos++;
 
+    // Analyse syntaxique de la chaine JSON par itérations successives
     while (pos < json.size()) {
         sauterEspaces(json, pos);
         if (pos >= json.size() || json[pos] == '}') break;

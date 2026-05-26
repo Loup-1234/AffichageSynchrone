@@ -5,8 +5,9 @@ Prérequis
 ---------
 Pour compiler ce projet, vous aurez besoin des éléments suivants :
 
-* **C++20** (via GCC, Clang ou MSVC)
+* **C++23** (via GCC, Clang ou MSVC)
 * **CMake** (version 3.10 ou supérieure)
 * **Raylib** & **Raygui** (pour l'interface graphique)
 * **LibVLC** (pour la lecture vidéo)
 * **FFmpeg** & **FFTW3** (pour le traitement de signal)
+* **SQLite3** (embarqué, pour la base de données)

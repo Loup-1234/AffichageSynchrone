@@ -29,7 +29,6 @@ void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
     if (threadRecherche.joinable()) threadRecherche.join();
 
     threadRecherche = thread([this]() {
-        // 1. Ajouter directement les informations du lecteur local
         map<string, string> localInfos = {
             {"ip", modeleLecteur.getIp()},
             {"mac", modeleLecteur.getMac()},

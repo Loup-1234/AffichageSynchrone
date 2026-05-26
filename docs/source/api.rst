@@ -1,14 +1,15 @@
 Référence de l'API (Classes C++)
 ================================
 
-Cette section détaille les classes principales du projet, extraites automatiquement depuis les sources.
+Cette section détaille les classes principales du projet AffichageSynchrone, extraites automatiquement par Doxygen et intégrées via Breathe.
 
-Interface Graphique
--------------------
-.. doxygenclass:: V_Master
+Interface Graphique et Contrôle
+-------------------------------
+.. doxygenclass:: Master
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 Contrôleur Principal
 --------------------
@@ -16,6 +17,7 @@ Contrôleur Principal
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 Gestion de Session et Vidéo
 ---------------------------
@@ -23,16 +25,19 @@ Gestion de Session et Vidéo
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 .. doxygenclass:: M_VideoComplexe
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 .. doxygenclass:: M_ConfigReseau
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 Communication Réseau
 --------------------
@@ -40,16 +45,19 @@ Communication Réseau
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
-.. doxygenclass:: M_ExpediteurUDP
+.. doxygenclass:: ExpediteurUDP_W
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 .. doxygenclass:: M_ServeurTFTP
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 Moteur de Lecture
 -----------------
@@ -57,6 +65,7 @@ Moteur de Lecture
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:
 
 Utilitaires
 -----------
@@ -64,3 +73,4 @@ Utilitaires
     :members:
     :protected-members:
     :private-members:
+    :undoc-members:

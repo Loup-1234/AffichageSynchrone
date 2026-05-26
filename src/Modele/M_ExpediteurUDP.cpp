@@ -36,6 +36,7 @@ M_ExpediteurUDP::M_ExpediteurUDP(const string &ip, const int port) {
 }
 
 M_ExpediteurUDP::~M_ExpediteurUDP() {
+    // Nettoyage de la socket et de la pile reseau selon le systeme d exploitation hote
     if (descripteurSocket != INVALID_SOCKET) {
 #ifdef _WIN32
         closesocket(descripteurSocket);

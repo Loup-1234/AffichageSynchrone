@@ -1,48 +1,74 @@
 #pragma once
 
 #include <string>
-#include <vector>
 
 using namespace std;
 
+/** @brief Fréquence utilisée pour l'échantillonnage des pistes audio extraites. */
+constexpr int FREQUENCE_ECHANTILLONNAGE = 44100;
+/** @brief Préfixe utilisé pour les fichiers binaires audio temporaires. */
+const string TEMP_AUDIO_PREFIX = "temp_audio_";
+
 /**
  * @class M_VideoComplexe
- * @brief Moteur de rendu multimédia exploitant FFmpeg pour la composition de flux.
- * * Cette classe encapsule la logique système de traitement vidéo. Elle assure l'isolation
- * des processus de rendu et la gestion sécurisée des ressources (fichiers temporaires, threads).
+ * @brief Module de traitement haute performance pour la synchronisation et la composition de vidéos.
+ *
+ * Cette classe permet de calculer les décalages temporels entre plusieurs vidéos par corrélation
+ * croisée acoustique et de produire une vidéo mosaïque finale via FFmpeg.
  */
 class M_VideoComplexe {
 public:
-    /** @brief Constructeur par défaut. */
-    M_VideoComplexe() = default;
-    /** @brief Destructeur par défaut. */
-    ~M_VideoComplexe() = default;
-
-    // Suppression de la copie pour garantir l'unicité du moteur de rendu
-    M_VideoComplexe(const M_VideoComplexe&) = delete;
-    M_VideoComplexe& operator=(const M_VideoComplexe&) = delete;
-
     /**
-     * @brief Génère une vidéo composite à partir de plusieurs flux sources.
-     * @param listeFichiers Pointeur vers le tableau des chemins d'accès des vidéos.
-     * @param nbVideos Nombre total de vidéos à composer.
-     * @param cheminSortie Chemin complet du fichier MP4 final généré.
+     * @brief Orchestre la génération de la vidéo complexe synchronisée.
+     * @param listeFichierEntree Tableau des chemins des vidéos sources.
+     * @param nbVideos Nombre de vidéos à traiter.
+     * @param fichierSortie Chemin du fichier MP4 final.
      */
-    void genererVideoComplexe(const string *listeFichiers, size_t nbVideos, const string &cheminSortie);
+    void genererVideoComplexe(const string* listeFichierEntree, size_t nbVideos, const string &fichierSortie);
 
 private:
     /**
-     * @brief Construit la ligne de commande système pour l'appel de FFmpeg.
-     * @param listeFichiers Tableau des chemins des vidéos.
+     * @brief Calcule les décalages (en secondes) de chaque vidéo par rapport à la première (référence).
+     * @param audios Tableau de pointeurs vers les échantillons audio (float).
+     * @param taillesAudios Tableau contenant le nombre d'échantillons par vidéo.
      * @param nbVideos Nombre de vidéos.
-     * @param decalages Pointeur vers les décalages de synchronisation temporelle.
-     * @param fichierSortie Chemin du fichier de destination.
-     * @return La commande shell complète formatée pour l'encodage H.264.
+     * @param listeFichiers Chemins des fichiers (pour log et détection du type).
+     * @return Un tableau dynamique de doubles contenant les décalages.
      */
-    string construireCommandeFFmpeg(const string *listeFichiers, size_t nbVideos,
-                                     const double *decalages, const string &fichierSortie);
+    double* calculerDecalages(const float* const* audios, const size_t* taillesAudios, size_t nbVideos, const string* listeFichiers);
 
-    static constexpr int FPS = 30;                 ///< Fréquence d'image cible pour le rendu.
-    static constexpr int LARGEUR_BASE = 640;       ///< Largeur standard d'un flux vidéo dans la mosaïque.
-    static constexpr int HAUTEUR_BASE = 360;       ///< Hauteur standard d'un flux vidéo dans la mosaïque.
+    /**
+     * @brief Génère la ligne de commande FFmpeg complexe (filtres xstack, scale, sync).
+     * @param listeFichierEntree Chemins des sources.
+     * @param nbVideos Nombre de vidéos.
+     * @param decalagesEnSecondes Valeurs de synchronisation calculées.
+     * @param fichierSortie Destination du fichier.
+     * @return La chaîne de caractères prête à être exécutée.
+     */
+    string construireCommandeFFmpeg(const string* listeFichierEntree, size_t nbVideos, const double* decalagesEnSecondes, const string &fichierSortie);
+
+    /**
+     * @brief Extrait les pistes audio des vidéos en parallèle et les charge en mémoire.
+     * @param listeFichierEntree Chemins des sources.
+     * @param nbVideos Nombre de vidéos.
+     * @param taillesAudios [out] Tableau rempli avec les tailles des flux chargés.
+     * @return Un tableau de pointeurs vers les données audio brutes.
+     */
+    float** extraireEtChargerAudios(const string* listeFichierEntree, size_t nbVideos, size_t* taillesAudios);
+
+    /**
+     * @brief Calcule la corrélation croisée entre deux signaux via FFT pour trouver le décalage optimal.
+     * @param video1 Signal de référence.
+     * @param taille1 Nombre d'échantillons signal 1.
+     * @param video2 Signal à synchroniser.
+     * @param taille2 Nombre d'échantillons signal 2.
+     * @return Le décalage en nombre d'échantillons.
+     */
+    int xcorr(const float* video1, size_t taille1, const float* video2, size_t taille2);
+
+    /**
+     * @brief Supprime les fichiers binaires temporaires créés durant l'extraction.
+     * @param nbVideos Nombre de fichiers à nettoyer.
+     */
+    void nettoyerTemporaires(int nbVideos);
 };

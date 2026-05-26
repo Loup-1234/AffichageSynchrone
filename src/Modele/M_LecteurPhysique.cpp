@@ -32,6 +32,7 @@ using namespace std;
 
 M_LecteurPhysique::M_LecteurPhysique()
 {
+    // Initialisation du coeur natif libVLC et d un lecteur dedie
     instanceVLC = libvlc_new(0, nullptr);
     lecteurVLC = libvlc_media_player_new(instanceVLC);
 }
@@ -46,7 +47,6 @@ float M_LecteurPhysique::getProgressionActuelle() const {
     return (t != -1) ? static_cast<float>(t) / 1000.0f : 0.0f;
 }
 
-// --- PARTIE VLC ---
 void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
     if (!filesystem::exists(cheminVideo)) return;
 
@@ -56,6 +56,7 @@ void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
     libvlc_media_player_set_media(lecteurVLC, media);
     libvlc_media_release(media);
 
+    // Configuration des callbacks memoire pour l extraction des images
     libvlc_video_set_callbacks(lecteurVLC, cb_verrouiller, cb_deverrouiller, nullptr, this);
     libvlc_video_set_format_callbacks(lecteurVLC, libvlc_video_format_cb(cb_configurerVideo), nullptr);
 
@@ -69,6 +70,7 @@ void M_LecteurPhysique::lireVideo(const string &cheminVideo) {
 
 bool M_LecteurPhysique::recupererFrameVideo(void *&outPixels, unsigned int &outLargeur, unsigned int &outHauteur,
                                             bool &outRedimensionnement) {
+    // Synchronisation par verrou pour empecher l écriture simultanée par LibVLC
     lock_guard lock(mutexImage);
     if (textureDoitEtreRedimensionnee || framePrete) {
         outPixels = pixelsVideo.data();
@@ -109,7 +111,6 @@ unsigned M_LecteurPhysique::cb_configurerVideo(void **opaque, char *chrominance,
     return 1;
 }
 
-// --- PARTIE MATÉRIELLE COMPATIBLE LINUX/WINDOWS ---
 void M_LecteurPhysique::collecterInfosLocales() {
     collecterIp();
     collecterMac();
@@ -128,7 +129,7 @@ void M_LecteurPhysique::collecterIp() {
             while (adapterInfo) {
                 if (adapterInfo->Type != MIB_IF_TYPE_LOOPBACK && string(adapterInfo->IpAddressList.IpAddress.String) != "0.0.0.0") {
                     m_ip = adapterInfo->IpAddressList.IpAddress.String;
-                    return; // On arrête dès qu'on a trouvé l'IP
+                    return;
                 }
                 adapterInfo = adapterInfo->Next;
             }
@@ -144,13 +145,13 @@ void M_LecteurPhysique::collecterIp() {
     for (ifaddrs *it = interfaces; it != nullptr; it = it->ifa_next) {
         if (it->ifa_addr == nullptr) continue;
         string nomIface(it->ifa_name);
-        if (nomIface == "lo") continue; // Ignorer la boucle locale
+        if (nomIface == "lo") continue;
         if (it->ifa_addr->sa_family == AF_INET) {
             char ipStr[INET_ADDRSTRLEN];
             auto *addr = reinterpret_cast<sockaddr_in *>(it->ifa_addr);
             inet_ntop(AF_INET, &addr->sin_addr, ipStr, sizeof(ipStr));
             m_ip = string(ipStr);
-            break; // On a trouvé l'IP, on sort de la boucle
+            break;
         }
     }
     freeifaddrs(interfaces);
@@ -173,7 +174,7 @@ void M_LecteurPhysique::collecterMac() {
                              adapterInfo->Address[0], adapterInfo->Address[1], adapterInfo->Address[2],
                              adapterInfo->Address[3], adapterInfo->Address[4], adapterInfo->Address[5]);
                     m_mac = macStr;
-                    return; // On a trouvé la MAC, on s'arrête
+                    return;
                 }
                 adapterInfo = adapterInfo->Next;
             }
@@ -188,10 +189,9 @@ void M_LecteurPhysique::collecterMac() {
         return mac;
     };
 
-    // On essaie les interfaces réseau communes sous Linux
     m_mac = lireMac("eth0");
     if (m_mac.empty()) m_mac = lireMac("wlan0");
-    if (m_mac.empty()) m_mac = lireMac("enp3s0"); // Nom d'interface fréquent sur les Linux modernes
+    if (m_mac.empty()) m_mac = lireMac("enp3s0");
     if (m_mac.empty()) m_mac = "00:00:00:00:00:00";
 #endif
 }
@@ -228,13 +228,9 @@ void M_LecteurPhysique::collecterOs() {
 
 void M_LecteurPhysique::collecterTailleEcran() {
 #ifdef _WIN32
-    // Récupération facile via l'API Windows
     m_largeurEcran = GetSystemMetrics(SM_CXSCREEN);
     m_hauteurEcran = GetSystemMetrics(SM_CYSCREEN);
 #else
-    // Sous Linux, sans bibliothèque graphique (comme X11 ou Wayland),
-    // il est difficile d'obtenir la résolution de manière native en C++ pur.
-    // Pour l'instant, on initialise à 0, ou on pourrait appeler une commande système comme xrandr.
     m_largeurEcran = 0;
     m_hauteurEcran = 0;
 #endif

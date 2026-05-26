@@ -9,7 +9,6 @@ M_TFTP_W::~M_TFTP_W() {
     WSACleanup();
 }
 
-// --- Méthode d'envoi (Silencieuse sur les blocs) ---
 void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
@@ -87,7 +86,6 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
             return;
         }
 
-        // L'affichage du bloc envoyé a été supprimé d'ici pour nettoyer la console
         if (bytesRead < BLOCK_SIZE) break;
         block++;
     }
@@ -97,7 +95,6 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     cout << "Transfert terminé !" << endl;
 }
 
-// --- Méthode de Réception (Silencieuse sur les blocs) ---
 bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
@@ -156,8 +153,6 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
             ack[3] = buf[3];
             sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
 
-            // L'affichage du bloc reçu a été supprimé d'ici pour garder la console propre
-
             if (n < 516) break;
             expectedBlock++;
         }
@@ -211,10 +206,6 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
     char ack[4] = {0, 4, 0, 0};
     sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
 
-    // =========================================================================
-    // CONFIGURATION DU TIMER (3 secondes)
-    // =========================================================================
-    // Sous Windows, SO_RCVTIMEO prend un entier représentant les millisecondes (3 000 ms = 3s)
     DWORD timeout = 3000;
 
     if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
@@ -223,14 +214,12 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
         closesocket(sock);
         return false;
     }
-    // =========================================================================
 
     uint16_t expectedBlock = 1;
 
     while (true) {
         n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&client, &clientLen);
 
-        // Gestion des erreurs de réception ou du timeout
         if (n == SOCKET_ERROR) {
             int err = WSAGetLastError();
             if (err == WSAETIMEDOUT) {
@@ -238,7 +227,6 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
             } else {
                 cerr << "Erreur de réception : " << err << endl;
             }
-            // On ferme proprement avant de quitter
             fichier.close();
             closesocket(sock);
             return false;

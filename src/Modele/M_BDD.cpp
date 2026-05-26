@@ -2,14 +2,17 @@
 #include <iostream>
 
 M_BDD::M_BDD() {
+    // Ouverture ou creation du fichier de base de donnees local SQLite
     sqlite3_open("../AffichageSynchroneBDD.db", &m_db);
 }
 
 void M_BDD::createTable(string nomTable) {
+    // Preparation de la requete de creation par defaut
     string query = "CREATE TABLE IF NOT EXISTS " + nomTable + " (Texte1 TEXT)";
 
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);
 
+    // Verification du resultat d execution du moteur SQLite
     if (exit != SQLITE_OK) {
         cout << "la table a mal ete cree" << endl;
     } else {
@@ -18,6 +21,7 @@ void M_BDD::createTable(string nomTable) {
 }
 
 int M_BDD::enregistrerDonnees(string nomTable, string nomColonnes, string values) {
+    // Insertion SQL classique
     string query = "INSERT INTO " + nomTable + " (" + nomColonnes + ") VALUES (" + values + ")";
 
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);
@@ -41,9 +45,11 @@ vector<vector<string>> M_BDD::recupereDonnees(string select, string from, string
         query += " WHERE " + where;
     }
 
+    // Preparation de la requete SQL et lecture du curseur de resultat
     if (sqlite3_prepare_v2(m_db, query.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
         int nbColonnes = sqlite3_column_count(stmt);
 
+        // Parcours de l ensemble des lignes retournées
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             vector<string> ligne;
             for (int i = 0; i < nbColonnes; i++) {
@@ -59,6 +65,7 @@ vector<vector<string>> M_BDD::recupereDonnees(string select, string from, string
     }
     sqlite3_finalize(stmt);
 
+    // Affichage console temporaire pour debug
     for (const auto& ligne : tableComplete) {
         for (const string& cellule : ligne) {
             cout << cellule << "   ";
@@ -70,6 +77,7 @@ vector<vector<string>> M_BDD::recupereDonnees(string select, string from, string
 }
 
 void M_BDD::actualiserDonnees(string nomTable, string nomColonne, string nomId, int id, string value) {
+    // Requete de mise a jour
     string query = "UPDATE " + nomTable + " SET " + nomColonne + " = '" + value + "' " + " WHERE " + nomId + " = " + to_string(id);
 
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);
@@ -82,6 +90,7 @@ void M_BDD::actualiserDonnees(string nomTable, string nomColonne, string nomId, 
 }
 
 void M_BDD::supprimerDonnees(string nomTable, string condition) {
+    // Requete de suppression de donnees avec condition clause WHERE
     string query = "DELETE FROM " + nomTable + " WHERE " + condition;
 
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);

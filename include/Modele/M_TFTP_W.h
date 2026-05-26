@@ -15,45 +15,42 @@ using namespace std;
 
 /**
  * @class M_TFTP_W
- * @brief Gestionnaire de transfert de fichiers via le protocole TFTP (Trivial File Transfer Protocol).
- * * Cette classe implémente les fonctions de base pour envoyer ou recevoir des fichiers
- * entre le Master et les clients distants. Elle gère la segmentation des données
- * en blocs (taille fixe) et la logique de retransmission en cas d'échec réseau.
+ * @brief Implémente le protocole de transfert de fichiers simplifié TFTP pour l'environnement Windows.
  */
 class M_TFTP_W {
+private:
+    const int BLOCK_SIZE = 512; /**< Taille fixe d'un bloc de données TFTP conforme au standard (512 octets). */
+    const int MAX_RETRIES = 5; /**< Nombre de tentatives de réémission maximales en cas de perte de paquet. */
+
 public:
     /**
-     * @brief Constructeur initialisant l'environnement réseau (WSAStartup pour Windows).
+     * @brief Constructeur initialisant l'utilisation de la bibliothèque Winsock.
      */
     M_TFTP_W();
 
     /**
-     * @brief Destructeur garantissant la fermeture propre des ressources réseau (WSACleanup).
+     * @brief Destructeur assurant le nettoyage et la désinitialisation de Winsock.
      */
     ~M_TFTP_W();
 
     /**
-     * @brief Transmet un fichier vers un client distant via TFTP.
-     * @param ipMaster Adresse IP de la cible recevant le fichier.
-     * @param cheminJson Chemin local du fichier source à envoyer.
+     * @brief Émet un fichier local vers un serveur TFTP distant en utilisant une requête WRQ.
+     * @param ipMaster Adresse IP de l'hôte récepteur distant.
+     * @param cheminJson Chemin complet ou relatif du fichier physique à envoyer.
      */
     void envoyer(string ipMaster, string cheminJson);
 
     /**
-     * @brief Reçoit un fichier envoyé par un client distant.
-     * @param fichierLocal Chemin où enregistrer le fichier reçu localement.
-     * @return True si le transfert est complet et intègre, False en cas d'erreur.
+     * @brief Initialise un serveur d'écoute TFTP passif pour stocker un fichier poussé par un client.
+     * @param fichierLocal Chemin et nom du fichier de sortie à créer localement.
+     * @return true si la totalité du fichier a été reçue et enregistrée, false sinon.
      */
     bool recevoirFichierPousse(const string& fichierLocal);
 
     /**
-     * @brief Spécifique au Master : reçoit un fichier poussé par un client distant.
-     * @param fichierLocal Chemin de sauvegarde sur le système de fichiers du Master.
-     * @return True si la réception réussit.
+     * @brief Serveur d'écoute TFTP dédié au Master, doté d'une gestion intégrée des délais d'attente (timeouts).
+     * @param fichierLocal Chemin et nom du fichier de sortie à créer localement.
+     * @return true si le transfert s'est correctement exécuté, false en cas de timeout ou d'erreur système.
      */
     bool recevoirFichierPousseMaster(const string& fichierLocal);
-
-private:
-    const int BLOCK_SIZE = 512;   ///< Taille standard d'un bloc TFTP (RFC 1350).
-    const int MAX_RETRIES = 5;    ///< Nombre maximal de tentatives de retransmission en cas de perte de paquet.
 };

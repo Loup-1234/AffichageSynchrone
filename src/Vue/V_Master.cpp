@@ -41,36 +41,28 @@ void V_Master::miseAJourDisposition() {
     const auto L = static_cast<float>(GetScreenWidth());
     const auto H = static_cast<float>(GetScreenHeight());
 
-    // Panneau gauche : Vidéos [0], [1], [10]
     zones[0] = {0, 48, largeurPanneauGauche, H - 96};
     zones[1] = {0, H - 48, largeurPanneauGauche, 48};
     zones[10] = {0, 0, largeurPanneauGauche, 48};
 
-    // Zone centrale : Affichage de la vidéo [2] et Séparateur [3]
     float largeurCentre = L - largeurPanneauGauche - largeurPanneauDroit;
     zones[2] = {largeurPanneauGauche, 0, largeurCentre, H - 72};
     zones[3] = {largeurPanneauGauche, H - 72, largeurCentre, 2};
 
-    // Barre de contrôle basse - Alignements & Paddings réparés
-    zones[4] = {largeurPanneauGauche + 8, H - 40, 32, 32};   // Bouton Play/Pause
-    zones[5] = {largeurPanneauGauche + 48, H - 72, 120, 32}; // Texte Horodatage
+    zones[4] = {largeurPanneauGauche + 8, H - 40, 32, 32};
+    zones[5] = {largeurPanneauGauche + 48, H - 72, 120, 32};
 
-    // FIX DU PADDING : On réduit légèrement la largeur de la timeline pour laisser de la place au bouton Mute
-    // Écart de sécurité : 48px à gauche (Play) + 180px à droite (Mute + Sliders) = 228px originels.
-    // En augmentant l'espace réservé à droite à 248px, on pousse le bouton Mute pour créer le padding.
     float largeurTimeline = largeurCentre - 248.0f;
     if (largeurTimeline < 50.0f) largeurTimeline = 50.0f;
 
-    zones[6] = {largeurPanneauGauche + 48, H - 40, largeurTimeline, 32}; // Barre de progression
+    zones[6] = {largeurPanneauGauche + 48, H - 40, largeurTimeline, 32};
 
-    // Ajustement des boutons de droite pour suivre le décalage (Padding fluide)
-    zones[7] = {L - largeurPanneauDroit - 190, H - 40, 32, 32};  // Bouton Mute décalé de 14px à gauche (Crée le padding vide !)
-    zones[8] = {L - largeurPanneauDroit - 150, H - 72, 142, 32}; // Texte Volume
-    zones[9] = {L - largeurPanneauDroit - 150, H - 40, 142, 32}; // Slider de Volume
+    zones[7] = {L - largeurPanneauDroit - 190, H - 40, 32, 32};
+    zones[8] = {L - largeurPanneauDroit - 150, H - 72, 142, 32};
+    zones[9] = {L - largeurPanneauDroit - 150, H - 40, 142, 32};
 
-    zones[11] = {L - largeurPanneauDroit - 150, 10.0f, 142.0f, 32.0f}; // Menu Vitesse
+    zones[11] = {L - largeurPanneauDroit - 150, 10.0f, 142.0f, 32.0f};
 
-    // Panneau droit : Lecteurs réseau
     zones[12] = {L - largeurPanneauDroit, 0, largeurPanneauDroit, H - 48};
     zones[13] = {L - largeurPanneauDroit, H - 48, largeurPanneauDroit, 48};
 }
@@ -418,7 +410,6 @@ void V_Master::gererBarreProgression() {
 }
 
 void V_Master::gererControlesVolume() {
-    // RESTAURATION STRICTE DU COMPORTEMENT D'ORIGINE (#128# pour MUET / #122# pour ACTIF)
     if (GuiButton(zones[7], estMuet ? "#128#" : "#122#")) {
         estMuet = !estMuet;
         controleur.modifierVolume(valeurVolume, estMuet);
