@@ -1,11 +1,12 @@
 #include "Modele/M_SessionLecture.h"
 #include "Modele/M_TFTP_W.h"
 #include "Modele/M_JsonUtil.h"
-#include "Modele/M_DecouverteReseau.h"
 #include <fstream>
 #include <iostream>
 
 using namespace std;
+
+M_SessionLecture::M_SessionLecture(const string &ip, int port) : config(&bdd, ip, port) {}
 
 void M_SessionLecture::configurerLecteurs(const vector<LecteurConfig>& configs) {
     m_lecteurs = configs;
@@ -72,22 +73,27 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
 #endif
 }
 
-vector<map<string, string>> M_SessionLecture::rechercherLecteurs(
-    const string &ipMulticast, const int portDecouverte, const int portReponse) {
+// Implémentation mise à jour de rechercherLecteurs
+vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
+    config.rechercherLecteurPhysique("JSON_recue"); // Récupère et stocke les données de la BDD
 
-    M_DecouverteReseau moteurDecouverte(ipMulticast, portDecouverte, portReponse);
-    moteurDecouverte.lancerDecouverte(2000);
+    config.visualiserLecteurPhysique();
 
+    vector<vector<string>> rawConfig = config.getConfigReseau();
     vector<map<string, string>> lecteursDetectes;
-    for (const string &cheminFichierJson : moteurDecouverte.getReponsesBrutes()) {
-        ifstream fichier(cheminFichierJson);
-        if (fichier) {
-            string contenuJson((istreambuf_iterator<char>(fichier)), istreambuf_iterator<char>());
-            auto infos = M_JsonUtil::parser(contenuJson);
-            if (!infos.empty()) lecteursDetectes.push_back(infos);
-        } else {
-            cerr << "[M_SessionLecture] Impossible de lire le fichier JSON de réponse: " << cheminFichierJson << endl;
+
+    // Les noms de colonnes doivent être en minuscules pour correspondre aux accès type .at("ip")
+    const vector<string> colonnes = {"id", "ip", "mac", "nb_videos"};
+
+    for (const auto& ligne : rawConfig) {
+        map<string, string> lecteur;
+        for (size_t i = 0; i < ligne.size() && i < colonnes.size(); ++i) {
+            lecteur[colonnes[i]] = ligne[i];
+        }
+        if (!lecteur.empty()) {
+            lecteursDetectes.push_back(lecteur);
         }
     }
+
     return lecteursDetectes;
 }

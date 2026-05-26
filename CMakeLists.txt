@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(AffichageSynchrone CXX)
+project(AffichageSynchrone CXX C)
 
 # Configuration C++
 set(CMAKE_CXX_STANDARD 23)
@@ -44,6 +44,10 @@ if(NOT EXISTS "${RAYGUI_HEADER_PATH}")
     )
 endif()
 
+# SQLite3
+add_library(sqlite_lib OBJECT libs/sqlite3/sqlite3.c)
+target_include_directories(sqlite_lib PUBLIC libs/sqlite3)
+
 # Fichiers du Projet
 set(SOURCE_FILES
         src/main.cpp
@@ -54,9 +58,10 @@ set(SOURCE_FILES
         src/Modele/M_SessionLecture.cpp
         src/Controleur/C_LecteurPhysiqueLocal.cpp
         src/Modele/M_LecteurPhysique.cpp
-        src/Modele/M_DecouverteReseau.cpp
         src/Modele/M_JsonUtil.cpp
         src/Modele/M_ReceveurUDP.cpp
+        src/Modele/M_BDD.cpp
+        src/Modele/M_configReseau.cpp
 )
 
 set(HEADER_FILES
@@ -67,10 +72,11 @@ set(HEADER_FILES
         include/Modele/M_SessionLecture.h
         include/Controleur/C_LecteurPhysiqueLocal.h
         include/Modele/M_LecteurPhysique.h
-        include/Modele/M_DecouverteReseau.h
         include/Modele/M_JsonUtil.h
         include/Modele/M_ReceveurUDP.h
         include/Modele/M_ProtocoleReseau.h
+        include/Modele/M_BDD.h
+        include/Modele/M_configReseau.h
 )
 
 # Création de l'Exécutable
@@ -99,6 +105,7 @@ if(WIN32)
             libvlc
             libvlccore
             iphlpapi
+            sqlite_lib
             "${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll"
     )
 else()

@@ -7,9 +7,9 @@ using namespace std;
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte,
                                                int portReponse, const vector<LecteurConfig> &configLecteurs, const string &cheminVideoMaster)
-    : m_cheminVideoMaster(cheminVideoMaster), udp(ipMulticast, portCommandes), m_configLecteurs(configLecteurs),
+    : m_cheminVideoMaster(cheminVideoMaster), udp(ipMulticast, portCommandes), session(ipMulticast, portDecouverte),
+      m_configLecteurs(configLecteurs),
       m_adresseMulticast(ipMulticast), m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
-
     session.configurerLecteurs(m_configLecteurs);
     modeleLecteur.collecterInfosLocales();
 
@@ -43,8 +43,7 @@ void C_LecteurPhysiqueLocal::lancerRechercheLecteurs() {
         cacheLecteurs.clear();
         cacheLecteurs.push_back(localInfos);
 
-        // 2. Lancer la recherche réseau pour les autres lecteurs
-        vector<map<string, string>> lecteursReseau = session.rechercherLecteurs(m_adresseMulticast, m_portDecouverte, m_portReponse);
+        vector<map<string, string>> lecteursReseau = session.rechercherLecteurs();
         cacheLecteurs.insert(cacheLecteurs.end(), lecteursReseau.begin(), lecteursReseau.end());
 
         resultatsRecherchePrets = true;
