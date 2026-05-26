@@ -242,7 +242,8 @@ Développé en **C++23**, le programme utilise des threads et des variables atom
 │   ├── Controleur/
 │   │   └── C_LecteurPhysiqueLocal.h
 │   ├── Modele/
-│   │   ├── M_DecouverteReseau.h
+│   │   ├── M_BDD.h
+│   │   ├── M_ConfigReseau.h
 │   │   ├── M_ExpediteurUDP.h
 │   │   ├── M_JsonUtil.h
 │   │   ├── M_LecteurPhysique.h
@@ -263,7 +264,8 @@ Développé en **C++23**, le programme utilise des threads et des variables atom
 │   ├── Controleur/
 │   │   └── C_LecteurPhysiqueLocal.cpp
 │   ├── Modele/
-│   │   ├── M_DecouverteReseau.cpp
+│   │   ├── M_BDD.cpp
+│   │   ├── M_ConfigReseau.cpp
 │   │   ├── M_ExpediteurUDP.cpp
 │   │   ├── M_JsonUtil.cpp
 │   │   ├── M_LecteurPhysique.cpp
@@ -314,17 +316,10 @@ constexpr int PORT_COMMANDES = 54321;
 constexpr int PORT_DECOUVERTE = 5000;
 constexpr int PORT_REPONSE = 5001;
 
-// Liste statique préconfigurée pour le recettage initial
-const vector<LecteurConfig> configurationReseau = {
-    {0, "127.0.0.1", 2},       // Master local (ID 0)
-    {1, "127.0.0.1", 2},       // Instance de test locale Slave (ID 1)
-    {2, "172.31.71.104", 2}    // Lecteur physique distant cible (ID 2)
-};
-
 const string DOSSIER_VIDEOS = "videos";
 const string CHEMIN_VIDEO_MASTER = "videosComplexes/VideoComplexe_0.mp4";
 
-V_Master master(IP_MULTICAST, PORT_COMMANDES, PORT_DECOUVERTE, PORT_REPONSE, configurationReseau, DOSSIER_VIDEOS, CHEMIN_VIDEO_MASTER);
+V_Master master(IP_MULTICAST, PORT_COMMANDES, PORT_DECOUVERTE, PORT_REPONSE, DOSSIER_VIDEOS, CHEMIN_VIDEO_MASTER);
 
 master.executer();
 

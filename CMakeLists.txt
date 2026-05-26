@@ -61,7 +61,7 @@ set(SOURCE_FILES
         src/Modele/M_JsonUtil.cpp
         src/Modele/M_ReceveurUDP.cpp
         src/Modele/M_BDD.cpp
-        src/Modele/M_configReseau.cpp
+        src/Modele/M_ConfigReseau.cpp
 )
 
 set(HEADER_FILES
@@ -76,7 +76,7 @@ set(HEADER_FILES
         include/Modele/M_ReceveurUDP.h
         include/Modele/M_ProtocoleReseau.h
         include/Modele/M_BDD.h
-        include/Modele/M_configReseau.h
+        include/Modele/M_ConfigReseau.h
 )
 
 # Création de l'Exécutable
