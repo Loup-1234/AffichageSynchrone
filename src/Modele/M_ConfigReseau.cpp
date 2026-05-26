@@ -1,18 +1,18 @@
 #include <iostream>
 
-#include "Modele/M_configReseau.h"
+#include "Modele/M_ConfigReseau.h"
 
 #include "Modele/M_TFTP_W.h"
 
-M_configReseau::M_configReseau(M_BDD* pMaBDD, const string &ip, int port) : Expediteur(ip, port), maM_BDD(pMaBDD), configReseau({}) {
+M_ConfigReseau::M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port) : Expediteur(ip, port), maM_BDD(pMaBDD), configReseau({}) {
 }
 
-void M_configReseau::visualiserLecteurPhysique() {
+void M_ConfigReseau::visualiserLecteurPhysique() {
     // Recuperation globale de la table cible stockee en base de donnees
     configReseau = maM_BDD->recupereDonnees("*", "config_reseau", "");
 }
 
-void M_configReseau::enregistrerJson(string fichierJson) {
+void M_ConfigReseau::enregistrerJson(string fichierJson) {
 
     ifstream fichier(fichierJson);
 
@@ -40,7 +40,7 @@ void M_configReseau::enregistrerJson(string fichierJson) {
     maM_BDD->enregistrerDonnees("config_reseau", colonnes, valeurs);
 }
 
-void M_configReseau::enregistrerConfigurationReseau(string dossierJson) {
+void M_ConfigReseau::enregistrerConfigurationReseau(string dossierJson) {
     // Iteration complete sur l ensemble des fichiers du dossier via le systeme de fichiers standard c++17
     for (const auto& entree : filesystem::directory_iterator(dossierJson)) {
 
@@ -50,7 +50,7 @@ void M_configReseau::enregistrerConfigurationReseau(string dossierJson) {
     }
 }
 
-void M_configReseau::rechercherLecteurPhysique(string fichierJson) {
+void M_ConfigReseau::rechercherLecteurPhysique(string fichierJson) {
 
     // Envoi d une commande specifique d initialisation reseau
     Expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
@@ -61,6 +61,6 @@ void M_configReseau::rechercherLecteurPhysique(string fichierJson) {
     enregistrerConfigurationReseau(fichierJson);
 }
 
-vector<vector<string>> M_configReseau::getConfigReseau() {
+vector<vector<string>> M_ConfigReseau::getConfigReseau() {
     return configReseau;
 }

@@ -11,13 +11,13 @@ using json = nlohmann::json;
 using namespace std;
 
 /**
- * @class M_configReseau
+ * @class M_ConfigReseau
  * @brief Gestionnaire de la configuration réseau des lecteurs physiques.
  *
  * Cette classe permet de récupérer les informations réseau depuis une base de données,
  * de les visualiser, et d'importer des configurations à partir de fichiers JSON.
  */
-class M_configReseau {
+class M_ConfigReseau {
 private:
     M_ExpediteurUDP Expediteur; /**< Instance de l'expéditeur UDP pour l'envoi de commandes. */
 
@@ -27,12 +27,12 @@ private:
 
 public:
     /**
-     * @brief Constructeur de la classe M_configReseau.
+     * @brief Constructeur de la classe M_ConfigReseau.
      * @param pMaBDD Pointeur vers l'instance de la base de données à utiliser.
      * @param ip Adresse IP de destination pour les commandes UDP.
      * @param port Port de destination pour les commandes UDP.
      */
-    M_configReseau(M_BDD* pMaBDD, const string &ip, int port);
+    M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port);
 
     /**
      * @brief Récupère et affiche les données des lecteurs physiques à l'écran.

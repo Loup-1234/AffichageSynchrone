@@ -3,7 +3,7 @@
 #include "M_VideoComplexe.h"
 #include "M_ProtocoleReseau.h"
 #include "M_BDD.h"
-#include "M_configReseau.h"
+#include "M_ConfigReseau.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -68,5 +68,5 @@ private:
     M_VideoComplexe instanceVideoComplexe; ///< Instance du moteur de composition vidéo FFmpeg.
     vector<LecteurConfig> m_lecteurs;      ///< Tableau dynamique des lecteurs sélectionnés pour la session courante.
     M_BDD bdd;                             ///< Instance d'accès et de requêtage à la base de données SQLite.
-    M_configReseau config;                 ///< Gestionnaire des topologies et de la découverte réseau.
+    M_ConfigReseau config;                 ///< Gestionnaire des topologies et de la découverte réseau.
 };

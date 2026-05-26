@@ -5,7 +5,7 @@ Cette section détaille les classes principales du projet AffichageSynchrone, ex
 
 Interface Graphique et Contrôle
 -------------------------------
-.. doxygenclass:: Master
+.. doxygenclass:: V_Master
     :members:
     :protected-members:
     :private-members:
@@ -41,19 +41,19 @@ Gestion de Session et Vidéo
 
 Communication Réseau
 --------------------
-.. doxygenclass:: M_DecouverteReseau
+.. doxygenclass:: M_ExpediteurUDP
     :members:
     :protected-members:
     :private-members:
     :undoc-members:
 
-.. doxygenclass:: ExpediteurUDP_W
+.. doxygenclass:: M_ReceveurUDP
     :members:
     :protected-members:
     :private-members:
     :undoc-members:
 
-.. doxygenclass:: M_ServeurTFTP
+.. doxygenclass:: M_TFTP_W
     :members:
     :protected-members:
     :private-members:
