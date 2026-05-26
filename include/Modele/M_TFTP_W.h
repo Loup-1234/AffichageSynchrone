@@ -24,4 +24,5 @@ public:
 
     void envoyer(string ipMaster, string cheminJson);
     bool recevoirFichierPousse(const string& fichierLocal);
+    bool recevoirFichierPousseMaster(const string& fichierLocal);
 };

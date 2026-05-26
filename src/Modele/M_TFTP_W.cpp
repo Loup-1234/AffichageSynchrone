@@ -168,3 +168,100 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
     cout << "Fichier vidéo reçu avec succès !" << endl;
     return true;
 }
+
+bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
+    SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
+    if (sock == INVALID_SOCKET) {
+        cerr << "Erreur création socket" << endl;
+        return false;
+    }
+
+    sockaddr_in server{};
+    server.sin_family = AF_INET;
+    server.sin_addr.s_addr = INADDR_ANY;
+
+    if (bind(sock, (sockaddr*)&server, sizeof(server)) < 0) {
+        cerr << "Erreur de bind" << endl;
+        closesocket(sock);
+        return false;
+    }
+
+    cout << "Serveur TFTP lancé  " << endl;
+
+    char buf[516];
+    sockaddr_in client{};
+    int clientLen = sizeof(client);
+
+    int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&client, &clientLen);
+    if (n < 4 || buf[1] != 2) {
+        cout << "WRQ invalide" << endl;
+        closesocket(sock);
+        return false;
+    }
+
+    ofstream fichier(fichierLocal, ios::binary);
+    if (!fichier) {
+        cout << "Impossible de créer le fichier local : " << fichierLocal << endl;
+        closesocket(sock);
+        return false;
+    }
+
+    cout << "Réception en cours de la vidéo vers : " << fichierLocal << endl;
+
+    char ack[4] = {0, 4, 0, 0};
+    sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
+
+    // =========================================================================
+    // CONFIGURATION DU TIMER (30 secondes)
+    // =========================================================================
+    // Sous Windows, SO_RCVTIMEO prend un entier représentant les millisecondes (30 000 ms = 30s)
+    DWORD timeout = 30000;
+    if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
+        cerr << "Erreur lors de la configuration du timeout" << endl;
+        fichier.close();
+        closesocket(sock);
+        return false;
+    }
+    // =========================================================================
+
+    uint16_t expectedBlock = 1;
+
+    while (true) {
+        n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&client, &clientLen);
+
+        // Gestion des erreurs de réception ou du timeout
+        if (n == SOCKET_ERROR) {
+            int err = WSAGetLastError();
+            if (err == WSAETIMEDOUT) {
+                cerr << "Erreur : Temps d'attente dépassé (Timeout de 30s). Abandon." << endl;
+            } else {
+                cerr << "Erreur de réception : " << err << endl;
+            }
+            // On ferme proprement avant de quitter
+            fichier.close();
+            closesocket(sock);
+            return false;
+        }
+
+        if (n < 4) continue;
+
+        uint16_t opcode = ((unsigned char)buf[0] << 8) | (unsigned char)buf[1];
+        uint16_t block  = ((unsigned char)buf[2] << 8) | (unsigned char)buf[3];
+
+        if (opcode == 3 && block == expectedBlock) {
+            fichier.write(buf + 4, n - 4);
+
+            ack[2] = buf[2];
+            ack[3] = buf[3];
+            sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
+
+            if (n < 516) break;
+            expectedBlock++;
+        }
+    }
+
+    fichier.close();
+    closesocket(sock);
+    cout << "Fichier vidéo reçu avec succès !" << endl;
+    return true;
+}
