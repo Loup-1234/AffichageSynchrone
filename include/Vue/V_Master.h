@@ -2,48 +2,47 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 #include "Controleur/C_LecteurPhysiqueLocal.h"
-
-using namespace std;
 
 /**
  * @class V_Master
- * @brief Composant de l'interface graphique (IHM) pilotant la grappe d'écrans.
+ * @brief Classe principale gérant l'affichage graphique et les événements de saisie.
  */
 class V_Master {
 public:
     /**
-     * @brief Constructeur de V_Master.
-     * @param ipMulticast Adresse IP Multicast pour la synchronisation.
-     * @param portCommandes Port UDP pour les ordres de lecture.
-     * @param portDecouverte Port d'écoute pour la découverte des nœuds.
-     * @param portReponse Port de retour pour l'identification.
-     * @param dossierSourceVideos Répertoire contenant les fichiers multimédias.
-     * @param cheminVideoMaster Chemin de destination pour la composition locale.
+     * @brief Constructeur de l'IHM.
+     * @param ipMulticast Paramètres réseau pour le contrôleur.
+     * @param pCmd Ports de communication.
+     * @param pDec Ports de découverte.
+     * @param pRep Ports de réponse.
+     * @param dossier Dossier contenant les médias.
+     * @param cheminMaster Chemin du Master local.
      */
-    V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-             const string &dossierSourceVideos, const string &cheminVideoMaster);
+    V_Master(const string &ipMulticast, int pCmd, int pDec, int pRep, const string &dossier, const string &cheminMaster);
+    ~V_Master() = default;
 
-    /**
-     * @brief Lance la boucle principale de rendu de l'interface utilisateur.
-     */
+    /** @brief Boucle principale de l'application (Main Loop). */
     void executer();
 
     /**
-     * @brief Récupère la liste des adresses IP sélectionnées par l'utilisateur.
-     * @return Vecteur contenant les adresses IP actives.
+     * @brief Retourne les adresses IP sélectionnées dans l'interface.
+     * @return Vecteur d'IP.
      */
     vector<string> getLecteursSelectionnes() const;
 
     /**
-     * @brief Récupère les chemins des vidéos cochées dans la liste.
-     * @return Vecteur des chemins complets vers les vidéos.
+     * @brief Retourne les chemins des vidéos sélectionnées.
+     * @return Vecteur de chemins fichiers.
      */
     vector<string> getVideosSelectionnees() const;
 
 private:
-    C_LecteurPhysiqueLocal controleur; ///< Instance du contrôleur associé.
-    string m_dossierVideos;            ///< Répertoire source des fichiers.
-    void chargerListeVideos();         ///< Charge la liste depuis le répertoire.
-    void miseAJourDisposition();       ///< Actualise la grille de l'IHM.
+    unique_ptr<C_LecteurPhysiqueLocal> m_controleur; ///< Contrôleur géré par pointeur intelligent.
+    string m_dossierVideos;                          ///< Répertoire source.
+    bool m_fenetreOuverte;                           ///< État de la fenêtre.
+
+    void dessinerInterface();                        ///< Rendu graphique des éléments Raylib.
+    void gererEntreesClavier();                      ///< Gestion des raccourcis et entrées utilisateur.
 };

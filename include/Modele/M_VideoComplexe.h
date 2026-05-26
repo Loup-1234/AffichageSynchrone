@@ -2,44 +2,47 @@
 
 #include <string>
 #include <vector>
-#include <future>
 
 using namespace std;
 
 /**
  * @class M_VideoComplexe
- * @brief Moteur de traitement multimédia exploitant FFmpeg pour extraire, analyser et fusionner les flux vidéo.
+ * @brief Moteur de rendu multimédia exploitant FFmpeg pour la composition de flux.
+ * * Cette classe encapsule la logique système de traitement vidéo. Elle assure l'isolation
+ * des processus de rendu et la gestion sécurisée des ressources (fichiers temporaires, threads).
  */
 class M_VideoComplexe {
 public:
+    /** @brief Constructeur par défaut. */
+    M_VideoComplexe() = default;
+    /** @brief Destructeur par défaut. */
+    ~M_VideoComplexe() = default;
+
+    // Suppression de la copie pour garantir l'unicité du moteur de rendu
+    M_VideoComplexe(const M_VideoComplexe&) = delete;
+    M_VideoComplexe& operator=(const M_VideoComplexe&) = delete;
+
     /**
-     * @brief Point d'entrée pour la génération de la vidéo mosaïque ou du flux unique calibré.
-     * @param listeFichiers Tableau contenant les chemins d'accès vers les vidéos sources.
-     * @param nbVideos Nombre de vidéos présentes au sein du tableau.
-     * @param cheminSortie Chemin d'enregistrement complet du fichier MP4 composite généré.
+     * @brief Génère une vidéo composite à partir de plusieurs flux sources.
+     * @param listeFichiers Pointeur vers le tableau des chemins d'accès des vidéos.
+     * @param nbVideos Nombre total de vidéos à composer.
+     * @param cheminSortie Chemin complet du fichier MP4 final généré.
      */
     void genererVideoComplexe(const string *listeFichiers, size_t nbVideos, const string &cheminSortie);
 
 private:
     /**
-     * @brief Extrait de manière asynchrone et parallèle les pistes audio brutes des fichiers sources.
-     * @param listeFichiersEntree Tableau des chemins d'accès des fichiers vidéo.
-     * @param nbVideos Nombre total de vidéos à traiter en parallèle.
-     * @param taillesAudios Tableau complété par la méthode pour stocker le nombre d'échantillons de chaque flux.
-     * @return Un tableau de pointeurs vers les segments de données audio flottantes (float*).
+     * @brief Construit la ligne de commande système pour l'appel de FFmpeg.
+     * @param listeFichiers Tableau des chemins des vidéos.
+     * @param nbVideos Nombre de vidéos.
+     * @param decalages Pointeur vers les décalages de synchronisation temporelle.
+     * @param fichierSortie Chemin du fichier de destination.
+     * @return La commande shell complète formatée pour l'encodage H.264.
      */
-    float **extraireEtChargerAudios(const string *listeFichiersEntree, size_t nbVideos, size_t *taillesAudios);
+    string construireCommandeFFmpeg(const string *listeFichiers, size_t nbVideos,
+                                     const double *decalages, const string &fichierSortie);
 
-    /**
-     * @brief Construit la syntaxe de la commande shell FFmpeg adaptée selon le nombre de vidéos à traiter.
-     * @param listeFichiersEntree Tableau des chemins d'accès des fichiers vidéo.
-     * @param nbVideos Nombre total de vidéos associées au lecteur.
-     * @param decalagesEnSecondes Tableau des décalages temporels de synchronisation calculés pour chaque flux.
-     * @param fichierSortie Chemin cible du fichier MP4 de sortie.
-     * @return La chaîne de caractères de la commande FFmpeg prête à l'exécution système.
-     */
-    string construireCommandeFFmpeg(const string *listeFichiersEntree, size_t nbVideos, const double *decalagesEnSecondes, const string &fichierSortie);
-
-    static constexpr int FREQUENCE_ECHANTILLONNAGE = 44100; ///< Fréquence de référence utilisée pour l'analyse audio.
-    const string TEMP_AUDIO_PREFIX = "temp_audio_";        ///< Préfixe des fichiers binaires temporaires d'extraction.
+    static constexpr int FPS = 30;                 ///< Fréquence d'image cible pour le rendu.
+    static constexpr int LARGEUR_BASE = 640;       ///< Largeur standard d'un flux vidéo dans la mosaïque.
+    static constexpr int HAUTEUR_BASE = 360;       ///< Hauteur standard d'un flux vidéo dans la mosaïque.
 };
