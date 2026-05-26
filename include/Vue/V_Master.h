@@ -10,9 +10,8 @@ using namespace std;
 
 class V_Master {
 public:
-    // Signature synchronisée à 7 arguments avec LecteurConfig
     V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-             const vector<LecteurConfig> &specLecteurs, const string &dossierSourceVideos, const string &cheminVideoMaster);
+             const string &dossierSourceVideos, const string &cheminVideoMaster);
     ~V_Master();
     void executer();
 

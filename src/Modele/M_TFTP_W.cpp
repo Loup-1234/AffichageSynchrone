@@ -212,10 +212,11 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
     sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
 
     // =========================================================================
-    // CONFIGURATION DU TIMER (30 secondes)
+    // CONFIGURATION DU TIMER (3 secondes)
     // =========================================================================
-    // Sous Windows, SO_RCVTIMEO prend un entier représentant les millisecondes (30 000 ms = 30s)
-    DWORD timeout = 30000;
+    // Sous Windows, SO_RCVTIMEO prend un entier représentant les millisecondes (3 000 ms = 3s)
+    DWORD timeout = 3000;
+
     if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
         cerr << "Erreur lors de la configuration du timeout" << endl;
         fichier.close();

@@ -52,7 +52,7 @@ void M_configReseau::rechercherLecteurPhysique(string fichierJson) {
 
     M_TFTP_W tftp;
 
-    tftp.recevoirFichierPousse( "JSON_recue");
+    //tftp.recevoirFichierPousseMaster( "JSON_recue");
 
     enregistrerConfigurationReseau(fichierJson);
 }

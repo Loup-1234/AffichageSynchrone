@@ -6,11 +6,9 @@
 using namespace std;
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte,
-                                               int portReponse, const vector<LecteurConfig> &configLecteurs, const string &cheminVideoMaster)
+                                               int portReponse, const string &cheminVideoMaster)
     : m_cheminVideoMaster(cheminVideoMaster), udp(ipMulticast, portCommandes), session(ipMulticast, portDecouverte),
-      m_configLecteurs(configLecteurs),
       m_adresseMulticast(ipMulticast), m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
-    session.configurerLecteurs(m_configLecteurs);
     modeleLecteur.collecterInfosLocales();
 
     if (filesystem::exists(m_cheminVideoMaster)) {
@@ -56,21 +54,21 @@ vector<map<string, string>> C_LecteurPhysiqueLocal::getDerniersLecteursTrouves()
     return cacheLecteurs;
 }
 
-void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers) {
-    if (generationEnCours || fichiers.size() < 2) return;
+void C_LecteurPhysiqueLocal::initialiserSession(const vector<string> &fichiers, const vector<string> &lecteursSelectionnes) {
+    if (generationEnCours) return;
 
     modeleLecteur.pause();
     generationEnCours = true;
 
     if (threadGeneration.joinable()) threadGeneration.join();
 
-    threadGeneration = thread([this, fichiers]() {
+    threadGeneration = thread([this, fichiers, lecteursSelectionnes]() {
         try {
             if (!filesystem::exists(m_dossierSortie)) {
                 filesystem::create_directory(m_dossierSortie);
             }
 
-            session.genererVideoComplexe(fichiers, m_dossierSortie);
+            session.genererVideoComplexe(fichiers, m_dossierSortie, lecteursSelectionnes);
 
             transfertEnCours = true;
             session.uploaderVideoComplexe(m_dossierSortie);

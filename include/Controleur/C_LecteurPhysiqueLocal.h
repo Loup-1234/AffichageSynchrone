@@ -14,10 +14,10 @@ using namespace std;
 class C_LecteurPhysiqueLocal {
 public:
     C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-                           const vector<LecteurConfig> &configLecteurs, const string &cheminVideoMaster);
+                           const string &cheminVideoMaster);
     ~C_LecteurPhysiqueLocal();
 
-    void initialiserSession(const vector<string> &fichiers);
+    void initialiserSession(const vector<string> &fichiers, const vector<string> &lecteursSelectionnes);
     void basculerPlayPause();
     void modifierVolume(float volume, bool muet);
     void modifierProgression(float progression, bool enGlissement, bool restaurerLecture = false);

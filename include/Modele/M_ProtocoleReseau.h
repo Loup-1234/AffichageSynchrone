@@ -53,10 +53,11 @@ struct PaquetControle {
 
 /**
  * @struct LecteurConfig
- * @brief Configuration propre et typée pour un lecteur cible.
+ * @brief Configuration propre, typée et reliée à la BDD pour un lecteur cible.
  */
 struct LecteurConfig {
     int id;
+    string mac;
     string ip;
     int nbVideosCapacite;
 };

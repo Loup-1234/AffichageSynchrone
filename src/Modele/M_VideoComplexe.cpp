@@ -106,7 +106,6 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
     constexpr int indexRef = 0;
     const string &cheminRef = listeFichiersEntree[indexRef];
 
-    // Détermination si la référence est une piste audio pure (sans flux vidéo)
     string cheminMinuscule = cheminRef;
     ranges::transform(cheminMinuscule, cheminMinuscule.begin(), ::tolower);
     const bool refEstAudioSeul = cheminMinuscule.ends_with(".mp3") || cheminMinuscule.ends_with(".wav");
@@ -119,48 +118,48 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
         indexVideos[nbVideosMosaique++] = static_cast<int>(i);
     }
 
-    // Calcul de la géométrie de la mosaïque (grille carrée optimisée)
-    const int nbColonnes = ceil(sqrt(nbVideosMosaique));
-    constexpr int largeurVideo = 640;
-    constexpr int hauteurVideo = 360;
-
     ostringstream fluxCommande;
     fluxCommande << "ffmpeg -y -hide_banner -loglevel error ";
 
-    // Ajout des entrées avec leurs décalages respectifs calculés
     for (size_t i = 0; i < nbVideos; ++i) {
         if (decalagesEnSecondes[i] > 0) fluxCommande << "-ss " << decalagesEnSecondes[i] << " ";
         fluxCommande << "-i \"" << listeFichiersEntree[i] << "\" ";
     }
 
-    fluxCommande << "-filter_complex \"";
+    // 🎯 LOGIQUE UNIFIÉE : On utilise -filter_complex et [vout] dans TOUS les cas
+    if (nbVideosMosaique == 1) {
+        const int idxSeul = indexVideos[0];
+        // On isole proprement le flux unique dans [vout] pour calquer la structure multi-écrans
+        fluxCommande << "-filter_complex \"[" << idxSeul << ":v]fps=30,scale=640:360,setsar=1,format=yuv420p[vout]\" "
+                     << "-map \"[vout]\" -map " << indexRef << ":a ";
+    } else {
+        fluxCommande << "-filter_complex \"";
 
-    // Mise à l'échelle et normalisation du framerate pour chaque flux vidéo
-    for (size_t i = 0; i < nbVideosMosaique; ++i) {
-        const int idx = indexVideos[i];
-        fluxCommande << "[" << idx << ":v]fps=30,scale=" << largeurVideo << ":" << hauteurVideo
-                << ",setsar=1,format=yuv420p[v" << i << "];";
+        for (size_t i = 0; i < nbVideosMosaique; ++i) {
+            const int idx = indexVideos[i];
+            fluxCommande << "[" << idx << ":v]fps=30,scale=640:360,setsar=1,format=yuv420p[v" << i << "];";
+        }
+
+        for (size_t i = 0; i < nbVideosMosaique; ++i) fluxCommande << "[v" << i << "]";
+
+        const int nbColonnes = ceil(sqrt(nbVideosMosaique));
+        constexpr int largeurVideo = 640;
+        constexpr int hauteurVideo = 360;
+
+        fluxCommande << "xstack=inputs=" << nbVideosMosaique << ":shortest=1:fill=black:layout=";
+
+        for (size_t i = 0; i < nbVideosMosaique; ++i) {
+            const int ligne = static_cast<int>(i) / nbColonnes;
+            const int colonne = static_cast<int>(i) % nbColonnes;
+            if (i > 0) fluxCommande << "|";
+            fluxCommande << (colonne * largeurVideo) << "_" << (ligne * hauteurVideo);
+        }
+
+        fluxCommande << "[vout]\" -map \"[vout]\" -map " << indexRef << ":a ";
     }
 
-    for (size_t i = 0; i < nbVideosMosaique; ++i) fluxCommande << "[v" << i << "]";
-
-    // Assemblage spatial via xstack
-    fluxCommande << "xstack=inputs=" << nbVideosMosaique << ":shortest=1:fill=black:layout=";
-
-    for (size_t i = 0; i < nbVideosMosaique; ++i) {
-        const int ligne = static_cast<int>(i) / nbColonnes;
-        const int colonne = static_cast<int>(i) % nbColonnes;
-        if (i > 0) fluxCommande << "|";
-        fluxCommande << (colonne * largeurVideo) << "_" << (ligne * hauteurVideo);
-    }
-
-    fluxCommande << "[vout]\" ";
-
-    // Mapping final : vidéo mosaïque + piste audio de la vidéo de référence uniquement
-    fluxCommande << "-map \"[vout]\" "
-            << "-map " << indexRef << ":a "
-            << "-c:v libx264 -preset ultrafast -pix_fmt yuv420p "
-            << "\"" << fichierSortie << "\"";
+    fluxCommande << "-c:v libx264 -preset ultrafast -pix_fmt yuv420p "
+                 << "\"" << fichierSortie << "\"";
 
     delete[] indexVideos;
     return fluxCommande.str();
@@ -173,10 +172,11 @@ float **M_VideoComplexe::extraireEtChargerAudios(const string *listeFichiersEntr
         size_t taille;
     };
 
-    future<ResultatAudio> *tachesFutures = new future<ResultatAudio>[nbVideos];
+    vector<future<ResultatAudio>> tachesFutures;
+    tachesFutures.reserve(nbVideos);
 
     for (size_t i = 0; i < nbVideos; ++i) {
-        tachesFutures[i] = async(launch::async, [i, listeFichiersEntree] {
+        tachesFutures.push_back(async(launch::async, [i, listeFichiersEntree] {
             string fichierTemporaire = TEMP_AUDIO_PREFIX + to_string(i) + ".bin";
 
             // Extraction audio en format Raw Float 32-bit Little Endian, Mono
@@ -185,7 +185,7 @@ float **M_VideoComplexe::extraireEtChargerAudios(const string *listeFichiersEntr
                               " -t 60 \"" + fichierTemporaire + "\"";
 
             if (system(commande.c_str()) != 0) {
-                throw runtime_error("Erreur FFmpeg : " + listeFichiersEntree[i]);
+                throw runtime_error("Fichier introuvable ou illisible par FFmpeg -> " + listeFichiersEntree[i]);
             }
 
             const auto tailleEnOctets = filesystem::file_size(fichierTemporaire);
@@ -200,17 +200,25 @@ float **M_VideoComplexe::extraireEtChargerAudios(const string *listeFichiersEntr
 
             fichierAudio.read(reinterpret_cast<char *>(echantillons), tailleEnOctets);
             return ResultatAudio{echantillons, nbEchantillons};
-        });
+        }));
     }
 
-    float **audios = new float *[nbVideos];
-    for (size_t i = 0; i < nbVideos; ++i) {
-        ResultatAudio res = tachesFutures[i].get();
-        audios[i] = res.donnees;
-        taillesAudios[i] = res.taille;
+    float **audios = new float *[nbVideos]();
+
+    try {
+        for (size_t i = 0; i < nbVideos; ++i) {
+            ResultatAudio res = tachesFutures[i].get();
+            audios[i] = res.donnees;
+            taillesAudios[i] = res.taille;
+        }
+    } catch (...) {
+        for (size_t i = 0; i < nbVideos; ++i) {
+            if (audios[i] != nullptr) delete[] audios[i];
+        }
+        delete[] audios;
+        throw;
     }
 
-    delete[] tachesFutures;
     return audios;
 }
 

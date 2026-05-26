@@ -13,8 +13,8 @@ using namespace std;
 namespace fs = filesystem;
 
 V_Master::V_Master(const string &ipMulticast, int portCommandes, int portDecouverte, int portReponse,
-                   const vector<LecteurConfig> &specLecteurs, const string &dossierSourceVideos, const string &cheminVideoMaster)
-    : controleur(ipMulticast, portCommandes, portDecouverte, portReponse, specLecteurs, cheminVideoMaster),
+                   const string &dossierSourceVideos, const string &cheminVideoMaster)
+    : controleur(ipMulticast, portCommandes, portDecouverte, portReponse, cheminVideoMaster),
       m_dossierVideos(dossierSourceVideos) {
 
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
@@ -272,7 +272,7 @@ void V_Master::dessinerListeFichiers() {
     GuiSetState(desactiver ? STATE_DISABLED : STATE_NORMAL);
 
     if (GuiButton(zones[1], "GÉNÉRER ET\nTRANSFÉRER")) {
-        controleur.initialiserSession(getVideosSelectionnees());
+        controleur.initialiserSession(getVideosSelectionnees(), getLecteursSelectionnes());
     }
 
     constexpr float HAUTEUR_LIGNE = 30.0f;
