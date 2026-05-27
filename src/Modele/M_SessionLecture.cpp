@@ -1,6 +1,7 @@
 #include "Modele/M_SessionLecture.h"
 #include "Modele/M_TFTP_W.h"
 #include <raylib.h>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <cmath>
@@ -30,11 +31,13 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         return;
     }
 
+    // Allocation initiale : 1 slot reserve d'office pour la video de reference (index 0)
     m_lecteurs[0].nbVideosCapacite = 1;
 
     int videosAPartager = nombreTotalVideos - 1;
     int nombreTotalLecteurs = static_cast<int>(m_lecteurs.size());
 
+    // Etape 1 : Garantie anti-ecran noir (on attribue au moins 1 video secondaire par machine si possible)
     int minSecParLecteur = (videosAPartager >= nombreTotalLecteurs) ? 1 : 0;
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         m_lecteurs[i].nbVideosCapacite = minSecParLecteur;
@@ -56,6 +59,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
+    // Capture dynamique de l'ecran du Master via l'affichage physique de Raylib (sans BDD)
     long long surfaceMaster = 1920LL * 1080LL;
     if (IsWindowReady()) {
         int largeurMaster = GetMonitorWidth(0);
@@ -79,6 +83,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         surfaceTotaleGlobale += surfaceParIP[m_lecteurs[i].ip];
     }
 
+    // Etape 2 : Distribution mathematique au prorata exact des surfaces d'affichage
     if (videosRestantes > 0 && surfaceTotaleGlobale > 0) {
         for (size_t i = 0; i < m_lecteurs.size(); ++i) {
             double ratio = static_cast<double>(surfaceParIP[m_lecteurs[i].ip]) / surfaceTotaleGlobale;
@@ -88,6 +93,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
+    // Etape 3 : Lissage algorithmique (Round-Robin) pour epuiser le reste des videos lie aux arrondis
     size_t idxLissage = 0;
     while (totalAttribue < videosAPartager) {
         m_lecteurs[idxLissage].nbVideosCapacite++;
@@ -96,6 +102,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         if (idxLissage >= m_lecteurs.size()) idxLissage = 0;
     }
 
+    // Etape 4 : Integration de la video de reference obligatoire dans la capacite finale globale
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         m_lecteurs[i].nbVideosCapacite += 1;
     }
@@ -113,6 +120,20 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
     if (listeFichiersEntree.empty()) {
         cerr << "[DEBUG] [Session Lecture] [ERROR] La liste des fichiers d'entree est vide. Abandon." << endl;
         return;
+    }
+
+    // --- LE NETTOYAGE DU DOSSIER CIBLE "videosComplexes" ---
+    try {
+        if (std::filesystem::exists("videosComplexes")) {
+            cout << "[DEBUG] [Session Lecture] Nettoyage complet du dossier : videosComplexes" << endl;
+            for (const auto& element : std::filesystem::directory_iterator("videosComplexes")) {
+                std::filesystem::remove_all(element.path());
+            }
+        } else {
+            std::filesystem::create_directories("videosComplexes");
+        }
+    } catch (const std::exception& e) {
+        cerr << "[DEBUG] [Session Lecture] [WARNING] Impossible de vider 'videosComplexes' : " << e.what() << endl;
     }
 
     m_lecteurs.clear();
@@ -145,12 +166,14 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
 
     vector<vector<string>> videosParLecteur(m_lecteurs.size());
 
+    // Injection obligatoire de la video de reference (index 0) en tete de chaque liste
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (m_lecteurs[i].nbVideosCapacite > 0) {
             videosParLecteur[i].push_back(listeFichiersEntree[0]);
         }
     }
 
+    // Distribution entrelacee des fichiers secondaires pour equilibrer les contenus sur la grille
     size_t indexVideoSource = 1;
     size_t lecteurActuel = 0;
 
@@ -166,12 +189,12 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
         }
     }
 
-    // --- RETOUR A LA GENERATION SEQUENTIELLE PLUS RAPIDE ---
-    // Chaque fichier complexe est cree l'un apres l'autre. FFmpeg profite de 100% du CPU
-    // pour chaque fichier sans subir de ralentissement lie aux acces disques simultanes.
+    // Traitement sequentiel (un par un) pour laisser 100% de la puissance CPU a chaque processus FFmpeg
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (!videosParLecteur[i].empty()) {
-            string cheminSortie = dossierSortie + "/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
+            string cheminSortie = "videosComplexes/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
+
+            // Regle de secret visuel : On cache le flux de reference uniquement sur les clients distants
             bool masquerRef = (m_lecteurs[i].id != 0);
 
             cout << "[DEBUG] [Session Lecture] Lancement du traitement pour le Lecteur ID " << m_lecteurs[i].id
@@ -188,6 +211,7 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
     cout << "[DEBUG] [Session Lecture] Preparation de l'upload TFTP des videos complexes..." << endl;
     vector<pair<string, string>> listeTransferts;
 
+    // Isolation des fichiers reseau (le Master genere localement, pas de transfert requis)
     for (const auto& lecteur : m_lecteurs) {
         if (lecteur.id == 0) continue;
         if (lecteur.nbVideosCapacite > 0) {
@@ -204,7 +228,7 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
     try {
         M_TFTP_W tftp;
         for (const auto& [ip, fichier] : listeTransferts) {
-            string cheminFichier = dossierSource + "/" + fichier;
+            string cheminFichier = "videosComplexes/" + fichier;
             tftp.envoyer(ip, cheminFichier);
         }
     } catch (const exception &e) {
@@ -226,6 +250,7 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
 
     const vector<string> colonnes = {"id", "ip", "mac", "nb_videos"};
 
+    // Transformation du tableau brut BDD en paires Clef/Valeur exploitables par l'IHM
     for (const auto& ligne : rawConfig) {
         map<string, string> lecteur;
         for (size_t i = 0; i < ligne.size() && i < colonnes.size(); ++i) {

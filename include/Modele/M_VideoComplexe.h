@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector> // Ajouté pour supporter les std::vector optimisés
 
 using namespace std;
 
@@ -24,7 +25,7 @@ private:
     /**
      * @brief Calcule les décalages (en secondes) de chaque vidéo par rapport à la première (référence).
      */
-    double* calculerDecalages(const float* const* audios, const size_t* taillesAudios, size_t nbVideos, const string* listeFichiers, int idLecteur);
+    vector<double> calculerDecalages(const vector<vector<float>>& audios, size_t nbVideos, const string* listeFichiers, int idLecteur);
 
     /**
      * @brief Génère la ligne de commande FFmpeg complexe (filtres xstack, scale, sync).
@@ -34,7 +35,7 @@ private:
     /**
      * @brief Extrait les pistes audio des vidéos en parallèle et les charge en mémoire.
      */
-    float** extraireEtChargerAudios(const string* listeFichiersEntree, size_t nbVideos, size_t* taillesAudios, int idLecteur);
+    vector<vector<float>> extraireEtChargerAudios(const string* listeFichiersEntree, size_t nbVideos, int idLecteur);
 
     /**
      * @brief Calcule la corrélation croisée entre deux signaux via FFT pour trouver le décalage optimal.
