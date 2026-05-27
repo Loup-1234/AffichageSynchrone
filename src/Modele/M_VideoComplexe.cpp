@@ -43,7 +43,7 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
     try {
         if (nbVideos < 1) throw invalid_argument("La liste d'entree est vide.");
 
-        // Etape 1 : Extraction des pistes audio (limitee aux 20s pour la rapidite du calcul)
+        // Etape 1 : Extraction des pistes audio
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 1/3 : Extraction des audios (reduite a 20s)..." << endl;
         auto audios = extraireEtChargerAudios(listeFichiersEntree, nbVideos, idLecteur);
 
@@ -51,15 +51,14 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 2/3 : Calcul des decalages par rapport a la reference..." << endl;
         auto decalagesEnSecondes = calculerDecalages(audios, nbVideos, listeFichiersEntree, idLecteur);
 
-        // Etape 3 : Generation de la mosaique via FFmpeg (pleine longueur)
+        // Etape 3 : Generation de la mosaique via FFmpeg
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 3/3 : Construction de la video complexe..." << endl;
         const string commande = construireCommandeFFmpeg(listeFichiersEntree, nbVideos, decalagesEnSecondes.data(),
                                                          fichierSortie, masquerReference, idLecteur);
 
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Execution de la commande FFmpeg..." << endl;
 
-        string commandeProtegee = "\"" + commande + "\"";
-        if (system(commandeProtegee.c_str()) != 0) {
+        if (system(commande.c_str()) != 0) {
             throw runtime_error("L'execution de FFmpeg a echoue.");
         }
 
