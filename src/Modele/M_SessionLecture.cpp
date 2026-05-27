@@ -1,9 +1,8 @@
 #include "Modele/M_SessionLecture.h"
 #include "Modele/M_TFTP_W.h"
-#include "Modele/M_JsonUtil.h"
+#include <raylib.h>
 #include <fstream>
 #include <iostream>
-#include <algorithm>
 #include <cmath>
 #include <map>
 
@@ -12,22 +11,39 @@ using namespace std;
 M_SessionLecture::M_SessionLecture(const string &ip, int port) : config(&bdd, ip, port) {}
 
 void M_SessionLecture::configurerLecteurs(const vector<LecteurConfig>& configs) {
+    cout << "[DEBUG] [Session Lecture] Configuration manuelle de " << configs.size() << " lecteur(s)." << endl;
     m_lecteurs = configs;
 }
 
 void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
-    if (m_lecteurs.empty() || nombreTotalVideos <= 0) return;
+    cout << "[DEBUG] [Session Lecture] Debut du calcul des capacites video pour " << nombreTotalVideos << " video(s)." << endl;
 
-    if (m_lecteurs.size() == 1 && m_lecteurs[0].id == 0) {
-        m_lecteurs[0].nbVideosCapacite = nombreTotalVideos;
+    if (m_lecteurs.empty() || nombreTotalVideos <= 0) {
+        cout << "[DEBUG] [Session Lecture] Annulation : Aucun lecteur ou aucune video a traiter." << endl;
         return;
     }
 
-    for (auto& lecteur : m_lecteurs) {
-        lecteur.nbVideosCapacite = 1;
+    if (m_lecteurs.size() == 1 && m_lecteurs[0].id == 0) {
+        m_lecteurs[0].nbVideosCapacite = nombreTotalVideos;
+        cout << "[DEBUG] [Session Lecture] Un seul lecteur maitre detecte. Attribution de la totalite ("
+             << nombreTotalVideos << " videos)." << endl;
+        return;
     }
 
-    vector<vector<string>> dataBDD = bdd.recupereDonnees("ip, ecran_largeur, ecran_hauteur", "config_reseau", "");
+    m_lecteurs[0].nbVideosCapacite = 1;
+
+    int videosAPartager = nombreTotalVideos - 1;
+    int nombreTotalLecteurs = static_cast<int>(m_lecteurs.size());
+
+    int minSecParLecteur = (videosAPartager >= nombreTotalLecteurs) ? 1 : 0;
+    for (size_t i = 0; i < m_lecteurs.size(); ++i) {
+        m_lecteurs[i].nbVideosCapacite = minSecParLecteur;
+    }
+
+    int totalAttribue = minSecParLecteur * nombreTotalLecteurs;
+    int videosRestantes = videosAPartager - totalAttribue;
+
+    vector<vector<string>> dataBDD = bdd.recupereDonnees("adresse_ip, ecran_largeur, ecran_hauteur", "config_reseau", "");
     map<string, long long> surfaceParIP;
 
     if (!dataBDD.empty()) {
@@ -40,48 +56,76 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
+    long long surfaceMaster = 1920LL * 1080LL;
+    if (IsWindowReady()) {
+        int largeurMaster = GetMonitorWidth(0);
+        int hauteurMaster = GetMonitorHeight(0);
+
+        if (largeurMaster > 0 && hauteurMaster > 0) {
+            surfaceMaster = static_cast<long long>(largeurMaster) * static_cast<long long>(hauteurMaster);
+        }
+    } else {
+        cout << "[DEBUG] [Session Lecture] Fenetre Raylib non prete. Taille Master par defaut (1920x1080)." << endl;
+    }
+    surfaceParIP[""] = surfaceMaster;
+
     long long surfaceTotaleGlobale = 0;
-    for (auto& lecteur : m_lecteurs) {
-        if (surfaceParIP.find(lecteur.ip) == surfaceParIP.end()) {
-            surfaceParIP[lecteur.ip] = 1920LL * 1080LL;
+    for (size_t i = 0; i < m_lecteurs.size(); ++i) {
+        if (surfaceParIP.find(m_lecteurs[i].ip) == surfaceParIP.end()) {
+            surfaceParIP[m_lecteurs[i].ip] = 1920LL * 1080LL;
+            cout << "[DEBUG] [Session Lecture] Dimensions non trouvees pour le client " << m_lecteurs[i].ip
+                 << ". Application de la resolution par defaut (1920x1080)." << endl;
         }
-        surfaceTotaleGlobale += surfaceParIP[lecteur.ip];
+        surfaceTotaleGlobale += surfaceParIP[m_lecteurs[i].ip];
     }
 
-    int totalAttribue = 0;
-    for (auto& lecteur : m_lecteurs) {
-        if (surfaceTotaleGlobale > 0) {
-            double ratio = static_cast<double>(surfaceParIP[lecteur.ip]) / surfaceTotaleGlobale;
-            lecteur.nbVideosCapacite = max(1, static_cast<int>(ratio * nombreTotalVideos));
-        } else {
-            lecteur.nbVideosCapacite = 1;
+    if (videosRestantes > 0 && surfaceTotaleGlobale > 0) {
+        for (size_t i = 0; i < m_lecteurs.size(); ++i) {
+            double ratio = static_cast<double>(surfaceParIP[m_lecteurs[i].ip]) / surfaceTotaleGlobale;
+            int supplement = static_cast<int>(ratio * videosRestantes);
+            m_lecteurs[i].nbVideosCapacite += supplement;
+            totalAttribue += supplement;
         }
-        totalAttribue += lecteur.nbVideosCapacite;
     }
 
-    // Processus de lissage pour attribuer le reste des videos manquantes
-    size_t idxArrondi = 0;
-    while (totalAttribue < nombreTotalVideos) {
-        m_lecteurs[idxArrondi].nbVideosCapacite++;
+    size_t idxLissage = 0;
+    while (totalAttribue < videosAPartager) {
+        m_lecteurs[idxLissage].nbVideosCapacite++;
         totalAttribue++;
-        idxArrondi = (idxArrondi + 1) % m_lecteurs.size();
+        idxLissage++;
+        if (idxLissage >= m_lecteurs.size()) idxLissage = 0;
     }
+
+    for (size_t i = 0; i < m_lecteurs.size(); ++i) {
+        m_lecteurs[i].nbVideosCapacite += 1;
+    }
+
+    for (const auto& lecteur : m_lecteurs) {
+        cout << "[DEBUG] [Session Lecture] Capacite finale fixee -> Lecteur ID " << lecteur.id
+             << " (" << (lecteur.id == 0 ? "Master" : lecteur.ip) << ") : " << lecteur.nbVideosCapacite << " video(s)." << endl;
+    }
+    cout << "[DEBUG] [Session Lecture] Fin du calcul des capacites." << endl;
 }
 
 void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersEntree, const string& dossierSortie, const vector<string>& ipsSelectionnees) {
-    if (listeFichiersEntree.empty()) return;
+    cout << "[DEBUG] [Session Lecture] Debut de la generation des videos complexes..." << endl;
+
+    if (listeFichiersEntree.empty()) {
+        cerr << "[DEBUG] [Session Lecture] [ERROR] La liste des fichiers d'entree est vide. Abandon." << endl;
+        return;
+    }
 
     m_lecteurs.clear();
 
     LecteurConfig master;
     master.id = 0;
-    master.ip = "127.0.0.1";
+    master.ip = "";
     master.nbVideosCapacite = 0;
     m_lecteurs.push_back(master);
 
     int prochainId = 1;
     for (const string& ip : ipsSelectionnees) {
-        if (ip != "127.0.0.1" && !ip.empty()) {
+        if (!ip.empty()) {
             bool existeDeja = false;
             for (const auto& l : m_lecteurs) {
                 if (l.ip == ip) { existeDeja = true; break; }
@@ -92,6 +136,7 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
                 client.ip = ip;
                 client.nbVideosCapacite = 0;
                 m_lecteurs.push_back(client);
+                cout << "[DEBUG] [Session Lecture] Ajout du Lecteur Client - ID: " << client.id << ", IP: " << client.ip << endl;
             }
         }
     }
@@ -99,36 +144,48 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
     calculerCapacitesVideo(static_cast<int>(listeFichiersEntree.size()));
 
     vector<vector<string>> videosParLecteur(m_lecteurs.size());
-    int placesDisponibles = 0;
 
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (m_lecteurs[i].nbVideosCapacite > 0) {
             videosParLecteur[i].push_back(listeFichiersEntree[0]);
         }
-        placesDisponibles += (m_lecteurs[i].nbVideosCapacite - static_cast<int>(videosParLecteur[i].size()));
     }
 
-    size_t indexVideo = 1;
+    size_t indexVideoSource = 1;
     size_t lecteurActuel = 0;
 
-    while (indexVideo < listeFichiersEntree.size() && placesDisponibles > 0) {
+    while (indexVideoSource < listeFichiersEntree.size()) {
         if (static_cast<int>(videosParLecteur[lecteurActuel].size()) < m_lecteurs[lecteurActuel].nbVideosCapacite) {
-            videosParLecteur[lecteurActuel].push_back(listeFichiersEntree[indexVideo]);
-            indexVideo++;
-            placesDisponibles--;
+            videosParLecteur[lecteurActuel].push_back(listeFichiersEntree[indexVideoSource]);
+            indexVideoSource++;
         }
-        lecteurActuel = (lecteurActuel + 1) % m_lecteurs.size();
+
+        lecteurActuel++;
+        if (lecteurActuel >= m_lecteurs.size()) {
+            lecteurActuel = 0;
+        }
     }
 
+    // --- RETOUR A LA GENERATION SEQUENTIELLE PLUS RAPIDE ---
+    // Chaque fichier complexe est cree l'un apres l'autre. FFmpeg profite de 100% du CPU
+    // pour chaque fichier sans subir de ralentissement lie aux acces disques simultanes.
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (!videosParLecteur[i].empty()) {
             string cheminSortie = dossierSortie + "/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
-            instanceVideoComplexe.genererVideoComplexe(videosParLecteur[i].data(), videosParLecteur[i].size(), cheminSortie);
+            bool masquerRef = (m_lecteurs[i].id != 0);
+
+            cout << "[DEBUG] [Session Lecture] Lancement du traitement pour le Lecteur ID " << m_lecteurs[i].id
+                 << " avec " << videosParLecteur[i].size() << " morceaux." << endl;
+
+            instanceVideoComplexe.genererVideoComplexe(videosParLecteur[i].data(), videosParLecteur[i].size(), cheminSortie, masquerRef, m_lecteurs[i].id);
         }
     }
+
+    cout << "[DEBUG] [Session Lecture] Fin de la generation des videos complexes." << endl;
 }
 
 void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const {
+    cout << "[DEBUG] [Session Lecture] Preparation de l'upload TFTP des videos complexes..." << endl;
     vector<pair<string, string>> listeTransferts;
 
     for (const auto& lecteur : m_lecteurs) {
@@ -138,21 +195,29 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
         }
     }
 
-    if (listeTransferts.empty()) return;
+    if (listeTransferts.empty()) {
+        cout << "[DEBUG] [Session Lecture] Aucun fichier a uploader (pas de clients distants configures)." << endl;
+        return;
+    }
 
 #ifdef _WIN32
     try {
         M_TFTP_W tftp;
         for (const auto& [ip, fichier] : listeTransferts) {
-            tftp.envoyer(ip, dossierSource + "/" + fichier);
+            string cheminFichier = dossierSource + "/" + fichier;
+            tftp.envoyer(ip, cheminFichier);
         }
     } catch (const exception &e) {
-        cerr << "[SESSION TFTP ERROR] " << e.what() << endl;
+        cerr << "[DEBUG] [Session Lecture] [SESSION TFTP ERROR] Echec lors du transfert : " << e.what() << endl;
     }
+#else
+    cout << "[DEBUG] [Session Lecture] Transfert TFTP ignore (Disponible uniquement sous Windows)." << endl;
 #endif
 }
 
 vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
+    cout << "[DEBUG] [Session Lecture] Recherche des lecteurs physiques sur le reseau..." << endl;
+
     config.rechercherLecteurPhysique("JSON_recue");
     config.visualiserLecteurPhysique();
 
@@ -167,9 +232,11 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
             lecteur[colonnes[i]] = ligne[i];
         }
         if (!lecteur.empty()) {
+            cout << "[DEBUG] [Session Lecture] Lecteur trouve -> ID: " << lecteur["id"] << " | IP: " << lecteur["ip"] << " | MAC: " << lecteur["mac"] << endl;
             lecteursDetectes.push_back(lecteur);
         }
     }
 
+    cout << "[DEBUG] [Session Lecture] Fin de la recherche. " << lecteursDetectes.size() << " lecteur(s) stocke(s)." << endl;
     return lecteursDetectes;
 }
