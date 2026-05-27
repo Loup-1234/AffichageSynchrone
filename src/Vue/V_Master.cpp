@@ -252,8 +252,8 @@ void V_Master::dessinerZoneVideo() const {
                        {destX, destY, destLargeur, destHauteur},
                        {0, 0}, 0.0f, WHITE);
     } else {
-        int longTexte = MeasureText("Aucun flux vidéo décodé", 16);
-        ::DrawText("Aucun flux vidéo décodé",
+        int longTexte = MeasureText("Aucune vidéo trouvée", 16);
+        ::DrawText("Aucune vidéo trouvée",
                    static_cast<int>(zones[2].x + (zones[2].width - static_cast<float>(longTexte)) / 2.0f),
                    static_cast<int>(zones[2].y + zones[2].height / 2.0f - 8.0f), 16, DARKGRAY);
     }
