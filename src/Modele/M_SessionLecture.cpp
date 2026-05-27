@@ -33,21 +33,27 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         return;
     }
 
-    // Allocation initiale : 1 slot reserve d'office pour la video de reference (index 0)
-    m_lecteurs[0].nbVideosCapacite = 1;
-
-    int videosAPartager = nombreTotalVideos - 1;
-    int nombreTotalLecteurs = static_cast<int>(m_lecteurs.size());
-
-    // Etape 1 : Garantie anti-ecran noir (on attribue au moins 1 video secondaire par machine si possible)
-    int minSecParLecteur = (videosAPartager >= nombreTotalLecteurs) ? 1 : 0;
+    // Initialisation de toutes les capacités de vidéos secondaires à 0
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
-        m_lecteurs[i].nbVideosCapacite = minSecParLecteur;
+        m_lecteurs[i].nbVideosCapacite = 0;
     }
 
-    int totalAttribue = minSecParLecteur * nombreTotalLecteurs;
-    int videosRestantes = videosAPartager - totalAttribue;
+    // Nombre de vidéos secondaires à distribuer (la vidéo de référence index 0 est à part)
+    int videosRestantes = nombreTotalVideos - 1;
 
+    // --- PALIER 1 : Garantie anti-ecran noir pour les clients distants (Index 1 a N-1) ---
+    for (size_t i = 1; i < m_lecteurs.size() && videosRestantes > 0; ++i) {
+        m_lecteurs[i].nbVideosCapacite++;
+        videosRestantes--;
+    }
+
+    // --- PALIER 2 : Garantie d'au moins une video secondaire pour le Master (Index 0) ---
+    if (videosRestantes > 0) {
+        m_lecteurs[0].nbVideosCapacite++;
+        videosRestantes--;
+    }
+
+    // Récupération des surfaces d'affichage depuis la BDD
     vector<vector<string>> dataBDD = bdd.recupereDonnees("adresse_ip, ecran_largeur, ecran_hauteur", "config_reseau", "");
     map<string, long long> surfaceParIP;
 
@@ -61,60 +67,59 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
-    // Capture dynamique de l'écran du Master via l'affichage physique de Raylib (sans BDD)
+    // Capture dynamique de la surface de l'écran du Master via Raylib
     long long surfaceMaster = 1920LL * 1080LL;
     if (IsWindowReady()) {
         int largeurMaster = GetMonitorWidth(0);
         int hauteurMaster = GetMonitorHeight(0);
-
         if (largeurMaster > 0 && hauteurMaster > 0) {
             surfaceMaster = static_cast<long long>(largeurMaster) * static_cast<long long>(hauteurMaster);
         }
-    } else {
-        cout << "[DEBUG] [Session Lecture] Fenetre Raylib non prete. Taille Master par defaut (1920x1080)." << endl;
     }
-    surfaceParIP[""] = surfaceMaster;
+    surfaceParIP[""] = surfaceMaster; // L'IP du master est vide "" dans la configuration
 
+    // Calcul de la surface totale de TOUS les lecteurs configurés
     long long surfaceTotaleGlobale = 0;
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (!surfaceParIP.contains(m_lecteurs[i].ip)) {
             surfaceParIP[m_lecteurs[i].ip] = 1920LL * 1080LL;
-            cout << "[DEBUG] [Session Lecture] Dimensions non trouvees pour le client " << m_lecteurs[i].ip
+            cout << "[DEBUG] [Session Lecture] Dimensions non trouvees pour le lecteur " << m_lecteurs[i].ip
                  << ". Application de la resolution par defaut (1920x1080)." << endl;
         }
         surfaceTotaleGlobale += surfaceParIP[m_lecteurs[i].ip];
     }
 
-    // Etape 2 : Distribution mathematique au prorata exact des surfaces d'affichage
+    // --- PALIER 3 : Distribution du reste au prorata exact pour TOUT LE MONDE ---
     if (videosRestantes > 0 && surfaceTotaleGlobale > 0) {
+        int aDistribuerAuProrata = videosRestantes;
         for (size_t i = 0; i < m_lecteurs.size(); ++i) {
             double ratio = static_cast<double>(surfaceParIP[m_lecteurs[i].ip]) / surfaceTotaleGlobale;
-            int supplement = static_cast<int>(ratio * videosRestantes);
+            int supplement = static_cast<int>(ratio * aDistribuerAuProrata);
             m_lecteurs[i].nbVideosCapacite += supplement;
-            totalAttribue += supplement;
+            videosRestantes -= supplement;
         }
     }
 
-    // Etape 3 : Lissage algorithmique en donnant la PRIORITÉ aux lecteurs distants
-    if (m_lecteurs.size() > 1) {
-        size_t idxLissage = 1; // On commence par le premier lecteur distant (ID 1) au lieu du Master (ID 0)
-        while (totalAttribue < videosAPartager && idxLissage < m_lecteurs.size()) {
-            m_lecteurs[idxLissage].nbVideosCapacite++;
-            totalAttribue++;
-            idxLissage++;
+    // --- PALIER 4 : Lissage des résidus (Round-Robin) avec priorité aux clients distants ---
+    if (videosRestantes > 0) {
+        vector<size_t> ordrePriorite;
+        // On enregistre d'abord les clients distants (1 à N-1)
+        for (size_t i = 1; i < m_lecteurs.size(); ++i) {
+            ordrePriorite.push_back(i);
+        }
+        // On ajoute le Master (0) en toute fin de liste de priorité
+        ordrePriorite.push_back(0);
+
+        size_t pointeurInterne = 0;
+        while (videosRestantes > 0) {
+            size_t idxLecteur = ordrePriorite[pointeurInterne];
+            m_lecteurs[idxLecteur].nbVideosCapacite++;
+            videosRestantes--;
+            pointeurInterne = (pointeurInterne + 1) % ordrePriorite.size();
         }
     }
 
-    // S'il reste encore des videos liees aux arrondis, on finit par un Round-Robin global
-    size_t idxLissageGlobal = 0;
-    while (totalAttribue < videosAPartager) {
-        m_lecteurs[idxLissageGlobal].nbVideosCapacite++;
-        totalAttribue++;
-        idxLissageGlobal++;
-        if (idxLissageGlobal >= m_lecteurs.size()) idxLissageGlobal = 0;
-    }
-
-    // Etape 4 : Integration de la video de reference obligatoire dans la capacite finale globale
+    // --- ETAPE FINAL : Injection de la vidéo de référence (+1 obligatoire pour tous) ---
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         m_lecteurs[i].nbVideosCapacite += 1;
     }
