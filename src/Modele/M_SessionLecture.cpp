@@ -59,7 +59,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
-    // Capture dynamique de l'ecran du Master via l'affichage physique de Raylib (sans BDD)
+    // Capture dynamique de l'écran du Master via l'affichage physique de Raylib (sans BDD)
     long long surfaceMaster = 1920LL * 1080LL;
     if (IsWindowReady()) {
         int largeurMaster = GetMonitorWidth(0);
@@ -75,7 +75,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
 
     long long surfaceTotaleGlobale = 0;
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
-        if (surfaceParIP.find(m_lecteurs[i].ip) == surfaceParIP.end()) {
+        if (!surfaceParIP.contains(m_lecteurs[i].ip)) {
             surfaceParIP[m_lecteurs[i].ip] = 1920LL * 1080LL;
             cout << "[DEBUG] [Session Lecture] Dimensions non trouvees pour le client " << m_lecteurs[i].ip
                  << ". Application de la resolution par defaut (1920x1080)." << endl;
@@ -122,17 +122,16 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
         return;
     }
 
-    // --- LE NETTOYAGE DU DOSSIER CIBLE "videosComplexes" ---
     try {
-        if (std::filesystem::exists("videosComplexes")) {
+        if (filesystem::exists("videosComplexes")) {
             cout << "[DEBUG] [Session Lecture] Nettoyage complet du dossier : videosComplexes" << endl;
-            for (const auto& element : std::filesystem::directory_iterator("videosComplexes")) {
-                std::filesystem::remove_all(element.path());
+            for (const auto& element : filesystem::directory_iterator("videosComplexes")) {
+                filesystem::remove_all(element.path());
             }
         } else {
-            std::filesystem::create_directories("videosComplexes");
+            filesystem::create_directories("videosComplexes");
         }
-    } catch (const std::exception& e) {
+    } catch (const exception& e) {
         cerr << "[DEBUG] [Session Lecture] [WARNING] Impossible de vider 'videosComplexes' : " << e.what() << endl;
     }
 
@@ -189,12 +188,10 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
         }
     }
 
-    // Traitement sequentiel (un par un) pour laisser 100% de la puissance CPU a chaque processus FFmpeg
+    // Traitement séquentiel optimisé (Chaque FFmpeg prend 100% du CPU l'un après l'autre)
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (!videosParLecteur[i].empty()) {
             string cheminSortie = "videosComplexes/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
-
-            // Regle de secret visuel : On cache le flux de reference uniquement sur les clients distants
             bool masquerRef = (m_lecteurs[i].id != 0);
 
             cout << "[DEBUG] [Session Lecture] Lancement du traitement pour le Lecteur ID " << m_lecteurs[i].id
@@ -211,7 +208,6 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
     cout << "[DEBUG] [Session Lecture] Preparation de l'upload TFTP des videos complexes..." << endl;
     vector<pair<string, string>> listeTransferts;
 
-    // Isolation des fichiers reseau (le Master genere localement, pas de transfert requis)
     for (const auto& lecteur : m_lecteurs) {
         if (lecteur.id == 0) continue;
         if (lecteur.nbVideosCapacite > 0) {
@@ -250,7 +246,6 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
 
     const vector<string> colonnes = {"id", "ip", "mac", "nb_videos"};
 
-    // Transformation du tableau brut BDD en paires Clef/Valeur exploitables par l'IHM
     for (const auto& ligne : rawConfig) {
         map<string, string> lecteur;
         for (size_t i = 0; i < ligne.size() && i < colonnes.size(); ++i) {

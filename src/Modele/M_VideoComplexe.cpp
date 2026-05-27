@@ -4,9 +4,9 @@
 #include <chrono>
 #include <cmath>
 #include <filesystem>
-#include <format>
 #include <fstream>
 #include <thread>
+#include <iomanip>
 #include <iostream>
 #include <memory>
 #include <mutex>
@@ -30,52 +30,54 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
 
         if (cheminRef.ends_with(".mp3") || cheminRef.ends_with(".wav")) {
             masquerReference = false;
-            cout << format("[DEBUG] [Video Complexe - ID {}] Fichier audio detecte comme reference.\n", idLecteur);
+            cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Fichier audio detecte comme reference." << endl;
         }
 
-        cout << format("[DEBUG] [Video Complexe - ID {}] Masquage de la video de reference : {}\n",
-                   idLecteur, masquerReference ? "Oui" : "Non");
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Masquage de la video de reference : "
+             << (masquerReference ? "Oui" : "Non") << endl;
     }
 
     const auto tempsDebut = chrono::high_resolution_clock::now();
-    cout << format("[DEBUG] [Video Complexe - ID {}] Debut de la generation de la video complexe...\n", idLecteur);
+    cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Debut de la generation de la video complexe..." << endl;
 
     try {
         if (nbVideos < 1) throw invalid_argument("La liste d'entree est vide.");
 
         // Etape 1 : Extraction des pistes audio
-        cout << format("[DEBUG] [Video Complexe - ID {}] Etape 1/3 : Extraction des audios (reduite a 20s)...\n", idLecteur);
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 1/3 : Extraction des audios (reduite a 20s)..." << endl;
         auto audios = extraireEtChargerAudios(listeFichiersEntree, nbVideos, idLecteur);
 
         // Etape 2 : Calcul de la synchronisation
-        cout << format("[DEBUG] [Video Complexe - ID {}] Etape 2/3 : Calcul des decalages par rapport a la reference...\n", idLecteur);
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 2/3 : Calcul des decalages par rapport a la reference..." << endl;
         auto decalagesEnSecondes = calculerDecalages(audios, nbVideos, listeFichiersEntree, idLecteur);
 
         // Etape 3 : Generation de la mosaique via FFmpeg
-        cout << format("[DEBUG] [Video Complexe - ID {}] Etape 3/3 : Construction de la video complexe...\n", idLecteur);
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 3/3 : Construction de la video complexe..." << endl;
         const string commande = construireCommandeFFmpeg(listeFichiersEntree, nbVideos, decalagesEnSecondes.data(),
                                                          fichierSortie, masquerReference, idLecteur);
 
-        cout << format("[DEBUG] [Video Complexe - ID {}] Execution de la commande FFmpeg...\n", idLecteur);
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Execution de la commande FFmpeg..." << endl;
         if (system(commande.c_str()) != 0) {
             throw runtime_error("L'execution de FFmpeg a echoue.");
         }
 
-        cout << format("[DEBUG] [Video Complexe - ID {}] Video complexe generee avec succes.\n", idLecteur);
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Video complexe generee avec succes." << endl;
     } catch (const exception &e) {
-        cerr << format("[DEBUG] [Video Complexe - ID {}] [ERREUR FATALE] : {}\n", idLecteur, e.what());
+        cerr << "[DEBUG] [Video Complexe - ID " << idLecteur << "] [ERREUR FATALE] : " << e.what() << endl;
     }
 
-    cout << format("[DEBUG] [Video Complexe - ID {}] Nettoyage des fichiers binaires temporaires...\n", idLecteur);
-    nettoyerTemporaires(static_cast<int>(nbVideos));
+    cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Nettoyage des fichiers binaires temporaires..." << endl;
+    nettoyerTemporaires(static_cast<int>(nbVideos), idLecteur);
 
     const auto tempsFin = chrono::high_resolution_clock::now();
-    cout << format("[DEBUG] [Video Complexe - ID {}] Temps total : {:.2f} secondes.\n", idLecteur, chrono::duration<float>(tempsFin - tempsDebut).count());
+    cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Temps total : "
+         << fixed << setprecision(2) << chrono::duration<float>(tempsFin - tempsDebut).count()
+         << " secondes." << endl;
 }
 
 vector<double> M_VideoComplexe::calculerDecalages(const vector<vector<float>>& audios, size_t nbVideos,
                                                   const string *listeFichiers, int idLecteur) {
-    cout << format("[DEBUG] [Video Complexe - ID {}] Initialisation des taches de correlation...\n", idLecteur);
+    cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Initialisation des taches de correlation..." << endl;
 
     vector<double> decalages(nbVideos, 0.0);
     vector<thread> lesThreads;
@@ -100,7 +102,7 @@ vector<double> M_VideoComplexe::calculerDecalages(const vector<vector<float>>& a
 
     for (size_t i = 0; i < nbVideos; ++i) {
         if (i != static_cast<size_t>(indexRef)) {
-            cout << format("[DEBUG] [Video Complexe - ID {}] Decalage calcule pour l'index {} : {} secondes.\n", idLecteur, i, decalages[i]);
+            cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Decalage calcule pour l'index " << i << " : " << decalages[i] << " secondes." << endl;
         }
     }
 
@@ -110,7 +112,7 @@ vector<double> M_VideoComplexe::calculerDecalages(const vector<vector<float>>& a
 string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntree, size_t nbVideos,
                                                  const double *decalagesEnSecondes, const string &fichierSortie,
                                                  bool masquerReference, int idLecteur) {
-    cout << format("[DEBUG] [Video Complexe - ID {}] Construction de la commande FFmpeg...\n", idLecteur);
+    cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Construction de la commande FFmpeg..." << endl;
     constexpr int indexRef = 0;
     const string &cheminRef = listeFichiersEntree[indexRef];
 
@@ -130,6 +132,7 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
 
     const size_t nbVideosMosaique = indexVideos.size();
     ostringstream fluxCommande;
+
     fluxCommande << "ffmpeg -y -hide_banner -loglevel error -threads 0 ";
 
     for (size_t i = 0; i < nbVideos; ++i) {
@@ -137,14 +140,21 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
         fluxCommande << "-skip_loop_filter all -i \"" << listeFichiersEntree[i] << "\" ";
     }
 
+    fluxCommande << "-filter_complex \"";
+
     if (nbVideosMosaique == 1) {
         const int idxSeul = indexVideos[0];
-        fluxCommande << "-filter_complex \"[" << idxSeul << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[vout]\" "
-                     << "-map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
+
+        if (masquerReference && idxSeul != indexRef && !refEstAudioSeul) {
+            fluxCommande << "[" << indexRef << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[refv];"
+                         << "[" << idxSeul << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[clientv];"
+                         << "[refv][clientv]overlay=shortest=1[vout]";
+        } else {
+            fluxCommande << "[" << idxSeul << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[vout]";
+        }
+        fluxCommande << "\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
     }
     else if (nbVideosMosaique > 1) {
-        fluxCommande << "-filter_complex \"";
-
         for (size_t i = 0; i < nbVideosMosaique; ++i) {
             const int idx = indexVideos[i];
             fluxCommande << "[" << idx << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[v" << i << "];";
@@ -164,16 +174,13 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
             if (i > 0) fluxCommande << "|";
             fluxCommande << (colonne * largeurVideo) << "_" << (ligne * hauteurVideo);
         }
-
         fluxCommande << "[vout]\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
     }
     else {
-        cout << format("[DEBUG] [Video Complexe - ID {}] Aucune piste video detectee pour la mosaique. Generation d'un fond noir.\n", idLecteur);
-        fluxCommande << "-filter_complex \"color=c=black:s=640x360:r=30[vout]\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
+        fluxCommande << "color=c=black:s=640x360:r=30[vout]\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
     }
 
-    // Ajout de -max_interleave_delta 0 pour resoudre le blocage temporel de FFmpeg lors du masquage de la reference
-    fluxCommande << "-c:v libx264 -preset ultrafast -tune fastdecode -bf 0 -pix_fmt yuv420p -max_interleave_delta 0 -shortest "
+    fluxCommande << "-c:v libx264 -preset ultrafast -tune fastdecode -bf 0 -pix_fmt yuv420p -max_interleave_delta 0 -shortest -t 20 "
                  << "\"" << fichierSortie << "\"";
 
     return fluxCommande.str();
@@ -190,9 +197,9 @@ vector<vector<float>> M_VideoComplexe::extraireEtChargerAudios(const string *lis
     for (size_t i = 0; i < nbVideos; ++i) {
         string cheminFichier = listeFichiersEntree[i];
 
-        lesThreads.push_back(thread([i, cheminFichier, &audios, &messageErreurGlobal, &verrouErreur]() {
+        lesThreads.push_back(thread([i, idLecteur, cheminFichier, &audios, &messageErreurGlobal, &verrouErreur]() {
             try {
-                string fichierTemporaire = TEMP_AUDIO_PREFIX + to_string(i) + ".bin";
+                string fichierTemporaire = TEMP_AUDIO_PREFIX + to_string(idLecteur) + "_" + to_string(i) + ".bin";
 
                 string commande = "ffmpeg -y -hide_banner -loglevel error -threads 1 -i \"" + cheminFichier +
                                   "\" -vn -f f32le -ac 1 -ar " + to_string(FREQUENCE_ECHANTILLONNAGE) +
@@ -235,12 +242,13 @@ vector<vector<float>> M_VideoComplexe::extraireEtChargerAudios(const string *lis
     }
 
     for (size_t i = 0; i < nbVideos; ++i) {
-        cout << format("[DEBUG] [Video Complexe - ID {}] Audio extrait - Index {} : {} echantillons charges.\n", idLecteur, i, audios[i].size());
+        cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Audio extrait - Index " << i << " : " << audios[i].size() << " echantillons charges." << endl;
     }
 
     return audios;
 }
 
+// UNTOUCHED : Ta fonction xcorr d'origine, strictement inchangée
 int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2, size_t taille2) {
     const size_t tailleInitiale = taille1 + taille2 - 1;
     const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitiale))));
@@ -316,9 +324,9 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     return indexMaxSigne > tailleFFTSigne / 2 ? indexMaxSigne - tailleFFTSigne : indexMaxSigne;
 }
 
-void M_VideoComplexe::nettoyerTemporaires(const int nbVideos) {
+void M_VideoComplexe::nettoyerTemporaires(const int nbVideos, int idLecteur) {
     for (int i = 0; i < nbVideos; ++i) {
-        string nomFichier = TEMP_AUDIO_PREFIX + to_string(i) + ".bin";
+        string nomFichier = TEMP_AUDIO_PREFIX + to_string(idLecteur) + "_" + to_string(i) + ".bin";
         remove(nomFichier.c_str());
     }
 }

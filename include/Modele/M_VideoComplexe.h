@@ -1,12 +1,12 @@
 #pragma once
 
 #include <string>
-#include <vector> // Ajouté pour supporter les std::vector optimisés
+#include <vector>
 
 using namespace std;
 
 /** @brief Fréquence utilisée pour l'échantillonnage des pistes audio extraites. */
-constexpr int FREQUENCE_ECHANTILLONNAGE = 16000; // Passage de 44100 à 16000
+constexpr int FREQUENCE_ECHANTILLONNAGE = 16000;
 /** @brief Préfixe utilisé pour les fichiers binaires audio temporaires. */
 const string TEMP_AUDIO_PREFIX = "temp_audio_";
 
@@ -45,5 +45,5 @@ private:
     /**
      * @brief Supprime les fichiers binaires temporaires créés durant l'extraction.
      */
-    void nettoyerTemporaires(int nbVideos);
+    void nettoyerTemporaires(int nbVideos, int idLecteur);
 };
