@@ -1,5 +1,8 @@
 #include "Modele/M_BDD.h"
 #include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 M_BDD::M_BDD() {
     // Ouverture ou creation du fichier de base de donnees local SQLite
@@ -14,9 +17,9 @@ void M_BDD::createTable(string nomTable) {
 
     // Verification du resultat d execution du moteur SQLite
     if (exit != SQLITE_OK) {
-        cout << "la table a mal ete cree" << endl;
+        cerr << "[DEBUG] [Base de Donnees] [ERROR] La table '" << nomTable << "' n'a pas pu etre cree." << endl;
     } else {
-        cout << "la table a bien ete cree" << endl;
+        cout << "[DEBUG] [Base de Donnees] La table '" << nomTable << "' a ete cree avec succes." << endl;
     }
 }
 
@@ -27,9 +30,9 @@ int M_BDD::enregistrerDonnees(string nomTable, string nomColonnes, string values
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);
 
     if (exit != SQLITE_OK) {
-        cout << "Erreur SQLite (" << exit << ") : " << sqlite3_errmsg(m_db) << endl;
+        cerr << "[DEBUG] [Base de Donnees] [SQL ERROR] Code " << exit << " : " << sqlite3_errmsg(m_db) << endl;
     } else {
-        cout << "Ligne insérée avec succes" << endl;
+        cout << "[DEBUG] [Base de Donnees] Ligne inseree avec succes dans la table '" << nomTable << "'." << endl;
     }
 
     return exit;
@@ -65,13 +68,17 @@ vector<vector<string>> M_BDD::recupereDonnees(string select, string from, string
     }
     sqlite3_finalize(stmt);
 
-    // Affichage console temporaire pour debug
+    cout << endl;
+
     for (const auto& ligne : tableComplete) {
+        cout << "[DEBUG] [Base de Donnees] ";
         for (const string& cellule : ligne) {
-            cout << cellule << "   ";
+            cout << left << setw(20) << cellule;
         }
         cout << endl;
     }
+
+    cout << endl;
 
     return tableComplete;
 }
@@ -83,9 +90,9 @@ void M_BDD::actualiserDonnees(string nomTable, string nomColonne, string nomId, 
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);
 
     if (exit != SQLITE_OK) {
-        cout << "Erreur : " << sqlite3_errmsg(m_db) << endl;
+        cerr << "[DEBUG] [Base de Donnees] [SQL ERROR] Impossible de modifier la ligne : " << sqlite3_errmsg(m_db) << endl;
     } else {
-        cout << "Ligne modifie avec succes" << endl;
+        cout << "[DEBUG] [Base de Donnees] Ligne modifiee avec succes dans '" << nomTable << "'." << endl;
     }
 }
 
@@ -96,8 +103,8 @@ void M_BDD::supprimerDonnees(string nomTable, string condition) {
     int exit = sqlite3_exec(m_db, query.c_str(), nullptr, 0, nullptr);
 
     if (exit != SQLITE_OK) {
-        cerr << "Erreur lors de la suppression : " << sqlite3_errmsg(m_db) << endl;
+        cerr << "[DEBUG] [Base de Donnees] [SQL ERROR] Erreur lors de la suppression : " << sqlite3_errmsg(m_db) << endl;
     } else {
-        cout << "Nettoyage reussi" << endl;
+        cout << "[DEBUG] [Base de Donnees] Nettoyage reussi de la table '" << nomTable << "'." << endl;
     }
 }

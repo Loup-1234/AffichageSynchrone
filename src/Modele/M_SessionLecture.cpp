@@ -117,17 +117,16 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
     }
 
     // Affichage du rapport de débug
-    cout << endl;
     for (const auto& lecteur : m_lecteurs) {
         string nomLecteur = (lecteur.id == 0) ? "Master (0)" : "Client (" + to_string(lecteur.id) + ")";
         string adresseIP  = (lecteur.id == 0) ? " " : lecteur.ip;
         string surfacePx  = to_string(surfaceParIP[lecteur.ip]) + " px";
 
         cout << "[DEBUG] [Session Lecture] "
-             << left << setw(17) << nomLecteur
-             << setw(17) << adresseIP
-             << setw(17) << surfacePx
-             << setw(17) << lecteur.nbVideosCapacite << endl;
+             << left << setw(20) << nomLecteur
+             << setw(20) << adresseIP
+             << setw(20) << surfacePx
+             << setw(20) << lecteur.nbVideosCapacite << endl;
     }
     cout << endl << "[DEBUG] [Session Lecture] Fin du calcul des capacites." << endl;
 }
@@ -246,13 +245,12 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
     cout << "[DEBUG] [Session Lecture] Recherche des lecteurs physiques sur le reseau..." << endl;
 
     config.rechercherLecteurPhysique("JSON_recue");
-    config.visualiserLecteurPhysique();
 
     const auto rawConfig = config.getConfigReseau();
     vector<map<string, string>> lecteursDetectes;
     lecteursDetectes.reserve(rawConfig.size());
 
-    const vector<string> colonnes = {"id", "ip", "mac", "nb_videos"};
+    const vector<string> colonnes = {"mac", "ip", "os", "ecran_largeur", "ecran_hauteur"};
 
     for (const auto& ligne : rawConfig) {
         if (ligne.empty()) continue;
@@ -261,9 +259,6 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
         for (size_t i = 0; i < ligne.size() && i < colonnes.size(); ++i) {
             lecteur[colonnes[i]] = ligne[i];
         }
-
-        cout << "[DEBUG] [Session Lecture] Lecteur trouve -> ID: " << lecteur["id"]
-             << " | IP: " << lecteur["ip"] << " | MAC: " << lecteur["mac"] << endl;
 
         lecteursDetectes.push_back(std::move(lecteur)); // Transfert efficace sans copie lourde
     }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 #include "Modele/M_ConfigReseau.h"
 
@@ -11,16 +12,17 @@ M_ConfigReseau::M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port) : Expe
 
 void M_ConfigReseau::visualiserLecteurPhysique() {
     // Recuperation globale de la table cible stockee en base de donnees
+
+    // [Alain] Déplacé dans getConfigReseau pour simplifier le code
     configReseau = maM_BDD->recupereDonnees("*", "config_reseau", "");
 }
 
 void M_ConfigReseau::enregistrerJson(string fichierJson) {
-
     ifstream fichier(fichierJson);
 
     if (!fichier.is_open()) {
-        cout << "Erreur : Impossible d'ouvrir le fichier " << fichierJson << endl;
-        cout << "Verifie que le dossier et le fichier existent au bon endroit !" << endl;
+        cerr << "[DEBUG] [Config Reseau] [ERROR] Impossible d'ouvrir le fichier : " << fichierJson << endl;
+        cerr << "[DEBUG] [Config Reseau] [ERROR] Verifie que le dossier et le fichier existent au bon endroit !" << endl;
         return;
     }
 
@@ -35,7 +37,6 @@ void M_ConfigReseau::enregistrerJson(string fichierJson) {
     int ecran_hauteur = listeValeurs["ecran_hauteur"].get<int>();
 
     string colonnes = "adresse_mac, adresse_ip, os, ecran_largeur, ecran_hauteur";
-
     string valeurs = "'" + adress_mac + "', '" + adress_ip + "', '" + os + "', " + to_string(ecran_largeur) + ", " + to_string(ecran_hauteur);
 
     // Sauvegarde immediate dans la table SQLite correspondante
@@ -45,15 +46,12 @@ void M_ConfigReseau::enregistrerJson(string fichierJson) {
 void M_ConfigReseau::enregistrerConfigurationReseau(string dossierJson) {
     // Iteration complete sur l ensemble des fichiers du dossier via le systeme de fichiers standard c++17
     for (const auto& entree : filesystem::directory_iterator(dossierJson)) {
-
         string fichierTrouve = entree.path().string();
-
         enregistrerJson(fichierTrouve);
     }
 }
 
 void M_ConfigReseau::rechercherLecteurPhysique(string fichierJson) {
-
     // Envoi d une commande specifique d initialisation reseau
     Expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
 
@@ -66,5 +64,6 @@ void M_ConfigReseau::rechercherLecteurPhysique(string fichierJson) {
 }
 
 vector<vector<string>> M_ConfigReseau::getConfigReseau() {
+    configReseau = maM_BDD->recupereDonnees("*", "config_reseau", "");
     return configReseau;
 }
