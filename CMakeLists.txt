@@ -14,13 +14,12 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc")
 set(SOURCE_FILES
         src/main.cpp
         src/Vue/V_Master.cpp
+        src/Controleur/C_LecteurPhysiqueLocal.cpp
         src/Modele/M_ExpediteurUDP.cpp
         src/Modele/M_VideoComplexe.cpp
         src/Modele/M_TFTP_W.cpp
         src/Modele/M_SessionLecture.cpp
-        src/Controleur/C_LecteurPhysiqueLocal.cpp
         src/Modele/M_LecteurPhysique.cpp
-        src/Modele/M_JsonUtil.cpp
         src/Modele/M_ReceveurUDP.cpp
         src/Modele/M_BDD.cpp
         src/Modele/M_ConfigReseau.cpp
@@ -28,13 +27,12 @@ set(SOURCE_FILES
 
 set(HEADER_FILES
         include/Vue/V_Master.h
+        include/Controleur/C_LecteurPhysiqueLocal.h
         include/Modele/M_ExpediteurUDP.h
         include/Modele/M_VideoComplexe.h
         include/Modele/M_TFTP_W.h
         include/Modele/M_SessionLecture.h
-        include/Controleur/C_LecteurPhysiqueLocal.h
         include/Modele/M_LecteurPhysique.h
-        include/Modele/M_JsonUtil.h
         include/Modele/M_ReceveurUDP.h
         include/Modele/M_ProtocoleReseau.h
         include/Modele/M_BDD.h

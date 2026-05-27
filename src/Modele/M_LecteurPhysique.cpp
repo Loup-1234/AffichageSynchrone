@@ -12,18 +12,16 @@
 #include <ifaddrs.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <unistd.h>
 #endif
 
 #include "Modele/M_LecteurPhysique.h"
-#include "Modele/M_JsonUtil.h"
+#include "../libs/JSON/json.hpp"
 
 #include <filesystem>
 #include <thread>
 #include <chrono>
 #include <cstring>
 #include <fstream>
-#include <sstream>
 #include <iostream>
 #include <map>
 #include <algorithm>
@@ -32,11 +30,19 @@ using namespace std;
 
 M_LecteurPhysique::M_LecteurPhysique()
 {
-    // Initialisation du coeur natif libVLC et d un lecteur dedie
-    instanceVLC = libvlc_new(0, nullptr);
+    // Arguments pour configurer LibVLC en mode "extraction mémoire" (vmem) sans conflits
+    const char* const vlc_args[] = {
+        "--avcodec-hw=none",       // 1. Désactive l'accélération matérielle (incompatible avec les callbacks RAM)
+        "--no-avcodec-dr",         // 2. Désactive le Direct Rendering FFmpeg pour éviter les échecs de buffer
+        "--no-video-title-show",   // 3. Optionnel : Évite l'affichage du titre du fichier à l'écran
+        "--quiet"                  // 4. Optionnel : Demande à VLC d'être plus discret sur les logs mineurs
+    };
+    int argc = sizeof(vlc_args) / sizeof(vlc_args[0]);
+
+    // Initialisation du coeur natif libVLC avec nos arguments de contournement
+    instanceVLC = libvlc_new(argc, vlc_args);
     lecteurVLC = libvlc_media_player_new(instanceVLC);
 }
-
 M_LecteurPhysique::~M_LecteurPhysique() {
     if (lecteurVLC) { libvlc_media_player_release(lecteurVLC); }
     if (instanceVLC) { libvlc_release(instanceVLC); }
@@ -87,6 +93,11 @@ bool M_LecteurPhysique::recupererFrameVideo(void *&outPixels, unsigned int &outL
 void *M_LecteurPhysique::cb_verrouiller(void *opaque, void **plans) {
     auto *mod = static_cast<M_LecteurPhysique *>(opaque);
     mod->mutexImage.lock();
+    
+    if (mod->pixelsVideo.empty()) {
+        mod->pixelsVideo.resize(64 * 64 * 4, 0); // Allocation minimale temporaire (ex: 64x64 en RGBA)
+    }
+
     *plans = mod->pixelsVideo.data();
     return nullptr;
 }
@@ -237,18 +248,25 @@ void M_LecteurPhysique::collecterTailleEcran() {
 }
 
 void M_LecteurPhysique::versJson(const string& cheminFichier) const {
-    map<string, string> champs = {
-        {"ip", m_ip},
-        {"mac", m_mac},
-        {"os", m_os},
-        {"largeurEcran", to_string(m_largeurEcran)},
-        {"hauteurEcran", to_string(m_hauteurEcran)},
-    };
-    string json = M_JsonUtil::construire(champs);
+    cout << "[DEBUG] [Lecteur Physique] Exportation des donnees en JSON..." << endl;
 
+    // 1. Initialisation de l'objet JSON fourni par la bibliothèque
+    nlohmann::json objetJson;
+
+    // 2. Remplissage manuel des champs
+    objetJson["ip"] = m_ip;
+    objetJson["mac"] = m_mac;
+    objetJson["os"] = m_os;
+    objetJson["largeurEcran"] = m_largeurEcran;
+    objetJson["hauteurEcran"] = m_hauteurEcran;
+
+    // 3. Écriture sécurisée dans le fichier
     ofstream fichier(cheminFichier);
     if (fichier) {
-        fichier << json;
+        fichier << objetJson.dump(4);
         fichier.close();
+        cout << "[DEBUG] [Lecteur Physique] Fichier JSON cree avec succes : " << cheminFichier << endl;
+    } else {
+        cerr << "[DEBUG] [Lecteur Physique] [ERROR] Impossible d'ouvrir le fichier pour ecriture : " << cheminFichier << endl;
     }
 }
