@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cmath>
 #include <map>
+#include <iomanip>
 
 using namespace std;
 
@@ -124,10 +125,22 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         m_lecteurs[i].nbVideosCapacite += 1;
     }
 
+    cout << endl;
+
     for (const auto& lecteur : m_lecteurs) {
-        cout << "[DEBUG] [Session Lecture] Capacite finale fixee -> Lecteur ID " << lecteur.id
-             << " (" << (lecteur.id == 0 ? "Master" : lecteur.ip) << ") : " << lecteur.nbVideosCapacite << " video(s)." << endl;
+        string nomLecteur = (lecteur.id == 0) ? "Master (0)" : "Client (" + to_string(lecteur.id) + ")";
+        string adresseIP  = (lecteur.id == 0) ? " " : lecteur.ip;
+        string surfacePx  = to_string(surfaceParIP[lecteur.ip]) + " px";
+
+        cout << "[DEBUG] [Session Lecture] "
+             << left << setw(17)  << nomLecteur
+             << setw(17) << adresseIP
+             << setw(17) << surfacePx
+             << setw(17) << lecteur.nbVideosCapacite << endl;
     }
+
+    cout << endl;
+
     cout << "[DEBUG] [Session Lecture] Fin du calcul des capacites." << endl;
 }
 
