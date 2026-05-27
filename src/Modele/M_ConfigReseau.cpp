@@ -2,7 +2,9 @@
 
 #include "Modele/M_ConfigReseau.h"
 
+#ifdef _WIN32
 #include "Modele/M_TFTP_W.h"
+#endif
 
 M_ConfigReseau::M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port) : Expediteur(ip, port), maM_BDD(pMaBDD), configReseau({}) {
 }
@@ -55,7 +57,9 @@ void M_ConfigReseau::rechercherLecteurPhysique(string fichierJson) {
     // Envoi d une commande specifique d initialisation reseau
     Expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
 
+    #ifdef _WIN32
     M_TFTP_W tftp;
+    #endif
 
     // Execution du stockage de la configuration
     enregistrerConfigurationReseau(fichierJson);

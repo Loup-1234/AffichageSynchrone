@@ -1,5 +1,7 @@
 #include "Modele/M_SessionLecture.h"
+#ifdef _WIN32
 #include "Modele/M_TFTP_W.h"
+#endif
 #include <raylib.h>
 #include <filesystem>
 #include <fstream>

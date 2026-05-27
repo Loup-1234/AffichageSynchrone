@@ -1,3 +1,5 @@
+#ifdef _WIN32
+
 #include "modele/M_TFTP_W.h"
 
 M_TFTP_W::M_TFTP_W() {
@@ -254,3 +256,5 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
     cout << "Fichier vidéo reçu avec succès !" << endl;
     return true;
 }
+
+#endif
