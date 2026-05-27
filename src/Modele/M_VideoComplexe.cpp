@@ -57,7 +57,10 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
                                                          fichierSortie, masquerReference, idLecteur);
 
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Execution de la commande FFmpeg..." << endl;
-        if (system(commande.c_str()) != 0) {
+
+        // Sécurisation absolue contre le quote-stripping de Windows cmd.exe
+        string commandeProtegee = "\"" + commande + "\"";
+        if (system(commandeProtegee.c_str()) != 0) {
             throw runtime_error("L'execution de FFmpeg a echoue.");
         }
 
@@ -152,7 +155,8 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
         } else {
             fluxCommande << "[" << idxSeul << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[vout]";
         }
-        fluxCommande << "\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
+        // Correction de la fermeture de chaîne et passage en AAC pour fixer l'audio du flux masqué
+        fluxCommande << "\" -map [vout] -map " << indexRef << ":a -c:a aac -b:a 128k ";
     }
     else if (nbVideosMosaique > 1) {
         for (size_t i = 0; i < nbVideosMosaique; ++i) {
@@ -174,10 +178,10 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
             if (i > 0) fluxCommande << "|";
             fluxCommande << (colonne * largeurVideo) << "_" << (ligne * hauteurVideo);
         }
-        fluxCommande << "[vout]\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
+        fluxCommande << "[vout]\" -map [vout] -map " << indexRef << ":a -c:a aac -b:a 128k ";
     }
     else {
-        fluxCommande << "color=c=black:s=640x360:r=30[vout]\" -map \"[vout]\" -map " << indexRef << ":a -c:a copy ";
+        fluxCommande << "color=c=black:s=640x360:r=30[vout]\" -map [vout] -map " << indexRef << ":a -c:a aac -b:a 128k ";
     }
 
     fluxCommande << "-c:v libx264 -preset ultrafast -tune fastdecode -bf 0 -pix_fmt yuv420p -max_interleave_delta 0 -shortest -t 20 "
@@ -248,7 +252,6 @@ vector<vector<float>> M_VideoComplexe::extraireEtChargerAudios(const string *lis
     return audios;
 }
 
-// UNTOUCHED : Ta fonction xcorr d'origine, strictement inchangée
 int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2, size_t taille2) {
     const size_t tailleInitiale = taille1 + taille2 - 1;
     const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitiale))));
