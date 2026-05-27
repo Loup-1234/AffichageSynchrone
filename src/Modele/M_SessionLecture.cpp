@@ -93,13 +93,23 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
-    // Etape 3 : Lissage algorithmique (Round-Robin) pour epuiser le reste des videos lie aux arrondis
-    size_t idxLissage = 0;
+    // Etape 3 : Lissage algorithmique en donnant la PRIORITÉ aux lecteurs distants
+    if (m_lecteurs.size() > 1) {
+        size_t idxLissage = 1; // On commence par le premier lecteur distant (ID 1) au lieu du Master (ID 0)
+        while (totalAttribue < videosAPartager && idxLissage < m_lecteurs.size()) {
+            m_lecteurs[idxLissage].nbVideosCapacite++;
+            totalAttribue++;
+            idxLissage++;
+        }
+    }
+
+    // S'il reste encore des videos liees aux arrondis, on finit par un Round-Robin global
+    size_t idxLissageGlobal = 0;
     while (totalAttribue < videosAPartager) {
-        m_lecteurs[idxLissage].nbVideosCapacite++;
+        m_lecteurs[idxLissageGlobal].nbVideosCapacite++;
         totalAttribue++;
-        idxLissage++;
-        if (idxLissage >= m_lecteurs.size()) idxLissage = 0;
+        idxLissageGlobal++;
+        if (idxLissageGlobal >= m_lecteurs.size()) idxLissageGlobal = 0;
     }
 
     // Etape 4 : Integration de la video de reference obligatoire dans la capacite finale globale
@@ -172,9 +182,9 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
         }
     }
 
-    // Distribution entrelacee des fichiers secondaires pour equilibrer les contenus sur la grille
+    // Distribution entrelacee en privilegiant également le depart sur les lecteurs distants (index 1)
     size_t indexVideoSource = 1;
-    size_t lecteurActuel = 0;
+    size_t lecteurActuel = (m_lecteurs.size() > 1) ? 1 : 0;
 
     while (indexVideoSource < listeFichiersEntree.size()) {
         if (static_cast<int>(videosParLecteur[lecteurActuel].size()) < m_lecteurs[lecteurActuel].nbVideosCapacite) {
