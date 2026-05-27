@@ -43,7 +43,7 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
     try {
         if (nbVideos < 1) throw invalid_argument("La liste d'entree est vide.");
 
-        // Etape 1 : Extraction des pistes audio
+        // Etape 1 : Extraction des pistes audio (limitee aux 20s pour la rapidite du calcul)
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 1/3 : Extraction des audios (reduite a 20s)..." << endl;
         auto audios = extraireEtChargerAudios(listeFichiersEntree, nbVideos, idLecteur);
 
@@ -51,14 +51,13 @@ void M_VideoComplexe::genererVideoComplexe(const string *listeFichiersEntree, si
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 2/3 : Calcul des decalages par rapport a la reference..." << endl;
         auto decalagesEnSecondes = calculerDecalages(audios, nbVideos, listeFichiersEntree, idLecteur);
 
-        // Etape 3 : Generation de la mosaique via FFmpeg
+        // Etape 3 : Generation de la mosaique via FFmpeg (pleine longueur)
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Etape 3/3 : Construction de la video complexe..." << endl;
         const string commande = construireCommandeFFmpeg(listeFichiersEntree, nbVideos, decalagesEnSecondes.data(),
                                                          fichierSortie, masquerReference, idLecteur);
 
         cout << "[DEBUG] [Video Complexe - ID " << idLecteur << "] Execution de la commande FFmpeg..." << endl;
 
-        // Sécurisation absolue contre le quote-stripping de Windows cmd.exe
         string commandeProtegee = "\"" + commande + "\"";
         if (system(commandeProtegee.c_str()) != 0) {
             throw runtime_error("L'execution de FFmpeg a echoue.");
@@ -155,7 +154,6 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
         } else {
             fluxCommande << "[" << idxSeul << ":v]fps=30,scale=640:360:flags=fast_bilinear,setsar=1,format=yuv420p[vout]";
         }
-        // Correction de la fermeture de chaîne et passage en AAC pour fixer l'audio du flux masqué
         fluxCommande << "\" -map [vout] -map " << indexRef << ":a -c:a aac -b:a 128k ";
     }
     else if (nbVideosMosaique > 1) {
@@ -184,7 +182,7 @@ string M_VideoComplexe::construireCommandeFFmpeg(const string *listeFichiersEntr
         fluxCommande << "color=c=black:s=640x360:r=30[vout]\" -map [vout] -map " << indexRef << ":a -c:a aac -b:a 128k ";
     }
 
-    fluxCommande << "-c:v libx264 -preset ultrafast -tune fastdecode -bf 0 -pix_fmt yuv420p -max_interleave_delta 0 -shortest -t 20 "
+    fluxCommande << "-c:v libx264 -preset ultrafast -tune fastdecode -bf 0 -pix_fmt yuv420p -max_interleave_delta 0 -shortest "
                  << "\"" << fichierSortie << "\"";
 
     return fluxCommande.str();
