@@ -14,11 +14,10 @@ M_TFTP_W::~M_TFTP_W() {
 void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
-        cerr << "Erreur création socket" << endl;
+        cerr << "[DEBUG] [Session Upload TFTP] Erreur lors de la creation de la socket." << endl;
         return;
     }
 
-    // CORRECTION : Définition du port 69 pour le serveur distant
     sockaddr_in server{};
     server.sin_family = AF_INET;
     server.sin_port = htons(69);
@@ -35,7 +34,7 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     wrq.push_back(0);
 
     sendto(sock, wrq.data(), (int)wrq.size(), 0, (sockaddr*)&server, sizeof(server));
-    cout << "WRQ envoyé pour : " << cheminJson << " vers " << ipMaster << " sur le port 69" << endl;
+    cout << "[DEBUG] [Session Upload TFTP] Requete WRQ envoyee pour " << cheminJson << " vers " << ipMaster << " sur le port 69." << endl;
 
     DWORD tv = 3000;
     setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
@@ -46,15 +45,15 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&peer, &peerLen);
 
     if (n < 4 || buf[1] != 4 || buf[2] != 0 || buf[3] != 0) {
-        cerr << "Erreur : ACK(0) non reçu" << endl;
+        cerr << "[DEBUG] [Session Upload TFTP] Erreur : ACK(0) non recu." << endl;
         closesocket(sock);
         return;
     }
-    cout << "ACK(0) reçu, début du transfert..." << endl;
+    cout << "[DEBUG] [Session Upload TFTP] ACK(0) recu, debut du transfert..." << endl;
 
     ifstream file(cheminJson, ios::binary);
     if (!file) {
-        cerr << "Impossible d'ouvrir : " << cheminJson << endl;
+        cerr << "[DEBUG] [Session Upload TFTP] Impossible d'ouvrir le fichier : " << cheminJson << endl;
         closesocket(sock);
         return;
     }
@@ -80,11 +79,11 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
                 if (ackBlock == block) { acked = true; break; }
             }
             tries++;
-            cout << "Timeout, tentative " << tries << "..." << endl;
+            cout << "[DEBUG] [Session Upload TFTP] Timeout atteint, tentative " << tries << " sur " << MAX_RETRIES << "..." << endl;
         }
 
         if (!acked) {
-            cerr << "Échec bloc " << block << endl;
+            cerr << "[DEBUG] [Session Upload TFTP] Echec de validation du bloc " << block << "." << endl;
             file.close();
             closesocket(sock);
             return;
@@ -96,29 +95,28 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
 
     file.close();
     closesocket(sock);
-    cout << "Transfert terminé !" << endl;
+    cout << "[DEBUG] [Session Upload TFTP] Upload du fichier termine avec succes !" << endl;
 }
 
 bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
-        cerr << "Erreur création socket" << endl;
+        cerr << "[DEBUG] [Session Reception TFTP] Erreur lors de la creation de la socket." << endl;
         return false;
     }
 
-    // CORRECTION : Spécification du port 69 pour l'écoute locale
     sockaddr_in server{};
     server.sin_family = AF_INET;
     server.sin_port = htons(69);
     server.sin_addr.s_addr = INADDR_ANY;
 
     if (bind(sock, (sockaddr*)&server, sizeof(server)) < 0) {
-        cerr << "Erreur de bind" << endl;
+        cerr << "[DEBUG] [Session Reception TFTP] Erreur d'association (bind) sur le port 69." << endl;
         closesocket(sock);
         return false;
     }
 
-    cout << "Serveur TFTP lancé sur le port 69..." << endl;
+    cout << "[DEBUG] [Session Reception TFTP] Serveur TFTP lance et a l'ecoute sur le port 69..." << endl;
 
     char buf[516];
     sockaddr_in client{};
@@ -126,19 +124,19 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
 
     int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&client, &clientLen);
     if (n < 4 || buf[1] != 2) {
-        cout << "WRQ invalide" << endl;
+        cout << "[DEBUG] [Session Reception TFTP] Requete WRQ invalide ou corrompue." << endl;
         closesocket(sock);
         return false;
     }
 
     ofstream fichier(fichierLocal, ios::binary);
     if (!fichier) {
-        cout << "Impossible de créer le fichier local : " << fichierLocal << endl;
+        cout << "[DEBUG] [Session Reception TFTP] Impossible de creer le fichier local : " << fichierLocal << endl;
         closesocket(sock);
         return false;
     }
 
-    cout << "Réception en cours vers : " << fichierLocal << endl;
+    cout << "[DEBUG] [Session Reception TFTP] Reception en cours vers : " << fichierLocal << endl;
 
     char ack[4] = {0, 4, 0, 0};
     sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
@@ -166,14 +164,14 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
 
     fichier.close();
     closesocket(sock);
-    cout << "Fichier reçu avec succès !" << endl;
+    cout << "[DEBUG] [Session Reception TFTP] Fichier recu et enregistre avec succes !" << endl;
     return true;
 }
 
 bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
-        cerr << "Erreur création socket" << endl;
+        cerr << "[DEBUG] [Session Master TFTP] Erreur lors de la creation de la socket." << endl;
         return false;
     }
 
@@ -183,53 +181,51 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
     server.sin_addr.s_addr = INADDR_ANY;
 
     if (bind(sock, (sockaddr*)&server, sizeof(server)) < 0) {
-        cerr << "Erreur de bind" << endl;
+        cerr << "[DEBUG] [Session Master TFTP] Erreur d'association (bind) sur le port 69." << endl;
         closesocket(sock);
         return false;
     }
 
-    // CORRECTION : On applique le timeout AVANT le premier recvfrom
     DWORD timeout = 3000; // 3 secondes
     if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
-        cerr << "Erreur lors de la configuration du timeout initial" << endl;
+        cerr << "[DEBUG] [Session Master TFTP] Erreur lors de la configuration du timeout initial." << endl;
         closesocket(sock);
         return false;
     }
 
-    cout << "Serveur TFTP lancé sur le port 69 (Timeout actif à l'écoute)..." << endl;
+    cout << "[DEBUG] [Session Master TFTP] Serveur TFTP lance sur le port 69 (Timeout actif a l'ecoute)..." << endl;
 
     char buf[516];
     sockaddr_in client{};
     int clientLen = sizeof(client);
 
-    // Ce premier recvfrom bénéficie maintenant du timeout de 3s
     int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&client, &clientLen);
 
     if (n == SOCKET_ERROR) {
         int err = WSAGetLastError();
         if (err == WSAETIMEDOUT) {
-            cerr << "Erreur : Aucune requête WRQ reçue. Le lecteur n'a pas répondu." << endl;
+            cerr << "[DEBUG] [Session Master TFTP] Erreur : Aucune requete WRQ recue. Le lecteur n'a pas repondu." << endl;
         } else {
-            cerr << "Erreur de réception WRQ : " << err << endl;
+            cerr << "[DEBUG] [Session Master TFTP] Erreur de reception WRQ (Code WSAGetLastError : " << err << ")." << endl;
         }
         closesocket(sock);
         return false;
     }
 
     if (n < 4 || buf[1] != 2) {
-        cout << "WRQ invalide" << endl;
+        cout << "[DEBUG] [Session Master TFTP] Requete WRQ invalide." << endl;
         closesocket(sock);
         return false;
     }
 
     ofstream fichier(fichierLocal, ios::binary);
     if (!fichier) {
-        cout << "Impossible de créer le fichier local : " << fichierLocal << endl;
+        cout << "[DEBUG] [Session Master TFTP] Impossible de creer le fichier local : " << fichierLocal << endl;
         closesocket(sock);
         return false;
     }
 
-    cout << "Réception en cours vers : " << fichierLocal << endl;
+    cout << "[DEBUG] [Session Master TFTP] Reception du flux en cours vers : " << fichierLocal << endl;
 
     char ack[4] = {0, 4, 0, 0};
     sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
@@ -242,9 +238,9 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
         if (n == SOCKET_ERROR) {
             int err = WSAGetLastError();
             if (err == WSAETIMEDOUT) {
-                cerr << "Erreur : Temps d'attente dépassé pendant le transfert. Abandon." << endl;
+                cerr << "[DEBUG] [Session Master TFTP] Erreur : Temps d'attente depasse pendant le transfert. Abandon." << endl;
             } else {
-                cerr << "Erreur de réception bloc : " << err << endl;
+                cerr << "[DEBUG] [Session Master TFTP] Erreur de reception de bloc (Code WSAGetLastError : " << err << ")." << endl;
             }
             fichier.close();
             closesocket(sock);
@@ -270,7 +266,7 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
 
     fichier.close();
     closesocket(sock);
-    cout << "Fichier reçu avec succès !" << endl;
+    cout << "[DEBUG] [Session Master TFTP] Fichier Master recu et valide avec succes !" << endl;
     return true;
 }
 
