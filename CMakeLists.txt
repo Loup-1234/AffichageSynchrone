@@ -6,7 +6,6 @@ project(AffichageSynchrone CXX C)
 # ==========================================
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc")
 
 # ==========================================
 # SOURCES ET EN-TÊTES
@@ -108,6 +107,13 @@ if(WIN32)
             iphlpapi
             sqlite_lib
             "${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll"
+    )
+
+    target_link_options(${PROJECT_NAME} PRIVATE
+            "-static-libgcc"
+            "-static-libstdc++"
+            "-static"
+            "-Wl,--allow-multiple-definition"
     )
 
 elseif(UNIX AND NOT APPLE)
