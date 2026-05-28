@@ -30,9 +30,9 @@ M_ExpediteurUDP::M_ExpediteurUDP(const string &ip, const int port) {
 #endif
 
     // Préparation de la structure d'adresse de destination
-    adresseDest.sin_family = AF_INET;
-    adresseDest.sin_port = htons(port); // Conversion en format réseau (Big Endian)
-    inet_pton(AF_INET, ip.c_str(), &adresseDest.sin_addr);
+    groupeMulticast.sin_family = AF_INET;
+    groupeMulticast.sin_port = htons(port); // Conversion en format réseau (Big Endian)
+    inet_pton(AF_INET, ip.c_str(), &groupeMulticast.sin_addr);
 }
 
 M_ExpediteurUDP::~M_ExpediteurUDP() {
@@ -52,7 +52,7 @@ bool M_ExpediteurUDP::envoyer(const void *donnees, const int taille) {
 
     // Envoi effectif du paquet vers l'adresse stockée dans adresseDest
     const int resultat = sendto(descripteurSocket, static_cast<const char *>(donnees), taille, 0,
-                                reinterpret_cast<sockaddr *>(&adresseDest), sizeof(adresseDest));
+                                reinterpret_cast<sockaddr *>(&groupeMulticast), sizeof(groupeMulticast));
 
     return resultat != SOCKET_ERROR;
 }

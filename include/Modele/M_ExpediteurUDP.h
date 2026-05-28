@@ -61,5 +61,5 @@ public:
 
 private:
     SocketType descripteurSocket = INVALID_SOCKET; /**< Identifiant ou descripteur système du socket. */
-    sockaddr_in adresseDest{}; /**< Structure d'adresse de destination réseau. */
+    sockaddr_in groupeMulticast{}; /**< Structure d'adresse de destination réseau. */
 };

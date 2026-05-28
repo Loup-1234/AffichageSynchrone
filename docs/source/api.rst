@@ -66,11 +66,3 @@ Moteur de Lecture
     :protected-members:
     :private-members:
     :undoc-members:
-
-Utilitaires
------------
-.. doxygenclass:: M_JsonUtil
-    :members:
-    :protected-members:
-    :private-members:
-    :undoc-members:
