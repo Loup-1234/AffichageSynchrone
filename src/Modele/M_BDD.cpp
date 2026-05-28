@@ -73,7 +73,7 @@ vector<vector<string>> M_BDD::recupereDonnees(string select, string from, string
     for (const auto& ligne : tableComplete) {
         cout << "[DEBUG] [Base de Donnees] ";
         for (const string& cellule : ligne) {
-            cout << left << setw(20) << cellule;
+            cout << left << setw(30) << cellule;
         }
         cout << endl;
     }

@@ -33,22 +33,24 @@ void M_ConfigReseau::enregistrerJson(string fichierJson) {
         return;
     }
 
-    string adress_mac = listeValeurs.value("adresse_mac", "00:00:00:00:00:00");
-    string adress_ip  = listeValeurs.value("adresse_ip", "0.0.0.0");
+    // Extraction des données en utilisant les clés réelles du JSON reçu
+    string adress_mac = listeValeurs.value("mac", "00:00:00:00:00:00");
+    string adress_ip  = listeValeurs.value("ip", "0.0.0.0");
     string os          = listeValeurs.value("os", "Inconnu");
-    int ecran_largeur  = listeValeurs.value("ecran_largeur", 0);
-    int ecran_hauteur  = listeValeurs.value("ecran_hauteur", 0);
+    int ecran_largeur  = listeValeurs.value("largeurEcran", 0);
+    int ecran_hauteur  = listeValeurs.value("hauteurEcran", 0);
 
-    if (!listeValeurs.contains("adresse_mac") || !listeValeurs.contains("adresse_ip")) {
-        cerr << "[WARNING] Cles manquantes dans le JSON recu !" << endl;
-        cerr << "Contenu reel du fichier : " << listeValeurs.dump(2) << endl;
-        cerr << "Verifie si le lecteur n'envoie pas plutot 'mac' ou 'ip' au lieu de 'adresse_mac'..." << endl;
+    // Validation de sécurité optionnelle pour s'assurer que le JSON est complet
+    if (!listeValeurs.contains("mac") || !listeValeurs.contains("ip")) {
+        cerr << "[WARNING] Clés attendues ('mac' ou 'ip') manquantes dans le JSON reçu !" << endl;
+        cerr << "Contenu réel du fichier : " << listeValeurs.dump(2) << endl;
     }
 
+    // Préparation de la requête pour la base de données
     string colonnes = "adresse_mac, adresse_ip, os, ecran_largeur, ecran_hauteur";
     string valeurs = "'" + adress_mac + "', '" + adress_ip + "', '" + os + "', " + to_string(ecran_largeur) + ", " + to_string(ecran_hauteur);
 
-    // Sauvegarde immediate dans la table SQLite correspondante
+    // Sauvegarde immédiate dans la table SQLite correspondante
     maM_BDD->enregistrerDonnees("config_reseau", colonnes, valeurs);
 }
 

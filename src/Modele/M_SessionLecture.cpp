@@ -220,7 +220,7 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
 
     for (const auto& lecteur : m_lecteurs) {
         if (lecteur.id != 0 && lecteur.nbVideosCapacite > 0) {
-            listeTransferts.push_back({lecteur.ip, dossierSource + "VideoComplexe_" + to_string(lecteur.id) + ".mp4"});
+            listeTransferts.push_back({lecteur.ip, dossierSource + "/VideoComplexe_" + to_string(lecteur.id) + ".mp4"});
         }
     }
 
