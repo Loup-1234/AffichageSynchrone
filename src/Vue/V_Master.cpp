@@ -18,7 +18,7 @@ V_Master::V_Master(const string &ipMulticast, int portCommandes, int portDecouve
       m_dossierVideos(dossierSourceVideos) {
 
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
-    InitWindow(800, 450, "Master UI - Contrôleur Multi-Écrans");
+    InitWindow(800, 450, "Master");
     SetWindowMinSize(800, 450);
     InitAudioDevice();
     SetTargetFPS(60);
