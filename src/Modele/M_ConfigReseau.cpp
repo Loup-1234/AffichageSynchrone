@@ -22,19 +22,28 @@ void M_ConfigReseau::enregistrerJson(string fichierJson) {
 
     if (!fichier.is_open()) {
         cerr << "[DEBUG] [Config Reseau] [ERROR] Impossible d'ouvrir le fichier : " << fichierJson << endl;
-        cerr << "[DEBUG] [Config Reseau] [ERROR] Verifie que le dossier et le fichier existent au bon endroit !" << endl;
         return;
     }
 
     json listeValeurs;
-    fichier >> listeValeurs;
+    try {
+        fichier >> listeValeurs;
+    } catch (const json::parse_error& e) {
+        cerr << "[DEBUG] [Config Reseau] [ERROR] Erreur de syntaxe JSON : " << e.what() << endl;
+        return;
+    }
 
-    // Lecture des valeurs depuis la structure du parseur JSON nlohmann
-    string adress_ip = listeValeurs["adresse_mac"].get<string>();
-    string adress_mac = listeValeurs["adresse_ip"].get<string>();
-    string os = listeValeurs["os"].get<string>();
-    int ecran_largeur = listeValeurs["ecran_largeur"].get<int>();
-    int ecran_hauteur = listeValeurs["ecran_hauteur"].get<int>();
+    string adress_mac = listeValeurs.value("adresse_mac", "00:00:00:00:00:00");
+    string adress_ip  = listeValeurs.value("adresse_ip", "0.0.0.0");
+    string os          = listeValeurs.value("os", "Inconnu");
+    int ecran_largeur  = listeValeurs.value("ecran_largeur", 0);
+    int ecran_hauteur  = listeValeurs.value("ecran_hauteur", 0);
+
+    if (!listeValeurs.contains("adresse_mac") || !listeValeurs.contains("adresse_ip")) {
+        cerr << "[WARNING] Cles manquantes dans le JSON recu !" << endl;
+        cerr << "Contenu reel du fichier : " << listeValeurs.dump(2) << endl;
+        cerr << "Verifie si le lecteur n'envoie pas plutot 'mac' ou 'ip' au lieu de 'adresse_mac'..." << endl;
+    }
 
     string colonnes = "adresse_mac, adresse_ip, os, ecran_largeur, ecran_hauteur";
     string valeurs = "'" + adress_mac + "', '" + adress_ip + "', '" + os + "', " + to_string(ecran_largeur) + ", " + to_string(ecran_hauteur);
@@ -44,23 +53,39 @@ void M_ConfigReseau::enregistrerJson(string fichierJson) {
 }
 
 void M_ConfigReseau::enregistrerConfigurationReseau(string dossierJson) {
-    // Iteration complete sur l ensemble des fichiers du dossier via le systeme de fichiers standard c++17
-    for (const auto& entree : filesystem::directory_iterator(dossierJson)) {
-        string fichierTrouve = entree.path().string();
-        enregistrerJson(fichierTrouve);
+    namespace fs = std::filesystem;
+    fs::path cheminConf = fs::path(dossierJson) / "conf.json";
+    std::cerr << "Erreur " << dossierJson << std::endl;
+
+    if (fs::exists(cheminConf) && fs::is_regular_file(cheminConf)) {
+        enregistrerJson(cheminConf.string());
+    } else {
+        std::cerr << "Erreur : conf.json introuvable dans " << dossierJson << std::endl;
     }
 }
 
-void M_ConfigReseau::rechercherLecteurPhysique(string fichierJson) {
+void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
+    string cheminConf = dossier + "/conf.json";
+    error_code ec;
+    filesystem::remove(cheminConf, ec);
+
     // Envoi d une commande specifique d initialisation reseau
     Expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
 
-    #ifdef _WIN32
-    M_TFTP_W tftp;
-    #endif
+    bool transfertReussi = false;
 
-    // Execution du stockage de la configuration
-    enregistrerConfigurationReseau(fichierJson);
+#ifdef _WIN32
+    M_TFTP_W tftp;
+    transfertReussi = tftp.recevoirFichierPousseMaster(cheminConf);
+#else
+
+#endif
+
+    if (transfertReussi) {
+        enregistrerConfigurationReseau(dossier);
+    } else {
+        cerr << "Abandon de la configuration : impossible de joindre le lecteur physique." << endl;
+    }
 }
 
 vector<vector<string>> M_ConfigReseau::getConfigReseau() {

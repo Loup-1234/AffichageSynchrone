@@ -53,9 +53,9 @@ public:
 
     /**
      * @brief Lance la recherche et l'importation des configurations (alias de enregistrerConfigurationReseau).
-     * @param fichierJson Chemin du dossier/fichier cible pour la recherche.
+     * @param dossier Chemin du dossier/fichier cible pour la recherche.
      */
-    void rechercherLecteurPhysique(string fichierJson);
+    void rechercherLecteurPhysique(string dossier);
 
     /**
      * @brief Accesseur (getter) pour obtenir la configuration réseau stockée localement.

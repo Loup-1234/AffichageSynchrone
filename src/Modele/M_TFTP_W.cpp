@@ -18,8 +18,10 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
         return;
     }
 
+    // CORRECTION : Définition du port 69 pour le serveur distant
     sockaddr_in server{};
     server.sin_family = AF_INET;
+    server.sin_port = htons(69);
     inet_pton(AF_INET, ipMaster.c_str(), &server.sin_addr);
 
     const char* filename = cheminJson.c_str();
@@ -33,7 +35,7 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     wrq.push_back(0);
 
     sendto(sock, wrq.data(), (int)wrq.size(), 0, (sockaddr*)&server, sizeof(server));
-    cout << "WRQ envoyé pour : " << cheminJson << " vers " << ipMaster << endl;
+    cout << "WRQ envoyé pour : " << cheminJson << " vers " << ipMaster << " sur le port 69" << endl;
 
     DWORD tv = 3000;
     setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
@@ -104,8 +106,10 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
         return false;
     }
 
+    // CORRECTION : Spécification du port 69 pour l'écoute locale
     sockaddr_in server{};
     server.sin_family = AF_INET;
+    server.sin_port = htons(69);
     server.sin_addr.s_addr = INADDR_ANY;
 
     if (bind(sock, (sockaddr*)&server, sizeof(server)) < 0) {
@@ -114,7 +118,7 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
         return false;
     }
 
-    cout << "Serveur TFTP lancé  " << endl;
+    cout << "Serveur TFTP lancé sur le port 69..." << endl;
 
     char buf[516];
     sockaddr_in client{};
@@ -134,7 +138,7 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
         return false;
     }
 
-    cout << "Réception en cours de la vidéo vers : " << fichierLocal << endl;
+    cout << "Réception en cours vers : " << fichierLocal << endl;
 
     char ack[4] = {0, 4, 0, 0};
     sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
@@ -162,7 +166,7 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
 
     fichier.close();
     closesocket(sock);
-    cout << "Fichier vidéo reçu avec succès !" << endl;
+    cout << "Fichier reçu avec succès !" << endl;
     return true;
 }
 
@@ -175,6 +179,7 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
 
     sockaddr_in server{};
     server.sin_family = AF_INET;
+    server.sin_port = htons(69);
     server.sin_addr.s_addr = INADDR_ANY;
 
     if (bind(sock, (sockaddr*)&server, sizeof(server)) < 0) {
@@ -183,13 +188,34 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
         return false;
     }
 
-    cout << "Serveur TFTP lancé  " << endl;
+    // CORRECTION : On applique le timeout AVANT le premier recvfrom
+    DWORD timeout = 3000; // 3 secondes
+    if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
+        cerr << "Erreur lors de la configuration du timeout initial" << endl;
+        closesocket(sock);
+        return false;
+    }
+
+    cout << "Serveur TFTP lancé sur le port 69 (Timeout actif à l'écoute)..." << endl;
 
     char buf[516];
     sockaddr_in client{};
     int clientLen = sizeof(client);
 
+    // Ce premier recvfrom bénéficie maintenant du timeout de 3s
     int n = recvfrom(sock, buf, sizeof(buf), 0, (sockaddr*)&client, &clientLen);
+
+    if (n == SOCKET_ERROR) {
+        int err = WSAGetLastError();
+        if (err == WSAETIMEDOUT) {
+            cerr << "Erreur : Aucune requête WRQ reçue. Le lecteur n'a pas répondu." << endl;
+        } else {
+            cerr << "Erreur de réception WRQ : " << err << endl;
+        }
+        closesocket(sock);
+        return false;
+    }
+
     if (n < 4 || buf[1] != 2) {
         cout << "WRQ invalide" << endl;
         closesocket(sock);
@@ -203,19 +229,10 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
         return false;
     }
 
-    cout << "Réception en cours de la vidéo vers : " << fichierLocal << endl;
+    cout << "Réception en cours vers : " << fichierLocal << endl;
 
     char ack[4] = {0, 4, 0, 0};
     sendto(sock, ack, 4, 0, (sockaddr*)&client, clientLen);
-
-    DWORD timeout = 3000;
-
-    if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) == SOCKET_ERROR) {
-        cerr << "Erreur lors de la configuration du timeout" << endl;
-        fichier.close();
-        closesocket(sock);
-        return false;
-    }
 
     uint16_t expectedBlock = 1;
 
@@ -225,9 +242,9 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
         if (n == SOCKET_ERROR) {
             int err = WSAGetLastError();
             if (err == WSAETIMEDOUT) {
-                cerr << "Erreur : Temps d'attente dépassé (Timeout de 30s). Abandon." << endl;
+                cerr << "Erreur : Temps d'attente dépassé pendant le transfert. Abandon." << endl;
             } else {
-                cerr << "Erreur de réception : " << err << endl;
+                cerr << "Erreur de réception bloc : " << err << endl;
             }
             fichier.close();
             closesocket(sock);
@@ -253,7 +270,7 @@ bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
 
     fichier.close();
     closesocket(sock);
-    cout << "Fichier vidéo reçu avec succès !" << endl;
+    cout << "Fichier reçu avec succès !" << endl;
     return true;
 }
 
