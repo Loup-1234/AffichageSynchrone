@@ -25,7 +25,7 @@ private:
 
     vector<vector<string>> configReseau; /**< Stockage local de la table de configuration réseau. */
 
-    //vector<string> ipLecteurs;
+    vector<string> ipLecteurs;
 
 public:
     /**

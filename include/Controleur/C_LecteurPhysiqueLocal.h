@@ -3,7 +3,6 @@
 #include "Modele/M_LecteurPhysique.h"
 #include "Modele/M_SessionLecture.h"
 #include "Modele/M_UDP.h"
-#include "Modele/M_ProtocoleReseau.h"
 #include <vector>
 #include <string>
 #include <atomic>

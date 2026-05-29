@@ -1,7 +1,6 @@
 #pragma once
 
 #include "M_VideoComplexe.h"
-#include "M_ProtocoleReseau.h"
 #include "M_BDD.h"
 #include "M_ConfigReseau.h"
 #include <string>
@@ -9,6 +8,17 @@
 #include <map>
 
 using namespace std;
+
+/**
+ * @struct LecteurConfig
+ * @brief Configuration propre, typée et reliée à la BDD pour un lecteur cible.
+ */
+struct LecteurConfig {
+    int id;
+    string mac;
+    string ip;
+    int nbVideosCapacite;
+};
 
 /**
  * @class M_SessionLecture

@@ -2,7 +2,6 @@
 
 #include "raylib.h"
 #include "Controleur/C_LecteurPhysiqueLocal.h"
-#include "Modele/M_ProtocoleReseau.h" // Pour LecteurConfig
 #include <string>
 #include <vector>
 

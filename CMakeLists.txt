@@ -30,7 +30,6 @@ set(HEADER_FILES
         include/Modele/M_TFTP.h
         include/Modele/M_SessionLecture.h
         include/Modele/M_LecteurPhysique.h
-        include/Modele/M_ProtocoleReseau.h
         include/Modele/M_BDD.h
         include/Modele/M_ConfigReseau.h
         include/Modele/M_UDP.h
