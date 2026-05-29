@@ -63,8 +63,12 @@ void V_Master::miseAJourDisposition() {
 
     zones[11] = {L - largeurPanneauDroit - 150, 10.0f, 142.0f, 32.0f};
 
-    zones[12] = {L - largeurPanneauDroit, 0, largeurPanneauDroit, H - 48};
-    zones[13] = {L - largeurPanneauDroit, H - 48, largeurPanneauDroit, 48};
+    float demiLargeur = largeurPanneauDroit / 2.0f;
+
+    zones[14] = {L - largeurPanneauDroit, 0, demiLargeur, 40};
+    zones[15] = {L - largeurPanneauDroit + demiLargeur, 0, demiLargeur, 40};
+    zones[12] = {L - largeurPanneauDroit, 40, largeurPanneauDroit, H - 80};
+    zones[13] = {L - largeurPanneauDroit, H - 40, largeurPanneauDroit, 40};
 }
 
 void V_Master::chargerListeVideos() {
@@ -356,6 +360,14 @@ void V_Master::dessinerListeLecteurs() {
     }
 
     EndScissorMode();
+
+    if (GuiButton(zones[14], "1")) {
+
+    }
+
+    if (GuiButton(zones[15], "2")) {
+
+    }
 
     if (GuiButton(zones[13], "CHERCHER IP")) {
         controleur.lancerRechercheLecteurs();

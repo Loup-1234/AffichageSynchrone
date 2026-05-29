@@ -40,7 +40,7 @@ private:
     const string m_dossierVideos; /**< Chemin du dossier de stockage des vidéos sources. */
 
     Texture2D textureVideo{}; /**< Texture Raylib employée pour l'affichage du flux vidéo décodé. */
-    Rectangle zones[14]{}; /**< Tableau des régions de découpage de la disposition de l'interface. */
+    Rectangle zones[16]{}; /**< Tableau des régions de découpage de la disposition de l'interface. */
 
     float rotationChargement = 0.0f; /**< Angle de rotation pour l'indicateur visuel de chargement. */
 
