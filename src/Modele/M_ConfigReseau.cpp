@@ -98,8 +98,10 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
     cout << "[DEBUG] Trame multicast envoyee. Collecte des fichiers JSON en cours..." << endl;
 
     // 3. Fenêtre de capture : On attend quelques secondes que tous les lecteurs envoient leur JSON
-    // Tu peux ajuster cette valeur (ex: 3, 4 ou 5 secondes) selon la réactivité de tes lecteurs.
     std::this_thread::sleep_for(std::chrono::seconds(4));
+
+    // --- NOUVEAUTÉ : Réinitialisation de notre liste locale avant de stocker les résultats ---
+    configReseau.clear();
 
     // 4. Traitement de TOUS les fichiers reçus dans le dossier
     bool auMoinsUnLecteurRecu = false;
@@ -111,12 +113,41 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
                 string cheminFichier = entry.path().string();
                 cout << "[DEBUG] Nouveau lecteur detecte ! Traitement de : " << entry.path().filename().string() << endl;
 
-                // On appelle ta fonction existante pour parser et insérer ce JSON spécifique en BDD
-                enregistrerJson(cheminFichier);
-                auMoinsUnLecteurRecu = true;
+                // --- LECTURE DIRECTE DU FICHIER JSON ---
+                ifstream fichier(cheminFichier);
+                if (fichier.is_open()) {
+                    json listeValeurs;
+                    try {
+                        fichier >> listeValeurs;
 
-                // [Optionnel] Nettoyage : On supprime le fichier physique après traitement
-                // pour que le dossier reste propre pour la prochaine recherche.
+                        // Extraction des données (identique à ton ancienne méthode)
+                        string adress_mac = listeValeurs.value("mac", "00:00:00:00:00:00");
+                        string adress_ip  = listeValeurs.value("ip", "0.0.0.0");
+                        string os          = listeValeurs.value("os", "Inconnu");
+                        int ecran_largeur  = listeValeurs.value("largeurEcran", 0);
+                        int ecran_hauteur  = listeValeurs.value("hauteurEcran", 0);
+
+                        // Création de la ligne représentant le lecteur sous forme de chaînes de caractères
+                        vector<string> ligneLecteur = {
+                            adress_mac,
+                            adress_ip,
+                            os,
+                            to_string(ecran_largeur),
+                            to_string(ecran_hauteur)
+                        };
+
+                        // Ajout de cette ligne directement dans notre vecteur 2D de configuration
+                        configReseau.push_back(ligneLecteur);
+                        auMoinsUnLecteurRecu = true;
+
+                    } catch (const json::parse_error& e) {
+                        cerr << "[DEBUG] [Config Reseau] [ERROR] Erreur de syntaxe JSON dans "
+                             << entry.path().filename().string() << " : " << e.what() << endl;
+                    }
+                    fichier.close(); // Pense à bien refermer le flux de fichier
+                }
+
+                // Nettoyage : On supprime le fichier physique après traitement pour libérer l'espace
                 fs::remove(entry.path());
             }
         }
@@ -124,13 +155,13 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
 
     // 5. Bilan de l'opération
     if (auMoinsUnLecteurRecu) {
-        cout << "[DEBUG] Fin de la recherche. Tous les lecteurs detectes ont ete enregistres en Base de Donnees." << endl;
+        cout << "[DEBUG] Fin de la recherche. Tous les lecteurs detectes ont ete enregistres localement dans configReseau." << endl;
     } else {
         cerr << "[WARNING] Aucun lecteur physique n'a repondu a la commande multicast dans le temps imparti." << endl;
     }
 }
 
 vector<vector<string>> M_ConfigReseau::getConfigReseau() {
-    configReseau = maM_BDD->recupereDonnees("*", "config_reseau", "");
+    //configReseau = maM_BDD->recupereDonnees("*", "config_reseau", "");
     return configReseau;
 }
