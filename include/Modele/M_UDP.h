@@ -44,17 +44,22 @@ public:
     bool initialiser(const std::string& ipCible = "", int portCible = 0, int portEcoute = 0, const std::string& ipMulticast = "");
     void fermer();
 
-    // --- ENVOI ÉPURÉ ---
+    // ENVOI
     bool envoyer(const void* donnees, int taille);
     void transmettreCommande(Expediteur exp, TypeCommande type, Action action, float valeur);
 
-    // --- RÉCEPTION ---
+    // RÉCEPTION
     bool recevoir(PaquetControle &paquet) const;
-    int recevoirAvecTimeout(char* buffer, int tailleMax, std::string& ipEmetteur, int timeoutMs) const;
+
+    /**
+     * @brief Récupère l'adresse IP du dernier émetteur de paquet.
+     */
+    string getIP() const { return derniereIpEmetteur; }
 
 private:
     SocketType descripteurSocket = INVALID_SOCKET;
     sockaddr_in adresseDestination{}; // Stocke la cible configurée
     ip_mreq groupeMulticast{};
     bool estMulticast = false;
+    mutable string derniereIpEmetteur = "";
 };
