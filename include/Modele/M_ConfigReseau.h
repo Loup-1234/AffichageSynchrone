@@ -66,4 +66,7 @@ public:
      * @return Le tableau 2D contenant les lignes et colonnes de la configuration.
      */
     vector<vector<string>> getConfigReseau();
+
+    // À ajouter dans les méthodes publiques de M_ConfigReseau :
+    void sauvegarderConfigActuelle();
 };
