@@ -14,28 +14,26 @@ set(SOURCE_FILES
         src/main.cpp
         src/Vue/V_Master.cpp
         src/Controleur/C_LecteurPhysiqueLocal.cpp
-        src/Modele/M_ExpediteurUDP.cpp
         src/Modele/M_VideoComplexe.cpp
-        src/Modele/M_TFTP_W.cpp
+        src/Modele/M_TFTP.cpp
         src/Modele/M_SessionLecture.cpp
         src/Modele/M_LecteurPhysique.cpp
-        src/Modele/M_ReceveurUDP.cpp
         src/Modele/M_BDD.cpp
         src/Modele/M_ConfigReseau.cpp
+        src/Modele/M_UDP.cpp
 )
 
 set(HEADER_FILES
         include/Vue/V_Master.h
         include/Controleur/C_LecteurPhysiqueLocal.h
-        include/Modele/M_ExpediteurUDP.h
         include/Modele/M_VideoComplexe.h
-        include/Modele/M_TFTP_W.h
+        include/Modele/M_TFTP.h
         include/Modele/M_SessionLecture.h
         include/Modele/M_LecteurPhysique.h
-        include/Modele/M_ReceveurUDP.h
         include/Modele/M_ProtocoleReseau.h
         include/Modele/M_BDD.h
         include/Modele/M_ConfigReseau.h
+        include/Modele/M_UDP.h
 )
 
 # ==========================================

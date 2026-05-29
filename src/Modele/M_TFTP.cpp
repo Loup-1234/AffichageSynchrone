@@ -1,17 +1,17 @@
 #ifdef _WIN32
 
-#include "modele/M_TFTP_W.h"
+#include "modele/M_TFTP.h"
 
-M_TFTP_W::M_TFTP_W() {
+M_TFTP::M_TFTP() {
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
 }
 
-M_TFTP_W::~M_TFTP_W() {
+M_TFTP::~M_TFTP() {
     WSACleanup();
 }
 
-void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
+void M_TFTP::envoyer(string ipMaster, string cheminJson) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
         cerr << "[DEBUG] [Session Upload TFTP] Erreur lors de la creation de la socket." << endl;
@@ -98,7 +98,7 @@ void M_TFTP_W::envoyer(string ipMaster, string cheminJson) {
     cout << "[DEBUG] [Session Upload TFTP] Upload du fichier termine avec succes !" << endl;
 }
 
-bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
+bool M_TFTP::recevoirFichierPousse(const string& fichierLocal) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
         cerr << "[DEBUG] [Session Reception TFTP] Erreur lors de la creation de la socket." << endl;
@@ -168,7 +168,7 @@ bool M_TFTP_W::recevoirFichierPousse(const string& fichierLocal) {
     return true;
 }
 
-bool M_TFTP_W::recevoirFichierPousseMaster(const string& fichierLocal) {
+bool M_TFTP::recevoirFichierPousseMaster(const string& fichierLocal) {
     SOCKET sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == INVALID_SOCKET) {
         cerr << "[DEBUG] [Session Master TFTP] Erreur lors de la creation de la socket." << endl;

@@ -4,10 +4,11 @@
 #include "Modele/M_ConfigReseau.h"
 
 #ifdef _WIN32
-#include "Modele/M_TFTP_W.h"
+#include "Modele/M_TFTP.h"
 #endif
 
-M_ConfigReseau::M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port) : Expediteur(ip, port), maM_BDD(pMaBDD), configReseau({}) {
+M_ConfigReseau::M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port) : maM_BDD(pMaBDD), configReseau({}) {
+    expediteur.initialiser(ip, port);
 }
 
 void M_ConfigReseau::visualiserLecteurPhysique() {
@@ -72,12 +73,12 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
     filesystem::remove(cheminConf, ec);
 
     // Envoi d une commande specifique d initialisation reseau
-    Expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
+    expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
 
     bool transfertReussi = false;
 
 #ifdef _WIN32
-    M_TFTP_W tftp;
+    M_TFTP tftp;
     transfertReussi = tftp.recevoirFichierPousseMaster(cheminConf);
 #else
 

@@ -14,10 +14,10 @@
 using namespace std;
 
 /**
- * @class M_TFTP_W
+ * @class M_TFTP
  * @brief Implémente le protocole de transfert de fichiers simplifié TFTP pour l'environnement Windows.
  */
-class M_TFTP_W {
+class M_TFTP {
 private:
     const int BLOCK_SIZE = 512; /**< Taille fixe d'un bloc de données TFTP conforme au standard (512 octets). */
     const int MAX_RETRIES = 5; /**< Nombre de tentatives de réémission maximales en cas de perte de paquet. */
@@ -26,12 +26,12 @@ public:
     /**
      * @brief Constructeur initialisant l'utilisation de la bibliothèque Winsock.
      */
-    M_TFTP_W();
+    M_TFTP();
 
     /**
      * @brief Destructeur assurant le nettoyage et la désinitialisation de Winsock.
      */
-    ~M_TFTP_W();
+    ~M_TFTP();
 
     /**
      * @brief Émet un fichier local vers un serveur TFTP distant en utilisant une requête WRQ.

@@ -7,8 +7,9 @@ using namespace std;
 
 C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int portCommandes, int portDecouverte,
                                                int portReponse, const string &cheminVideoMaster)
-    : m_cheminVideoMaster(cheminVideoMaster), udp(ipMulticast, portCommandes), session(ipMulticast, portDecouverte),
+    : m_cheminVideoMaster(cheminVideoMaster), session(ipMulticast, portDecouverte),
       m_adresseMulticast(ipMulticast), m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
+    expediteur.initialiser(ipMulticast, portCommandes);
     modeleLecteur.collecterInfosLocales();
 
     if (filesystem::exists(m_cheminVideoMaster)) {
@@ -91,14 +92,14 @@ void C_LecteurPhysiqueLocal::mettreAJour() {
 void C_LecteurPhysiqueLocal::basculerPlayPause() {
     if (modeleLecteur.estEnLecture()) {
         modeleLecteur.pause();
-        udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PAUSE, 0.0f);
+        expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PAUSE, 0.0f);
     } else {
         if (modeleLecteur.estTermine()) {
             modeleLecteur.stop();
             modeleLecteur.demarrer();
         } else {
             modeleLecteur.play();
-            udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PLAY, 0.0f);
+            expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PLAY, 0.0f);
         }
     }
 }
@@ -106,12 +107,12 @@ void C_LecteurPhysiqueLocal::basculerPlayPause() {
 void C_LecteurPhysiqueLocal::modifierVolume(float volume, bool muet) {
     volumeCourant = muet ? 0.0f : volume;
     modeleLecteur.setVolume(static_cast<int>(volumeCourant));
-    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VOLUME, volumeCourant);
+    expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VOLUME, volumeCourant);
 }
 
 void C_LecteurPhysiqueLocal::modifierProgression(float progression, bool enGlissement, bool restaurerLecture) {
     modeleLecteur.setTime(progression);
-    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PROGRESSION, progression);
+    expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::PROGRESSION, progression);
 
     if (enGlissement) {
         modeleLecteur.pause();
@@ -125,10 +126,10 @@ void C_LecteurPhysiqueLocal::modifierProgression(float progression, bool enGliss
 
 void C_LecteurPhysiqueLocal::modifierVitesse(float vitesse) {
     modeleLecteur.setVitesse(vitesse);
-    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VITESSE, vitesse);
+    expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::VITESSE, vitesse);
 }
 
 void C_LecteurPhysiqueLocal::stopper() {
     modeleLecteur.stop();
-    udp.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::STOP, 0.0f);
+    expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::ORDRE, Action::STOP, 0.0f);
 }

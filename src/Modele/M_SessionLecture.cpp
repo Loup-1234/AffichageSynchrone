@@ -1,6 +1,6 @@
 #include "Modele/M_SessionLecture.h"
 #ifdef _WIN32
-#include "Modele/M_TFTP_W.h"
+#include "Modele/M_TFTP.h"
 #endif
 #include <raylib.h>
 #include <filesystem>
@@ -231,7 +231,7 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
 
 #ifdef _WIN32
     try {
-        M_TFTP_W tftp;
+        M_TFTP tftp;
         for (const auto& [ip, fichier] : listeTransferts) tftp.envoyer(ip, fichier);
     } catch (const exception &e) {
         cerr << "[DEBUG] [Session Lecture] [SESSION TFTP ERROR] Echec lors du transfert : " << e.what() << endl;

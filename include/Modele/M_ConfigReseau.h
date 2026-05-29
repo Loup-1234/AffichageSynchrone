@@ -3,7 +3,7 @@
 #include <fstream>
 
 #include "M_BDD.h"
-#include "M_ExpediteurUDP.h"
+#include "M_UDP.h"
 #include "../libs/JSON/json.hpp"
 
 using json = nlohmann::json;
@@ -19,7 +19,7 @@ using namespace std;
  */
 class M_ConfigReseau {
 private:
-    M_ExpediteurUDP Expediteur; /**< Instance de l'expéditeur UDP pour l'envoi de commandes. */
+    M_UDP expediteur; /**< Instance de l'expéditeur UDP pour l'envoi de commandes. */
 
     M_BDD* maM_BDD; /**< Pointeur vers le gestionnaire de la base de données. */
 

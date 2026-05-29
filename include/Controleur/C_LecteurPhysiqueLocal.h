@@ -2,7 +2,7 @@
 
 #include "Modele/M_LecteurPhysique.h"
 #include "Modele/M_SessionLecture.h"
-#include "Modele/M_ExpediteurUDP.h"
+#include "Modele/M_UDP.h"
 #include "Modele/M_ProtocoleReseau.h"
 #include <vector>
 #include <string>
@@ -106,9 +106,8 @@ private:
     const string m_dossierSortie = "videosComplexes";
 
     M_LecteurPhysique modeleLecteur;
-    M_ExpediteurUDP udp;
+    M_UDP expediteur;
     M_SessionLecture session;
-    vector<LecteurConfig> m_configLecteurs;
 
     const string m_adresseMulticast;
     const int m_portDecouverte;
