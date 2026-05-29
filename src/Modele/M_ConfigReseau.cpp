@@ -20,8 +20,6 @@ M_ConfigReseau::~M_ConfigReseau() {
 
 void M_ConfigReseau::visualiserLecteurPhysique() {
     // Recuperation globale de la table cible stockee en base de donnees
-
-    // [Alain] Déplacé dans getConfigReseau pour simplifier le code
     configReseau = maM_BDD->recupereDonnees("*", "config_reseau", "");
 }
 
