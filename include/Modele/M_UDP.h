@@ -27,7 +27,7 @@ using SockLenType = socklen_t;
 
 /**
  * @class M_UDP
- * @brief Version simplifiée avec stockage de la cible à l'initialisation.
+ * @brief Gestionnaire de socket UDP spécialisé par cas d'usage.
  */
 class M_UDP {
 public:
@@ -35,13 +35,20 @@ public:
     ~M_UDP();
 
     /**
-     * @brief Initialise le socket UDP avec ses paramètres de communication.
-     * @param ipCible Adresse IP de destination (Unicast, Broadcast ou Multicast).
-     * @param portCible Port de destination pour l'envoi.
-     * @param portEcoute Port local d'écoute (0 si émetteur seul).
-     * @param ipMulticast Adresse du groupe multicast à rejoindre (optionnel).
+     * @brief Configure le socket uniquement pour l'envoi (Unicast / Broadcast).
      */
-    bool initialiser(const std::string& ipCible = "", int portCible = 0, int portEcoute = 0, const std::string& ipMulticast = "");
+    bool initialiserEmetteur(const std::string& ipCible, int portCible);
+
+    /**
+     * @brief Configure le socket uniquement pour l'écoute locale (Unicast).
+     */
+    bool initialiserRecepteur(int portEcoute);
+
+    /**
+     * @brief Configure le socket pour écouter et émettre au sein d'un groupe Multicast.
+     */
+    bool initialiserMulticast(const std::string& ipMulticast, int portPort);
+
     void fermer();
 
     // ENVOI
@@ -54,12 +61,17 @@ public:
     /**
      * @brief Récupère l'adresse IP du dernier émetteur de paquet.
      */
-    string getIP() const { return derniereIpEmetteur; }
+    std::string getIP() const { return derniereIpEmetteur; }
 
 private:
+    /**
+     * @brief Factorise la création du socket et l'application des options universelles.
+     */
+    bool preparerSocket();
+
     SocketType descripteurSocket = INVALID_SOCKET;
-    sockaddr_in adresseDestination{}; // Stocke la cible configurée
+    sockaddr_in adresseDestination{};
     ip_mreq groupeMulticast{};
     bool estMulticast = false;
-    mutable string derniereIpEmetteur = "";
+    mutable std::string derniereIpEmetteur = "";
 };

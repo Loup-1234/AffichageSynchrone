@@ -1,9 +1,17 @@
 #include "Vue/V_Master.h"
+#include "Modele/M_BDD.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
+
+    // M_BDD maBDD;
+    // maBDD.supprimerDonnees("video", "true");
+    // maBDD.supprimerDonnees("config_reseau", "true");
+    // maBDD.supprimerDonnees("video_complexe", "true");
+    // maBDD.supprimerDonnees("musique", "true");
+
     try {
         // Configuration des parametres de demarrage reseau et d affichage
         const string IP_MULTICAST = "224.0.0.1";

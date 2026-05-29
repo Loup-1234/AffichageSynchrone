@@ -9,7 +9,7 @@ C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int po
                                                int portReponse, const string &cheminVideoMaster)
     : m_cheminVideoMaster(cheminVideoMaster), session(ipMulticast, portDecouverte),
       m_adresseMulticast(ipMulticast), m_portDecouverte(portDecouverte), m_portReponse(portReponse) {
-    expediteur.initialiser(ipMulticast, portCommandes);
+    expediteur.initialiserMulticast(ipMulticast, portCommandes);
     modeleLecteur.collecterInfosLocales();
 
     if (filesystem::exists(m_cheminVideoMaster)) {
@@ -18,6 +18,7 @@ C_LecteurPhysiqueLocal::C_LecteurPhysiqueLocal(const string &ipMulticast, int po
 }
 
 C_LecteurPhysiqueLocal::~C_LecteurPhysiqueLocal() {
+    expediteur.fermer();
     if (threadGeneration.joinable()) threadGeneration.join();
     if (threadRecherche.joinable()) threadRecherche.join();
 }

@@ -8,7 +8,11 @@
 #endif
 
 M_ConfigReseau::M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port) : maM_BDD(pMaBDD), configReseau({}) {
-    expediteur.initialiser(ip, port);
+    expediteur.initialiserMulticast(ip, port);
+}
+
+M_ConfigReseau::~M_ConfigReseau() {
+    expediteur.fermer();
 }
 
 void M_ConfigReseau::visualiserLecteurPhysique() {
@@ -72,10 +76,12 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
     error_code ec;
     filesystem::remove(cheminConf, ec);
 
-    // Envoi d une commande specifique d initialisation reseau
+    // Envoi d'une commande specifique d initialisation reseau
     expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
 
     bool transfertReussi = false;
+
+    //expediteur.recevoir();
 
 #ifdef _WIN32
     M_TFTP tftp;

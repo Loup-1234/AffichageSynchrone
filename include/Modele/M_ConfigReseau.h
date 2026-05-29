@@ -25,6 +25,8 @@ private:
 
     vector<vector<string>> configReseau; /**< Stockage local de la table de configuration réseau. */
 
+    //vector<string> ipLecteurs;
+
 public:
     /**
      * @brief Constructeur de la classe M_ConfigReseau.
@@ -33,6 +35,8 @@ public:
      * @param port Port de destination pour les commandes UDP.
      */
     M_ConfigReseau(M_BDD* pMaBDD, const string &ip, int port);
+
+    ~M_ConfigReseau();
 
     /**
      * @brief Récupère et affiche les données des lecteurs physiques à l'écran.
