@@ -207,6 +207,7 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
     cout << "[DEBUG] [Session Lecture] Fin de la generation des videos complexes." << endl;
 }
 
+
 void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const {
     cout << "[DEBUG] [Session Lecture] Preparation de l'upload TFTP des videos complexes..." << endl;
 
@@ -231,10 +232,40 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
 
 #ifdef _WIN32
     try {
-        M_TFTP tftp;
-        for (const auto& [ip, fichier] : listeTransferts) tftp.envoyer(ip, fichier);
-    } catch (const exception &e) {
-        cerr << "[DEBUG] [Session Lecture] [SESSION TFTP ERROR] Echec lors du transfert : " << e.what() << endl;
+        // Un vecteur pour stocker et suivre nos threads
+        std::vector<std::thread> listeThreads;
+        listeThreads.reserve(listeTransferts.size());
+
+        // 1. LANCEMENT DES TRANSFERTS EN PARALLÈLE
+        for (const auto& [ip, fichier] : listeTransferts) {
+            // Chaque transfert est géré par son propre thread de manière autonome
+            listeThreads.push_back(std::thread([ip, fichier]() {
+                try {
+                    M_TFTP tftp; // Une instance TFTP unique et locale par thread
+                    tftp.envoyer(ip, fichier);
+                } catch (const std::exception &e) {
+                    // On gère l'erreur ici pour éviter qu'un échec réseau ne coupe les autres threads
+                    std::cerr << "[DEBUG] [Session Lecture] [THREAD ERROR] Echec pour "
+                              << ip << " (" << fichier << ") : " << e.what() << std::endl;
+                }
+            }));
+        }
+
+        cout << "[DEBUG] [Session Lecture] " << listeThreads.size()
+             << " transferts TFTP lances en simultane. Attente de la fin des envois..." << endl;
+
+        // 2. SYNCHRONISATION
+        // On attend que chaque lecteur ait fini de recevoir son fichier avant de continuer
+        for (auto& unThread : listeThreads) {
+            if (unThread.joinable()) {
+                unThread.join(); // Bloque le thread principal jusqu'à la fin de ce transfert précis
+            }
+        }
+
+        cout << "[DEBUG] [Session Lecture] Tous les transferts multithreades sont termines avec succes." << endl;
+
+    } catch (const std::exception &e) {
+        cerr << "[DEBUG] [Session Lecture] [SESSION TFTP ERROR] Erreur generale dans le gestionnaire : " << e.what() << endl;
     }
 #else
     cout << "[DEBUG] [Session Lecture] Transfert TFTP ignore (Disponible uniquement sous Windows)." << endl;

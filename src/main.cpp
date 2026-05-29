@@ -6,11 +6,10 @@ using namespace std;
 
 int main() {
 
-    // M_BDD maBDD;
-    // maBDD.supprimerDonnees("video", "true");
-    // maBDD.supprimerDonnees("config_reseau", "true");
-    // maBDD.supprimerDonnees("video_complexe", "true");
-    // maBDD.supprimerDonnees("musique", "true");
+    //M_BDD maBDD;
+    //maBDD.supprimerDonnees("config_reseau", "true");
+    //maBDD.supprimerDonnees("video_complexe", "true");
+    //maBDD.supprimerDonnees("musique", "true");
 
     try {
         // Configuration des parametres de demarrage reseau et d affichage

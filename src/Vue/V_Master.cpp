@@ -263,9 +263,7 @@ void V_Master::dessinerListeFichiers() {
     bool desactiver = controleur.estGenerationEnCours() || controleur.estRechercheEnCours();
     GuiSetState(desactiver ? STATE_DISABLED : STATE_NORMAL);
 
-    if (GuiButton(zones[1], "GÉNÉRER ET\nTRANSFÉRER")) {
-        controleur.initialiserSession(getVideosSelectionnees(), getLecteursSelectionnes());
-    }
+    if (GuiButton(zones[10], "#001# DOSSIER")) ouvrirDossierVideos();
 
     constexpr float HAUTEUR_LIGNE = 30.0f;
     constexpr float TAILLE_CHECKBOX = 20.0f;
@@ -307,17 +305,16 @@ void V_Master::dessinerListeFichiers() {
     }
     EndScissorMode();
 
-    if (GuiButton(zones[10], "#001# DOSSIER")) ouvrirDossierVideos();
+    if (GuiButton(zones[1], "GÉNÉRER ET\nTRANSFÉRER")) {
+        controleur.initialiserSession(getVideosSelectionnees(), getLecteursSelectionnes());
+    }
+
     GuiSetState(STATE_NORMAL);
 }
 
 void V_Master::dessinerListeLecteurs() {
     bool desactiver = controleur.estGenerationEnCours() || controleur.estRechercheEnCours();
     GuiSetState(desactiver ? STATE_DISABLED : STATE_NORMAL);
-
-    if (GuiButton(zones[13], "CHERCHER IP")) {
-        controleur.lancerRechercheLecteurs();
-    }
 
     constexpr float HAUTEUR_LIGNE = 30.0f;
     constexpr float TAILLE_CHECKBOX = 20.0f;
@@ -359,6 +356,11 @@ void V_Master::dessinerListeLecteurs() {
     }
 
     EndScissorMode();
+
+    if (GuiButton(zones[13], "CHERCHER IP")) {
+        controleur.lancerRechercheLecteurs();
+    }
+
     GuiSetState(STATE_NORMAL);
 }
 
