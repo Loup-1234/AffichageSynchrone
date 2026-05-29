@@ -72,7 +72,9 @@ void M_ConfigReseau::enregistrerConfigurationReseau(string dossierJson) {
 }
 
 void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
+
     string cheminConf = dossier + "/conf.json";
+
     error_code ec;
     filesystem::remove(cheminConf, ec);
 
