@@ -65,6 +65,10 @@ public:
      */
     vector<map<string, string>> rechercherLecteurs();
 
+    vector<vector<string>> getConfig() {return config.getConfigReseau();}
+    void sauvegarderConfig() {config.sauvegarderConfigActuelle();}
+    void chargerConfig() {config.visualiserLecteurPhysique();}
+
 private:
     /**
      * @brief Calcule le quota de vidéos attribué à chaque écran proportionnellement à sa surface en pixels.

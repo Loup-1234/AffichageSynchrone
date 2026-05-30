@@ -40,12 +40,14 @@ V_Master::~V_Master() {
 void V_Master::miseAJourDisposition() {
     const auto L = static_cast<float>(GetScreenWidth());
     const auto H = static_cast<float>(GetScreenHeight());
+    constexpr float HAUTEUR_BOUTON_STANDARD = 48.0f; // Alignement sur la hauteur de DOSSIER
 
-    zones[0] = {0, 48, largeurPanneauGauche, H - 96};
-    zones[1] = {0, H - 48, largeurPanneauGauche, 48};
-    zones[10] = {0, 0, largeurPanneauGauche, 48};
+    zones[10] = {0, 0, largeurPanneauGauche, HAUTEUR_BOUTON_STANDARD}; // DOSSIER
+    zones[0] = {0, HAUTEUR_BOUTON_STANDARD, largeurPanneauGauche, H - (HAUTEUR_BOUTON_STANDARD * 2.0f)}; // Liste vidéos
+    zones[1] = {0, H - HAUTEUR_BOUTON_STANDARD, largeurPanneauGauche, HAUTEUR_BOUTON_STANDARD}; // GÉNÉRER ET TRANSFÉRER
 
     float largeurCentre = L - largeurPanneauGauche - largeurPanneauDroit;
+
     zones[2] = {largeurPanneauGauche, 0, largeurCentre, H - 72};
     zones[3] = {largeurPanneauGauche, H - 72, largeurCentre, 2};
 
@@ -65,10 +67,10 @@ void V_Master::miseAJourDisposition() {
 
     float demiLargeur = largeurPanneauDroit / 2.0f;
 
-    zones[14] = {L - largeurPanneauDroit, 0, demiLargeur, 40};
-    zones[15] = {L - largeurPanneauDroit + demiLargeur, 0, demiLargeur, 40};
-    zones[12] = {L - largeurPanneauDroit, 40, largeurPanneauDroit, H - 80};
-    zones[13] = {L - largeurPanneauDroit, H - 40, largeurPanneauDroit, 40};
+    zones[14] = {L - largeurPanneauDroit, 0, demiLargeur, HAUTEUR_BOUTON_STANDARD}; // Enregistrer
+    zones[15] = {L - largeurPanneauDroit + demiLargeur, 0, demiLargeur, HAUTEUR_BOUTON_STANDARD}; // Charger
+    zones[12] = {L - largeurPanneauDroit, HAUTEUR_BOUTON_STANDARD, largeurPanneauDroit, H - (HAUTEUR_BOUTON_STANDARD * 2.0f)}; // Liste lecteurs
+    zones[13] = {L - largeurPanneauDroit, H - HAUTEUR_BOUTON_STANDARD, largeurPanneauDroit, HAUTEUR_BOUTON_STANDARD}; // CHERCHER IP
 }
 
 void V_Master::chargerListeVideos() {
@@ -91,16 +93,31 @@ void V_Master::chargerListeVideos() {
 }
 
 void V_Master::chargerListeLecteurs() {
+    // 1. Nettoyage des listes actuelles pour éviter les doublons
     lecteursIPs.clear();
     lecteursCoches.clear();
     ordreSelectionLecteurs.clear();
 
-    auto lecteurs = controleur.getDerniersLecteursTrouves();
-    for (const auto &infos: lecteurs) {
-        string label = infos.at("ip");
-        lecteursIPs.push_back(label);
-        lecteursCoches.push_back(false);
+    // 2. Récupération de la configuration réseau via la cascade de méthodes
+    auto lecteurs = controleur.getConfig();
+
+    // 3. Parcours et extraction des adresses IP
+    for (size_t i = 0; i < lecteurs.size(); ++i) {
+        const auto &infos = lecteurs[i];
+
+        // Sécurité : On s'assure qu'il y a au moins 2 éléments (index 0=MAC, index 1=IP)
+        if (infos.size() > 1) {
+            string label = infos[1];
+            lecteursIPs.push_back(label);
+            lecteursCoches.push_back(false);
+        } else {
+            // Affichage d'un simple avertissement si une donnée est incomplète
+            cerr << "[WARNING] [Vue Master] Ligne " << i << " ignoree : format de donnee invalide." << endl;
+        }
     }
+
+    // 4. Affichage du bilan de l'opération au format standardisé
+    cout << "[DEBUG] [Vue Master] Fin du chargement. " << lecteursIPs.size() << " lecteur(s) stocke(s)." << endl;
 }
 
 vector<string> V_Master::getVideosSelectionnees() const {
@@ -333,8 +350,8 @@ void V_Master::dessinerListeLecteurs() {
 
     BeginScissorMode(static_cast<int>(vue.x), static_cast<int>(vue.y), static_cast<int>(vue.width), static_cast<int>(vue.height));
 
-    for (size_t i = 1; i < lecteursIPs.size(); ++i) {
-        const float posY = zones[12].y + MARGE + static_cast<float>(i - 1) * HAUTEUR_LIGNE + positionDefilementLecteurs.y;
+    for (size_t i = 0; i < lecteursIPs.size(); ++i) {
+        const float posY = zones[12].y + MARGE + i * HAUTEUR_LIGNE + positionDefilementLecteurs.y;
         const Rectangle rectItem = {zones[12].x + MARGE + positionDefilementLecteurs.x, posY, TAILLE_CHECKBOX, TAILLE_CHECKBOX};
 
         if (rectItem.y + rectItem.height < vue.y || rectItem.y > vue.y + vue.height) continue;
@@ -361,12 +378,13 @@ void V_Master::dessinerListeLecteurs() {
 
     EndScissorMode();
 
-    if (GuiButton(zones[14], "1")) {
-
+    if (GuiButton(zones[14], "Enregistrer")) {
+        controleur.sauvegarderConfig();
     }
 
-    if (GuiButton(zones[15], "2")) {
-
+    if (GuiButton(zones[15], "Charger")) {
+        controleur.chargerConfig();
+        chargerListeLecteurs();
     }
 
     if (GuiButton(zones[13], "CHERCHER IP")) {

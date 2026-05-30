@@ -65,8 +65,7 @@ public:
      * @brief Accesseur (getter) pour obtenir la configuration réseau stockée localement.
      * @return Le tableau 2D contenant les lignes et colonnes de la configuration.
      */
-    vector<vector<string>> getConfigReseau();
+    vector<vector<string>> getConfigReseau() {return configReseau;}
 
-    // À ajouter dans les méthodes publiques de M_ConfigReseau :
     void sauvegarderConfigActuelle();
 };

@@ -159,29 +159,27 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
     }
 }
 
-vector<vector<string>> M_ConfigReseau::getConfigReseau() {
-    return configReseau;
-}
-
 void M_ConfigReseau::sauvegarderConfigActuelle() {
     if (configReseau.empty()) {
         cout << "[DEBUG] [Config Reseau] Rien à enregistrer, la liste est vide." << endl;
         return;
     }
 
+    // 1. SUPPRIME LES DONNÉES EXISTANTES
+    maM_BDD->supprimerDonnees("config_reseau", "");
+
     string colonnes = "adresse_mac, adresse_ip, os, ecran_largeur, ecran_hauteur";
 
+    // 2. ENREGISTRE LES NOUVELLES DONNÉES
     for (const auto& lecteur : configReseau) {
-        // On extrait les éléments dans l'ordre exact du vecteur créé lors de la recherche
         string adress_mac     = lecteur[0];
         string adress_ip      = lecteur[1];
         string os             = lecteur[2];
         string ecran_largeur  = lecteur[3];
         string ecran_hauteur  = lecteur[4];
 
-        string valeurs = "'" + adress_mac + "', '" + adress_ip + "', '" + os + "', " + ecran_largeur + ", " + ecran_hauteur;
+        const string valeurs = "'" + adress_mac + "', '" + adress_ip + "', '" + os + "', " + ecran_largeur + ", " + ecran_hauteur;
 
-        // Sauvegarde dans la table SQLite
         maM_BDD->enregistrerDonnees("config_reseau", colonnes, valeurs);
     }
 

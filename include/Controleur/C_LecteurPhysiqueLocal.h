@@ -99,6 +99,10 @@ public:
     bool estGenerationEnCours() const { return generationEnCours; }
     bool estTransfertEnCours() const { return transfertEnCours; }
 
+    vector<vector<string>> getConfig() {resultatsRecherchePrets = false;return session.getConfig();}
+    void sauvegarderConfig() {session.sauvegarderConfig();}
+    void chargerConfig() {session.chargerConfig();}
+
 private:
     float volumeCourant = 100.0f;
     const string m_cheminVideoMaster;
