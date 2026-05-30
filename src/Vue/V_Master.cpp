@@ -159,13 +159,20 @@ void V_Master::executer() {
 }
 
 void V_Master::gererLogique() {
+    // 1. Gestion du redimensionnement de la fenêtre
     if (IsWindowResized()) {
         float limiteMax = static_cast<float>(GetScreenWidth()) / 2.5f;
         if (largeurPanneauGauche > limiteMax) largeurPanneauGauche = limiteMax;
         if (largeurPanneauDroit > limiteMax) largeurPanneauDroit = limiteMax;
+
+        // Sécurité : évite que les panneaux ne descendent sous la taille par défaut
+        if (largeurPanneauGauche < 180.0f) largeurPanneauGauche = 180.0f;
+        if (largeurPanneauDroit < 180.0f) largeurPanneauDroit = 180.0f;
+
         miseAJourDisposition();
     }
 
+    // 2. Logique de redimensionnement manuel des panneaux (Drag & Drop)
     float mouseX = GetMouseX();
     float mouseY = GetMouseY();
     float L = static_cast<float>(GetScreenWidth());
@@ -192,24 +199,73 @@ void V_Master::gererLogique() {
 
     if (enRedimensionnementGauche) {
         largeurPanneauGauche = mouseX;
-        if (largeurPanneauGauche < 100) largeurPanneauGauche = 100;
+        if (largeurPanneauGauche < 180.0f) largeurPanneauGauche = 180.0f;
         if (largeurPanneauGauche > L / 2.5f) largeurPanneauGauche = L / 2.5f;
         miseAJourDisposition();
     }
 
     if (enRedimensionnementDroit) {
         largeurPanneauDroit = L - mouseX;
-        if (largeurPanneauDroit < 100) largeurPanneauDroit = 100;
+        if (largeurPanneauDroit < 180.0f) largeurPanneauDroit = 180.0f;
         if (largeurPanneauDroit > L / 2.5f) largeurPanneauDroit = L / 2.5f;
         miseAJourDisposition();
     }
 
+    // 3. Gestion des raccourcis clavier
+    if (!controleur.estGenerationEnCours() && !controleur.estRechercheEnCours()) {
+
+        // ESPACE -> Lecture / Pause
+        if (IsKeyPressed(KEY_SPACE)) {
+            controleur.basculerPlayPause();
+        }
+
+        // M -> Sourdine
+        if (IsKeyPressed(KEY_M)) {
+            estMuet = !estMuet;
+            controleur.modifierVolume(valeurVolume, estMuet);
+        }
+
+        // FLÈCHE HAUT -> Augmenter le volume (+50% par seconde)
+        if (IsKeyDown(KEY_UP)) {
+            valeurVolume += 50.0f * GetFrameTime();
+            if (valeurVolume > 100.0f) valeurVolume = 100.0f;
+            estMuet = false;
+            controleur.modifierVolume(valeurVolume, estMuet);
+        }
+
+        // FLÈCHE BAS -> Diminuer le volume (-50% par seconde)
+        if (IsKeyDown(KEY_DOWN)) {
+            valeurVolume -= 50.0f * GetFrameTime();
+            if (valeurVolume < 0.0f) valeurVolume = 0.0f;
+            if (valeurVolume == 0.0f) estMuet = true;
+            controleur.modifierVolume(valeurVolume, estMuet);
+        }
+
+        // FLÈCHE DROITE -> Avancer de 5 secondes
+        if (IsKeyPressed(KEY_RIGHT) && controleur.getDureeTotale() > 0.0f) {
+            valeurProgression += 5.0f;
+            if (valeurProgression > controleur.getDureeTotale()) {
+                valeurProgression = controleur.getDureeTotale();
+            }
+            controleur.modifierProgression(valeurProgression, false, controleur.estEnLecture());
+        }
+
+        // FLÈCHE GAUCHE -> Reculer de 5 secondes
+        if (IsKeyPressed(KEY_LEFT) && controleur.getDureeTotale() > 0.0f) {
+            valeurProgression -= 5.0f;
+            if (valeurProgression < 0.0f) valeurProgression = 0.0f;
+            controleur.modifierProgression(valeurProgression, false, controleur.estEnLecture());
+        }
+    }
+
+    // 4. Mises à jour du contrôleur et du réseau
     controleur.mettreAJour();
 
     if (controleur.resultatsRechercheDisponibles()) {
         chargerListeLecteurs();
     }
 
+    // 5. Récupération et traitement de la texture vidéo
     void *pixels = nullptr;
     unsigned int largeur = 0, hauteur = 0;
     bool redimensionnement = false;
@@ -232,6 +288,7 @@ void V_Master::gererLogique() {
         }
     }
 
+    // 6. Actualisation temporelle de la barre de progression
     if (delaiRecherche > 0) delaiRecherche -= GetFrameTime();
     if (!enGlissement && delaiRecherche <= 0 && controleur.getDureeTotale() > 0) {
         valeurProgression = controleur.estTermine() ? controleur.getDureeTotale() : controleur.getProgressionActuelle();
