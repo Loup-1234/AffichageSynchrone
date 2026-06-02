@@ -7,10 +7,11 @@
 #include <iostream>
 #include <map>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
-M_SessionLecture::M_SessionLecture(const string &ip, int port) : config(&bdd, ip, port) {}
+M_SessionLecture::M_SessionLecture(const string &ip, int port) : config(ip, port) {}
 
 void M_SessionLecture::configurerLecteurs(const vector<LecteurConfig>& configs) {
     cout << "[DEBUG] [Session Lecture] Configuration manuelle de " << configs.size() << " lecteur(s)." << endl;
@@ -32,7 +33,6 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         return;
     }
 
-    // Réinitialisation des capacités via une boucle moderne
     for (auto& lecteur : m_lecteurs) {
         lecteur.nbVideosCapacite = 0;
     }
@@ -51,14 +51,14 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         videosRestantes--;
     }
 
-    // Récupération et traitement des surfaces d'affichage depuis la BDD
-    vector<vector<string>> dataBDD = bdd.recupereDonnees("adresse_ip, ecran_largeur, ecran_hauteur", "config_reseau", "");
+    // --- TRAITEMENT VIA LE CACHE LOCALISÉ ---
     map<string, long long> surfaceParIP;
 
-    for (const auto& ligne : dataBDD) {
-        if (ligne.size() >= 3) {
-            long long surface = stoll(ligne[1]) * stoll(ligne[2]);
-            if (surface > 0) surfaceParIP[ligne[0]] = surface;
+    for (const auto& ligne : m_cacheConfigReseau) {
+        if (ligne.size() >= 5) {
+            // Index basés sur le SELECT * (0: mac, 1: ip, 2: os, 3: largeur, 4: hauteur)
+            long long surface = stoll(ligne[3]) * stoll(ligne[4]);
+            if (surface > 0) surfaceParIP[ligne[1]] = surface;
         }
     }
 
@@ -101,7 +101,7 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         ordrePriorite.reserve(m_lecteurs.size());
 
         for (size_t i = 1; i < m_lecteurs.size(); ++i) ordrePriorite.push_back(i);
-        ordrePriorite.push_back(0); // Master en dernier
+        ordrePriorite.push_back(0);
 
         size_t pointeurInterne = 0;
         while (videosRestantes > 0) {
@@ -139,7 +139,6 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
         return;
     }
 
-    // Gestion du dossier de sortie
     try {
         if (filesystem::exists("videosComplexes")) {
             cout << "[DEBUG] [Session Lecture] Nettoyage complet du dossier : videosComplexes" << endl;
@@ -154,7 +153,6 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
     }
 
     m_lecteurs.clear();
-
     m_lecteurs.push_back({.id = 0, .ip = "", .nbVideosCapacite = 0});
 
     int prochainId = 1;
@@ -174,7 +172,6 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
 
     vector<vector<string>> videosParLecteur(m_lecteurs.size());
 
-    // Injection obligatoire de la vidéo de référence
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (m_lecteurs[i].nbVideosCapacite > 0) {
             videosParLecteur[i].push_back(listeFichiersEntree[0]);
@@ -191,7 +188,6 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
         lecteurActuel = (lecteurActuel + 1) % m_lecteurs.size();
     }
 
-    // Traitement séquentiel FFmpeg
     for (size_t i = 0; i < m_lecteurs.size(); ++i) {
         if (!videosParLecteur[i].empty()) {
             string cheminSortie = "videosComplexes/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
@@ -206,7 +202,6 @@ void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersE
 
     cout << "[DEBUG] [Session Lecture] Fin de la generation des videos complexes." << endl;
 }
-
 
 void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const {
     cout << "[DEBUG] [Session Lecture] Preparation de l'upload TFTP des videos complexes..." << endl;
@@ -232,19 +227,15 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
 
 #ifdef _WIN32
     try {
-        // Un vecteur pour stocker et suivre nos threads
         std::vector<std::thread> listeThreads;
         listeThreads.reserve(listeTransferts.size());
 
-        // 1. LANCEMENT DES TRANSFERTS EN PARALLÈLE
         for (const auto& [ip, fichier] : listeTransferts) {
-            // Chaque transfert est géré par son propre thread de manière autonome
             listeThreads.push_back(std::thread([ip, fichier]() {
                 try {
-                    M_TFTP tftp; // Une instance TFTP unique et locale par thread
+                    M_TFTP tftp;
                     tftp.envoyer(ip, fichier);
                 } catch (const std::exception &e) {
-                    // On gère l'erreur ici pour éviter qu'un échec réseau ne coupe les autres threads
                     std::cerr << "[DEBUG] [Session Lecture] [THREAD ERROR] Echec pour "
                               << ip << " (" << fichier << ") : " << e.what() << std::endl;
                 }
@@ -254,11 +245,9 @@ void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const 
         cout << "[DEBUG] [Session Lecture] " << listeThreads.size()
              << " transferts TFTP lances en simultane. Attente de la fin des envois..." << endl;
 
-        // 2. SYNCHRONISATION
-        // On attend que chaque lecteur ait fini de recevoir son fichier avant de continuer
         for (auto& unThread : listeThreads) {
             if (unThread.joinable()) {
-                unThread.join(); // Bloque le thread principal jusqu'à la fin de ce transfert précis
+                unThread.join();
             }
         }
 
@@ -277,6 +266,9 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
 
     config.rechercherLecteurPhysique("JSON_recue");
 
+    // MISE À JOUR DU CACHE AVEC LA DECOUVERTE RESEAU DYNAMIQUE
+    m_cacheConfigReseau = config.getConfigReseau();
+
     const auto rawConfig = config.getConfigReseau();
     vector<map<string, string>> lecteursDetectes;
     lecteursDetectes.reserve(rawConfig.size());
@@ -291,7 +283,7 @@ vector<map<string, string>> M_SessionLecture::rechercherLecteurs() {
             lecteur[colonnes[i]] = ligne[i];
         }
 
-        lecteursDetectes.push_back(std::move(lecteur)); // Transfert efficace sans copie lourde
+        lecteursDetectes.push_back(std::move(lecteur));
     }
 
     cout << "[DEBUG] [Session Lecture] Fin de la recherche. " << lecteursDetectes.size() << " lecteur(s) stocke(s)." << endl;
