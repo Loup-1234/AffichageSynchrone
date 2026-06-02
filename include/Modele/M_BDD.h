@@ -1,3 +1,10 @@
+/**
+* @file M_BDD.h
+ * @brief Déclaration de la classe M_BDD pour la gestion et l'accès à une base de données SQLite3.
+ * @author Robin Calendreau
+ * @date 2026
+ */
+
 #pragma once
 
 #include <string>
@@ -50,7 +57,7 @@ public:
      * @param where La clause de condition.
      * @return Un vecteur de vecteurs contenant les résultats sous forme de chaînes.
      */
-    vector<vector<string>> recupereDonnees(string select, string from, string where) const;
+    vector<vector<string> > recupereDonnees(string select, string from, string where) const;
 
     /**
      * @brief Supprime des données selon une condition.
@@ -60,5 +67,5 @@ public:
     void supprimerDonnees(string nomTable, string condition);
 
 private:
-    sqlite3* m_db; /**< Pointeur vers l'objet de connexion SQLite3. */
+    sqlite3 *m_db; /**< Pointeur vers l'objet de connexion SQLite3. */
 };

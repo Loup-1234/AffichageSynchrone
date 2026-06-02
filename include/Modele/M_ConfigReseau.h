@@ -1,3 +1,10 @@
+/**
+* @file M_ConfigReseau.h
+ * @brief Déclaration de la classe M_ConfigReseau pour la gestion de la topologie et des configurations réseau.
+ * @author Robin Calendreau
+ * @date 2026
+ */
+
 #pragma once
 
 #include <fstream>
@@ -17,10 +24,10 @@ using namespace std;
  */
 class M_ConfigReseau {
 private:
-    M_UDP expediteur;                     /**< Instance de l'expéditeur UDP pour l'envoi de commandes. */
-    M_BDD maM_BDD;                        /**< Instance autonome et encapsulée d'accès à la base de données SQLite. */
-    vector<vector<string>> configReseau;  /**< Stockage local de la table de configuration réseau. */
-    vector<string> ipLecteurs;            /**< Liste interne des adresses IP des lecteurs détectés. */
+    M_UDP expediteur; /**< Instance de l'expéditeur UDP pour l'envoi de commandes. */
+    M_BDD maM_BDD; /**< Instance autonome et encapsulée d'accès à la base de données SQLite. */
+    vector<vector<string> > configReseau; /**< Stockage local de la table de configuration réseau. */
+    vector<string> ipLecteurs; /**< Liste interne des adresses IP des lecteurs détectés. */
 
 public:
     /**
@@ -62,7 +69,7 @@ public:
      * @brief Accesseur (getter) pour obtenir la configuration réseau stockée localement.
      * @return Le tableau 2D contenant les lignes et colonnes de la configuration.
      */
-    vector<vector<string>> getConfigReseau() { return configReseau; }
+    vector<vector<string> > getConfigReseau() { return configReseau; }
 
     /**
      * @brief Supprime l'ancienne configuration en BDD et persiste l'état de configReseau actuel.

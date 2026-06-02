@@ -1,3 +1,10 @@
+/**
+ * @file C_LecteurPhysiqueLocal.h
+ * @brief Déclaration de la classe C_LecteurPhysiqueLocal chargée de la supervision du lecteur local et du réseau.
+ * @author Alain HUMEAU
+ * @date 2026
+ */
+
 #pragma once
 
 #include "Modele/M_LecteurPhysique.h"
@@ -7,12 +14,16 @@
 #include <string>
 #include <atomic>
 #include <thread>
+#include <map>
 
 using namespace std;
 
 /**
  * @class C_LecteurPhysiqueLocal
  * @brief Contrôleur supervisant le fonctionnement du lecteur local et l'état de la session multi-écrans.
+ * * Cette classe fait le lien entre les modèles de lecture physique, de session et de communication UDP.
+ * Elle gère également les traitements asynchrones via des threads pour la recherche de périphériques
+ * et la génération de médias.
  */
 class C_LecteurPhysiqueLocal {
 public:
@@ -80,49 +91,96 @@ public:
      */
     void lancerRechercheLecteurs();
 
-    /** @return true si un thread d'analyse réseau est en cours d'exécution. */
+    /** * @brief Vérifie si une recherche réseau est active.
+     * @return true si un thread d'analyse réseau est en cours d'exécution.
+     */
     bool estRechercheEnCours() const { return rechercheEnCours; }
-    /** @return true si de nouvelles données de topologie réseau ont été consolidées. */
-    bool resultatsRechercheDisponibles() const { return resultatsRecherchePrets; }
-    /** @brief Récupère la liste mise à jour des périphériques découverts et réinitialise le flag de disponibilité. */
-    vector<map<string, string>> getDerniersLecteursTrouves();
 
-    /** @brief Transmet les informations de frame vidéo décodées issues du modèle multimédia. */
-    bool recupererFrameVideo(void*& pixels, unsigned int& largeur, unsigned int& hauteur, bool& redimensionnement) {
+    /** * @brief Vérifie la disponibilité de nouveaux résultats.
+     * @return true si de nouvelles données de topologie réseau ont été consolidées.
+     */
+    bool resultatsRechercheDisponibles() const { return resultatsRecherchePrets; }
+
+    /** * @brief Récupère la liste mise à jour des périphériques découverts et réinitialise le flag de disponibilité.
+     * @return Un vecteur de dictionnaires contenant les propriétés des lecteurs trouvés.
+     */
+    vector<map<string, string> > getDerniersLecteursTrouves();
+
+    /** * @brief Transmet les informations de frame vidéo décodées issues du modèle multimédia.
+     * @param[out] pixels Pointeur de réception vers les données brutes des pixels.
+     * @param[out] largeur Variable de réception pour la largeur de l'image.
+     * @param[out] hauteur Variable de réception pour la hauteur de l'image.
+     * @param[out] redimensionnement Booléen indiquant si un changement de dimension a eu lieu.
+     * @return true si une nouvelle frame a été récupérée avec succès.
+     */
+    bool recupererFrameVideo(void *&pixels, unsigned int &largeur, unsigned int &hauteur, bool &redimensionnement) {
         return modeleLecteur.recupererFrameVideo(pixels, largeur, hauteur, redimensionnement);
     }
 
+    /** * @brief Récupère la durée totale du média chargé.
+     * @return Durée en secondes.
+     */
     float getDureeTotale() const { return modeleLecteur.getDureeTotale(); }
+
+    /** * @brief Récupère la progression temporelle actuelle.
+     * @return Position actuelle en secondes.
+     */
     float getProgressionActuelle() const { return modeleLecteur.getProgressionActuelle(); }
+
+    /** * @brief Vérifie si le lecteur local est en cours de lecture.
+     * @return true si le média défile.
+     */
     bool estEnLecture() const { return modeleLecteur.estEnLecture(); }
+
+    /** * @brief Vérifie si le média est arrivé à son terme.
+     * @return true si la vidéo est finie.
+     */
     bool estTermine() const { return modeleLecteur.estTermine(); }
+
+    /** * @brief Indique si la génération asynchrone d'une vidéo est active.
+     * @return true si le thread de génération travaille.
+     */
     bool estGenerationEnCours() const { return generationEnCours; }
+
+    /** * @brief Indique si le transfert réseau de médias est en cours.
+     * @return true si un envoi est actif.
+     */
     bool estTransfertEnCours() const { return transfertEnCours; }
 
-    vector<vector<string>> getConfig() {resultatsRecherchePrets = false;return session.getConfig();}
-    void sauvegarderConfig() {session.sauvegarderConfig();}
-    void chargerConfig() {session.chargerConfig();}
+    /** * @brief Récupère la configuration courante de la session et réinitialise le flag réseau.
+     * @return Matrice de chaînes de caractères représentant la configuration.
+     */
+    vector<vector<string> > getConfig() {
+        resultatsRecherchePrets = false;
+        return session.getConfig();
+    }
+
+    /** @brief Sauvegarde la configuration actuelle de la session sur le disque. */
+    void sauvegarderConfig() { session.sauvegarderConfig(); }
+
+    /** @brief Charge la configuration de la session depuis le fichier de sauvegarde. */
+    void chargerConfig() { session.chargerConfig(); }
 
 private:
-    float volumeCourant = 100.0f;
-    const string m_cheminVideoMaster;
-    const string m_dossierSortie = "videosComplexes";
+    float volumeCourant = 100.0f; ///< Volume sonore courant du lecteur (0.0 à 100.0).
+    const string m_cheminVideoMaster; ///< Chemin d'accès local de la vidéo principale.
+    const string m_dossierSortie = "videosComplexes"; ///< Répertoire de destination pour les vidéos générées.
 
-    M_LecteurPhysique modeleLecteur;
-    M_UDP expediteur;
-    M_SessionLecture session;
+    M_LecteurPhysique modeleLecteur; ///< Instance du modèle de lecture physique locale.
+    M_UDP expediteur; ///< Instance du gestionnaire de protocole réseau UDP.
+    M_SessionLecture session; ///< Instance assurant la gestion de la session de lecture partagée.
 
-    const string m_adresseMulticast;
-    const int m_portDecouverte;
-    const int m_portReponse;
+    const string m_adresseMulticast; ///< Adresse IP utilisée pour le groupe multicast.
+    const int m_portDecouverte; ///< Port réseau affecté aux requêtes de découverte.
+    const int m_portReponse; ///< Port réseau dédié à la réception des réponses.
 
-    atomic<bool> videoGeneree{false};
-    atomic<bool> generationEnCours{false};
-    atomic<bool> transfertEnCours{false};
-    thread threadGeneration;
+    atomic<bool> videoGeneree{false}; ///< Flag atomique indiquant si le traitement vidéo est terminé.
+    atomic<bool> generationEnCours{false}; ///< Flag atomique signalant qu'une génération est active.
+    atomic<bool> transfertEnCours{false}; ///< Flag atomique signalant qu'un transfert réseau est en cours.
+    thread threadGeneration; ///< Thread secondaire alloué aux calculs de génération vidéo.
 
-    atomic<bool> rechercheEnCours{false};
-    atomic<bool> resultatsRecherchePrets{false};
-    thread threadRecherche;
-    vector<map<string, string>> cacheLecteurs;
+    atomic<bool> rechercheEnCours{false}; ///< Flag atomique indiquant qu'une recherche réseau est active.
+    atomic<bool> resultatsRecherchePrets{false}; ///< Flag atomique indiquant que le cache des lecteurs a changé.
+    thread threadRecherche; ///< Thread secondaire dédié à l'écoute des terminaux réseau.
+    vector<map<string, string> > cacheLecteurs; ///< Tampon de stockage des informations des terminaux détectés.
 };

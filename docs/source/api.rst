@@ -41,19 +41,13 @@ Gestion de Session et Vidéo
 
 Communication Réseau
 --------------------
-.. doxygenclass:: M_ExpediteurUDP
+.. doxygenclass:: M_UDP
     :members:
     :protected-members:
     :private-members:
     :undoc-members:
 
-.. doxygenclass:: M_ReceveurUDP
-    :members:
-    :protected-members:
-    :private-members:
-    :undoc-members:
-
-.. doxygenclass:: M_TFTP_W
+.. doxygenclass:: M_TFTP
     :members:
     :protected-members:
     :private-members:
