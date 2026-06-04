@@ -7,6 +7,15 @@ project(AffichageSynchrone CXX C)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# GOOGLE TEST
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG v1.14.0
+)
+FetchContent_MakeAvailable(googletest)
+
 # ==========================================
 # SOURCES ET EN-TÊTES
 # ==========================================
@@ -57,8 +66,28 @@ endif()
 # ==========================================
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
 
+# GOOGLE TEST
+add_executable(Gtest test/Test1.cpp
+        src/Vue/V_Master.cpp
+        src/Controleur/C_LecteurPhysiqueLocal.cpp
+        src/Modele/M_VideoComplexe.cpp
+        src/Modele/M_TFTP.cpp
+        src/Modele/M_SessionLecture.cpp
+        src/Modele/M_LecteurPhysique.cpp
+        src/Modele/M_BDD.cpp
+        src/Modele/M_ConfigReseau.cpp
+        src/Modele/M_UDP.cpp)
+target_link_libraries(Gtest PRIVATE gtest_main)
+include(GoogleTest)
+gtest_discover_tests(Gtest)
+
 # Inclusions globales du projet
 target_include_directories(${PROJECT_NAME} PRIVATE
+        include
+        "libs/raygui"
+)
+
+target_include_directories(Gtest PRIVATE
         include
         "libs/raygui"
 )
@@ -113,6 +142,41 @@ if(WIN32)
             "-Wl,--allow-multiple-definition"
     )
 
+    # GOOGLE TEST
+    # Remplacement de add_definitions par la méthode moderne liée à la target
+    target_compile_definitions(Gtest PRIVATE
+            WIN32_LEAN_AND_MEAN NOMINMAX NOGDI NOUSER
+    )
+
+    # Inclusions spécifiques Windows
+    target_include_directories(Gtest PRIVATE
+            "libs/LibVLC/include"
+            "libs/LibVLC/include/vlc"
+            "libs/FFTW"
+    )
+    target_link_directories(Gtest PRIVATE "libs/LibVLC/lib")
+
+    # Linking Windows
+    target_link_libraries(Gtest PRIVATE
+            raylib
+            winmm
+            gdi32
+            ws2_32
+            wsock32
+            libvlc
+            libvlccore
+            iphlpapi
+            sqlite_lib
+            "${CMAKE_SOURCE_DIR}/libs/FFTW/libfftw3-3.dll"
+    )
+
+    target_link_options(Gtest PRIVATE
+            "-static-libgcc"
+            "-static-libstdc++"
+            "-static"
+            "-Wl,--allow-multiple-definition"
+    )
+
 elseif(UNIX AND NOT APPLE)
     message(STATUS "Configuration pour Linux détectée")
 
@@ -124,6 +188,16 @@ elseif(UNIX AND NOT APPLE)
 
     # Linking Linux
     target_link_libraries(${PROJECT_NAME} PRIVATE
+            PkgConfig::RAYLIB
+            PkgConfig::VLC
+            PkgConfig::FFTW
+            sqlite_lib
+            m
+            pthread
+    )
+
+    # GOOGLE TEST
+    target_link_libraries(Gtest PRIVATE
             PkgConfig::RAYLIB
             PkgConfig::VLC
             PkgConfig::FFTW
