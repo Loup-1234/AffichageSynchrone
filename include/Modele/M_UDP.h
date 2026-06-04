@@ -1,7 +1,7 @@
 /**
  * @file M_UDP.h
  * @brief Déclaration de la classe M_UDP et des structures associées pour la communication réseau.
- * @author Robin Manceau
+ * @author Robin Manceau et Alain Humeau
  * @date 2026
  */
 
