@@ -250,17 +250,18 @@ vector<vector<float>> M_VideoComplexe::extraireEtChargerAudios(const string *lis
 }
 
 int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2, size_t taille2) {
-    // 1. Planification des dimensions pour la FFT
-    const size_t tailleInitiale = taille1 + taille2 - 1; // Taille théorique du signal après corrélation
-    // On cherche la puissance de 2 supérieure pour maximiser les performances de l'algorithme FFT
-    const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitiale))));
-    const size_t tailleFrequence = tailleFFT / 2 + 1; // Format R2C (Real to Complex) de FFTW
+    // 1. Calcul de la taille idéale pour la FFT
+    const size_t tailleInitiale = taille1 + taille2 - 1; // Taille théorique minimale pour comparer les signaux
 
-    // Destructeurs personnalisés pour sécuriser la mémoire FFTW avec des unique_ptr
+    // On arrondit à la puissance de 2 supérieure pour que les calculs soient beaucoup plus rapides
+    const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitial))));
+    const size_t tailleFrequence = tailleFFT / 2 + 1; // Format FFTW pour stocker les fréquences (nombres complexes)
+
+    // Outils pour vider proprement la mémoire FFTW à la fin grâce aux unique_ptr
     auto destructeurReel = [](double *p) { fftw_free(p); };
     auto destructeurComplexe = [](fftw_complex *p) { fftw_free(p); };
 
-    // Allocation des buffers temporels et fréquentiels
+    // Création des tableaux pour stocker les signaux temporels et leurs fréquences
     const unique_ptr<double, decltype(destructeurReel)> signalTemporel1(fftw_alloc_real(tailleFFT), destructeurReel);
     const unique_ptr<double, decltype(destructeurReel)> signalTemporel2(fftw_alloc_real(tailleFFT), destructeurReel);
     const unique_ptr<double, decltype(destructeurReel)> signalResultat(fftw_alloc_real(tailleFFT), destructeurReel);
@@ -272,22 +273,22 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     const unique_ptr<fftw_complex, decltype(destructeurComplexe)> spectreCroise(
         fftw_alloc_complex(tailleFrequence), destructeurComplexe);
 
-    // 2. Préparation des signaux (Centrage et Zero-Padding)
-    // On calcule la moyenne pour soustraire la composante continue (éviter les biais d'amplitude)
+    // 2. Préparation des signaux (Centrage et ajout de zéros)
+    // On calcule le volume moyen pour le soustraire à chaque point (enlève les écarts de volume global)
     const double moyenne1 = accumulate(sig1, sig1 + taille1, 0.0) / static_cast<double>(taille1);
     const double moyenne2 = accumulate(sig2, sig2 + taille2, 0.0) / static_cast<double>(taille2);
 
     for (size_t i = 0; i < taille1; ++i) signalTemporel1.get()[i] = sig1[i] - moyenne1;
     for (size_t i = 0; i < taille2; ++i) signalTemporel2.get()[i] = sig2[i] - moyenne2;
 
-    // Remplissage de zéros (Zero-padding) pour atteindre la taille FFT et éviter le repliement circulaire
+    // Remplissage avec des zéros (Zero-padding) pour atteindre la taille cible et éviter les erreurs de calcul
     fill(signalTemporel1.get() + taille1, signalTemporel1.get() + tailleFFT, 0.0);
     fill(signalTemporel2.get() + taille2, signalTemporel2.get() + tailleFFT, 0.0);
 
-    // 3. Passage dans le domaine fréquentiel (FFT)
+    // 3. Passage dans le domaine des fréquences (FFT)
     fftw_plan planAller1, planAller2;
     {
-        // FFTW n'étant pas thread-safe sur la création de plans, on verrouille
+        // On verrouille l'accès car FFTW ne sait pas gérer plusieurs créations de plans en même temps
         lock_guard verrou(verrouFftw);
         planAller1 = fftw_plan_dft_r2c_1d(static_cast<int>(tailleFFT), signalTemporel1.get(), spectre1.get(),
                                           FFTW_ESTIMATE);
@@ -298,19 +299,19 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     fftw_execute(planAller1);
     fftw_execute(planAller2);
 
-    // 4. Multiplication des spectres (Corrélation <=> Produit par le conjugué complexe)
+    // 4. Multiplication des fréquences pour mesurer la ressemblance
     for (size_t i = 0; i < tailleFrequence; ++i) {
         const double reel1 = spectre1.get()[i][0];
         const double imag1 = spectre1.get()[i][1];
         const double reel2 = spectre2.get()[i][0];
         const double imag2 = spectre2.get()[i][1];
 
-        // Équivalent fréquentiel de la corrélation : Spectre1 * Conjugué(Spectre2)
+        // Calcul mathématique (produit par le conjugué) pour trouver la ressemblance exacte entre les deux signaux
         spectreCroise.get()[i][0] = reel1 * reel2 + imag1 * imag2;
         spectreCroise.get()[i][1] = imag1 * reel2 - reel1 * imag2;
     }
 
-    // 5. Retour dans le domaine temporel (IFFT)
+    // 5. Retour au domaine temporel classique (IFFT)
     fftw_plan planRetour;
     {
         lock_guard verrou(verrouFftw);
@@ -320,12 +321,12 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
 
     fftw_execute(planRetour);
 
-    // 6. Extraction du décalage (Lag)
-    // Le pic d'amplitude maximale représente le point de corrélation maximale (le meilleur alignement)
+    // 6. Recherche du décalage exact (Lag)
+    // Le point le plus haut (le pic d'amplitude) indique le moment où les vidéos sont le mieux alignées
     const auto iterateurMax = max_element(signalResultat.get(), signalResultat.get() + tailleFFT);
     const size_t indexMax = distance(signalResultat.get(), iterateurMax);
 
-    // Libération des plans de calcul (Section critique)
+    // Nettoyage des outils de calcul FFTW (avec verrouillage de sécurité)
     {
         lock_guard verrou(verrouFftw);
         fftw_destroy_plan(planAller1);
@@ -336,8 +337,8 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     const int indexMaxSigne = static_cast<int>(indexMax);
     const int tailleFFTSigne = static_cast<int>(tailleFFT);
 
-    // Ajustement pour les décalages négatifs : à cause de la périodicité de la FFT,
-    // la seconde moitié du tableau correspond à des retards (lags négatifs).
+    // Si le point maximal se trouve dans la seconde moitié du tableau,
+    // cela signifie mathématiquement que la vidéo est en avance (décalage négatif).
     return indexMaxSigne > tailleFFTSigne / 2 ? indexMaxSigne - tailleFFTSigne : indexMaxSigne;
 }
 
