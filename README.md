@@ -69,159 +69,86 @@ flowchart LR
 classDiagram
     direction LR
 
-%% --- MODÈLES ---
-    class M_ProtocoleReseau {
-        +enum Expediteur
-        +enum TypeCommande
-        +enum Action
-        +struct PaquetControle
-        +struct LecteurConfig
+    class V_Master {
+        +executer() : void
     }
 
-    class M_BDD {
-        -pBaseDonne
-        +enregistrerDonnees()
-        +actualiserDonnees()
-        +recupererDonnees()
-    }
-
-    class M_VideoComplexe {
-        +genererVideoComplexe()
-        -calculerDecalages()
-        -construireCommandeFFmpeg()
+    class C_LecteurPhysiqueLocal {
+        +initialiserSession(fichiers, lecteurs) : void
+        +basculerPlayPause() : void
+        +lancerRechercheLecteurs() : void
     }
 
     class M_SessionLecture {
-        -M_VideoComplexe
-        -idLecteurs
-        -ipLecteurs
-        +preparerSessionLecture()
-        +genererVideoComplexe()
-        +uploaderVideoComplexe()
-        +rechercherLecteurs()
+        +genererVideoComplexe(fichiers, dossier, ips) : void
+        +uploaderVideoComplexe(dossierSource) : void
+        +rechercherLecteurs() : vector~map~
     }
 
-    class M_DecouverteReseau {
-        -m_expediteur
-        -m_receveur
-        +lancerDecouverte()
-        +getReponsesBrutes()
-        +afficherResultats()
+    class M_VideoComplexe {
+        +genererVideoComplexe(fichiers, nb, sortie) : void
+        -xcorr(sig1, sig2) : int
     }
 
-    class M_LecteurPhysique {
-        -instanceVLC
-        -m_ip
-        -m_os
-        -m_memoireMo
-        +lireVideo()
-        +recupererFrameVideo()
-        +collecterInfosLocales()
-        +versJson()
-        +play()
-        +pause()
-        +stop()
+    class M_ConfigReseau {
+        +rechercherLecteurPhysique(dossier) : void
+        +sauvegarderConfigActuelle() : void
+        +visualiserLecteurPhysique() : void
     }
 
-    class M_JsonUtil {
-        +parser()
-        +construire()
-    }
-
-    class M_TFTP_W {
-        -TFTP_PORT
-        -BLOCK_SIZE
-        -MAX_RETRIES
-        +envoyer()
-        +recevoirFichierPousse()
-    }
-
-    class M_ExpediteurUDP {
-        -descripteurSocket
-        -groupeMulticast
-        +envoyer()
-        +transmettreCommande()
-    }
-
-    class M_ReceveurUDP {
-        -descripteurSocket
-        -groupeMulticast
-        +recevoir()
-        +recevoirAvecTimeout()
-        +envoyerReponse()
-    }
-
-    class M_ClientTFTP {
-        +recevoirFichier()
-    }
-
-%% --- CONTRÔLEURS ---
-    class C_LecteurPhysiqueLocal {
-        -M_LecteurPhysique
-        -M_SessionLecture
-        -M_ExpediteurUDP
-        -M_ReceveurUDP
-        +initialiserSession()
-        +basculerPlayPause()
-        +lancerRechercheLecteurs()
-        +demarrerEcouteMulticast()
-        +mettreAJour()
-    }
-
-    class C_LecteurPhysiqueDistant {
-        -M_LecteurPhysique
-        -M_ClientTFTP
-        -M_ReceveurUDP
-        +recevoirVideosComplexes()
-        +recevoirCommande()
-    }
-
-%% --- VUES ---
-    class V_Master {
-        -C_LecteurPhysiqueLocal
-        +executer()
-        -chargerListeVideos()
-        -chargerListeLecteurs()
-        -dessinerZoneVideo()
-        -dessinerOverlayChargement()
+    class M_BDD {
+        +enregistrerDonnees() : int
+        +recupereDonnees() : vector~vector~
     }
 
     class V_LecteurPhysiqueDistant {
-        -C_LecteurPhysiqueDistant
-        +afficherVideo()
+        +executer() : void
+        -actualiserLecteur() : void
     }
 
-%% --- RELATIONS ET LIENS ---
+    class C_LecteurPhysiqueDistant {
+        +initialiserConnexionMaster(ip, json, video) : void
+        +executerCommande(paquet) : void
+        +genererFichierJson(nom) : string
+    }
 
-%% Dépendances Protocoles (Nouvelles)
-    M_ExpediteurUDP ..> M_ProtocoleReseau
-    M_ReceveurUDP ..> M_ProtocoleReseau
+    class M_LecteurPhysique {
+        +lireVideo(chemin) : void
+        +recupererFrameVideo(pixels, L, H, redim) : bool
+        +collecterInfosLocales() : void
+    }
 
-%% Master (MVC)
-    C_LecteurPhysiqueLocal <--* V_Master
-    C_LecteurPhysiqueLocal *--> M_SessionLecture
-    C_LecteurPhysiqueLocal *--> M_LecteurPhysique
-    M_ExpediteurUDP <--* C_LecteurPhysiqueLocal
-    M_ReceveurUDP <--* C_LecteurPhysiqueLocal
+    class M_UDP {
+        +transmettreCommande(exp, type, action, valeur) : void
+        +recevoir(paquet) : bool
+    }
 
-%% Session et Découverte
-    M_SessionLecture *--> M_VideoComplexe
-    M_SessionLecture ..> M_DecouverteReseau
-    M_SessionLecture ..> M_TFTP_W
-    M_DecouverteReseau *--> M_ExpediteurUDP
-    M_DecouverteReseau *--> M_ReceveurUDP
+    class M_TFTP {
+        +envoyer(ip, fichier) : void
+        +recevoirFichierPousse(fichier) : bool
+        +demarrerServeurMultiThread(dossier) : void
+    }
 
-%% Utilitaires et BDD
-    M_SessionLecture ..> M_JsonUtil
-    M_LecteurPhysique ..> M_JsonUtil
-    M_SessionLecture ..> M_BDD
-    M_DecouverteReseau ..> M_BDD
+    M_LecteurPhysique "1" <--* "1" C_LecteurPhysiqueDistant
+    M_LecteurPhysique "1" <--* "1" C_LecteurPhysiqueLocal
 
-%% Client Distant (MVC)
-    V_LecteurPhysiqueDistant *--> C_LecteurPhysiqueDistant
-    M_ClientTFTP <--* C_LecteurPhysiqueDistant
-    C_LecteurPhysiqueDistant *--> M_ReceveurUDP
-    C_LecteurPhysiqueDistant *--> M_LecteurPhysique
+    C_LecteurPhysiqueDistant "1" *--> "1" M_TFTP
+    C_LecteurPhysiqueDistant "1" ..> "1" M_UDP : Dépendance (PaquetControle)
+    C_LecteurPhysiqueDistant "1" <--* "1" V_LecteurPhysiqueDistant
+    V_LecteurPhysiqueDistant "1" *--> "2" M_UDP : Découverte + Ordres
+
+    M_ConfigReseau "1" ..> "1" M_TFTP : Dépendance (Serveur de recherche)
+    M_BDD "1" <--* "1" M_ConfigReseau
+
+    M_SessionLecture "1" ..> "*" M_TFTP : Dépendance (Upload en thread)
+    M_SessionLecture "1" *--> "1" M_ConfigReseau
+
+    V_Master "1" *--> "1" C_LecteurPhysiqueLocal
+    C_LecteurPhysiqueLocal "1" *--> "1" M_UDP
+    C_LecteurPhysiqueLocal "1" *--> "1" M_SessionLecture
+    M_ConfigReseau "1" *--> "1" M_UDP
+
+    M_VideoComplexe "1" <--* "1" M_SessionLecture
 ```
 
 Le projet respecte l'architecture **MVC (Modèle-Vue-Contrôleur)**.
@@ -244,13 +171,10 @@ Développé en **C++23**, le programme utilise des threads et des variables atom
 │   ├── Modele/
 │   │   ├── M_BDD.h
 │   │   ├── M_ConfigReseau.h
-│   │   ├── M_ExpediteurUDP.h
-│   │   ├── M_JsonUtil.h
 │   │   ├── M_LecteurPhysique.h
-│   │   ├── M_ProtocoleReseau.h
-│   │   ├── M_ReceveurUDP.h
 │   │   ├── M_SessionLecture.h
-│   │   ├── M_TFTP_W.h
+│   │   ├── M_TFTP.h
+│   │   ├── M_UDP.h
 │   │   └── M_VideoComplexe.h
 │   └── Vue/
 │       └── V_Master.h
@@ -266,12 +190,10 @@ Développé en **C++23**, le programme utilise des threads et des variables atom
 │   ├── Modele/
 │   │   ├── M_BDD.cpp
 │   │   ├── M_ConfigReseau.cpp
-│   │   ├── M_ExpediteurUDP.cpp
-│   │   ├── M_JsonUtil.cpp
 │   │   ├── M_LecteurPhysique.cpp
-│   │   ├── M_ReceveurUDP.cpp
 │   │   ├── M_SessionLecture.cpp
-│   │   ├── M_TFTP_W.cpp
+│   │   ├── M_TFTP.cpp
+│   │   ├── M_UDP.cpp
 │   │   └── M_VideoComplexe.cpp
 │   └── Vue/
 │       └── V_Master.cpp
@@ -310,11 +232,10 @@ cmake --build . --config Release
 ## 📊 Configuration de test
 
 ```cpp
-
 const string IP_MULTICAST = "224.0.0.1";
 constexpr int PORT_COMMANDES = 54321;
-constexpr int PORT_DECOUVERTE = 5000;
-constexpr int PORT_REPONSE = 5001;
+constexpr int PORT_DECOUVERTE = 50000;
+constexpr int PORT_REPONSE = 50001;
 
 const string DOSSIER_VIDEOS = "videos";
 const string CHEMIN_VIDEO_MASTER = "videosComplexes/VideoComplexe_0.mp4";
@@ -322,7 +243,6 @@ const string CHEMIN_VIDEO_MASTER = "videosComplexes/VideoComplexe_0.mp4";
 V_Master master(IP_MULTICAST, PORT_COMMANDES, PORT_DECOUVERTE, PORT_REPONSE, DOSSIER_VIDEOS, CHEMIN_VIDEO_MASTER);
 
 master.executer();
-
 ```
 
 ## 👥 Développeurs
