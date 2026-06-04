@@ -254,7 +254,7 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
     const size_t tailleInitiale = taille1 + taille2 - 1; // Taille théorique minimale pour comparer les signaux
 
     // On arrondit à la puissance de 2 supérieure pour que les calculs soient beaucoup plus rapides
-    const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitial))));
+    const auto tailleFFT = static_cast<size_t>(pow(2, ceil(log2(tailleInitiale))));
     const size_t tailleFrequence = tailleFFT / 2 + 1; // Format FFTW pour stocker les fréquences (nombres complexes)
 
     // Outils pour vider proprement la mémoire FFTW à la fin grâce aux unique_ptr
