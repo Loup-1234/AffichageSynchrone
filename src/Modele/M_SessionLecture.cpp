@@ -21,11 +21,13 @@ void M_SessionLecture::configurerLecteurs(const vector<LecteurConfig>& configs) 
 void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
     cout << "[DEBUG] [Session Lecture] Debut du calcul des capacites video pour " << nombreTotalVideos << " video(s)." << endl;
 
+    // Conditions de garde : rien à traiter ou aucun lecteur disponible
     if (m_lecteurs.empty() || nombreTotalVideos <= 0) {
         cout << "[DEBUG] [Session Lecture] Annulation : Aucun lecteur ou aucune video a traiter." << endl;
         return;
     }
 
+    // Cas particulier : si le Master est seul, il prend l'intégralité du flux
     if (m_lecteurs.size() == 1 && m_lecteurs[0].id == 0) {
         m_lecteurs[0].nbVideosCapacite = nombreTotalVideos;
         cout << "[DEBUG] [Session Lecture] Un seul lecteur maitre detecte. Attribution de la totalite ("
@@ -33,58 +35,55 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         return;
     }
 
+    // Réinitialisation des capacités avant répartition
     for (auto& lecteur : m_lecteurs) {
         lecteur.nbVideosCapacite = 0;
     }
 
     int videosRestantes = nombreTotalVideos - 1;
 
-    // --- PALIER 1 : Garantie anti-ecran noir pour les clients distants (1 a N-1) ---
-    for (size_t i = 1; i < m_lecteurs.size() && videosRestantes > 0; ++i) {
+    // 1. Distribution minimale de sécurité
+    // On donne d'abord une vidéo à chaque client pour éviter un écran noir distant
+    for (size_t i = 0; i < m_lecteurs.size() && videosRestantes > 0; ++i) {
         m_lecteurs[i].nbVideosCapacite++;
         videosRestantes--;
     }
 
-    // --- PALIER 2 : Garantie d'au moins une video secondaire pour le Master (0) ---
-    if (videosRestantes > 0) {
-        m_lecteurs[0].nbVideosCapacite++;
-        videosRestantes--;
-    }
+    // 2. Récupération des surfaces d'affichage (Poids pour le prorata)
+    map<string, int> surfaceParIP;
 
-    // --- TRAITEMENT VIA LE CACHE LOCALISÉ ---
-    map<string, long long> surfaceParIP;
-
+    // Extraction des résolutions depuis le cache réseau (Format : MAC, IP, OS, Largeur, Hauteur)
     for (const auto& ligne : m_cacheConfigReseau) {
         if (ligne.size() >= 5) {
-            // Index basés sur le SELECT * (0: mac, 1: ip, 2: os, 3: largeur, 4: hauteur)
-            long long surface = stoll(ligne[3]) * stoll(ligne[4]);
+            int surface = stoi(ligne[3]) * stoi(ligne[4]);
             if (surface > 0) surfaceParIP[ligne[1]] = surface;
         }
     }
 
-    // Capture dynamique de la surface de l'écran du Master via Raylib
-    long long surfaceMaster = 1920LL * 1080LL;
+    // Détermination dynamique de la surface du Master via l'écran principal Raylib
+    int surfaceMaster = 1920 * 1080;
     if (IsWindowReady()) {
         int largeurMaster = GetMonitorWidth(0);
         int hauteurMaster = GetMonitorHeight(0);
         if (largeurMaster > 0 && hauteurMaster > 0) {
-            surfaceMaster = static_cast<long long>(largeurMaster) * static_cast<long long>(hauteurMaster);
+            surfaceMaster = largeurMaster * hauteurMaster;
         }
     }
     surfaceParIP[""] = surfaceMaster;
 
-    // Calcul de la surface globale et application des résolutions par défaut si manquantes
-    long long surfaceTotaleGlobale = 0;
+    // Calcul de la surface totale de la mosaïque (et fallback 1080p pour les IPs inconnues)
+    int surfaceTotaleGlobale = 0;
     for (const auto& lecteur : m_lecteurs) {
         if (!surfaceParIP.contains(lecteur.ip)) {
-            surfaceParIP[lecteur.ip] = 1920LL * 1080LL;
+            surfaceParIP[lecteur.ip] = 1920 * 1080;
             cout << "[DEBUG] [Session Lecture] Dimensions non trouvees pour le lecteur " << lecteur.ip
                  << ". Application de la resolution par defaut (1920x1080)." << endl;
         }
         surfaceTotaleGlobale += surfaceParIP[lecteur.ip];
     }
 
-    // --- PALIER 3 : Distribution du reste au prorata exact ---
+    // 3. Distribution proportionnelle
+    // On répartit le gros des vidéos restantes au prorata de la surface d'affichage de chaque écran
     if (videosRestantes > 0 && surfaceTotaleGlobale > 0) {
         int aDistribuerAuProrata = videosRestantes;
         for (auto& lecteur : m_lecteurs) {
@@ -95,7 +94,9 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
-    // --- PALIER 4 : Lissage des résidus (Round-Robin) avec priorité aux clients ---
+    // 4. Lissage des résidus (Round-Robin)
+    // S'il reste des vidéos à cause des arrondis du prorata, on les distribue une par une.
+    // On priorise les clients distants, et on termine par le Master.
     if (videosRestantes > 0) {
         vector<size_t> ordrePriorite;
         ordrePriorite.reserve(m_lecteurs.size());
@@ -111,7 +112,8 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
         }
     }
 
-    // --- ETAPE FINALE : Injection de la vidéo de référence (+1 obligatoire) ---
+    // 5. Finalisation des slots
+    // On injecte la vidéo de référence obligatoire (+1) pour tout le monde
     for (auto& lecteur : m_lecteurs) {
         lecteur.nbVideosCapacite += 1;
     }
