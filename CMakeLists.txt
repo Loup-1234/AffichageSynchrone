@@ -67,7 +67,10 @@ endif()
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
 
 # GOOGLE TEST
-add_executable(Gtest test/Test1.cpp
+add_executable(Gtest
+        test/M_SessionLecture_Test.cpp
+        test/M_VideoComplexe_Test.cpp
+        test/M_UDP_Expediteur_Test.cpp
         src/Vue/V_Master.cpp
         src/Controleur/C_LecteurPhysiqueLocal.cpp
         src/Modele/M_VideoComplexe.cpp

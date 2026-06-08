@@ -250,6 +250,10 @@ vector<vector<float>> M_VideoComplexe::extraireEtChargerAudios(const string *lis
 }
 
 int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2, size_t taille2) {
+    if (sig1 == nullptr || taille1 == 0 || sig2 == nullptr || taille2 == 0) {
+        throw std::invalid_argument("Les signaux ne peuvent pas être vides ou nuls.");
+    }
+
     // 1. Calcul de la taille idéale pour la FFT
     const size_t tailleInitiale = taille1 + taille2 - 1; // Taille théorique minimale pour comparer les signaux
 
