@@ -134,75 +134,83 @@ void M_SessionLecture::calculerCapacitesVideo(int nombreTotalVideos) {
 }
 
 void M_SessionLecture::genererVideoComplexe(const vector<string>& listeFichiersEntree, const string& dossierSortie, const vector<string>& ipsSelectionnees) {
-    cout << "[DEBUG] [Session Lecture] Debut de la generation des videos complexes..." << endl;
-
     if (listeFichiersEntree.empty()) {
-        cerr << "[DEBUG] [Session Lecture] [ERROR] La liste des fichiers d'entree est vide. Abandon." << endl;
+        cerr << "[DEBUG] [Session Lecture] [ERROR] Aucun fichier sélectionné. Abandon." << endl;
         return;
     }
 
+    // 1. Nettoyage classique du dossier de sortie
     try {
-        if (filesystem::exists("videosComplexes")) {
-            cout << "[DEBUG] [Session Lecture] Nettoyage complet du dossier : videosComplexes" << endl;
-            for (const auto& element : filesystem::directory_iterator("videosComplexes")) {
+        if (filesystem::exists(dossierSortie)) {
+            for (const auto& element : filesystem::directory_iterator(dossierSortie)) {
                 filesystem::remove_all(element.path());
             }
         } else {
-            filesystem::create_directories("videosComplexes");
+            filesystem::create_directories(dossierSortie);
         }
     } catch (const exception& e) {
-        cerr << "[DEBUG] [Session Lecture] [WARNING] Impossible de vider 'videosComplexes' : " << e.what() << endl;
+        cerr << "[DEBUG] [Session Lecture] [WARNING] Nettoyage impossible : " << e.what() << endl;
     }
 
+    // 2. Configuration des structures des lecteurs
     m_lecteurs.clear();
     m_lecteurs.push_back({.id = 0, .ip = "", .nbVideosCapacite = 0});
-
     int prochainId = 1;
     for (const string& ip : ipsSelectionnees) {
         if (ip.empty()) continue;
-
-        bool existeDeja = std::any_of(m_lecteurs.begin(), m_lecteurs.end(),
-                                      [&ip](const auto& l) { return l.ip == ip; });
-
+        bool existeDeja = std::any_of(m_lecteurs.begin(), m_lecteurs.end(), [&ip](const auto& l) { return l.ip == ip; });
         if (!existeDeja) {
             m_lecteurs.push_back({.id = prochainId++, .ip = ip, .nbVideosCapacite = 0});
-            cout << "[DEBUG] [Session Lecture] Ajout du Lecteur Client - ID: " << prochainId - 1 << ", IP: " << ip << endl;
         }
     }
 
-    calculerCapacitesVideo(static_cast<int>(listeFichiersEntree.size()));
+    // =========================================================================
+    // 3. COMMUTATEUR AUTOMATIQUE : MODE MIROIR vs MODE MOSAÏQUE
+    // =========================================================================
+    if (listeFichiersEntree.size() == 1) {
+        // --------- MODE MIROIR (Vidéo Unique) ---------
+        cout << "[SESSION LECTURE] Une seule vidéo détectée : Activation du Mode Miroir." << endl;
 
-    vector<vector<string>> videosParLecteur(m_lecteurs.size());
+        for (auto& lecteur : m_lecteurs) {
+            lecteur.nbVideosCapacite = 1;
+            string cheminSortie = dossierSortie + "/VideoComplexe_" + to_string(lecteur.id) + ".mp4";
+            filesystem::copy_file(listeFichiersEntree[0], cheminSortie, filesystem::copy_options::overwrite_existing);
+        }
+    }
+    else {
+        // --------- MODE MOSAÏQUE (FFmpeg d'origine) ---------
+        cout << "[SESSION LECTURE] " << listeFichiersEntree.size() << " vidéos détectées : Activation du Mode Mosaïque." << endl;
 
-    for (size_t i = 0; i < m_lecteurs.size(); ++i) {
-        if (m_lecteurs[i].nbVideosCapacite > 0) {
-            videosParLecteur[i].push_back(listeFichiersEntree[0]);
+        // Ton code algorithmique d'origine
+        calculerCapacitesVideo(static_cast<int>(listeFichiersEntree.size()));
+
+        vector<vector<string>> videosParLecteur(m_lecteurs.size());
+        for (size_t i = 0; i < m_lecteurs.size(); ++i) {
+            if (m_lecteurs[i].nbVideosCapacite > 0) {
+                videosParLecteur[i].push_back(listeFichiersEntree[0]);
+            }
+        }
+
+        size_t indexVideoSource = 1;
+        size_t lecteurActuel = (m_lecteurs.size() > 1) ? 1 : 0;
+
+        while (indexVideoSource < listeFichiersEntree.size()) {
+            if (static_cast<int>(videosParLecteur[lecteurActuel].size()) < m_lecteurs[lecteurActuel].nbVideosCapacite) {
+                videosParLecteur[lecteurActuel].push_back(listeFichiersEntree[indexVideoSource++]);
+            }
+            lecteurActuel = (lecteurActuel + 1) % m_lecteurs.size();
+        }
+
+        for (size_t i = 0; i < m_lecteurs.size(); ++i) {
+            if (!videosParLecteur[i].empty()) {
+                string cheminSortie = dossierSortie + "/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
+                bool masquerRef = (m_lecteurs[i].id != 0);
+                instanceVideoComplexe.genererVideoComplexe(videosParLecteur[i].data(), videosParLecteur[i].size(), cheminSortie, masquerRef, m_lecteurs[i].id);
+            }
         }
     }
 
-    size_t indexVideoSource = 1;
-    size_t lecteurActuel = (m_lecteurs.size() > 1) ? 1 : 0;
-
-    while (indexVideoSource < listeFichiersEntree.size()) {
-        if (static_cast<int>(videosParLecteur[lecteurActuel].size()) < m_lecteurs[lecteurActuel].nbVideosCapacite) {
-            videosParLecteur[lecteurActuel].push_back(listeFichiersEntree[indexVideoSource++]);
-        }
-        lecteurActuel = (lecteurActuel + 1) % m_lecteurs.size();
-    }
-
-    for (size_t i = 0; i < m_lecteurs.size(); ++i) {
-        if (!videosParLecteur[i].empty()) {
-            string cheminSortie = "videosComplexes/VideoComplexe_" + to_string(m_lecteurs[i].id) + ".mp4";
-            bool masquerRef = (m_lecteurs[i].id != 0);
-
-            cout << "[DEBUG] [Session Lecture] Lancement du traitement pour le Lecteur ID " << m_lecteurs[i].id
-                 << " avec " << videosParLecteur[i].size() << " morceaux." << endl;
-
-            instanceVideoComplexe.genererVideoComplexe(videosParLecteur[i].data(), videosParLecteur[i].size(), cheminSortie, masquerRef, m_lecteurs[i].id);
-        }
-    }
-
-    cout << "[DEBUG] [Session Lecture] Fin de la generation des videos complexes." << endl;
+    cout << "[DEBUG] [Session Lecture] Fin de la préparation des fichiers." << endl;
 }
 
 void M_SessionLecture::uploaderVideoComplexe(const string& dossierSource) const {

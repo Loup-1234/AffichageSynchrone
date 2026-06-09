@@ -84,7 +84,8 @@ void M_ConfigReseau::rechercherLecteurPhysique(string dossier) {
     }
 #endif
 
-    expediteur.transmettreCommande(Expediteur::AUTRE, TypeCommande::CONNECTION, Action::PLAY, 0);
+    expediteur.transmettreCommande(Expediteur::MASTER, TypeCommande::CONNECTION, Action::PLAY, 0);
+
     cout << "[DEBUG] Trame multicast envoyee. Collecte des fichiers JSON en cours..." << endl;
 
     std::this_thread::sleep_for(std::chrono::seconds(4));
