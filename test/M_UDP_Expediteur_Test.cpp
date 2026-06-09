@@ -1,5 +1,3 @@
-#pragma once
-
 #include <gtest/gtest.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
