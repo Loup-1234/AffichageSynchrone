@@ -19,6 +19,8 @@ V_Master::V_Master(const string &ipMulticast, int portCommandes, int portDecouve
 
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
     InitWindow(800, 450, "Master");
+    const Image icon = LoadImage("tango.png");
+    SetWindowIcon(icon);
     SetWindowMinSize(800, 450);
     InitAudioDevice();
     SetTargetFPS(60);

@@ -6,7 +6,7 @@ using namespace std;
 
 M_BDD::M_BDD() {
     // Ouverture ou creation du fichier de base de donnees local SQLite
-    sqlite3_open("../AffichageSynchroneBDD.db", &m_db);
+    sqlite3_open("AffichageSynchroneBDD.db", &m_db);
 }
 
 void M_BDD::createTable(string nomTable) {
