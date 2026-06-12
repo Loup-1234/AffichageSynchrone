@@ -79,7 +79,8 @@ add_executable(Gtest
         src/Modele/M_LecteurPhysique.cpp
         src/Modele/M_BDD.cpp
         src/Modele/M_ConfigReseau.cpp
-        src/Modele/M_UDP.cpp)
+        src/Modele/M_UDP.cpp
+        test/M_BDD_Test.cpp)
 target_link_libraries(Gtest PRIVATE gtest_main)
 include(GoogleTest)
 gtest_discover_tests(Gtest)
