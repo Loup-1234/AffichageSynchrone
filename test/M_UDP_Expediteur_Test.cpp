@@ -1,3 +1,5 @@
+#ifdef _WIN32
+
 #include <gtest/gtest.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -123,3 +125,5 @@ TEST_F(ExpediteurUDPTest, Envoyer_Progression) {
     EXPECT_EQ(paquetRecu.action, Action::PROGRESSION);
     EXPECT_FLOAT_EQ(paquetRecu.valeur, 75.5f);
 }
+
+#endif

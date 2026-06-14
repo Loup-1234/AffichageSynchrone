@@ -90,7 +90,7 @@ vector<double> M_VideoComplexe::calculerDecalages(const vector<vector<float>>& a
 
         lesThreads.push_back(thread([&, i, indexRef]() {
             if (!audios[indexRef].empty() && !audios[i].empty()) {
-                const auto resultatXcorr = -static_cast<double>(xcorr(audios[indexRef].data(), audios[indexRef].size(),
+                const auto resultatXcorr = static_cast<double>(xcorr(audios[indexRef].data(), audios[indexRef].size(),
                                                                       audios[i].data(), audios[i].size()));
                 decalages[i] = resultatXcorr / FREQUENCE_ECHANTILLONNAGE;
             }
@@ -312,7 +312,7 @@ int M_VideoComplexe::xcorr(const float *sig1, size_t taille1, const float *sig2,
 
         // Calcul mathématique (produit par le conjugué) pour trouver la ressemblance exacte entre les deux signaux
         spectreCroise.get()[i][0] = reel1 * reel2 + imag1 * imag2;
-        spectreCroise.get()[i][1] = imag1 * reel2 - reel1 * imag2;
+        spectreCroise.get()[i][1] = reel1 * imag2 - imag1 * reel2;
     }
 
     // 5. Retour au domaine temporel classique (IFFT)

@@ -33,8 +33,8 @@ TEST(TestsCorrelation, SignalDecale) {
 
     const int decalage = video.xcorr(video1.data(), video1.size(), video2.data(), video2.size());
 
-    // Vérifie si le décalage trouvé est de 2 (ou -2 selon l'ordre interne)
-    EXPECT_TRUE(decalage == 2 || decalage == -2);
+    // Vérifie si le décalage trouvé est de 2
+    EXPECT_TRUE(decalage == 2);
 }
 
 // TESTS AVANCÉS
@@ -48,8 +48,8 @@ TEST(TestsCorrelation, TaillesDifferentes) {
 
     const int decalage = video.xcorr(video1.data(), video1.size(), video2.data(), video2.size());
 
-    // L'extrait commence à l'indice 2 de l'audio principal
-    EXPECT_EQ(decalage, 2);
+    // L'extrait commence à l'indice -2 de l'audio principal
+    EXPECT_EQ(decalage, -2);
 }
 
 // TEST 4 : « vidéo1 » et « vidéo2 » alignées avec du bruit dans la « vidéo2 »
